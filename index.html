@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML to Figma | Convert Code to Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#2563EB', // Cobalt Blue - Restrained accent
+              'accent-dark': '#1E40AF',
+              surface: '#F9FAFB',
+              'surface-dark': '#F3F4F6',
+              content: '#111827', // Gray 900
+              'content-muted': '#6B7280', // Gray 500
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            boxShadow: {
+              'soft': '0 20px 40px -10px rgba(0, 0, 0, 0.05)',
+              'sharp': '0 0 0 1px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FFFFFF;
+        color: #111827;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar - Minimal */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F9FAFB;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D1D5DB;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "three": "https://esm.sh/three@^0.182.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
