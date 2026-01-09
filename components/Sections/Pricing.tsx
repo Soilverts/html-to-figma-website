@@ -22,23 +22,22 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         price="$12"
                         period="/mo"
                         description="Flexible for short sprints."
-                        features={["Unlimited Imports", "Typography Mirroring", "Auto-Layout Generation"]}
+                        features={["Unlimited Imports", "Typography Mirroring"]}
                         delay={0}
+                        checkoutUrl="https://gumroad.com/checkout?product=tqnzys&option=1kEWOYV-7AMz_YlmOADMRw%3D%3D&recurrence=monthly"
                     />
                     <PriceCard
                         title="Yearly"
                         price="$96"
                         period="/yr"
                         description="Best for continuous teams."
-                        features={["Unlimited Imports", "Typography Mirroring", "Auto-Layout Generation", "Priority Support"]}
+                        features={["Unlimited Imports", "Typography Mirroring", "Priority Support"]}
                         isPopular
                         delay={0.1}
+                        checkoutUrl="https://gumroad.com/checkout?product=tqnzys&option=1kEWOYV-7AMz_YlmOADMRw%3D%3D&recurrence=yearly"
                     />
                 </div>
 
-                <div className="mt-12 text-sm text-content-muted font-medium ml-2">
-                    * All plans include a 3-day free trial.
-                </div>
             </div>
         </section>
     )
@@ -52,9 +51,10 @@ interface PriceCardProps {
     features: string[];
     isPopular?: boolean;
     delay: number;
+    checkoutUrl: string;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ title, price, period, description, features, isPopular, delay }) => {
+const PriceCard: React.FC<PriceCardProps> = ({ title, price, period, description, features, isPopular, delay, checkoutUrl }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,13 +93,15 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, period, description
                 </CardContent>
 
                 <CardFooter className="pt-8">
-                    <Button
-                        size="lg"
-                        variant={isPopular ? 'secondary' : 'default'}
-                        className={`w-full font-bold ${isPopular ? 'bg-white text-black hover:bg-gray-100' : ''}`}
-                    >
-                        {isPopular ? 'Start Annual' : 'Start Monthly'}
-                    </Button>
+                    <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                        <Button
+                            size="lg"
+                            variant={isPopular ? 'secondary' : 'default'}
+                            className={`w-full font-bold ${isPopular ? 'bg-white text-black hover:bg-gray-100' : ''}`}
+                        >
+                            {isPopular ? 'Start Annual' : 'Start Monthly'}
+                        </Button>
+                    </a>
                 </CardFooter>
             </Card>
         </motion.div>

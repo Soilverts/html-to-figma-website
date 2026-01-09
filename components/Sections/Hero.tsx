@@ -106,7 +106,7 @@ const VisualGraphic = () => {
           <div className="w-full h-3 bg-gray-100 rounded-full mb-3" />
           <div className="w-2/3 h-3 bg-gray-100 rounded-full mb-8" />
           <Button size="sm" className="w-full shadow-lg shadow-accent/20">
-            Auto-Layout
+            Get Started
           </Button>
         </div>
         {/* Selection Overlay */}
