@@ -21,14 +21,14 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     </a>
                 </div>
 
-                <div className="mt-32 pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono tracking-widest uppercase">
+                <footer className="mt-32 pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono tracking-widest uppercase">
                     <p>© 2026 HTML to Figma.</p>
                     <div className="flex gap-8 mt-6 md:mt-0">
                         <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>
                         <a href="/terms" className="hover:text-accent transition-colors">Terms</a>
                         <a href="/contact" className="hover:text-accent transition-colors">Contact</a>
                     </div>
-                </div>
+                </footer>
             </div>
 
             {/* Minimalist Background Accents */}
