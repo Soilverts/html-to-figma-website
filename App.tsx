@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Hero } from './components/Sections/Hero';
 import { Features } from './components/Sections/Features';
 import { HowItWorks } from './components/Sections/HowItWorks';
@@ -11,8 +11,17 @@ import { Comparison } from './components/Sections/Comparison';
 import { CTA } from './components/Sections/CTA';
 
 const App: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>('hero');
-  const sections = ['hero', 'features', 'how-it-works', 'use-cases', 'pricing'];
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const isNavigatingRef = useRef(false);
+  const sections = ['home', 'features', 'how-it-works', 'use-cases', 'pricing'];
+
+  const handleNavigate = (id: string) => {
+    setActiveSection(id);
+    isNavigatingRef.current = true;
+    setTimeout(() => {
+      isNavigatingRef.current = false;
+    }, 1000);
+  };
 
   // Handle Keyboard Navigation
   useEffect(() => {
@@ -41,7 +50,7 @@ const App: React.FC = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !isNavigatingRef.current) {
             setActiveSection(entry.target.id);
           }
         });
@@ -66,11 +75,11 @@ const App: React.FC = () => {
       </div>
 
       {/* UI Overlay */}
-      <Navigation activeSection={activeSection} sections={sections} />
+      <Navigation activeSection={activeSection} sections={sections} onNavigate={handleNavigate} />
 
       {/* Content */}
       <main className="relative z-10">
-        <Hero id="hero" />
+        <Hero id="home" />
         <Features id="features" />
         <HowItWorks id="how-it-works" />
         <Stats id="stats" />

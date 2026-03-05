@@ -6,9 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface NavigationProps {
   activeSection: string;
   sections: string[];
+  onNavigate: (section: string) => void;
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections }) => {
+export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,6 +25,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections 
 
   const handleScrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    onNavigate(id);
     setIsOpen(false);
   };
 
