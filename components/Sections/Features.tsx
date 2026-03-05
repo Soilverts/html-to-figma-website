@@ -5,33 +5,33 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 const featureData = [
   {
-    title: "Vector Production",
-    desc: "Clean vector rectangles and frames, never rasterized.",
+    title: "Native Figma Layers",
+    desc: "Creates real Figma frames, rectangles, and text layers — not flattened screenshots.",
     icon: <Box strokeWidth={1.5} size={22} />
   },
   {
-    title: "Typography Mirroring",
-    desc: "Font families, line-heights, and kerning fully preserved.",
+    title: "Typography Preserved",
+    desc: "Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced.",
     icon: <Type strokeWidth={1.5} size={22} />
   },
   {
-    title: "Auto-Layout Ready",
-    desc: "Flexbox & Grid translated to Auto-Layout automatically.",
+    title: "Auto-Layout Support",
+    desc: "Optionally converts CSS Flexbox layouts into Figma Auto-Layout frames.",
     icon: <Layout strokeWidth={1.5} size={22} />
   },
   {
-    title: "Color Styles",
-    desc: "Extracts CSS variables into a local Figma palette.",
+    title: "Styling Fidelity",
+    desc: "Colors, borders, shadows, gradients, and opacity carried over accurately.",
     icon: <Palette strokeWidth={1.5} size={22} />
   },
   {
     title: "Image Handling",
-    desc: "High-res fills preserved. SVGs imported as paths.",
+    desc: "High-res image fills preserved. SVGs imported as native vector paths.",
     icon: <ImageIcon strokeWidth={1.5} size={22} />
   },
   {
-    title: "Component Detection",
-    desc: "Identifies repeating patterns to suggest Components.",
+    title: "Structured Output",
+    desc: "HTML hierarchy mapped to a clean, organized Figma layer tree you can edit immediately.",
     icon: <Layers strokeWidth={1.5} size={22} />
   }
 ];

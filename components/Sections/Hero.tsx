@@ -30,8 +30,8 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
             </h1>
             <p className="text-lg md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
               Instantly convert HTML and CSS into native Figma layers.
-              Preserve your layout, typography, and styles with pixel-perfect precision.
-              Used by over 50,000 design teams worldwide.
+              Preserve your layout, typography, and styles with precision.
+              Used by 2,000+ designers and developers.
             </p>
           </motion.div>
 

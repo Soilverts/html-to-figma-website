@@ -5,10 +5,14 @@ import { HowItWorks } from './components/Sections/HowItWorks';
 import { Navigation } from './components/Layout/Navigation';
 import { ParticleField } from './components/Visuals/ParticleField';
 import { Pricing } from './components/Sections/Pricing';
+import { UseCases } from './components/Sections/UseCases';
+import { Stats } from './components/Sections/Stats';
+import { Comparison } from './components/Sections/Comparison';
+import { CTA } from './components/Sections/CTA';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('hero');
-  const sections = ['hero', 'features', 'how-it-works'];
+  const sections = ['hero', 'features', 'how-it-works', 'use-cases', 'pricing'];
 
   // Handle Keyboard Navigation
   useEffect(() => {
@@ -69,14 +73,11 @@ const App: React.FC = () => {
         <Hero id="hero" />
         <Features id="features" />
         <HowItWorks id="how-it-works" />
+        <Stats id="stats" />
+        <UseCases id="use-cases" />
+        <Comparison id="comparison" />
         <Pricing id="pricing" />
-
-        {/* Footer */}
-        <footer className="py-12 border-t border-gray-100 bg-white" role="contentinfo">
-          <div className="container mx-auto px-6 text-center text-xs text-gray-400 font-mono">
-            <p>© 2026 HTML to Figma. Convert HTML/CSS to native Figma designs. All rights reserved.</p>
-          </div>
-        </footer>
+        <CTA id="cta" />
       </main>
     </div>
   );

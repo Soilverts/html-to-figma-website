@@ -17,12 +17,12 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
             <Step 
                 num="01" 
                 title="Input" 
-                desc="Provide a URL or paste raw HTML/CSS." 
+                desc="Select an HTML file or paste raw HTML/CSS." 
             />
             <Step 
                 num="02" 
                 title="Configure" 
-                desc="Adjust viewport and theme settings." 
+                desc="Adjust scale and import settings." 
             />
             <Step 
                 num="03" 

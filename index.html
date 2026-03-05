@@ -6,7 +6,7 @@
 
     <!-- Primary SEO -->
     <title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs Instantly</title>
-    <meta name="description" content="Convert HTML and CSS code into native, editable Figma layers instantly. Preserve typography, auto-layout, color styles, and component structure with pixel-perfect precision. Used by 50,000+ design teams worldwide." />
+    <meta name="description" content="Convert HTML and CSS code into native, editable Figma layers instantly. Preserve typography, layout, styling, images, and SVGs as a clean, organized Figma layer tree." />
     <meta name="keywords" content="HTML to Figma, convert HTML to Figma, code to design, Figma plugin, HTML CSS to Figma, design handoff, reverse design, web to Figma, Figma import HTML, auto-layout, design system, developer handoff" />
     <meta name="author" content="HTML to Figma" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://html2design.com/" />
     <meta property="og:title" content="HTML to Figma - Convert Code to Design Instantly" />
-    <meta property="og:description" content="Instantly convert HTML/CSS into native Figma layers. Preserve layout, typography, and styles with pixel-perfect precision. Trusted by 50,000+ teams." />
+    <meta property="og:description" content="Instantly convert HTML/CSS into native Figma layers. Preserve layout, typography, styling, images, and SVGs." />
     <meta property="og:image" content="https://html2design.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="669" />
@@ -27,7 +27,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="HTML to Figma - Convert Code to Design Instantly" />
-    <meta name="twitter:description" content="Instantly convert HTML/CSS into native Figma layers. Preserve layout, typography, and styles with pixel-perfect precision." />
+    <meta name="twitter:description" content="Instantly convert HTML/CSS into native Figma layers. Preserve layout, typography, styling, images, and SVGs." />
     <meta name="twitter:image" content="https://html2design.com/og-image.png" />
     <meta name="twitter:image:alt" content="HTML to Figma plugin showing code-to-design conversion" />
 
@@ -55,17 +55,17 @@
       "applicationCategory": "DesignApplication",
       "applicationSubCategory": "Figma Plugin",
       "operatingSystem": "Web",
-      "description": "Convert HTML and CSS code into native, editable Figma layers instantly. Preserves typography, auto-layout, color styles, and component structure with pixel-perfect precision.",
+      "description": "Convert HTML and CSS code into native, editable Figma layers. Preserves typography, layout, styling, images, and SVGs as a clean Figma layer tree.",
       "url": "https://html2design.com/",
       "image": "https://html2design.com/og-image.png",
       "screenshot": "https://html2design.com/og-image.png",
       "featureList": [
-        "Convert HTML/CSS to native Figma layers",
-        "Preserve typography including font families, line-heights, and kerning",
-        "Translate Flexbox and CSS Grid to Figma Auto-Layout",
-        "Extract CSS variables into Figma color styles",
-        "Import high-resolution images and SVGs as vector paths",
-        "Detect repeating patterns and suggest Figma Components"
+        "Convert HTML/CSS to native Figma frames, rectangles, and text layers",
+        "Preserve typography including font families, weights, sizes, line-heights, and letter-spacing",
+        "Optionally convert CSS Flexbox to Figma Auto-Layout",
+        "Preserve colors, borders, shadows, gradients, and opacity",
+        "Import high-resolution images and SVGs as native vector paths",
+        "Generate structured, organized Figma layer hierarchy"
       ],
       "offers": [
         {
@@ -74,7 +74,7 @@
           "price": "12.00",
           "priceCurrency": "USD",
           "billingIncrement": "P1M",
-          "description": "Flexible monthly plan with unlimited imports and typography mirroring"
+          "description": "Flexible monthly plan with unlimited imports and typography preservation"
         },
         {
           "@type": "Offer",
@@ -82,15 +82,9 @@
           "price": "96.00",
           "priceCurrency": "USD",
           "billingIncrement": "P1Y",
-          "description": "Annual plan with unlimited imports, typography mirroring, and priority support"
+          "description": "Annual plan with unlimited imports, typography preservation, and priority support"
         }
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "2340",
-        "bestRating": "5"
-      },
       "author": {
         "@type": "Organization",
         "name": "HTML to Figma"
@@ -109,15 +103,15 @@
           "name": "How does HTML to Figma work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma works in three simple steps: (1) Input - provide a URL or paste raw HTML/CSS code, (2) Configure - adjust viewport and theme settings, (3) Generate - receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles, then recreates them as clean vector rectangles, frames, and text layers in Figma with pixel-perfect precision."
+            "text": "HTML to Figma works in three simple steps: (1) Input - select an HTML file or paste raw HTML/CSS code, (2) Configure - adjust scale and import settings, (3) Generate - receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles, then recreates them as clean vector rectangles, frames, and text layers in Figma."
           }
         },
         {
           "@type": "Question",
-          "name": "Does HTML to Figma preserve CSS layouts like Flexbox and Grid?",
+          "name": "Does HTML to Figma preserve CSS layouts like Flexbox?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. HTML to Figma automatically translates CSS Flexbox and Grid layouts into Figma's native Auto-Layout system. This means your responsive layouts, spacing, and alignment are faithfully reproduced as editable Auto-Layout frames, not flattened images."
+            "text": "Yes. HTML to Figma can optionally convert CSS Flexbox layouts into Figma's native Auto-Layout system when enabled in settings. Your flex direction, alignment, gap, and padding are mapped to Auto-Layout properties."
           }
         },
         {
@@ -125,7 +119,7 @@
           "name": "What typography features are preserved when converting HTML to Figma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma fully preserves font families, font weights, font sizes, line-heights, letter-spacing (kerning), and text alignment. Your text layers in Figma will match your CSS typography exactly, making it ideal for design system migration and developer handoff workflows."
+            "text": "HTML to Figma preserves font families, font weights, font sizes, line-heights, letter-spacing, and text alignment. If a font is not available in Figma, it falls back to Inter Regular with a warning."
           }
         },
         {
@@ -133,7 +127,7 @@
           "name": "How much does HTML to Figma cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma offers two pricing plans: a Monthly plan at $12/month for flexible short sprints, and a Yearly plan at $96/year ($8/month equivalent) which includes priority support. Both plans include unlimited imports and full typography mirroring capabilities."
+            "text": "HTML to Figma offers two pricing plans: a Monthly plan at $12/month for flexible short sprints, and a Yearly plan at $96/year ($8/month equivalent) which includes priority support. Both plans include unlimited imports and full typography preservation."
           }
         },
         {
@@ -141,7 +135,7 @@
           "name": "What are the main use cases for HTML to Figma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma is used for four primary workflows: (1) Legacy Migration - rebuild old websites in Figma without starting from scratch, (2) Developer Handoff - reverse engineer implementations back into design files, (3) Competitor Analysis - import competitor layouts to deconstruct design patterns, (4) Design System Bootstrap - extract CSS variables and tokens into Figma style libraries."
+            "text": "HTML to Figma is used for four primary workflows: (1) Legacy Migration - rebuild old websites in Figma without starting from scratch, (2) Developer Handoff - reverse engineer implementations back into design files, (3) Competitor Analysis - import competitor layouts to deconstruct design patterns, (4) Design Kickstart - import existing page layouts as a starting point for design iteration."
           }
         },
         {
@@ -164,8 +158,44 @@
       "name": "HTML to Figma",
       "url": "https://html2design.com/",
       "logo": "https://html2design.com/favicon.svg",
-      "description": "Professional Figma plugin that converts HTML/CSS code into native Figma designs with pixel-perfect precision.",
+      "description": "Professional Figma plugin that converts HTML/CSS code into native, editable Figma designs. Preserves layout, typography, styling, images, and SVGs.",
       "sameAs": []
+    }
+    </script>
+
+    <!-- JSON-LD: HowTo Schema (GEO Boost) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Convert HTML to Figma",
+      "description": "Convert HTML and CSS code into native, editable Figma layers in three steps using the HTML to Figma plugin.",
+      "totalTime": "PT2M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "12"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Input your HTML",
+          "text": "Open the HTML to Figma plugin in Figma. Select an HTML file or paste raw HTML/CSS code into the input field."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Configure settings",
+          "text": "Adjust scale and import preferences such as Auto-Layout conversion."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Generate Figma layers",
+          "text": "Click Generate to receive native, editable Figma layers. The plugin converts HTML elements into Figma frames, text layers, and vector shapes."
+        }
+      ]
     }
     </script>
 
@@ -175,7 +205,7 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "HTML to Figma - Convert HTML/CSS Code to Native Figma Designs",
-      "description": "Convert HTML and CSS code into native, editable Figma layers instantly. Preserve typography, auto-layout, color styles, and component structure with pixel-perfect precision.",
+      "description": "Convert HTML and CSS code into native, editable Figma layers. Preserve typography, layout, styling, images, and SVGs as a clean Figma layer tree.",
       "url": "https://html2design.com/",
       "inLanguage": "en",
       "isPartOf": {
@@ -255,26 +285,26 @@
       <div style="max-width:960px;margin:0 auto;padding:40px 20px;font-family:Inter,sans-serif;color:#111827">
         <header>
           <h1>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs Instantly</h1>
-          <p>Instantly convert HTML into native Figma layers. Preserve your layout, typography, and styles with absolute precision. Trusted by over 50,000 design and development teams worldwide.</p>
+          <p>Instantly convert HTML into native Figma layers. Preserve your layout, typography, and styles with precision. Used by 2,000+ designers and developers.</p>
         </header>
 
         <section>
           <h2>Key Features</h2>
           <ul>
-            <li><strong>Vector Production</strong> - Clean vector rectangles and frames, never rasterized</li>
-            <li><strong>Typography Mirroring</strong> - Font families, line-heights, and kerning fully preserved</li>
-            <li><strong>Auto-Layout Ready</strong> - Flexbox and CSS Grid translated to Auto-Layout automatically</li>
-            <li><strong>Color Styles</strong> - Extracts CSS variables into a local Figma palette</li>
-            <li><strong>Image Handling</strong> - High-res fills preserved, SVGs imported as vector paths</li>
-            <li><strong>Component Detection</strong> - Identifies repeating patterns to suggest Figma Components</li>
+            <li><strong>Native Figma Layers</strong> - Creates real Figma frames, rectangles, and text layers — not flattened screenshots</li>
+            <li><strong>Typography Preserved</strong> - Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced</li>
+            <li><strong>Auto-Layout Support</strong> - Optionally converts CSS Flexbox layouts into Figma Auto-Layout frames</li>
+            <li><strong>Styling Fidelity</strong> - Colors, borders, shadows, gradients, and opacity carried over accurately</li>
+            <li><strong>Image Handling</strong> - High-res fills preserved, SVGs imported as native vector paths</li>
+            <li><strong>Structured Output</strong> - HTML hierarchy mapped to a clean, organized Figma layer tree</li>
           </ul>
         </section>
 
         <section>
           <h2>How It Works</h2>
           <ol>
-            <li><strong>Input</strong> - Provide a URL or paste raw HTML/CSS code</li>
-            <li><strong>Configure</strong> - Adjust viewport and theme settings</li>
+            <li><strong>Input</strong> - Select an HTML file or paste raw HTML/CSS code</li>
+            <li><strong>Configure</strong> - Adjust scale and import settings</li>
             <li><strong>Generate</strong> - Receive native, editable Figma layers</li>
           </ol>
         </section>
@@ -285,26 +315,43 @@
             <li><strong>Legacy Migration</strong> - Rebuild old sites without starting from scratch</li>
             <li><strong>Developer Handoff</strong> - Reverse engineer implementation back to design</li>
             <li><strong>Competitor Analysis</strong> - Import competitor layouts to deconstruct patterns</li>
-            <li><strong>Design System Bootstrap</strong> - Extract token libraries from existing CSS variables</li>
+            <li><strong>Design Kickstart</strong> - Import existing page layouts as a starting point for design iteration</li>
           </ul>
         </section>
 
         <section>
+          <h2>HTML to Figma vs. Alternatives</h2>
+          <p>Manual recreation of HTML layouts in Figma takes hours and introduces human error. Screenshot-based capture tools produce flat, non-editable images. HTML to Figma delivers fully editable, layered Figma files with preserved typography and styling.</p>
+          <table>
+            <thead><tr><th>Feature</th><th>HTML to Figma</th><th>Manual Rebuild</th><th>Screenshot Tools</th></tr></thead>
+            <tbody>
+              <tr><td>Native Figma layers</td><td>Yes</td><td>No</td><td>No</td></tr>
+              <tr><td>Flexbox to Auto-Layout (optional)</td><td>Yes</td><td>No</td><td>No</td></tr>
+              <tr><td>Typography preservation</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+              <tr><td>Styling fidelity (colors, shadows)</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+              <tr><td>SVG as vector paths</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+              <tr><td>Image fills preserved</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+              <tr><td>Structured layer hierarchy</td><td>Yes</td><td>No</td><td>No</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
           <h2>Pricing</h2>
-          <p><strong>Monthly:</strong> $12/month - Unlimited imports, typography mirroring</p>
-          <p><strong>Yearly:</strong> $96/year - Unlimited imports, typography mirroring, priority support</p>
+          <p><strong>Monthly:</strong> $12/month - Unlimited imports, typography preservation</p>
+          <p><strong>Yearly:</strong> $96/year ($8/month) - Unlimited imports, typography preservation, priority support</p>
         </section>
 
         <section>
           <h2>Frequently Asked Questions</h2>
           <h3>How does HTML to Figma work?</h3>
-          <p>HTML to Figma works in three simple steps: provide a URL or paste HTML/CSS, configure viewport settings, and generate native Figma layers with pixel-perfect precision.</p>
+          <p>HTML to Figma works in three simple steps: select an HTML file or paste HTML/CSS, configure your settings, and generate native, editable Figma layers.</p>
 
-          <h3>Does HTML to Figma preserve CSS layouts like Flexbox and Grid?</h3>
-          <p>Yes. HTML to Figma automatically translates CSS Flexbox and Grid layouts into Figma's native Auto-Layout system, faithfully reproducing responsive layouts and spacing.</p>
+          <h3>Does HTML to Figma preserve CSS layouts like Flexbox?</h3>
+          <p>Yes. HTML to Figma can optionally convert CSS Flexbox layouts into Figma's native Auto-Layout system when enabled in settings, mapping flex direction, alignment, gap, and padding.</p>
 
           <h3>What typography features are preserved?</h3>
-          <p>Font families, font weights, font sizes, line-heights, letter-spacing, and text alignment are all fully preserved when converting HTML to Figma.</p>
+          <p>Font families, font weights, font sizes, line-heights, letter-spacing, and text alignment are preserved. If a font is not available in Figma, it falls back to Inter Regular.</p>
 
           <h3>How much does HTML to Figma cost?</h3>
           <p>Monthly plan at $12/month or yearly plan at $96/year ($8/month equivalent) with priority support. Both include unlimited imports.</p>
