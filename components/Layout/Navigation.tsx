@@ -41,6 +41,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections 
 
       {/* Desktop Navigation */}
       <motion.nav
+        aria-label="Main navigation"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.1 }}

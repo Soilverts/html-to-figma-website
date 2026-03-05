@@ -71,10 +71,10 @@ const App: React.FC = () => {
         <HowItWorks id="how-it-works" />
         <Pricing id="pricing" />
 
-        {/* Simple Footer */}
-        <footer className="py-12 border-t border-gray-100 bg-white">
+        {/* Footer */}
+        <footer className="py-12 border-t border-gray-100 bg-white" role="contentinfo">
           <div className="container mx-auto px-6 text-center text-xs text-gray-400 font-mono">
-            <p>© 2026 HTML to Figma. All rights reserved.</p>
+            <p>© 2026 HTML to Figma. Convert HTML/CSS to native Figma designs. All rights reserved.</p>
           </div>
         </footer>
       </main>

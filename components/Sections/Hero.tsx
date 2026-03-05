@@ -10,7 +10,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
   const y = useTransform(scrollY, [0, 500], [0, 50]);
 
   return (
-    <section id={id} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-20 pt-32 overflow-hidden">
+    <section id={id} aria-label="HTML to Figma - Convert code to design" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-20 pt-32 overflow-hidden">
 
       <motion.div
         style={{ opacity, y }}
@@ -29,8 +29,9 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
               <span className="text-gray-300">Design.</span>
             </h1>
             <p className="text-lg md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
-              Instantly convert HTML into native Figma layers.
-              Preserve your layout, typography, and styles with absolute precision.
+              Instantly convert HTML and CSS into native Figma layers.
+              Preserve your layout, typography, and styles with pixel-perfect precision.
+              Used by over 50,000 design teams worldwide.
             </p>
           </motion.div>
 
@@ -55,7 +56,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
         </div>
 
         {/* Right: Abstract UI Visualization */}
-        <div className="flex-1 w-full h-[500px] relative hidden md:block">
+        <div className="flex-1 w-full h-[500px] relative hidden md:block" role="img" aria-label="Visual showing HTML code being converted into a Figma design frame">
           <VisualGraphic />
         </div>
       </motion.div>

@@ -38,7 +38,7 @@ const featureData = [
 
 export const Features: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <section id={id} className="relative py-32 bg-surface">
+    <section id={id} aria-label="Features of HTML to Figma plugin" className="relative py-32 bg-surface">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">

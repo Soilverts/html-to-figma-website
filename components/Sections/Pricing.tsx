@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const Pricing: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} className="relative py-32 bg-white border-t border-gray-100">
+        <section id={id} aria-label="HTML to Figma pricing plans" className="relative py-32 bg-white border-t border-gray-100">
             <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
                     <div className="max-w-xl">
