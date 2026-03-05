@@ -42,6 +42,9 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://esm.sh" />
+    <link rel="preconnect" href="https://esm.sh" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -216,7 +219,7 @@
     }
     </script>
 
-    <!-- JSON-LD: WebPage Schema -->
+    <!-- JSON-LD: WebPage Schema with Speakable (GEO Voice Search) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -234,11 +237,23 @@
       },
       "about": {
         "@type": "Thing",
-        "name": "HTML to Figma conversion"
+        "name": "HTML to Figma conversion",
+        "description": "Converting HTML and CSS source code into native, editable Figma design layers"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://html2design.com/og-image.png"
+        "url": "https://html2design.com/og-image.png",
+        "width": 1200,
+        "height": 669
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "[aria-label='HTML to Figma - Convert code to design']",
+          "[aria-label='Frequently asked questions about HTML to Figma']",
+          "h1",
+          "h2"
+        ]
       },
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -392,6 +407,12 @@
 
         <footer>
           <p>&copy; 2026 HTML to Figma. All rights reserved.</p>
+          <nav>
+            <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html">Figma Plugin</a> |
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="/terms">Terms of Service</a> |
+            <a href="/contact">Contact</a>
+          </nav>
         </footer>
       </div>
     </noscript>

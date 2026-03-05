@@ -10,7 +10,7 @@ const stats = [
 
 export const Stats: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <section id={id} aria-label="HTML to Figma key capabilities" className="relative py-16 md:py-24 bg-gray-950 text-white overflow-hidden scroll-mt-24">
+    <section id={id} aria-label="HTML to Figma plugin capabilities - native layers, typography, Auto-Layout, and SVG vector import" className="relative py-16 md:py-24 bg-gray-950 text-white overflow-hidden scroll-mt-24">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="mb-12 md:mb-20 md:flex justify-between items-end border-b border-gray-800 pb-8 md:pb-10">
           <h2 className="text-3xl md:text-4xl lg:text-6xl font-black tracking-tighter mb-4 md:mb-0 max-w-2xl leading-[1]">

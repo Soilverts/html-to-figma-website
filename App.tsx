@@ -9,6 +9,7 @@ import { UseCases } from './components/Sections/UseCases';
 import { Stats } from './components/Sections/Stats';
 import { Comparison } from './components/Sections/Comparison';
 import { CTA } from './components/Sections/CTA';
+import { FAQ } from './components/Sections/FAQ';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -86,6 +87,7 @@ const App: React.FC = () => {
         <UseCases id="use-cases" />
         <Comparison id="comparison" />
         <Pricing id="pricing" />
+        <FAQ id="faq" />
         <CTA id="cta" />
       </main>
     </div>

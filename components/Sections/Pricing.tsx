@@ -26,8 +26,9 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                     />
                     <PriceCard
                         title="Yearly"
-                        price="$96"
-                        period="/yr"
+                        price="$8"
+                        originalPrice="$12"
+                        period="/mo"
                         label="Most Popular"
                         description="Best for continuous design operations. Save 33%."
                         features={["Unlimited Imports", "Typography Mirroring", "Priority Support"]}
@@ -43,6 +44,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
 interface PriceCardProps {
     title: string;
     price: string;
+    originalPrice?: string;
     period: string;
     description: string;
     features: string[];
@@ -51,7 +53,7 @@ interface PriceCardProps {
     label?: string;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ title, price, period, description, features, isPopular, checkoutUrl, label }) => {
+const PriceCard: React.FC<PriceCardProps> = ({ title, price, originalPrice, period, description, features, isPopular, checkoutUrl, label }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,10 +76,16 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, period, description
             </div>
 
             <div className="mb-8">
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-2">
+                    {originalPrice && (
+                        <span className="text-2xl font-bold tracking-tighter text-gray-300 line-through">{originalPrice}</span>
+                    )}
                     <span className="text-5xl font-black tracking-tighter text-content">{price}</span>
                     <span className="text-content-muted font-medium">{period}</span>
                 </div>
+                {originalPrice && (
+                    <p className="text-xs text-content-muted mt-2">Billed annually at $96/yr</p>
+                )}
             </div>
 
             <ul className="space-y-4 mb-8 flex-1">

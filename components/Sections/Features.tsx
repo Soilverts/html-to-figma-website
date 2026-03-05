@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Features: React.FC<{ id: string }> = ({ id }) => {
 
   return (
-    <section id={id} className="relative py-20 md:py-48 bg-white text-content overflow-hidden">
+    <section id={id} aria-label="HTML to Figma key features - native Figma layers, typography preservation, and Auto-Layout support" className="relative py-20 md:py-48 bg-white text-content overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
         <div className="flex flex-col items-center mb-16 md:mb-40">
           <motion.h2
@@ -17,6 +17,15 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
             Retain the soul of <br />
             <span className="text-gray-300 italic">your architecture.</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-sm md:text-base text-gray-400 font-light max-w-xl text-center mt-6"
+          >
+            HTML to Figma converts every DOM node into native, editable Figma elements — preserving CSS layout, typography, and styling with precision.
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 md:gap-y-20">

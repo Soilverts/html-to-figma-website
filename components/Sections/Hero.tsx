@@ -24,6 +24,9 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-start"
           >
+            <Badge variant="outline" className="mb-4 md:mb-6 text-[10px] font-mono tracking-widest border-gray-200 text-content-muted px-3 py-1 uppercase">
+              Figma Plugin — HTML to Figma
+            </Badge>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
               Code to <br />
               <span className="text-gray-300">Design.</span>

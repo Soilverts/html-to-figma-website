@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://html2design.com/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://html2design.com/og-image.png</image:loc>
+      <image:title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs</image:title>
+      <image:caption>HTML to Figma plugin converting HTML and CSS code into native, editable Figma layers with preserved typography, layout, and styling</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://html2design.com/favicon.svg</image:loc>
+      <image:title>HTML to Figma logo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://html2design.com/privacy</loc>

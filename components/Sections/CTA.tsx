@@ -9,7 +9,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     Design <br /><span className="text-gray-200">Waitless.</span>
                 </h2>
                 <p className="text-base md:text-xl text-content-muted max-w-2xl mx-auto mb-10 md:mb-12 font-light">
-                    Join 2,000+ designers and developers bridging the gap between code and design.
+                    Join 2,000+ designers and developers using HTML to Figma to bridge the gap between code and design.
                 </p>
 
                 <div className="flex flex-col items-center gap-6">
@@ -22,8 +22,9 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                 </div>
 
                 <footer className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 font-mono tracking-widest uppercase">
-                    <p>© 2026 HTML to Figma.</p>
+                    <p>&copy; 2026 HTML to Figma.</p>
                     <div className="flex gap-8 mt-6 md:mt-0">
+                        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Figma Plugin</a>
                         <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>
                         <a href="/terms" className="hover:text-accent transition-colors">Terms</a>
                         <a href="/contact" className="hover:text-accent transition-colors">Contact</a>
