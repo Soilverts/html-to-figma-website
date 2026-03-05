@@ -3,12 +3,12 @@ import { ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} className="relative py-32 bg-white flex flex-col items-center justify-center border-t border-gray-100 overflow-hidden">
+        <section id={id} className="relative py-20 md:py-32 bg-white flex flex-col items-center justify-center border-t border-gray-100 overflow-hidden">
             <div className="container mx-auto px-6 text-center max-w-4xl z-10">
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-content mb-8">
+                <h2 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
                     Design <br /><span className="text-gray-200">Waitless.</span>
                 </h2>
-                <p className="text-lg md:text-xl text-content-muted max-w-2xl mx-auto mb-12 font-light">
+                <p className="text-base md:text-xl text-content-muted max-w-2xl mx-auto mb-10 md:mb-12 font-light">
                     Join 2,000+ designers and developers bridging the gap between code and design.
                 </p>
 
@@ -21,7 +21,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     </a>
                 </div>
 
-                <footer className="mt-32 pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono tracking-widest uppercase">
+                <footer className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 font-mono tracking-widest uppercase">
                     <p>© 2026 HTML to Figma.</p>
                     <div className="flex gap-8 mt-6 md:mt-0">
                         <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>

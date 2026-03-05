@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 
 export const Pricing: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} aria-label="HTML to Figma pricing plans" className="relative py-24 bg-white scroll-mt-24 border-t border-gray-100">
+        <section id={id} aria-label="HTML to Figma pricing plans" className="relative py-16 md:py-24 bg-white scroll-mt-24 border-t border-gray-100">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-content mb-4">
                         Simple, transparent pricing.
                     </h2>
-                    <p className="text-content-muted text-lg font-light">
+                    <p className="text-content-muted text-base md:text-lg font-light">
                         Professional tools at a fraction of the manual cost.
                     </p>
                 </div>

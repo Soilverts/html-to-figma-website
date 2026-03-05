@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} className="relative py-32 md:py-48 bg-surface-dark text-content overflow-hidden">
+        <section id={id} className="relative py-20 md:py-48 bg-surface-dark text-content overflow-hidden">
             {/* Soft Ambient Background Glow */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
                 <div className="w-[80vw] max-w-[800px] h-[80vw] max-h-[800px] bg-blue-100/30 rounded-full blur-[120px]" />
@@ -15,7 +15,7 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-content mb-8"
+                    className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-content mb-6 md:mb-8"
                 >
                     A fluid workflow.
                 </motion.h2>
@@ -25,7 +25,7 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xl md:text-2xl text-content-muted font-light leading-relaxed mb-20"
+                    className="text-lg md:text-2xl text-content-muted font-light leading-relaxed mb-12 md:mb-20"
                 >
                     Skip the tedious setup. Copy raw HTML from your inspector or open a local file. The engine instantly repaints the browser DOM onto your canvas in one seamless motion.
                 </motion.p>

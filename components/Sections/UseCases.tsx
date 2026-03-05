@@ -10,17 +10,17 @@ const cases = [
 
 export const UseCases: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} aria-label="Use cases for HTML to Figma" className="relative py-24 bg-white scroll-mt-24">
+        <section id={id} aria-label="Use cases for HTML to Figma" className="relative py-16 md:py-24 bg-white scroll-mt-24">
             <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-                <div className="flex flex-col lg:flex-row justify-between mb-16 gap-8 lg:items-end">
+                <div className="flex flex-col lg:flex-row justify-between mb-12 md:mb-16 gap-6 md:gap-8 lg:items-end">
                     <div className="max-w-3xl">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1] text-content">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1] text-content">
                             Built for <br className="hidden md:block" />
                             <span className="text-gray-300">Design Operations.</span>
                         </h2>
                     </div>
                     <div className="lg:max-w-sm pb-2">
-                        <p className="text-content-muted text-lg font-light leading-relaxed">
+                        <p className="text-content-muted text-base md:text-lg font-light leading-relaxed">
                             One plugin, endless utility. From legacy migration to design system bootstrapping.
                         </p>
                     </div>
@@ -40,10 +40,10 @@ export const UseCases: React.FC<{ id: string }> = ({ id }) => {
                                 <span className="font-mono text-xs font-bold text-gray-400">0{i + 1}</span>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold tracking-tight text-content mb-4 group-hover:text-accent transition-colors">
+                                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-content mb-3 md:mb-4 group-hover:text-accent transition-colors">
                                     {c.title}
                                 </h3>
-                                <p className="text-content-muted text-base font-light leading-relaxed">
+                                <p className="text-content-muted text-sm md:text-base font-light leading-relaxed">
                                     {c.desc}
                                 </p>
                             </div>

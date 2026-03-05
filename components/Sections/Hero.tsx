@@ -10,11 +10,11 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
   const y = useTransform(scrollY, [0, 500], [0, 50]);
 
   return (
-    <section id={id} aria-label="HTML to Figma - Convert code to design" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-20 pt-32 overflow-hidden">
+    <section id={id} aria-label="HTML to Figma - Convert code to design" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-16 md:py-20 pt-28 md:pt-32 overflow-hidden">
 
       <motion.div
         style={{ opacity, y }}
-        className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-16 md:gap-24 z-10"
+        className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 md:gap-24 z-10"
       >
         {/* Left: Editorial Content */}
         <div className="flex-1 space-y-10">
@@ -24,11 +24,11 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-start"
           >
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-8">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
               Code to <br />
               <span className="text-gray-300">Design.</span>
             </h1>
-            <p className="text-lg md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
+            <p className="text-base md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
               Instantly convert HTML and CSS into native Figma layers.
               Preserve your layout, typography, and styles with precision.
               Used by 2,000+ designers and developers.
