@@ -46,7 +46,7 @@ const App: React.FC = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     sections.forEach((id) => {

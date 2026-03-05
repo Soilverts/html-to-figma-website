@@ -4,38 +4,39 @@ import { motion } from 'framer-motion';
 const stats = [
   { value: "6", label: "Core features", detail: "Typography, layout, images, SVGs, styles, and structure" },
   { value: "Native", label: "Figma layers", detail: "Real frames and text — not flattened screenshots" },
-  { value: "Flex", label: "Auto-Layout support", detail: "CSS Flexbox optionally mapped to Figma Auto-Layout" },
+  { value: "Flex", label: "Auto-Layout", detail: "CSS Flexbox optionally mapped to Figma Auto-Layout" },
   { value: "SVG", label: "Vector import", detail: "SVG elements imported as editable Figma vector paths" },
 ];
 
 export const Stats: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <section id={id} aria-label="HTML to Figma key capabilities" className="relative py-24 bg-gray-950 text-white">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            What you get out of the box.
+    <section id={id} aria-label="HTML to Figma key capabilities" className="relative py-24 bg-gray-950 text-white overflow-hidden scroll-mt-24">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+        <div className="mb-20 md:flex justify-between items-end border-b border-gray-800 pb-10">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-black tracking-tighter mb-6 md:mb-0 max-w-2xl leading-[1]">
+            Everything out<br /> of the box.
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            HTML to Figma converts your code into native, editable Figma layers — preserving typography, styling, images, and structure so you can iterate in your design tool immediately.
+          <p className="text-gray-400 text-base max-w-xs font-light leading-relaxed">
+            Converts code into native layers — preserving typography, styling, images, and structure instantly.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="text-center"
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col group"
             >
-              <div className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">
+              <div className="text-4xl lg:text-5xl font-light tracking-tighter text-white mb-4 group-hover:text-accent transition-colors duration-500">
                 {stat.value}
               </div>
-              <div className="text-sm font-semibold text-gray-300 mb-1">{stat.label}</div>
-              <div className="text-xs text-gray-500">{stat.detail}</div>
+              <div className="w-8 h-px bg-gray-800 mb-5 group-hover:bg-accent transition-colors duration-500"></div>
+              <div className="text-xs font-bold uppercase tracking-widest text-gray-300 mb-3">{stat.label}</div>
+              <div className="text-sm text-gray-500 font-light leading-relaxed max-w-[200px]">{stat.detail}</div>
             </motion.div>
           ))}
         </div>

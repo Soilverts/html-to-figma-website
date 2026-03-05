@@ -3,31 +3,37 @@ import { ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC<{ id: string }> = ({ id }) => {
     return (
-        <section id={id} className="relative py-40 bg-white flex items-center justify-center border-t border-gray-100">
+        <section id={id} className="relative py-32 bg-white flex flex-col items-center justify-center border-t border-gray-100 overflow-hidden">
             <div className="container mx-auto px-6 text-center max-w-4xl z-10">
-                <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-content mb-8">
+                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-content mb-8">
                     Design <br /><span className="text-gray-200">Waitless.</span>
                 </h2>
-                <p className="text-xl text-content-muted max-w-xl mx-auto mb-12 font-light">
+                <p className="text-lg md:text-xl text-content-muted max-w-2xl mx-auto mb-12 font-light">
                     Join 2,000+ designers and developers bridging the gap between code and design.
                 </p>
 
                 <div className="flex flex-col items-center gap-6">
-                    <a href="#pricing" className="px-10 py-5 bg-accent text-white font-bold text-lg hover:bg-accent-dark transition-all duration-300 shadow-xl shadow-accent/20 flex items-center gap-3 rounded-full">
-                        Get Access
-                        <ArrowRight size={20} />
+                    <a href="#pricing" className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-lg text-white transition-all duration-300 bg-content rounded-full hover:bg-black hover:scale-105 hover:shadow-2xl hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                        <span className="mr-8">Get Access</span>
+                        <div className="absolute right-2 top-2 bottom-2 aspect-square bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 delay-100">
+                            <ArrowRight size={20} className="text-white group-hover:text-black transition-colors duration-300 delay-100" />
+                        </div>
                     </a>
                 </div>
 
-                <div className="mt-24 pt-8 border-t border-gray-100 w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+                <div className="mt-32 pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono tracking-widest uppercase">
                     <p>© 2026 HTML to Figma.</p>
-                    <div className="flex gap-6 mt-4 md:mt-0">
-                        <a href="/privacy" className="hover:text-black">Privacy</a>
-                        <a href="/terms" className="hover:text-black">Terms</a>
-                        <a href="/contact" className="hover:text-black">Contact</a>
+                    <div className="flex gap-8 mt-6 md:mt-0">
+                        <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>
+                        <a href="/terms" className="hover:text-accent transition-colors">Terms</a>
+                        <a href="/contact" className="hover:text-accent transition-colors">Contact</a>
                     </div>
                 </div>
             </div>
+
+            {/* Minimalist Background Accents */}
+            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-transparent via-gray-100 to-transparent w-full z-0" />
+            <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-gray-100 to-transparent h-full z-0" />
         </section>
     );
 };

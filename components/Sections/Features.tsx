@@ -1,93 +1,51 @@
 import React from 'react';
-import { Layers, Type, Image as ImageIcon, Layout, Box, Palette } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-
-const featureData = [
-  {
-    title: "Native Figma Layers",
-    desc: "Creates real Figma frames, rectangles, and text layers — not flattened screenshots.",
-    icon: <Box strokeWidth={1.5} size={22} />
-  },
-  {
-    title: "Typography Preserved",
-    desc: "Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced.",
-    icon: <Type strokeWidth={1.5} size={22} />
-  },
-  {
-    title: "Auto-Layout Support",
-    desc: "Optionally converts CSS Flexbox layouts into Figma Auto-Layout frames.",
-    icon: <Layout strokeWidth={1.5} size={22} />
-  },
-  {
-    title: "Styling Fidelity",
-    desc: "Colors, borders, shadows, gradients, and opacity carried over accurately.",
-    icon: <Palette strokeWidth={1.5} size={22} />
-  },
-  {
-    title: "Image Handling",
-    desc: "High-res image fills preserved. SVGs imported as native vector paths.",
-    icon: <ImageIcon strokeWidth={1.5} size={22} />
-  },
-  {
-    title: "Structured Output",
-    desc: "HTML hierarchy mapped to a clean, organized Figma layer tree you can edit immediately.",
-    icon: <Layers strokeWidth={1.5} size={22} />
-  }
-];
 
 export const Features: React.FC<{ id: string }> = ({ id }) => {
-  return (
-    <section id={id} aria-label="Features of HTML to Figma plugin" className="relative py-32 bg-surface">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-content mb-6">
-              Precision in every pixel.
-            </h2>
-            <p className="text-content-muted text-lg font-light leading-relaxed max-w-xl">
-              Designed for professionals who demand exact replicas of their code in their design tools. No approximations.
-            </p>
-          </div>
+  return (
+    <section id={id} className="relative py-32 md:py-48 bg-white text-content overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
+        <div className="flex flex-col items-center mb-24 md:mb-40">
+          <motion.h2
+            initial={{ opacity: 0, filter: 'blur(8px)', y: 20 }}
+            whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-center leading-[1.1]"
+          >
+            Retain the soul of <br />
+            <span className="text-gray-300 italic">your architecture.</span>
+          </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featureData.map((f, i) => (
-            <FeatureCard key={i} {...f} index={i} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Native structures</h3>
+            <p className="text-xl text-gray-400 font-light leading-relaxed">
+              Layers aren't flattened. Every DOM node breathes as native Figma elements—editable text layers, crisp SVG paths, and properly grouped frames mirroring your exact structural intent.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="md:mt-32"
+          >
+            <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Organic alignment</h3>
+            <p className="text-xl text-gray-400 font-light leading-relaxed">
+              Your design remains fluid. The engine interprets CSS flex rules and seamlessly maps them to Figma's Auto-Layout, preserving spacing, padding, and alignment logic perfectly.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
-
-interface FeatureCardProps {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-  index: number;
-}
-
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, desc, icon, index }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-    >
-      <Card className="h-full border-transparent hover:border-accent/20 bg-white shadow-soft hover:shadow-lg transition-all duration-500">
-        <CardHeader className="pb-4">
-          <div className="mb-4 text-content w-12 h-12 flex items-center justify-center rounded-xl bg-gray-50 border border-gray-100">
-            {icon}
-          </div>
-          <CardTitle className="text-lg font-bold">{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-content-muted leading-relaxed text-sm">{desc}</p>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-}
