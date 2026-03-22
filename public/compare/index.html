@@ -46,6 +46,20 @@
     "inLanguage": "en",
     "datePublished": "2026-03-22",
     "dateModified": "2026-03-22",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
     "isPartOf": {
       "@type": "WebSite",
       "name": "HTML to Figma",
@@ -127,10 +141,10 @@
       },
       {
         "@type": "Question",
-        "name": "Which HTML to Figma tool preserves Flexbox as Auto-Layout?",
+        "name": "Which HTML to Figma tool preserves Flexbox layouts most accurately?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HTML to Figma (html2design.com) offers an optional setting to convert CSS Flexbox layouts into Figma's native Auto-Layout. This maps flex-direction, align-items, justify-content, gap, and padding to the corresponding Auto-Layout properties in Figma. html.to.design captures the visual appearance of a page but may not always produce editable Auto-Layout frames from Flexbox."
+          "text": "HTML to Figma (html2design.com) reads the computed CSS positions and sizes from Flexbox layouts and recreates them as accurately positioned Figma frames. The spatial relationships between elements are preserved so you can iterate on the design. html.to.design captures the visual appearance of a page but may not always produce accurately positioned frames from Flexbox."
         }
       }
     ]
@@ -210,7 +224,7 @@
           <ul class="mt-4 space-y-1.5 text-sm">
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> No Chrome extension</li>
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Works with localhost</li>
-            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Flexbox → Auto-Layout</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Flexbox layout preserved</li>
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> $12/mo or $96/yr</li>
           </ul>
           <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
@@ -323,7 +337,7 @@
               <td class="py-4 px-4 text-center text-2xl text-accent">✓</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
-              <td class="py-4 px-5 font-medium text-content">Flexbox → Figma Auto-Layout (optional)</td>
+              <td class="py-4 px-5 font-medium text-content">Flexbox layout fidelity</td>
               <td class="py-4 px-4 text-center text-2xl text-accent">✓</td>
               <td class="py-4 px-4 text-center text-2xl text-gray-300">✗</td>
               <td class="py-4 px-4 text-center text-2xl text-gray-300">✗</td>
@@ -417,7 +431,7 @@
             <li>You have raw HTML/CSS and no live URL yet</li>
             <li>You're working on <strong class="text-content">localhost</strong> or a dev server</li>
             <li>You need to import an <strong class="text-content">email template</strong></li>
-            <li>You want Flexbox converted to <strong class="text-content">Auto-Layout</strong></li>
+            <li>You want <strong class="text-content">Flexbox layouts accurately preserved</strong></li>
             <li>You work with <strong class="text-content">unreleased components</strong> behind auth</li>
             <li>You don't want to install a browser extension</li>
           </ul>
@@ -429,7 +443,7 @@
             <li>You want to import a <strong class="text-content">public website by URL</strong></li>
             <li>You're comfortable installing a Chrome extension</li>
             <li>The page is <strong class="text-content">already live and accessible</strong></li>
-            <li>You primarily need a visual reference, not fully editable Auto-Layout</li>
+            <li>You primarily need a visual reference, not fully editable positioned frames</li>
           </ul>
         </div>
 
@@ -474,20 +488,20 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">02</p>
-            <h3 class="text-xl font-bold tracking-tight">Flexbox → Auto-Layout</h3>
+            <h3 class="text-xl font-bold tracking-tight">Flexbox Layout Fidelity</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              When enabled, HTML to Figma maps <strong class="text-content">CSS Flexbox properties</strong> to Figma's native Auto-Layout:
+              HTML to Figma reads the <strong class="text-content">computed CSS positions and sizes</strong> from your Flexbox layouts and recreates them as accurately positioned Figma frames. Properties like
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">flex-direction</code>,
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">align-items</code>,
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">justify-content</code>,
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gap</code>, and
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code>
-              all become editable Auto-Layout properties.
+              are reflected in the spatial layout of the generated frames.
             </p>
             <p>
-              The result is a Figma layer tree you can <em>actually resize and iterate on</em> — not just a frozen screenshot that happens to live in Figma.
+              The result is a Figma layer tree you can <em>actually iterate on</em> — not just a frozen screenshot that happens to live in Figma.
             </p>
           </div>
         </article>
