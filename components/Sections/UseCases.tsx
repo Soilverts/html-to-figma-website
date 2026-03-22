@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const cases = [
-    { title: "Legacy Migration", desc: "Rebuild old websites in Figma without starting from scratch. Import existing layouts and iterate directly in your design tool." },
-    { title: "Developer Handoff", desc: "Reverse engineer live implementations back into editable design files. Bridge the gap between what was coded and what was designed." },
-    { title: "Competitor Analysis", desc: "Import competitor layouts to deconstruct design patterns, spacing systems, and component hierarchies." },
-    { title: "Design Kickstart", desc: "Import existing page layouts into Figma as a starting point, then refine and build your design system on top." },
+    { title: "Legacy Migration", desc: "Rebuild old websites in Figma without starting from scratch. Import existing layouts and iterate directly in your design tool.", href: "/use-cases/legacy-migration" },
+    { title: "Developer Handoff", desc: "Reverse engineer live implementations back into editable design files. Bridge the gap between what was coded and what was designed.", href: "/use-cases/developer-handoff" },
+    { title: "Competitor Analysis", desc: "Import competitor layouts to deconstruct design patterns, spacing systems, and component hierarchies.", href: null },
+    { title: "Design Kickstart", desc: "Import existing page layouts into Figma as a starting point, then refine and build your design system on top.", href: null },
 ];
 
 export const UseCases: React.FC<{ id: string }> = ({ id }) => {
@@ -41,11 +41,20 @@ export const UseCases: React.FC<{ id: string }> = ({ id }) => {
                             </div>
                             <div>
                                 <h3 className="text-xl md:text-2xl font-bold tracking-tight text-content mb-3 md:mb-4 group-hover:text-accent transition-colors">
-                                    {c.title}
+                                    {c.href ? (
+                                        <a href={c.href} className="hover:text-accent transition-colors no-underline text-content">
+                                            {c.title}
+                                        </a>
+                                    ) : c.title}
                                 </h3>
                                 <p className="text-content-muted text-sm md:text-base font-light leading-relaxed">
                                     {c.desc}
                                 </p>
+                                {c.href && (
+                                    <a href={c.href} className="inline-flex items-center gap-1 mt-4 text-xs font-mono text-accent hover:underline">
+                                        Learn more &rarr;
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}
