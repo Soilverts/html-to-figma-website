@@ -26,6 +26,26 @@ const faqs = [
   {
     question: "Does HTML to Figma handle images and SVGs?",
     answer: "Yes. HTML to Figma preserves high-resolution image fills and imports SVG elements as native Figma vector paths rather than rasterized images. This ensures your imported designs remain fully scalable and editable within Figma."
+  },
+  {
+    question: "Can I convert React/JSX components to Figma?",
+    answer: "Yes. Render your React component in the browser, then copy the resulting HTML from the page. Paste that HTML into the HTML to Figma plugin and it will generate native Figma layers — frames, text, and shapes — from your component's output. No special React integration is needed; the plugin works with any valid HTML regardless of how it was produced."
+  },
+  {
+    question: "Does HTML to Figma support Tailwind CSS classes?",
+    answer: "Yes. Tailwind utility classes are parsed the same way as any other CSS. The plugin reads computed styles from the browser's rendering engine, so it doesn't matter whether your styles come from Tailwind, plain CSS, or a CSS-in-JS library — the final visual output is what gets converted into Figma properties."
+  },
+  {
+    question: "Can I sync my design system between code and Figma?",
+    answer: "Yes. Export the rendered HTML of a component from your codebase, import it into Figma with HTML to Figma, and compare the resulting layers against your Figma design tokens and components. This workflow lets teams catch drift between the coded implementation and the design file without manual redrawing."
+  },
+  {
+    question: "How does HTML to Figma compare to URL-based tools like html.to.design?",
+    answer: "HTML to Figma takes a code-first approach: you paste HTML/CSS directly into the plugin, so no browser extension is required and no live URL is needed. This means it works with local development builds, unreleased components, email templates, and any HTML that isn't publicly accessible. URL-based tools are limited to pages that are already live on the web."
+  },
+  {
+    question: "Can I use HTML to Figma with VS Code or my IDE?",
+    answer: "Yes. Open your component or page in a browser preview (for example, a local dev server or Storybook), then use browser DevTools to copy the rendered HTML of the element you want to import. Paste that HTML directly into the HTML to Figma plugin in Figma. The workflow is IDE-agnostic and works with any editor or framework."
   }
 ];
 
