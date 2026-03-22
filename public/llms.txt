@@ -145,3 +145,9 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - How to Convert React Components to Figma Designs — https://www.htmltofigma.io/blog/react-component-to-figma
 - Tailwind to Figma: Build a Design System from Your Tailwind Components — https://www.htmltofigma.io/blog/tailwind-to-figma
 - Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://www.htmltofigma.io/blog/bootstrap-to-figma
+- Design System Migration: From Code to Figma Components — https://www.htmltofigma.io/blog/design-system-migration
+- Screenshot vs Code Import: Which Figma Conversion Method Actually Wins? — https://www.htmltofigma.io/blog/screenshot-vs-code-import
+
+## RSS Feed
+
+- Blog RSS feed (for syndication and crawl frequency): https://www.htmltofigma.io/blog/feed.xml

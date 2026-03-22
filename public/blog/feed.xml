@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML to Figma Blog</title>
+    <link>https://www.htmltofigma.io/blog</link>
+    <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <generator>HTML to Figma</generator>
+    <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Design System Migration: From Code to Figma Components</title>
+      <link>https://www.htmltofigma.io/blog/design-system-migration</link>
+      <description>Step-by-step guide to migrating a design system from code to Figma. Extract design tokens from HTML/CSS, identify components, and build a native Figma component library.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-system-migration</guid>
+    </item>
+
+    <item>
+      <title>Screenshot vs Code Import: Which Figma Conversion Method Actually Wins?</title>
+      <link>https://www.htmltofigma.io/blog/screenshot-vs-code-import</link>
+      <description>Side-by-side comparison of screenshot and code import methods for Figma. Covers output quality, editability, typography, layer structure, and a practical decision framework.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/screenshot-vs-code-import</guid>
+    </item>
+
+    <item>
+      <title>Bootstrap to Figma: A Migration Guide for Bootstrap Teams</title>
+      <link>https://www.htmltofigma.io/blog/bootstrap-to-figma</link>
+      <description>How to convert Bootstrap components and grid layouts into editable Figma designs using html2design. Covers outerHTML export, responsive breakpoints, and Bootstrap utility mapping.</description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/bootstrap-to-figma</guid>
+    </item>
+
+    <item>
+      <title>Tailwind to Figma: Build a Design System from Your Tailwind Components</title>
+      <link>https://www.htmltofigma.io/blog/tailwind-to-figma</link>
+      <description>Extract Tailwind design tokens as Figma Variables and Styles, convert your component library to native Figma layers, and keep code and design in sync.</description>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/tailwind-to-figma</guid>
+    </item>
+
+    <item>
+      <title>How to Convert React Components to Figma Designs</title>
+      <link>https://www.htmltofigma.io/blog/react-component-to-figma</link>
+      <description>Step-by-step guide to converting React components into native, editable Figma layers using html2design. Works with localhost, Storybook, Next.js, and Tailwind.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/react-component-to-figma</guid>
+    </item>
+
+    <item>
+      <title>How to Import a Website into Figma: Two Methods Compared</title>
+      <link>https://www.htmltofigma.io/blog/import-website-into-figma</link>
+      <description>Step-by-step guide to importing any website into Figma as editable layers. Compares Chrome extension and code-paste approaches.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/import-website-into-figma</guid>
+    </item>
+
+    <item>
+      <title>How to Convert HTML to Figma: A Developer's Guide</title>
+      <link>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</link>
+      <description>Step-by-step guide to converting HTML and CSS code into native, editable Figma designs using the html2design plugin.</description>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</guid>
+    </item>
+
+  </channel>
+</rss>
