@@ -8,25 +8,29 @@ export const ParticleField: React.FC = () => {
     const container = containerRef.current;
     let cleanup: (() => void) | null = null;
 
+    // Skip on mobile (particle field is decorative, saves 703KB chunk download)
+    if (window.innerWidth < 768 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Only initialize Three.js when the canvas is in viewport and main thread is idle
     const initThree = async () => {
-      const THREE = await import('three');
+      const { Scene, FogExp2, PerspectiveCamera, WebGLRenderer,
+              BufferGeometry, BufferAttribute, PointsMaterial, Points } = await import('three');
 
       if (!container.isConnected) return;
 
       // Scene Setup
-      const scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0xffffff, 0.05);
+      const scene = new Scene();
+      scene.fog = new FogExp2(0xffffff, 0.05);
 
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new WebGLRenderer({ alpha: true, antialias: true });
 
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       container.appendChild(renderer.domElement);
 
       // Particles - Sphere distribution
-      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesGeometry = new BufferGeometry();
       const particlesCount = 1200;
       const posArray = new Float32Array(particlesCount * 3);
       const radius = 6;
@@ -41,16 +45,16 @@ export const ParticleField: React.FC = () => {
         posArray[i * 3 + 2] = r * Math.cos(phi);
       }
 
-      particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      particlesGeometry.setAttribute('position', new BufferAttribute(posArray, 3));
 
-      const material = new THREE.PointsMaterial({
+      const material = new PointsMaterial({
         size: 0.03,
         color: 0x111827,
         transparent: true,
         opacity: 0.6,
       });
 
-      const particlesMesh = new THREE.Points(particlesGeometry, material);
+      const particlesMesh = new Points(particlesGeometry, material);
       scene.add(particlesMesh);
 
       camera.position.z = 10;
