@@ -111,7 +111,7 @@
       {
         "@type": "Question",
         "name": "What gets preserved when importing a website into Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "With html2design, the following are preserved: typography (font family, size, weight, line-height, letter-spacing), layout (including CSS Flexbox converted to Figma Auto Layout), colors, borders, border-radius, box shadows, gradients, opacity, background images, and SVGs as native vector paths. JavaScript-rendered content is also captured because you copy the computed HTML after the page has executed." }
+        "acceptedAnswer": { "@type": "Answer", "text": "With html2design, the following are preserved: typography (font family, size, weight, line-height, letter-spacing), layout positions and sizes (Flexbox containers become accurately positioned Figma frames), colors, borders, border-radius, box shadows, gradients, opacity, background images, and SVGs as native vector paths. JavaScript-rendered content is also captured because you copy the computed HTML after the page has executed." }
       },
       {
         "@type": "Question",
@@ -326,7 +326,7 @@
       </p>
       <ul>
         <li>Rename auto-generated layer names to match your component vocabulary</li>
-        <li>Verify Auto Layout settings on flex containers (html2design maps CSS flexbox automatically)</li>
+        <li>Check flex container frames for accurate spacing and alignment (html2design preserves computed positions from CSS flexbox)</li>
         <li>Detach and replace web fonts not in your Figma team library</li>
         <li>Remove any utility layers you don't need (e.g., invisible overflow wrappers)</li>
       </ul>
@@ -362,7 +362,7 @@
     <h3>Preserved by html2design</h3>
     <ul>
       <li>Typography: font family, size, weight, line-height, letter-spacing, text alignment</li>
-      <li>Layout: CSS Flexbox → Figma Auto Layout (direction, gap, padding, alignment)</li>
+      <li>Layout: CSS Flexbox → Accurately positioned Figma frames (spacing, padding, and alignment preserved visually)</li>
       <li>Colors: fills, borders, gradients, box shadows</li>
       <li>Border radius and opacity</li>
       <li>Background images (as fills)</li>
@@ -421,9 +421,9 @@
       No. Figma doesn't natively support importing websites or HTML. You need a plugin from the Figma Community — either url-based or code-paste.
     </p>
 
-    <h3>Does importing a website preserve CSS Auto Layout?</h3>
+    <h3>Does importing a website preserve CSS Flexbox layouts?</h3>
     <p>
-      Yes. html2design maps <code>display: flex</code>, <code>flex-direction</code>, <code>gap</code>, <code>padding</code>, and <code>align-items</code> to Figma's native Auto Layout system. This is one of its most useful features for design system work.
+      html2design reads the computed positions and sizes from Flexbox containers and recreates them as accurately positioned Figma frames. The visual result — spacing, padding, alignment — matches the original. Note that Flexbox containers become fixed-position frames, not Figma Auto Layout. You can apply Auto Layout manually in Figma after import if needed.
     </p>
 
     <h3>How long does it take to import a page?</h3>

@@ -122,10 +122,10 @@
       },
       {
         "@type": "Question",
-        "name": "Does HTML to Figma preserve CSS Flexbox as Figma Auto Layout?",
+        "name": "Does HTML to Figma preserve CSS Flexbox layouts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The html2design plugin maps CSS flexbox properties to Figma's native Auto Layout system, preserving direction, gaps, padding, and alignment."
+          "text": "html2design reads computed positions and sizes from Flexbox layouts and recreates them as accurately positioned Figma frames. Flexbox containers become fixed-position frames rather than Figma Auto Layout. You can apply Auto Layout manually in Figma after import."
         }
       },
       {
@@ -223,7 +223,7 @@
       The manual path is painful. Recreating a single component by hand can take 20–40 minutes. For an entire design system with dozens of states and breakpoints, that's weeks of work just to have a starting point.
     </p>
     <p>
-      <strong>html2design</strong> solves this. You copy HTML and CSS — from DevTools, a local dev server, or any source — paste it into the Figma plugin, and get back native, editable Figma layers. Flexbox becomes Auto Layout. Tokens become styles. What took an hour now takes thirty seconds.
+      <strong>html2design</strong> solves this. You copy HTML and CSS — from DevTools, a local dev server, or any source — paste it into the Figma plugin, and get back native, editable Figma layers. Positions, sizes, and spacing are preserved accurately. What took an hour now takes thirty seconds.
     </p>
 
     <h2>Prerequisites</h2>
@@ -288,7 +288,7 @@
         Select the generated frame on the canvas. Inspect the layers panel. You'll find:
       </p>
       <ul>
-        <li><strong>Auto Layout frames</strong> wherever CSS Flexbox was used</li>
+        <li><strong>Positioned frames</strong> preserving the visual layout of Flexbox containers</li>
         <li><strong>Text layers</strong> with font, size, weight, and color preserved</li>
         <li><strong>Shape fills</strong> matching background colors and borders</li>
         <li><strong>Images</strong> resolved from external URLs where accessible</li>
@@ -324,10 +324,10 @@
     <p>html2design handles the vast majority of production UI, but a few things need manual follow-up:</p>
 
     <ul>
-      <li><strong>Flexbox layouts</strong> → Figma Auto Layout (fully supported)</li>
+      <li><strong>Flexbox layouts</strong> → Accurately positioned Figma frames (visual layout preserved; Auto Layout not applied automatically)</li>
       <li><strong>Typography</strong> → Text layers with font, size, weight, line-height (fully supported)</li>
       <li><strong>Colors and borders</strong> → Fills, strokes, border radius (fully supported)</li>
-      <li><strong>CSS Grid</strong> → Approximated with nested Auto Layout frames (partial)</li>
+      <li><strong>CSS Grid</strong> → Approximated with nested frames (partial; positions preserved, no Auto Layout)</li>
       <li><strong>SVG icons and vectors</strong> → Imported as vector paths (fully supported)</li>
       <li><strong>Animations and transitions</strong> → Static snapshot only; no animation (not converted)</li>
       <li><strong>JavaScript-rendered content</strong> → Captured at paste time; dynamic state not tracked</li>
@@ -358,9 +358,9 @@
       Yes — because you paste raw HTML/CSS rather than giving the plugin a URL, it works with localhost, Storybook, internal tools, and any environment you can open in a browser. No Chrome extension or network access required.
     </p>
 
-    <h3>Does it preserve CSS Flexbox as Figma Auto Layout?</h3>
+    <h3>Does it preserve CSS Flexbox layouts?</h3>
     <p>
-      Yes. The html2design plugin maps <code>display: flex</code>, <code>flex-direction</code>, <code>gap</code>, <code>padding</code>, and <code>align-items</code> to the equivalent Figma Auto Layout properties. This is one of its strongest features.
+      html2design reads the computed positions and sizes from Flexbox containers and recreates them as accurately positioned Figma frames. The visual layout — spacing, padding, and alignment — is preserved. Note that Flexbox containers are converted to fixed-position frames, not Figma Auto Layout. You can apply Auto Layout manually in Figma after import.
     </p>
 
     <h3>What about responsive designs?</h3>
@@ -384,11 +384,11 @@
         </a>
         <a href="/blog/tailwind-to-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>
-          <p class="text-xs text-content-muted mt-0.5">Extract tokens as Figma Variables and convert your component library to native Figma layers.</p>
+          <p class="text-xs text-content-muted mt-0.5">Convert your Tailwind component library to native Figma layers and manually extract design tokens.</p>
         </a>
         <a href="/blog/bootstrap-to-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Bootstrap to Figma: A Migration Guide for Bootstrap Teams &rarr;</p>
-          <p class="text-xs text-content-muted mt-0.5">Convert Bootstrap grid layouts and components to Figma — custom theme, breakpoints, and utilities all preserved.</p>
+          <p class="text-xs text-content-muted mt-0.5">Convert Bootstrap components to Figma — custom theme and utilities preserved. Capture each breakpoint separately.</p>
         </a>
       </div>
     </div>

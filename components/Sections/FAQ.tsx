@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "Does HTML to Figma preserve CSS layouts like Flexbox?",
-    answer: "Yes. HTML to Figma can optionally convert CSS Flexbox layouts (as defined in the W3C CSS Flexible Box Layout Module) into Figma\u2019s native Auto-Layout system when enabled in settings. Your flex-direction, align-items, justify-content, gap, and padding are mapped to corresponding Auto-Layout properties."
+    answer: "HTML to Figma reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Each element\u2019s width, height, padding, and spacing are preserved in the resulting Figma layers. Note: Flexbox containers are converted to fixed-position frames, not Figma Auto-Layout. You can manually apply Auto-Layout in Figma after import if needed."
   },
   {
     question: "What typography features are preserved when converting HTML to Figma?",

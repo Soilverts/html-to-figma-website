@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>Bootstrap to Figma: Migration Guide for Bootstrap Teams (2026)</title>
-  <meta name="description" content="How to convert Bootstrap components and grid layouts into editable Figma designs. Paste outerHTML from any Bootstrap project — local or live — and get native Auto Layout frames. No plugin required on the browser side." />
+  <meta name="description" content="How to convert Bootstrap components and grid layouts into editable Figma designs. Paste outerHTML from any Bootstrap project — local or live — and get native Figma frames with accurate positioning. No plugin required on the browser side." />
   <meta name="keywords" content="bootstrap to figma, convert bootstrap to figma, bootstrap figma plugin, bootstrap figma migration, import bootstrap figma, html2design bootstrap" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -117,7 +117,7 @@
         "name": "Does html2design support Bootstrap's grid system?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a .row and its .col-* children, the computed layout is a flex container with flex-basis and width values. html2design maps these to Figma Auto Layout frames, so columns become resizable frames just as you'd expect."
+          "text": "Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a .row and its .col-* children, the computed layout is a flex container with flex-basis and width values. html2design reads the computed positions and sizes and recreates them as accurately positioned Figma frames, so columns appear exactly as they do in the browser."
         }
       },
       {
@@ -236,7 +236,7 @@
       Bootstrap's utility classes like <code>text-primary</code>, <code>p-3</code>, and <code>d-flex</code> are just CSS. When the browser renders your page, it resolves every class — including your custom <code>$primary</code> Sass variable — into computed pixel values. By the time you inspect an element in DevTools, Bootstrap's class names are gone: what you see is <code>color: rgb(13, 110, 253)</code>, <code>padding: 16px</code>, and <code>display: flex</code>.
     </p>
     <p>
-      html2design reads that resolved HTML and CSS output — not the class names — and maps it to Figma's native primitives. Flexbox containers become Auto Layout frames. Colors become fills. Border radii, shadows, and typography all transfer correctly. This is why it works with Bootstrap without any special Bootstrap support: the hard part (resolving the cascade) is already done by the browser before you even click Copy.
+      html2design reads that resolved HTML and CSS output — not the class names — and maps it to Figma's native primitives. Flexbox containers become accurately positioned Figma frames. Colors become fills. Border radii, shadows, and typography all transfer correctly. This is why it works with Bootstrap without any special Bootstrap support: the hard part (resolving the cascade) is already done by the browser before you even click Copy.
     </p>
 
     <div class="tip-box">
@@ -285,7 +285,7 @@
         In Figma, open the html2design plugin via <em>Main Menu → Plugins → html2design</em>. In the plugin panel, paste the copied HTML into the input field. Click <strong>Import</strong> (or press <kbd>Cmd+Enter</kbd>).
       </p>
       <p>
-        The plugin fetches the computed styles for the elements in your markup and generates native Figma layers on the canvas. A Bootstrap card typically generates in 2–4 seconds: a Frame for the card wrapper, an Auto Layout Frame for the card body, a Text layer for the heading, another Text layer for the paragraph, and a styled button Frame.
+        The plugin fetches the computed styles for the elements in your markup and generates native Figma layers on the canvas. A Bootstrap card typically generates in 2–4 seconds: a Frame for the card wrapper, a Frame for the card body, a Text layer for the heading, another Text layer for the paragraph, and a styled button Frame.
       </p>
     </div>
 
@@ -310,8 +310,8 @@
     </p>
     <ul>
       <li><strong>.container</strong> — Renders as a max-width block. In Figma, it becomes a Frame with a fixed or fluid width and horizontal centering.</li>
-      <li><strong>.row</strong> — Bootstrap rows use <code>display: flex; flex-wrap: wrap</code>. In Figma, this becomes an Auto Layout frame with Wrap enabled and negative margin resolved.</li>
-      <li><strong>.col-md-6</strong> — At the md breakpoint, this resolves to <code>flex: 0 0 auto; width: 50%</code>. In Figma, it maps to an Auto Layout child with a fill or fixed width depending on context.</li>
+      <li><strong>.row</strong> — Bootstrap rows use <code>display: flex; flex-wrap: wrap</code>. In Figma, this becomes a Frame with child elements positioned to match the rendered flex layout.</li>
+      <li><strong>.col-md-6</strong> — At the md breakpoint, this resolves to <code>flex: 0 0 auto; width: 50%</code>. In Figma, it maps to a child Frame with the correct width and position as rendered by the browser.</li>
       <li><strong>.g-3 (gutters)</strong> — Bootstrap 5 gutters apply <code>--bs-gutter-x</code> and <code>--bs-gutter-y</code> CSS variables, which resolve to padding on columns. html2design captures the computed padding values.</li>
     </ul>
 
@@ -329,9 +329,9 @@
   &lt;/div&gt;
 &lt;/div&gt;</div>
 
-    <h2>Bootstrap Utility → Figma Auto Layout Mapping</h2>
+    <h2>Bootstrap Utility → Figma Property Mapping</h2>
     <p>
-      Bootstrap 5's utility system and Figma's Auto Layout cover much of the same territory. Here's how the most common Bootstrap layout utilities map after html2design processes them:
+      Bootstrap 5's utility classes resolve to standard CSS, which html2design maps to Figma's native properties. Here's how the most common Bootstrap utilities translate after html2design processes them:
     </p>
 
     <table class="mapping-table">
@@ -346,32 +346,32 @@
         <tr>
           <td><code>d-flex</code></td>
           <td><code>display: flex</code></td>
-          <td>Auto Layout (horizontal)</td>
+          <td>Frame with children positioned horizontally</td>
         </tr>
         <tr>
           <td><code>flex-column</code></td>
           <td><code>flex-direction: column</code></td>
-          <td>Auto Layout (vertical)</td>
+          <td>Frame with children stacked vertically</td>
         </tr>
         <tr>
           <td><code>gap-3</code></td>
           <td><code>gap: 16px</code></td>
-          <td>Auto Layout gap: 16</td>
+          <td>Child spacing preserved via positioning</td>
         </tr>
         <tr>
           <td><code>p-3</code></td>
           <td><code>padding: 16px</code></td>
-          <td>Auto Layout padding: 16</td>
+          <td>Frame padding: 16</td>
         </tr>
         <tr>
           <td><code>align-items-center</code></td>
           <td><code>align-items: center</code></td>
-          <td>Auto Layout align: center</td>
+          <td>Children centered via positioning</td>
         </tr>
         <tr>
           <td><code>justify-content-between</code></td>
           <td><code>justify-content: space-between</code></td>
-          <td>Auto Layout space between</td>
+          <td>Children spaced via positioning</td>
         </tr>
         <tr>
           <td><code>rounded-3</code></td>
@@ -500,7 +500,7 @@
 
     <h3>Does html2design support Bootstrap's grid system?</h3>
     <p>
-      Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a <code>.row</code> and its <code>.col-*</code> children, the computed layout is a flex container with flex-basis and width values. html2design maps these to Figma Auto Layout frames.
+      Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a <code>.row</code> and its <code>.col-*</code> children, the computed layout is a flex container with flex-basis and width values. html2design reads these computed positions and sizes and recreates them as accurately positioned Figma frames.
     </p>
 
     <h3>How do I capture different Bootstrap breakpoints?</h3>

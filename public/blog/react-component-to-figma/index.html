@@ -351,7 +351,7 @@ npm run storybook</div>
         The plugin generates a native Figma frame on the canvas with:
       </p>
       <ul>
-        <li><strong>Auto Layout frames</strong> for every Flexbox container</li>
+        <li><strong>Positioned frames</strong> preserving the visual layout of every Flexbox container</li>
         <li><strong>Text layers</strong> with font, size, weight, and color preserved</li>
         <li><strong>Fills and strokes</strong> matching background colors, borders, and shadows</li>
         <li><strong>SVG vector paths</strong> for any icons or SVG elements</li>
@@ -410,13 +410,13 @@ npm run storybook</div>
     <p>html2design accurately converts the vast majority of what React components produce. Here's what to expect:</p>
 
     <ul>
-      <li><strong>Flexbox layouts</strong> → Figma Auto Layout, including direction, gap, padding, and alignment</li>
+      <li><strong>Flexbox layouts</strong> → Accurately positioned Figma frames (spacing, padding, and alignment preserved visually; Auto Layout not applied automatically)</li>
       <li><strong>Typography</strong> → Font family, size, weight, line-height, letter-spacing, color, text alignment</li>
       <li><strong>Colors</strong> → Fills, gradients, box shadows, borders — all preserved as Figma styles</li>
       <li><strong>Border radius</strong> → Mapped from CSS or Tailwind values to Figma corner radius</li>
       <li><strong>SVG icons</strong> → Native Figma vector paths, fully editable</li>
       <li><strong>Background images</strong> → Captured as image fills where accessible</li>
-      <li><strong>CSS Grid</strong> → Approximated with nested Auto Layout (partial support)</li>
+      <li><strong>CSS Grid</strong> → Approximated with nested frames (partial support; positions preserved, no Auto Layout)</li>
       <li><strong>CSS animations</strong> → Static snapshot only; animation state not captured</li>
       <li><strong>React state</strong> → You capture one state at a time; use multiple captures for variants</li>
     </ul>

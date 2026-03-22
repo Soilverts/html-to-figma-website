@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const Features: React.FC<{ id: string }> = ({ id }) => {
 
   return (
-    <section id={id} aria-label="HTML to Figma key features - native Figma layers, typography preservation, and Auto-Layout support" className="relative py-20 md:py-48 bg-white text-content overflow-hidden">
+    <section id={id} aria-label="HTML to Figma key features - native Figma layers, typography preservation, and precise CSS styling" className="relative py-20 md:py-48 bg-white text-content overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
         <div className="flex flex-col items-center mb-16 md:mb-40">
           <motion.h2
@@ -48,9 +48,9 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="md:mt-32"
           >
-            <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Organic alignment</h3>
+            <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Pixel-accurate positioning</h3>
             <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-              Your design remains fluid. The engine interprets CSS flex rules and seamlessly maps them to Figma's Auto-Layout, preserving spacing, padding, and alignment logic perfectly.
+              Your design stays true to the original. The engine reads computed CSS positions, sizes, and spacing from the browser and recreates them as precisely positioned Figma frames — preserving the visual layout exactly as rendered.
             </p>
           </motion.div>
         </div>

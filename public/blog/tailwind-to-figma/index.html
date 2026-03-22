@@ -402,15 +402,15 @@ npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch
     </p>
     <ul>
       <li><strong>Colors</strong> — All <code>bg-</code>, <code>text-</code>, <code>border-</code>, and <code>ring-</code> utilities resolve to exact hex or RGB values</li>
-      <li><strong>Spacing</strong> — <code>p-</code>, <code>m-</code>, <code>gap-</code>, and <code>space-</code> values map to Figma padding, margin (as spacing between frames), and Auto Layout gap</li>
+      <li><strong>Spacing</strong> — <code>p-</code>, <code>m-</code>, <code>gap-</code>, and <code>space-</code> values are preserved as accurate frame padding and spacing between child frames</li>
       <li><strong>Typography</strong> — <code>text-</code>, <code>font-</code>, <code>leading-</code>, <code>tracking-</code> resolve fully to Figma text properties</li>
-      <li><strong>Flexbox</strong> — <code>flex</code>, <code>flex-col</code>, <code>items-</code>, <code>justify-</code>, <code>gap-</code> map to Figma Auto Layout</li>
+      <li><strong>Flexbox</strong> — <code>flex</code>, <code>flex-col</code>, <code>items-</code>, <code>justify-</code>, <code>gap-</code> are converted to accurately positioned Figma frames (Auto Layout not applied automatically; you can add it manually after import)</li>
       <li><strong>Border radius</strong> — <code>rounded</code>, <code>rounded-lg</code>, <code>rounded-full</code> etc. capture as corner radius</li>
       <li><strong>Shadows</strong> — <code>shadow-</code> utilities capture as Figma drop shadows</li>
       <li><strong>SVG icons</strong> — Rendered as Figma vector paths (Heroicons, Lucide, etc. all work)</li>
       <li><strong>Arbitrary values</strong> — <code>bg-[#1a2b3c]</code>, <code>p-[13px]</code> — these resolve to their exact values just like preset utilities</li>
       <li><strong>Dark mode</strong> — Capture separately per mode; see the FAQ below for the workflow</li>
-      <li><strong>CSS Grid</strong> — Partially supported; complex grids are approximated with nested Auto Layout</li>
+      <li><strong>CSS Grid</strong> — Partially supported; complex grids are approximated with nested frames (positions preserved, no Auto Layout)</li>
       <li><strong>Transitions and animations</strong> — Static snapshot only; Figma doesn't support CSS animation natively</li>
     </ul>
 
