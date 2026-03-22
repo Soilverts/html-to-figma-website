@@ -45,7 +45,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
             </Badge>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
               Code to <br />
-              <span className="text-gray-300">Design.</span>
+              <span className="text-gray-500">Design.</span>
             </h1>
             <p className="text-base md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
               Instantly convert HTML and CSS into native Figma layers.

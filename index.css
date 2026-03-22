@@ -36,8 +36,8 @@ body {
 
 /* Hero entrance animations — replaces framer-motion for above-fold content */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0); }
 }
 
 @keyframes fadeIn {

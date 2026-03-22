@@ -65,7 +65,7 @@ export const Comparison: React.FC<{ id: string }> = ({ id }) => {
           </div>
         </motion.div>
 
-        <p className="text-xs font-mono text-gray-400 mt-12 max-w-2xl">
+        <p className="text-xs font-mono text-gray-500 mt-12 max-w-2xl">
           * "Screenshot tools" refers to browser-extension-based capture plugins that produce flat, non-editable images.
         </p>
       </div>

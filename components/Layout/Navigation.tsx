@@ -95,6 +95,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         aria-hidden={!isOpen}
+        {...(!isOpen ? { inert: '' } : {})}
       >
         <div className="flex flex-col gap-6 text-center">
           {sections.map((id, i) => (

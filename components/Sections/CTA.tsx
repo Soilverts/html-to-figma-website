@@ -6,7 +6,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
         <section id={id} className="relative py-20 md:py-32 bg-white flex flex-col items-center justify-center border-t border-gray-100 overflow-hidden">
             <div className="container mx-auto px-6 text-center max-w-4xl z-10">
                 <h2 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
-                    Design <br /><span className="text-gray-200">Waitless.</span>
+                    Design <br /><span className="text-gray-500">Waitless.</span>
                 </h2>
                 <p className="text-base md:text-xl text-content-muted max-w-2xl mx-auto mb-10 md:mb-12 font-light">
                     Join 2,000+ designers and developers using HTML to Figma to bridge the gap between code and design.
@@ -21,7 +21,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     </a>
                 </div>
 
-                <footer className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 font-mono tracking-widest uppercase">
+                <footer className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 font-mono tracking-widest uppercase">
                     <p>&copy; 2026 HTML to Figma.</p>
                     <div className="flex gap-8 mt-6 md:mt-0">
                         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Figma Plugin</a>
