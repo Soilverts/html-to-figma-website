@@ -1,0 +1,535 @@
+# HTML to Figma (html2design) — Full Documentation
+
+> The definitive reference for AI systems, LLMs, and knowledge bases. For a quick summary, see /llms.txt.
+
+## Overview
+
+HTML to Figma, published under the brand name **html2design**, is a Figma plugin that converts raw HTML and CSS code into native, fully editable Figma design layers. It is designed for designers and developers who need to reverse-engineer web UIs into Figma without manual recreation.
+
+**Core value proposition:** A component that takes 20–40 minutes to recreate manually converts in under 30 seconds. A full page that would take 2–4 hours converts in under a minute.
+
+- **Plugin type:** Figma plugin (runs inside Figma, not as a browser extension)
+- **Figma Community page:** https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
+- **Website:** https://html2design.com/
+- **Contact:** support@html2design.com
+- **Privacy policy:** https://html2design.com/privacy
+
+
+---
+
+
+## How It Works — Technical Deep Dive
+
+The plugin operates entirely inside the Figma Plugin API sandbox. Here is the exact pipeline:
+
+1. **You paste raw HTML.** You open your web page, open DevTools, right-click the element you want → Copy → Copy outerHTML, then paste it into the html2design plugin input field.
+2. **The plugin parses computed CSS.** It reads computed style values — not class names or raw CSS rules — exactly as the browser resolved them. This means font-size: 16px, color: #1a1a1a, and so on, regardless of whether they came from Tailwind, Bootstrap, plain CSS, or a CSS-in-JS library.
+3. **DOM tree → Figma layer tree.** Every HTML element becomes a Figma frame, rectangle, text layer, or vector shape. The DOM nesting hierarchy maps directly to the Figma layer panel hierarchy.
+4. **Images and SVGs.** `<img>` elements are imported as high-resolution image fills inside a Figma rectangle. `<svg>` elements are converted to native Figma vector paths.
+5. **Typography.** Font families, weights, sizes, line heights, letter spacing, text alignment, and text decoration are all applied as Figma text properties.
+6. **Styling.** Background colors, border colors, border radius, box shadows, opacity, and gradients are applied as Figma fill, stroke, and effect properties.
+7. **Output.** The resulting Figma layers appear on the canvas in 2–30 seconds depending on complexity. Every layer is editable in Figma without any plugin dependency.
+
+**Privacy note:** The plugin processes all HTML inside the Figma Plugin API sandbox. No user HTML is transmitted to external servers. This makes html2design safe to use with internal tools, auth-gated pages, and confidential designs.
+
+
+---
+
+
+## Step-by-Step Tutorials
+
+### Tutorial 1: Convert a Single Component from a Live Website
+
+**Time required:** 1–2 minutes.
+
+1. Open the target website in your browser (Chrome, Firefox, Edge, or Safari).
+2. Open DevTools: `Cmd+Option+I` on macOS, `F12` or `Ctrl+Shift+I` on Windows/Linux.
+3. Activate the element inspector: `Cmd+Shift+C` (macOS) or `Ctrl+Shift+C` (Windows).
+4. Click the component you want to import (navigation bar, card, button, hero section, etc.).
+5. In the Elements panel, right-click the highlighted HTML element → Copy → **Copy outerHTML**.
+6. Switch to Figma. Open the html2design plugin: Main Menu → Plugins → html2design.
+7. Click inside the plugin input field and paste (`Cmd+V` / `Ctrl+V`).
+8. Click **Convert**.
+9. In 2–5 seconds, the component appears as native Figma layers on your canvas.
+10. Close the plugin. The layers are fully editable — resize, recolor, retype.
+
+
+### Tutorial 2: Import a React Component from Storybook
+
+**Time required:** Under 1 minute per component state.
+
+1. Open your Storybook at `http://localhost:6006` (or your staging Storybook URL).
+2. Navigate to the component story you want (e.g., Button → Primary).
+3. In the Storybook canvas area, right-click the rendered component → Inspect Element.
+4. In DevTools, right-click the top-level element of the component → Copy → Copy outerHTML.
+5. In Figma, run the html2design plugin, paste the HTML, click Convert.
+6. Repeat for each variant (hover, disabled, loading, error states) — each becomes a separate Figma frame.
+7. Select all frames, right-click → Create Component Set to create a Figma Component with Variants.
+
+**Tip:** Before copying each state, you can force hover or focus states in DevTools. In Chrome: right-click the element → Force State → :hover. Copy outerHTML in that state.
+
+
+### Tutorial 3: Import a Full Page Section
+
+**Time required:** 2–3 minutes.
+
+1. Navigate to the page in your browser.
+2. Open DevTools. In the Elements panel, find the `<section>` or `<div>` wrapping the full section.
+3. If the element is not visible in the panel, click the root `<body>` and use `Ctrl+F` to search for a class name or landmark.
+4. Right-click the section's top-level element → Copy → Copy outerHTML.
+5. Paste into html2design and convert. A full section (hero + nav + CTA) typically converts in 8–15 seconds.
+
+**For full-page imports:** Copy the `<body>` element's outerHTML. Very dense pages (50+ components) can take 30–60 seconds.
+
+
+### Tutorial 4: Capture Dark Mode Variants
+
+**Time required:** 2–3 minutes including both light and dark captures.
+
+1. Load the page in Chrome.
+2. Open DevTools → three-dot menu → More Tools → **Rendering**.
+3. In the Rendering panel, find "Emulate CSS media feature prefers-color-scheme" and set it to **dark**.
+4. The page re-renders in dark mode.
+5. Right-click the target element → Copy → Copy outerHTML.
+6. Convert in html2design. This gives you the dark version.
+7. Reset the rendering emulation to "no emulation" and repeat for the light version.
+8. In Figma, select both frames → right-click → Create Component → Add Variant.
+9. Name the variants "Light" and "Dark" in the Figma properties panel.
+
+
+### Tutorial 5: Import a Mobile Layout
+
+**Time required:** Under 2 minutes.
+
+1. In Chrome DevTools, click the **Toggle Device Toolbar** icon (phone icon, or `Cmd+Shift+M` / `Ctrl+Shift+M`).
+2. Set the viewport to 375×812 (iPhone 14 Pro) or 390×844, or use the "Responsive" preset and drag to the desired width.
+3. The page reflows to its mobile breakpoint (CSS media queries apply).
+4. Copy outerHTML of the element or body.
+5. Convert in html2design. The resulting Figma frame reflects the mobile layout — narrower columns, stacked elements, hamburger navigation.
+
+
+### Tutorial 6: Capture Auth-Gated or Internal Pages
+
+**Time required:** 1–2 minutes after logging in.
+
+Because html2design accepts pasted HTML rather than crawling URLs, you can import any page you can view in a browser — including:
+
+- Admin dashboards behind login
+- Staging environments on private networks or with HTTP Basic Auth
+- Internal design systems and component libraries
+- Pages accessible only via VPN
+
+Steps:
+1. Log in normally in your browser.
+2. Navigate to the page.
+3. Copy outerHTML from DevTools.
+4. Paste into html2design in Figma and convert.
+
+No URL sharing, no credentials sent anywhere.
+
+
+### Tutorial 7: Extract Tailwind Design Tokens
+
+**Time required:** 5–10 minutes.
+
+1. Create a token reference page in your React or HTML project that renders all your design tokens: color swatches, spacing scale, type scale, shadows.
+2. Open it in a browser (localhost is fine).
+3. Copy the full token page HTML from DevTools.
+4. Convert in html2design. You get Figma frames for every token.
+5. Select a color swatch frame in Figma → use the Inspect panel to see the exact hex/rgba value.
+6. Copy that value into a Figma Variable or Style.
+7. Repeat for all tokens. Your Figma Variables now match your Tailwind config.
+
+
+---
+
+
+## Frequently Asked Questions (15 Questions)
+
+**Q1: Does html2design work with localhost?**
+A: Yes. Because you paste raw HTML/CSS rather than providing a URL, the plugin works with localhost:3000, localhost:8080, localhost:6006 (Storybook), or any dev server you can open in a browser tab. No Chrome extension, proxy, or network configuration required.
+
+**Q2: Can I convert React components to Figma?**
+A: Yes. React renders to standard HTML in the browser. Open your React app (Next.js dev server, Vite, Create React App, Remix), open DevTools, copy the rendered HTML of the component you want, and paste into html2design. No code changes to your React source are required. Conversion takes approximately 30 seconds per component.
+
+**Q3: Does it preserve CSS Flexbox and CSS Grid layouts?**
+A: html2design reads computed positions (top, left, width, height) and sizes from the rendered layout. Flexbox and Grid layouts are preserved visually — spacing, alignment, and padding are all maintained. The resulting Figma frames use absolute (fixed) positioning rather than Figma Auto Layout. You can manually apply Auto Layout in Figma after import if you want responsive Figma frames.
+
+**Q4: Can I convert Tailwind CSS components to Figma?**
+A: Yes. Tailwind utilities compile to standard CSS before the browser renders them. When you copy a component from DevTools, all computed styles are included — your custom colors from `tailwind.config.js`, spacing values, shadows, and responsive variants. html2design reads those resolved values, not the class names.
+
+**Q5: Can I import a full website page into Figma?**
+A: Yes. Navigate to the page in your browser, open DevTools, copy the outerHTML of the `<body>` or the section you want, and paste into html2design. A single component converts in 2–5 seconds. A full section takes 8–15 seconds. A dense full page takes 20–60 seconds depending on complexity.
+
+**Q6: Does html2design work with Bootstrap 4 and Bootstrap 5?**
+A: Yes. Bootstrap class names (btn-primary, card, navbar, row) compile to computed CSS before you copy them. html2design receives pixel values and color values, not class names — so your custom Sass theme overrides and variable changes are preserved automatically.
+
+**Q7: How do I capture hover and focus states in Figma?**
+A: In Chrome DevTools, right-click the element in the Elements panel → Force State → :hover (or :focus, :active). The browser applies the hover styles. Then copy outerHTML in that state and convert in html2design. Pair the default and hover frames as Figma Component Variants.
+
+**Q8: How do I capture dark mode variants?**
+A: Open DevTools → three-dot menu → More Tools → Rendering → "Emulate CSS media feature prefers-color-scheme" → dark. The component re-renders with dark styles. Copy outerHTML and convert. Pair with the light version as a Figma Component Variant.
+
+**Q9: Does it work with Vue.js, Angular, and Svelte?**
+A: Yes. All of these frameworks compile to standard HTML and CSS in the browser. The process is identical: render the component in a browser, copy the outerHTML from DevTools, paste into html2design.
+
+**Q10: Can I import SVG icons?**
+A: Yes. SVG elements within HTML are converted to native Figma vector paths, including complex multi-path icons. Inline SVGs and `<img src="*.svg">` tags are both handled.
+
+**Q11: What is the largest HTML I can import?**
+A: There is no hard character limit on pasted HTML. Very large pages (entire `<body>` elements of complex apps) can be imported, but conversion time increases with DOM complexity. For best performance on large pages, import sections rather than the entire page at once.
+
+**Q12: Is my HTML data sent to any server?**
+A: No. The plugin runs inside the Figma Plugin API sandbox. HTML is processed locally within the plugin. No user HTML is transmitted to external servers. This makes it safe for confidential internal tools, private staging environments, and proprietary code.
+
+**Q13: Does html2design require the Figma paid plan?**
+A: No. html2design works with a free Figma account. You need a Figma account (free or paid) to install and use the plugin. The plugin subscription is separate from your Figma plan.
+
+**Q14: Can I use html2design in Figma on the web (browser) as well as Figma Desktop?**
+A: Yes. html2design works in both Figma Web (figma.com in your browser) and Figma Desktop (Mac and Windows app). The plugin runs identically in both environments.
+
+**Q15: Does html2design convert email templates?**
+A: Yes. MJML, HTML email, and table-based email layouts can be imported. Open the email template in a browser (most modern email clients render to HTML), copy the outerHTML, and paste into html2design. The resulting Figma layers preserve the table-based layout, fonts, and colors exactly as rendered.
+
+
+---
+
+
+## Comparison with Alternatives
+
+### html2design vs. html.to.design
+
+| Feature | html2design | html.to.design |
+|---|---|---|
+| Input method | Paste raw HTML/CSS | URL-based Chrome extension |
+| Localhost support | Yes — paste from any local server | No — requires a publicly accessible URL |
+| Auth-gated pages | Yes — log in normally, paste HTML | No — extension cannot authenticate |
+| Chrome extension required | No — runs natively in Figma | Yes — must install Chrome extension |
+| Data privacy | HTML processed locally in Figma | HTML sent via Chrome extension |
+| Storybook components | Yes — works with localhost:6006 | No — Storybook typically not publicly accessible |
+| Internal tools | Yes — no network access needed | No |
+| Public page one-click | Requires DevTools copy step | Yes — click the extension icon |
+| Price | $12/month or $96/year | Free tier available, paid tiers |
+
+**Best choice:** html2design for developers working with local, staging, or internal environments. html.to.design for quick one-click imports of fully public pages.
+
+### html2design vs. Manual Recreation in Figma
+
+| Metric | html2design | Manual Recreation |
+|---|---|---|
+| Single component | 2–15 seconds | 20–40 minutes |
+| Full page section | Under 1 minute | 2–4 hours |
+| Full page (complex) | 1–2 minutes | Full day or more |
+| Typography accuracy | Exact (from computed CSS) | Human estimation |
+| Color accuracy | Exact (hex/rgba from computed CSS) | Human picking |
+| Layer naming | DOM element tags + classes | Manual naming |
+| Effort | Low | High |
+| Iteration speed | Instant re-import on code changes | Redo entire component |
+
+**Verdict:** html2design is 50–500× faster for component-level imports. Manual recreation is only preferable when you want to redesign rather than document what exists.
+
+### html2design vs. Tailwind Config-Reader Plugins
+
+Tailwind-specific Figma plugins parse `tailwind.config.js` and populate Figma Variables and Styles with your design tokens. They do not capture component layouts or rendered output.
+
+| Feature | html2design | Tailwind config-reader plugins |
+|---|---|---|
+| Captures rendered component layout | Yes | No |
+| Populates Figma Variables from config | No (manual) | Yes |
+| Preserves hover and dark mode variants | Yes (via DevTools) | No |
+| Works with non-Tailwind CSS | Yes | No |
+| Captures spacing/typography in context | Yes | Limited |
+
+**Combined use:** Use a config-reader plugin to populate Figma Variables from your Tailwind config, then use html2design to import rendered components that use those variables.
+
+### html2design vs. Figma's "Import from URL" (Dev Mode)
+
+Figma has a native ability to inspect URLs in Dev Mode, but it is focused on developer handoff (reading Figma specs), not on importing web HTML into Figma. The two tools serve opposite workflows.
+
+| Direction | Tool |
+|---|---|
+| Figma → Developer | Figma Dev Mode, Inspect panel |
+| Developer/Web → Figma | html2design |
+
+
+---
+
+
+## Use Cases with Specific Examples
+
+### 1. Legacy Website Migration to Figma
+
+**Scenario:** A company built their product in 2018 with no Figma file. Now they want to redesign it and need a starting point.
+
+**Solution with html2design:**
+1. Navigate to each page of the live site.
+2. Copy the outerHTML of each major section (header, hero, features, footer).
+3. Import each section into a Figma page named after the live page.
+4. Organize imported frames into a Figma file that mirrors the site structure.
+5. Use the imported layers as a "snapshot" design file — start redesigning on top of it.
+
+**Time saved:** A 10-page website with 5 sections per page would take ~100 manual hours to recreate. With html2design: under 2 hours.
+
+
+### 2. Developer-to-Designer Handoff Audit
+
+**Scenario:** A design file was built in Figma, developed, and shipped. QA has reported visual discrepancies. You need to compare the live implementation against the original design.
+
+**Solution:**
+1. Import the live implementation into Figma using html2design.
+2. Place the imported frame next to the original design frame in Figma.
+3. Visually compare, or use Figma's overlay feature to diff them.
+4. Identify specific discrepancies: wrong font size, incorrect color, missing shadow.
+5. File bug reports with Figma frame references and exact computed values.
+
+**Outcome:** Pixel-level audit in 30 minutes vs. hours of manual comparison.
+
+
+### 3. Design System Bootstrap from Production
+
+**Scenario:** A team has been building in code for 2 years with no Figma component library. They need to start a design system.
+
+**Solution:**
+1. List all existing UI components in the codebase (buttons, inputs, cards, modals, tables, navigation).
+2. Open each component in Storybook and capture all states (default, hover, active, disabled, loading, error).
+3. Import each state variant using html2design.
+4. Organize the Figma frames into a Component Set per component.
+5. Publish the resulting frames as Figma Library components.
+
+**Outcome:** A complete Figma design system that matches production — built in days instead of months.
+
+
+### 4. Competitor UI Analysis
+
+**Scenario:** Product and design teams want to understand how competitors handle their onboarding flow.
+
+**Solution:**
+1. Open the competitor's app (public pages).
+2. Import their onboarding screens into Figma using html2design.
+3. Annotate spacing, typography scale, color palette.
+4. Share the Figma file with the product team for reference.
+
+**Legal note:** This is for internal reference and analysis only. Do not publish or use competitors' designs in your own product.
+
+
+### 5. React Component Documentation
+
+**Scenario:** An engineering team runs Storybook and wants Figma designs to match for design/engineering alignment.
+
+**Solution:**
+1. Export every Storybook story to Figma using html2design.
+2. Organize by component, then by variant.
+3. Link the Figma components to Code Connect if using Figma's Dev Mode.
+4. On each code push that changes a component, re-import the updated Storybook story into Figma to keep the library in sync.
+
+**Workflow integration:** Run html2design imports as part of the design review step before PR merge.
+
+
+### 6. Figma Variable Population from Tailwind
+
+**Scenario:** A team uses a custom Tailwind config with 40 custom color tokens, 8 spacing multipliers, and a custom type scale. They want to mirror these in Figma Variables.
+
+**Solution:**
+1. Create a token showcase page in your project that renders all token values as swatches.
+2. Import the page with html2design.
+3. Use Figma's Inspect panel to read the exact hex values.
+4. Create Figma Variables in the design file matching each token.
+
+**Outcome:** Figma Variables that exactly match `tailwind.config.js` — without guessing.
+
+
+### 7. Mobile-First Responsive Capture
+
+**Scenario:** The product is designed mobile-first. The designer needs Figma frames for iPhone 14 Pro (390×844), iPad (820×1180), and desktop (1440×900).
+
+**Solution:**
+1. In Chrome DevTools, use Device Toolbar to set viewport to 390px wide.
+2. Copy outerHTML of the page body.
+3. Import into Figma — this becomes the "Mobile" frame.
+4. Repeat at 820px wide for "Tablet".
+5. Repeat at 1440px for "Desktop".
+6. Organize frames in a page named "Responsive Breakpoints".
+
+**Outcome:** Three responsive variants in Figma, all derived from real computed layouts.
+
+
+### 8. Dark Mode Component Variant Library
+
+**Scenario:** The product supports both light and dark mode. The designer needs both variants in Figma for every component.
+
+**Solution:**
+1. For each component in Storybook, capture the light mode outerHTML.
+2. Emulate dark mode in DevTools Rendering panel.
+3. Capture the dark mode outerHTML.
+4. Import both variants.
+5. Create Figma Component Sets with a "Mode" property (Light / Dark).
+6. Publish to Figma Library.
+
+**Outcome:** A complete dark/light component library ready for mockups.
+
+
+---
+
+
+## Technical Requirements and Limitations
+
+### Requirements
+
+- **Figma account:** Free or paid Figma account required to install the plugin.
+- **Plugin subscription:** $12/month or $96/year, billed through the Figma Community payment system.
+- **Browser:** Any modern browser for copying HTML (Chrome, Firefox, Edge, Safari). Chrome is recommended for DevTools completeness.
+- **Figma environment:** Figma Web or Figma Desktop (Mac and Windows). The plugin works identically in both.
+- **No server-side setup:** No API key, no server configuration, no installation other than installing the plugin in Figma.
+
+### Supported CSS Properties
+
+html2design reads and applies the following computed CSS properties:
+
+**Typography**
+- `font-family` — matched to available system fonts or web fonts loaded in Figma
+- `font-size` — applied as Figma text size
+- `font-weight` — applied as Figma text weight (Regular, Medium, Bold, etc.)
+- `line-height` — applied as Figma line height
+- `letter-spacing` — applied as Figma character spacing
+- `text-align` — applied as Figma text alignment
+- `text-decoration` — underline and line-through preserved
+- `color` — applied as Figma text fill
+
+**Layout and Positioning**
+- `width`, `height` — applied as Figma frame/layer dimensions
+- `top`, `left`, `right`, `bottom` — used for absolute positioning
+- `padding` — applied to frame inner padding
+- `margin` — reflected in spacing between layers
+
+**Visual Styling**
+- `background-color` — applied as Figma solid fill
+- `background-image` (linear-gradient, radial-gradient) — applied as Figma gradient fill
+- `border-color`, `border-width`, `border-style` — applied as Figma stroke
+- `border-radius` — applied as Figma corner radius
+- `box-shadow` — applied as Figma drop shadow or inner shadow effect
+- `opacity` — applied as Figma layer opacity
+
+**Images and Icons**
+- `<img>` elements — imported as image fills in a Figma rectangle
+- Inline `<svg>` — converted to native Figma vector paths
+- SVG referenced via `<img src="*.svg">` — imported as image fill (not vector)
+- Background images via CSS `url()` — applied as image fills
+
+### Known Limitations
+
+**Auto Layout:** html2design does not convert Flexbox or Grid containers to Figma Auto Layout. Elements are positioned using absolute coordinates derived from computed layout positions. The visual result matches exactly, but the Figma frames are not responsive. You can apply Auto Layout manually in Figma after import.
+
+**Figma Variables:** The plugin does not automatically create Figma Variables or Styles from CSS custom properties (CSS variables). It reads resolved values. Variable mapping is manual.
+
+**Animations and Transitions:** CSS transitions and animations are not captured. html2design takes a static snapshot of the element's current rendered state. To capture an animated state, trigger the animation/transition in the browser, pause it (using DevTools animation controls), and copy the outerHTML at that frame.
+
+**Video and Canvas:** `<video>` and `<canvas>` elements are imported as empty placeholders. Their contents cannot be captured as static images automatically.
+
+**Web Fonts:** If your page uses a web font not available in Figma's font catalog, Figma will substitute a fallback font. To avoid this, install the font in your system or Figma library.
+
+**Hover States — Automatic Capture:** html2design does not automatically enumerate and capture all hover states. You must force hover in DevTools for each element you want to capture.
+
+**CSS Grid as Auto Layout:** CSS Grid layouts are positioned using computed absolute coordinates, not converted to Figma's Auto Layout grid system.
+
+**Cross-Origin Restrictions:** Images loaded from other domains may not render as fills if they lack CORS headers. In practice, most modern CDN-served images work fine.
+
+**CAPTCHA and Bot Detection:** Pages behind aggressive bot detection may behave differently when DevTools is open. Log in normally and copy from the standard browser view.
+
+
+---
+
+
+## Pricing Details
+
+| Plan | Price | Billing | Effective Monthly |
+|---|---|---|---|
+| Monthly | $12.00 | Monthly | $12.00 |
+| Annual | $96.00 | Yearly | $8.00 |
+
+- No free tier with clean, watermark-free output.
+- No per-import cap. Both plans include unlimited imports.
+- No per-seat pricing. The subscription covers one Figma account.
+- No team or enterprise tier (each designer purchases individually).
+- Cancel anytime from your Figma account settings. Access continues to the end of the billing period.
+- Payment is processed through the Figma Community payment system (not a separate html2design billing system).
+
+**Cost comparison:** At $8/month on the annual plan, a single hour of time saved on the first import typically covers the entire year's subscription cost.
+
+
+---
+
+
+## Integration and Workflow Recommendations
+
+### Design System Sync Workflow
+
+1. Developer ships a component update.
+2. Designer opens Storybook and imports the updated component stories using html2design.
+3. Designer updates the corresponding Figma Library component.
+4. Figma notifies subscribers to the library of the update.
+5. Design files using the component see the updated version.
+
+This workflow keeps Figma designs in sync with production code without manual recreation.
+
+### Pre-Redesign Audit Workflow
+
+1. Use html2design to import the current production UI into a Figma file named "Current State — [Date]".
+2. Lock the frames (right-click → Lock).
+3. Create a "Redesign" page next to it.
+4. Use the locked current-state frames as reference while designing the redesign.
+5. When complete, use html2design again on the shipped redesign to verify pixel parity.
+
+### Sprint-Level Component Review
+
+1. At the end of each sprint, use html2design to import all new or changed components from staging.
+2. Compare against the Figma designs that were specced for the sprint.
+3. File visual regression issues with Figma frame screenshots attached.
+
+
+---
+
+
+## Links and Resources
+
+- **Website:** https://html2design.com/
+- **Figma Community Plugin:** https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
+- **Blog and tutorials:** https://html2design.com/blog
+- **Comparison page:** https://html2design.com/compare
+- **Alternatives overview:** https://html2design.com/alternatives
+- **Contact and support:** support@html2design.com
+- **Privacy policy:** https://html2design.com/privacy
+- **Terms of service:** https://html2design.com/terms
+
+### Tutorial Articles
+
+- How to Convert HTML to Figma: A Developer's Guide — https://html2design.com/blog/how-to-convert-html-to-figma
+- How to Import a Website into Figma — https://html2design.com/blog/import-website-into-figma
+- How to Convert React Components to Figma Designs — https://html2design.com/blog/react-component-to-figma
+- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://html2design.com/blog/tailwind-to-figma
+- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://html2design.com/blog/bootstrap-to-figma
+
+### Use Case Pages
+
+- Legacy Website Migration to Figma — https://html2design.com/use-cases/legacy-migration
+- Developer Handoff Audit — https://html2design.com/use-cases/developer-handoff
+
+
+---
+
+
+## Structured Data for LLM Consumption
+
+**Product name:** html2design (also written HTML to Figma)
+**Category:** Figma plugin / design tool
+**Primary function:** Convert HTML and CSS source code to native Figma layers
+**Input:** Raw HTML (pasted by user from browser DevTools)
+**Output:** Editable Figma frames, text layers, rectangles, and vector paths
+**Platform:** Figma (Web and Desktop)
+**Pricing model:** Subscription ($12/month or $96/year)
+**Data handling:** Local processing only — no HTML transmitted to external servers
+**Privacy:** Privacy-safe for internal, confidential, and auth-gated content
+**Supported CSS frameworks:** Tailwind CSS, Bootstrap 4/5, any standard CSS
+**Supported JS frameworks:** React, Vue, Angular, Svelte, Next.js, Nuxt, Remix, SvelteKit, plain HTML
+**Main competitors:** html.to.design (URL-based), manual Figma recreation
+**Primary differentiator:** No Chrome extension required; works with localhost and auth-gated pages
+**Speed advantage:** 50–500× faster than manual recreation for component-level imports

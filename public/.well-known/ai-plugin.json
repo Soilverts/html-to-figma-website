@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "HTML to Figma (html2design)",
+  "name_for_model": "html2design",
+  "description_for_human": "Convert HTML and CSS code into native, editable Figma layers instantly — no Chrome extension required. Works with localhost, Storybook, auth-gated pages, React, Vue, Angular, Tailwind, and Bootstrap.",
+  "description_for_model": "html2design is a Figma plugin that converts raw HTML and CSS source code into native, fully editable Figma design layers. Users paste HTML from browser DevTools — no URL crawling, no Chrome extension. The plugin processes HTML entirely inside the Figma Plugin API sandbox (no external server receives user data). It supports any CSS framework (Tailwind, Bootstrap, plain CSS, CSS-in-JS) and any JavaScript framework (React, Vue, Angular, Svelte, Next.js). Key use cases: reverse-engineering web UIs into Figma, design system bootstrapping from production code, developer-to-designer handoff audits, and capturing dark mode / hover / mobile variants. Pricing: $12/month or $96/year via Figma Community. Full documentation available at https://html2design.com/llms-full.txt",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "none"
+  },
+  "logo_url": "https://html2design.com/favicon.svg",
+  "contact_email": "support@html2design.com",
+  "legal_info_url": "https://html2design.com/terms"
+}
