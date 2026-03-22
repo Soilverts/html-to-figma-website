@@ -496,6 +496,10 @@ This workflow keeps Figma designs in sync with production code without manual re
 - **Blog and tutorials:** https://www.htmltofigma.io/blog
 - **Comparison page:** https://www.htmltofigma.io/compare
 - **Alternatives overview:** https://www.htmltofigma.io/alternatives
+- **Glossary:** https://www.htmltofigma.io/glossary
+- **Quick-start guide:** https://www.htmltofigma.io/guide
+- **Changelog:** https://www.htmltofigma.io/changelog
+- **RSS feed:** https://www.htmltofigma.io/blog/feed.xml
 - **Contact and support:** support@html2design.com
 - **Privacy policy:** https://www.htmltofigma.io/privacy
 - **Terms of service:** https://www.htmltofigma.io/terms
@@ -507,11 +511,19 @@ This workflow keeps Figma designs in sync with production code without manual re
 - How to Convert React Components to Figma Designs — https://www.htmltofigma.io/blog/react-component-to-figma
 - Tailwind to Figma: Build a Design System from Your Tailwind Components — https://www.htmltofigma.io/blog/tailwind-to-figma
 - Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://www.htmltofigma.io/blog/bootstrap-to-figma
+- Design System Migration: From Code to Figma Components — https://www.htmltofigma.io/blog/design-system-migration
+- Screenshot vs Code Import: Which Figma Conversion Method Actually Wins? — https://www.htmltofigma.io/blog/screenshot-vs-code-import
 
 ### Use Case Pages
 
 - Legacy Website Migration to Figma — https://www.htmltofigma.io/use-cases/legacy-migration
 - Developer Handoff Audit — https://www.htmltofigma.io/use-cases/developer-handoff
+- Vue to Figma — https://www.htmltofigma.io/use-cases/vue-to-figma
+- Angular to Figma — https://www.htmltofigma.io/use-cases/angular-to-figma
+- Svelte to Figma — https://www.htmltofigma.io/use-cases/svelte-to-figma
+- Next.js to Figma — https://www.htmltofigma.io/use-cases/nextjs-to-figma
+- WordPress to Figma — https://www.htmltofigma.io/use-cases/wordpress-to-figma
+- Gatsby to Figma — https://www.htmltofigma.io/use-cases/gatsby-to-figma
 
 
 ---
