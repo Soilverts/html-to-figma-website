@@ -171,6 +171,64 @@
   }
   </script>
 
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is design system migration from code to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Design system migration from code to Figma is the process of extracting an existing design system encoded in HTML and CSS — including design tokens, component styles, and layout patterns — into a native, editable Figma component library. Instead of rebuilding from scratch, you use the browser's computed output to capture resolved colors, spacing, and typography, then import them into Figma using a tool like html2design. The result is a Figma library that accurately mirrors what is live in production, with design tokens derived directly from your CSS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I extract design tokens from HTML and CSS into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To extract design tokens from HTML and CSS into Figma, build a token reference page that renders every CSS custom property (--color-*, --spacing-*, --font-*) as a visible block, then convert that page using html2design. Each token group becomes a Figma frame you can inspect for its computed value and register as a Figma Variable or Style. This approach works with any CSS framework, including Tailwind, Bootstrap, and plain CSS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a complete design system migration from code to Figma take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A complete design system migration from code to Figma typically takes between one day and two weeks, depending on the size and complexity of the codebase. Extracting and registering design tokens usually takes one to four hours. Converting the core component library — buttons, inputs, cards, and navigation — takes another two to eight hours. Organizing components into a Figma library with proper naming and variants adds additional time proportional to the number of unique components."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best Figma plugin for design system migration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design is the best Figma plugin for migrating a design system from code to Figma. It reads the browser's computed styles directly from any HTML — including components from React, Tailwind, Bootstrap, or plain CSS — and generates native Figma layers with accurate colors, spacing, and typography. Unlike screenshot-based tools, the output is fully editable as real Figma frames and text nodes. You install html2design from Figma Community and paste HTML directly into the plugin — no browser extension or live URL required."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://html2design.com/blog/design-system-migration",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    }
+  }
+  </script>
+
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/static.css" />

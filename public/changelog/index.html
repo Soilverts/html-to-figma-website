@@ -83,6 +83,56 @@
   }
   </script>
 
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://html2design.com/changelog",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header.max-w-3xl p",
+        "main p"
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often is HTML to Figma updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma is updated on a rolling basis as new guides, features, and improvements are shipped. The changelog at html2design.com/changelog tracks every update — including new blog posts, GEO schema additions, new use-case pages, and tool improvements — with dates and short descriptions of each change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most recent updates to HTML to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most recent updates to html2design include new tutorial guides (such as the Design System Migration guide and the Tailwind to Figma and Bootstrap to Figma workflows), new use-case landing pages for legacy migration and developer handoff, expanded FAQ schema coverage across all major pages, and speakable schema for voice search optimization. Check html2design.com/changelog for the full chronological list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I follow HTML to Figma product updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can follow all HTML to Figma product updates on the changelog page at html2design.com/changelog. The page is updated whenever new guides, features, or site improvements are shipped. For plugin-specific release notes, follow the html2design plugin listing on Figma Community."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="/static.css" />
   <link rel="stylesheet" href="/fonts.css" />
 </head>

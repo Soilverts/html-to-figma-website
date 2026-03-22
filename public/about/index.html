@@ -84,7 +84,57 @@
       "@type": "Organization",
       "name": "HTML to Figma",
       "url": "https://html2design.com/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header.mb-16 p",
+        "section[aria-labelledby='mission-heading'] p",
+        "section[aria-labelledby='story-heading'] p"
+      ]
     }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is HTML to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma (html2design) is a Figma plugin that converts HTML and CSS code directly into native, editable Figma layers. You paste raw HTML into the plugin — from a live component, a local development build, or a static file — and it generates Figma frames, text nodes, and rectangles that match the browser's computed layout. No Chrome extension is required. HTML to Figma is used by over 2,000 designers and developers to bridge the gap between production code and design files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who built HTML to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma was created by Jesse, a developer who spent too many hours manually rebuilding production UI in Figma. It started as an internal tool for bridging the gap between a live website and an outdated Figma file, then became a Figma Community plugin used by thousands of design and engineering teams worldwide. The plugin launched in 2024 and has grown to over 2,000 active users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of code can HTML to Figma convert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma converts any HTML and CSS that a browser can render, including components built with React, Vue, Angular, Svelte, Tailwind CSS, Bootstrap, plain CSS, CSS-in-JS, and email template markup. Because it reads the browser's computed styles rather than parsing source code, any rendering framework that outputs standard HTML and CSS is fully supported."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does HTML to Figma cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma is available from Figma Community as a paid plugin. Pricing starts at $12 per month. You can install the plugin directly from Figma Community and begin converting HTML components into native Figma layers immediately after subscribing."
+        }
+      }
+    ]
   }
   </script>
 </head>
