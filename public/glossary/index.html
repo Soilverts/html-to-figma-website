@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML to Figma Glossary — Design-Development Terms Defined</title>
+  <meta name="description" content="Authoritative definitions of 25 design-development terms used in HTML-to-Figma workflows — from auto layout and design tokens to Core Web Vitals, E-E-A-T, and GEO." />
+  <meta name="robots" content="index, follow, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/glossary" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HTML to Figma Glossary — Design-Development Terms Defined" />
+  <meta property="og:description" content="Authoritative definitions of 25 design-development terms used in HTML-to-Figma workflows — from auto layout and design tokens to Core Web Vitals, E-E-A-T, and GEO." />
+  <meta property="og:url" content="https://www.htmltofigma.io/glossary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HTML to Figma Glossary — Design and Development Terms" />
+  <meta property="og:site_name" content="HTML to Figma" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HTML to Figma Glossary — Design-Development Terms Defined" />
+  <meta name="twitter:description" content="Authoritative definitions of 25 design-development terms used in HTML-to-Figma workflows." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://www.htmltofigma.io/glossary"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: DefinedTermSet -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "HTML to Figma Glossary — Design-Development Terms",
+    "description": "Authoritative definitions of design-development terms used in HTML-to-Figma workflows, including Figma concepts, CSS properties, SEO signals, and web standards.",
+    "url": "https://www.htmltofigma.io/glossary",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "hasDefinedTerm": [
+      {
+        "@type": "DefinedTerm",
+        "name": "Accessibility",
+        "description": "Accessibility (a11y) is the practice of building web content that can be used by people with disabilities — including those using screen readers, keyboard navigation, or assistive technologies. In Figma workflows, accessibility means ensuring imported layers carry semantic meaning, sufficient color contrast, and correct reading order.",
+        "url": "https://www.htmltofigma.io/glossary#accessibility",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Auto Layout",
+        "description": "Auto Layout is Figma's constraint-based layout system that mirrors CSS Flexbox — it allows frames to resize automatically as their contents change. When HTML to Figma imports HTML, it reads computed Flexbox positions and recreates them as positioned frames; designers can then apply Auto Layout to those frames for a fully responsive Figma component.",
+        "url": "https://www.htmltofigma.io/glossary#auto-layout",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Color Palette",
+        "description": "A color palette is the curated set of colors — primary, secondary, neutral, semantic (success, warning, error) — defined in a design system. Color palettes are typically encoded as design tokens and applied consistently across both code (CSS custom properties or Tailwind config) and Figma (local styles or variables).",
+        "url": "https://www.htmltofigma.io/glossary#color-palette",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Component Library",
+        "description": "A component library is a shared repository of reusable UI components — buttons, inputs, cards, modals — that teams build from once and consume across products. In Figma, this lives as a shared library of components; in code, it may be an npm package, Storybook, or a monorepo package. HTML to Figma is often used to sync the coded component library back into Figma when design files fall out of date.",
+        "url": "https://www.htmltofigma.io/glossary#component-library",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Computed Styles",
+        "description": "Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. Unlike authored styles (which may use relative units or shorthand), computed styles are absolute — pixel dimensions, resolved colors, and exact font sizes. HTML to Figma reads computed styles directly from the browser's rendering engine to produce pixel-accurate Figma layers.",
+        "url": "https://www.htmltofigma.io/glossary#computed-styles",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Core Web Vitals",
+        "description": "Core Web Vitals are Google's set of real-world performance metrics that measure user experience quality: Largest Contentful Paint (LCP, loading), Interaction to Next Paint (INP, interactivity), and Cumulative Layout Shift (CLS, visual stability). Strong Core Web Vitals scores are a confirmed ranking signal in Google Search and directly affect organic search visibility.",
+        "url": "https://www.htmltofigma.io/glossary#core-web-vitals",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "CSS Flexbox",
+        "description": "CSS Flexbox (Flexible Box Layout) is a one-dimensional layout model that distributes space along a single axis — row or column — and aligns items within a container. It is the most common layout system for web UI components. HTML to Figma translates Flexbox computed positions into accurately placed Figma frames that visually reproduce the browser layout.",
+        "url": "https://www.htmltofigma.io/glossary#css-flexbox",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "CSS Grid",
+        "description": "CSS Grid Layout is a two-dimensional layout system that positions elements into rows and columns simultaneously. Unlike Flexbox, Grid excels at macro page layouts — sidebars, multi-column cards, and dashboard grids. HTML to Figma captures the computed pixel positions of Grid children as accurately placed frames, preserving the visual layout even if Figma does not natively model CSS Grid.",
+        "url": "https://www.htmltofigma.io/glossary#css-grid",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Design Handoff",
+        "description": "Design handoff is the process of transferring finalized design specifications from designers to developers so they can build the UI accurately. Traditionally this means annotated Figma files with measurements, tokens, and interaction notes. HTML to Figma enables reverse handoff — taking the coded implementation and regenerating a Figma file that matches what was actually built, useful when code drifts from the original design.",
+        "url": "https://www.htmltofigma.io/glossary#design-handoff",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Design System",
+        "description": "A design system is a collection of reusable components, design tokens, patterns, and guidelines that govern the visual language of a product. It lives in both code (a component library and token definitions) and Figma (a shared component and style library). Keeping code and Figma in sync is one of the primary use cases for HTML to Figma, especially after a design system migration.",
+        "url": "https://www.htmltofigma.io/glossary#design-system",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Design Tokens",
+        "description": "Design tokens are the atomic values of a design system — colors, typography sizes, spacing steps, border radii, and shadow definitions — stored in a format that both design tools and code can consume. Tokens are typically defined in JSON or YAML and compiled into CSS custom properties, Tailwind config, or Figma variables. They are the single source of truth that prevents visual drift between design files and production code.",
+        "url": "https://www.htmltofigma.io/glossary#design-tokens",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "E-E-A-T",
+        "description": "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness — the quality signals Google's Search Quality Raters use to evaluate content. Experience reflects first-hand knowledge; Expertise reflects subject-matter depth; Authoritativeness measures how recognized a source is in its domain; Trustworthiness covers accuracy and transparency. Strong E-E-A-T is especially important for YMYL (Your Money or Your Life) content and is a major factor in how AI overviews and generative search engines select cited sources.",
+        "url": "https://www.htmltofigma.io/glossary#e-e-a-t",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Figma Plugin",
+        "description": "A Figma plugin is a program that extends Figma's functionality using the Figma Plugin API — it can create, read, and modify nodes in the Figma document, access the file system, and communicate with external services. HTML to Figma is a Figma plugin: it reads HTML and CSS input, uses the Plugin API to create native frames, text nodes, rectangles, and vector paths, and places them directly in the open Figma document.",
+        "url": "https://www.htmltofigma.io/glossary#figma-plugin",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "GEO",
+        "description": "Generative Engine Optimization (GEO) is the practice of structuring web content so it is discovered and cited by AI-powered search engines and assistants — including ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot, and Claude. GEO strategies include structured data markup (JSON-LD), clear entity definitions, authoritative sourcing, direct answer formatting, and content that is machine-readable and factually verifiable.",
+        "url": "https://www.htmltofigma.io/glossary#geo",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "JSON-LD",
+        "description": "JSON-LD (JavaScript Object Notation for Linked Data) is a W3C standard for embedding structured semantic data in web pages using a <script type='application/ld+json'> tag. Search engines and AI systems use JSON-LD to understand entity relationships, page type, and factual claims without relying on visual HTML parsing. JSON-LD schemas such as FAQPage, HowTo, and DefinedTermSet are key components of both SEO and GEO strategies.",
+        "url": "https://www.htmltofigma.io/glossary#json-ld",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Layer Tree",
+        "description": "The layer tree is Figma's hierarchical panel that shows every object in a document as a nested node structure — frames contain groups, groups contain shapes and text, and so on. When HTML to Figma converts an HTML document, it maps the DOM hierarchy to an equivalent Figma layer tree: block elements become frames, inline text becomes text nodes, and background images become image fills on rectangle layers.",
+        "url": "https://www.htmltofigma.io/glossary#layer-tree",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Pixel-Perfect",
+        "description": "Pixel-perfect describes a design or implementation where every element matches the original specification to the exact pixel — no rounding errors, unintended gaps, or misaligned borders. In HTML-to-Figma workflows, pixel-perfect conversion means the imported Figma layers reproduce the browser's visual rendering exactly, using computed styles rather than estimated measurements. This is what differentiates HTML to Figma from screenshot-based tools, which flatten designs and cannot be edited at the layer level.",
+        "url": "https://www.htmltofigma.io/glossary#pixel-perfect",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Responsive Design",
+        "description": "Responsive design is a web development approach where layouts and content adapt fluidly to different screen sizes and viewport widths using CSS techniques such as media queries, Flexbox, and Grid. When importing responsive HTML into Figma with HTML to Figma, the plugin captures the computed layout at the current browser viewport width, producing a Figma frame that represents that specific breakpoint.",
+        "url": "https://www.htmltofigma.io/glossary#responsive-design",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Rich Results",
+        "description": "Rich results (formerly rich snippets) are enhanced search engine result page (SERP) entries that display additional information — star ratings, FAQ dropdowns, How-To steps, event dates, or product prices — pulled from structured data markup. Eligible pages with JSON-LD schemas such as FAQPage, HowTo, Product, and Recipe can qualify for rich results, which typically increase click-through rates compared to standard blue-link results.",
+        "url": "https://www.htmltofigma.io/glossary#rich-results",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Semantic HTML",
+        "description": "Semantic HTML is the practice of using HTML elements that convey meaning about the content they contain — <article>, <nav>, <header>, <main>, <aside>, <section> — rather than using generic <div> and <span> elements for everything. Semantic HTML improves accessibility, helps search engines understand page structure, and makes documents more machine-readable for AI and assistive technology.",
+        "url": "https://www.htmltofigma.io/glossary#semantic-html",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Spacing System",
+        "description": "A spacing system is a set of predefined margin and padding values — typically a numeric scale such as 4px, 8px, 16px, 24px, 32px, 48px, 64px — that design teams apply consistently across all UI components. Spacing tokens in code map to spacing variables in Figma, ensuring that imported layouts and hand-designed components share the same visual rhythm.",
+        "url": "https://www.htmltofigma.io/glossary#spacing-system",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Structured Data",
+        "description": "Structured data is machine-readable information embedded in a web page that describes its content in a standardized vocabulary — most commonly Schema.org implemented via JSON-LD. Structured data enables search engines and AI assistants to parse facts, entities, and relationships without visual interpretation. Common structured data types include FAQPage, HowTo, Product, Article, BreadcrumbList, and DefinedTermSet.",
+        "url": "https://www.htmltofigma.io/glossary#structured-data",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Typography Scale",
+        "description": "A typography scale is a defined set of font sizes and line heights — such as xs (12px), sm (14px), base (16px), lg (18px), xl (20px), 2xl (24px) — that create visual hierarchy across a UI. Typography scales are encoded as design tokens in code and as text styles in Figma. HTML to Figma preserves the full typography stack — family, weight, size, line-height, letter-spacing — when importing HTML elements into Figma.",
+        "url": "https://www.htmltofigma.io/glossary#typography-scale",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Vector Path",
+        "description": "A vector path is a scalable graphic defined by mathematical curves and anchor points rather than pixel grids, making it resolution-independent at any size. In Figma, SVG elements from HTML are imported as native vector paths — fully editable curves that remain sharp at any zoom level. This contrasts with rasterized images, which pixelate when scaled beyond their native resolution.",
+        "url": "https://www.htmltofigma.io/glossary#vector-path",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Viewport",
+        "description": "The viewport is the visible area of a web page within a browser window — its width and height determine which CSS media queries are active and how layout algorithms compute element sizes. When using HTML to Figma, the viewport width at the time of HTML capture determines the breakpoint that gets imported into Figma. To import a mobile layout, resize the browser to a mobile viewport before copying the HTML.",
+        "url": "https://www.htmltofigma.io/glossary#viewport",
+        "inDefinedTermSet": "https://www.htmltofigma.io/glossary"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "HTML to Figma Glossary — Design-Development Terms",
+    "description": "Authoritative definitions of 25 design-development terms used in HTML-to-Figma workflows.",
+    "url": "https://www.htmltofigma.io/glossary",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.htmltofigma.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Glossary",
+          "item": "https://www.htmltofigma.io/glossary"
+        }
+      ]
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".glossary-term dd",
+        "header.glossary-header p"
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <a href="/" class="text-sm text-content-muted hover:text-content transition-colors">&larr; Back to home</a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb (visible) -->
+  <div class="max-w-3xl mx-auto px-6 pt-20">
+    <nav aria-label="Breadcrumb" class="pt-4">
+      <ol class="flex items-center gap-2 text-xs text-content-muted">
+        <li><a href="/" class="hover:text-content transition-colors">Home</a></li>
+        <li aria-hidden="true"><span class="text-gray-300">/</span></li>
+        <li class="text-content font-medium">Glossary</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-10 pb-24">
+
+    <header class="glossary-header mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Reference</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Design-Development Glossary</h1>
+      <p class="text-content-muted text-lg leading-relaxed">
+        Authoritative definitions of the terms that appear in HTML-to-Figma workflows — from Figma concepts and CSS layout models to SEO signals and AI search optimization. Each term is written for both human readers and AI extraction.
+      </p>
+    </header>
+
+    <!-- Alphabetical quick-jump index -->
+    <nav aria-label="Glossary index" class="mb-12">
+      <div class="flex flex-wrap gap-2">
+        <a href="#section-a" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">A</a>
+        <a href="#section-c" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">C</a>
+        <a href="#section-d" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">D</a>
+        <a href="#section-e" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">E</a>
+        <a href="#section-f" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">F</a>
+        <a href="#section-g" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">G</a>
+        <a href="#section-j" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">J</a>
+        <a href="#section-l" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">L</a>
+        <a href="#section-p" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">P</a>
+        <a href="#section-r" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">R</a>
+        <a href="#section-s" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">S</a>
+        <a href="#section-t" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">T</a>
+        <a href="#section-v" class="px-3 py-1.5 text-xs font-mono font-semibold bg-gray-50 border border-gray-200 rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">V</a>
+      </div>
+    </nav>
+
+    <!-- Terms list -->
+    <dl class="space-y-0 divide-y divide-gray-100">
+
+      <!-- A -->
+      <div id="section-a" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">A</p>
+      </div>
+
+      <div id="accessibility" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#accessibility" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Accessibility">#</a>
+          <h2 class="text-xl font-bold text-content">Accessibility</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Accessibility (a11y) is the practice of building web content that can be used by people with disabilities — including those using screen readers, keyboard navigation, or assistive technologies. In Figma workflows, accessibility means ensuring imported layers carry semantic meaning, sufficient color contrast, and correct reading order. When using HTML to Figma, starting with <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">well-structured HTML</a> that uses semantic elements produces a more accessible Figma layer hierarchy.
+        </dd>
+      </div>
+
+      <div id="auto-layout" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#auto-layout" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Auto Layout">#</a>
+          <h2 class="text-xl font-bold text-content">Auto Layout</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Auto Layout is Figma's constraint-based layout system that mirrors CSS Flexbox — it allows frames to resize automatically as their contents change. When <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma imports HTML</a>, it reads computed Flexbox positions and recreates them as accurately positioned frames. Designers can then apply Auto Layout to those imported frames to produce fully resizable, responsive Figma components.
+        </dd>
+      </div>
+
+      <!-- C -->
+      <div id="section-c" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">C</p>
+      </div>
+
+      <div id="color-palette" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#color-palette" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Color Palette">#</a>
+          <h2 class="text-xl font-bold text-content">Color Palette</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A color palette is the curated set of colors — primary, secondary, neutral, and semantic (success, warning, error) — defined in a <a href="#design-system" class="text-accent hover:underline font-medium">design system</a>. Color palettes are typically encoded as <a href="#design-tokens" class="text-accent hover:underline font-medium">design tokens</a> and applied consistently across both code (CSS custom properties or Tailwind config) and Figma (local styles or variables). Keeping color palettes synchronized between code and Figma is one of the main benefits of a <a href="/blog/design-system-migration" class="text-accent hover:underline font-medium">design system migration</a>.
+        </dd>
+      </div>
+
+      <div id="component-library" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#component-library" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Component Library">#</a>
+          <h2 class="text-xl font-bold text-content">Component Library</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A component library is a shared repository of reusable UI components — buttons, inputs, cards, modals — that teams build once and consume across products. In Figma, this lives as a shared library; in code, it may be an npm package, Storybook, or a monorepo package. HTML to Figma is commonly used to <a href="/blog/design-system-migration" class="text-accent hover:underline font-medium">sync a coded component library back into Figma</a> when design files fall behind the implementation.
+        </dd>
+      </div>
+
+      <div id="computed-styles" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#computed-styles" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Computed Styles">#</a>
+          <h2 class="text-xl font-bold text-content">Computed Styles</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. Unlike authored styles (which may use relative units or shorthand), computed styles are absolute — pixel dimensions, resolved colors, and exact font sizes. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma reads computed styles</a> directly from the browser's rendering engine to produce <a href="#pixel-perfect" class="text-accent hover:underline font-medium">pixel-accurate</a> Figma layers.
+        </dd>
+      </div>
+
+      <div id="core-web-vitals" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#core-web-vitals" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Core Web Vitals">#</a>
+          <h2 class="text-xl font-bold text-content">Core Web Vitals</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Core Web Vitals are Google's set of real-world performance metrics that measure user experience quality: Largest Contentful Paint (LCP, loading speed), Interaction to Next Paint (INP, interactivity), and Cumulative Layout Shift (CLS, visual stability). Strong Core Web Vitals scores are a confirmed Google Search ranking signal and directly affect organic search visibility. See how <a href="/blog/screenshot-vs-code-import" class="text-accent hover:underline font-medium">code-based imports compare to screenshot tools</a> in terms of performance impact.
+        </dd>
+      </div>
+
+      <div id="css-flexbox" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#css-flexbox" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to CSS Flexbox">#</a>
+          <h2 class="text-xl font-bold text-content">CSS Flexbox</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          CSS Flexbox (Flexible Box Layout) is a one-dimensional layout model that distributes space along a single axis — row or column — and aligns items within a container. It is the most common layout system for web UI components. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma translates Flexbox computed positions</a> into accurately placed Figma frames that visually reproduce the browser layout, and is compatible with Tailwind's <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">flex</code> utilities.
+        </dd>
+      </div>
+
+      <div id="css-grid" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#css-grid" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to CSS Grid">#</a>
+          <h2 class="text-xl font-bold text-content">CSS Grid</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          CSS Grid Layout is a two-dimensional layout system that positions elements into rows and columns simultaneously. Unlike <a href="#css-flexbox" class="text-accent hover:underline font-medium">Flexbox</a>, Grid excels at macro page layouts — sidebars, multi-column cards, and dashboard grids. HTML to Figma captures the computed pixel positions of Grid children as accurately placed Figma frames, preserving the visual layout. Works with <a href="/blog/tailwind-to-figma" class="text-accent hover:underline font-medium">Tailwind CSS Grid classes</a> like <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">grid-cols-3</code>.
+        </dd>
+      </div>
+
+      <!-- D -->
+      <div id="section-d" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">D</p>
+      </div>
+
+      <div id="design-handoff" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#design-handoff" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Design Handoff">#</a>
+          <h2 class="text-xl font-bold text-content">Design Handoff</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Design handoff is the process of transferring finalized design specifications from designers to developers so they can build the UI accurately. Traditionally this means annotated Figma files with measurements, tokens, and interaction notes. HTML to Figma enables <a href="/use-cases/developer-handoff" class="text-accent hover:underline font-medium">reverse handoff</a> — taking a coded implementation and regenerating a Figma file that matches what was actually built, which is useful when code diverges from the original design.
+        </dd>
+      </div>
+
+      <div id="design-system" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#design-system" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Design System">#</a>
+          <h2 class="text-xl font-bold text-content">Design System</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A design system is a collection of reusable <a href="#component-library" class="text-accent hover:underline font-medium">components</a>, <a href="#design-tokens" class="text-accent hover:underline font-medium">design tokens</a>, patterns, and guidelines that govern the visual language of a product. It lives in both code and Figma. Keeping code and Figma in sync is one of the primary use cases for HTML to Figma, especially after a <a href="/blog/design-system-migration" class="text-accent hover:underline font-medium">design system migration</a>.
+        </dd>
+      </div>
+
+      <div id="design-tokens" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#design-tokens" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Design Tokens">#</a>
+          <h2 class="text-xl font-bold text-content">Design Tokens</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Design tokens are the atomic values of a <a href="#design-system" class="text-accent hover:underline font-medium">design system</a> — colors, <a href="#typography-scale" class="text-accent hover:underline font-medium">typography sizes</a>, <a href="#spacing-system" class="text-accent hover:underline font-medium">spacing steps</a>, border radii, and shadow definitions — stored in a format that both design tools and code can consume. Tokens are defined in JSON or YAML and compiled into CSS custom properties, Tailwind config, or Figma variables. They are the single source of truth that prevents visual drift. Learn how tokens relate to <a href="/blog/design-system-migration" class="text-accent hover:underline font-medium">design system migrations</a>.
+        </dd>
+      </div>
+
+      <!-- E -->
+      <div id="section-e" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">E</p>
+      </div>
+
+      <div id="e-e-a-t" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#e-e-a-t" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to E-E-A-T">#</a>
+          <h2 class="text-xl font-bold text-content">E-E-A-T</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness — the quality signals Google's Search Quality Raters use to evaluate content. Experience reflects first-hand knowledge; Expertise reflects subject-matter depth; Authoritativeness measures how recognized a source is in its domain; Trustworthiness covers accuracy and transparency. Strong E-E-A-T is essential for YMYL content and is a major factor in how AI overviews and generative search engines select cited sources. See also: <a href="#geo" class="text-accent hover:underline font-medium">GEO</a>.
+        </dd>
+      </div>
+
+      <!-- F -->
+      <div id="section-f" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">F</p>
+      </div>
+
+      <div id="figma-plugin" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#figma-plugin" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Figma Plugin">#</a>
+          <h2 class="text-xl font-bold text-content">Figma Plugin</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A Figma plugin is a program that extends Figma's functionality using the Figma Plugin API — it can create, read, and modify nodes in the Figma document, access the file system, and communicate with external services. HTML to Figma is a Figma plugin: it reads HTML and CSS input, uses the Plugin API to create native frames, text nodes, rectangles, and <a href="#vector-path" class="text-accent hover:underline font-medium">vector paths</a>, and places them directly in the open Figma document. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">Learn how to use it</a>.
+        </dd>
+      </div>
+
+      <!-- G -->
+      <div id="section-g" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">G</p>
+      </div>
+
+      <div id="geo" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#geo" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to GEO">#</a>
+          <h2 class="text-xl font-bold text-content">GEO (Generative Engine Optimization)</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Generative Engine Optimization (GEO) is the practice of structuring web content so it is discovered and cited by AI-powered search engines and assistants — including ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot, and Claude. GEO strategies include <a href="#structured-data" class="text-accent hover:underline font-medium">structured data markup</a> (<a href="#json-ld" class="text-accent hover:underline font-medium">JSON-LD</a>), clear entity definitions, authoritative sourcing, direct answer formatting, and content that is machine-readable and factually verifiable. See also: <a href="#e-e-a-t" class="text-accent hover:underline font-medium">E-E-A-T</a>.
+        </dd>
+      </div>
+
+      <!-- J -->
+      <div id="section-j" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">J</p>
+      </div>
+
+      <div id="json-ld" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#json-ld" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to JSON-LD">#</a>
+          <h2 class="text-xl font-bold text-content">JSON-LD</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          JSON-LD (JavaScript Object Notation for Linked Data) is a W3C standard for embedding <a href="#structured-data" class="text-accent hover:underline font-medium">structured semantic data</a> in web pages using a <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;script type="application/ld+json"&gt;</code> tag. Search engines and AI systems use JSON-LD to understand entity relationships, page type, and factual claims. JSON-LD schemas such as FAQPage, HowTo, and DefinedTermSet are key components of both SEO and <a href="#geo" class="text-accent hover:underline font-medium">GEO</a> strategies. When implemented correctly, JSON-LD can unlock <a href="#rich-results" class="text-accent hover:underline font-medium">rich results</a> in search engine result pages.
+        </dd>
+      </div>
+
+      <!-- L -->
+      <div id="section-l" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">L</p>
+      </div>
+
+      <div id="layer-tree" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#layer-tree" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Layer Tree">#</a>
+          <h2 class="text-xl font-bold text-content">Layer Tree</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          The layer tree is Figma's hierarchical panel that shows every object in a document as a nested node structure — frames contain groups, groups contain shapes and text, and so on. When <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma converts an HTML document</a>, it maps the DOM hierarchy to an equivalent Figma layer tree: block elements become frames, inline text becomes text nodes, and background images become image fills on rectangle layers. Meaningful layer names are preserved where possible.
+        </dd>
+      </div>
+
+      <!-- P -->
+      <div id="section-p" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">P</p>
+      </div>
+
+      <div id="pixel-perfect" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#pixel-perfect" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Pixel-Perfect">#</a>
+          <h2 class="text-xl font-bold text-content">Pixel-Perfect</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Pixel-perfect describes a design or implementation where every element matches the original specification to the exact pixel — no rounding errors, unintended gaps, or misaligned borders. In HTML-to-Figma workflows, pixel-perfect conversion means the imported Figma layers reproduce the browser's visual rendering exactly, using <a href="#computed-styles" class="text-accent hover:underline font-medium">computed styles</a> rather than estimated measurements. This distinguishes HTML to Figma from <a href="/blog/screenshot-vs-code-import" class="text-accent hover:underline font-medium">screenshot-based tools</a>, which flatten designs into non-editable raster images.
+        </dd>
+      </div>
+
+      <!-- R -->
+      <div id="section-r" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">R</p>
+      </div>
+
+      <div id="responsive-design" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#responsive-design" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Responsive Design">#</a>
+          <h2 class="text-xl font-bold text-content">Responsive Design</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Responsive design is a web development approach where layouts and content adapt fluidly to different screen sizes and <a href="#viewport" class="text-accent hover:underline font-medium">viewport</a> widths using CSS techniques such as media queries, <a href="#css-flexbox" class="text-accent hover:underline font-medium">Flexbox</a>, and <a href="#css-grid" class="text-accent hover:underline font-medium">Grid</a>. When <a href="/blog/import-website-into-figma" class="text-accent hover:underline font-medium">importing a responsive website into Figma</a>, the plugin captures the computed layout at the current browser viewport width, producing a Figma frame that represents that specific breakpoint. Resize the browser before capturing to import different breakpoints.
+        </dd>
+      </div>
+
+      <div id="rich-results" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#rich-results" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Rich Results">#</a>
+          <h2 class="text-xl font-bold text-content">Rich Results</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Rich results (formerly rich snippets) are enhanced search engine result page (SERP) entries that display additional information — star ratings, FAQ dropdowns, How-To steps, event dates, or product prices — pulled from <a href="#structured-data" class="text-accent hover:underline font-medium">structured data markup</a>. Pages with <a href="#json-ld" class="text-accent hover:underline font-medium">JSON-LD</a> schemas such as FAQPage, HowTo, Product, and Recipe can qualify for rich results, which typically increase click-through rates significantly compared to standard blue-link search results.
+        </dd>
+      </div>
+
+      <!-- S -->
+      <div id="section-s" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">S</p>
+      </div>
+
+      <div id="semantic-html" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#semantic-html" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Semantic HTML">#</a>
+          <h2 class="text-xl font-bold text-content">Semantic HTML</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Semantic HTML is the practice of using HTML elements that convey meaning about the content they contain — <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;article&gt;</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;nav&gt;</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;header&gt;</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;main&gt;</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;aside&gt;</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;section&gt;</code> — rather than generic <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded font-mono">&lt;div&gt;</code> elements. Semantic HTML improves <a href="#accessibility" class="text-accent hover:underline font-medium">accessibility</a>, helps search engines understand page structure, and makes documents more machine-readable for AI and assistive technology. When used as input for <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma</a>, semantic markup produces a cleaner, more meaningful <a href="#layer-tree" class="text-accent hover:underline font-medium">layer tree</a>.
+        </dd>
+      </div>
+
+      <div id="spacing-system" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#spacing-system" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Spacing System">#</a>
+          <h2 class="text-xl font-bold text-content">Spacing System</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A spacing system is a set of predefined margin and padding values — typically a numeric scale such as 4px, 8px, 16px, 24px, 32px, 48px, 64px — that design teams apply consistently across all UI components. Spacing tokens in code map to spacing variables in Figma, ensuring that imported layouts and hand-designed components share the same visual rhythm. See how <a href="/blog/design-system-migration" class="text-accent hover:underline font-medium">design system migrations</a> handle spacing token synchronization. Related: <a href="#design-tokens" class="text-accent hover:underline font-medium">Design Tokens</a>.
+        </dd>
+      </div>
+
+      <div id="structured-data" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#structured-data" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Structured Data">#</a>
+          <h2 class="text-xl font-bold text-content">Structured Data</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          Structured data is machine-readable information embedded in a web page that describes its content in a standardized vocabulary — most commonly Schema.org implemented via <a href="#json-ld" class="text-accent hover:underline font-medium">JSON-LD</a>. Structured data enables search engines and AI assistants to parse facts, entities, and relationships without visual interpretation. Common structured data types include FAQPage, HowTo, Product, Article, BreadcrumbList, and DefinedTermSet. Properly implemented structured data can unlock <a href="#rich-results" class="text-accent hover:underline font-medium">rich results</a> and improves <a href="#geo" class="text-accent hover:underline font-medium">GEO</a> citation likelihood.
+        </dd>
+      </div>
+
+      <!-- T -->
+      <div id="section-t" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">T</p>
+      </div>
+
+      <div id="typography-scale" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#typography-scale" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Typography Scale">#</a>
+          <h2 class="text-xl font-bold text-content">Typography Scale</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A typography scale is a defined set of font sizes and line heights — such as xs (12px), sm (14px), base (16px), lg (18px), xl (20px), 2xl (24px) — that create visual hierarchy across a UI. Typography scales are encoded as <a href="#design-tokens" class="text-accent hover:underline font-medium">design tokens</a> in code and as text styles in Figma. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma</a> preserves the full typography stack — family, weight, size, line-height, and letter-spacing — when importing HTML elements into Figma, ensuring the scale is faithfully reproduced.
+        </dd>
+      </div>
+
+      <!-- V -->
+      <div id="section-v" class="pt-8 pb-2">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-4">V</p>
+      </div>
+
+      <div id="vector-path" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#vector-path" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Vector Path">#</a>
+          <h2 class="text-xl font-bold text-content">Vector Path</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          A vector path is a scalable graphic defined by mathematical curves and anchor points rather than pixel grids, making it resolution-independent at any size. In Figma, SVG elements from HTML are imported by <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma</a> as native vector paths — fully editable curves that remain sharp at any zoom level. This contrasts with rasterized images, which pixelate when scaled beyond their native resolution. See also: <a href="/blog/screenshot-vs-code-import" class="text-accent hover:underline font-medium">screenshot vs. code import</a>.
+        </dd>
+      </div>
+
+      <div id="viewport" class="glossary-term pt-8 pb-8">
+        <dt class="flex items-start gap-3 mb-3">
+          <a href="#viewport" class="text-gray-300 hover:text-accent transition-colors mt-1" aria-label="Link to Viewport">#</a>
+          <h2 class="text-xl font-bold text-content">Viewport</h2>
+        </dt>
+        <dd class="pl-6 text-content-muted leading-relaxed text-base">
+          The viewport is the visible area of a web page within a browser window — its width and height determine which CSS media queries are active and how layout algorithms compute element sizes. When using HTML to Figma, the viewport width at the time of HTML capture determines which breakpoint is imported into Figma. To <a href="/blog/import-website-into-figma" class="text-accent hover:underline font-medium">import a mobile layout</a>, resize the browser to a mobile viewport (e.g., 375px wide) before copying the rendered HTML. Related: <a href="#responsive-design" class="text-accent hover:underline font-medium">Responsive Design</a>.
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- CTA -->
+    <section class="mt-16 pt-16 border-t border-gray-100 text-center">
+      <h2 class="text-2xl font-bold text-content mb-3">Put these concepts into practice</h2>
+      <p class="text-content-muted mb-8 text-base">Install the HTML to Figma plugin and convert your first HTML component into native Figma layers in under 2 minutes.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-content text-white text-sm font-semibold rounded-full hover:bg-black transition-colors"
+        >
+          Get the Figma Plugin
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-200 text-content text-sm font-semibold rounded-full hover:bg-gray-50 transition-colors">
+          Read the tutorial
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors font-medium text-content">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
