@@ -1,30 +1,46 @@
-import React from 'react';
-import { ArrowRight, Code, Figma, MousePointer2 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Figma, MousePointer2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export const Hero: React.FC<{ id: string }> = ({ id }) => {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  const y = useTransform(scrollY, [0, 500], [0, 50]);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        setScrollProgress(Math.min(window.scrollY / 500, 1));
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  const opacity = 1 - scrollProgress;
+  const yOffset = scrollProgress * 50;
 
   return (
-    <section id={id} aria-label="HTML to Figma - Convert code to design" className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-16 md:py-20 pt-28 md:pt-32 overflow-hidden">
-
-      <motion.div
-        style={{ opacity, y }}
+    <section
+      id={id}
+      aria-label="HTML to Figma - Convert code to design"
+      className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-16 md:py-20 pt-28 md:pt-32 overflow-hidden"
+    >
+      <div
+        style={{ opacity, transform: `translateY(${yOffset}px)` }}
         className="container mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12 md:gap-24 z-10"
       >
         {/* Left: Editorial Content */}
         <div className="flex-1 space-y-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start"
-          >
-            <Badge variant="outline" className="mb-4 md:mb-6 text-[10px] font-mono tracking-widest border-gray-200 text-content-muted px-3 py-1 uppercase">
+          <div className="hero-fade-up flex flex-col items-start">
+            <Badge
+              variant="outline"
+              className="mb-4 md:mb-6 text-[10px] font-mono tracking-widest border-gray-200 text-content-muted px-3 py-1 uppercase"
+            >
               Figma Plugin — HTML to Figma
             </Badge>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
@@ -36,14 +52,9 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
               Preserve your layout, typography, and styles with precision.
               Used by 2,000+ designers and developers.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
-          >
+          <div className="hero-fade-in flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <Button size="lg" className="h-14 px-8 text-base shadow-xl shadow-black/10 group" asChild>
               <a href="#pricing">
                 Get Access
@@ -55,28 +66,28 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
               <span className="border-b border-transparent group-hover:border-content pb-0.5 text-sm font-medium">See how it works</span>
               <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right: Abstract UI Visualization */}
-        <div className="flex-1 w-full h-[500px] relative hidden md:block" role="img" aria-label="Visual showing HTML code being converted into a Figma design frame">
+        <div
+          className="flex-1 w-full h-[500px] relative hidden md:block"
+          role="img"
+          aria-label="Visual showing HTML code being converted into a Figma design frame"
+        >
           <VisualGraphic />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
 
-// Abstract Representation of Transformation
 const VisualGraphic = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center perspective-[2000px]">
       {/* HTML Source Plane */}
-      <motion.div
-        initial={{ rotateY: 15, rotateX: 5, x: -40, opacity: 0 }}
-        animate={{ rotateY: 25, rotateX: 5, x: -80, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute z-10 w-[320px] bg-white/80 backdrop-blur-md rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-white/50 p-6 font-mono text-[10px] text-gray-400 overflow-hidden ring-1 ring-black/5"
+      <div className="visual-slide-left absolute z-10 w-[320px] bg-white/80 backdrop-blur-md rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-white/50 p-6 font-mono text-[10px] text-gray-400 overflow-hidden ring-1 ring-black/5"
+        style={{ transform: 'rotateY(25deg) rotateX(5deg) translateX(-80px)' }}
       >
         <div className="flex gap-1.5 mb-6">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/20" />
@@ -92,14 +103,11 @@ const VisualGraphic = () => {
           <div className="w-16 h-2 bg-gray-900/5 rounded mt-4" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent" />
-      </motion.div>
+      </div>
 
       {/* Figma Result Plane */}
-      <motion.div
-        initial={{ rotateY: 15, rotateX: 5, x: 40, opacity: 0 }}
-        animate={{ rotateY: 25, rotateX: 5, x: 80, opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
-        className="absolute z-20 w-[320px] bg-white rounded-xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] border border-gray-100 p-2 overflow-hidden ring-1 ring-black/5"
+      <div className="visual-slide-right absolute z-20 w-[320px] bg-white rounded-xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] border border-gray-100 p-2 overflow-hidden ring-1 ring-black/5"
+        style={{ transform: 'rotateY(25deg) rotateX(5deg) translateX(80px)' }}
       >
         <div className="absolute top-0 left-0 w-full h-10 bg-gray-50/50 border-b border-gray-100 flex items-center px-4 gap-2">
           <Figma size={14} className="text-black opacity-40" />
@@ -118,7 +126,7 @@ const VisualGraphic = () => {
         <div className="absolute -bottom-3 -right-3">
           <MousePointer2 className="fill-accent text-white w-6 h-6 drop-shadow-md" />
         </div>
-      </motion.div>
+      </div>
     </div>
-  )
-}
+  );
+};

@@ -33,3 +33,53 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Hero entrance animations — replaces framer-motion for above-fold content */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: rotateY(25deg) rotateX(5deg) translateX(-120px); }
+  to   { opacity: 1; transform: rotateY(25deg) rotateX(5deg) translateX(-80px); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: rotateY(25deg) rotateX(5deg) translateX(40px); }
+  to   { opacity: 1; transform: rotateY(25deg) rotateX(5deg) translateX(80px); }
+}
+
+.hero-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-fade-in {
+  animation: fadeIn 0.8s ease 0.2s both;
+}
+
+.visual-slide-left {
+  animation: slideInLeft 1.5s ease-out both;
+}
+
+.visual-slide-right {
+  animation: slideInRight 1.5s ease-out 0.2s both;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-slide-down {
+  animation: slideDown 0.5s ease both;
+}
+
+.nav-slide-down:nth-child(2) {
+  animation-delay: 0.1s;
+}
