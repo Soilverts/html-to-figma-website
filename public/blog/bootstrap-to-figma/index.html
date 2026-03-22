@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Bootstrap to Figma: Migration Guide for Bootstrap Teams (2026)</title>
+  <meta name="description" content="How to convert Bootstrap components and grid layouts into editable Figma designs. Paste outerHTML from any Bootstrap project — local or live — and get native Auto Layout frames. No plugin required on the browser side." />
+  <meta name="keywords" content="bootstrap to figma, convert bootstrap to figma, bootstrap figma plugin, bootstrap figma migration, import bootstrap figma, html2design bootstrap" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/blog/bootstrap-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/blog/bootstrap-to-figma" />
+  <meta property="og:title" content="Bootstrap to Figma: Migration Guide for Bootstrap Teams (2026)" />
+  <meta property="og:description" content="Convert Bootstrap grid layouts and components into editable Figma designs by pasting outerHTML into html2design. Works with any Bootstrap project — localhost or live." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bootstrap to Figma migration workflow" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="bootstrap to figma" />
+  <meta property="article:tag" content="figma plugin" />
+  <meta property="article:tag" content="design migration" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bootstrap to Figma: Migration Guide for Bootstrap Teams (2026)" />
+  <meta name="twitter:description" content="Paste Bootstrap outerHTML into html2design and get editable Figma layers — grid, utilities, components, all resolved." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Bootstrap to Figma: Migration Guide for Bootstrap Teams",
+    "description": "How to convert Bootstrap components and grid layouts into editable Figma designs using html2design. Covers outerHTML export, responsive breakpoints, and Bootstrap utility mapping.",
+    "url": "https://html2design.com/blog/bootstrap-to-figma",
+    "datePublished": "2026-03-22T00:00:00Z",
+    "dateModified": "2026-03-22T00:00:00Z",
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://html2design.com/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://html2design.com/blog/bootstrap-to-figma"
+    },
+    "keywords": "bootstrap to figma, convert bootstrap to figma, bootstrap figma plugin, html2design"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://html2design.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Bootstrap to Figma", "item": "https://html2design.com/blog/bootstrap-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert Bootstrap components to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open your Bootstrap project in a browser, right-click any component in DevTools and copy its outerHTML, then paste it into the html2design Figma plugin. The browser resolves all Bootstrap utility classes to computed CSS before you copy, so html2design gets exact pixel values — not class names."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design support Bootstrap's grid system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a .row and its .col-* children, the computed layout is a flex container with flex-basis and width values. html2design maps these to Figma Auto Layout frames, so columns become resizable frames just as you'd expect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture different Bootstrap breakpoints in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Resize your browser's DevTools viewport to the target breakpoint (e.g., 576px for sm, 768px for md, 992px for lg), wait for the layout to reflow, then copy the outerHTML. Import each breakpoint separately into html2design and pair them as Figma Component Variants or separate frames labeled by breakpoint."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Bootstrap Figma plugin or kit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. html2design works from the rendered HTML output of your actual Bootstrap project — not from a generic Bootstrap UI kit. This means your custom theme, overrides, and brand colors are all preserved automatically, without any manual kit configuration."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .mapping-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .mapping-table th { text-align: left; padding: 0.6rem 0.75rem; background: #F9FAFB; border-bottom: 2px solid #E5E7EB; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; }
+    .mapping-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #F3F4F6; color: #374151; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+    .mapping-table tr:last-child td { border-bottom: none; }
+    .mapping-table code { background: #E5E7EB; padding: 0.1em 0.3em; border-radius: 0.25rem; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Bootstrap to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Bootstrap to Figma: A Migration Guide for Bootstrap Teams
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Your Bootstrap project already contains every layout, color, and spacing value Figma needs. Here's how to extract it — without manually rebuilding a single component.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-22" class="text-xs text-gray-400 font-mono">March 22, 2026</time>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <h2>Why Bootstrap Teams Migrate to Figma</h2>
+    <p>
+      Bootstrap is still the most-installed CSS framework on the web. Millions of production apps — admin dashboards, SaaS products, internal tools — were built with Bootstrap 4 or 5 and have never had a Figma counterpart. That creates a real problem when a design system initiative kicks off, a rebrand lands, or a new designer joins the team and needs accurate references.
+    </p>
+    <p>
+      The standard answer is to buy a Bootstrap UI kit for Figma and customize it. The problem: those kits reflect vanilla Bootstrap, not <em>your</em> Bootstrap — not your custom theme variables, your overridden components, your brand colors. You're starting from a generic baseline and manually bridging to reality.
+    </p>
+    <p>
+      A faster path exists: <strong>convert your actual rendered Bootstrap HTML into Figma</strong>. The browser already knows exactly what every <code>btn-primary</code>, <code>card</code>, and <code>row</code> looks like after your theme variables are applied. html2design lets you capture that rendered output and import it directly as native Figma layers.
+    </p>
+
+    <h2>How the Conversion Works</h2>
+    <p>
+      Bootstrap's utility classes like <code>text-primary</code>, <code>p-3</code>, and <code>d-flex</code> are just CSS. When the browser renders your page, it resolves every class — including your custom <code>$primary</code> Sass variable — into computed pixel values. By the time you inspect an element in DevTools, Bootstrap's class names are gone: what you see is <code>color: rgb(13, 110, 253)</code>, <code>padding: 16px</code>, and <code>display: flex</code>.
+    </p>
+    <p>
+      html2design reads that resolved HTML and CSS output — not the class names — and maps it to Figma's native primitives. Flexbox containers become Auto Layout frames. Colors become fills. Border radii, shadows, and typography all transfer correctly. This is why it works with Bootstrap without any special Bootstrap support: the hard part (resolving the cascade) is already done by the browser before you even click Copy.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Works with Bootstrap 4 and 5.</strong> Because html2design operates on computed CSS — not class names — it doesn't care which Bootstrap version you're running, or whether you're using the CDN, a custom Sass build, or a third-party Bootstrap theme. The output is always resolved pixel values.</p>
+    </div>
+
+    <h2>Step-by-Step: Convert Bootstrap to Figma</h2>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Open your Bootstrap project in a browser</h3>
+      <p>
+        Navigate to the page containing the component you want to migrate. This can be a local dev server (<code>localhost:3000</code>, a Laravel app, a Django project with Bootstrap), a staging environment, or a live URL. Because html2design works from HTML you paste — not from a URL it fetches — there's no requirement that the page be publicly accessible.
+      </p>
+      <p>
+        For component-level work, Storybook instances or isolated component preview pages are ideal: each story renders a single component in isolation, so the HTML you copy is clean and focused.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Inspect and copy the component's outerHTML</h3>
+      <p>
+        Open DevTools (<kbd>Cmd+Option+I</kbd> on Mac, <kbd>F12</kbd> on Windows). In the <strong>Elements</strong> panel, click the root element of the component you want to convert. For a Bootstrap card, that's the outermost <code>&lt;div class="card"&gt;</code>. For a navbar, it's the <code>&lt;nav&gt;</code> element.
+      </p>
+      <p>
+        Right-click the highlighted node → <strong>Copy → Copy outerHTML</strong>. The browser copies the full rendered markup, including all child elements and any inline styles that JavaScript may have applied.
+      </p>
+      <div class="code-block">&lt;!-- Example: Bootstrap card copied from DevTools --&gt;
+&lt;div class="card shadow-sm" style="width: 18rem;"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Card heading&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Supporting text for this card.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+      <p>
+        The class names are still present in the copied HTML, but the browser will have resolved them to computed values when html2design processes the paste.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Paste into html2design</h3>
+      <p>
+        In Figma, open the html2design plugin via <em>Main Menu → Plugins → html2design</em>. In the plugin panel, paste the copied HTML into the input field. Click <strong>Import</strong> (or press <kbd>Cmd+Enter</kbd>).
+      </p>
+      <p>
+        The plugin fetches the computed styles for the elements in your markup and generates native Figma layers on the canvas. A Bootstrap card typically generates in 2–4 seconds: a Frame for the card wrapper, an Auto Layout Frame for the card body, a Text layer for the heading, another Text layer for the paragraph, and a styled button Frame.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Review the generated layers</h3>
+      <p>
+        Select the generated frame and inspect the Layers panel. For a well-structured Bootstrap component, you'll find the hierarchy closely mirrors your HTML structure: every <code>&lt;div&gt;</code> with display-related styles becomes a Frame, every text node becomes a Text layer, and every <code>&lt;img&gt;</code> becomes an image fill.
+      </p>
+      <p>
+        Typical light cleanup includes: renaming layers from auto-generated names to something meaningful (<code>Card/Default</code>), linking text fills to your color styles if you've set them up, and converting the top-level frame to a Figma Component (<kbd>Cmd+Alt+K</kbd>) so it can be reused.
+      </p>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>No Chrome extension needed.</strong> Unlike tools that capture live pages via a browser extension, html2design only needs the HTML string you paste. This means you can convert localhost builds, authentication-gated admin panels, and internal tools that are never exposed to the public internet.</p>
+    </div>
+
+    <h2>Handling Bootstrap's Grid System</h2>
+    <p>
+      Bootstrap's grid is one of the most common things teams want to migrate. A typical layout uses <code>.container</code>, <code>.row</code>, and <code>.col-md-6</code>-style classes to create responsive columns. Here's what happens when you convert it:
+    </p>
+    <ul>
+      <li><strong>.container</strong> — Renders as a max-width block. In Figma, it becomes a Frame with a fixed or fluid width and horizontal centering.</li>
+      <li><strong>.row</strong> — Bootstrap rows use <code>display: flex; flex-wrap: wrap</code>. In Figma, this becomes an Auto Layout frame with Wrap enabled and negative margin resolved.</li>
+      <li><strong>.col-md-6</strong> — At the md breakpoint, this resolves to <code>flex: 0 0 auto; width: 50%</code>. In Figma, it maps to an Auto Layout child with a fill or fixed width depending on context.</li>
+      <li><strong>.g-3 (gutters)</strong> — Bootstrap 5 gutters apply <code>--bs-gutter-x</code> and <code>--bs-gutter-y</code> CSS variables, which resolve to padding on columns. html2design captures the computed padding values.</li>
+    </ul>
+
+    <p>
+      The cleanest migration strategy for grid layouts is to convert each row separately, then assemble the columns in Figma. Converting an entire <code>.container</code> at once works but produces a deeply nested layer tree. Working row by row keeps the output manageable.
+    </p>
+
+    <div class="code-block">&lt;!-- Convert this row, not the entire container --&gt;
+&lt;div class="row g-3"&gt;
+  &lt;div class="col-md-8"&gt;
+    &lt;!-- main content --&gt;
+  &lt;/div&gt;
+  &lt;div class="col-md-4"&gt;
+    &lt;!-- sidebar --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+
+    <h2>Bootstrap Utility → Figma Auto Layout Mapping</h2>
+    <p>
+      Bootstrap 5's utility system and Figma's Auto Layout cover much of the same territory. Here's how the most common Bootstrap layout utilities map after html2design processes them:
+    </p>
+
+    <table class="mapping-table">
+      <thead>
+        <tr>
+          <th>Bootstrap utility</th>
+          <th>Computed CSS</th>
+          <th>Figma result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>d-flex</code></td>
+          <td><code>display: flex</code></td>
+          <td>Auto Layout (horizontal)</td>
+        </tr>
+        <tr>
+          <td><code>flex-column</code></td>
+          <td><code>flex-direction: column</code></td>
+          <td>Auto Layout (vertical)</td>
+        </tr>
+        <tr>
+          <td><code>gap-3</code></td>
+          <td><code>gap: 16px</code></td>
+          <td>Auto Layout gap: 16</td>
+        </tr>
+        <tr>
+          <td><code>p-3</code></td>
+          <td><code>padding: 16px</code></td>
+          <td>Auto Layout padding: 16</td>
+        </tr>
+        <tr>
+          <td><code>align-items-center</code></td>
+          <td><code>align-items: center</code></td>
+          <td>Auto Layout align: center</td>
+        </tr>
+        <tr>
+          <td><code>justify-content-between</code></td>
+          <td><code>justify-content: space-between</code></td>
+          <td>Auto Layout space between</td>
+        </tr>
+        <tr>
+          <td><code>rounded-3</code></td>
+          <td><code>border-radius: 0.5rem (8px)</code></td>
+          <td>Corner radius: 8</td>
+        </tr>
+        <tr>
+          <td><code>shadow</code></td>
+          <td><code>box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)</code></td>
+          <td>Drop shadow</td>
+        </tr>
+        <tr>
+          <td><code>text-primary</code></td>
+          <td><code>color: #0d6efd</code> (or your theme value)</td>
+          <td>Text fill: #0d6efd</td>
+        </tr>
+        <tr>
+          <td><code>bg-white</code></td>
+          <td><code>background-color: #fff</code></td>
+          <td>Fill: #FFFFFF</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Bootstrap's spacing scale (<code>p-1</code> through <code>p-5</code>, <code>m-auto</code>, etc.) resolves to concrete pixel values based on the <code>$spacer</code> variable in your build — typically 4px through 48px. Because html2design captures the computed values, any customizations to that scale are automatically preserved.
+    </p>
+
+    <h2>Capturing Bootstrap Responsive Breakpoints</h2>
+    <p>
+      Bootstrap's responsive classes — <code>col-sm-12 col-md-6 col-lg-4</code> — activate at different viewport widths. To capture each breakpoint in Figma:
+    </p>
+    <ol>
+      <li>Open DevTools and click the <strong>device toolbar</strong> icon (or press <kbd>Cmd+Shift+M</kbd> in Chrome)</li>
+      <li>Set the viewport width to the target breakpoint:
+        <ul>
+          <li><code>xs</code>: below 576px — set to 375 (mobile)</li>
+          <li><code>sm</code>: 576px — set to 576</li>
+          <li><code>md</code>: 768px — set to 768</li>
+          <li><code>lg</code>: 992px — set to 992</li>
+          <li><code>xl</code>: 1200px — set to 1200</li>
+          <li><code>xxl</code>: 1400px — set to 1400</li>
+        </ul>
+      </li>
+      <li>Wait for the layout to reflow at that width</li>
+      <li>In the Elements panel, copy the outerHTML of the component</li>
+      <li>Import it into html2design</li>
+      <li>In Figma, name the resulting frame to reflect the breakpoint: <code>Card / Mobile</code>, <code>Card / Tablet</code>, <code>Card / Desktop</code></li>
+    </ol>
+    <p>
+      Pair the breakpoint frames as Figma Component Variants so designers can toggle between them in one place. This is the closest Bootstrap-to-Figma equivalent to a responsive component set.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Tip:</strong> For Bootstrap's <code>d-none d-md-block</code> visibility patterns (hide on mobile, show on desktop), you'll need to capture both states separately and document the visibility rule on the Figma component. DevTools can help — use the <em>Force element state</em> panel or manually toggle classes to expose hidden elements before copying.</p>
+    </div>
+
+    <h2>Bootstrap Components: What Converts Cleanly</h2>
+    <p>
+      Bootstrap's component library covers a wide range. Here's what to expect from each category:
+    </p>
+
+    <h3>Cards, alerts, and badges</h3>
+    <p>
+      These convert with high fidelity. They're simple flex containers with padding, border, border-radius, and background fills — all of which html2design handles fully. Import these component-by-component and you'll have a complete set in Figma within minutes.
+    </p>
+
+    <h3>Buttons</h3>
+    <p>
+      Bootstrap buttons (<code>btn btn-primary</code>, <code>btn btn-outline-secondary</code>, etc.) convert correctly including border, border-radius, padding, and text styling. For interactive states (hover, active, disabled), use DevTools' <em>Force element state</em> to trigger the state before copying, or manually add the <code>disabled</code> attribute to capture the disabled variant.
+    </p>
+
+    <h3>Navbars</h3>
+    <p>
+      Navbars are best converted at desktop width where they render in their horizontal expanded form. The mobile collapsed state (hamburger menu) is a separate layout — capture it at xs/sm viewport width. The result in Figma is two separate frames; use Variants to switch between them.
+    </p>
+
+    <h3>Modals and dropdowns</h3>
+    <p>
+      Modals require a small DevTools trick: open the modal via your app's normal interaction, then copy the <code>.modal.show</code> element before it disappears. Alternatively, open DevTools, find the modal in the Elements panel, and manually add the <code>show</code> class and <code>display: block</code> style to render it without JavaScript. Then copy its outerHTML.
+    </p>
+
+    <h3>Forms</h3>
+    <p>
+      Form inputs (<code>form-control</code>, <code>form-select</code>, <code>form-check</code>) convert well for their default, focused, and error states. Use DevTools' Force element state for <code>:focus</code> to capture the focused ring appearance before copying.
+    </p>
+
+    <h3>Tables</h3>
+    <p>
+      Bootstrap tables (<code>table table-striped</code>, etc.) convert to a grid of frame rows and text cells. The output is functional but often benefits from being rebuilt as a proper Figma table component after the initial import — use the import as a reference for dimensions and typography rather than the final deliverable.
+    </p>
+
+    <h2>Migrating a Complete Bootstrap Design System</h2>
+    <p>
+      If your goal is a full Bootstrap-to-Figma design system migration, a phased approach works best:
+    </p>
+    <ul>
+      <li><strong>Phase 1 — Tokens:</strong> Identify your Bootstrap Sass variables (<code>$primary</code>, <code>$spacer</code>, <code>$font-size-base</code>, etc.) and register them as Figma Variables. Use one reference component import to verify that the pixel values match.</li>
+      <li><strong>Phase 2 — Atoms:</strong> Import buttons, badges, form inputs, and icons. These are the smallest reusable pieces. Convert each state (default, hover, disabled, error) and create Figma Components with Variants.</li>
+      <li><strong>Phase 3 — Molecules:</strong> Import cards, alerts, list groups, and input groups. Link atom components from Phase 2 where applicable.</li>
+      <li><strong>Phase 4 — Organisms:</strong> Import navbars, sidebars, modals, and full-page section layouts. These reference the molecules you've already set up.</li>
+      <li><strong>Phase 5 — Pages:</strong> Assemble page templates from the component library. These are mostly layout — grab the grid structure from html2design and place the components from your library.</li>
+    </ul>
+
+    <p>
+      A team of two (one developer exporting HTML, one designer assembling in Figma) can typically cover all Bootstrap atoms in a day and molecules in another day. Full organisms and page templates add another two to three days depending on complexity.
+    </p>
+
+    <h2>Compared to Bootstrap Figma UI Kits</h2>
+    <p>
+      Bootstrap Figma UI kits give you a generic starting point, but they can't capture your customizations. When you've extended Bootstrap with a custom color palette, overridden button border-radius, or added your own component variants, no kit reflects that. You'd spend days manually aligning the kit to your actual application.
+    </p>
+    <p>
+      html2design converts your running application — custom theme and all. The tradeoff is that you're capturing snapshots rather than receiving a pre-organized kit. That's actually fine for design system work: you want to document what your components look like in production, not what an idealized kit suggests they should look like.
+    </p>
+    <p>
+      For a full breakdown of HTML-to-Figma approaches, see our <a href="/compare">comparison of HTML to Figma tools</a>.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I convert Bootstrap components to Figma?</h3>
+    <p>
+      Yes. Open your Bootstrap project in a browser, right-click any component in DevTools, and copy its outerHTML. Paste it into html2design. The browser resolves Bootstrap's utility classes to computed CSS before you copy, so html2design receives exact pixel values — not class names.
+    </p>
+
+    <h3>Does html2design support Bootstrap's grid system?</h3>
+    <p>
+      Yes. Bootstrap's grid is built on CSS Flexbox. When the browser renders a <code>.row</code> and its <code>.col-*</code> children, the computed layout is a flex container with flex-basis and width values. html2design maps these to Figma Auto Layout frames.
+    </p>
+
+    <h3>How do I capture different Bootstrap breakpoints?</h3>
+    <p>
+      Resize DevTools' viewport to the target breakpoint (e.g., 768px for <code>md</code>), wait for the layout to reflow, then copy the outerHTML. Import each breakpoint separately and pair the resulting Figma frames as Component Variants.
+    </p>
+
+    <h3>Do I need to install a Bootstrap Figma plugin or kit?</h3>
+    <p>
+      No. html2design works from the rendered HTML of your actual Bootstrap project. Your custom theme, Sass variable overrides, and brand colors are all preserved automatically. No generic kit configuration required.
+    </p>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The complete step-by-step walkthrough: install html2design, copy outerHTML from DevTools, and get editable Figma layers in under a minute.</p>
+        </a>
+        <a href="/blog/tailwind-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Extract tokens as Figma Variables and convert your Tailwind component library to native Figma layers.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">React renders to HTML — capture any component state from Storybook, Next.js, or localhost and import it directly.</p>
+        </a>
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Two methods compared: Chrome extension vs code paste. Covers localhost, staging, and auth-gated pages.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Convert your Bootstrap UI in minutes</h2>
+      <p class="text-content-muted mb-6">Install html2design from the Figma Community. Paste any Bootstrap component. Get editable Figma layers — custom theme included.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
