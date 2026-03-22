@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>How to Convert React Components to Figma Designs (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting React components into editable Figma designs using the html2design plugin. Works with localhost, Storybook, Next.js, and any React dev server." />
+  <meta name="keywords" content="react to figma, convert react component to figma, figma react plugin, react component figma, export react to figma, storybook to figma, next.js to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/blog/react-component-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/blog/react-component-to-figma" />
+  <meta property="og:title" content="How to Convert React Components to Figma Designs (2026)" />
+  <meta property="og:description" content="React renders to HTML and CSS — and that output can be converted to native, editable Figma layers in seconds. Here's the exact workflow for React developers." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="669" />
+  <meta property="og:image:alt" content="React component to Figma conversion workflow" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="react to figma" />
+  <meta property="article:tag" content="figma react plugin" />
+  <meta property="article:tag" content="design workflow" />
+  <meta property="article:tag" content="react components" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Convert React Components to Figma (2026)" />
+  <meta name="twitter:description" content="React renders to HTML/CSS — paste that output into html2design and get editable Figma layers in seconds. Step-by-step guide." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Convert React Components to Figma Designs",
+    "description": "Step-by-step guide to converting React components into native, editable Figma layers using the html2design plugin. Works with localhost, Storybook, Next.js, and any React dev server.",
+    "url": "https://html2design.com/blog/react-component-to-figma",
+    "datePublished": "2026-03-22T00:00:00Z",
+    "dateModified": "2026-03-22T00:00:00Z",
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 669
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://html2design.com/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://html2design.com/blog/react-component-to-figma"
+    },
+    "keywords": "react to figma, convert react component to figma, figma react plugin, storybook to figma",
+    "articleSection": "Tutorial",
+    "wordCount": 1800,
+    "timeRequired": "PT8M",
+    "about": {
+      "@type": "Thing",
+      "name": "Converting React components to Figma",
+      "description": "Workflow for exporting rendered React component output into native, editable Figma design layers"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://html2design.com/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Storybook", "url": "https://storybook.js.org/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://html2design.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Convert React Components to Figma", "item": "https://html2design.com/blog/react-component-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert a React component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. React renders to HTML and CSS in the browser. You can copy that rendered output using browser DevTools, then paste it into the html2design Figma plugin to get fully editable Figma layers. No special React plugin or build step is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does React to Figma work with localhost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design works by processing HTML you paste directly — it doesn't need a public URL. You can run your React dev server on localhost:3000 (or any port), open the component in a browser, copy its HTML via DevTools, and paste it into the plugin. This works with Create React App, Vite, Next.js, Remix, and any other React setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert Storybook stories to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open the Storybook story in isolation mode (the Canvas view), inspect the rendered component in DevTools, copy its outerHTML, and paste it into html2design. Since Storybook runs locally on a port like localhost:6006, url-based tools can't reach it — the code-paste method is the only option that works."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design preserve Tailwind CSS styles from React components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When you copy outerHTML from a rendered React component, the browser has already applied all Tailwind utility classes to computed styles. html2design reads those computed styles — colors, spacing, typography, flex layout — and maps them to native Figma properties. Tailwind class names don't appear in the output; what you get is the resolved visual result."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a React to Figma plugin and html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most 'React to Figma' tools try to parse JSX or use custom annotations in your React code to generate Figma layers at build time. html2design takes a different approach: it works from the rendered browser output (HTML + computed CSS), so it works with any React app without modifying your codebase. The trade-off is that you capture one state at a time rather than generating all component variants automatically."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .react-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 999px; background: #DBEAFE; color: #1D4ED8; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">React Component to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 8 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      How to Convert React Components to Figma Designs
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      React renders to HTML and CSS — and that output can be converted to native, editable Figma layers in seconds. Here's the exact workflow for React developers, including Storybook, Next.js, and Tailwind.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-22" class="text-xs text-gray-400 font-mono">March 22, 2026</time>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <h2>The React-to-Figma Problem</h2>
+    <p>
+      React teams face a workflow gap that gets more expensive the longer it's ignored. Your component library lives in code — a hundred components built up over years, styled with Tailwind or CSS Modules, tested in Storybook. But your design system in Figma is months behind. Designers work from stale mockups. New hires reverse-engineer the app to understand the actual UI.
+    </p>
+    <p>
+      The obvious fix is to pull the real components into Figma. But React components aren't static files you can drag and drop — they're JavaScript functions that need a browser to render. And most "React to Figma" tools require you to annotate your JSX or add a build plugin, which means touching every component in your codebase.
+    </p>
+    <p>
+      There's a simpler approach. <strong>React already renders to HTML and CSS</strong>. You can capture that output from any running React app — no code changes, no plugins, no build step — and convert it to editable Figma layers using <strong>html2design</strong>. The workflow takes about 30 seconds per component.
+    </p>
+
+    <h2>Why This Works</h2>
+    <p>
+      When a React component renders, the browser produces a standard HTML DOM with computed CSS styles. At that point, it's just HTML — the same HTML that any other website generates. The html2design Figma plugin processes raw HTML and CSS, mapping the structure and styles to native Figma layers.
+    </p>
+    <p>
+      This means the approach is framework-agnostic. It doesn't matter whether your app uses Create React App, Vite, Next.js, Remix, or a custom webpack setup. It doesn't care whether you use Tailwind, CSS Modules, styled-components, or plain CSS. What matters is the rendered output — and every React app produces that the same way.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key insight:</strong> You don't need a "React to Figma" plugin. You need an "HTML to Figma" plugin — because that's what React produces. html2design is built exactly for this.</p>
+    </div>
+
+    <h2>Prerequisites</h2>
+    <ul>
+      <li>A Figma account (free or paid)</li>
+      <li>The <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design plugin</a> installed from Figma Community</li>
+      <li>An active html2design subscription ($12/mo or $96/yr)</li>
+      <li>A running React dev server (localhost:3000, localhost:6006, or similar)</li>
+    </ul>
+
+    <h2>Step-by-Step: Convert a React Component to Figma</h2>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Run your React app locally</h3>
+      <p>
+        Start your React development server as you normally would:
+      </p>
+      <div class="code-block"># Create React App / Vite
+npm start
+# or
+npx vite
+
+# Next.js
+npm run dev
+
+# Storybook
+npm run storybook</div>
+      <p>
+        Navigate to the page or component you want to convert. For Storybook, open the specific story in Canvas mode (the isolated story view, not the Docs tab) — this gives you a clean component without the Storybook chrome.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Open DevTools and locate the component</h3>
+      <p>
+        Open browser DevTools with <kbd>Cmd+Option+I</kbd> (Mac) or <kbd>F12</kbd> (Windows/Linux). Switch to the <strong>Elements</strong> panel.
+      </p>
+      <p>
+        Use the element picker (<kbd>Cmd+Shift+C</kbd> on Mac) to click directly on the component you want to capture. DevTools will highlight and select the DOM node in the Elements panel.
+      </p>
+      <p>
+        Navigate up the DOM tree to find the right root element for your component. For a card component, you want the outermost <code>&lt;div&gt;</code> of the card — not a wrapping layout container, and not a deeply nested child.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Copy the rendered HTML</h3>
+      <p>
+        In the Elements panel, right-click the root element of your component → <strong>Copy → Copy outerHTML</strong>.
+      </p>
+      <p>
+        This copies the fully rendered HTML — with all React-generated class names, inline styles, and data attributes. For a typical React component, this looks like:
+      </p>
+      <div class="code-block">&lt;div class="bg-white rounded-xl shadow-sm p-6 flex flex-col gap-4"&gt;
+  &lt;div class="flex items-center gap-3"&gt;
+    &lt;img src="/avatar.jpg" class="w-10 h-10 rounded-full" alt="..." /&gt;
+    &lt;div&gt;
+      &lt;p class="font-semibold text-gray-900"&gt;Jane Smith&lt;/p&gt;
+      &lt;p class="text-sm text-gray-500"&gt;Product Designer&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="text-gray-700 leading-relaxed"&gt;Great tool for bridging design and code.&lt;/p&gt;
+&lt;/div&gt;</div>
+      <p>
+        Notice: Tailwind utility classes are included in the HTML, but what html2design actually reads are the <em>computed styles</em> — the resolved pixel values behind those utilities. You don't need to do anything special for Tailwind to work.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Open html2design in Figma</h3>
+      <p>
+        Switch to your Figma file. Open the plugin via <em>Main Menu → Plugins → html2design</em>. The plugin panel appears on the right side of the canvas.
+      </p>
+      <p>
+        Make sure you're signed in with an active subscription. If you're not subscribed yet, install the plugin from the Figma Community and start a subscription — it takes about two minutes.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 5</div>
+      <h3>Paste and convert</h3>
+      <p>
+        Paste the copied HTML into the plugin's input field (<kbd>Cmd+V</kbd> on Mac, <kbd>Ctrl+V</kbd> on Windows). Click <strong>Convert</strong>.
+      </p>
+      <p>
+        The plugin generates a native Figma frame on the canvas with:
+      </p>
+      <ul>
+        <li><strong>Auto Layout frames</strong> for every Flexbox container</li>
+        <li><strong>Text layers</strong> with font, size, weight, and color preserved</li>
+        <li><strong>Fills and strokes</strong> matching background colors, borders, and shadows</li>
+        <li><strong>SVG vector paths</strong> for any icons or SVG elements</li>
+        <li><strong>Border radius</strong> mapped from Tailwind utilities or CSS values</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 6</div>
+      <h3>Clean up and promote to a component</h3>
+      <p>
+        Select the generated frame. Review the layer names in the Layers panel — auto-generated names like <code>div.bg-white.rounded-xl</code> should be renamed to reflect your component vocabulary (<code>TestimonialCard</code>, <code>Avatar</code>, etc.).
+      </p>
+      <p>
+        When the layers look right, select the root frame and press <kbd>Cmd+Alt+K</kbd> (Mac) or <kbd>Ctrl+Alt+K</kbd> (Windows) to promote it to a Figma Component. Add variants for different states (hover, selected, disabled) by capturing those states individually and using Figma's Variants panel.
+      </p>
+    </div>
+
+    <h2>React-Specific Workflows</h2>
+
+    <h3>Converting Storybook stories</h3>
+    <p>
+      Storybook is the ideal source for component-level conversion. Each story renders a component in isolation with specific props — exactly what you want to capture. Open the story in Canvas mode, use the element picker to select the component root, and follow the steps above.
+    </p>
+    <p>
+      A practical workflow for teams building a design system: work through your Storybook component catalog systematically, converting one story per component variant (default, error, disabled, etc.), then build out the Figma variants from those captures.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Storybook tip:</strong> Use the <em>Full Screen</em> view in Storybook (the expand icon in the canvas toolbar) to hide the Storybook frame itself before copying. This gives you a cleaner DOM with fewer wrapper elements to filter out.</p>
+    </div>
+
+    <h3>Working with Tailwind CSS</h3>
+    <p>
+      Tailwind compiles to standard CSS at build time. When you copy a rendered component's outerHTML, the browser's DevTools shows the component with all computed styles applied — the pixel values behind utilities like <code>text-gray-900</code>, <code>p-6</code>, or <code>rounded-xl</code> are already resolved.
+    </p>
+    <p>
+      html2design reads these computed values, not the utility class names. So whether your component uses Tailwind, styled-components, CSS Modules, or vanilla CSS, the output in Figma looks the same: resolved color values, exact spacing in pixels, and typography properties mapped to Figma text styles.
+    </p>
+
+    <h3>Capturing different component states</h3>
+    <p>
+      React components often have multiple visual states: a default state, a loading state, an error state, a selected state. Each needs to be captured separately. The workflow for each is the same — trigger the state in the browser (fill in a form, click a toggle, add a query param), then copy the HTML from DevTools.
+    </p>
+    <p>
+      In Figma, create each state as a separate captured frame, then combine them as Variants under a single Component. This gives you a Figma component library that mirrors your React component API.
+    </p>
+
+    <h3>Next.js and server-rendered components</h3>
+    <p>
+      Next.js components — both App Router and Pages Router — render to HTML that you can capture in exactly the same way. The fact that a component is server-rendered doesn't matter; by the time you inspect it in DevTools, the browser has received and painted the final HTML. Copy it and paste it into html2design the same way you would for a client-side React component.
+    </p>
+
+    <h2>What Gets Converted from React Components</h2>
+
+    <p>html2design accurately converts the vast majority of what React components produce. Here's what to expect:</p>
+
+    <ul>
+      <li><strong>Flexbox layouts</strong> → Figma Auto Layout, including direction, gap, padding, and alignment</li>
+      <li><strong>Typography</strong> → Font family, size, weight, line-height, letter-spacing, color, text alignment</li>
+      <li><strong>Colors</strong> → Fills, gradients, box shadows, borders — all preserved as Figma styles</li>
+      <li><strong>Border radius</strong> → Mapped from CSS or Tailwind values to Figma corner radius</li>
+      <li><strong>SVG icons</strong> → Native Figma vector paths, fully editable</li>
+      <li><strong>Background images</strong> → Captured as image fills where accessible</li>
+      <li><strong>CSS Grid</strong> → Approximated with nested Auto Layout (partial support)</li>
+      <li><strong>CSS animations</strong> → Static snapshot only; animation state not captured</li>
+      <li><strong>React state</strong> → You capture one state at a time; use multiple captures for variants</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Component-level beats full-page.</strong> Convert one component at a time rather than copying the entire page body. Smaller input produces a cleaner layer tree that's easier to name, organize, and turn into a Figma Component.</p>
+    </div>
+
+    <h2>Compared to Dedicated React-to-Figma Tools</h2>
+    <p>
+      There are tools specifically marketed as "React to Figma" converters. Most work by parsing your JSX at the source level — reading component files, interpreting props, and generating Figma frames from the code structure rather than the rendered output.
+    </p>
+    <p>
+      This approach can automatically generate all component variants from a single pass, which is a real advantage at scale. The downside: these tools require you to add annotations or decorators to your components, they often lag behind the latest React patterns, and they struggle with complex CSS-in-JS setups.
+    </p>
+    <p>
+      The html2design approach is lower friction: no code changes, no annotations, no build pipeline integration. You work from the rendered browser output, which is always accurate regardless of how the component is built. The trade-off is that you capture states manually rather than automatically.
+    </p>
+    <p>
+      For most teams, the rendered-output approach is practical and fast enough. For teams that need to auto-generate hundreds of variants, a dedicated React introspection tool may be worth the setup cost. See our <a href="/compare">full comparison of HTML-to-Figma tools</a> for more context.
+    </p>
+
+    <h2>Building a React Design System in Figma</h2>
+    <p>
+      Once you have a workflow for converting individual components, you can systematically build out a Figma design system that mirrors your React component library. A practical sequencing:
+    </p>
+    <ul>
+      <li><strong>Primitives first</strong> — buttons, inputs, badges, avatars. These are small, composable, and easy to convert and clean up.</li>
+      <li><strong>Compound components next</strong> — cards, modals, forms. These use the primitives you've already captured.</li>
+      <li><strong>Page sections last</strong> — hero, pricing, navigation. These are bigger and dirtier, but they're also used less often for component-level design work.</li>
+    </ul>
+    <p>
+      For each component, aim to capture the three or four most important states. Default, hover (captured by triggering the hover state via DevTools' <em>Force element state</em> feature), disabled, and error states cover 90% of what designers need.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I convert a React component to Figma?</h3>
+    <p>
+      Yes. React renders to HTML and CSS in the browser. You copy that rendered output using DevTools and paste it into the html2design Figma plugin. No special React plugin or code annotation is needed.
+    </p>
+
+    <h3>Does React to Figma work with localhost?</h3>
+    <p>
+      Yes. html2design works from HTML you paste directly into the plugin — it doesn't need to reach a URL. Your React dev server on <code>localhost:3000</code> (or any port) works exactly the same as a live URL. See our guide on <a href="/blog/how-to-convert-html-to-figma">converting HTML to Figma</a> for the general workflow.
+    </p>
+
+    <h3>Can I convert Storybook stories to Figma?</h3>
+    <p>
+      Yes. Open the story in Canvas mode, inspect the component in DevTools, copy its outerHTML, and paste it into html2design. Because Storybook runs on <code>localhost:6006</code>, URL-based tools can't reach it — the code-paste method is the only approach that works.
+    </p>
+
+    <h3>Does html2design preserve Tailwind CSS from React components?</h3>
+    <p>
+      Yes. Tailwind utilities are compiled to standard CSS, and when you copy a rendered component from DevTools, all computed styles are included. html2design reads those resolved values — not the class names — so Tailwind, styled-components, CSS Modules, and plain CSS all work the same way.
+    </p>
+
+    <h3>What about importing a full React page into Figma?</h3>
+    <p>
+      You can — the workflow is the same. Copy the page's outerHTML (or just the main content area) from DevTools and paste it into html2design. Full pages produce larger, denser layer trees. For design system work, component-level imports are usually more useful. See our guide on <a href="/blog/import-website-into-figma">importing a website into Figma</a> for full-page strategies.
+    </p>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Reading -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Reading</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The core workflow — DevTools, code paste, and cleaning up the output in Figma.</p>
+        </a>
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Full-page import strategies and the two methods compared: Chrome extension vs code paste.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Convert your first React component in 30 seconds</h2>
+      <p class="text-content-muted mb-6">Open DevTools on your running React app. Copy the component's outerHTML. Paste into html2design. Get editable Figma layers instantly.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
