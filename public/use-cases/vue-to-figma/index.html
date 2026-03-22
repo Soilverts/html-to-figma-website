@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Convert Vue.js Components to Figma Designs — Vue to Figma Workflow (2026)</title>
+  <meta name="description" content="Convert Vue.js components into editable Figma designs in minutes. Works with Vue 3 Composition API, Pinia, Nuxt, and scoped styles — no public URL, no Chrome extension. Paste rendered HTML into the html2design Figma plugin." />
+  <meta name="keywords" content="vue to figma, vue.js to figma, convert vue component figma, vue figma plugin, nuxt to figma, vue 3 figma, vue component design handoff, html to figma vue" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/vue-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/vue-to-figma" />
+  <meta property="og:title" content="Convert Vue.js Components to Figma Designs — Vue to Figma Workflow" />
+  <meta property="og:description" content="Turn any Vue 3 or Nuxt component into native, editable Figma layers. No public URL required — works on localhost with scoped styles preserved." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vue.js to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convert Vue.js Components to Figma Designs — Vue to Figma Workflow" />
+  <meta name="twitter:description" content="Turn Vue 3 and Nuxt components into editable Figma layers. Works with scoped styles, Pinia state, and localhost — no extension needed." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Vue.js Components to Figma Designs — Vue to Figma Workflow",
+    "description": "Step-by-step guide for converting Vue 3 and Nuxt components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://html2design.com/use-cases/vue-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://html2design.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://html2design.com/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Vue to Figma",
+        "item": "https://html2design.com/use-cases/vue-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Vue component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Vue app locally with npm run dev (or via Nuxt dev server). Open the component in your browser, right-click the root element in DevTools → Copy → Copy outerHTML, then paste that HTML into the html2design Figma plugin. The plugin converts the rendered output — including scoped styles resolved by the browser — into native Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Vue's scoped CSS affect the Figma output?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Vue scoped styles (using the scoped attribute in Single File Components) are resolved by the browser at render time. The html2design plugin reads computed CSS — the final styles the browser calculated — not the source stylesheets. Your scoped styles will be fully reflected in the generated Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert Nuxt.js pages to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Run your Nuxt app with nuxt dev, navigate to the page or component in your browser, and copy the rendered HTML from DevTools. Paste it into the html2design plugin. This works for any Nuxt route, including server-side rendered pages — as long as you can view the rendered output in a browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture a Vue component that depends on Pinia state?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run the app locally with the desired Pinia store state populated — log in, navigate to the right route, or use Vue DevTools to manually set store values. Once the component renders the state you want to capture, copy the outerHTML from the browser's DevTools and paste it into html2design. The plugin captures the rendered output, not the source code, so whatever is visible in the browser is what gets imported into Figma."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Vue to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Vue.js</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Vue to Figma —<br />
+        In Two Minutes
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Vue.js components to Figma</strong> means rendering your
+        component in the browser, copying the output HTML, and pasting it into the html2design plugin. Vue's scoped styles,
+        Composition API state, and Nuxt server-rendered output all land in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> — no public URL, no Chrome extension.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/blog/react-component-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          React Component Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Vue to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Vue to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Vue to Figma"</strong> refers to the process of converting a rendered Vue.js component or page —
+        including its computed styles, layout, and typography — into a native Figma design that designers can edit, annotate, and
+        use as a handoff spec. The html2design Figma plugin enables this workflow by accepting raw HTML pasted directly from your
+        browser's DevTools and generating editable Figma frames from it.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Unlike screenshot tools or Chrome extensions, this approach works entirely offline: you render the Vue component on
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>, copy
+        its outerHTML, and paste it into Figma. The browser has already resolved Vue's scoped styles, reactive data, and
+        compiled template — so what arrives in Figma is a pixel-accurate representation of the real component, not a static image.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Vue to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works with Vue 3, Vue 2, Nuxt 3, and any Vue-based framework.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run your Vue app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start your dev server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code> (Vite),
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">vue-cli-service serve</code>, or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">nuxt dev</code> for Nuxt projects.
+              Navigate to the page or component you want to capture. No staging deploy, no public URL required.
+            </p>
+            <p>
+              If the component depends on Pinia store state or a specific route, set that state first — log in, navigate to the
+              correct route, or use Vue DevTools to manually update the store. The plugin captures whatever the browser renders.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), find the root element
+              of your component in the Elements panel — typically a
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;div&gt;</code> with a
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">data-v-*</code> scoped attribute —
+              right-click it, and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+            </p>
+            <p>
+              For a full-page capture, select the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code>
+              or the app root element (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">#app</code>).
+              For a single component, select just that component's root node.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin parses the HTML and reads the computed
+              styles the browser already resolved — your Vue scoped styles, Tailwind utility classes, or custom CSS variables
+              are all baked in before the plugin ever sees the markup.
+            </p>
+            <p>
+              The result is a native Figma frame: real text layers with correct fonts, fills reflecting your CSS custom
+              properties, and a layer tree that mirrors the component hierarchy. No screenshot, no rasterized image.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer can open the frame, add comments, adjust spacing, iterate on the design,
+              and hand back a Figma-native spec — all without needing to run the Vue app or touch the codebase.
+            </p>
+            <p>
+              Because the Figma frame starts from the actual rendered component, the designer's changes represent a true
+              delta from the current state. No "does this match what's live?" questions — it does, because you just exported it.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Vue-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Vue-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Vue has a few unique characteristics that affect how components render. These tips help you get the cleanest Figma import.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Scoped styles are resolved automatically</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Vue Single File Components (SFCs) use <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style scoped&gt;</code>
+            to add unique <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">data-v-*</code> attribute selectors.
+            The browser resolves these scoped styles to their final computed values — so when you copy the rendered HTML and paste
+            it into html2design, all scoped styles are already applied. You do not need to worry about them.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use Vue DevTools to set component state before capturing</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The Vue DevTools browser extension lets you inspect and manually edit component data, props, and Pinia store state.
+            If you want to capture a component in a specific state — for example, a form with validation errors, a dropdown
+            in its open position, or a dashboard with loaded data — use Vue DevTools to set that state, then copy the outerHTML
+            from the browser's Elements panel.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Force-render CSS transitions to a specific frame</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Vue's <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;Transition&gt;</code> component
+            adds CSS classes during enter/leave cycles. If you want to capture a mid-transition state for a handoff,
+            use DevTools to pause the animation: open the Animations panel, slow down the animation speed to 10%, trigger
+            the transition, then pause and copy the HTML at the frame you want.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Nuxt: use the hydrated client-side DOM, not SSR source</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If you're using Nuxt, the page source you see when you "View Page Source" is the server-rendered HTML before Vue
+            hydrates it. Always copy from the browser DevTools Elements panel — not the raw page source — to get the fully
+            hydrated, client-side DOM with all reactive data applied.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not plugin wrappers.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text node — including dynamic content rendered by Vue's template engine — becomes a real Figma text layer
+            with the correct font family, size, weight, line height, and color.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Computed spacing from CSS</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, margin, gap, and flex/grid layout values are read from the browser's computed styles —
+            not the source stylesheets. What the browser renders is exactly what lands in Figma.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">CSS custom properties as fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Vue apps often use CSS custom properties for theming. The browser resolves
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-primary)</code>
+            to its actual hex value before the plugin reads it — so Figma fills reflect your exact design tokens.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Named layer hierarchy</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            HTML class names and element types become Figma layer names. Your component's
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.header__title</code>
+            becomes a named frame in Figma's layer panel — easy to navigate and hand off.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Vue component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run your Vue app locally, open the component in the browser, copy the root element's outerHTML from DevTools,
+            and paste it into the html2design Figma plugin. The plugin converts the rendered HTML — with scoped styles
+            already resolved by the browser — into native Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Vue's scoped CSS affect the Figma output?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. Scoped styles are resolved to their final computed values by the browser before the plugin reads the HTML.
+            The <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">data-v-*</code> attributes Vue adds for
+            scoping are irrelevant to the plugin — it reads computed styles, not source stylesheets.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I convert Nuxt.js pages to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">nuxt dev</code>, navigate to the page,
+            copy the rendered HTML from the DevTools Elements panel (not page source), and paste into html2design.
+            Works for SSR pages, SPA routes, and static Nuxt sites.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">What if my component uses Pinia store data?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Populate the Pinia store first — log in, navigate to the right state, or use Vue DevTools to manually set
+            store values. Once the component renders with the desired data, copy the outerHTML and import it.
+            The plugin captures rendered output, not source code, so the store state is already reflected in the HTML.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components.</p>
+        </a>
+
+        <a href="/use-cases/angular-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Angular to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Angular components with ViewEncapsulation into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/svelte-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Svelte to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How to export SvelteKit components to Figma from the compiled output.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Vue components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, no Chrome extension, no public URL required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+      <p>&copy; 2026 HTML to Figma.</p>
+      <nav class="flex gap-6 mt-4 md:mt-0" aria-label="Footer navigation">
+        <a href="/" class="hover:text-black transition-colors">Home</a>
+        <a href="/compare" class="hover:text-black transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-black transition-colors">Blog</a>
+        <a href="/changelog" class="hover:text-black transition-colors">Changelog</a>
+        <a href="/alternatives" class="hover:text-black transition-colors">Alternatives</a>
+        <a href="/about" class="hover:text-black transition-colors">About</a>
+        <a href="/privacy" class="hover:text-black transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-black transition-colors">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

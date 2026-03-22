@@ -113,6 +113,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://html2design.com/use-cases/vue-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/angular-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/svelte-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://html2design.com/llms-full.txt</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>

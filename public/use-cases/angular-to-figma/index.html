@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Convert Angular Components to Figma Designs — Angular to Figma Workflow (2026)</title>
+  <meta name="description" content="Convert Angular components into editable Figma designs. Works with Angular 17+, standalone components, ViewEncapsulation, and the Angular CLI dev server — no public URL required. Paste rendered HTML into html2design." />
+  <meta name="keywords" content="angular to figma, convert angular component figma, angular figma plugin, angular html to figma, angular design handoff figma, angular component figma export, ng to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/angular-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/angular-to-figma" />
+  <meta property="og:title" content="Convert Angular Components to Figma Designs — Angular to Figma Workflow" />
+  <meta property="og:description" content="Turn Angular 17+ components into native, editable Figma layers. ViewEncapsulation, standalone components, and Angular Material all work — copy rendered HTML, paste into the plugin." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Angular to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convert Angular Components to Figma Designs — Angular to Figma Workflow" />
+  <meta name="twitter:description" content="Export Angular components to Figma in minutes. Works with ViewEncapsulation.Emulated, Angular Material, and standalone components." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Angular Components to Figma Designs — Angular to Figma Workflow",
+    "description": "Step-by-step guide for converting Angular components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://html2design.com/use-cases/angular-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://html2design.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://html2design.com/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Angular to Figma",
+        "item": "https://html2design.com/use-cases/angular-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an Angular component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Angular app with ng serve. Navigate to the component in your browser, open DevTools (F12), find the component's host element in the Elements panel, right-click → Copy → Copy outerHTML, then paste the HTML into the html2design Figma plugin. The plugin generates native Figma layers from the rendered HTML, including all styles Angular's ViewEncapsulation has already resolved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Angular ViewEncapsulation affect the Figma import?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Angular's default ViewEncapsulation.Emulated adds unique _nghost and _ngcontent attributes to scope component styles. The browser resolves these to computed CSS values before the html2design plugin reads the markup. The plugin reads computed styles, not source stylesheets, so encapsulated styles appear correctly in Figma regardless of the encapsulation mode."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert Angular Material components to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Angular Material components render as standard HTML elements with computed CSS. Open the component in your browser, copy the rendered HTML from DevTools, and paste into html2design. Material's design tokens and theme colors are resolved by the browser and reflected in the Figma fills and typography."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture an Angular component at a specific state (loading, error, success)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Angular DevTools browser extension to inspect and modify component state. You can change @Input values, Observable streams, or NgRx/Signal store values to put the component in the desired state. Once the component renders the state you want, copy the outerHTML from the browser's Elements panel and import it into html2design."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Angular to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Angular</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Angular to Figma —<br />
+        No Extension Needed
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Angular components to Figma</strong> means running
+        <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">ng serve</code>, opening the component
+        in your browser, and copying the rendered HTML into the html2design plugin. Angular's
+        <strong class="text-content font-medium">ViewEncapsulation, Material themes, and Signal-based state</strong>
+        are all resolved by the browser before the plugin reads a single character — so Figma gets the real thing.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Angular to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Angular to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Angular to Figma"</strong> describes the process of exporting a rendered Angular
+        component — including its encapsulated styles, Material Design tokens, and component-bound data — into a native
+        Figma design that can be edited, annotated, and used as a designer handoff spec. The html2design Figma plugin
+        enables this by accepting raw HTML from your browser's DevTools and generating editable Figma frames from the
+        computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Angular's component architecture is famously opinionated: its default
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">ViewEncapsulation.Emulated</code>
+        mode scopes styles to individual components using generated attributes. This is handled entirely by the browser —
+        by the time you copy the rendered HTML from DevTools, Angular has already applied and resolved every encapsulated
+        style rule. Paste that HTML into html2design and Figma receives a pixel-accurate representation of the component.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Angular to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Angular 14+, standalone components, NgModules, and Angular Material.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Serve the Angular app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ng serve</code> (or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npx nx serve</code> for Nx monorepos)
+              and navigate to the route containing the component you want to export. No staging environment or live URL needed.
+            </p>
+            <p>
+              If the component depends on NgRx store state, Angular Signals, or HTTP data, ensure the app is in the correct
+              state before capturing. Use Angular DevTools to inspect and modify component inputs or service values if needed.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the component's rendered HTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and locate the
+              component's host element in the Elements panel. Angular components render as custom elements
+              (e.g., <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;app-card&gt;</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;mat-button&gt;</code>) with
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">_nghost-*</code> and
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">_ngcontent-*</code> attributes.
+            </p>
+            <p>
+              Right-click the host element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For a full-page export, select the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;app-root&gt;</code> element
+              or the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> container.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads the computed styles
+              the browser already calculated — Material theme colors, component-scoped styles, CSS custom properties,
+              and Angular CDK layout utilities are all resolved before the plugin processes the markup.
+            </p>
+            <p>
+              The output is a native Figma frame with real text layers, accurate fills from your design system, and a
+              layer hierarchy that mirrors your Angular component tree. Not a screenshot — an editable design.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Hand off the Figma frame to your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link with your designer. They can inspect spacing values, adjust colors, leave
+              comments, and iterate — all in Figma's native interface, without ever touching the Angular codebase
+              or running the dev server.
+            </p>
+            <p>
+              Because the Figma frame was generated from the live component — not a wireframe or a mock — designers
+              work with accurate data. The spacing, font sizes, and colors they see are the same ones the Angular app
+              renders in the browser.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Angular-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Angular-specific tips for Figma exports</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Angular's component architecture has some quirks that affect how components render and how to get the best output.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">ViewEncapsulation is transparent to html2design</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular's <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ViewEncapsulation.Emulated</code> (the default)
+            scopes styles using generated <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">_nghost-*</code> and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">_ngcontent-*</code> attributes.
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ViewEncapsulation.None</code> disables scoping entirely.
+            Both modes work the same way with html2design — the plugin reads computed CSS, which the browser has already resolved
+            regardless of encapsulation mode.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Angular Material: capture after theme is applied</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular Material applies its design tokens via CSS custom properties on the
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">:root</code> element at runtime.
+            These tokens — colors, typography, density — are resolved by the browser to their actual hex/px values
+            before html2design reads them. Material buttons, cards, dialogs, and form fields all import with accurate
+            colors and spacing as long as you copy from the live rendered page.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use Angular DevTools to set component state</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The Angular DevTools Chrome extension lets you inspect the component tree, view and edit
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@Input</code> values, and trigger change detection.
+            Use it to put components into specific states — error states, loading states, filled form variants —
+            before capturing the outerHTML for import. This lets you export every visual variant of a component to Figma
+            without changing the source code.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Standalone components work identically to NgModule components</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular 14+ standalone components have no architectural difference in how they render HTML. Both standalone
+            and NgModule-based components produce the same DOM output when rendered in the browser. The html2design workflow
+            is identical for both: serve locally, copy outerHTML, paste into the plugin.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What lands in Figma from an Angular component</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Native Figma objects — not screenshots, not plugin wrappers, not embedded iframes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Real text layers with Angular-rendered content</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular's template engine (<code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">{{ interpolation }}</code>,
+            pipes, and directives) produces rendered text in the DOM. That text becomes a real Figma text layer with
+            the correct font, size, and weight — not placeholder copy.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Material Design token colors in fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular Material's
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">--mat-*</code> CSS
+            custom properties are resolved to their hex values by the browser. Your primary, accent, and warn palette
+            colors appear as real Figma fill values — no manual color-matching needed.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Component-scoped layout preserved</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Angular Layout (Flex-Layout, Angular CDK, or plain CSS) produces computed layout values the browser renders.
+            Padding, margins, flex-gap, grid-template — all read from computed styles and reflected in Figma spacing.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layer names from HTML structure</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Custom element names like <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">app-dashboard-card</code>
+            and class names like <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.card__header</code>
+            become Figma layer names — making the output easy to navigate and reference.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert an Angular component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ng serve</code>, navigate to the component
+            in your browser, copy the host element's outerHTML from DevTools, and paste into html2design in Figma.
+            The plugin generates native Figma layers from the rendered HTML.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Angular ViewEncapsulation affect the Figma import?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. Emulated, None, and ShadowDom encapsulation modes all produce computed CSS values the browser resolves
+            before html2design reads the markup. The plugin only sees computed styles — not Angular's scoping mechanisms.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I convert Angular Material components to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Material components render standard HTML with CSS custom property tokens resolved to their actual values.
+            Copy the rendered HTML from DevTools and paste into html2design. Material colors, typography, and density
+            settings all land correctly in the Figma output.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I capture an Angular component at a specific loading state?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Use Angular DevTools to modify component
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@Input</code> values or trigger specific
+            states, or manipulate the NgRx/Signal store directly. Once the component renders the state you want to document,
+            copy the outerHTML and import it into html2design.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3 and Nuxt components into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/svelte-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Svelte to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How to export SvelteKit components to Figma from the compiled output.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export Angular components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any Angular version, no extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+      <p>&copy; 2026 HTML to Figma.</p>
+      <nav class="flex gap-6 mt-4 md:mt-0" aria-label="Footer navigation">
+        <a href="/" class="hover:text-black transition-colors">Home</a>
+        <a href="/compare" class="hover:text-black transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-black transition-colors">Blog</a>
+        <a href="/changelog" class="hover:text-black transition-colors">Changelog</a>
+        <a href="/alternatives" class="hover:text-black transition-colors">Alternatives</a>
+        <a href="/about" class="hover:text-black transition-colors">About</a>
+        <a href="/privacy" class="hover:text-black transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-black transition-colors">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

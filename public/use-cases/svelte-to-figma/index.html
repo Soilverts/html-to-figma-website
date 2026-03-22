@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Convert Svelte Components to Figma Designs — Svelte to Figma Workflow (2026)</title>
+  <meta name="description" content="Convert Svelte and SvelteKit components into editable Figma designs. Svelte compiles styles to scoped CSS classes — the browser resolves them all before html2design reads the markup. No extension, no public URL required." />
+  <meta name="keywords" content="svelte to figma, sveltekit to figma, convert svelte component figma, svelte figma plugin, svelte design handoff figma, svelte html to figma, svelte figma export" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/svelte-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/svelte-to-figma" />
+  <meta property="og:title" content="Convert Svelte Components to Figma Designs — Svelte to Figma Workflow" />
+  <meta property="og:description" content="Export Svelte and SvelteKit components to native Figma layers. Svelte's compiled scoped CSS is already resolved by the browser — paste the rendered HTML into html2design and get editable Figma frames instantly." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Svelte to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convert Svelte Components to Figma Designs — Svelte to Figma Workflow" />
+  <meta name="twitter:description" content="Export SvelteKit components to editable Figma layers. Svelte's compiled output and scoped CSS work perfectly with html2design — no extension needed." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Svelte Components to Figma Designs — Svelte to Figma Workflow",
+    "description": "Step-by-step guide for converting Svelte and SvelteKit components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://html2design.com/use-cases/svelte-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://html2design.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://html2design.com/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Svelte to Figma",
+        "item": "https://html2design.com/use-cases/svelte-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Svelte component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Svelte app locally with npm run dev (Vite) or via SvelteKit dev server. Open the component in your browser, copy the root element's outerHTML from DevTools (F12 → Elements → right-click → Copy outerHTML), and paste the HTML into the html2design Figma plugin. The plugin generates native Figma layers from the rendered HTML. Svelte's compiled scoped CSS is already resolved by the browser before the plugin reads a single line."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Svelte's scoped CSS affect the Figma output?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Svelte compiles component CSS into scoped class names (e.g., svelte-abc123) at build time. When the browser renders the component, it resolves those scoped classes to their final computed values. The html2design plugin reads computed CSS — not the source stylesheets — so Svelte's scoping mechanism is completely transparent to the import process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert SvelteKit pages to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Run your SvelteKit app with npm run dev, navigate to the page you want to export, and copy the rendered HTML from the browser's DevTools Elements panel. SvelteKit SSR pages hydrate in the browser, so always copy from DevTools (not page source) to get the fully rendered, client-hydrated DOM. Paste it into html2design to generate Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture a Svelte component that uses stores or reactive state?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Navigate your app to the state you want to capture — log in, fill a form, or trigger the specific condition. Svelte stores are reactive, so the component DOM updates automatically when the store changes. Once the component renders the desired state, copy the outerHTML from DevTools and import into html2design. The plugin captures the rendered output, not the reactive logic."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Svelte to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Svelte</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Svelte to Figma —<br />
+        From Compiled Output
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Svelte components to Figma</strong> is straightforward because
+        Svelte compiles everything — templates, reactive logic, and scoped CSS — into plain HTML and CSS at build time.
+        Run the dev server, copy the rendered HTML from your browser, paste it into html2design, and get
+        <strong class="text-content font-medium">native Figma layers</strong> that reflect exactly what the browser renders.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Svelte to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Svelte to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Svelte to Figma"</strong> refers to exporting a rendered Svelte or SvelteKit component —
+        with its compiled styles, reactive state, and layout — into a native Figma design that designers can edit directly.
+        Unlike React or Vue, which ship a runtime to the browser, Svelte compiles components into highly optimized vanilla
+        HTML and CSS at build time. This means there is no Svelte runtime "layer" between the component and the rendered DOM —
+        making the export process especially clean.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
+        native Figma frames. Svelte's scoped CSS is compiled into hashed class names (e.g.,
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">svelte-1a2b3c</code>)
+        that the browser resolves to computed values before the plugin reads them. The result in Figma is a pixel-accurate
+        representation of the Svelte component — complete with real text layers, accurate spacing, and correct colors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Svelte to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Svelte 4+, SvelteKit, Svelte 5 runes, and any Svelte-based framework.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run the Svelte dev server</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start the dev server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>.
+              For SvelteKit projects this starts the Vite dev server with HMR; for standalone Svelte apps, it boots a local
+              preview. Navigate to the route or component you want to capture. No staging deploy, no public URL needed.
+            </p>
+            <p>
+              If the component depends on Svelte stores or SvelteKit
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">load</code> data, ensure the app has
+              reached the correct state before capturing — log in, complete a flow, or seed local store values.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and find the
+              component's root element in the Elements panel. Svelte components don't add a wrapper element by default —
+              the component's template is rendered directly into the DOM. Find the outermost element of the component
+              you want (often a <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section&gt;</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;div&gt;</code>, or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;article&gt;</code> with Svelte's
+              hashed class).
+            </p>
+            <p>
+              Right-click the element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For a full-page capture, select the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element or the
+              SvelteKit app root.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. Svelte's compiled scoped styles — those
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">svelte-*</code> hash classes — are
+              already resolved by the browser. The plugin reads the computed CSS values directly, not the Svelte source,
+              so the output is a true representation of the rendered component.
+            </p>
+            <p>
+              You get a native Figma frame with editable text layers, accurate fills from your CSS custom properties
+              or Tailwind classes, and a layer hierarchy that follows the component's HTML structure.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer gets an editable version of the exact component — not a PNG,
+              not a wireframe — and can iterate on spacing, typography, and color directly in Figma. No Svelte experience
+              needed on their end.
+            </p>
+            <p>
+              When the Svelte component changes, re-import: run the dev server, copy the updated outerHTML, paste into
+              html2design. The workflow takes under two minutes and keeps Figma in sync with the live codebase.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Svelte-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Svelte-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Svelte's compiled output has some unique characteristics — here's how to work with them for the cleanest import.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Svelte's compiled scoped CSS is already resolved</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte compiles <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style&gt;</code> blocks
+            in <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.svelte</code> files into scoped CSS rules
+            with hashed selectors like
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.button.svelte-1a2b3c</code>.
+            The browser resolves these to their final computed values before the html2design plugin reads the rendered HTML.
+            Svelte's scoping is invisible to the plugin — the import process is identical to any other HTML component.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">SvelteKit: copy from the hydrated DOM, not page source</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            SvelteKit supports SSR by default. The raw page source contains server-rendered HTML, but the client-side
+            JavaScript then hydrates it with reactive state. Always copy from the browser DevTools Elements panel —
+            not from "View Page Source" — to get the fully hydrated, Svelte-reactive DOM. This is especially important
+            for pages that load data via <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">+page.ts</code>
+            or <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">+page.server.ts</code>.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Svelte 5 runes work identically</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte 5 introduced runes (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">$state</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">$derived</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">$effect</code>) as a new reactive primitive.
+            Like all Svelte reactivity, runes compile to efficient DOM mutations at build time.
+            The browser renders the same HTML and CSS regardless of whether you use runes or the older
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">let</code> / store syntax —
+            so the html2design workflow is the same for both.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture Svelte transition states using DevTools animations</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte's built-in transitions (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">fade</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">slide</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">fly</code>) animate CSS properties during
+            component mount/unmount. To capture a mid-transition state for a design handoff, use the browser's
+            Animation DevTools panel to slow down transitions to 0.1× speed, trigger the transition, pause it at the
+            frame you want, then copy the outerHTML and import into html2design.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Svelte output is especially clean -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Svelte output is especially clean in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Svelte's compile-to-vanillaJS approach produces leaner DOM output than framework-runtime models — which translates to cleaner Figma imports.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">No virtual DOM wrappers in the output</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte compiles to direct DOM manipulation — no virtual DOM reconciler nodes, no React fiber
+            internals, no Angular decorator wrappers. The HTML you copy from the browser is clean,
+            semantic markup that maps directly to Figma layer names.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Scoped CSS compiles away cleanly</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte's scoped styles compile to hashed class selectors at build time — not inline styles or
+            JavaScript-in-CSS patterns. The browser resolves these normally, so computed styles are
+            straightforward hex values, pixel measurements, and font stacks that Figma can represent natively.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Reactive state is baked into the DOM at import time</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte's reactivity updates the DOM directly. When you capture the rendered HTML, the component's
+            current state — form values, toggled classes, conditional blocks — is already present in the markup.
+            There's no need to "freeze" async state: what you see in the browser is what you get in Figma.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">CSS custom properties flow through unchanged</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Svelte components can consume CSS custom properties defined at the app level — for theming,
+            design tokens, or color modes. The browser resolves
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-brand)</code>
+            to its real hex value, so Figma fills reflect your actual design system colors.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Svelte component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run your Svelte app locally with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>,
+            open the component in the browser, copy the root element's outerHTML from DevTools, and paste into html2design
+            in Figma. The plugin converts the rendered HTML into native Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Svelte's scoped CSS affect the Figma import?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. Svelte compiles scoped styles to hashed class names that the browser resolves to computed CSS values.
+            html2design reads computed CSS — not the source stylesheets — so scoped styles appear correctly in Figma
+            without any special handling.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I convert SvelteKit pages to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>, navigate to the
+            page, and copy the rendered HTML from the DevTools Elements panel (not page source, which is pre-hydration).
+            Paste it into html2design to generate Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Svelte 5 work the same way as Svelte 4?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Both Svelte 4 and Svelte 5 (runes) compile to vanilla HTML and CSS. The browser renders them identically
+            from the perspective of the Elements panel. The html2design workflow — copy rendered HTML, paste into plugin —
+            is the same for both versions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3 and Nuxt components with scoped styles into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/angular-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Angular to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Angular components with ViewEncapsulation into editable Figma layers.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Svelte components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with Svelte 4, Svelte 5, and SvelteKit.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+      <p>&copy; 2026 HTML to Figma.</p>
+      <nav class="flex gap-6 mt-4 md:mt-0" aria-label="Footer navigation">
+        <a href="/" class="hover:text-black transition-colors">Home</a>
+        <a href="/compare" class="hover:text-black transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-black transition-colors">Blog</a>
+        <a href="/changelog" class="hover:text-black transition-colors">Changelog</a>
+        <a href="/alternatives" class="hover:text-black transition-colors">Alternatives</a>
+        <a href="/about" class="hover:text-black transition-colors">About</a>
+        <a href="/privacy" class="hover:text-black transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-black transition-colors">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
