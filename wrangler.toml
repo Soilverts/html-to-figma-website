@@ -1,2 +1,5 @@
 name = "html-to-figma"
 compatibility_date = "2024-01-01"
+
+[assets]
+html_handling = "drop-trailing-slash"
