@@ -219,6 +219,7 @@
     </script>
 
     <!-- JSON-LD: WebPage Schema with Speakable (GEO Voice Search) -->
+    <!-- DEPLOY: Update dateModified below to today's date (YYYY-MM-DD) on every production deploy -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -248,10 +249,11 @@
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": [
-          "[aria-label='HTML to Figma - Convert code to design']",
-          "[aria-label='Frequently asked questions about HTML to Figma']",
-          "h1",
-          "h2"
+          "#home p",
+          "#features p",
+          "#how-it-works p",
+          "#pricing p",
+          "[aria-label='Frequently asked questions about HTML to Figma']"
         ]
       },
       "breadcrumb": {
