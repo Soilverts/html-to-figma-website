@@ -68,6 +68,12 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
         >
           Compare
         </a>
+        <a
+          href="/blog"
+          className="text-xs font-medium uppercase tracking-wider rounded-full px-4 py-2 text-gray-500 hover:text-black transition-colors"
+        >
+          Blog
+        </a>
       </motion.nav>
 
       {/* Mobile Menu Button */}
@@ -119,6 +125,19 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
                   onClick={() => setIsOpen(false)}
                 >
                   Compare
+                </a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * (sections.length + 1) }}
+              >
+                <a
+                  href="/blog"
+                  className="text-4xl font-light tracking-tight capitalize transition-colors text-gray-400 hover:text-black"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Blog
                 </a>
               </motion.div>
             </div>
