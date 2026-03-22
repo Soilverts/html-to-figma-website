@@ -73,6 +73,12 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
         >
           Blog
         </a>
+        <a
+          href="/about"
+          className="text-xs font-medium uppercase tracking-wider rounded-full px-4 py-2 text-gray-500 hover:text-black transition-colors"
+        >
+          About
+        </a>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -136,6 +142,18 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
               onClick={() => setIsOpen(false)}
             >
               Blog
+            </a>
+          </div>
+          <div
+            className={`transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: isOpen ? `${(sections.length + 2) * 60}ms` : '0ms' }}
+          >
+            <a
+              href="/about"
+              className="text-4xl font-light tracking-tight capitalize transition-colors text-gray-400 hover:text-black"
+              onClick={() => setIsOpen(false)}
+            >
+              About
             </a>
           </div>
         </div>

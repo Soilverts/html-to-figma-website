@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About HTML to Figma — The Code-to-Design Plugin</title>
+  <meta name="description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds. Learn about the plugin, who built it, and why." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://html2design.com/about" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About HTML to Figma — The Code-to-Design Plugin" />
+  <meta property="og:description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds. Learn about the plugin, who built it, and why." />
+  <meta property="og:url" content="https://html2design.com/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HTML to Figma plugin showing code-to-design conversion" />
+  <meta property="og:site_name" content="HTML to Figma" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About HTML to Figma — The Code-to-Design Plugin" />
+  <meta name="twitter:description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://html2design.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://html2design.com/about"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HTML to Figma",
+    "url": "https://html2design.com/",
+    "logo": "https://html2design.com/favicon.svg",
+    "description": "HTML to Figma is a Figma plugin that converts HTML and CSS code into native, editable Figma layers — preserving typography, layout, images, and structure with precision.",
+    "foundingDate": "2024",
+    "email": "support@html2design.com",
+    "sameAs": [
+      "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About HTML to Figma",
+    "description": "Learn about HTML to Figma — who built it, why it exists, and how it converts code into native Figma designs.",
+    "url": "https://html2design.com/about",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <a href="/" class="text-sm text-content-muted hover:text-content transition-colors">&larr; Back to home</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+
+    <header class="mb-16">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">About</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">HTML to Figma</h1>
+      <p class="text-content-muted text-lg leading-relaxed">
+        The code-to-design plugin that converts HTML and CSS into native, editable Figma layers — so designers and developers can stop recreating work by hand.
+      </p>
+    </header>
+
+    <!-- Mission -->
+    <section class="mb-16" aria-labelledby="mission-heading">
+      <h2 id="mission-heading" class="text-2xl font-bold text-content mb-4">Our mission</h2>
+      <p class="text-content-muted leading-relaxed text-base">
+        Eliminate the time developers and designers spend rebuilding existing UI in Figma.
+        Every hour spent recreating a production component by hand is an hour not spent improving it.
+      </p>
+    </section>
+
+    <!-- Product Story -->
+    <section class="mb-16" aria-labelledby="story-heading">
+      <h2 id="story-heading" class="text-2xl font-bold text-content mb-4">The story</h2>
+      <div class="space-y-4 text-content-muted leading-relaxed text-base">
+        <p>
+          HTML to Figma was built out of a recurring frustration: a production website exists,
+          but the Figma file doesn't. Recreating it manually takes hours — and it's never quite right.
+          Computed styles, spacing, and font rendering all diverge slightly from what the browser actually renders.
+        </p>
+        <p>
+          The insight was simple: the browser already knows the answer. Every DOM node has computed styles
+          for position, size, font, color, and spacing. HTML to Figma reads those values directly from
+          the browser's rendering engine and maps them to equivalent Figma properties —
+          frames, text, rectangles, vectors — without any manual approximation.
+        </p>
+        <p>
+          Since launching in 2024, over 2,000 designers and developers have used HTML to Figma
+          to bridge the gap between their codebase and their design files.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Numbers -->
+    <section class="mb-16" aria-labelledby="numbers-heading">
+      <h2 id="numbers-heading" class="text-2xl font-bold text-content mb-8">By the numbers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+          <div class="text-3xl font-bold text-content mb-1">2,000+</div>
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Active users</div>
+          <p class="text-sm text-content-muted leading-relaxed">Designers and developers using HTML to Figma across Figma Community.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+          <div class="text-3xl font-bold text-content mb-1">6</div>
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Core capabilities</div>
+          <p class="text-sm text-content-muted leading-relaxed">Typography, layout, images, SVGs, styles, and structure — all converted natively.</p>
+        </div>
+
+        <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+          <div class="text-3xl font-bold text-content mb-1">Any CSS</div>
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Framework support</div>
+          <p class="text-sm text-content-muted leading-relaxed">Works with React, Tailwind, Bootstrap, plain CSS, or any HTML the browser renders.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="mb-16" aria-labelledby="how-heading">
+      <h2 id="how-heading" class="text-2xl font-bold text-content mb-6">How it works</h2>
+      <ol class="space-y-6">
+
+        <li class="flex gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-sm">1</div>
+          <div>
+            <h3 class="font-semibold text-content mb-1">Paste your HTML</h3>
+            <p class="text-sm text-content-muted leading-relaxed">
+              Open the plugin inside Figma and paste any HTML — from a live component, a local build, or a static file.
+              No live URL or browser extension required.
+            </p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-sm">2</div>
+          <div>
+            <h3 class="font-semibold text-content mb-1">The plugin reads computed styles</h3>
+            <p class="text-sm text-content-muted leading-relaxed">
+              HTML to Figma renders the HTML in a sandbox and reads the browser's computed styles —
+              exact pixel positions, fonts, colors, and spacing — from every DOM node.
+            </p>
+          </div>
+        </li>
+
+        <li class="flex gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-accent font-bold text-sm">3</div>
+          <div>
+            <h3 class="font-semibold text-content mb-1">Native Figma layers appear</h3>
+            <p class="text-sm text-content-muted leading-relaxed">
+              Each element becomes a real Figma layer — frames, text nodes, rectangles, and vectors.
+              Fully editable, properly named, and ready to use in your design system.
+            </p>
+          </div>
+        </li>
+
+      </ol>
+      <div class="mt-8">
+        <a href="/blog/how-to-convert-html-to-figma" class="inline-flex items-center gap-2 text-accent font-semibold hover:underline text-sm">
+          Read the full tutorial
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Creator / Credibility -->
+    <section class="mb-16 pt-16 border-t border-gray-100" aria-labelledby="creator-heading">
+      <h2 id="creator-heading" class="text-2xl font-bold text-content mb-6">Built by developers, for designers</h2>
+      <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-content mb-1">Jesse — Creator of HTML to Figma</h3>
+            <p class="text-sm text-content-muted leading-relaxed mb-4">
+              HTML to Figma was created by Jesse, a developer who spent too many hours manually
+              rebuilding production UI in Figma. The plugin started as an internal tool and
+              became a product used by thousands of design and engineering teams worldwide.
+            </p>
+            <a
+              href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-accent font-semibold hover:underline text-sm"
+            >
+              View on Figma Community
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pt-16 border-t border-gray-100 text-center">
+      <h2 class="text-2xl font-bold text-content mb-3">Try HTML to Figma</h2>
+      <p class="text-content-muted mb-8 text-base">Install the plugin from Figma Community and convert your first component in minutes.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-content text-white text-sm font-semibold rounded-full hover:bg-black transition-colors"
+        >
+          Get the Figma Plugin
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-200 text-content text-sm font-semibold rounded-full hover:bg-gray-50 transition-colors">
+          Contact us
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+      <p>&copy; 2026 HTML to Figma.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <span class="text-gray-600">About</span>
+        <a href="/privacy" class="hover:text-black transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-black transition-colors">Terms</a>
+        <a href="/contact" class="hover:text-black transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
