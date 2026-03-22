@@ -41,10 +41,6 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Preconnect for Performance -->
-    <link rel="dns-prefetch" href="https://esm.sh" />
-    <link rel="preconnect" href="https://esm.sh" crossorigin />
-
     <!-- Preload critical stylesheet -->
     <link rel="preload" href="/index.css" as="style" />
 
@@ -64,7 +60,7 @@
       "featureList": [
         "Convert HTML/CSS to native Figma frames, rectangles, and text layers",
         "Preserve typography including font families, weights, sizes, line-heights, and letter-spacing",
-        "Optionally convert CSS Flexbox to Figma Auto-Layout",
+        "Recreate CSS Flexbox layouts as accurately positioned Figma frames",
         "Preserve colors, borders, shadows, gradients, and opacity",
         "Import high-resolution images and SVGs as native vector paths",
         "Generate structured, organized Figma layer hierarchy"
@@ -113,7 +109,7 @@
           "name": "Does HTML to Figma preserve CSS layouts like Flexbox?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. HTML to Figma can optionally convert CSS Flexbox layouts (as defined in the W3C CSS Flexible Box Layout Module) into Figma's native Auto-Layout system when enabled in settings. Your flex-direction, align-items, justify-content, gap, and padding are mapped to corresponding Auto-Layout properties."
+            "text": "Yes. HTML to Figma reads the computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. The visual result — element dimensions, spacing, and alignment — matches the browser rendering. You can then apply Figma's Auto Layout manually to the imported frames if needed."
           }
         },
         {
@@ -207,7 +203,7 @@
     }
     </script>
 
-    <!-- JSON-LD: WebSite Schema with SearchAction (Google Sitelinks) -->
+    <!-- JSON-LD: WebSite Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -218,14 +214,6 @@
       "publisher": {
         "@type": "Organization",
         "name": "HTML to Figma"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://html2design.com/blog?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       }
     }
     </script>
@@ -254,7 +242,7 @@
           "@type": "HowToStep",
           "position": 2,
           "name": "Configure settings",
-          "text": "Adjust scale and import preferences such as Auto-Layout conversion."
+          "text": "Adjust scale and import preferences such as image imports and font handling."
         },
         {
           "@type": "HowToStep",
@@ -325,7 +313,7 @@
          React (createRoot) replaces this on mount. Inline styles used so this
          paints immediately regardless of CSS-load timing.
          Target: FCP <1.5s (was 2.5s with blank React SPA shell). -->
-    <div id="root"><div style="position:relative;width:100%;min-height:100vh;background:#fff;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#111827;"><div style="position:fixed;top:2rem;left:2rem;z-index:50;mix-blend-mode:multiply;pointer-events:none;"><span style="font-weight:700;letter-spacing:-0.025em;font-size:1.125rem;">HTML<span style="color:#2563EB;">2</span>FIGMA</span></div><main style="position:relative;z-index:10;"><section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 1.5rem 4rem;overflow:hidden;"><div style="max-width:80rem;margin:0 auto;width:100%;"><div style="display:flex;flex-direction:column;gap:2rem;max-width:32rem;"><div style="display:inline-flex;align-items:center;border:1px solid #E5E7EB;padding:0.25rem 0.75rem;border-radius:9999px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;font-family:monospace;width:fit-content;">Figma Plugin — HTML to Figma</div><h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:700;letter-spacing:-0.04em;line-height:0.9;color:#111827;margin:0;">Code to<br><span style="color:#6B7280;">Design.</span></h1><p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.625;margin:0;">Instantly convert HTML and CSS into native Figma layers. Preserve your layout, typography, and styles with precision. Used by 2,000+ designers and developers.</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;"><a href="#pricing" style="display:inline-flex;align-items:center;height:3.5rem;padding:0 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:1rem;font-weight:500;text-decoration:none;">Get Access &#8594;</a><a href="#how-it-works" style="color:#6B7280;font-size:0.875rem;font-weight:500;text-decoration:none;">See how it works &#8594;</a></div></div></div></section></main></div></div>
+    <div id="root"><div style="position:relative;width:100%;min-height:100vh;background:#fff;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#111827;"><div style="position:fixed;top:2rem;left:2rem;z-index:50;mix-blend-mode:multiply;pointer-events:none;"><span style="font-weight:700;letter-spacing:-0.025em;font-size:1.125rem;">HTML<span style="color:#2563EB;">2</span>FIGMA</span></div><main style="position:relative;z-index:10;"><section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 1.5rem 4rem;overflow:hidden;"><div style="max-width:80rem;margin:0 auto;width:100%;"><div style="display:flex;flex-direction:column;gap:2rem;max-width:32rem;"><div style="display:inline-flex;align-items:center;border:1px solid #E5E7EB;padding:0.25rem 0.75rem;border-radius:9999px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;font-family:monospace;width:fit-content;">Figma Plugin — HTML to Figma</div><h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:700;letter-spacing:-0.04em;line-height:0.9;color:#111827;margin:0;">Code to<br><span style="color:#6B7280;">Design.</span></h1><p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.625;margin:0;">Instantly convert HTML and CSS into native Figma layers. Preserve your layout, typography, and styles with precision. Used by 2,000+ designers and developers.</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;"><a href="#pricing" style="display:inline-flex;align-items:center;height:3.5rem;padding:0 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:1rem;font-weight:500;text-decoration:none;">Get Access &#8594;</a><a href="#how-it-works" style="color:#6B7280;font-size:0.875rem;font-weight:500;text-decoration:none;">See how it works &#8594;</a></div><nav style="display:flex;gap:1.5rem;margin-top:1.5rem;font-size:0.75rem;"><a href="/blog" style="color:#6B7280;text-decoration:none;">Blog</a><a href="/compare" style="color:#6B7280;text-decoration:none;">Compare Tools</a><a href="/contact" style="color:#6B7280;text-decoration:none;">Contact</a></nav></div></div></section></main></div></div>
 
     <!-- Noscript SEO Fallback: Critical content for crawlers that don't execute JS -->
     <noscript>
@@ -340,7 +328,7 @@
           <ul>
             <li><strong>Native Figma Layers</strong> - Creates real Figma frames, rectangles, and text layers — not flattened screenshots. Manual recreation of a single web page typically takes 2–4 hours; HTML to Figma reduces this to under 2 minutes.</li>
             <li><strong>Typography Preserved</strong> - Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced per the <a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4 specification</a></li>
-            <li><strong>Auto-Layout Support</strong> - Optionally converts <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox</a> layouts into Figma Auto-Layout frames, mapping flex-direction, align-items, gap, and padding</li>
+            <li><strong>Flexbox Layout Fidelity</strong> - Reads computed positions and sizes from <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox</a> layouts and recreates them as accurately positioned Figma frames</li>
             <li><strong>Styling Fidelity</strong> - Colors, borders, shadows, gradients, and opacity carried over accurately. Supports 100% of CSS box-model properties</li>
             <li><strong>Image Handling</strong> - High-res fills preserved at up to 2x resolution, SVGs imported as native vector paths</li>
             <li><strong>Structured Output</strong> - HTML hierarchy mapped to a clean, organized Figma layer tree with meaningful layer names</li>
@@ -373,7 +361,7 @@
             <thead><tr><th>Feature</th><th>HTML to Figma</th><th>Manual Rebuild</th><th>Screenshot Tools</th></tr></thead>
             <tbody>
               <tr><td>Native Figma layers</td><td>Yes</td><td>No</td><td>No</td></tr>
-              <tr><td>Flexbox to Auto-Layout (optional)</td><td>Yes</td><td>No</td><td>No</td></tr>
+              <tr><td>Flexbox layout preserved</td><td>Yes</td><td>No</td><td>No</td></tr>
               <tr><td>Typography preservation</td><td>Yes</td><td>Yes</td><td>No</td></tr>
               <tr><td>Styling fidelity (colors, shadows)</td><td>Yes</td><td>Yes</td><td>No</td></tr>
               <tr><td>SVG as vector paths</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
@@ -395,7 +383,7 @@
           <p>HTML to Figma works in three simple steps: select an HTML file or paste HTML/CSS, configure your settings, and generate native, editable Figma layers.</p>
 
           <h3>Does HTML to Figma preserve CSS layouts like Flexbox?</h3>
-          <p>Yes. HTML to Figma can optionally convert CSS Flexbox layouts into Figma's native Auto-Layout system when enabled in settings, mapping flex direction, alignment, gap, and padding.</p>
+          <p>Yes. HTML to Figma reads the computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames that match the browser rendering.</p>
 
           <h3>What typography features are preserved?</h3>
           <p>Font families, font weights, font sizes, line-heights, letter-spacing, and text alignment are preserved. If a font is not available in Figma, it falls back to Inter Regular.</p>

@@ -1,0 +1,52 @@
+# HTML to Figma (html2design)
+
+> Convert HTML and CSS code into native, editable Figma layers instantly.
+
+## What it is
+
+HTML to Figma is a Figma plugin that converts HTML/CSS source code into native Figma design layers. It parses HTML structure and computed CSS styles, then recreates them as Figma frames, text layers, rectangles, and vector shapes.
+
+## How it works
+
+1. Open the plugin in Figma
+2. Paste raw HTML/CSS code or select an HTML file
+3. Configure scale and import preferences
+4. Click Generate to receive native Figma layers
+
+The plugin reads computed CSS values (not class names), so it works with any CSS framework: Tailwind, Bootstrap, plain CSS, CSS-in-JS, or Sass.
+
+## Key capabilities
+
+- Converts HTML elements to native Figma frames, rectangles, and text layers
+- Preserves typography: font families, weights, sizes, line-heights, letter-spacing
+- Preserves styling: colors, borders, shadows, gradients, opacity, border-radius
+- Imports images as high-resolution fills and SVGs as native vector paths
+- Generates a structured Figma layer hierarchy matching the HTML DOM tree
+- Works with localhost, staging, and production HTML (no live URL required)
+
+## What it does NOT do
+
+- Does not convert CSS Flexbox to Figma Auto Layout (elements are positioned absolutely to match the rendered layout)
+- Does not extract Figma Variables from CSS custom properties
+- Does not preserve CSS animations or transitions
+- Does not fetch live URLs (you paste the HTML, the plugin does not crawl)
+
+## Use cases
+
+- Legacy website migration to Figma design files
+- Developer-to-designer handoff (reverse engineering code back to design)
+- Competitor layout analysis and deconstruction
+- Design system kickstart from existing implementations
+- Converting React, Vue, or Angular component output to Figma
+
+## Pricing
+
+- Monthly: $12/month
+- Yearly: $96/year ($8/month)
+
+## Links
+
+- Website: https://html2design.com/
+- Figma Community: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
+- Blog: https://html2design.com/blog
+- Contact: support@html2design.com

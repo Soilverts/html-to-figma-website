@@ -8,8 +8,8 @@ const posts = [
     title: 'How to Convert HTML to Figma: A Developer\'s Guide',
     description: 'Paste raw HTML and CSS directly into Figma and get fully editable layers — no Chrome extension, no live URL required.',
     tags: 'html2design · tutorial',
-    date: 'Mar 22, 2026',
-    datetime: '2026-03-22',
+    date: 'Mar 16, 2026',
+    datetime: '2026-03-16',
   },
   {
     href: '/blog/import-website-into-figma',
@@ -17,8 +17,8 @@ const posts = [
     title: 'How to Import a Website into Figma',
     description: 'Two methods compared: Chrome extension vs HTML code paste. Covers localhost, staging environments, and auth-gated dashboards.',
     tags: 'web-to-figma · tutorial',
-    date: 'Mar 22, 2026',
-    datetime: '2026-03-22',
+    date: 'Mar 17, 2026',
+    datetime: '2026-03-17',
   },
   {
     href: '/blog/react-component-to-figma',
@@ -26,8 +26,8 @@ const posts = [
     title: 'How to Convert React Components to Figma Designs',
     description: 'React renders to HTML — and that output converts to editable Figma layers in seconds. Covers Storybook, Next.js, and Tailwind.',
     tags: 'react · tutorial',
-    date: 'Mar 22, 2026',
-    datetime: '2026-03-22',
+    date: 'Mar 18, 2026',
+    datetime: '2026-03-18',
   },
 ];
 
