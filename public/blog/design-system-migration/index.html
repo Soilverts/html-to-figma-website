@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Design System Migration: Extract Components from HTML into Figma (2026)</title>
+  <meta name="description" content="Step-by-step guide to migrating a design system from code to Figma. Extract design tokens from HTML/CSS, identify components, and build a native Figma component library that stays in sync with your codebase." />
+  <meta name="keywords" content="design system migration figma, code to design system, extract design tokens from HTML, component library from code to figma, html to figma design tokens, design system figma plugin, css to figma variables" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/blog/design-system-migration" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/blog/design-system-migration" />
+  <meta property="og:title" content="Design System Migration: Extract Components from HTML into Figma (2026)" />
+  <meta property="og:description" content="Your code already encodes your design system. Here's how to extract it — tokens, components, and all — into a native Figma library using html2design." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Design system migration from HTML/CSS code to Figma component library" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="design system migration" />
+  <meta property="article:tag" content="figma" />
+  <meta property="article:tag" content="design tokens" />
+  <meta property="article:tag" content="component library" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Design System Migration: Extract Components from HTML into Figma (2026)" />
+  <meta name="twitter:description" content="Your code already encodes your design system. Extract design tokens and components from HTML/CSS into a native Figma library — no rebuilding from scratch." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Design System Migration: How to Extract Components from HTML into Figma",
+    "description": "Step-by-step guide to migrating a design system from code to Figma. Extract design tokens from HTML/CSS, identify components, and build a native Figma component library.",
+    "url": "https://html2design.com/blog/design-system-migration",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 1800,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://html2design.com/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://html2design.com/blog/design-system-migration"
+    },
+    "keywords": "design system migration figma, code to design system, extract design tokens from HTML, component library from code to figma",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Design system migration from code to Figma",
+      "description": "Workflow for extracting design tokens and component libraries from HTML/CSS codebases into a native Figma design system using html2design"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://html2design.com/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Migrate a Design System from Code to Figma",
+    "description": "Extract design tokens and components from an HTML/CSS codebase and import them into a native Figma design system using html2design.",
+    "totalTime": "PT2H",
+    "tool": [
+      { "@type": "HowToTool", "name": "Browser DevTools" },
+      { "@type": "HowToTool", "name": "html2design (Figma plugin)" },
+      { "@type": "HowToTool", "name": "Figma" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Audit your codebase for design tokens",
+        "text": "Identify all CSS custom properties (--color-*, --spacing-*, --font-*), hardcoded color and spacing values, and typography declarations. List every token that appears in more than one component."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Build a token reference page",
+        "text": "Create a single HTML page that renders a swatch for every color, a scale for every spacing value, and a specimen for every text style in your system. This becomes your Figma Variables source of truth."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Import the token reference page into Figma",
+        "text": "Open the token reference page in a browser, copy its outerHTML from DevTools, and paste it into the html2design plugin in Figma. You get one Figma frame per token group with exact computed values."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Register tokens as Figma Variables and Styles",
+        "text": "Use the imported frames as reference to create Color Variables, Number Variables (for spacing), and Text Styles in Figma. Bind them to the same names as your CSS custom properties for traceability."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Identify and prioritize components",
+        "text": "List all UI components in your codebase. Rank by usage frequency and business criticality. Start with atoms (buttons, inputs, badges), then molecules (cards, forms), then organisms (navbars, hero sections)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Import components one by one",
+        "text": "For each component, open it in a browser, copy the outerHTML from DevTools (including all states), and import via html2design. You get a native Figma frame preserving every spacing, color, and typography value."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 7,
+        "name": "Organize components in Figma",
+        "text": "Convert imported frames to Figma Components. Group them under a published Figma Library. Use the naming convention Category / Component / Variant (e.g., Button / Primary / Default) to match your codebase structure."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://html2design.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Design System Migration", "item": "https://html2design.com/blog/design-system-migration" }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .token-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .token-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .token-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .token-table tr:last-child td { border-bottom: none; }
+    .token-table code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: #F3F4F6; padding: 0.1rem 0.3rem; border-radius: 3px; }
+    .drift-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 999px; background: #FEE2E2; color: #DC2626; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Design System Migration</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Design System Migration: From Code to Figma Components
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Your codebase already encodes your design system — every token, every component, every spacing value. Here's how to extract it into a native Figma library without rebuilding from scratch.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block — AI engines prefer pages that open with a direct answer -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Design system migration from code to Figma</strong> is the process of extracting an existing <a href="https://www.smashingmagazine.com/2021/10/building-design-system/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">design system</a> encoded in HTML and CSS into a native <a href="https://help.figma.com/hc/en-us/articles/360038746534-Create-and-manage-design-systems" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma component library</a>. Rather than rebuilding from a blank canvas, you capture the browser's computed output — resolved colors, spacing, and typography — and import it into Figma using a tool like <a href="https://html2design.com/" style="color:#2563EB;">html2design</a>. The result is a Figma library that accurately reflects what is already live in production, with design tokens derived directly from your CSS.</p>
+    </div>
+
+    <h2>The Problem: Design Drift Between Code and Figma</h2>
+    <p>
+      Design drift is what happens when the code and the design file stop describing the same product. It starts small: a developer tweaks a button padding to fix a layout issue and doesn't update Figma. A designer iterates on a card component in Figma but the changes never make it to a developer ticket. Within months, the Figma file and the live product are two different things.
+    </p>
+    <p>
+      The root cause is almost always a <strong>missing migration step</strong>. A company builds a product in code first — or iterates so quickly that design files fall behind — and never formalizes the design system in Figma. Later, when the team grows and designers need editable files, they find themselves staring at a blank Figma canvas while the actual system lives entirely in a stylesheet.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Common signs of design drift:</strong> designers recreating components from screenshots instead of a library, developers getting "the specs are in Figma" on work that was never actually designed there, and onboarding taking weeks because new designers have to reverse-engineer the live product instead of reading a component library.</p>
+    </div>
+
+    <p>
+      The solution is not to freeze the codebase and rebuild Figma from scratch — that takes months and the result is immediately out of date. The better path is to <strong>extract the design system that already exists in your code</strong> and import it into Figma with full fidelity.
+    </p>
+
+    <h2>Step 1: Audit Your Codebase for Design Tokens</h2>
+    <p>
+      Before touching Figma, spend an hour auditing your CSS for the raw material of your design system. You're looking for three categories of tokens:
+    </p>
+
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Token Type</th>
+          <th>Where to Find It</th>
+          <th>Figma Equivalent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Colors</strong></td>
+          <td>CSS custom properties (<code>--color-primary</code>), Sass/Less variables, Tailwind config, Bootstrap theme overrides</td>
+          <td>Color Variables or Color Styles</td>
+        </tr>
+        <tr>
+          <td><strong>Spacing</strong></td>
+          <td>Base spacing scale (<code>--spacing-4: 1rem</code>), padding/margin values used across components</td>
+          <td>Number Variables</td>
+        </tr>
+        <tr>
+          <td><strong>Typography</strong></td>
+          <td>Font-family declarations, type scale (<code>--text-sm</code>, <code>--text-lg</code>), font-weight and line-height values</td>
+          <td>Text Styles</td>
+        </tr>
+        <tr>
+          <td><strong>Radii &amp; shadows</strong></td>
+          <td>Border-radius values (often a small set: 4px, 8px, 16px, full), box-shadow declarations</td>
+          <td>Number Variables, Effect Styles</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      If your codebase uses CSS custom properties on <code>:root</code>, you can extract the full token list in seconds by opening DevTools, selecting the <code>&lt;html&gt;</code> element, and scanning the Computed panel. Every <code>--</code> prefixed variable is a potential Figma Variable.
+    </p>
+
+    <div class="code-block">/* What you find in DevTools: Computed > CSS Properties */<br>
+--color-primary: #2563EB;<br>
+--color-primary-dark: #1E40AF;<br>
+--color-surface: #F9FAFB;<br>
+--spacing-base: 1rem;<br>
+--spacing-sm: 0.5rem;<br>
+--spacing-lg: 1.5rem;<br>
+--font-sans: 'Inter', system-ui, sans-serif;<br>
+--text-sm: 0.875rem;<br>
+--text-lg: 1.125rem;<br>
+--radius-md: 0.5rem;<br>
+--radius-lg: 1rem;</div>
+
+    <h2>Step 2: Build a Token Reference Page</h2>
+    <p>
+      The most reliable way to extract design tokens into Figma is to create a single HTML page that renders every token visually — a color palette, a spacing scale, a typography specimen, a shadow gallery. This page becomes your <em>import document</em> for html2design.
+    </p>
+    <p>
+      The page doesn't need to be pretty. Its only job is to render every token as a visible element so the browser computes the styles. Here's the minimum structure:
+    </p>
+
+    <div class="code-block">&lt;!-- Colors --&gt;<br>
+&lt;div class="token-row"&gt;<br>
+&nbsp;&nbsp;&lt;div style="width:48px;height:48px;background:var(--color-primary);border-radius:8px"&gt;&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;span&gt;color-primary&lt;/span&gt;<br>
+&lt;/div&gt;<br><br>
+&lt;!-- Spacing --&gt;<br>
+&lt;div style="height:var(--spacing-base);background:#E5E7EB;width:100%"&gt;&lt;/div&gt;<br><br>
+&lt;!-- Typography --&gt;<br>
+&lt;p style="font-size:var(--text-lg);font-family:var(--font-sans)"&gt;Large Text&lt;/p&gt;</div>
+
+    <p>
+      Once the token reference page is open in your browser, open DevTools, select the root element, and copy its <code>outerHTML</code>. Then paste it into html2design in Figma. You'll get a single frame with all your tokens rendered at their exact computed values — the right blue, the right 16px spacing, the right font rendered in its actual weight.
+    </p>
+    <p>
+      Use this frame as the source of truth to register Color Variables, Number Variables, and Text Styles in Figma. You can inspect each rendered element with the Figma eyedropper and match values exactly.
+    </p>
+
+    <h2>Step 3: Identify and Prioritize Components</h2>
+    <p>
+      A design system component inventory is a list of every distinct UI component in your codebase ranked by how often it appears. You don't need to import everything at once — start with the components that block the most design work.
+    </p>
+
+    <div class="step-card">
+      <div class="step-num">Priority 1 — Atoms</div>
+      <h3>Buttons, inputs, badges, labels, icons</h3>
+      <p style="margin:0;color:#374151;font-size:0.9rem;line-height:1.6;">These are used everywhere and their styles (padding, border-radius, color, font-weight) are the most frequently referenced in design work. Import all states: default, hover, focus, disabled.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Priority 2 — Molecules</div>
+      <h3>Cards, form fields, dropdowns, modals, alerts</h3>
+      <p style="margin:0;color:#374151;font-size:0.9rem;line-height:1.6;">Composed of atoms. Import the full rendered component, including any nested elements — html2design preserves the entire layer hierarchy. Cards with headings, metadata, and actions import as nested Figma groups.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Priority 3 — Organisms</div>
+      <h3>Navigation, hero sections, data tables, footers</h3>
+      <p style="margin:0;color:#374151;font-size:0.9rem;line-height:1.6;">Large, complex layouts. Import these last. They're useful for page-level design work but not needed for the core component library to be functional.</p>
+    </div>
+
+    <h2>Step 4: Import Components with HTML to Figma</h2>
+    <p>
+      For each component, the workflow is the same three steps: render in browser → copy outerHTML → import into Figma.
+    </p>
+    <ol>
+      <li>Open your component in a browser — a Storybook story, a local dev server, or a staging environment</li>
+      <li>Open DevTools (<kbd>F12</kbd> or <kbd>Cmd+Option+I</kbd>) and navigate to the Elements panel</li>
+      <li>Right-click the root element of the component and select <strong>Copy &gt; Copy outerHTML</strong></li>
+      <li>Open Figma, launch the html2design plugin</li>
+      <li>Paste the outerHTML into the plugin and click <strong>Import</strong></li>
+      <li>A new Figma frame appears with the component rendered at pixel-perfect fidelity</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>Capturing component states:</strong> DevTools' <em>Force element state</em> feature lets you trigger <code>:hover</code>, <code>:focus</code>, and <code>:active</code> without JavaScript. Right-click the element in the Elements panel, select <em>Force state</em>, and check the desired pseudo-class. The rendered state is now stable — copy the outerHTML while that state is active. You'll get a separate Figma frame for each state, which you can set up as Component Variants.</p>
+    </div>
+
+    <h3>Handling interactive components (dropdowns, modals)</h3>
+    <p>
+      Some components only render their full DOM when triggered by user interaction. For dropdowns, open the dropdown first, then open DevTools and copy the outerHTML of the parent before closing it. For modals, trigger the modal open, then use DevTools to find the <code>.modal</code> or <code>[role="dialog"]</code> element while it's still visible and copy it. If the component dismisses before you can copy, add <code>pointer-events: none</code> to the backdrop in DevTools to freeze it in place.
+    </p>
+
+    <h2>Step 5: Organize Components in Figma</h2>
+    <p>
+      Raw imported frames are useful but not yet a design system. To make them a publishable Figma library, you need to convert frames to Components and organize them with a consistent naming convention.
+    </p>
+
+    <p>
+      The standard naming pattern that matches most codebases is:
+    </p>
+
+    <div class="code-block">Category / ComponentName / VariantName<br><br>
+Button / Primary / Default<br>
+Button / Primary / Hover<br>
+Button / Primary / Disabled<br>
+Button / Secondary / Default<br>
+Input / Text / Empty<br>
+Input / Text / Filled<br>
+Input / Text / Error<br>
+Card / Default<br>
+Badge / Success<br>
+Badge / Warning</div>
+
+    <p>
+      To convert an imported frame to a Figma Component: select the frame, then press <kbd>Cmd+Alt+K</kbd> (macOS) or <kbd>Ctrl+Alt+K</kbd> (Windows). Add it to a dedicated <strong>Design System</strong> page in your Figma file, then publish that file as a Figma Library so other files can use the components.
+    </p>
+
+    <h3>Binding components to tokens</h3>
+    <p>
+      After importing components, connect their fills, strokes, and text to the Figma Variables you created from your token reference page. Select a button's background fill, click the Variable picker, and map it to <code>color-primary</code>. This step is manual but it pays off immediately — when a token value changes in your design file, every bound component updates automatically.
+    </p>
+
+    <h2>Extracting Design Tokens from CSS: Detailed Reference</h2>
+    <p>
+      If your codebase doesn't use CSS custom properties, you can still extract tokens from the computed CSS values in DevTools. Here's what to look for across common CSS frameworks:
+    </p>
+
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Token Location</th>
+          <th>Extract Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Plain CSS</strong></td>
+          <td><code>:root { --token: value }</code> in main stylesheet</td>
+          <td>DevTools → Elements → <code>&lt;html&gt;</code> → Computed → filter <code>--</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tailwind</strong></td>
+          <td><code>tailwind.config.js</code> theme object</td>
+          <td>Build a token reference page using <code>@apply</code> or inline classes; import with html2design</td>
+        </tr>
+        <tr>
+          <td><strong>Bootstrap</strong></td>
+          <td><code>$primary</code>, <code>$font-size-base</code>, etc. in compiled CSS</td>
+          <td>Inspect any Bootstrap-styled element; colors and spacing resolve to exact values in Computed panel</td>
+        </tr>
+        <tr>
+          <td><strong>CSS-in-JS (styled-components)</strong></td>
+          <td>Theme object passed via <code>ThemeProvider</code></td>
+          <td>React DevTools → find ThemeProvider component → inspect theme prop for full token map</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>When to Migrate vs. Build from Scratch</h2>
+    <p>
+      Extracting a design system from code is the right choice in most cases, but not all. Use this decision guide:
+    </p>
+
+    <ul>
+      <li><strong>Migrate from code when:</strong> your product is already live and in use, the design system in code is consistent (tokens used throughout, not ad-hoc), and you want Figma to reflect what's actually deployed rather than an aspirational redesign</li>
+      <li><strong>Build from scratch when:</strong> you're doing a full visual rebrand and the old design system won't survive, the existing code is so inconsistent that extracting it would import hundreds of one-off values with no pattern, or the design team needs to work on a future system before engineering has started</li>
+      <li><strong>Hybrid approach:</strong> migrate the tokens and the most-used atoms from code, then layer in aspirational components designed fresh in Figma. Mark legacy-extracted components clearly so designers know which ones reflect current production vs. new work</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>The hybrid approach works well for growing teams:</strong> the migrated library unblocks designers immediately (they stop recreating components from screenshots) while the fresh components give them room to iterate on the next version of the system without touching the live production layer.</p>
+    </div>
+
+    <h2>Keeping Code and Figma in Sync After Migration</h2>
+    <p>
+      Migration is not a one-time event. To prevent drift from building back up, establish a lightweight maintenance cadence:
+    </p>
+    <ol>
+      <li><strong>Token change:</strong> when a CSS custom property changes, update the corresponding Figma Variable. If your team uses a design token pipeline (Style Dictionary, Theo), consider exporting Figma Variables JSON from that same source of truth.</li>
+      <li><strong>Component change:</strong> when a component's visual appearance changes in code, re-import it via html2design and update the Figma Component. Schedule a monthly review of the 10 most-used components to catch drift early.</li>
+      <li><strong>New component:</strong> whenever a new component ships in code, add importing it to Figma to the definition of done for that ticket. This prevents the migration backlog from rebuilding.</li>
+    </ol>
+
+    <h3>FAQ</h3>
+
+    <h3>Can I extract design tokens from a production website I don't own the source for?</h3>
+    <p>
+      Yes — you can read computed CSS values from any website you can open in a browser. DevTools shows the computed value of every CSS property on every element, regardless of whether you have the source code. This is useful for auditing a competitor's design system or capturing a client's existing site before a redesign. html2design works from outerHTML, which includes all inline computed styles — no source access required.
+    </p>
+
+    <h3>What if my codebase has no token system and uses hardcoded values?</h3>
+    <p>
+      That's the most common situation. Import a representative set of components first, then use the Figma <em>Edit &gt; Find/Replace</em> tool to find every instance of a common value (e.g., the hex code <code>#2563EB</code>) and replace it with a Color Variable. The migration becomes a token consolidation exercise — you're discovering the tokens that were implicit in the code and making them explicit in Figma.
+    </p>
+
+    <h3>Does html2design work with server-side rendered pages?</h3>
+    <p>
+      Yes. html2design works from rendered HTML, which the browser has already produced regardless of how it was generated — Next.js SSR, Rails, PHP, static HTML. The source of the markup doesn't matter. What matters is that the browser has rendered it with full styles applied, which you capture via DevTools' outerHTML copy.
+    </p>
+
+    <h3>How do I handle icons in the design system migration?</h3>
+    <p>
+      SVG icons copy cleanly. When you copy a component's outerHTML that contains inline SVGs, the full SVG markup comes along. html2design imports SVG elements as Figma vector nodes — fully editable, preserving paths, fills, and dimensions. If your icon library renders SVGs via CSS <code>mask-image</code> or background images, DevTools' Computed panel shows the resolved image URL; you can download the SVG and import it into Figma as a standalone icon.
+    </p>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Extract, don't rebuild.</strong> Your code already encodes the design system — tokens, spacing, and components are all in the computed CSS. html2design captures them at exact values from the browser's rendered output.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Start with a token reference page.</strong> Render all CSS custom properties (colors, spacing, typography) in a single HTML page and import it first. This gives you Figma Variables that reflect production values exactly.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Prioritize atoms before organisms.</strong> Import buttons, inputs, and badges first. These unblock the most design work and form the foundation of every higher-level component.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Convert imported frames to Figma Components.</strong> Use the naming convention <code>Category / Component / Variant</code> to match your codebase structure. Publish as a Figma Library for the whole team.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Prevent drift from coming back.</strong> Add "import to Figma" to your definition of done for component changes. A monthly 10-component sync review takes less than an hour and eliminates design drift. Works with <a href="https://html2design.com/blog/react-component-to-figma" style="color:#2563EB;">React</a>, <a href="https://html2design.com/blog/tailwind-to-figma" style="color:#2563EB;">Tailwind</a>, <a href="https://html2design.com/blog/bootstrap-to-figma" style="color:#2563EB;">Bootstrap</a>, and any HTML/CSS stack.</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The complete step-by-step walkthrough: install html2design, copy outerHTML from DevTools, and get editable Figma layers in under a minute.</p>
+        </a>
+        <a href="/blog/tailwind-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Extract tokens as Figma Variables and convert your Tailwind component library to native Figma layers.</p>
+        </a>
+        <a href="/blog/bootstrap-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Bootstrap to Figma: A Migration Guide for Bootstrap Teams &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Convert Bootstrap components and grid layouts into editable Figma designs, including responsive breakpoints and theme customizations.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">React renders to HTML — capture any component state from Storybook, Next.js, or localhost and import it directly.</p>
+        </a>
+        <a href="/use-cases/legacy-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Legacy Code Migration to Figma — Full Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Migrating an older codebase to Figma? This guide covers the full workflow including multi-page site audits and component inventory.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Migrate your design system in hours, not weeks</h2>
+      <p class="text-content-muted mb-6">Install html2design from the Figma Community. Paste any component's outerHTML. Get editable Figma layers with exact token values — no rebuilding from scratch.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/use-cases/legacy-migration" class="hover:text-content transition-colors">Legacy Migration</a>
+        <a href="/use-cases/developer-handoff" class="hover:text-content transition-colors">Developer Handoff</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
