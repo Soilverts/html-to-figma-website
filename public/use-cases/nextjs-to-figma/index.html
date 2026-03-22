@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Next.js to Figma — Convert Next.js Pages to Figma Designs</title>
+  <meta name="description" content="Convert Next.js pages and components into editable Figma designs in minutes. Works with App Router, Pages Router, SSR, SSG, and React Server Components — paste rendered HTML to import." />
+  <meta name="keywords" content="nextjs to figma, next.js to figma, convert nextjs figma, next.js figma plugin, react server components figma, nextjs design handoff, html to figma nextjs, app router figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/nextjs-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/nextjs-to-figma" />
+  <meta property="og:title" content="Next.js to Figma — Convert Next.js Pages to Figma Designs" />
+  <meta property="og:description" content="Convert Next.js pages and components into editable Figma designs in minutes. Works with App Router, Pages Router, SSR, SSG, and React Server Components — paste rendered HTML to import." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Next.js to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Next.js to Figma — Convert Next.js Pages to Figma Designs" />
+  <meta name="twitter:description" content="Convert Next.js pages and components into editable Figma designs in minutes. Works with App Router, Pages Router, SSR, SSG, and React Server Components." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Next.js Pages to Figma Designs — Next.js to Figma Workflow",
+    "description": "Step-by-step guide for converting Next.js pages and components — including App Router, SSR, and SSG output — into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/nextjs-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Next.js to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/nextjs-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Next.js page to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Next.js app locally with npm run dev. Navigate to the page you want to capture in your browser. Open DevTools (F12), find the root element in the Elements panel, right-click it, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The plugin converts the fully rendered, hydrated output — including server-rendered data — into native Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Next.js SSR or SSG affect how I capture pages for Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — and that is the key advantage of this workflow. Whether your Next.js page uses getServerSideProps, getStaticProps, or React Server Components, the browser displays the fully rendered output. Always copy from the DevTools Elements panel (not View Page Source), which shows the hydrated, client-side DOM with all dynamic data applied. The html2design plugin reads that final output, not the source files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Next.js App Router pages into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. App Router pages — including those built with React Server Components — render to standard HTML in the browser. Run npm run dev, navigate to the route, copy the rendered DOM from DevTools, and paste it into html2design. The distinction between Server Components and Client Components is invisible to the browser: you always capture the final rendered HTML."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import a statically generated Next.js site into Figma without running a dev server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Run npm run build and then npm run start (or npx serve out for a static export). Open the built site in your browser, navigate to the page, and copy the outerHTML from DevTools as usual. This is especially useful for capturing the exact production-optimized output rather than the development version."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Next.js to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Next.js</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Next.js to Figma —<br />
+        In Two Minutes
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Next.js pages to Figma</strong> means running your app locally,
+        copying the hydrated HTML from DevTools, and pasting it into the html2design plugin. App Router, Pages Router,
+        SSR, SSG, and React Server Components all land in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> — no public URL, no Chrome extension.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/blog/react-component-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          React Component Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Next.js to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Next.js to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Next.js to Figma"</strong> refers to the workflow of converting a rendered Next.js page —
+        whether server-side rendered, statically generated, or built with the App Router — into a native Figma design that
+        designers can edit, annotate, and use for handoff. The html2design Figma plugin enables this by accepting raw HTML
+        copied from your browser's DevTools and generating editable Figma frames from the computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Next.js is unique because it pre-renders pages on the server — via SSR, SSG, or React Server Components —
+        before delivering them to the browser. This means by the time you open DevTools, the page already contains
+        the real data, the resolved styles, and the fully hydrated markup. Copying that output is more reliable than
+        trying to screenshot a partially-loaded state: you get the exact DOM the user sees, turned into a
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>-only
+        Figma design in under two minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Next.js to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works with Next.js 13, 14, 15 — App Router, Pages Router, and static export.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run your Next.js app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start the development server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>
+              and navigate to the page or route you want to capture. No staging deploy, no public URL required — everything runs on
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>.
+            </p>
+            <p>
+              If the page depends on authenticated data or specific route parameters, log in and navigate to the correct state first.
+              For pages that load data dynamically (SWR, React Query, server actions), wait for the data to fully render before copying.
+              The plugin captures whatever the browser displays — fetch the right state first.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to the
+              Elements panel. For a full-page capture, right-click the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element or the top-level
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;div id="__next"&gt;</code>.
+              For a single component, select just that component's root node.
+            </p>
+            <p>
+              Right-click the element and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              Do <em>not</em> use View Page Source — that shows the raw server-rendered HTML before React hydrates the page.
+              The Elements panel always reflects the live, fully-hydrated DOM.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads the computed styles the browser
+              already resolved — your Tailwind utility classes, CSS Modules, or global stylesheets are all baked into
+              the rendered output before the plugin ever sees the markup.
+            </p>
+            <p>
+              The result is a native Figma frame: real text layers with correct fonts, fills that reflect your CSS
+              custom properties, and a layer tree that mirrors the component hierarchy. No screenshot, no rasterized image.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer can open the frame, add annotations, adjust spacing, and iterate
+              on the design — all without running the Next.js app or touching the codebase. Because the Figma frame
+              starts from the actual rendered page, any changes represent a true delta from the current implementation.
+            </p>
+            <p>
+              For team handoffs, you can use this approach to capture multiple page states — logged-in vs logged-out,
+              empty state vs populated, mobile breakpoint vs desktop — and organize them into a single Figma document
+              for designer review.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Next.js-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Next.js-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Next.js has rendering characteristics that make it especially well-suited to this workflow — and a few gotchas worth knowing.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Always copy from the Elements panel, not View Page Source</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Next.js sends server-rendered HTML before React hydrates the page. View Page Source shows this initial HTML,
+            which may be missing client-side state, dynamic data loaded after hydration, or styles applied by
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">useEffect</code>. The DevTools Elements
+            panel always shows the live, fully-hydrated DOM — always use that for your copy.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">CSS Modules and Tailwind are resolved automatically</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Next.js compiles CSS Modules into hashed class names (e.g.
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">styles_heading__xK2mP</code>) and injects
+            them at build time. Tailwind classes are also compiled and purged. By the time the browser renders the page,
+            all of these are resolved to their computed CSS values. The html2design plugin reads those computed values —
+            you never need to worry about module names or utility classes.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture SSG pages from the built output for production fidelity</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If your pages use <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">getStaticProps</code>
+            or the App Router's static generation, the dev server may not reflect the exact production output. For the
+            most accurate capture, run
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run build &amp;&amp; npm run start</code>
+            to preview the production build locally. Navigate to the page and copy from DevTools as usual.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">React Server Components render to plain HTML — just like client components</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Server Components run on the server and send pre-rendered HTML to the browser. From the browser's perspective,
+            they are indistinguishable from client-rendered output. You copy, paste, and generate in Figma the same way.
+            There is no special handling needed for RSC — the output you see in the Elements panel is exactly what
+            html2design will convert.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not plugin wrappers.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers with correct fonts</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text node — including server-rendered content from a CMS or database — becomes a real Figma
+            text layer with the correct font family, size, weight, line height, and color.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Computed spacing from Tailwind or CSS Modules</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, margin, gap, and flex/grid layout values are read from the browser's computed styles —
+            not from source Tailwind classes or CSS Module declarations. What renders is what lands in Figma.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">CSS custom properties as fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Next.js apps often define design tokens in
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">:root</code>
+            or via Tailwind's config. The browser resolves
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--foreground)</code>
+            to its actual hex value before html2design reads it — Figma fills reflect your exact design tokens.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Named layer hierarchy from class names</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            HTML class names and element types become Figma layer names. Your
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.hero-section</code>
+            or <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">nav</code>
+            becomes a named frame in Figma's layer panel — navigable and ready to hand off.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Next.js page to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>, navigate to the page,
+            open DevTools, right-click the root element in the Elements panel, and choose Copy &gt; Copy outerHTML.
+            Paste the HTML into the html2design Figma plugin and click Generate. The plugin converts the fully rendered,
+            hydrated output into native Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Next.js SSR or SSG affect how I capture pages for Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No — that is the key advantage. The browser always shows you the fully rendered output regardless of whether
+            the page used SSR, SSG, or RSC. Copy from the DevTools Elements panel (not View Page Source) to ensure you
+            get the hydrated, client-side DOM with all dynamic data applied.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import Next.js App Router pages into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. App Router pages and React Server Components render to standard HTML in the browser. Run the dev server,
+            navigate to the route, and copy the DOM from DevTools. The plugin works the same way regardless of whether
+            you are using the Pages Router or App Router.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture a statically exported Next.js site without running a dev server?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run build</code> and then
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run start</code> (or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npx serve out</code> for a static export).
+            Open the built site in your browser and copy the outerHTML from DevTools as usual. This captures the
+            production-optimized output rather than the development version.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3, Nuxt, and scoped-style components into native Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/gatsby-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Gatsby to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Export Gatsby static site output to Figma from the browser-rendered DOM.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and Chrome extensions.</p>
+        </a>
+
+        <a href="/alternatives"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Alternatives</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Alternatives</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Other tools for importing HTML and web designs into Figma.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Next.js pages to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, no Chrome extension, no public URL required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

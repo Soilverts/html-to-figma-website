@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Gatsby to Figma — Convert Gatsby Sites to Figma Designs</title>
+  <meta name="description" content="Convert Gatsby static sites and pages into editable Figma designs in minutes. Works with GatsbyJS built output, GraphQL-populated content, and any Gatsby theme — paste rendered HTML to import." />
+  <meta name="keywords" content="gatsby to figma, gatsby.js to figma, convert gatsby figma, gatsby figma plugin, gatsbyjs design handoff, gatsby static site figma, html to figma gatsby, gatsby component figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/gatsby-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/gatsby-to-figma" />
+  <meta property="og:title" content="Gatsby to Figma — Convert Gatsby Sites to Figma Designs" />
+  <meta property="og:description" content="Convert Gatsby static sites and pages into editable Figma designs in minutes. Works with GatsbyJS built output, GraphQL-populated content, and any Gatsby theme." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gatsby to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gatsby to Figma — Convert Gatsby Sites to Figma Designs" />
+  <meta name="twitter:description" content="Convert Gatsby static sites and pages into editable Figma designs. Works with built output, GraphQL-populated content, and any Gatsby theme." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Gatsby Sites to Figma Designs — Gatsby to Figma Workflow",
+    "description": "Step-by-step guide for converting Gatsby static sites — including GraphQL-populated pages, Gatsby themes, and the production build output — into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/gatsby-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Gatsby to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/gatsby-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Gatsby site to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Gatsby site locally with gatsby develop or preview the production build with gatsby build && gatsby serve. Navigate to the page you want in your browser, open DevTools (F12), right-click the root element in the Elements panel, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The plugin converts the fully rendered static output — including GraphQL-populated content and compiled CSS Modules — into native Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Gatsby's static build affect how I capture pages for Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gatsby pre-renders every page to static HTML at build time, then React hydrates the result in the browser. Both gatsby develop and gatsby build produce the same rendered output. The key is to always copy from the DevTools Elements panel — not View Page Source — to capture the hydrated DOM with all client-side enhancements applied. For the most accurate production output, capture from gatsby build && gatsby serve."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GraphQL data populate before I copy the HTML?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Gatsby queries GraphQL at build time and bakes the data into the generated HTML. By the time you open the page in a browser, all GraphQL-populated content — blog post titles, CMS images, product data — is already in the rendered output. You do not need to worry about async fetching or loading states for the static parts of a Gatsby page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert Gatsby Theme pages and Gatsby starters to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Gatsby Themes and starters are just Gatsby sites with pre-configured components and styles. They generate the same standard HTML and CSS output as any other Gatsby project. Run the dev server or build the project, open the page in your browser, copy the outerHTML from DevTools, and paste into html2design. The plugin works the same regardless of which Gatsby Theme or starter was used."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Gatsby to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Gatsby</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Gatsby to Figma —<br />
+        In Two Minutes
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting a Gatsby site to Figma</strong> means running the site
+        locally, copying the rendered static HTML from DevTools, and pasting it into the html2design plugin.
+        Gatsby's static build output, GraphQL-populated content, and CSS Modules all land in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> — not screenshots.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/nextjs-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Next.js to Figma
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Gatsby to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Gatsby to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Gatsby to Figma"</strong> refers to the process of converting a Gatsby static
+        site page — including its GraphQL-populated content, compiled CSS Modules, and styled-components output —
+        into a native Figma design that designers can edit, annotate, and use as a handoff spec. The html2design
+        Figma plugin enables this workflow by accepting raw HTML copied from your browser's DevTools and generating
+        editable Figma frames from the computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Gatsby is built around static site generation (SSG): at build time, it queries GraphQL data sources, renders
+        React components to HTML, and writes static files to disk. This means every page is pre-rendered with real
+        data before you ever open it in a browser. By the time you copy the outerHTML from DevTools, the page already
+        contains the final content, resolved CSS, and fully hydrated DOM — ready to paste directly into the
+        html2design plugin and generate a pixel-accurate Figma design in under two minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Gatsby to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works with gatsby develop, gatsby build, Gatsby Themes, and any Gatsby starter.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run your Gatsby site locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start the development server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby develop</code>
+              and navigate to the page or route you want to capture. The dev server runs at
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:8000</code> by default. No public URL required.
+            </p>
+            <p>
+              For the most accurate production output — with all optimizations, image processing, and CSS minification applied —
+              run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby build</code> followed by
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby serve</code>. The built site
+              serves at <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:9000</code> and reflects the exact
+              output that will be deployed.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to the
+              Elements panel. For a full-page capture, right-click the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element or the top-level
+              Gatsby page wrapper. For a single component, select just that component's root node.
+            </p>
+            <p>
+              Right-click the element and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              Always use the Elements panel — not View Page Source — to ensure you get the hydrated, client-side DOM with
+              all React enhancements applied. Gatsby ships a static HTML shell and then hydrates it with React; the Elements
+              panel shows the post-hydration DOM.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads the computed styles the browser
+              already resolved — Gatsby's CSS Modules hashed class names, styled-components injected styles, or plain
+              global CSS — all baked into the rendered output before the plugin sees the markup.
+            </p>
+            <p>
+              The result is a native Figma frame: real text layers with correct fonts, fills that reflect your design
+              system's color tokens, and a layer tree that mirrors the page's component hierarchy.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer can open the frame, add annotations, adjust spacing, and iterate
+              on the design — all without running Gatsby locally or touching the codebase. Because the frame starts from
+              the actual rendered static output, any design changes represent a true delta from the current implementation.
+            </p>
+            <p>
+              Gatsby's static nature makes it particularly easy to capture multiple page variations — blog post pages,
+              category pages, landing pages — each as a separate Figma frame, organized into a single design document
+              for review or handoff.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gatsby-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Gatsby-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Gatsby's static build has a few unique characteristics worth understanding before you start capturing pages.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">GraphQL data is baked in at build time — no async fetch needed</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Gatsby queries all GraphQL data at build time and embeds it directly into the generated HTML. When you open
+            a Gatsby page in the browser, all content — blog titles, CMS images, product descriptions, author bios —
+            is already in the DOM. You do not need to wait for API calls or worry about loading states for the static
+            parts of the page. What you see immediately in the browser is what the plugin will import.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Prefer gatsby build + gatsby serve for production-accurate capture</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby develop</code> runs a development
+            version with unoptimized CSS and development-only overlays. For the most accurate representation of what
+            users will see in production, run
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby build &amp;&amp; gatsby serve</code>
+            before capturing. This shows the fully optimized, production-ready output including any CSS purging and
+            image optimization that only runs in the production build.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">CSS Modules hashed class names are resolved by the browser</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Gatsby compiles CSS Modules into hashed class names like
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">hero-module--title--a7Kx2</code>.
+            The browser resolves these to their final computed CSS values — so when you copy the rendered HTML and paste
+            it into html2design, all the styles are already applied as concrete pixel values. You never need to manually
+            track down which CSS Module file a class belongs to.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Gatsby Image optimized components capture correctly</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Gatsby Image (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">GatsbyImage</code> and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">StaticImage</code>) renders placeholder
+            images during load and swaps to the optimized image once loaded. Wait for images to fully load before copying
+            the outerHTML — you can verify they are loaded by checking the Elements panel for
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">src</code> attributes pointing to the
+            optimized image files rather than placeholder data URIs.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not plugin wrappers.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Real text with CMS-populated content</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Blog post titles, headings, and body copy populated from GraphQL data sources — Contentful, Sanity, WordPress,
+            or Markdown — all become real Figma text layers with correct fonts and styles.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Computed spacing from CSS Modules or styled-components</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, margin, gap, and layout values are read from the browser's computed styles — not from source
+            CSS Module files or styled-component definitions. What the browser renders is exactly what lands in Figma.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Design tokens as fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            CSS custom properties and Gatsby theme tokens are resolved by the browser to their actual values.
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-primary)</code>
+            becomes the exact hex color in Figma fills — reflecting your design system directly.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layer hierarchy from component structure</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            HTML class names and element types become Figma layer names. Your
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.post-header</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.hero</code>,
+            and navigation elements are named frames in Figma's layer panel, ready to hand off.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Gatsby site to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby develop</code> (or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby build &amp;&amp; gatsby serve</code>
+            for production fidelity), navigate to the page, open DevTools, right-click the root element in the
+            Elements panel, and choose Copy &gt; Copy outerHTML. Paste into the html2design Figma plugin and click Generate.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Gatsby's static build affect how I capture pages?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Gatsby pre-renders pages to static HTML, then hydrates with React in the browser. Always copy from the
+            DevTools Elements panel — not View Page Source — to get the hydrated DOM. For production-accurate output,
+            prefer <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby build &amp;&amp; gatsby serve</code>
+            over <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gatsby develop</code>.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Is GraphQL data already populated when I copy the HTML?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Gatsby queries GraphQL at build time and embeds the data directly into the static HTML. When you open
+            the page in a browser, all content is already in the DOM — no async fetching needed. You copy exactly what
+            you see, with the real data already present.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I convert Gatsby Themes and starters to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Gatsby Themes and starters produce the same standard HTML and CSS output as any other Gatsby project.
+            Run the dev server or build, open the page in your browser, copy the outerHTML from DevTools, and paste
+            into html2design. The plugin works the same regardless of which theme or starter was used.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/nextjs-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Next.js to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Next.js pages with App Router, SSR, and SSG into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/wordpress-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">WordPress to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert any WordPress theme — Elementor, Divi, Astra — into editable Figma designs.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3, Nuxt, and scoped-style components into native Figma layers.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and Chrome extensions.</p>
+        </a>
+
+        <a href="/alternatives"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Alternatives</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Alternatives</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Other tools for importing HTML and web designs into Figma.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Gatsby site to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any Gatsby site, no Chrome extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

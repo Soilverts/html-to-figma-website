@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>WordPress to Figma — Convert WordPress Sites to Figma Designs</title>
+  <meta name="description" content="Convert any WordPress site into editable Figma designs in minutes. Works with any theme — Divi, Elementor, Astra, or custom — paste rendered HTML to import without a public URL." />
+  <meta name="keywords" content="wordpress to figma, convert wordpress figma, wordpress figma plugin, elementor to figma, divi to figma, wordpress theme figma, html to figma wordpress, wordpress design handoff" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/wordpress-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/wordpress-to-figma" />
+  <meta property="og:title" content="WordPress to Figma — Convert WordPress Sites to Figma Designs" />
+  <meta property="og:description" content="Convert any WordPress site into editable Figma designs in minutes. Works with any theme — Divi, Elementor, Astra, or custom — paste rendered HTML to import without a public URL." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="WordPress to Figma conversion workflow using HTML to Figma plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WordPress to Figma — Convert WordPress Sites to Figma Designs" />
+  <meta name="twitter:description" content="Convert any WordPress site into editable Figma designs — Elementor, Divi, Astra, or custom theme. Paste rendered HTML to import into Figma." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert WordPress Sites to Figma Designs — WordPress to Figma Workflow",
+    "description": "Step-by-step guide for converting any WordPress site — built with Elementor, Divi, Astra, or a custom theme — into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/wordpress-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "WordPress to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/wordpress-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a WordPress site to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the WordPress page in any browser — local, staging, or live. Open DevTools (F12), find the element you want in the Elements panel, right-click it, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The plugin converts the fully rendered theme output — including styles from Elementor, Divi, Astra, or any custom theme — into native Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with page builders like Elementor or Divi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Elementor, Divi, Beaver Builder, Bricks, and other WordPress page builders generate standard HTML and CSS at render time. The browser resolves all their inline styles, custom CSS, and dynamic styles into computed values. When you copy the rendered HTML from DevTools and paste it into html2design, all of those styles are already applied — the plugin reads the final computed output, not the page builder's internal data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert a local WordPress site to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Local WordPress environments created with LocalWP, MAMP, XAMPP, Lando, or DevKinsta work perfectly. Open the local site in your browser, navigate to the page you want, copy the outerHTML from DevTools, and paste it into html2design. The plugin works entirely offline — no public URL or internet connection required for the conversion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between converting a WordPress theme and taking a screenshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A screenshot produces a rasterized image — a flat PNG or JPEG that designers cannot edit at the element level. The html2design approach converts the rendered HTML into native Figma objects: real text layers with correct fonts, vector fills, editable spacing, and a layer hierarchy that mirrors the DOM. Designers can change text, adjust colors, tweak spacing, and use the output directly as a handoff spec or redesign starting point."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">WordPress to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · WordPress</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        WordPress to Figma —<br />
+        Any Theme, Any Page
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting a WordPress site to Figma</strong> means opening the page
+        in a browser, copying the rendered HTML from DevTools, and pasting it into the html2design plugin. Works with
+        Elementor, Divi, Astra, block themes, and custom PHP themes — the result is a
+        <strong class="text-content font-medium">native, editable Figma design</strong>, not a screenshot.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          HTML to Figma Full Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is WordPress to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "WordPress to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"WordPress to Figma"</strong> refers to the process of converting a live or locally-hosted
+        WordPress page — including its theme styles, page builder output, and dynamic content — into a native Figma design
+        that designers and developers can use for handoff, redesign, or documentation. Because WordPress generates standard
+        HTML and CSS at render time, any WordPress page can be imported into Figma using the html2design plugin, regardless
+        of which theme or page builder was used to build it.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Unlike screenshot tools, this approach produces editable Figma objects — real text layers, vector fills, and a
+        layer hierarchy that mirrors the rendered DOM. You open the WordPress page in a browser, copy the rendered HTML
+        from DevTools, and paste it into the plugin. The browser has already compiled PHP templates, loaded stylesheets,
+        and rendered the page builder output into standard HTML and CSS — html2design reads that final output directly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The WordPress to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works with any WordPress theme — Elementor, Divi, block editor, or custom PHP.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Open the WordPress page in your browser</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Navigate to the WordPress page you want to capture — local, staging, or live. Local environments
+              (LocalWP, MAMP, XAMPP, Lando, DevKinsta) work perfectly; no public URL is required. If the page
+              requires authentication, log in first so the content renders as it would for a real user.
+            </p>
+            <p>
+              If you want to capture a specific post, product, or page state — an empty WooCommerce cart vs a
+              cart with items, a logged-in header vs a logged-out one — navigate to or set up that state first.
+              The plugin captures whatever the browser currently displays.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to the
+              Elements panel. For a full-page capture, right-click the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element or the primary
+              content wrapper (often <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.site-main</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.wp-site-blocks</code>, or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">#main-content</code>).
+              For a single section or component, select just that element.
+            </p>
+            <p>
+              Right-click the element and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              This captures the fully rendered DOM — PHP templates compiled, page builder styles applied, dynamic
+              content loaded. You are copying exactly what the browser rendered, not the raw PHP source.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads the computed styles the browser
+              already resolved — Elementor's custom CSS, Divi's inline styles, Twenty Twenty-Four's block theme styles —
+              all baked into the rendered output before the plugin sees the markup.
+            </p>
+            <p>
+              The result is a native Figma frame with real text layers, correct fonts, fills that reflect your theme's
+              color palette, and a layer tree that mirrors the page hierarchy. No screenshot, no rasterized image.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer or client</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer or client can open the frame, annotate it, adjust spacing,
+              propose color changes, and use it as a redesign starting point — all without needing WordPress access.
+              This is especially useful for client review: export the current state to Figma, let the client mark up
+              changes directly in Figma, then implement the delta.
+            </p>
+            <p>
+              For agencies handling multiple WordPress clients, this workflow lets you document the current state of
+              any site in Figma in under two minutes — no manual recreation, no screenshots stitched together.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WordPress-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">WordPress-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        WordPress sites range from simple block themes to complex page builders. These tips help you get the cleanest import.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Elementor and Divi: capture the frontend, not the editor</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Page builders like Elementor and Divi have their own editing interfaces that inject extra markup and scripts
+            into the DOM. Always capture from the frontend view — visit the page as a regular user would, not from
+            within the Elementor or Divi visual editor. The frontend view shows the clean rendered output without
+            builder-specific wrapper divs and editor scripts.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Select the content container, not the entire body</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            WordPress pages often include admin bars, sticky headers, cookie banners, and sticky footers that add
+            noise to the import. For a cleaner result, select the main content area — typically
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.site-main</code> — rather than
+            the entire <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code>.
+            You can always add header and footer sections separately.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Local WordPress sites work just as well as live sites</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If you are building a site locally with LocalWP, MAMP, XAMPP, or DevKinsta, the html2design plugin works
+            exactly the same way. Open the local site in Chrome or Firefox, copy the outerHTML from DevTools, and paste
+            it into Figma. No public URL is required — the plugin runs entirely inside Figma and does not need to access
+            the WordPress site directly.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">WooCommerce product and shop pages work too</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            WooCommerce pages are standard WordPress pages with additional dynamic content — product listings, cart
+            items, checkout forms. Navigate to the specific page state you want to capture (a product with reviews,
+            a populated cart, the checkout form), copy the rendered HTML from DevTools, and import it. All WooCommerce
+            styling — whether from the default WooCommerce stylesheet or a custom theme — is resolved by the browser
+            before the plugin reads it.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not plugin wrappers.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers with correct fonts</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text node — post titles, body copy, WooCommerce product names, button labels — becomes a real Figma
+            text layer with the correct font family, size, weight, line height, and color from your theme.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Theme colors as fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            WordPress block themes and Elementor/Divi both use CSS custom properties for color palettes. The browser
+            resolves <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--wp--preset--color--primary)</code>
+            to its actual hex value before the plugin reads it — Figma fills reflect your exact theme palette.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Computed spacing from theme stylesheets</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, margin, gap, and section spacing values are read from computed styles — not from raw PHP templates
+            or Elementor's widget settings. What the browser renders is exactly what lands in Figma.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layer hierarchy from theme structure</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Class names, section IDs, and element types become Figma layer names. Your theme's
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.hero-section</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.wp-block-group</code>,
+            and navigation elements become named frames in Figma's layer panel.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a WordPress site to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Open the WordPress page in any browser, open DevTools, right-click the content area in the Elements panel,
+            and choose Copy &gt; Copy outerHTML. Paste the HTML into the html2design Figma plugin and click Generate.
+            Works with any theme — Elementor, Divi, Astra, block themes, or custom PHP.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does it work with Elementor or Divi?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Elementor and Divi generate standard HTML and CSS at render time. The browser resolves all inline styles
+            and custom CSS into computed values. Copy the outerHTML from the frontend (not the editor), paste into
+            html2design, and all builder styles are already applied.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I convert a local WordPress site to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. LocalWP, MAMP, XAMPP, Lando, and DevKinsta all work. Open the local site in your browser, copy the
+            outerHTML from DevTools, and paste into html2design. The plugin runs inside Figma and does not need to
+            access the WordPress site directly — no public URL required.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">What is the difference between this and taking a screenshot?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            A screenshot is a rasterized image that designers cannot edit at the element level. The html2design approach
+            produces native Figma objects: real text layers, editable fills, and a layer hierarchy. Designers can change
+            text, tweak spacing, and use the output as a live handoff spec or redesign starting point — not just a
+            reference image.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/blog/how-to-convert-html-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">How to Convert HTML to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The complete step-by-step walkthrough for importing any HTML into Figma.</p>
+        </a>
+
+        <a href="/use-cases/nextjs-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Next.js to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Next.js pages with App Router, SSR, and SSG into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/gatsby-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Gatsby to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Export Gatsby static site output to Figma from the browser-rendered DOM.</p>
+        </a>
+
+        <a href="/use-cases/legacy-migration"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Legacy Migration</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Document existing sites in Figma before a redesign or framework migration.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and Chrome extensions.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your WordPress site to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any WordPress theme, no Chrome extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
