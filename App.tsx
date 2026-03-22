@@ -29,6 +29,9 @@ const Pricing = lazy(() =>
 const FAQ = lazy(() =>
   import('./components/Sections/FAQ').then(m => ({ default: m.FAQ }))
 );
+const BlogPreview = lazy(() =>
+  import('./components/Sections/BlogPreview').then(m => ({ default: m.BlogPreview }))
+);
 const CTA = lazy(() =>
   import('./components/Sections/CTA').then(m => ({ default: m.CTA }))
 );
@@ -125,6 +128,9 @@ const App: React.FC = () => {
         </Suspense>
         <Suspense fallback={<div className="h-64" />}>
           <FAQ id="faq" />
+        </Suspense>
+        <Suspense fallback={<div className="h-64" />}>
+          <BlogPreview id="blog" />
         </Suspense>
         <Suspense fallback={<div className="h-64" />}>
           <CTA id="cta" />

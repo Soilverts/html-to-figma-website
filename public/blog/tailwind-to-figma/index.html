@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Tailwind to Figma: Convert Tailwind Components into a Figma Design System (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting Tailwind CSS components into a Figma design system. Extract utility classes as Figma styles and variables, sync your component library, and keep code and design in step." />
+  <meta name="keywords" content="tailwind to figma, convert tailwind to figma, tailwind figma design system, tailwind css figma, design system figma plugin, tailwind components figma, figma tailwind variables" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/blog/tailwind-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/blog/tailwind-to-figma" />
+  <meta property="og:title" content="Tailwind to Figma: Build a Figma Design System from Tailwind Components (2026)" />
+  <meta property="og:description" content="Tailwind compiles to real CSS — and that CSS maps directly to Figma styles and variables. Here's the exact workflow for extracting your Tailwind design tokens and components into Figma." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="669" />
+  <meta property="og:image:alt" content="Tailwind CSS to Figma design system conversion workflow" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-22T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="tailwind to figma" />
+  <meta property="article:tag" content="design system" />
+  <meta property="article:tag" content="figma variables" />
+  <meta property="article:tag" content="tailwind css" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tailwind to Figma: Build a Design System from Your Tailwind Components (2026)" />
+  <meta name="twitter:description" content="Tailwind compiles to CSS — paste that rendered output into html2design and get native Figma layers. Here's the full design system workflow." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Tailwind to Figma: Convert Tailwind Components into a Figma Design System",
+    "description": "Step-by-step guide to converting Tailwind CSS components into a Figma design system. Extract utility classes as Figma styles and variables, sync your component library, and keep code and design aligned.",
+    "url": "https://html2design.com/blog/tailwind-to-figma",
+    "datePublished": "2026-03-22T00:00:00Z",
+    "dateModified": "2026-03-22T00:00:00Z",
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 669
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://html2design.com/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://html2design.com/blog/tailwind-to-figma"
+    },
+    "keywords": "tailwind to figma, convert tailwind to figma, design system figma plugin, tailwind figma variables, tailwind css figma",
+    "articleSection": "Tutorial",
+    "wordCount": 1900,
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Converting Tailwind CSS components to Figma",
+      "description": "Workflow for extracting Tailwind design tokens and components into a native Figma design system using rendered browser output"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://html2design.com/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Tailwind CSS", "url": "https://tailwindcss.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://html2design.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Tailwind to Figma", "item": "https://html2design.com/blog/tailwind-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert Tailwind CSS to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tailwind utility classes compile to standard CSS in the browser. When you inspect a rendered Tailwind component in DevTools and copy its outerHTML, all computed styles are included. html2design reads those resolved values — colors, spacing, typography, layout — and maps them to native Figma properties. Tailwind class names don't appear in the output; what you get is the visual result as Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I extract Tailwind design tokens into Figma variables?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable approach is to build a small HTML reference page that renders every token in your tailwind.config — colors, font sizes, spacing, border radius, and shadows — then convert that page using html2design. You get one Figma frame per token group that you can inspect and manually register as Figma Variables or Styles. For teams that want automation, exporting the tailwind.config JSON and importing it into Figma's Variables API is an alternative, but it requires custom scripting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best Figma plugin for Tailwind?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design works from rendered browser output, which means it captures Tailwind's actual compiled result — not just class names — including your customized theme values, dark mode variants, and arbitrary values. Other plugins that read Tailwind config files directly don't account for responsive overrides, JIT-generated values, or custom utility plugins. For converting real Tailwind UIs to Figma, the rendered-output approach gives the most accurate visual fidelity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep Figma in sync with Tailwind changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no fully automated sync between Tailwind and Figma — any workflow requires periodic re-capture. The lightest approach is to establish a re-export cadence: whenever your tailwind.config theme changes significantly, re-run the token reference page through html2design and update the affected Figma styles. For component-level sync, re-import affected components when they change visually. Some teams automate this with a CI step that flags config changes and prompts a designer review."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Tailwind's dark mode work with html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but you capture light and dark modes as separate imports. Toggle the browser's color scheme (via DevTools > Rendering > Emulate prefers-color-scheme) or add the 'dark' class to the root element, then copy the component's outerHTML in that state and paste it into html2design. You get a Figma frame with the dark-mode computed styles, which you can use as the dark variant in a Figma Component alongside the light version."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .tailwind-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 999px; background: #DBEAFE; color: #1D4ED8; margin-bottom: 0.5rem; }
+    .token-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .token-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .token-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .token-table tr:last-child td { border-bottom: none; }
+    .token-table code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: #F3F4F6; padding: 0.1rem 0.3rem; border-radius: 3px; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Tailwind to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Tailwind to Figma: Build a Design System from Your Tailwind Components
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Tailwind compiles to standard CSS — which means every Tailwind component is already one paste away from becoming a native Figma layer. Here's how to extract your design tokens, convert your component library, and keep code and design in sync.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-22" class="text-xs text-gray-400 font-mono">March 22, 2026</time>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <h2>The Tailwind–Figma Gap</h2>
+    <p>
+      Tailwind CSS has become the dominant styling system for product teams. Your entire UI vocabulary — every color, spacing value, font size, and shadow — lives in a <code>tailwind.config</code> file. Components are built from utility classes that reference that config directly. The result is a tightly controlled, token-driven design system in code.
+    </p>
+    <p>
+      Figma doesn't know any of this exists. Your design file is a separate artifact, built by hand, probably months behind the code. Designers add new screens using hardcoded color values that don't match the compiled Tailwind palette. Developers get mockups that use spacing values that don't map to any <code>p-</code> or <code>gap-</code> class. The gap compounds with every sprint.
+    </p>
+    <p>
+      The fix isn't a one-time import — it's a workflow. You need a way to pull your Tailwind tokens into Figma as Variables and Styles, convert your rendered components into Figma layers, and re-export on a cadence that keeps things close enough to be useful. <strong>html2design</strong> handles the conversion step; this guide covers the full workflow.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key insight:</strong> Tailwind class names are never in the HTML that reaches Figma. By the time a browser paints a Tailwind component, all utility classes have been compiled to computed CSS values. html2design reads those resolved values — the exact hex color, the exact pixel spacing — not the class names. Your custom theme is captured automatically.</p>
+    </div>
+
+    <h2>Phase 1: Extract Your Tailwind Design Tokens into Figma</h2>
+    <p>
+      Before you import components, establish your token foundation. Figma Variables and Styles are the equivalent of your <code>tailwind.config</code> theme — colors, typography, spacing, and shadows. Getting these in sync first means that converted components will slot naturally into your design file.
+    </p>
+
+    <h3>Build a token reference page</h3>
+    <p>
+      The fastest approach is to render all your tokens in the browser and convert the result. Create a simple HTML file (or a Storybook page, or a Next.js route) that displays every token from your config:
+    </p>
+    <div class="code-block">&lt;!-- Color palette --&gt;
+&lt;div class="grid grid-cols-10 gap-2 p-4"&gt;
+  &lt;div class="w-10 h-10 rounded bg-primary-50"&gt;&lt;/div&gt;
+  &lt;div class="w-10 h-10 rounded bg-primary-100"&gt;&lt;/div&gt;
+  &lt;div class="w-10 h-10 rounded bg-primary-200"&gt;&lt;/div&gt;
+  &lt;!-- ... all shades ... --&gt;
+&lt;/div&gt;
+
+&lt;!-- Typography scale --&gt;
+&lt;div class="space-y-2 p-4"&gt;
+  &lt;p class="text-xs"&gt;text-xs — 12px&lt;/p&gt;
+  &lt;p class="text-sm"&gt;text-sm — 14px&lt;/p&gt;
+  &lt;p class="text-base"&gt;text-base — 16px&lt;/p&gt;
+  &lt;!-- ... all sizes ... --&gt;
+&lt;/div&gt;</div>
+    <p>
+      Open this page in your browser, copy the outerHTML from DevTools, and paste it into html2design. You'll get a Figma frame with every color rendered as a fill, every font size rendered as live text. Use the Figma eyedropper and the Inspect panel to populate your Color Styles and Text Styles — the pixel values are all there, no guessing.
+    </p>
+
+    <h3>Map Tailwind token categories to Figma</h3>
+    <p>
+      Not all token types map to the same Figma feature. Here's how to think about it:
+    </p>
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Tailwind config key</th>
+          <th>Figma equivalent</th>
+          <th>Where to register</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>colors</code></td>
+          <td>Color Variables / Color Styles</td>
+          <td>Variables panel → Color collection</td>
+        </tr>
+        <tr>
+          <td><code>fontSize</code></td>
+          <td>Text Styles</td>
+          <td>Local Styles → Text</td>
+        </tr>
+        <tr>
+          <td><code>spacing</code></td>
+          <td>Number Variables</td>
+          <td>Variables panel → Number collection</td>
+        </tr>
+        <tr>
+          <td><code>borderRadius</code></td>
+          <td>Number Variables</td>
+          <td>Variables panel → Number collection</td>
+        </tr>
+        <tr>
+          <td><code>boxShadow</code></td>
+          <td>Effect Styles</td>
+          <td>Local Styles → Effects</td>
+        </tr>
+        <tr>
+          <td><code>fontFamily</code></td>
+          <td>Text Styles (font family)</td>
+          <td>Local Styles → Text</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Figma Variables (available on Professional and Organization plans) are the closest parallel to Tailwind tokens — they support semantic naming, mode switching (light/dark), and aliasing. If you're on a plan without Variables, Color Styles and Text Styles cover the essential ground.
+    </p>
+
+    <h2>Phase 2: Convert Tailwind Components to Figma Layers</h2>
+    <p>
+      With your token foundation in place, you're ready to convert components. The workflow is the same as any other HTML-to-Figma import — you're just being systematic about what you capture and in what order.
+    </p>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Run your development server</h3>
+      <p>
+        Start your app or component development environment:
+      </p>
+      <div class="code-block"># Vite (most Tailwind projects)
+npm run dev
+
+# Next.js
+npm run dev
+
+# Storybook with Tailwind
+npm run storybook
+
+# Plain HTML with Tailwind CLI
+npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch
+# then open the HTML file in a browser</div>
+      <p>
+        Navigate to the component you want to convert. For Storybook, use Canvas mode (the isolated story view) to get a clean component frame without Storybook's chrome around it.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Copy the rendered outerHTML</h3>
+      <p>
+        Open DevTools (<kbd>Cmd+Option+I</kbd> on Mac, <kbd>F12</kbd> on Windows/Linux) and switch to the <strong>Elements</strong> panel. Find the root element of the component — the outermost <code>&lt;div&gt;</code> or semantic element — right-click it, and choose <strong>Copy &rarr; Copy outerHTML</strong>.
+      </p>
+      <p>
+        At this point, the browser has already resolved all Tailwind classes to their computed CSS values. The <code>bg-blue-600</code> class is now <code>background-color: rgb(37, 99, 235)</code> in the computed styles. That's what gets captured.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Paste into html2design</h3>
+      <p>
+        In Figma, open the html2design plugin (<strong>Plugins &rarr; html2design</strong>). Switch to the <strong>Code</strong> tab, paste your copied HTML, and click <strong>Import</strong>. The plugin processes the HTML and computed CSS, then generates native Figma layers in your current file.
+      </p>
+      <p>
+        For a button component, you'll typically get a Frame with correct dimensions, fill color, border radius, and a Text layer with the right font, size, weight, and color. Everything that Tailwind compiled is present.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Clean up and create a Figma Component</h3>
+      <p>
+        After import, rename the top-level frame to match your component name (e.g., <code>Button/Primary/Default</code>). Link the fills and text styles to the Variables and Styles you registered in Phase 1. Then convert the frame to a Figma Component (<kbd>Cmd+Option+K</kbd>).
+      </p>
+      <p>
+        Repeat the capture for each significant state: hover (trigger via DevTools <em>Force element state &rarr; :hover</em>), disabled, loading, destructive. Group them as Variants under a single Component Set.
+      </p>
+    </div>
+
+    <h2>Which Tailwind Styles Convert Cleanly</h2>
+    <p>
+      html2design captures the computed CSS output of whatever the browser renders. For Tailwind specifically:
+    </p>
+    <ul>
+      <li><strong>Colors</strong> — All <code>bg-</code>, <code>text-</code>, <code>border-</code>, and <code>ring-</code> utilities resolve to exact hex or RGB values</li>
+      <li><strong>Spacing</strong> — <code>p-</code>, <code>m-</code>, <code>gap-</code>, and <code>space-</code> values map to Figma padding, margin (as spacing between frames), and Auto Layout gap</li>
+      <li><strong>Typography</strong> — <code>text-</code>, <code>font-</code>, <code>leading-</code>, <code>tracking-</code> resolve fully to Figma text properties</li>
+      <li><strong>Flexbox</strong> — <code>flex</code>, <code>flex-col</code>, <code>items-</code>, <code>justify-</code>, <code>gap-</code> map to Figma Auto Layout</li>
+      <li><strong>Border radius</strong> — <code>rounded</code>, <code>rounded-lg</code>, <code>rounded-full</code> etc. capture as corner radius</li>
+      <li><strong>Shadows</strong> — <code>shadow-</code> utilities capture as Figma drop shadows</li>
+      <li><strong>SVG icons</strong> — Rendered as Figma vector paths (Heroicons, Lucide, etc. all work)</li>
+      <li><strong>Arbitrary values</strong> — <code>bg-[#1a2b3c]</code>, <code>p-[13px]</code> — these resolve to their exact values just like preset utilities</li>
+      <li><strong>Dark mode</strong> — Capture separately per mode; see the FAQ below for the workflow</li>
+      <li><strong>CSS Grid</strong> — Partially supported; complex grids are approximated with nested Auto Layout</li>
+      <li><strong>Transitions and animations</strong> — Static snapshot only; Figma doesn't support CSS animation natively</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Arbitrary values work perfectly.</strong> Tailwind's JIT engine generates CSS for any arbitrary value you specify. Since html2design reads computed styles — not class names — <code>bg-[#ff6b35]</code> captures as <code>#FF6B35</code> in Figma just like any preset color. Your custom theme is fully preserved.</p>
+    </div>
+
+    <h2>Maintaining Sync Between Tailwind and Figma</h2>
+    <p>
+      There is no magic sync — any workflow requires deliberate re-export when things change. But a lightweight process keeps the gap manageable.
+    </p>
+
+    <h3>When your tailwind.config theme changes</h3>
+    <p>
+      If you update token values — a new primary color, a revised spacing scale, a custom font — update your Figma Variables and Styles to match. The token reference page approach makes this fast: re-render the reference page with the new config, re-import it, and use the Inspect panel to read the new computed values. Update the affected Variables or Styles. Components that reference those Variables update automatically in Figma.
+    </p>
+
+    <h3>When a component changes visually</h3>
+    <p>
+      For significant visual updates — a redesigned button, a new card layout — re-import the component and replace the existing Figma frames. Small changes (color tweak, border radius adjustment) are often faster to fix directly in Figma, especially if your Variables are already linked. The goal isn't pixel-perfect sync on every commit; it's close enough that designers can work from accurate references.
+    </p>
+
+    <h3>A practical cadence</h3>
+    <ul>
+      <li><strong>Every sprint</strong> — Import any new components that shipped this sprint. Add them to the Figma component library before designers need them.</li>
+      <li><strong>On theme changes</strong> — Update affected Variables/Styles immediately. This takes 10–15 minutes per token category changed.</li>
+      <li><strong>On major refactors</strong> — Treat like a fresh import. Re-export affected components, replace the old frames, and verify the component variants are still correct.</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Design leads the naming.</strong> When you import Tailwind components, use Figma's component naming conventions from the start — <code>Button/Primary/Default</code>, not <code>btn-primary</code>. This makes the library navigable for designers and easy to alias in code annotations later.</p>
+    </div>
+
+    <h2>Advanced: Dark Mode and Theme Variants</h2>
+    <p>
+      Tailwind's dark mode (<code>dark:</code> prefix) compiles to separate CSS rules activated by a class or <code>prefers-color-scheme</code> media query. To capture dark mode variants in Figma:
+    </p>
+    <ol>
+      <li>Open DevTools and go to the <strong>Rendering</strong> tab (accessible via the three-dot menu → More tools → Rendering)</li>
+      <li>Under <strong>Emulate CSS media feature prefers-color-scheme</strong>, select <code>dark</code> — or manually add the <code>dark</code> class to your <code>&lt;html&gt;</code> element</li>
+      <li>The component re-renders with dark mode computed styles</li>
+      <li>Copy its outerHTML and import it via html2design</li>
+      <li>In Figma, pair the dark frame with the light frame as a Component Variant, or use Figma Variables modes to switch between them at the library level</li>
+    </ol>
+    <p>
+      The same approach works for other Tailwind variants that change computed output: <code>sm:</code> / <code>md:</code> responsive breakpoints (resize the DevTools viewport), <code>focus:</code> states (trigger via DevTools Force element state), and <code>disabled:</code> states (add the <code>disabled</code> attribute in DevTools).
+    </p>
+
+    <h2>Compared to Other Tailwind-to-Figma Approaches</h2>
+    <p>
+      Several tools exist for bridging Tailwind and Figma. They fall into two categories: config-reader tools that parse your <code>tailwind.config</code> and generate Figma tokens, and rendered-output tools like html2design that work from the browser's computed styles.
+    </p>
+    <p>
+      Config-reader tools are useful for the token layer — they can auto-populate Figma Variables from your config file without any browser step. The limitation is that they can't capture the visual result of your components: the layout, the hover states, the rendered icons, the exact box shadows. They give you the tokens; you still have to build the components by hand.
+    </p>
+    <p>
+      html2design works from the rendered output, which means you capture the full visual result — tokens applied to components in context. The trade-off is that it's manual: you import one component at a time, not the entire library in one pass. For most teams, the rendered-output approach is more useful because what designers need isn't an abstract token list — they need accurate component mockups they can work with.
+    </p>
+    <p>
+      For a broader comparison of HTML-to-Figma tools and which scenarios each approach fits, see our <a href="/compare">full tool comparison</a>.
+    </p>
+
+    <h2>Building Your Tailwind Design System in Figma: Recommended Sequence</h2>
+    <p>
+      If you're starting from scratch — converting an existing Tailwind project into a Figma design system for the first time — work in this order:
+    </p>
+    <ol>
+      <li><strong>Token foundation</strong> — Import your color palette, type scale, and spacing tokens. Register them as Figma Variables and Styles.</li>
+      <li><strong>Primitive components</strong> — Buttons, inputs, badges, checkboxes, avatars. Small, reusable, high-leverage. Convert default + key states for each.</li>
+      <li><strong>Compound components</strong> — Cards, modals, dropdowns, forms. These compose from primitives you've already captured, so they're faster to clean up.</li>
+      <li><strong>Page sections</strong> — Navigation, hero, pricing, footer. Large, but only needed occasionally for design work.</li>
+      <li><strong>Full pages</strong> — Dashboard views, onboarding flows, settings screens. Import the whole page for high-fidelity reference; use <a href="/blog/import-website-into-figma">the full-page import workflow</a> for these.</li>
+    </ol>
+    <p>
+      Starting with primitives means each subsequent step builds on a foundation that's already in Figma. By the time you're importing page sections, you're mostly cleaning up layout rather than re-creating components from scratch.
+    </p>
+    <p>
+      For teams already using a React component library with Tailwind, the <a href="/blog/react-component-to-figma">React component to Figma workflow</a> combines naturally with this approach — use your Storybook or dev server to render the exact component states you need, then import them into Figma.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I convert Tailwind CSS to Figma?</h3>
+    <p>
+      Yes. Tailwind utilities compile to standard CSS, and when you copy a rendered component from DevTools, all computed styles are included. html2design reads those resolved values — not the class names — and maps them to native Figma properties. See our guide on <a href="/blog/how-to-convert-html-to-figma">converting HTML to Figma</a> for the core workflow.
+    </p>
+
+    <h3>How do I extract Tailwind design tokens into Figma variables?</h3>
+    <p>
+      Build a token reference page that renders every value in your <code>tailwind.config</code> theme (colors, font sizes, spacing, shadows). Convert that page using html2design, then use the Inspect panel to read the computed values and populate your Figma Variables and Styles manually. For full details, see Phase 1 above.
+    </p>
+
+    <h3>Does Tailwind's dark mode work with html2design?</h3>
+    <p>
+      Yes, but you capture light and dark as separate imports. Toggle dark mode via DevTools (Rendering tab → emulate prefers-color-scheme, or add the <code>dark</code> class to <code>&lt;html&gt;</code>), then re-copy the outerHTML in that state and paste it into html2design. Pair the two frames as Figma Component Variants or use Variable modes.
+    </p>
+
+    <h3>What is the best Figma plugin for Tailwind?</h3>
+    <p>
+      html2design captures Tailwind's actual compiled output — including your customized theme, arbitrary values, and multi-level utility overrides — not just the default config. For converting real Tailwind UIs (with all your custom design decisions applied) to editable Figma layers, rendered-output conversion gives the most accurate results. For a feature-by-feature breakdown, see our <a href="/compare">comparison page</a>.
+    </p>
+
+    <h3>How do I keep Figma in sync with Tailwind changes?</h3>
+    <p>
+      Re-export components and tokens when they change visually. For theme changes, update the affected Figma Variables/Styles using the token reference page. For component changes, re-import and replace the affected frames. A per-sprint cadence works well for most teams — import new components as they ship, update tokens when the config changes.
+    </p>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The core workflow — DevTools, code paste, and cleaning up the output in Figma.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Covers Storybook, Next.js, and capturing component states — pairs naturally with Tailwind projects.</p>
+        </a>
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Full-page import strategies for capturing complete views from your Tailwind-powered app.</p>
+        </a>
+        <a href="/compare" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Compare HTML-to-Figma Tools &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Side-by-side breakdown of html2design vs. alternatives for Tailwind and React workflows.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Convert your first Tailwind component in 60 seconds</h2>
+      <p class="text-content-muted mb-6">Run your dev server, copy a component's outerHTML from DevTools, and paste it into html2design. Get native Figma layers with all Tailwind styles resolved — no config files, no plugins, no build step.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
