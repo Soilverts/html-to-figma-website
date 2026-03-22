@@ -141,6 +141,59 @@
   }
   </script>
 
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert HTML to Figma",
+    "description": "Convert HTML and CSS into native, editable Figma layers using the html2design plugin — no Chrome extension required.",
+    "totalTime": "PT5M",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Browser DevTools" },
+      { "@type": "HowToTool", "name": "Figma" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Install the html2design plugin",
+        "text": "Open Figma and go to the Community tab. Search for html2design or HTML to Figma. Click Install. Once installed, find it under Plugins → html2design in any Figma file.",
+        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Open DevTools and copy the HTML",
+        "text": "Navigate to the element you want to convert. Right-click the element → Inspect. In the Elements panel, right-click the root node of your component → Copy → Copy outerHTML.",
+        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Open html2design in Figma",
+        "text": "In your Figma file, open the plugin via Main Menu → Plugins → html2design. The plugin panel opens on the right side of the canvas. Make sure you're logged in with your subscription active.",
+        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Paste your HTML and convert",
+        "text": "In the plugin panel, paste your copied HTML into the input field. Click Convert (or press Cmd+Enter). The plugin processes your markup and generates native Figma layers on the canvas.",
+        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Review and clean up the output",
+        "text": "Select the generated frame on the canvas. Review positioned frames, text layers, shape fills, and images. Rename layers, merge redundant groups, and swap placeholder fills with your design system tokens.",
+        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
+      }
+    ]
+  }
+  </script>
+
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/static.css" />
