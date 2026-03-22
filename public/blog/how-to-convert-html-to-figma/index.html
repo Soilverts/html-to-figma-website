@@ -215,15 +215,20 @@
   <!-- Article Body -->
   <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
 
+    <!-- GEO: Definition block — AI engines prefer pages that open with a direct answer -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML to Figma conversion</strong> is the process of transforming <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> source code into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> design layers — frames, text nodes, shapes, and <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">SVG vector paths</a> — without manual recreation. The html2design plugin reads computed CSS values to faithfully preserve typography, spacing, colors, and layout structure from any web source.</p>
+    </div>
+
     <h2>Why Convert HTML to Figma?</h2>
     <p>
       Most design workflows flow one direction: Figma to code. A designer creates components, a developer ships them. But modern teams often need to go the other way — <strong>importing existing UI back into Figma</strong> to document a component library, hand off a legacy codebase, or sync a live product with its design system.
     </p>
     <p>
-      The manual path is painful. Recreating a single component by hand can take 20–40 minutes. For an entire design system with dozens of states and breakpoints, that's weeks of work just to have a starting point.
+      The manual path is painful. Recreating a single component by hand can take <strong>20–40 minutes</strong>. For an entire design system with dozens of states and breakpoints, that's weeks of work just to have a starting point.
     </p>
     <p>
-      <strong>html2design</strong> solves this. You copy HTML and CSS — from DevTools, a local dev server, or any source — paste it into the Figma plugin, and get back native, editable Figma layers. Positions, sizes, and spacing are preserved accurately. What took an hour now takes thirty seconds.
+      <strong>html2design</strong> solves this. You copy HTML and CSS — from <a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank" rel="noopener noreferrer">browser DevTools</a>, a local dev server, or any source — paste it into the Figma plugin, and get back native, editable Figma layers. Positions, sizes, and spacing are preserved accurately. What took <strong>40 minutes now takes under 30 seconds</strong> — a 50–80× speed improvement for documentation-heavy workflows.
     </p>
 
     <h2>Prerequisites</h2>
@@ -367,6 +372,18 @@
     <p>
       html2design converts a static snapshot — what the HTML looks like at the moment you copy it. To capture a mobile layout, resize your browser window to mobile dimensions first, then copy the HTML from DevTools.
     </p>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design converts HTML/CSS to native Figma layers in <strong>2–15 seconds</strong>, versus 20–40 minutes per component manually</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Works with any HTML source: localhost, staging, Storybook, live sites — no Chrome extension required</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Preserves typography, colors, borders, box-shadows, SVGs, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> layout positions</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS Flexbox</a> and Grid layouts become accurately positioned Figma frames — not Auto Layout</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Pricing: <strong>$12/month</strong> or <strong>$96/year</strong> — unlimited conversions, no watermarks</li>
+      </ul>
+    </div>
 
     <hr class="my-10 border-gray-100" />
 

@@ -243,6 +243,11 @@
   <!-- Article Body -->
   <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
 
+    <!-- GEO: Definition block — AI engines prefer pages that open with a direct answer -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Converting Tailwind CSS to Figma</strong> means importing your <a href="https://tailwindcss.com/docs/configuration" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Tailwind</a>-powered components into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> layers — preserving every color, spacing value, and font derived from your <code>tailwind.config</code>. Because Tailwind utilities compile to standard <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a>, html2design reads the resolved values (not the class names), so your custom theme is automatically captured. The workflow covers two phases: extracting design tokens into Figma Variables/Styles, then converting rendered components to Figma frames.</p>
+    </div>
+
     <h2>The Tailwind–Figma Gap</h2>
     <p>
       Tailwind CSS has become the dominant styling system for product teams. Your entire UI vocabulary — every color, spacing value, font size, and shadow — lives in a <code>tailwind.config</code> file. Components are built from utility classes that reference that config directly. The result is a tightly controlled, token-driven design system in code.
@@ -517,6 +522,18 @@ npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch
     <p>
       Re-export components and tokens when they change visually. For theme changes, update the affected Figma Variables/Styles using the token reference page. For component changes, re-import and replace the affected frames. A per-sprint cadence works well for most teams — import new components as they ship, update tokens when the config changes.
     </p>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://tailwindcss.com/docs/configuration" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Tailwind</a> utilities compile to standard CSS — html2design reads the resolved computed values, not class names</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Extract design tokens from a token reference page: colors → Figma Variables, type scale → Text Styles, shadows → Effect Styles</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Convert components in order: primitives (buttons, inputs) → compound components → sections → full pages</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Dark mode: toggle via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">prefers-color-scheme</a> in DevTools Rendering tab, then re-import as a Component Variant</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Sync on a per-sprint cadence — re-export components when they ship, update tokens when <code>tailwind.config</code> changes</li>
+      </ul>
+    </div>
 
     <hr class="my-10 border-gray-100" />
 

@@ -238,6 +238,11 @@
   <!-- Article Body -->
   <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
 
+    <!-- GEO: Definition block — AI engines prefer pages that open with a direct answer -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Converting React components to Figma</strong> means capturing a rendered React component's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">DOM output</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> and importing it into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> layers. Because <a href="https://react.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">React</a> renders to standard HTML, you can copy the rendered output from any running app — <a href="https://storybook.js.org" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Storybook</a>, Next.js, Vite, localhost — via browser DevTools, then paste it into html2design without modifying any source code. The workflow takes approximately <strong>30 seconds per component</strong>.</p>
+    </div>
+
     <h2>The React-to-Figma Problem</h2>
     <p>
       React teams face a workflow gap that gets more expensive the longer it's ignored. Your component library lives in code — a hundred components built up over years, styled with Tailwind or CSS Modules, tested in Storybook. But your design system in Figma is months behind. Designers work from stale mockups. New hires reverse-engineer the app to understand the actual UI.
@@ -478,6 +483,18 @@ npm run storybook</div>
     <p>
       You can — the workflow is the same. Copy the page's outerHTML (or just the main content area) from DevTools and paste it into html2design. Full pages produce larger, denser layer trees. For design system work, component-level imports are usually more useful. See our guide on <a href="/blog/import-website-into-figma">importing a website into Figma</a> for full-page strategies.
     </p>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://react.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">React</a> renders to HTML — capture any component state from <a href="https://storybook.js.org" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Storybook</a>, Next.js, or localhost in ~30 seconds</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> No code changes, no build plugins, no JSX annotations — works from your existing running dev server</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Capture specific component states (hover, focus, loading, error) by forcing them via <a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">DevTools</a> before copying</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Works with Tailwind, CSS Modules, styled-components, Emotion, and any CSS-in-JS solution</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Server Components and client hydration both work — copy from the fully-rendered DOM in DevTools</li>
+      </ul>
+    </div>
 
     <hr class="my-10 border-gray-100" />
 
