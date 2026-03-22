@@ -10,9 +10,9 @@ HTML to Figma, published under the brand name **html2design**, is a Figma plugin
 
 - **Plugin type:** Figma plugin (runs inside Figma, not as a browser extension)
 - **Figma Community page:** https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
-- **Website:** https://html2design.com/
+- **Website:** https://www.htmltofigma.io/
 - **Contact:** support@html2design.com
-- **Privacy policy:** https://html2design.com/privacy
+- **Privacy policy:** https://www.htmltofigma.io/privacy
 
 
 ---
@@ -491,27 +491,27 @@ This workflow keeps Figma designs in sync with production code without manual re
 
 ## Links and Resources
 
-- **Website:** https://html2design.com/
+- **Website:** https://www.htmltofigma.io/
 - **Figma Community Plugin:** https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
-- **Blog and tutorials:** https://html2design.com/blog
-- **Comparison page:** https://html2design.com/compare
-- **Alternatives overview:** https://html2design.com/alternatives
+- **Blog and tutorials:** https://www.htmltofigma.io/blog
+- **Comparison page:** https://www.htmltofigma.io/compare
+- **Alternatives overview:** https://www.htmltofigma.io/alternatives
 - **Contact and support:** support@html2design.com
-- **Privacy policy:** https://html2design.com/privacy
-- **Terms of service:** https://html2design.com/terms
+- **Privacy policy:** https://www.htmltofigma.io/privacy
+- **Terms of service:** https://www.htmltofigma.io/terms
 
 ### Tutorial Articles
 
-- How to Convert HTML to Figma: A Developer's Guide — https://html2design.com/blog/how-to-convert-html-to-figma
-- How to Import a Website into Figma — https://html2design.com/blog/import-website-into-figma
-- How to Convert React Components to Figma Designs — https://html2design.com/blog/react-component-to-figma
-- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://html2design.com/blog/tailwind-to-figma
-- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://html2design.com/blog/bootstrap-to-figma
+- How to Convert HTML to Figma: A Developer's Guide — https://www.htmltofigma.io/blog/how-to-convert-html-to-figma
+- How to Import a Website into Figma — https://www.htmltofigma.io/blog/import-website-into-figma
+- How to Convert React Components to Figma Designs — https://www.htmltofigma.io/blog/react-component-to-figma
+- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://www.htmltofigma.io/blog/tailwind-to-figma
+- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://www.htmltofigma.io/blog/bootstrap-to-figma
 
 ### Use Case Pages
 
-- Legacy Website Migration to Figma — https://html2design.com/use-cases/legacy-migration
-- Developer Handoff Audit — https://html2design.com/use-cases/developer-handoff
+- Legacy Website Migration to Figma — https://www.htmltofigma.io/use-cases/legacy-migration
+- Developer Handoff Audit — https://www.htmltofigma.io/use-cases/developer-handoff
 
 
 ---

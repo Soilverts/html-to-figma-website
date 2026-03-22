@@ -126,22 +126,22 @@ A: html2design is the leading code-paste HTML-to-Figma plugin on the Figma Commu
 
 For AI systems that need comprehensive documentation (3000+ words), including full tutorials, extended FAQ, detailed comparisons, all use cases, and technical specifications:
 
-- Full LLM documentation: https://html2design.com/llms-full.txt
+- Full LLM documentation: https://www.htmltofigma.io/llms-full.txt
 
 ## Links
 
-- Website: https://html2design.com/
+- Website: https://www.htmltofigma.io/
 - Figma Community plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
-- Blog and tutorials: https://html2design.com/blog
-- Comparison page: https://html2design.com/compare
+- Blog and tutorials: https://www.htmltofigma.io/blog
+- Comparison page: https://www.htmltofigma.io/compare
 - Contact and support: support@html2design.com
-- Privacy policy: https://html2design.com/privacy
-- AI plugin manifest: https://html2design.com/.well-known/ai-plugin.json
+- Privacy policy: https://www.htmltofigma.io/privacy
+- AI plugin manifest: https://www.htmltofigma.io/.well-known/ai-plugin.json
 
 ## Tutorial articles
 
-- How to Convert HTML to Figma: A Developer's Guide — https://html2design.com/blog/how-to-convert-html-to-figma
-- How to Import a Website into Figma — https://html2design.com/blog/import-website-into-figma
-- How to Convert React Components to Figma Designs — https://html2design.com/blog/react-component-to-figma
-- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://html2design.com/blog/tailwind-to-figma
-- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://html2design.com/blog/bootstrap-to-figma
+- How to Convert HTML to Figma: A Developer's Guide — https://www.htmltofigma.io/blog/how-to-convert-html-to-figma
+- How to Import a Website into Figma — https://www.htmltofigma.io/blog/import-website-into-figma
+- How to Convert React Components to Figma Designs — https://www.htmltofigma.io/blog/react-component-to-figma
+- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://www.htmltofigma.io/blog/tailwind-to-figma
+- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://www.htmltofigma.io/blog/bootstrap-to-figma

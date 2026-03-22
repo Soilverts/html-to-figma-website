@@ -2,148 +2,148 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://html2design.com/</loc>
+    <loc>https://www.htmltofigma.io/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://html2design.com/og-image.png</image:loc>
+      <image:loc>https://www.htmltofigma.io/og-image.png</image:loc>
       <image:title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs</image:title>
       <image:caption>HTML to Figma plugin converting HTML and CSS code into native, editable Figma layers with preserved typography, layout, and styling</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://html2design.com/favicon.svg</image:loc>
+      <image:loc>https://www.htmltofigma.io/favicon.svg</image:loc>
       <image:title>HTML to Figma logo</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://html2design.com/about</loc>
+    <loc>https://www.htmltofigma.io/about</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://html2design.com/compare</loc>
+    <loc>https://www.htmltofigma.io/compare</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/alternatives</loc>
+    <loc>https://www.htmltofigma.io/alternatives</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://html2design.com/privacy</loc>
+    <loc>https://www.htmltofigma.io/privacy</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://html2design.com/terms</loc>
+    <loc>https://www.htmltofigma.io/terms</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://html2design.com/contact</loc>
+    <loc>https://www.htmltofigma.io/contact</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://html2design.com/changelog</loc>
+    <loc>https://www.htmltofigma.io/changelog</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog</loc>
+    <loc>https://www.htmltofigma.io/blog</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/how-to-convert-html-to-figma</loc>
+    <loc>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/import-website-into-figma</loc>
+    <loc>https://www.htmltofigma.io/blog/import-website-into-figma</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/react-component-to-figma</loc>
+    <loc>https://www.htmltofigma.io/blog/react-component-to-figma</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/tailwind-to-figma</loc>
+    <loc>https://www.htmltofigma.io/blog/tailwind-to-figma</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/bootstrap-to-figma</loc>
+    <loc>https://www.htmltofigma.io/blog/bootstrap-to-figma</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/design-system-migration</loc>
+    <loc>https://www.htmltofigma.io/blog/design-system-migration</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/blog/screenshot-vs-code-import</loc>
+    <loc>https://www.htmltofigma.io/blog/screenshot-vs-code-import</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/legacy-migration</loc>
+    <loc>https://www.htmltofigma.io/use-cases/legacy-migration</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/developer-handoff</loc>
+    <loc>https://www.htmltofigma.io/use-cases/developer-handoff</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/vue-to-figma</loc>
+    <loc>https://www.htmltofigma.io/use-cases/vue-to-figma</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/angular-to-figma</loc>
+    <loc>https://www.htmltofigma.io/use-cases/angular-to-figma</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/svelte-to-figma</loc>
+    <loc>https://www.htmltofigma.io/use-cases/svelte-to-figma</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://html2design.com/llms-full.txt</loc>
+    <loc>https://www.htmltofigma.io/llms-full.txt</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://html2design.com/.well-known/ai-plugin.json</loc>
+    <loc>https://www.htmltofigma.io/.well-known/ai-plugin.json</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
