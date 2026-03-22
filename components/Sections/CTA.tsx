@@ -25,6 +25,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     <p>&copy; 2026 HTML to Figma.</p>
                     <div className="flex gap-8 mt-6 md:mt-0">
                         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Figma Plugin</a>
+                        <a href="/compare" className="hover:text-accent transition-colors">Compare</a>
                         <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>
                         <a href="/terms" className="hover:text-accent transition-colors">Terms</a>
                         <a href="/contact" className="hover:text-accent transition-colors">Contact</a>
