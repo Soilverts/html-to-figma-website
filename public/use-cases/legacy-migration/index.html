@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Convert Old Website to Figma — Legacy Site Migration Guide (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting legacy websites and old HTML codebases into editable Figma designs. Rebuild your old website in Figma without starting from scratch — paste HTML directly into the plugin." />
+  <meta name="keywords" content="convert old website to figma, rebuild website in figma, legacy website to figma, old website figma migration, html to figma legacy, redesign website figma, import legacy html figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/legacy-migration" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/legacy-migration" />
+  <meta property="og:title" content="Convert Old Website to Figma — Legacy Site Migration Guide" />
+  <meta property="og:description" content="Migrate your legacy website into Figma in minutes. Paste the old HTML/CSS and get editable Figma layers — no manual redrawing, no Chrome extension required." />
+  <meta property="og:image" content="https://html2design.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Legacy website being converted into editable Figma layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convert Old Website to Figma — Legacy Site Migration Guide" />
+  <meta name="twitter:description" content="Stop rebuilding legacy sites from scratch. Paste old HTML into Figma and get fully editable layers in under 2 minutes." />
+  <meta name="twitter:image" content="https://html2design.com/og-image.png" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Old Website to Figma — Legacy Site Migration Guide",
+    "description": "Step-by-step guide to converting legacy websites and old HTML codebases into editable Figma designs using the html2design plugin.",
+    "url": "https://html2design.com/use-cases/legacy-migration",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://html2design.com/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://html2design.com/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://html2design.com/og-image.png",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://html2design.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://html2design.com/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Legacy Migration",
+        "item": "https://html2design.com/use-cases/legacy-migration"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert an old website to Figma without a Chrome extension?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. HTML to Figma (html2design) is a native Figma plugin that requires no Chrome extension. You copy the HTML from your browser's DevTools or directly from the legacy codebase, paste it into the plugin, and it generates fully editable Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the old website need to be live to convert it to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. HTML to Figma works entirely from pasted HTML and CSS code. You can convert a legacy site even if it only exists as files on disk — no live server or public URL required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I rebuild a website in Figma from old HTML?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the legacy site in your browser (or locally), right-click the section you want, choose 'Inspect', and copy the outer HTML. Paste that HTML into the html2design Figma plugin. The plugin converts it into native, editable Figma frames with typography, colors, and layout preserved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of legacy HTML does the plugin support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma supports any valid HTML and CSS — including old table-based layouts, Bootstrap 3/4 grids, inline styles, and modern Flexbox. If the browser can render it, the plugin can convert it."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Legacy Migration</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Use Case · Legacy Migration</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Convert Old Website<br />
+        to Figma
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        Stop rebuilding legacy HTML from scratch. Paste your old site's code directly into Figma and get
+        <strong class="text-content font-medium">fully editable layers</strong> — with layout, typography, and colors
+        preserved — in under 2 minutes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Read the Full Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Problem / Why section -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">The Problem with Legacy Redesigns</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <p class="text-2xl mb-3">⏳</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Hours of manual work</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Recreating an old site in Figma by hand takes 2–4 hours per page. Spacing, font sizes, and colors drift. You end up with a design that doesn't match the live product.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <p class="text-2xl mb-3">🔗</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Extension tools need a live URL</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chrome-extension importers like html.to.design require a publicly accessible URL. Legacy sites on staging servers, internal intranets, or local builds can't be captured that way.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <p class="text-2xl mb-3">🏗️</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Legacy HTML is messy</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Old sites often use table layouts, inline styles, or Bootstrap 3 — formats that screenshot-based tools handle poorly. You need a tool that reads the actual CSS, not a snapshot.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">How to rebuild a website in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        The html2design plugin works from raw HTML and CSS — not screenshots. That means it handles legacy codebases just as well as modern React apps.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Open the legacy site in your browser</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open the old website in Chrome or any modern browser. It doesn't matter if it's running on
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>,
+              a staging server behind a VPN, or even just a saved
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.html</code> file on your desktop.
+              HTML to Figma doesn't need a public URL.
+            </p>
+            <p>
+              If the site no longer exists at all, you can work directly from the source files. Open the HTML in a browser via
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">File &gt; Open</code>
+              or a simple local server like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">python3 -m http.server</code>.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Right-click the section or page you want to migrate. Choose <strong class="text-content">Inspect</strong>.
+              In the Elements panel, right-click the root element of that section and choose
+              <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+            </p>
+            <p>
+              For a full-page migration, select the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> element
+              and copy its outerHTML. For individual components — a nav, hero, or card grid — select just that element.
+              You can import the page section by section and assemble it in Figma.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into the html2design plugin</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin from the plugin menu,
+              and paste your copied HTML into the input field. Click <strong class="text-content">Generate</strong>.
+            </p>
+            <p>
+              The plugin reads the HTML structure and the browser's computed CSS — including fonts, colors, padding, margin,
+              Flexbox layout, borders, and shadows — and recreates each element as a native Figma layer.
+              You get a named layer tree you can actually edit, not a flattened screenshot.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Iterate and redesign in Figma</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Once the legacy site is in Figma as editable layers, your designer can iterate directly — adjust spacing,
+              update typography, swap colors, and explore layout changes without rebuilding from scratch.
+            </p>
+            <p>
+              This is the fastest way to create a redesign baseline. Instead of recreating every pixel by hand,
+              you start from an accurate digital twin of the live site and make only the changes that matter.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What gets preserved -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What the plugin preserves from legacy HTML</h2>
+      <p class="text-content-muted mb-10">Even 10-year-old Bootstrap and table-based layouts come through accurately.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Typography</h3>
+          <ul class="text-sm text-content-muted space-y-1.5">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Font family, size, and weight</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Line height and letter spacing</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Text alignment and color</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Inline styles (font-size, color)</li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layout &amp; Spacing</h3>
+          <ul class="text-sm text-content-muted space-y-1.5">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Flexbox direction, alignment, gap</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Padding and margin (computed)</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Width, height, and positioning</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Bootstrap grid columns</li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Visual Styles</h3>
+          <ul class="text-sm text-content-muted space-y-1.5">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Background colors and gradients</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Borders, border-radius</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Box shadows</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Image fills and background images</li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layer Structure</h3>
+          <ul class="text-sm text-content-muted space-y-1.5">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Named layers from HTML tags/classes</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Nested group hierarchy</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> SVGs as native vector paths</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Editable text layers (not rasterized)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Common use cases -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Common legacy migration scenarios</h2>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Redesigning a Bootstrap 3 or Bootstrap 4 site</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Bootstrap grid columns, cards, and navigation components paste cleanly into the plugin. The computed CSS provides accurate widths and gutters.
+            You can migrate an entire Bootstrap template into Figma and hand it off to designers for a visual refresh — without rewriting any HTML first.
+            See also: <a href="/blog/bootstrap-to-figma" class="text-accent hover:underline">Bootstrap to Figma guide</a>.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Migrating an internal tool or admin panel</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Internal tools often live on private servers or VPNs — places Chrome-extension importers can't reach. HTML to Figma doesn't care.
+            Open the admin panel in your browser, copy the relevant HTML from DevTools, and paste it into Figma.
+            No public URL, no extension access issues.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Documenting a live site before a full rewrite</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Before replacing an old site entirely, teams often need a design audit. Convert the existing site page by page into Figma
+            to create a visual inventory — then annotate, restructure, and hand off to development as the redesign brief.
+            Much faster than screenshotting and manually tracing each page.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Converting an email template to Figma</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            HTML email templates are notoriously table-heavy and tricky to document. The plugin reads the raw HTML and renders it as
+            Figma layers — giving your design team an editable version of every email in the library.
+            No live URL needed, just the template file.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does the old website need to be live to convert it to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. HTML to Figma works entirely from pasted HTML and CSS — not from a URL or a live server.
+            You can open an archived <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.html</code> file directly in your browser,
+            copy the HTML from DevTools, and paste it into the plugin. No deployment required.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">What about table-based layouts? Will those work?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. The plugin reads computed CSS, so it doesn't matter whether the layout uses tables, floats, Flexbox, or Grid.
+            As long as a modern browser can render the HTML, the plugin can import it. Table cells become frames with accurate widths and positions.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import just one section, not the whole page?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes — and that's often the best approach for legacy sites. Select the specific
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;header&gt;</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section&gt;</code>, or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;div&gt;</code>
+            you need in DevTools, copy its outerHTML, and import just that piece. You can combine multiple imports on the same Figma canvas.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How is this different from taking a screenshot?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Screenshots give you a flat image — you can't edit text, change colors, or adjust layout.
+            HTML to Figma gives you <strong class="text-content">native, editable Figma layers</strong>: each text block is a text layer,
+            each container is a frame, and each color is an actual fill value. You can iterate immediately without retracing anything.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links / See also -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/blog/how-to-convert-html-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">How to Convert HTML to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Step-by-step developer guide to the full plugin workflow.</p>
+        </a>
+
+        <a href="/blog/bootstrap-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Bootstrap to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Migration guide for Bootstrap 3/4/5 teams moving to Figma.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Comparison</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">html2design vs Alternatives</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">See how HTML to Figma compares to html.to.design and manual recreation.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Ready to convert your old website?</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community and import your first legacy page in under 2 minutes.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-8">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-mono">
+      <p>&copy; 2026 HTML to Figma.</p>
+      <nav class="flex gap-6 mt-4 md:mt-0" aria-label="Footer navigation">
+        <a href="/" class="hover:text-black transition-colors">Home</a>
+        <a href="/compare" class="hover:text-black transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-black transition-colors">Blog</a>
+        <a href="/privacy" class="hover:text-black transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-black transition-colors">Terms</a>
+        <a href="/contact" class="hover:text-black transition-colors">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
