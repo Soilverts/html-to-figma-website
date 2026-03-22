@@ -313,7 +313,11 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <!-- FCP prerender: critical hero content visible before React JS loads.
+         React (createRoot) replaces this on mount. Inline styles used so this
+         paints immediately regardless of CSS-load timing.
+         Target: FCP <1.5s (was 2.5s with blank React SPA shell). -->
+    <div id="root"><div style="position:relative;width:100%;min-height:100vh;background:#fff;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#111827;"><div style="position:fixed;top:2rem;left:2rem;z-index:50;mix-blend-mode:multiply;pointer-events:none;"><span style="font-weight:700;letter-spacing:-0.025em;font-size:1.125rem;">HTML<span style="color:#2563EB;">2</span>FIGMA</span></div><main style="position:relative;z-index:10;"><section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 1.5rem 4rem;overflow:hidden;"><div style="max-width:80rem;margin:0 auto;width:100%;"><div style="display:flex;flex-direction:column;gap:2rem;max-width:32rem;"><div style="display:inline-flex;align-items:center;border:1px solid #E5E7EB;padding:0.25rem 0.75rem;border-radius:9999px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;font-family:monospace;width:fit-content;">Figma Plugin — HTML to Figma</div><h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:700;letter-spacing:-0.04em;line-height:0.9;color:#111827;margin:0;">Code to<br><span style="color:#6B7280;">Design.</span></h1><p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.625;margin:0;">Instantly convert HTML and CSS into native Figma layers. Preserve your layout, typography, and styles with precision. Used by 2,000+ designers and developers.</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;"><a href="#pricing" style="display:inline-flex;align-items:center;height:3.5rem;padding:0 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:1rem;font-weight:500;text-decoration:none;">Get Access &#8594;</a><a href="#how-it-works" style="color:#6B7280;font-size:0.875rem;font-weight:500;text-decoration:none;">See how it works &#8594;</a></div></div></div></section></main></div></div>
 
     <!-- Noscript SEO Fallback: Critical content for crawlers that don't execute JS -->
     <noscript>
