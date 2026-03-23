@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Chakra UI to Figma — Convert Chakra Components to Figma Designs</title>
+  <meta name="description" content="Convert Chakra UI components into editable Figma designs. Works with Chakra v2+, design token system, style props, and color mode — no live URL needed." />
+  <meta name="keywords" content="chakra ui to figma, chakra figma, chakra ui figma plugin, chakra design tokens figma, chakra component figma, chakra figma import, chakra ui figma export" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/chakra-ui-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/chakra-ui-to-figma" />
+  <meta property="og:title" content="Chakra UI to Figma — Convert Chakra Components to Figma Designs" />
+  <meta property="og:description" content="Convert Chakra UI components into editable Figma designs. Works with Chakra v2+, design token system, style props, and color mode — no live URL needed." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/chakra-ui-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Chakra UI components imported as editable Figma layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chakra UI to Figma — Convert Chakra Components to Figma Designs" />
+  <meta name="twitter:description" content="Convert Chakra UI components into editable Figma designs. Works with Chakra v2+, design token system, style props, and color mode — no live URL needed." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/chakra-ui-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Chakra UI Components to Figma Designs — Chakra to Figma Workflow",
+    "description": "Step-by-step guide for converting Chakra UI components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/chakra-ui-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/chakra-ui-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Chakra UI", "url": "https://chakra-ui.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "html2design",
+    "alternateName": "HTML to Figma",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Figma",
+    "url": "https://www.htmltofigma.io/",
+    "offers": {
+      "@type": "Offer",
+      "price": "12.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "12.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    "description": "Figma plugin that converts HTML and CSS — including Chakra UI components — into native, editable Figma layers without a Chrome extension.",
+    "featureList": [
+      "Converts Chakra UI components to Figma layers",
+      "Resolves Chakra style props to computed CSS",
+      "Works with Chakra v2+ and Ark UI",
+      "No Chrome extension required",
+      "Supports localhost and auth-gated pages"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Chakra UI to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/chakra-ui-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Chakra UI component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your React app with npm start or Vite. Navigate to the page containing the Chakra UI component, open DevTools (F12), find the component's root element in the Elements panel, right-click → Copy → Copy outerHTML, then paste the HTML into the html2design Figma plugin. Chakra's style props (p, bg, rounded, etc.) are resolved to computed CSS by the browser before you copy — the Figma output has accurate fills, spacing, and border-radius values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Chakra UI style props work with html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Chakra's style props (p, px, py, m, bg, color, rounded, shadow, etc.) are processed by ChakraProvider at runtime and resolved to standard CSS values by the browser. html2design reads computed CSS, not Chakra prop names. Every style prop — including semantic token references like 'blue.500' — is resolved to its actual value before the plugin sees the markup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I export Chakra UI design tokens to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you import a Chakra component with html2design, the Figma output contains the resolved hex values from your Chakra theme — for example, 'blue.500' becomes its actual hex color. To recreate the token structure in Figma Variables, note the hex values from the imported layers and manually map them to Figma Variable aliases. For a complete token export, consider building a Chakra theme reference page (all color swatches rendered) and importing that page into html2design to capture the full palette."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I capture Chakra UI dark mode variants in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If your app uses Chakra's useColorMode hook or a color mode toggle, switch to dark mode in the running app before copying the component's outerHTML. The browser re-renders the component with dark-mode tokens resolved. Copy the outerHTML in dark mode and import it as a separate frame in html2design to create a dark-mode variant alongside your light-mode import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with Chakra UI v3 and Ark UI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Chakra UI v3 (built on Ark UI) uses a CSS variable-based token system instead of CSS-in-JS. CSS variables are resolved by the browser to their actual values before html2design reads the markup. The workflow is identical: serve the app, copy the rendered HTML from DevTools, paste into the plugin. Both v2 and v3 produce computed CSS that html2design reads correctly."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Chakra UI to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Chakra UI</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Chakra UI to Figma —<br />
+        No Extension Needed
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Chakra UI components to Figma</strong> means running your
+        React app, opening the component in your browser, and copying the rendered HTML into the html2design plugin.
+        Chakra's <strong class="text-content font-medium">style props, design token system, and color mode</strong>
+        are all resolved by the browser before the plugin reads a single character — so Figma receives accurate fills,
+        spacing, and semantic token colors from your real theme.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Chakra UI to Figma — GEO definition -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Chakra UI to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Chakra UI to Figma"</strong> describes the process of exporting a rendered Chakra UI
+        component — including its resolved style props, semantic token colors, and color-mode-specific values — into a
+        native Figma design that can be edited, annotated, and used as a designer handoff artifact. The html2design
+        Figma plugin enables this by accepting raw HTML from your browser's DevTools and generating editable Figma frames
+        from the computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Chakra UI's style prop system (
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">p</code>,
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">bg</code>,
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">rounded</code>,
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">shadow</code>)
+        maps shorthand props to standard CSS at runtime. ChakraProvider resolves semantic token names like
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">blue.500</code>
+        to their actual color values. By the time you copy rendered HTML from DevTools, all of this is already
+        computed — html2design receives a fully resolved snapshot with real hex values, pixel measurements, and typography.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+      <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Chakra style props (<code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">p</code>, <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">bg</code>, <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">rounded</code>) resolve to standard CSS in the browser — html2design reads computed values, not prop names</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Semantic token colors (<code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">blue.500</code>, <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">gray.100</code>) resolve to their exact hex values in the Figma import</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Toggle color mode in the running app before copying HTML to capture dark-mode variants as separate Figma frames</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Works with Chakra v2 (emotion-based) and Chakra v3 / Ark UI (CSS variable-based) — the workflow is identical for both</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-6 md:py-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Chakra UI to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Chakra UI v2, Chakra UI v3, Ark UI, and any Chakra component or custom theme.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Serve the React app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm start</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">vite</code>, or your project's dev command
+              and navigate to the route or page containing the Chakra UI component you want to export.
+              No staging environment or live URL needed.
+            </p>
+            <p>
+              If the component depends on API data or context state, ensure the app is in the desired visual state before
+              capturing. Use React DevTools to inspect and modify component props or Chakra context values if needed.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the component's rendered HTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and locate the
+              Chakra component's root element in the Elements panel. Chakra components render as standard HTML elements
+              (e.g., <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;button class="chakra-button..."&gt;</code>)
+              with all style props already applied as computed CSS.
+            </p>
+            <p>
+              Right-click the root element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              Chakra's semantic token colors (like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">blue.500</code>)
+              are resolved to their hex values by ChakraProvider at this point.
+              The HTML you copy contains only computed CSS — no Chakra prop names or token aliases.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads computed styles the browser
+              already resolved — Chakra token colors, spacing scale values, border-radius, and shadow definitions
+              all land correctly in Figma.
+            </p>
+            <p>
+              The output is a native Figma frame with real text layers, accurate fills from your Chakra theme,
+              and a layer hierarchy that matches your component structure. Not a screenshot — an editable design.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Capture color modes and hand off to your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              If your app supports dark mode via Chakra's
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">useColorMode</code>,
+              toggle to dark mode in the running app and repeat the export. Import both light and dark variants
+              into html2design to build a complete Figma Component Variant set.
+            </p>
+            <p>
+              Share the Figma frames with your designer. Because they were generated from the live Chakra app,
+              designers see the same token colors and spacing your users see — not approximations.
+              They can annotate, iterate, and propose changes without running the dev server.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Chakra-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Chakra UI-specific tips for Figma exports</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Chakra's style props, token system, and color mode all behave predictably with html2design.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Style props resolve to standard CSS</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra style props like
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">p={4}</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">bg="blue.500"</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">rounded="lg"</code>, and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">shadow="md"</code>
+            are processed by ChakraProvider into standard CSS rules. The browser computes those rules to final values
+            — pixel measurements, hex colors, specific box-shadow values. html2design reads only computed CSS,
+            so all Chakra style props import correctly without any special handling.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Semantic token colors land as exact hex fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra's token system maps names like
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">blue.500</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gray.100</code>, and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">teal.400</code>
+            to their actual hex values via ChakraProvider. By the time you copy the rendered HTML, every color
+            token has been resolved. The Figma import contains the correct hex fills — the same colors your users see.
+            No manual color-matching or color picker work required.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Dark mode: toggle in the app before copying</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra's <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">useColorMode</code> hook
+            and <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ColorModeButton</code> switch the
+            entire app between light and dark token sets. Toggle to dark mode in your running app, then copy the
+            component's outerHTML. The browser will have re-resolved all
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">_dark</code> style overrides.
+            Import the dark HTML as a separate frame in html2design alongside the light import.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Chakra v3 / Ark UI uses CSS variables — same workflow</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra UI v3 (built on Ark UI) shifted from emotion CSS-in-JS to a CSS custom property token system.
+            CSS variables are set on the
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">:root</code> element and resolved
+            by the browser to their computed values. html2design reads those computed values, so the workflow is
+            identical for v2 and v3 — the implementation difference is invisible from the DevTools HTML perspective.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What lands in Figma from a Chakra UI component</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Native Figma objects — not screenshots, not plugin wrappers, not embedded iframes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Token colors as accurate Figma fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra token colors (<code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">blue.500</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gray.700</code>)
+            resolve to their exact hex values in the browser and appear as correct Figma fill colors in the import.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Chakra shadow values in Figma</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra's shadow tokens (<code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">shadow="sm"</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">shadow="xl"</code>)
+            render as computed <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">box-shadow</code> values.
+            html2design generates Figma Drop Shadow effects with accurate parameters.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Spacing scale as real Figma dimensions</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra's spacing scale (4px base unit for Chakra v2; 4px for v3) produces computed
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">margin</code>, and
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gap</code> values
+            that map to Figma frame dimensions and auto-layout spacing.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Typography tokens as real text layer properties</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Chakra's typography system (font sizes, font weights, letter spacing) is applied via style props and
+            rendered to computed font property values. These values become real Figma text layer properties —
+            font size, weight, and line height — in the output.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Chakra UI component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Serve your React app locally, navigate to the component in your browser, open DevTools
+            (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), copy the component's
+            outerHTML from the Elements panel, and paste into html2design in Figma. Chakra's style props and token
+            colors are already resolved to computed CSS values before you copy — the Figma output reflects your real theme.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Do Chakra UI style props work with html2design?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Chakra maps style props to standard CSS rules at runtime. The browser resolves those rules to
+            computed values — pixel measurements and hex colors — before html2design reads the markup.
+            Style prop shorthand like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">p={4}</code>
+            becomes <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding: 16px</code> in the import.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I export Chakra design tokens to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            html2design imports resolved hex values — not token names. To recreate the token structure as Figma Variables,
+            import a Chakra theme reference page (all swatches rendered) and note the hex values from the Figma output.
+            Then create Figma Variables with those hex values and the corresponding Chakra token names.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture Chakra dark mode variants?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Toggle dark mode in your running Chakra app using its color mode button or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">useColorMode</code>.
+            The browser re-renders with dark token values resolved. Copy the outerHTML in dark mode
+            and import it into html2design as a separate frame alongside your light-mode import.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does this work with Chakra UI v3 and Ark UI?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Chakra v3 uses CSS variables instead of emotion CSS-in-JS. Both approaches produce
+            computed CSS values the browser resolves before html2design reads the markup.
+            The workflow is identical for v2 and v3.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components.</p>
+        </a>
+
+        <a href="/use-cases/material-ui-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Material UI to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert MUI components and emotion-based themes to Figma.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3 and Nuxt components into editable Figma layers.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export Chakra UI components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any Chakra version, no extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

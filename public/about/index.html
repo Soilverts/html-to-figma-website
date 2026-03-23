@@ -15,17 +15,17 @@
   <meta property="og:description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds. Learn about the plugin, who built it, and why." />
   <meta property="og:url" content="https://www.htmltofigma.io/about" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/about.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="HTML to Figma plugin showing code-to-design conversion" />
+  <meta property="og:image:alt" content="About the HTML to Figma plugin team and product story" />
   <meta property="og:site_name" content="HTML to Figma" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About HTML to Figma — The Code-to-Design Plugin" />
   <meta name="twitter:description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds." />
-  <meta name="twitter:image" content="https://www.htmltofigma.io/og-image.png" />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/about.svg" />
 
   <meta name="theme-color" content="#2563EB" />
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -54,19 +54,30 @@
   }
   </script>
 
-  <!-- JSON-LD: Organization -->
+  <!-- JSON-LD: Organization (enriched: logo, foundingDate, sameAs) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "HTML to Figma",
     "url": "https://www.htmltofigma.io/",
-    "logo": "https://www.htmltofigma.io/favicon.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/favicon.svg",
+      "width": 64,
+      "height": 64
+    },
     "description": "HTML to Figma is a Figma plugin that converts HTML and CSS code into native, editable Figma layers — preserving typography, layout, images, and structure with precision.",
     "foundingDate": "2024",
     "email": "support@html2design.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@html2design.com",
+      "contactType": "customer support"
+    },
     "sameAs": [
-      "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+      "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html",
+      "https://www.htmltofigma.io/"
     ]
   }
   </script>
@@ -79,6 +90,13 @@
     "name": "About HTML to Figma",
     "description": "Learn about HTML to Figma — who built it, why it exists, and how it converts code into native Figma designs.",
     "url": "https://www.htmltofigma.io/about",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/og/about.svg",
+        "width": 1200,
+        "height": 630,
+        "caption": "About HTML to Figma — plugin built for designers and frontend developers"
+      },
     "inLanguage": "en",
     "publisher": {
       "@type": "Organization",

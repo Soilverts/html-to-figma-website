@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>HTML Email Template to Figma: Import &amp; Edit Email Designs (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting HTML email templates into editable Figma designs using html2design. Covers table-based layouts, inline styles, gotchas, and email-specific Figma workflow tips." />
+  <meta name="keywords" content="html email to figma, email template figma, convert html email figma, figma email design, import email template figma, html email figma plugin" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/html-email-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/html-email-to-figma" />
+  <meta property="og:title" content="HTML Email Template to Figma: Import &amp; Edit Email Designs (2026)" />
+  <meta property="og:description" content="Convert HTML email templates into native, editable Figma designs. Works with table-based layouts, inline styles, and any ESP preview — no screenshot required." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/html-email-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HTML email template converted to editable Figma design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="html email figma" />
+  <meta property="article:tag" content="email design" />
+  <meta property="article:tag" content="figma workflow" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HTML Email Template to Figma: Import &amp; Edit Email Designs (2026)" />
+  <meta name="twitter:description" content="Convert HTML email templates into editable Figma designs. Works with table layouts, inline styles, and ESP previews." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/html-email-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "HTML Email Template to Figma: Import & Edit Email Designs (2026)",
+    "description": "Step-by-step guide to converting HTML email templates into editable Figma designs using html2design. Covers table-based layouts, inline styles, gotchas, and email-specific Figma workflow tips.",
+    "url": "https://www.htmltofigma.io/blog/html-email-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 1520,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/html-email-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/html-email-to-figma"
+    },
+    "keywords": "html email to figma, email template figma, convert email template figma, html2design email"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "HTML Email Template to Figma", "item": "https://www.htmltofigma.io/blog/html-email-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you convert an HTML email template to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Paste the HTML source of your email template into the html2design Figma plugin. The plugin reads inline styles and computed CSS to create editable Figma frames preserving your layout, typography, colors, and spacing. Table-based email layouts import as nested frames."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design support table-based HTML email layouts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design reads table elements and their inline styles, creating nested Figma frames that match the visual layout. Table cells become Figma frames with appropriate sizes and fills. The result is a static visual representation — not an Auto Layout Figma structure, which you can apply manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get the HTML source of an email template?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are several methods: (1) Open the email in your ESP (Mailchimp, Klaviyo, etc.) and use their 'View HTML' or 'Edit Code' option. (2) Send the email to yourself and open it in Gmail → click More → Show original → Copy HTML. (3) Open the email in a browser and use DevTools to copy the outerHTML of the email body."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I design HTML emails in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many teams use Figma to design and sign off email templates before a developer codes them. By importing existing email HTML into Figma with html2design, you can document live templates, propose design changes on top of the actual email structure, and share Figma links with stakeholders for review — without needing to send test emails."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert an HTML Email Template to Figma",
+    "description": "Import an HTML email template into Figma as editable layers using html2design. Works with table-based layouts, inline styles, and ESP-hosted templates.",
+    "totalTime": "PT8M",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Email HTML source" },
+      { "@type": "HowToTool", "name": "Figma" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Get the HTML source of your email",
+        "text": "Open the email in your ESP or email client. Use View Source, Show Original, or the code editor in your ESP to copy the full HTML of the email template.",
+        "url": "https://www.htmltofigma.io/blog/html-email-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Paste into html2design and convert",
+        "text": "Open html2design in Figma (Plugins → html2design). Paste the email HTML into the input field. Click Convert. The plugin processes the table structure and inline styles to create Figma frames.",
+        "url": "https://www.htmltofigma.io/blog/html-email-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Review the generated frame structure",
+        "text": "In Figma's layers panel, the email renders as nested frames matching the table/row/cell structure. Check that the layout matches the visual design. Some email clients render table borders differently.",
+        "url": "https://www.htmltofigma.io/blog/html-email-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Clean up and apply design system tokens",
+        "text": "Rename layers, swap fills for design system color tokens, and apply text styles. For email design templates in Figma, convert the frame width to a standard email width (600px or 640px) and crop to remove browser chrome.",
+        "url": "https://www.htmltofigma.io/blog/html-email-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Create components for reusable email blocks",
+        "text": "Select individual email sections (header, hero, content block, footer) and use Create Component (Cmd+Alt+K) to make them reusable. Build an email template library from your imported sections.",
+        "url": "https://www.htmltofigma.io/blog/html-email-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/html-email-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "HTML Email Template to Figma: Import & Edit Email Designs (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .warn-box { background: #FFFBEB; border-left: 3px solid #F59E0B; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .warn-box p { margin-bottom: 0; color: #92400E; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">HTML Email Template to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 7 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      HTML Email Template to Figma
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Paste the source of any HTML email template into Figma and get fully editable layers — table layouts, inline styles, and all. No screenshot capture needed.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML email to Figma conversion</strong> is the process of importing <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">table-based HTML email</a> source code into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> design layers. Because HTML emails rely on inline CSS and nested tables rather than modern CSS layout, the conversion workflow differs from standard web components — but html2design handles both inline styles and table structures, producing accurate visual representations of your email templates as editable Figma frames.</p>
+    </div>
+
+    <h2>Why Convert HTML Email Templates to Figma?</h2>
+    <p>
+      Email design teams face a persistent problem: the live email template lives in code (often inside an ESP like Mailchimp, Klaviyo, or Salesforce Marketing Cloud), while design reviews and iteration happen in Figma. Keeping the two in sync requires either maintaining a parallel Figma file or taking screenshots of email previews — both of which drift from the actual live template.
+    </p>
+    <p>
+      <strong>html2design</strong> lets you close this gap by importing the actual HTML source of your email into Figma directly. The result is a pixel-accurate, editable Figma file that reflects what your email actually looks like — not a screenshot, not a manual recreation.
+    </p>
+    <p>
+      Common use cases for this workflow:
+    </p>
+    <ul>
+      <li>Documenting an existing email template library in Figma for design review</li>
+      <li>Proposing design changes on top of the actual email structure</li>
+      <li>Building a Figma component library from live email blocks (header, hero, footer)</li>
+      <li>Onboarding new designers to an existing email program without sending test campaigns</li>
+      <li>Sharing email designs with non-technical stakeholders via Figma links</li>
+    </ul>
+
+    <h2>What Makes HTML Email Different</h2>
+    <p>
+      HTML email is notoriously different from modern web HTML. Because email clients have inconsistent CSS support, email templates use:
+    </p>
+    <ul>
+      <li><strong>Table-based layout</strong> — <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code> for structure instead of Flexbox/Grid</li>
+      <li><strong>Inline styles</strong> — <code>style="..."</code> attributes on every element instead of external CSS</li>
+      <li><strong>Fixed widths</strong> — most email containers are 600px or 640px wide</li>
+      <li><strong>MSO conditional comments</strong> — Outlook-specific fallbacks using <code>&lt;!--[if mso]&gt;</code></li>
+      <li><strong>Limited CSS properties</strong> — no CSS Grid, minimal Flexbox, basic box model</li>
+    </ul>
+    <p>
+      html2design handles all of this: it reads inline styles directly and converts table structures into appropriately sized and positioned Figma frames. The MSO conditional comments are ignored during conversion.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key advantage over screenshots:</strong> html2design produces editable text layers, not rasterized images. Every headline, body copy paragraph, and CTA button becomes a real Figma text layer you can edit, style, and connect to your design system.</p>
+    </div>
+
+    <h2>How to Get the HTML Source of Your Email</h2>
+    <p>There are four ways to get the HTML source you'll paste into html2design:</p>
+
+    <h3>From your ESP (Mailchimp, Klaviyo, etc.)</h3>
+    <p>In Mailchimp, open the campaign → Edit → Edit Design → Code your own. In Klaviyo, open the flow email → Edit → HTML editor. Most ESPs have a "View HTML" or "Edit Code" button. Copy the full HTML content.</p>
+
+    <h3>From a received email (Gmail)</h3>
+    <p>Open the email in Gmail. Click the three-dot menu (⋮) in the top-right of the email → <em>Show original</em>. In the Message Source view, click <em>Copy to clipboard</em> or <em>Download Original</em>. You'll get the raw email including HTML.</p>
+
+    <div class="warn-box">
+      <p><strong>Gmail gotcha:</strong> The raw email source includes email headers (From, To, Subject, MIME boundaries). Scroll down to find the HTML portion — it starts after <code>Content-Type: text/html</code>. Copy from <code>&lt;!DOCTYPE html&gt;</code> or <code>&lt;html&gt;</code> onwards.</p>
+    </div>
+
+    <h3>From a browser email preview</h3>
+    <p>Many ESPs let you preview your email in a browser. Open the preview URL, right-click → Inspect, find the root email table element, and right-click → Copy → Copy outerHTML. This captures the rendered HTML with all styles applied.</p>
+
+    <h3>From your email codebase</h3>
+    <p>If you're building email templates from source (using MJML, Handlebars, or raw HTML), compile the template to final HTML and copy the output. Run <code>mjml input.mjml -o output.html</code> and use the output file.</p>
+
+    <h2>Step-by-Step: Importing Your Email Template</h2>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Prepare your email HTML</h3>
+      <p>
+        Paste your email HTML into a text editor and do a quick scan:
+      </p>
+      <ul>
+        <li>Remove MSO conditional comments (<code>&lt;!--[if mso]&gt;...&lt;![endif]--&gt;</code>) if they create visual noise</li>
+        <li>Confirm inline styles are present on key elements</li>
+        <li>Note the email container width (typically 600px or 640px)</li>
+      </ul>
+      <p>You don't need to strip the HTML — html2design handles most email HTML as-is. This step is just for orientation.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Open html2design and set the canvas width</h3>
+      <p>
+        Open html2design in Figma (<em>Plugins → html2design</em>). Before pasting, create a new frame at <strong>600px wide</strong> (or your email's container width) to give the conversion a reference width. This helps ensure the email renders at the correct proportions.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Paste the HTML and convert</h3>
+      <p>
+        Paste your email HTML into the plugin input field. Click <strong>Convert</strong>. For a typical transactional or marketing email (600px wide, 1000–3000px tall), conversion takes 5–15 seconds.
+      </p>
+      <p>
+        The plugin will generate a frame on the canvas. Table rows become horizontal groups of frames; table cells become individual child frames with fills, borders, and text content.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Review the layer structure</h3>
+      <p>
+        Email HTML tends to produce deeply nested frame hierarchies because of nested tables. In the layers panel, you'll see frames nested inside frames inside frames — this mirrors the <code>&lt;table&gt; → &lt;tr&gt; → &lt;td&gt;</code> structure.
+      </p>
+      <p>
+        Check that:
+      </p>
+      <ul>
+        <li>The outer container matches your expected email width (600px)</li>
+        <li>Header, hero, content blocks, and footer are visually distinguishable</li>
+        <li>Text layers have the correct font, size, and color</li>
+        <li>Image placeholders or live images appear in the correct positions</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 5</div>
+      <h3>Clean up and flatten unnecessary nesting</h3>
+      <p>
+        Table-based HTML creates more nesting than modern CSS layouts. After import, flatten unnecessary wrapper frames:
+      </p>
+      <ol>
+        <li>Select frames that are just transparent wrappers with no visible styling</li>
+        <li>Use <em>Edit → Flatten</em> or manually cut-and-paste children up one level</li>
+        <li>Rename remaining frames: <code>Email / Header</code>, <code>Email / Hero</code>, <code>Email / Content</code>, <code>Email / Footer</code></li>
+      </ol>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 6</div>
+      <h3>Build reusable email components</h3>
+      <p>
+        Once you've cleaned up the layer tree, select individual email sections and convert them to Figma components (<kbd>Cmd+Alt+K</kbd> or right-click → Create Component). Build an email template library with:
+      </p>
+      <ul>
+        <li><strong>Email / Header</strong> — logo, navigation, branding</li>
+        <li><strong>Email / Hero</strong> — hero image, headline, CTA button</li>
+        <li><strong>Email / Content Block</strong> — body text, inline images</li>
+        <li><strong>Email / Button</strong> — CTA with variants (primary, secondary)</li>
+        <li><strong>Email / Footer</strong> — unsubscribe, address, social links</li>
+      </ul>
+    </div>
+
+    <h2>Email-Specific Gotchas</h2>
+
+    <h3>Images and linked assets</h3>
+    <p>
+      Email images are often hosted on CDN URLs or ESP image servers. html2design will attempt to load referenced image URLs. If the images are behind authentication or expired CDN links, you'll get empty image placeholder frames. Replace these manually with your design system images.
+    </p>
+
+    <h3>Web fonts vs. email-safe fonts</h3>
+    <p>
+      Many email clients don't support web fonts — email templates often specify fallback system fonts (<code>Arial, sans-serif</code>). After import, the Figma text layers will use whatever font was specified inline. If you want to apply your brand font for design purposes (not production email), swap the font family after import.
+    </p>
+
+    <h3>Dark mode email styles</h3>
+    <p>
+      Some email clients support <code>@media (prefers-color-scheme: dark)</code>. html2design captures the light mode styles by default. To preview dark mode, duplicate the Figma frame and manually override fills and text colors for the dark mode variants.
+    </p>
+
+    <h3>Outlook conditional content</h3>
+    <p>
+      MSO conditional comments are ignored by html2design (they're HTML comments). If your template has Outlook-specific fallback layouts that differ significantly from the main layout, the Figma import will reflect the non-Outlook rendering path.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Best practice:</strong> For production email documentation, import once from the ESP's live preview (not raw source) to get the final rendered state — including any merge tag replacements or dynamic content previews.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can you convert an HTML email template to Figma?</h3>
+    <p>
+      Yes. Paste the HTML source of your email into html2design. The plugin reads inline styles and table structures to create editable Figma frames that match your email's visual layout. Text layers, fills, and spacing are all preserved.
+    </p>
+
+    <h3>Does html2design support table-based email layouts?</h3>
+    <p>
+      Yes — table-based layouts are fully supported. Table rows (<code>&lt;tr&gt;</code>) become horizontal frame groups; table cells (<code>&lt;td&gt;</code>) become individual frames with their inline-styled backgrounds, padding, and content. The nesting is deeper than modern Flexbox layouts, but the visual output is accurate.
+    </p>
+
+    <h3>How do I get the HTML source of my email?</h3>
+    <p>
+      Open the email in your ESP (Mailchimp, Klaviyo, etc.) and use the code editor or "View HTML" option. For received emails, use Gmail's "Show original" menu option. For email previews in browsers, use DevTools to copy the outerHTML of the email container.
+    </p>
+
+    <h3>Can I design HTML emails in Figma?</h3>
+    <p>
+      Yes. Figma is an excellent tool for email design sign-off and iteration. Use html2design to import existing email templates as a baseline, then design new variations in Figma for team review before handing off to a developer to code.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design supports <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">table-based email layouts</a> and inline CSS — the standard format for HTML email</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Text layers are fully editable in Figma after import — not rasterized screenshots</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Get email HTML from your ESP code editor, Gmail "Show original", or browser DevTools</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> MSO conditional comments are ignored; the import reflects the non-Outlook rendering path</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Build an email component library by converting header, hero, content, and footer blocks into Figma components after import</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Step-by-step walkthrough of the html2design plugin workflow from DevTools to editable Figma layers.</p>
+        </a>
+        <a href="/blog/css-grid-to-figma-auto-layout" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">CSS Grid &amp; Flexbox to Figma Auto Layout &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import CSS Grid and Flexbox layouts into Figma as accurately positioned frames and apply Auto Layout.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">A complete workflow for extracting design tokens and components into a native Figma library.</p>
+        </a>
+        <a href="/use-cases/developer-handoff" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Use Case: Developer Handoff &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Reverse engineer shipped implementations back into editable Figma files for design-dev alignment.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your email template in 30 seconds</h2>
+      <p class="text-content-muted mb-6">Paste any HTML email into html2design and get editable Figma layers with typography, layout, and colors preserved.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

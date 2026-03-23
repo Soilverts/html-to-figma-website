@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Material UI to Figma — Convert MUI Components to Figma Designs</title>
+  <meta name="description" content="Convert Material UI (MUI) components into editable Figma designs. Works with MUI v5+, emotion-based themes, and all variant props — no live URL needed." />
+  <meta name="keywords" content="material ui to figma, mui components figma, material ui figma plugin, mui to figma, mui figma export, material ui figma import, mui component figma, mui v5 figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/material-ui-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/material-ui-to-figma" />
+  <meta property="og:title" content="Material UI to Figma — Convert MUI Components to Figma Designs" />
+  <meta property="og:description" content="Convert Material UI (MUI) components into editable Figma designs. Works with MUI v5+, emotion-based themes, and all variant props — no live URL needed." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/material-ui-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MUI components imported as editable Figma layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Material UI to Figma — Convert MUI Components to Figma Designs" />
+  <meta name="twitter:description" content="Convert Material UI (MUI) components into editable Figma designs. Works with MUI v5+, emotion-based themes, and all variant props — no live URL needed." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/material-ui-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Material UI Components to Figma Designs — MUI to Figma Workflow",
+    "description": "Step-by-step guide for converting MUI (Material UI) components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/material-ui-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/material-ui-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Material UI (MUI)", "url": "https://mui.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "html2design",
+    "alternateName": "HTML to Figma",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Figma",
+    "url": "https://www.htmltofigma.io/",
+    "offers": {
+      "@type": "Offer",
+      "price": "12.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "12.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    "description": "Figma plugin that converts HTML and CSS — including MUI components — into native, editable Figma layers without a Chrome extension.",
+    "featureList": [
+      "Converts MUI components to Figma layers",
+      "Resolves emotion CSS-in-JS to computed styles",
+      "Works with MUI v5+ and MUI v6",
+      "No Chrome extension required",
+      "Supports localhost and auth-gated pages"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Material UI to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/material-ui-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Material UI component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start your React app with npm start or Vite. Navigate to the page containing the MUI component, open DevTools (F12), find the component's root element in the Elements panel, right-click → Copy → Copy outerHTML, then paste the HTML into the html2design Figma plugin. The plugin generates native Figma layers including all MUI emotion-resolved styles, theme colors, and spacing values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does MUI's emotion CSS-in-JS work with html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MUI v5+ uses emotion to generate scoped CSS class names at runtime. By the time you copy the rendered HTML from DevTools, the browser has already resolved all emotion styles to their computed CSS values. html2design reads computed styles — not class names or emotion rules — so MUI components import with full fidelity: correct colors, spacing, border-radius, and typography."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I export different MUI component variants to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use React DevTools to change the variant prop (e.g., variant='contained', variant='outlined', variant='text' for a Button) while the app is running. Each time you change the prop, the component re-renders in the browser. Copy the outerHTML of each variant and import them separately into html2design to build a complete Figma component variant set."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export MUI theme colors to Figma design tokens?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MUI theme tokens (palette.primary.main, palette.secondary.main, etc.) are applied to components as computed CSS values in the browser. When you copy a rendered MUI component and import it into html2design, the Figma output contains the actual hex color values — not token references. To recreate the token structure in Figma Variables, note the hex values from the imported layers and map them manually to Figma Variable aliases."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with MUI v6?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MUI v6 uses the same emotion-based CSS-in-JS approach as v5. Both versions resolve component styles to standard computed CSS values in the browser. The html2design workflow is identical: serve the app, copy the component's rendered HTML from DevTools, and paste into the plugin."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Material UI to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Material UI</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Material UI to Figma —<br />
+        No Extension Needed
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting MUI components to Figma</strong> means running your React app,
+        opening the component in your browser, and copying the rendered HTML into the html2design plugin. MUI's
+        <strong class="text-content font-medium">emotion CSS-in-JS, theme tokens, and variant props</strong>
+        are all resolved by the browser before the plugin reads a single character — so Figma gets pixel-accurate fills,
+        spacing, and typography from your real design system.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Material UI to Figma — GEO definition -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Material UI to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Material UI to Figma"</strong> (also written "MUI to Figma") describes the process of
+        exporting a rendered MUI component — including its emotion-resolved styles, theme palette colors, and variant props —
+        into a native Figma design that can be edited, annotated, and used as a designer handoff artifact. The html2design
+        Figma plugin enables this by accepting raw HTML from your browser's DevTools and generating editable Figma frames
+        from the computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        MUI v5+ uses <strong class="text-content">emotion</strong> to generate scoped CSS class names at runtime.
+        These class names are injected into the document's
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style&gt;</code> tags
+        and resolved to computed values by the browser. By the time you copy the rendered HTML from DevTools,
+        all emotion rules have been applied — html2design receives a fully resolved snapshot with real colors,
+        spacing, and typography values from your MUI theme.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+      <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> MUI uses emotion — the browser resolves all CSS-in-JS to computed values before html2design reads them, so fills and spacing are always accurate</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Export each variant prop (contained, outlined, text) separately and combine them as Figma Component Variants</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Theme palette colors (<code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">primary.main</code>, <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">secondary.main</code>) resolve to hex fills — no manual color-matching needed</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use React DevTools to toggle dark mode or change MUI theme context before copying HTML to capture dark variants</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-6 md:py-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The MUI to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with MUI v5, MUI v6, emotion-based themes, and any MUI component.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Serve the React app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm start</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">vite</code>, or your project's dev command
+              and navigate to the route or page containing the MUI component you want to export. No staging environment or live URL needed.
+            </p>
+            <p>
+              If the component depends on data from an API or Redux/Zustand store, ensure the app is in the desired state
+              before capturing. Use React DevTools to inspect and modify props or context values if needed.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the component's rendered HTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and locate the
+              MUI component's root element in the Elements panel. MUI components render as semantic HTML elements
+              (e.g., <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;button class="MuiButton-root..."&gt;</code>)
+              with emotion-generated class names already applied.
+            </p>
+            <p>
+              Right-click the root element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For a full card or section, select the outermost container.
+              Emotion's scoped styles are fully resolved at this point — the HTML you copy includes the correct computed class values.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads computed styles the browser
+              already calculated — MUI theme colors, elevation shadows, border-radius values, and typography are all
+              resolved before the plugin processes the markup.
+            </p>
+            <p>
+              The output is a native Figma frame with real text layers, accurate fills from your MUI theme palette,
+              and a layer hierarchy that mirrors your component structure. Not a screenshot — an editable design.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Export each variant and hand off to your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              For components with multiple states or variants, use React DevTools to change
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">variant</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">color</code>, or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">size</code> props
+              and repeat the export for each. Import all variants into the same Figma frame to build a complete variant set.
+            </p>
+            <p>
+              Share the Figma frame with your designer. Because the frames were generated from the live app — not a wireframe —
+              designers see the same colors, spacing, and content your users see. They can annotate, iterate, and propose
+              changes without needing to run the dev server.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MUI-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">MUI-specific tips for Figma exports</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Emotion, MUI theming, and component variants all interact with html2design in predictable ways.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Emotion CSS-in-JS is transparent to html2design</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI v5+ uses emotion to inject scoped CSS rules at runtime. By the time you copy the rendered HTML from DevTools,
+            emotion has already applied all rules and the browser has computed the final CSS values.
+            html2design reads computed CSS — not emotion class names or CSS-in-JS rules — so all MUI components
+            import with their correct visual properties regardless of the emotion cache or theme provider configuration.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture variant props with React DevTools</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's variant system (e.g., <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">variant="contained"</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">variant="outlined"</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">variant="text"</code>) produces
+            visually distinct renders. Use the React DevTools browser extension to change prop values on a live component
+            without modifying source code. After changing a prop, the component re-renders — copy the new outerHTML
+            and import it as a separate frame in Figma.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">MUI theme palette colors resolve to hex values</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's theme system exposes palette tokens like
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">palette.primary.main</code> and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">palette.secondary.main</code>.
+            These are applied to components as CSS custom properties or direct computed values.
+            By the time the component renders, the browser has resolved these to their actual hex values.
+            The Figma import reflects those exact hex fills — your design system colors appear in the right place
+            without manual color-matching.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Dark mode: toggle the MUI theme before copying</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If your app uses MUI's
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ColorModeContext</code> or a dark-mode toggle,
+            switch to dark mode in the running app before copying the component's HTML. The browser re-renders the component
+            with dark-mode-specific palette values resolved. Copy the outerHTML in dark mode to import a dark-mode variant
+            into Figma. Export light and dark separately to build a complete Figma Component Variant set.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What lands in Figma from a MUI component</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Native Figma objects — not screenshots, not plugin wrappers, not embedded iframes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Theme palette colors as real Figma fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">palette.primary.main</code>,
+            hover states, and disabled tints are resolved by the browser to exact hex values. Those values become
+            Figma fill colors — no manual color-matching required.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">MUI elevation shadows in Figma</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's elevation system (Paper, Card, Dialog) uses computed
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">box-shadow</code> values.
+            html2design reads these and generates Figma Drop Shadow effects with accurate x/y offsets, blur, and color.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">MUI Typography as real text layers</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's typography variants (h1–h6, body1, body2, caption) render with specific font sizes, weights, and
+            letter-spacing from the theme. These values become real Figma text layer properties —
+            no guessing, no manual font-size entry.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Grid and spacing system preserved</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            MUI's spacing scale (8px base unit) produces computed
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code> and
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">margin</code> values.
+            The Figma import reflects those exact pixel values in frame padding and auto-layout gaps.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Material UI component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Serve your React app locally, navigate to the component in your browser, open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>),
+            copy the component's outerHTML from the Elements panel, and paste into html2design in Figma.
+            The plugin generates native Figma layers with MUI theme colors and spacing already resolved.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does MUI's emotion CSS-in-JS work with html2design?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Emotion injects scoped CSS rules at runtime and the browser resolves them to computed values.
+            html2design reads those computed values — not emotion class names — so MUI components import
+            with accurate fills, spacing, and typography regardless of the emotion configuration.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I export different MUI variants (contained, outlined) to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Use React DevTools to change the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">variant</code> prop
+            on the live component. After each prop change, copy the re-rendered outerHTML and import it as a separate
+            frame in html2design. Arrange all variants side by side in Figma to document the complete component variant set.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I export MUI theme colors as Figma Variables?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            html2design imports the resolved hex values from the browser — not MUI token references.
+            To recreate the token structure, note the hex values from the imported Figma layers
+            and manually create Figma Variables mapped to those colors. For a one-time migration,
+            the imported colors match your theme exactly.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does this work with MUI v6?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. MUI v6 uses the same emotion-based approach. The html2design workflow is identical:
+            serve the app, copy the rendered HTML, paste into the plugin. Both v5 and v6 produce
+            the same kind of computed CSS that html2design reads.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components.</p>
+        </a>
+
+        <a href="/use-cases/chakra-ui-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Chakra UI to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Chakra UI components and design tokens to Figma.</p>
+        </a>
+
+        <a href="/use-cases/angular-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Angular to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Export Angular Material components and ViewEncapsulation-scoped styles.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export MUI components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any MUI version, no extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

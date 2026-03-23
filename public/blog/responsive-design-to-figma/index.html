@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Responsive Design to Figma: Converting Breakpoints to Figma Variants (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting responsive web designs into Figma Variants. Capture each breakpoint with html2design and build a responsive component library with mobile, tablet, and desktop variants." />
+  <meta name="keywords" content="responsive design figma, figma variants breakpoints, responsive figma, convert breakpoints figma variants, figma responsive design, breakpoints figma components" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/responsive-design-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/responsive-design-to-figma" />
+  <meta property="og:title" content="Responsive Design to Figma: Converting Breakpoints to Figma Variants (2026)" />
+  <meta property="og:description" content="Capture mobile, tablet, and desktop layouts separately using html2design and build Figma Variants for each breakpoint. A complete responsive design to Figma workflow." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/responsive-design-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Responsive design breakpoints converted to Figma Variants" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="responsive design figma" />
+  <meta property="article:tag" content="figma variants" />
+  <meta property="article:tag" content="figma workflow" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Responsive Design to Figma: Converting Breakpoints to Figma Variants (2026)" />
+  <meta name="twitter:description" content="Capture mobile, tablet, and desktop layouts from any responsive site and build Figma Variants for each breakpoint." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/responsive-design-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Responsive Design to Figma: Converting Breakpoints to Figma Variants (2026)",
+    "description": "Step-by-step guide to converting responsive web designs into Figma Variants. Capture each breakpoint with html2design and build a responsive component library with mobile, tablet, and desktop variants.",
+    "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 1580,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/responsive-design-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+    },
+    "keywords": "responsive design figma, figma variants breakpoints, responsive figma, convert breakpoints figma variants"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Responsive Design to Figma", "item": "https://www.htmltofigma.io/blog/responsive-design-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert responsive breakpoints to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Resize your browser window to each breakpoint (mobile: 375px, tablet: 768px, desktop: 1280px), then copy the outerHTML of the component or page section at that width using DevTools. Paste each into html2design separately. This gives you three import frames — one per breakpoint — which you then combine as Figma Variants in a Component Set."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Figma support responsive design like CSS media queries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma does not have native CSS media query support. Instead, it uses Variants (Component Sets) to represent different states and sizes of a component. By importing each breakpoint as a separate frame and grouping them as Variants, you can present mobile, tablet, and desktop designs in a single Figma component that designers can toggle between."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the standard breakpoints to use in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common breakpoint widths for Figma frames are: Mobile (375px or 390px for iPhone), Tablet (768px or 834px for iPad), and Desktop (1280px, 1440px, or 1920px). Match these to your actual CSS breakpoints — typically defined in your Tailwind config, Bootstrap grid, or custom media queries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can html2design capture a component at a specific screen size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design converts a static snapshot of whatever the HTML looks like when you copy it. To capture a specific breakpoint, resize your browser window to that width before opening DevTools and copying the outerHTML. The plugin will read the computed styles at that viewport size, producing the correct responsive layout for that breakpoint."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert Responsive Design Breakpoints to Figma Variants",
+    "description": "Capture a responsive web component at multiple CSS breakpoints using html2design and assemble the results as Figma Variants in a Component Set.",
+    "totalTime": "PT15M",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Browser DevTools" },
+      { "@type": "HowToTool", "name": "Figma" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Identify your breakpoints",
+        "text": "Check your CSS or design system for the breakpoints you want to capture. Common breakpoints: 375px (mobile), 768px (tablet), 1280px (desktop). Note the exact pixel values.",
+        "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Capture mobile layout",
+        "text": "Resize your browser to 375px wide. In DevTools, right-click the component root element and select Copy → Copy outerHTML. Paste into html2design and convert. Label the resulting frame 'Viewport=Mobile'.",
+        "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Capture tablet and desktop layouts",
+        "text": "Repeat step 2 at 768px for tablet and 1280px for desktop. Each conversion produces a separate Figma frame. Name them consistently: 'Viewport=Tablet' and 'Viewport=Desktop'.",
+        "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Convert each frame to a component",
+        "text": "Select the mobile frame and press Cmd+Alt+K to Create Component. Repeat for tablet and desktop. You now have three separate components — one per breakpoint.",
+        "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Combine into a Figma Component Set (Variants)",
+        "text": "Select all three components on the canvas. Right-click → Combine as Variants. Figma creates a Component Set with a Viewport property (Mobile, Tablet, Desktop). Designers can now switch between breakpoints using the Variants panel.",
+        "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/responsive-design-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Responsive Design to Figma: Converting Breakpoints to Figma Variants (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    th { text-align: left; padding: 0.625rem 0.875rem; background: #F9FAFB; border: 1px solid #E5E7EB; font-weight: 600; color: #111827; }
+    td { padding: 0.625rem 0.875rem; border: 1px solid #E5E7EB; color: #374151; }
+    tr:nth-child(even) td { background: #F9FAFB; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Responsive Design to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 7 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Responsive Design to Figma: Converting Breakpoints to Variants
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Capture mobile, tablet, and desktop layouts from any responsive site and build Figma Variants for each breakpoint — no manual recreation needed.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Responsive design to Figma</strong> is the workflow of importing a responsive web component or layout at multiple <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS breakpoints</a> into separate Figma frames, then combining them as <a href="https://help.figma.com/hc/en-us/articles/360056440594-Create-and-use-variants" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Variants</a> in a Component Set. The html2design plugin captures a static snapshot of whatever layout is active at the current viewport width — meaning you can import the mobile, tablet, and desktop versions of a component by resizing your browser before each capture.</p>
+    </div>
+
+    <h2>Why Responsive Design and Figma Don't Naturally Align</h2>
+    <p>
+      CSS media queries are dynamic — a single component renders completely differently at different viewport widths. Figma, by contrast, uses fixed-size frames: a frame is always a fixed width unless you use Auto Layout and fill/hug sizing.
+    </p>
+    <p>
+      This mismatch creates a documentation problem for teams with responsive production code. To document a responsive nav, card grid, or hero section in Figma, designers traditionally:
+    </p>
+    <ul>
+      <li>Manually recreate each breakpoint from scratch — <strong>30–60 minutes per component</strong></li>
+      <li>Take screenshots of each breakpoint — <strong>produces non-editable raster images</strong></li>
+      <li>Maintain only the desktop design, ignoring mobile — <strong>incomplete documentation</strong></li>
+    </ul>
+    <p>
+      <strong>html2design</strong> changes this. Because it captures computed HTML/CSS at the current viewport size, you can import mobile, tablet, and desktop layouts as separate editable frames in under 5 minutes — then assemble them as Figma Variants for a single, browsable component.
+    </p>
+
+    <h2>Standard Breakpoints for Figma Variants</h2>
+    <p>The breakpoints you use should match your actual CSS. Here are common values:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Breakpoint</th>
+          <th>Width</th>
+          <th>Figma Frame</th>
+          <th>CSS Reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mobile</td>
+          <td>375px (or 390px)</td>
+          <td>375 × [height]</td>
+          <td><code>max-width: 767px</code></td>
+        </tr>
+        <tr>
+          <td>Tablet</td>
+          <td>768px (or 834px)</td>
+          <td>768 × [height]</td>
+          <td><code>min-width: 768px</code></td>
+        </tr>
+        <tr>
+          <td>Desktop</td>
+          <td>1280px (or 1440px)</td>
+          <td>1280 × [height]</td>
+          <td><code>min-width: 1024px</code></td>
+        </tr>
+        <tr>
+          <td>Wide</td>
+          <td>1920px</td>
+          <td>1920 × [height]</td>
+          <td><code>min-width: 1440px</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>Match your actual breakpoints:</strong> Check your CSS or Tailwind config for the exact values your product uses. Tailwind defaults: sm=640px, md=768px, lg=1024px, xl=1280px, 2xl=1536px. Use those values for your browser resize targets so the imports reflect real production breakpoints.</p>
+    </div>
+
+    <h2>Step-by-Step: Breakpoints to Figma Variants</h2>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Open your component in the browser</h3>
+      <p>
+        Navigate to the page containing the component you want to import. Open <strong>DevTools</strong> (<kbd>Cmd+Option+I</kbd> on Mac). Use the responsive mode (<kbd>Cmd+Shift+M</kbd> in Chrome) to switch between viewport sizes easily — or simply drag the browser window edge to resize.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Capture the mobile layout (375px)</h3>
+      <p>
+        Set the browser viewport to <strong>375px wide</strong> (iPhone-sized). Wait for the layout to reflow. Right-click the component's root element → <em>Copy → Copy outerHTML</em>.
+      </p>
+      <p>
+        In html2design, paste and convert. Label the resulting Figma frame <code>Viewport=Mobile</code>. Resize the frame to exactly 375px wide if needed.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Capture the tablet layout (768px)</h3>
+      <p>
+        Resize the viewport to <strong>768px</strong>. The CSS media queries will trigger the tablet layout. Copy the outerHTML again — even if the element is the same, the computed styles will differ because different CSS rules are active at this width.
+      </p>
+      <p>Paste into html2design and convert. Label the frame <code>Viewport=Tablet</code>.</p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Capture the desktop layout (1280px)</h3>
+      <p>
+        Resize to <strong>1280px</strong> (or your desktop breakpoint). Copy the outerHTML. Convert. Label the frame <code>Viewport=Desktop</code>.
+      </p>
+      <p>
+        You now have three separate Figma frames — one per breakpoint — each accurately reflecting the computed CSS layout at that viewport width.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 5</div>
+      <h3>Convert each frame to a Figma Component</h3>
+      <p>
+        Select the mobile frame. Press <kbd>Cmd+Alt+K</kbd> (or right-click → Create Component). Repeat for tablet and desktop. Each frame becomes a standalone Figma component named with its viewport label.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 6</div>
+      <h3>Combine as Figma Variants (Component Set)</h3>
+      <p>
+        Select all three components on the canvas. Right-click → <em>Combine as Variants</em>. Figma automatically detects the naming convention (<code>Viewport=Mobile</code>, etc.) and creates a <strong>Component Set</strong> with a <em>Viewport</em> property.
+      </p>
+      <p>
+        In any Figma file, instances of this component can now switch between Mobile, Tablet, and Desktop using the Variants panel in the right sidebar — exactly like toggling CSS media query states.
+      </p>
+    </div>
+
+    <h2>Advanced: Using Figma Variables for Responsive Tokens</h2>
+    <p>
+      If your responsive design uses different spacing, typography, or color values at different breakpoints, you can represent those differences using <a href="https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma" target="_blank" rel="noopener noreferrer">Figma Variables</a> with modes.
+    </p>
+    <p>
+      Create a Variable collection with three modes: <strong>Mobile</strong>, <strong>Tablet</strong>, and <strong>Desktop</strong>. Define spacing, font-size, and layout variables for each mode. Apply these variables to your imported component frames. When a designer switches between Variable modes, the component updates to reflect each breakpoint's token values.
+    </p>
+    <p>
+      This approach works best after you've imported the three breakpoint frames with html2design and cleaned them up — it adds a token layer on top of the visual representation.
+    </p>
+
+    <h2>Handling Components with Complex Responsive Behavior</h2>
+
+    <h3>Navigation menus (hamburger → desktop nav)</h3>
+    <p>
+      Mobile navs often show a hamburger menu; desktop navs show inline links. These are fundamentally different DOM structures in some implementations. Import each separately and create Variants for <code>Viewport=Mobile</code> and <code>Viewport=Desktop</code>. The hamburger open state can be a third variant: <code>Viewport=Mobile, State=Open</code>.
+    </p>
+
+    <h3>Card grids (1 column → 2 column → 3 column)</h3>
+    <p>
+      Import the card grid container at each breakpoint. The 1-column mobile import will be taller and narrower; the 3-column desktop import will be wider and shorter. Combine as Variants with a Columns property (1, 2, 3) for clarity.
+    </p>
+
+    <h3>Hero sections (stacked → side-by-side)</h3>
+    <p>
+      Mobile heroes often stack the image above the text. Desktop heroes often place them side-by-side. These require two separate imports. After importing both, apply Auto Layout to the desktop variant to make it truly responsive in Figma.
+    </p>
+
+    <h3>Tables (horizontal scroll → stacked cards)</h3>
+    <p>
+      Responsive tables sometimes reflow as stacked cards on mobile. If the DOM structure changes between breakpoints, import each separately and document them as distinct Variants — they won't share the same underlying component structure.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>DevTools tip:</strong> Use Chrome's Device Mode (<kbd>Cmd+Shift+M</kbd>) to quickly snap between standard device sizes. The "Responsive" mode lets you drag to any custom width. This is faster than resizing the entire browser window and gives you precise control over the exact pixel width for each capture.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How do I convert responsive breakpoints to Figma?</h3>
+    <p>
+      Resize your browser to each breakpoint width (e.g., 375px, 768px, 1280px) and use DevTools to copy the outerHTML at each width. Paste each into html2design separately to get three import frames. Name them with a Viewport property and combine as Figma Variants.
+    </p>
+
+    <h3>Does Figma support responsive design like CSS media queries?</h3>
+    <p>
+      Figma doesn't have native media query support. Figma Variants (Component Sets) serve as the closest equivalent — they let designers switch between mobile, tablet, and desktop versions of a component in the same file. Figma Variables with modes can represent responsive design tokens.
+    </p>
+
+    <h3>What are the standard breakpoints to use in Figma?</h3>
+    <p>
+      Common Figma frame widths: 375px (mobile), 768px (tablet), 1280px or 1440px (desktop). Use widths that match your actual CSS breakpoints — check your Tailwind config, Bootstrap grid settings, or custom media query definitions.
+    </p>
+
+    <h3>Can html2design capture a component at a specific screen size?</h3>
+    <p>
+      Yes. html2design reads computed CSS at the moment you copy the outerHTML. Resize your browser to the target width before copying — the plugin will read the styles that are active at that viewport size and produce the correct responsive layout for that breakpoint.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design captures computed CSS at the current viewport width — resize the browser before each copy to get breakpoint-accurate imports</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Combine mobile, tablet, and desktop imports as <a href="https://help.figma.com/hc/en-us/articles/360056440594-Create-and-use-variants" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Variants</a> in a Component Set for a toggleable responsive documentation artifact</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Common Figma frame widths: 375px (mobile), 768px (tablet), 1280px / 1440px (desktop) — match to your actual CSS breakpoints</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use <a href="https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Variable modes</a> to represent responsive design tokens across breakpoints</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> This workflow replaces 30–60 minutes of manual Figma recreation per component with &lt;5 minutes of import + variant assembly</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/css-grid-to-figma-auto-layout" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">CSS Grid &amp; Flexbox to Figma Auto Layout &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import any CSS layout into Figma and apply Auto Layout for responsive, editable designs.</p>
+        </a>
+        <a href="/blog/tailwind-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Extract Tailwind breakpoint tokens as Figma Variable modes and convert responsive components.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">A complete workflow for extracting design tokens and components into a native Figma library.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Capture React component states from Storybook, Next.js, and localhost as editable Figma layers.</p>
+        </a>
+        <a href="/use-cases/legacy-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Use Case: Legacy Migration &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">How to rebuild an old website in Figma without starting from scratch. Includes responsive layout workflow.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first responsive layout in minutes</h2>
+      <p class="text-content-muted mb-6">Resize your browser, copy the HTML, paste into html2design. Get editable breakpoint frames in seconds.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

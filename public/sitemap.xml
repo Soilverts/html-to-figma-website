@@ -17,22 +17,301 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.htmltofigma.io/about</loc>
+    <loc>https://www.htmltofigma.io/guide</loc>
     <lastmod>2026-03-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/compare</loc>
-    <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/guide.svg</image:loc>
+      <image:title>Complete Guide to HTML to Figma</image:title>
+      <image:caption>Step-by-step guide to setting up and using the html2design plugin to convert HTML and CSS into native Figma layers</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/alternatives</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/alternatives.svg</image:loc>
+      <image:title>HTML to Figma Alternatives Comparison</image:title>
+      <image:caption>Comparison of the best tools for importing HTML and CSS code into Figma designs</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/compare</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/compare.svg</image:loc>
+      <image:title>HTML to Figma Plugin Feature Comparison</image:title>
+      <image:caption>Side-by-side comparison of html2design versus screenshot-based and manual Figma import methods</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/glossary</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/glossary.svg</image:loc>
+      <image:title>HTML to Figma Glossary</image:title>
+      <image:caption>Authoritative definitions of design-development terms used in HTML-to-Figma workflows</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/about</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/about.svg</image:loc>
+      <image:title>About HTML to Figma</image:title>
+      <image:caption>About the HTML to Figma plugin — built for designers and frontend development teams</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog.svg</image:loc>
+      <image:title>HTML to Figma Blog</image:title>
+      <image:caption>Tutorials, guides and design workflow tips for HTML to Figma plugin users</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/how-to-convert-html-to-figma.svg</image:loc>
+      <image:title>How to Convert HTML to Figma — Step-by-Step Guide</image:title>
+      <image:caption>Step-by-step tutorial using the html2design Figma plugin to convert HTML and CSS code into native Figma layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/import-website-into-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/import-website-into-figma.svg</image:loc>
+      <image:title>Import Website into Figma</image:title>
+      <image:caption>How to turn any live website into editable Figma layers using html2design plugin</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/react-component-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/react-component-to-figma.svg</image:loc>
+      <image:title>React Component to Figma</image:title>
+      <image:caption>Convert React component JSX markup into native Figma design layers with html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/tailwind-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/tailwind-to-figma.svg</image:loc>
+      <image:title>Tailwind CSS to Figma</image:title>
+      <image:caption>Import Tailwind CSS-styled components as editable Figma layers using html2design plugin</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/bootstrap-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/bootstrap-to-figma.svg</image:loc>
+      <image:title>Bootstrap to Figma</image:title>
+      <image:caption>Convert Bootstrap 5 components and grid layouts to native Figma design layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/design-system-migration</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/design-system-migration.svg</image:loc>
+      <image:title>Design System Migration to Figma</image:title>
+      <image:caption>Migrate existing CSS design systems and component libraries into a Figma design system</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/screenshot-vs-code-import</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/screenshot-vs-code-import.svg</image:loc>
+      <image:title>Screenshot vs Code Import — HTML to Figma Methods Compared</image:title>
+      <image:caption>Comparing screenshot-based Figma import against code-based import with html2design for accuracy and editability</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/css-grid-to-figma-auto-layout.svg</image:loc>
+      <image:title>CSS Grid and Flexbox to Figma Auto Layout</image:title>
+      <image:caption>Converting CSS Grid and Flexbox layouts to accurately positioned Figma frames with Auto Layout applied</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/html-email-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/html-email-to-figma.svg</image:loc>
+      <image:title>HTML Email Template to Figma</image:title>
+      <image:caption>Import HTML email templates as editable Figma design layers to edit and re-export</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/responsive-design-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/responsive-design-to-figma.svg</image:loc>
+      <image:title>Responsive Design to Figma — Converting Breakpoints to Variants</image:title>
+      <image:caption>Converting responsive HTML/CSS breakpoints into Figma Variants for multi-device design documentation</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/legacy-migration</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/legacy-migration.svg</image:loc>
+      <image:title>Legacy Code Migration to Figma</image:title>
+      <image:caption>Modernize legacy HTML and CSS codebases by importing them as editable Figma designs</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/developer-handoff</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/developer-handoff.svg</image:loc>
+      <image:title>Developer Handoff to Figma</image:title>
+      <image:caption>Bridge the design-development gap by importing live code into Figma for accurate design documentation</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/vue-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/vue-to-figma.svg</image:loc>
+      <image:title>Vue.js to Figma</image:title>
+      <image:caption>Import Vue.js component templates as native Figma design layers with html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/angular-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/angular-to-figma.svg</image:loc>
+      <image:title>Angular to Figma</image:title>
+      <image:caption>Convert Angular component templates into editable Figma frames with html2design plugin</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/svelte-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/svelte-to-figma.svg</image:loc>
+      <image:title>Svelte to Figma</image:title>
+      <image:caption>Import Svelte component markup as native Figma design layers using html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/nextjs-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/nextjs-to-figma.svg</image:loc>
+      <image:title>Next.js to Figma</image:title>
+      <image:caption>Import Next.js page components as editable Figma frames with html2design plugin</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/wordpress-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/wordpress-to-figma.svg</image:loc>
+      <image:title>WordPress to Figma</image:title>
+      <image:caption>Extract WordPress theme HTML as editable Figma components using html2design plugin</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/gatsby-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/gatsby-to-figma.svg</image:loc>
+      <image:title>Gatsby to Figma</image:title>
+      <image:caption>Convert Gatsby site components and pages to native Figma design layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/material-ui-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/material-ui-to-figma.svg</image:loc>
+      <image:title>Material UI to Figma</image:title>
+      <image:caption>Convert MUI components and emotion-based themes to native Figma design layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/chakra-ui-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/chakra-ui-to-figma.svg</image:loc>
+      <image:title>Chakra UI to Figma</image:title>
+      <image:caption>Convert Chakra UI components and design tokens to native Figma design layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/ember-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/ember-to-figma.svg</image:loc>
+      <image:title>Ember to Figma</image:title>
+      <image:caption>Convert Ember.js Glimmer components and Handlebars templates to native Figma design layers</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/privacy</loc>
@@ -59,108 +338,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.htmltofigma.io/guide</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/import-website-into-figma</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/react-component-to-figma</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/tailwind-to-figma</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/bootstrap-to-figma</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/design-system-migration</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/blog/screenshot-vs-code-import</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/legacy-migration</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/developer-handoff</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/vue-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/angular-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/svelte-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/nextjs-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/wordpress-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/use-cases/gatsby-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.htmltofigma.io/llms-full.txt</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -171,12 +348,6 @@
     <lastmod>2026-03-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://www.htmltofigma.io/glossary</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/feed.xml</loc>

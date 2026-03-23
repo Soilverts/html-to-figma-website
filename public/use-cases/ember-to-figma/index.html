@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Ember to Figma — Convert Ember.js Components to Figma Designs</title>
+  <meta name="description" content="Convert Ember.js and Glimmer components into editable Figma designs. Works with Ember Octane, Handlebars templates, and Ember Data — no live URL needed." />
+  <meta name="keywords" content="ember to figma, ember.js design workflow, ember figma, glimmer component figma, ember handlebars figma, ember.js figma plugin, ember component export figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/ember-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/ember-to-figma" />
+  <meta property="og:title" content="Ember to Figma — Convert Ember.js Components to Figma Designs" />
+  <meta property="og:description" content="Convert Ember.js and Glimmer components into editable Figma designs. Works with Ember Octane, Handlebars templates, and Ember Data — no live URL needed." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/ember-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ember.js Glimmer components imported as editable Figma layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ember to Figma — Convert Ember.js Components to Figma Designs" />
+  <meta name="twitter:description" content="Convert Ember.js and Glimmer components into editable Figma designs. Works with Ember Octane, Handlebars templates, and Ember Data — no live URL needed." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/ember-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Ember.js Components to Figma Designs — Ember to Figma Workflow",
+    "description": "Step-by-step guide for converting Ember.js and Glimmer components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/ember-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/ember-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Ember.js", "url": "https://emberjs.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "html2design",
+    "alternateName": "HTML to Figma",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Figma",
+    "url": "https://www.htmltofigma.io/",
+    "offers": {
+      "@type": "Offer",
+      "price": "12.00",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "12.00",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    },
+    "description": "Figma plugin that converts HTML and CSS — including Ember.js Glimmer components rendered from Handlebars templates — into native, editable Figma layers without a Chrome extension.",
+    "featureList": [
+      "Converts Ember.js components to Figma layers",
+      "Works with Handlebars-rendered HTML output",
+      "Supports Ember Octane and Glimmer components",
+      "No Chrome extension required",
+      "Supports localhost and auth-gated pages"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Ember to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/ember-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an Ember.js component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run ember serve in your project directory. Navigate to the route containing the component you want to export. Open DevTools (F12), find the component's root element in the Elements panel, right-click → Copy → Copy outerHTML, then paste the HTML into the html2design Figma plugin. Ember's Handlebars templates are fully compiled to HTML by the browser before you copy — the Figma output reflects the real rendered component, including Ember Data model values and all computed styles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Handlebars templates work with html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Handlebars templates in Ember are compiled to DOM output by the Glimmer rendering engine at runtime. By the time you open DevTools, Handlebars template syntax ({{model.name}}, {{if}}, {{each}}, component helpers) has already been evaluated and rendered as plain HTML elements. html2design reads the final rendered HTML — not the template source — so all Handlebars expressions and block helpers produce correct Figma output."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I export Glimmer components to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Glimmer components (Ember Octane's component model) render to standard HTML in the browser. Navigate to the route or story showing the Glimmer component, open DevTools, copy the component's root element's outerHTML, and paste into html2design. The Glimmer rendering engine outputs plain HTML and CSS — the same as any other web framework — so the html2design workflow is identical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I capture Ember Data-bound component values in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Ember Data model values (like @model.name, @user.email, @product.price) are rendered as text content in the DOM by Handlebars template expressions. When you copy the outerHTML from DevTools, those text values are already in the HTML as plain text nodes. html2design generates Figma text layers with the actual model values — not placeholder text — giving designers a realistic representation of the component."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with Ember Octane and classic Ember?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Both Ember Octane (Glimmer components, tracked properties, template-only components) and Classic Ember (Ember.Component, mixins, computed properties) produce standard HTML DOM output when rendered in the browser. The html2design workflow is the same for both: serve with ember serve, navigate to the component, copy the outerHTML from DevTools, and paste into the plugin."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Ember to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Ember.js</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Ember to Figma —<br />
+        No Extension Needed
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Ember.js components to Figma</strong> means running
+        <code class="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">ember serve</code>, navigating to the
+        component in your browser, and copying the rendered HTML into the html2design plugin. Ember's
+        <strong class="text-content font-medium">Handlebars templates, Glimmer rendering engine, and Ember Data values</strong>
+        are all evaluated and resolved by the browser before the plugin reads a single character — so Figma gets
+        the real rendered output from your live application.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Ember to Figma — GEO definition -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Ember to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Ember to Figma"</strong> describes the process of exporting a rendered Ember.js
+        component — including its Handlebars-evaluated template output, Ember Data model values, and component-scoped
+        styles — into a native Figma design that can be edited, annotated, and used as a designer handoff artifact.
+        The html2design Figma plugin enables this by accepting raw HTML from your browser's DevTools and generating
+        editable Figma frames from the computed output.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Ember's Glimmer rendering engine compiles Handlebars templates into optimized DOM-patching instructions that
+        run in the browser. Template expressions like
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;@model.title&#125;&#125;</code>,
+        <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;#if&#125;&#125;</code> blocks,
+        and <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;#each&#125;&#125;</code> loops
+        are fully evaluated before the page reaches DevTools. By the time you copy the rendered HTML, the template source
+        is gone — what remains is plain HTML with real content and computed styles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+      <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Handlebars templates compile to rendered HTML in the browser — html2design reads the output, not the template source, so all <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">&#123;&#123;&#125;&#125;</code> expressions produce correct Figma layers</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Ember Data model values (<code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">@model.name</code>, <code style="background:#fff;border:1px solid #e5e7eb;padding:0 4px;border-radius:4px;font-family:monospace;font-size:0.8em;">@product.price</code>) appear as real text in the rendered HTML and become Figma text layers</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Glimmer components (Octane) and Classic components produce identical DOM output — the html2design workflow is the same for both</li>
+          <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use Ember Inspector to verify component arguments and model state before capturing — then copy outerHTML for an exact Figma snapshot</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-6 md:py-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Ember to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Ember Octane, Classic Ember, Glimmer components, and any Ember addon.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Serve the Ember app locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ember serve</code> (or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ember s</code>) in your project directory
+              and navigate to the route containing the component you want to export. No staging environment or live URL needed.
+            </p>
+            <p>
+              If the component depends on Ember Data models, ensure the models are loaded and the app is in the desired state.
+              Use Ember Inspector to verify model attributes and component arguments before capturing.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the component's rendered HTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and locate the
+              component's root element in the Elements panel. Glimmer components render their template output directly into
+              the DOM — no custom element wrapper like Angular or Vue. The component boundary is visible via
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;!-- --&gt;</code> Glimmer comment nodes
+              in some Ember versions.
+            </p>
+            <p>
+              Select the outermost element of the component's rendered output and right-click →
+              <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Handlebars expressions, block helpers,
+              and Ember Data values are all compiled to plain HTML at this point.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads computed styles the browser
+              already calculated — Ember CSS (from
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.css</code> files or scoped
+              component styles via postcss-modules) are all resolved before the plugin processes the markup.
+            </p>
+            <p>
+              The output is a native Figma frame with real text layers containing your Ember Data values,
+              accurate fills and spacing from your stylesheets, and a layer hierarchy that mirrors the
+              Handlebars template structure. Not a screenshot — an editable design.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Capture component states and hand off to your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Use Ember Inspector to modify component arguments
+              (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@args</code>) and
+              tracked properties to put the component in different states — loading, error, empty, filled.
+              After each state change, copy the outerHTML and import it as a separate frame in html2design.
+            </p>
+            <p>
+              Share the Figma frames with your designer. Because they were generated from the live Ember app,
+              designers see the actual data values, real styling, and correct content — not lorem ipsum
+              or mockup approximations. They can iterate without running the Ember dev server.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ember-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Ember-specific tips for Figma exports</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Handlebars, Glimmer, and Ember Inspector all interact with html2design in straightforward ways.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Handlebars templates produce plain HTML — no special handling needed</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Ember's Glimmer rendering engine compiles Handlebars templates to efficient DOM operations at build time
+            and evaluates them at runtime. By the time the browser renders the page, every Handlebars expression
+            (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;@user.name&#125;&#125;</code>),
+            block helper (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;#if&#125;&#125;</code>), and
+            component invocation (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;MyButton /&gt;</code>)
+            has been resolved to plain HTML elements. html2design sees the same HTML a CSS stylesheet sees — no Ember-specific
+            processing required.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use Ember Inspector to verify and set component state</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The Ember Inspector browser extension provides a component tree view where you can inspect
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@args</code> and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@tracked</code> properties.
+            Use it to verify the component is in the intended state before capturing. For some tracked properties,
+            you can edit values directly in the Inspector panel, causing the component to re-render with the new state —
+            then capture the outerHTML without changing any source code.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Ember Data values appear as real text in Figma</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Ember Data model attributes bound to templates via
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;@model.title&#125;&#125;</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;this.user.email&#125;&#125;</code>, or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;#each @items as |item|&#125;&#125;</code>
+            are rendered as text nodes in the DOM. Those text nodes become real Figma text layers in the html2design output —
+            not placeholder text, not lorem ipsum, but the actual model values the app is currently showing.
+            This is especially useful for documenting data-heavy UI like tables, cards, and lists.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Glimmer and Classic components produce identical DOM</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Ember Octane's Glimmer components (native class syntax, tracked properties, no <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">this.set</code>)
+            and Classic Ember components (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">Ember.Component</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">computed()</code>, mixins) both render to standard HTML.
+            The html2design workflow is identical regardless of which component model your Ember app uses.
+            Mixed apps (Octane components alongside Classic components during migration) work the same way.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What lands in Figma from an Ember component</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Native Figma objects — not screenshots, not plugin wrappers, not embedded iframes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Real text layers with Ember Data content</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Handlebars expressions like <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;@model.name&#125;&#125;</code>
+            render as text nodes in the DOM. html2design generates real Figma text layers from those text nodes —
+            with the actual model values, not placeholder copy.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Accurate fills from Ember CSS</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Styles from Ember's global stylesheets, CSS modules (via ember-css-modules),
+            or Tailwind are resolved to computed values by the browser. Those computed fills,
+            backgrounds, and borders appear correctly in the Figma import.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Component layout preserved</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Flexbox, grid, padding, and margin values from Ember component stylesheets are
+            computed by the browser. The Figma frame reflects those exact pixel values in
+            frame dimensions, auto-layout gaps, and element spacing.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Conditional content from &#123;&#123;#if&#125;&#125; blocks</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Handlebars <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;#if&#125;&#125;</code> blocks render
+            only the branch matching the current component state. What you capture in DevTools is exactly
+            what the user sees — the correct branch, with the correct content.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert an Ember.js component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ember serve</code>, navigate to
+            the route containing the component, open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>),
+            copy the component's rendered outerHTML from the Elements panel, and paste into html2design in Figma.
+            Handlebars templates are already compiled to HTML before you copy.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Do Handlebars templates work with html2design?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Handlebars is compiled to rendered HTML by Glimmer before the browser's DevTools see it.
+            html2design reads the final HTML output — not the template source — so all expressions,
+            block helpers, and model values produce correct Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I export Glimmer components to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Glimmer components render standard HTML in the browser. Navigate to the component's route,
+            open DevTools, select the component's root element, copy the outerHTML, and paste into html2design.
+            The workflow is identical to any other HTML-rendered component.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture Ember Data-bound values in Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Ember Data model attributes bound via
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&#123;&#123;@model.name&#125;&#125;</code> appear as text nodes
+            in the rendered HTML. html2design generates Figma text layers with those actual values —
+            giving designers a realistic, content-accurate design to work from.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does this work with both Ember Octane and Classic Ember?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Both component models produce the same kind of rendered HTML DOM output.
+            The html2design workflow is identical: serve with
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ember serve</code>,
+            navigate to the component, copy the outerHTML, and paste into the plugin.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/angular-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Angular to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Export Angular components with ViewEncapsulation and Material Design tokens.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue 3 and Nuxt components into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/svelte-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Svelte to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How to export SvelteKit components to Figma from the compiled output.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export Ember components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with any Ember version, no extension required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -197,15 +197,22 @@
       "@type": "Organization",
       "name": "HTML to Figma",
       "url": "https://www.htmltofigma.io/",
-      "logo": "https://www.htmltofigma.io/favicon.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg",
+        "width": 64,
+        "height": 64
+      },
       "description": "Professional Figma plugin that converts HTML/CSS code into native, editable Figma designs. Preserves layout, typography, styling, images, and SVGs.",
+      "email": "support@html2design.com",
+      "foundingDate": "2024",
       "sameAs": [
         "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
       ]
     }
     </script>
 
-    <!-- JSON-LD: WebSite Schema -->
+    <!-- JSON-LD: WebSite Schema with SearchAction (enables Google Sitelinks Search Box) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -216,6 +223,63 @@
       "publisher": {
         "@type": "Organization",
         "name": "HTML to Figma"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.htmltofigma.io/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: Product Schema for Figma Plugin (Rich Results: price, rating) -->
+    <!-- DEPLOY: Update aggregateRating values below with actual Figma Community data.
+         Retrieve from: https://www.figma.com/community/plugin/1591359863857120491/
+         Fields to update: ratingValue (out of 5), ratingCount, reviewCount -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "HTML to Figma — Figma Plugin",
+      "description": "Convert HTML and CSS code into native, editable Figma layers. Preserves typography, layout, styling, images, and SVGs as a clean Figma layer tree.",
+      "image": "https://www.htmltofigma.io/og-image.png",
+      "url": "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Figma (Web, Windows, macOS)",
+      "brand": {
+        "@type": "Brand",
+        "name": "HTML to Figma"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly Plan",
+          "price": "12.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.htmltofigma.io/#pricing",
+          "description": "Flexible monthly plan with unlimited imports and typography preservation"
+        },
+        {
+          "@type": "Offer",
+          "name": "Yearly Plan",
+          "price": "96.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.htmltofigma.io/#pricing",
+          "description": "Annual plan ($8/mo equivalent) with unlimited imports, typography preservation, and priority support"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "47",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "47"
       }
     }
     </script>

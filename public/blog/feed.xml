@@ -10,6 +10,30 @@
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
+      <title>Responsive Design to Figma: Converting Breakpoints to Figma Variants</title>
+      <link>https://www.htmltofigma.io/blog/responsive-design-to-figma</link>
+      <description>Step-by-step guide to converting responsive web designs into Figma Variants. Capture each breakpoint with html2design and build a responsive component library with mobile, tablet, and desktop variants.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/responsive-design-to-figma</guid>
+    </item>
+
+    <item>
+      <title>HTML Email Template to Figma: Import &amp; Edit Email Designs</title>
+      <link>https://www.htmltofigma.io/blog/html-email-to-figma</link>
+      <description>Step-by-step guide to converting HTML email templates into editable Figma designs using html2design. Covers table-based layouts, inline styles, gotchas, and email-specific Figma workflow tips.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-email-to-figma</guid>
+    </item>
+
+    <item>
+      <title>CSS Grid &amp; Flexbox to Figma Auto Layout: Conversion Guide</title>
+      <link>https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</link>
+      <description>Step-by-step guide to converting CSS Grid and Flexbox layouts into Figma Auto Layout. Covers layout import, post-conversion cleanup, and applying Figma Auto Layout for true responsiveness.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</guid>
+    </item>
+
+    <item>
       <title>Design System Migration: From Code to Figma Components</title>
       <link>https://www.htmltofigma.io/blog/design-system-migration</link>
       <description>Step-by-step guide to migrating a design system from code to Figma. Extract design tokens from HTML/CSS, identify components, and build a native Figma component library.</description>
