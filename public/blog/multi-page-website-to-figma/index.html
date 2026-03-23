@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Importing Multi-page Websites into Figma: Full Guide</title>
+  <meta name="description" content="Import multi-page websites into Figma as editable layers. Organize pages by route, preserve global navigation, and build a complete site design system." />
+  <meta name="keywords" content="import entire website figma, multi page figma import, website redesign figma, import website into figma pages, figma multi-page import html" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/multi-page-website-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/multi-page-website-to-figma" />
+  <meta property="og:title" content="Importing Multi-page Websites into Figma: Full Guide" />
+  <meta property="og:description" content="Import multi-page websites into Figma as editable layers. Organize pages by route, preserve global navigation, and build a complete site design system." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/multi-page-website-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Importing a multi-page website into Figma" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="website redesign" />
+  <meta property="article:tag" content="multi-page import" />
+  <meta property="article:tag" content="figma plugin" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Importing Multi-page Websites into Figma: Full Workflow (2026)" />
+  <meta name="twitter:description" content="Don't rebuild 25 pages by hand. Here's the page-by-page html2design workflow for importing an entire website into Figma." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/multi-page-website-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Importing Multi-page Websites into Figma: Full Workflow",
+    "description": "How to import an entire multi-page website into Figma using html2design. Page-by-page workflow, consistency tips, Figma page organization, and sitemap-driven import strategy.",
+    "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2300,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/multi-page-website-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/multi-page-website-to-figma"
+    },
+    "keywords": "import entire website figma, multi page figma import, website redesign figma, html2design"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Importing Multi-page Websites into Figma", "item": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I import an entire website into Figma at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not in a single operation, but you can import each page's HTML in one paste per page. For a 10-page site, that's 10 convert operations — each taking under 30 seconds. The page-by-page workflow is fast and produces cleaner, more manageable Figma frames than trying to batch everything into one import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I maintain visual consistency when importing a multi-page website into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Import shared sections (navigation, footer) once and use them as references across pages. Use a consistent Figma canvas width (1440px for desktop) for all page frames. Import each page at the same viewport size in the browser before copying the HTML. Name frames consistently: Home, About, Pricing, Contact."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to import a 20-page website into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With the html2design workflow, a 20-page website typically takes 3–6 hours including import, frame naming, and basic organization. Manual recreation of the same site would take 2–4 weeks. The exact time depends on page complexity and how much cleanup you do after each import."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Import a Multi-page Website into Figma",
+    "description": "Import all pages of a website into Figma as editable design frames using the html2design plugin and a page-by-page workflow.",
+    "totalTime": "PT4H",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Browser DevTools" },
+      { "@type": "HowToTool", "name": "Figma" }
+    ],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Build your page inventory from the sitemap", "text": "Use the sitemap.xml or a manual crawl to list all pages. Categorize by template type. Identify which pages share layouts.", "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" },
+      { "@type": "HowToStep", "position": 2, "name": "Set up a consistent Figma file structure", "text": "Create one Figma page per website section. Use consistent frame naming. Set canvas width to 1440px (desktop) or 390px (mobile).", "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" },
+      { "@type": "HowToStep", "position": 3, "name": "Import shared sections first", "text": "Import the navigation bar and footer before any full pages. Use these as reference layers so you can compare consistency across page imports.", "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" },
+      { "@type": "HowToStep", "position": 4, "name": "Import pages one at a time", "text": "For each page, set browser viewport to 1440px wide, copy outerHTML from the body element in DevTools, and paste into html2design. Name each resulting frame with the page name.", "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" },
+      { "@type": "HowToStep", "position": 5, "name": "Organize and link Figma pages", "text": "Arrange page frames vertically on the canvas. Add Figma prototype connections between pages to create a navigable wireframe. Set up a Figma Cover page with a site map for orientation.", "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/multi-page-website-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["header p", "article.prose-article p"]
+    },
+    "name": "Importing Multi-page Websites into Figma: Full Workflow (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Importing Multi-page Websites into Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 10 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Importing Multi-page Websites into Figma
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      You're redesigning a site with 15–30 pages and you need editable Figma designs of the current state. Here's the page-by-page workflow that replaces weeks of manual recreation with hours of systematic import.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Multi-page website import into Figma</strong> is a systematic workflow for converting every page of an existing website — home, about, product, blog, contact, and more — into native, editable Figma design frames. Using the html2design plugin, each page is imported one at a time by copying the page's rendered HTML from DevTools and converting it, producing a complete Figma design file that mirrors the live site and serves as the baseline for redesign work.</p>
+    </div>
+
+    <h2>Why a Systematic Workflow Matters</h2>
+    <p>
+      Importing a 25-page website into Figma without a plan produces a chaotic file: inconsistently named frames, mismatched canvas widths, shared sections imported multiple times, and no clear way to navigate between pages. Designers can't work effectively in a file that resembles a landfill.
+    </p>
+    <p>
+      A systematic approach — inventory first, structure before import, shared sections as anchors — produces a clean, navigable Figma file that your team can actually use as a redesign baseline. This guide covers that approach end to end.
+    </p>
+
+    <h2>Step 1: Build Your Page Inventory</h2>
+    <p>
+      Before opening Figma or DevTools, list every page you need to import. The fastest source of truth is your <strong>sitemap.xml</strong>. Open it in a browser (usually at <code>/sitemap.xml</code>) and copy the full URL list. Group pages by template type:
+    </p>
+    <ul>
+      <li><strong>Marketing pages:</strong> Home, About, Pricing, Contact, Blog index</li>
+      <li><strong>Product pages:</strong> Feature pages, landing pages, comparison pages</li>
+      <li><strong>Content templates:</strong> Blog post, case study, help article (import one representative page per template — they share the same layout)</li>
+      <li><strong>Transactional:</strong> Sign up, Login, Checkout, Confirmation</li>
+      <li><strong>Legal/utility:</strong> Privacy, Terms, 404 (low priority — import last if at all)</li>
+    </ul>
+    <p>
+      For content templates (blog posts, case studies), you only need to import one example per template type. The content varies, but the layout — header, sidebar, footer, article container — is the same across all posts. Import the template once, not every post.
+    </p>
+    <p>
+      Mark your priority order. Marketing pages and high-traffic product pages first. Legal pages and 404s last (or skip them).
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Quick inventory trick:</strong> Open Chrome DevTools Console on any page and run <code>performance.getEntriesByType('navigation')</code> to see the current page's URL. Then navigate to <code>/sitemap.xml</code> and press <kbd>Ctrl+A</kbd>, <kbd>Ctrl+C</kbd> to copy all URLs at once for a quick inventory list.</p>
+    </div>
+
+    <h2>Step 2: Set Up Your Figma File Structure</h2>
+    <p>
+      Before importing a single page, set up the Figma file properly. A good structure makes the finished file usable:
+    </p>
+    <ul>
+      <li><strong>Create one Figma page per site section</strong> — "Marketing", "Product", "Blog Templates", "Auth", "Legal". Avoid one Figma page per web page — that creates too many tabs.</li>
+      <li><strong>Add a "Cover" Figma page</strong> at the top — a simple site map showing the URL structure. This helps teammates orient themselves when they open the file.</li>
+      <li><strong>Add a "Shared" Figma page</strong> — where you'll store the nav, footer, and any globally shared sections. Import these first and reference them when reviewing pages for consistency.</li>
+    </ul>
+    <p>
+      Set your canvas to the correct desktop width before importing. Most marketing sites are designed at 1440px or 1280px. Check the live site's max-width by inspecting the main container element in DevTools. If in doubt, use 1440px.
+    </p>
+
+    <h2>Step 3: Import Shared Sections First</h2>
+    <p>
+      Every page on your site shares at least two elements: the navigation bar and the footer. Import these first — they'll serve as your visual consistency anchors for every subsequent page import.
+    </p>
+
+    <div class="step-card">
+      <div class="step-num">Navigation</div>
+      <h3>Import the main nav</h3>
+      <p>
+        Navigate to the home page. Right-click the navigation element → Inspect. Select the <code>&lt;nav&gt;</code> or header element (not the full page). Copy outerHTML. Paste into html2design. Name the result <code>Nav/Desktop/Default</code> and place it on the Shared Figma page.
+      </p>
+      <p>
+        Also import the mobile nav if it differs — either navigate to a mobile breakpoint by resizing the browser, or find the mobile nav in DevTools and copy it directly.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Footer</div>
+      <h3>Import the footer</h3>
+      <p>
+        Scroll to the bottom of the page. Inspect the <code>&lt;footer&gt;</code> element. Copy outerHTML. Convert. Name it <code>Footer/Desktop</code> and place it on the Shared Figma page.
+      </p>
+    </div>
+
+    <p>
+      With shared sections in place, you can visually compare them against the nav and footer sections of each page you import to catch inconsistencies (e.g. a page that has a slightly different nav style or a custom footer).
+    </p>
+
+    <h2>Step 4: Import Pages One at a Time</h2>
+    <p>
+      For each page in your priority order, follow the same sequence:
+    </p>
+
+    <div class="step-card">
+      <div class="step-num">Step 4a</div>
+      <h3>Set browser viewport to your target width</h3>
+      <p>
+        Open DevTools, click the device toolbar icon (<kbd>Ctrl+Shift+M</kbd>), and set the viewport width to your target desktop size (1440px). This ensures the HTML captures the desktop layout, not a responsive intermediate state.
+      </p>
+      <p>
+        For mobile imports, set to 390px (iPhone 15) or 375px (older standard).
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4b</div>
+      <h3>Copy the full page HTML</h3>
+      <p>
+        In DevTools Elements panel, right-click the <code>&lt;body&gt;</code> element → Copy → Copy outerHTML. This captures the full page content.
+      </p>
+      <p>
+        For very long pages (1000+ lines of HTML), consider copying section by section instead. Select the hero section, convert it, then the features section, then testimonials, etc. Stack them vertically in Figma to reconstruct the page. This approach is slower but produces a cleaner, more organized Figma layer structure.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4c</div>
+      <h3>Convert and name immediately</h3>
+      <p>
+        Paste into html2design and convert. The moment the frame appears on canvas, rename it to the page name: <code>Home</code>, <code>About</code>, <code>Pricing</code>, <code>Blog — Index</code>, <code>Blog — Article Template</code>.
+      </p>
+      <p>
+        Set the frame width to 1440px in the Figma properties panel to match your target — sometimes the import produces a slightly different width depending on the body element's CSS.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4d</div>
+      <h3>Stack frames on the canvas</h3>
+      <p>
+        Place each new page frame directly below the previous one on the canvas, aligned to the left edge. A vertical stack of page frames makes it easy to scroll through the entire site and compare pages. Leave 200–400px of gap between frames for notes and annotations.
+      </p>
+    </div>
+
+    <h2>Step 5: Maintain Consistency Across Pages</h2>
+    <p>
+      When importing many pages, small inconsistencies accumulate. Here's how to keep the file coherent:
+    </p>
+    <ul>
+      <li><strong>Consistent frame names</strong> — Use a naming convention and stick to it. <code>Page / Home</code>, <code>Page / About</code>, <code>Page / Pricing</code>. Avoid one-off names like "hp final" or "new about".</li>
+      <li><strong>Consistent frame widths</strong> — Check each imported frame's width after conversion and set it to 1440px manually if needed.</li>
+      <li><strong>Compare nav and footer</strong> — After each page import, visually compare its nav and footer against the anchors on your Shared page. Note any differences — these may be intentional (a landing page uses a simplified nav) or bugs in the live site.</li>
+      <li><strong>Group by section after import</strong> — For pages with many import passes (e.g. a long home page imported section by section), group all the section frames and set them as an Auto Layout frame arranged vertically. This reconstructs the page as a single scrollable design.</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Organize as you go:</strong> After every 5–6 pages, take 10 minutes to organize the Figma canvas. Align frames, check naming, and add any annotations. It's much faster to stay organized incrementally than to clean up 25 messy frames at the end.</p>
+    </div>
+
+    <h2>Step 6: Add Figma Page Navigation</h2>
+    <p>
+      A Figma file with 20 page frames is only useful if teammates can navigate it. Add two navigation aids:
+    </p>
+    <ul>
+      <li><strong>Site map on the Cover page</strong> — A simple tree diagram showing the URL structure and which Figma frame corresponds to each URL. Use a text box with the page list and links to the frames.</li>
+      <li><strong>Prototype connections</strong> — In Figma's Prototype panel, add hotspots to navigation links in your page frames that point to the corresponding destination frames. This lets anyone click through the site as a navigable prototype.</li>
+    </ul>
+
+    <h2>Step 7: Handle Edge Cases</h2>
+
+    <h3>Auth-gated pages</h3>
+    <p>
+      Pages behind login (dashboards, account pages, admin panels) can't be reached by URL-based screenshot tools. With html2design, log into the site normally in your browser, navigate to the page, and copy the HTML from DevTools while logged in. Paste into html2design as usual. Authentication state is irrelevant — you're pasting rendered HTML, not making a request.
+    </p>
+
+    <h3>Infinite scroll and lazy-loaded content</h3>
+    <p>
+      If a page uses infinite scroll (a feed, a product grid), scroll down in the browser to load the content you want, then copy the outerHTML. The loaded content is now in the DOM and will be included in the copy.
+    </p>
+
+    <h3>Pages with heavy JavaScript interactions</h3>
+    <p>
+      For pages that rely on JavaScript for rendering (modals, drawers, expanded states), open the interaction in the browser, then copy the HTML. For example, open a navigation mega-menu, and then copy the nav HTML — the expanded state will be captured. Import it as a separate frame: <code>Nav/Desktop/Menu Open</code>.
+    </p>
+
+    <h3>Large pages that time out</h3>
+    <p>
+      For very large pages (100+ complex elements), full-page import may take 15–30 seconds or time out. Use the section-by-section approach instead: copy the hero, convert, then the features section, convert, and so on. This is more work but is reliable for any page size.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I import an entire website into Figma at once?</h3>
+    <p>
+      Not in a single operation, but the page-by-page workflow is fast — each page takes under 60 seconds to import. A 20-page site typically takes 3–6 hours total, including organization and naming. That's a fraction of the time it would take to manually recreate even a single page.
+    </p>
+
+    <h3>How do I handle pages that look different across browsers?</h3>
+    <p>
+      html2design reads the computed styles from whatever browser you use for the import. For consistency, use the same browser (Chrome is recommended) for all page imports. Avoid mixing imports from Chrome and Firefox — subtle rendering differences in computed values can make the Figma file inconsistent.
+    </p>
+
+    <h3>Should I import mobile and desktop versions of each page?</h3>
+    <p>
+      For a redesign project, yes — import both. Run a desktop import pass (1440px viewport) first, then a mobile pass (390px viewport). Name mobile frames with a suffix: <code>Home — Mobile</code>. Place mobile frames in a separate column to the right of desktop frames on the canvas. See our guide on <a href="/blog/responsive-design-to-figma">responsive design to Figma</a> for the full workflow.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Inventory your pages first — categorize by template type and import one template, not every instance</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import nav and footer first as consistency anchors on a Shared Figma page</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use a consistent canvas width (1440px desktop) and naming convention across all page frames</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Auth-gated pages work fine — copy HTML from DevTools while logged in and paste normally</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> A 20-page site takes 3–6 hours with html2design, versus 2–4 weeks manually</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma: Two Methods Compared &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Chrome extension vs HTML code paste — which works for localhost, staging, and auth-gated pages.</p>
+        </a>
+        <a href="/blog/responsive-design-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Responsive Design to Figma: Converting Breakpoints to Variants &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Capture desktop, tablet, and mobile layouts and combine them into Figma Variants.</p>
+        </a>
+        <a href="/use-cases/legacy-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Use Case: Legacy Migration &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Rebuild old websites in Figma without starting from scratch. Step-by-step workflow for migrating legacy codebases.</p>
+        </a>
+        <a href="/blog/webflow-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Webflow to Figma: Import Your Webflow Site into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Section-by-section import from Webflow, capturing interaction states and building a Figma design system.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first page in 30 seconds</h2>
+      <p class="text-content-muted mb-6">Copy any page's HTML from DevTools. Paste into html2design. Get a full editable Figma design instantly — no rebuilding from scratch.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

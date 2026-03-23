@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>The Complete Guide to HTML to Figma Conversion (2026)</title>
-  <meta name="description" content="The definitive guide to converting HTML and CSS to native Figma designs. Covers React, Vue, Angular, Svelte, Tailwind, Bootstrap, design system migration, and every method compared." />
+  <meta name="description" content="Complete guide to converting HTML and CSS into Figma. Learn setup, best practices, and advanced workflows for designers and developers using HTML to Figma." />
   <meta name="keywords" content="html to figma, convert html to figma, html to figma guide, html2design, figma import html, react to figma, vue to figma, tailwind to figma, design system migration figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.htmltofigma.io/guide" />
   <meta property="og:title" content="The Complete Guide to HTML to Figma Conversion (2026)" />
-  <meta property="og:description" content="The definitive guide to converting HTML and CSS to native Figma designs. React, Vue, Angular, Svelte, Tailwind, Bootstrap, design system migration, and every method compared." />
+  <meta property="og:description" content="Complete guide to converting HTML and CSS into Figma. Learn setup, best practices, and advanced workflows for designers and developers using HTML to Figma." />
   <meta property="og:image" content="https://www.htmltofigma.io/og/guide.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -382,6 +382,7 @@
     <ul>
       <li><strong>Design system bootstrap:</strong> Your team coded a full UI before creating a Figma library. Instead of rebuilding every component by hand, import them directly from the browser.</li>
       <li><strong>Legacy application modernisation:</strong> An older codebase has no design files at all. Converting key screens to Figma is the first step toward a modern design process. See the <a href="/use-cases/legacy-migration">legacy migration use case</a> for a detailed workflow.</li>
+      <li><strong>Sketch to Figma migration:</strong> Teams moving from Sketch to Figma can use their existing HTML components as the source of truth, skipping the need to recreate designs from scratch. See the <a href="/use-cases/sketch-to-figma">Sketch to Figma migration use case</a>.</li>
       <li><strong>Developer handoff in reverse:</strong> Usually designers hand off to developers. With HTML to Figma, developers hand off back — sharing an accurate visual reference that designers can refine without re-measuring the live app. Read more about <a href="/use-cases/developer-handoff">developer handoff</a>.</li>
       <li><strong>Design drift audit:</strong> Import the current production UI and compare it side-by-side with the original Figma designs. Every discrepancy is visible immediately.</li>
       <li><strong>Client presentations:</strong> Import a live staging environment into Figma to create high-fidelity mock-ups for stakeholder reviews without any manual work.</li>
@@ -482,10 +483,28 @@
         <div class="fw-title">Gatsby</div>
         <div class="fw-desc">Convert Gatsby static sites with GraphQL-populated content into Figma layers.</div>
       </a>
+      <a href="/use-cases/storybook-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Storybook</div>
+        <div class="fw-desc">Import Storybook stories into Figma — no public URL required, works on localhost:6006.</div>
+      </a>
+      <a href="/use-cases/tailwind-react-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Tailwind + React</div>
+        <div class="fw-desc">Focused workflow for React + Tailwind teams — import components and extract tokens as Figma Variables.</div>
+      </a>
+      <a href="/use-cases/sketch-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Sketch Migration</div>
+        <div class="fw-desc">Migrate a Sketch-based design system to Figma using your HTML components as source of truth.</div>
+      </a>
     </div>
 
     <h3>React and Next.js</h3>
     <p>React renders to the DOM just like any other framework. Run your dev server (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>), open the component in Chrome, copy its outerHTML from DevTools, and paste into html2design. Works with Next.js App Router, Pages Router, and Storybook. The full tutorial walks through converting a complex component with hover states, dark mode, and responsive variants. → <a href="/blog/react-component-to-figma">React Component to Figma →</a></p>
+
+    <h3>Storybook</h3>
+    <p>Storybook is the ideal source for component-level conversion because each story renders an isolated component variant at a predictable localhost URL. Open the story in Canvas mode, select the component root in DevTools, and copy its outerHTML. Because Storybook runs on <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">localhost:6006</code>, URL-based import tools cannot reach it — the code-paste method is the only approach that works. A common team workflow: export every component story to Figma systematically, then build a Figma component library from the captures. → <a href="/use-cases/storybook-to-figma">Storybook to Figma →</a></p>
 
     <h3>Vue and Nuxt</h3>
     <p>Vue's scoped CSS is resolved by the browser before you copy the outerHTML, so scoped styles import correctly with no extra steps. Start your Nuxt or Vite dev server, navigate to the component's URL, and copy the root element's outerHTML. Scoped class names like <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">data-v-xxxx</code> are already resolved to their computed values by the time you copy. → <a href="/use-cases/vue-to-figma">Vue to Figma →</a></p>
@@ -498,6 +517,9 @@
 
     <h3>Tailwind CSS</h3>
     <p>Tailwind is ideal for HTML to Figma conversion because its utility classes map cleanly to Figma properties: spacing utilities become layout values, colour utilities become fill/stroke colours, and font utilities become text styles. Import a Tailwind component and you get a Figma frame whose design tokens are directly readable. The Tailwind tutorial also covers extracting your design token configuration into Figma Variables. → <a href="/blog/tailwind-to-figma">Tailwind to Figma →</a></p>
+
+    <h3>Tailwind CSS + React</h3>
+    <p>Teams using React with Tailwind get a particularly smooth workflow: run your dev server or Storybook instance, copy the rendered component's outerHTML from DevTools, and paste into html2design. Every utility class is already resolved to pixel values by the browser — you get exact spacing, colors, and typography in Figma without any manual mapping. The dedicated use case page covers token extraction and building a Figma component library from your Tailwind design system. → <a href="/use-cases/tailwind-react-to-figma">Tailwind + React to Figma →</a></p>
 
     <h3>Bootstrap</h3>
     <p>Bootstrap's component library imports cleanly because every component follows a predictable HTML structure with well-named CSS classes. Import a Bootstrap button, card, or navbar and you get a Figma frame that accurately mirrors the component's visual output. The Bootstrap guide covers mapping imported frames to a reusable Figma component library. → <a href="/blog/bootstrap-to-figma">Bootstrap to Figma →</a></p>
@@ -669,6 +691,11 @@
       <p>All feature releases, bug fixes, and improvements are listed in the <a href="/changelog">html2design changelog</a>, updated with each plugin release.</p>
     </div>
 
+    <div class="faq-item">
+      <h3>Where can I find more answers to common questions?</h3>
+      <p>The <a href="/faq">html2design FAQ page</a> covers 23 common questions organized by category: getting started, technical details, workflow tips, and comparisons — including pricing, browser support, and how html2design differs from other import tools.</p>
+    </div>
+
     <!-- Key Takeaways -->
     <div id="takeaways" class="key-takeaways">
       <h2>Key Takeaways</h2>
@@ -797,6 +824,7 @@
         <a href="/blog" class="hover:text-content transition-colors">Blog</a>
         <a href="/guide" class="hover:text-content transition-colors font-medium text-content">Guide</a>
         <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
         <a href="/about" class="hover:text-content transition-colors">About</a>
         <a href="/contact" class="hover:text-content transition-colors">Contact</a>
         <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>

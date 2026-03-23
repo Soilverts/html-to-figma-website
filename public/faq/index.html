@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML to Figma FAQ — Frequently Asked Questions</title>
+  <meta name="description" content="Find answers to the most common questions about HTML to Figma. Learn how it works, what it supports, pricing, and how to get started converting code to Figma." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.htmltofigma.io/faq" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HTML to Figma FAQ — Frequently Asked Questions" />
+  <meta property="og:description" content="Find answers to the most common questions about HTML to Figma. Learn how it works, what it supports, pricing, and how to get started converting code to Figma." />
+  <meta property="og:url" content="https://www.htmltofigma.io/faq" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/faq.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HTML to Figma FAQ — Frequently Asked Questions about the html2design plugin" />
+  <meta property="og:site_name" content="HTML to Figma" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HTML to Figma FAQ — Frequently Asked Questions" />
+  <meta name="twitter:description" content="Answers to the most common questions about HTML to Figma: installation, pricing, supported frameworks, and workflow tips." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/faq.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQ",
+        "item": "https://www.htmltofigma.io/faq"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage (all 23 questions — primary SEO value) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is HTML to Figma (html2design)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma (html2design) is a Figma plugin that converts HTML and CSS code directly into native, editable Figma layers. You paste raw HTML into the plugin — copied from a live website, a local dev server, or a static file — and it generates Figma frames, text nodes, and rectangles that match the browser's computed layout. No Chrome extension or live URL is required. It is used by over 2,000 designers and developers to bridge the gap between production code and design files."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install the HTML to Figma plugin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Figma and go to the Community tab (or visit the Figma Community page for html2design). Search for 'html2design' or 'HTML to Figma'. Click 'Install'. The plugin then appears under Main Menu → Plugins → html2design inside any Figma file. Installation takes under 30 seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which browsers does HTML to Figma support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma works with any modern browser — Chrome, Firefox, Edge, and Safari. You use your browser to copy HTML from DevTools, then paste it into the plugin running inside Figma. No browser extension is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does HTML to Figma cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTML to Figma (html2design) is a paid Figma plugin available from Figma Community. Pricing starts at $12 per month. You can install the plugin directly from Figma Community and begin converting HTML components into native Figma layers immediately after subscribing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a paid Figma plan to use html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. html2design works with a free Figma account. You need any Figma account (free or paid) to install and run plugins. The html2design subscription is separate from your Figma plan — you do not need Figma Professional or Figma Organization to use the plugin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work in both Figma Web and Figma Desktop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design runs identically in Figma Web (figma.com in your browser) and Figma Desktop (the Mac and Windows app). The plugin is sandboxed inside the Figma Plugin API in both environments, so there is no functional difference between the two."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which CSS properties does html2design support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design reads computed CSS values from the browser's rendering engine, including: background colors and gradients, border colors, border radius, box shadows, opacity, font family, font size, font weight, line height, letter spacing, text alignment, text decoration, padding, margin, width, height, and absolute position. Because it reads resolved computed values rather than source CSS, all CSS methodologies are supported: plain CSS, CSS Modules, CSS-in-JS, Tailwind, Bootstrap, and any other framework that compiles to standard CSS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work with React, Vue, Angular, and Svelte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All major frontend frameworks compile to standard HTML and CSS in the browser. The process is the same regardless of framework: render the component in a browser, open DevTools, right-click the element → Copy → Copy outerHTML, paste into html2design. No source code changes are required. This also applies to Next.js, Nuxt, Remix, Astro, and any other framework that outputs standard HTML."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Tailwind CSS components into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tailwind utility classes compile to standard CSS before the browser renders them. When you copy a component's outerHTML from DevTools, all computed styles are included — your custom colors from tailwind.config.js, spacing scale values, shadows, and responsive variants. html2design reads those resolved values, not the class names, so the output is accurate regardless of your Tailwind configuration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design preserve Flexbox and CSS Grid layouts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design reads computed positions (top, left, width, height) and sizes from the browser's rendered layout. Flexbox and Grid layouts are preserved visually — spacing, alignment, and padding are all maintained. The resulting Figma frames use absolute positioning rather than Figma Auto Layout. You can manually apply Auto Layout in Figma after import if you want responsive Figma frames."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work with localhost and local development servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Because you paste raw HTML rather than providing a URL, html2design works with any local development server: localhost:3000, localhost:8080, localhost:6006 (Storybook), Vite dev server, Next.js dev server, or any other local environment. No proxy, tunnel, or special network configuration is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert HTML email templates with html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MJML, HTML email, and table-based email layouts can be imported. Open the email template in a browser (most email preview tools and browser-based email clients render standard HTML), copy the outerHTML, and paste into html2design. The resulting Figma layers preserve the table-based layout, fonts, and colors exactly as rendered in the browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture hover, focus, and active states in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Chrome DevTools, right-click the element in the Elements panel → Force State → :hover (or :focus, :active, :visited). The browser applies the state styles. Copy outerHTML in that state and paste into html2design. Each state becomes a separate Figma frame. Select all frames, right-click → Create Component Set to create a Figma Component with Variants for the different interaction states."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I import dark mode variants into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Chrome DevTools → three-dot menu (⋮) → More Tools → Rendering → 'Emulate CSS media feature prefers-color-scheme' → dark. The component re-renders with its dark-mode styles applied. Copy outerHTML and convert in html2design. Pair the light and dark frames as Figma Component Variants to create a complete dark-mode component in your design system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create Figma Component Variants from imported states?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Import each component state (default, hover, focus, dark mode, error, disabled) as a separate Figma frame using html2design. Select all imported frames on the canvas, right-click → Create Component Set. Figma groups them into a single component with Variants, which you can rename and connect to your design system tokens and styles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can teams use html2design together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each team member installs the html2design plugin on their own Figma account. The plugin subscription is per-seat. Teams use it to import components and pages into shared Figma files, build design libraries from existing code, and keep Figma files in sync with production UI. There is no special team plan — each designer or developer installs and subscribes individually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use html2design for design handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design is often used in reverse-handoff workflows: a developer imports the production UI into Figma so a designer can refine it, document it, or migrate it to a design system. The typical workflow is: (1) developer copies outerHTML of the live component, (2) pastes into html2design, (3) the resulting Figma frame becomes the source of truth for the designer's review. This eliminates manual recreation and ensures the Figma file reflects what is actually in production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How large can the HTML be that I import?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no hard character limit on pasted HTML. A single component converts in 2–5 seconds. A full page section takes 8–15 seconds. A dense full page (entire body element of a complex app) typically takes 20–60 seconds. For best performance on large pages, import sections or individual components rather than the entire page at once."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is html2design different from taking a screenshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A screenshot produces a flat, non-editable image. html2design produces native Figma layers — frames, text nodes, rectangles, and vector shapes — that are fully editable in Figma. You can change text, recolor shapes, resize frames, move layers, and connect the result to your design system. Screenshots cannot be edited at all; html2design imports are a starting point for design work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is html2design different from Figma Dev Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma Dev Mode helps developers read Figma designs (inspect measurements, copy CSS). html2design does the opposite — it imports production code into Figma so designers can work with it. They solve different problems in different directions. Dev Mode requires a designer-created Figma file to exist first; html2design creates that Figma file from existing code when no design file exists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is html2design different from html.to.design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html.to.design uses a Chrome extension to capture a live URL from the browser and import it. html2design works by pasting raw HTML directly into the Figma plugin — no Chrome extension, no live URL, no network access required. This means html2design works on localhost, Storybook, auth-gated pages, and any HTML you can copy from DevTools, including cases where html.to.design cannot access the page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use html2design instead of rebuilding manually?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use html2design whenever the production HTML and CSS already exist and you need an accurate Figma representation. A component that takes 20–40 minutes to recreate manually converts in under 30 seconds with html2design. A full page section that would take 2–4 hours converts in under a minute. The main cases are: documenting existing UI, building a design system from a live codebase, keeping Figma files in sync with production, and reviewing code changes as a designer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my HTML data sent to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The html2design plugin runs entirely inside the Figma Plugin API sandbox. All HTML processing happens locally within the plugin — no user HTML is transmitted to external servers. This makes html2design safe to use with confidential internal tools, private staging environments, auth-gated pages, and proprietary source code."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebPage with Speakable (GEO/voice search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "HTML to Figma FAQ",
+    "description": "Answers to the most common questions about HTML to Figma (html2design): installation, pricing, supported frameworks, workflow tips, and comparisons.",
+    "url": "https://www.htmltofigma.io/faq",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/faq.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header.faq-header p",
+        ".faq-answer p",
+        ".faq-intro"
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-4">
+        <a href="/guide" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Guide</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a
+          href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm px-4 py-2 bg-content text-white font-semibold rounded-full hover:bg-black transition-colors"
+        >Get Plugin</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">FAQ</span>
+    </nav>
+  </div>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-8 pb-24">
+
+    <header class="faq-header mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">FAQ</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Frequently Asked Questions</h1>
+      <p class="faq-intro text-content-muted text-lg leading-relaxed">
+        Everything you need to know about HTML to Figma — from installation and pricing to framework support, workflow tips, and how it compares to alternatives.
+      </p>
+    </header>
+
+    <!-- Jump links -->
+    <nav aria-label="FAQ categories" class="mb-12 flex flex-wrap gap-2">
+      <a href="#getting-started" class="text-xs font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border border-gray-200 text-content-muted hover:border-accent hover:text-accent transition-colors">Getting started</a>
+      <a href="#technical" class="text-xs font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border border-gray-200 text-content-muted hover:border-accent hover:text-accent transition-colors">Technical</a>
+      <a href="#workflow" class="text-xs font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border border-gray-200 text-content-muted hover:border-accent hover:text-accent transition-colors">Workflow</a>
+      <a href="#comparison" class="text-xs font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border border-gray-200 text-content-muted hover:border-accent hover:text-accent transition-colors">Comparison</a>
+    </nav>
+
+    <!-- ── GETTING STARTED ──────────────────────────────────────── -->
+    <section id="getting-started" class="mb-16" aria-labelledby="getting-started-heading">
+      <h2 id="getting-started-heading" class="text-xs font-mono uppercase tracking-widest text-accent mb-8">Getting Started</h2>
+
+      <div class="space-y-0 divide-y divide-gray-100">
+
+        <!-- Q1 -->
+        <details class="py-6 group" open>
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">What is HTML to Figma (html2design)?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> HTML to Figma (html2design) is a Figma plugin that converts HTML and CSS code into native, editable Figma layers — paste raw HTML from DevTools and get editable frames in seconds. No Chrome extension or live URL required.</p>
+            <p>You paste raw HTML into the plugin — copied from a live website, a local dev server, or a static file — and it generates Figma frames, text nodes, and rectangles that match the browser's computed layout. Every layer is fully editable in Figma without any plugin dependency.</p>
+            <p>No Chrome extension or live URL is required. It is used by over 2,000 designers and developers to bridge the gap between production code and design files.</p>
+            <p class="mt-2"><a href="/guide" class="text-accent hover:underline font-medium">Read the full guide →</a></p>
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How do I install the HTML to Figma plugin?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>Open Figma and go to the Community tab (or visit the Figma Community page for html2design). Search for <strong>html2design</strong> or <strong>HTML to Figma</strong>. Click <strong>Install</strong>.</p>
+            <p>The plugin then appears under Main Menu → Plugins → html2design inside any Figma file. Installation takes under 30 seconds.</p>
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Which browsers does HTML to Figma support?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>HTML to Figma works with any modern browser — Chrome, Firefox, Edge, and Safari. You use your browser to copy HTML from DevTools, then paste it into the plugin running inside Figma. No browser extension is required.</p>
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How much does HTML to Figma cost?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>HTML to Figma (html2design) is a paid Figma plugin available from Figma Community. Pricing starts at <strong>$12 per month</strong>. You can install the plugin directly from Figma Community and begin converting HTML components into native Figma layers immediately after subscribing.</p>
+          </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Do I need a paid Figma plan to use html2design?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>No. html2design works with a free Figma account. You need any Figma account (free or paid) to install and run plugins. The html2design subscription is separate from your Figma plan — you do not need Figma Professional or Figma Organization to use the plugin.</p>
+          </div>
+        </details>
+
+        <!-- Q6 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Does html2design work in both Figma Web and Figma Desktop?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>Yes. html2design runs identically in Figma Web (figma.com in your browser) and Figma Desktop (the Mac and Windows app). The plugin is sandboxed inside the Figma Plugin API in both environments, so there is no functional difference between the two.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ── TECHNICAL ───────────────────────────────────────────── -->
+    <section id="technical" class="mb-16" aria-labelledby="technical-heading">
+      <h2 id="technical-heading" class="text-xs font-mono uppercase tracking-widest text-accent mb-8">Technical</h2>
+
+      <div class="space-y-0 divide-y divide-gray-100">
+
+        <!-- Q7 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Which CSS properties does html2design support?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>html2design reads <strong>computed CSS values</strong> from the browser's rendering engine, including background colors and gradients, border colors, border radius, box shadows, opacity, font family, font size, font weight, line height, letter spacing, text alignment, text decoration, padding, margin, width, height, and absolute position.</p>
+            <p>Because it reads resolved values rather than source CSS, all CSS methodologies are supported: plain CSS, CSS Modules, CSS-in-JS, Tailwind, Bootstrap, Sass, and any other approach that compiles to standard CSS.</p>
+          </div>
+        </details>
+
+        <!-- Q8 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Does html2design work with React, Vue, Angular, and Svelte?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>Yes. All major frontend frameworks compile to standard HTML and CSS in the browser. The process is the same regardless of framework: render the component in a browser, open DevTools, right-click the element → Copy → Copy outerHTML, paste into html2design. No source code changes are required.</p>
+            <p>This also applies to Next.js, Nuxt, Remix, Astro, and any other framework that outputs standard HTML. See specific guides for <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React</a> and <a href="/use-cases/tailwind-react-to-figma" class="text-accent hover:underline">Tailwind + React</a>.</p>
+          </div>
+        </details>
+
+        <!-- Q9 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Can I import Tailwind CSS components into Figma?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>Yes. Tailwind utility classes compile to standard CSS before the browser renders them. When you copy a component's outerHTML from DevTools, all computed styles are included — your custom colors from <code class="bg-gray-100 px-1 rounded text-xs">tailwind.config.js</code>, spacing scale values, shadows, and responsive variants. html2design reads those resolved values, not the class names.</p>
+            <p><a href="/blog/tailwind-to-figma" class="text-accent hover:underline">Read the Tailwind to Figma guide →</a></p>
+          </div>
+        </details>
+
+        <!-- Q10 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Does html2design preserve Flexbox and CSS Grid layouts?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>html2design reads computed positions (top, left, width, height) and sizes from the browser's rendered layout. Flexbox and Grid layouts are preserved visually — spacing, alignment, and padding are all maintained. The resulting Figma frames use absolute positioning rather than Figma Auto Layout. You can manually apply Auto Layout in Figma after import if you want responsive Figma frames.</p>
+          </div>
+        </details>
+
+        <!-- Q11 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Does html2design work with localhost and local development servers?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> Yes — html2design works with localhost because you paste raw HTML rather than providing a URL. No proxy, tunnel, or network configuration required.</p>
+            <p>It works with any local development server: <code class="bg-gray-100 px-1 rounded text-xs">localhost:3000</code>, <code class="bg-gray-100 px-1 rounded text-xs">localhost:8080</code>, <code class="bg-gray-100 px-1 rounded text-xs">localhost:6006</code> (Storybook), Vite dev server, Next.js dev server, or any other local environment.</p>
+          </div>
+        </details>
+
+        <!-- Q12 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Can I convert HTML email templates with html2design?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>Yes. MJML, HTML email, and table-based email layouts can be imported. Open the email template in a browser (most email preview tools render standard HTML), copy the outerHTML, and paste into html2design. The resulting Figma layers preserve the table-based layout, fonts, and colors exactly as rendered in the browser.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ── WORKFLOW ────────────────────────────────────────────── -->
+    <section id="workflow" class="mb-16" aria-labelledby="workflow-heading">
+      <h2 id="workflow-heading" class="text-xs font-mono uppercase tracking-widest text-accent mb-8">Workflow</h2>
+
+      <div class="space-y-0 divide-y divide-gray-100">
+
+        <!-- Q13 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How do I capture hover, focus, and active states in Figma?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>In Chrome DevTools, right-click the element in the Elements panel → <strong>Force State</strong> → <code class="bg-gray-100 px-1 rounded text-xs">:hover</code> (or <code class="bg-gray-100 px-1 rounded text-xs">:focus</code>, <code class="bg-gray-100 px-1 rounded text-xs">:active</code>, <code class="bg-gray-100 px-1 rounded text-xs">:visited</code>). The browser applies the state styles. Copy outerHTML in that state and paste into html2design.</p>
+            <p>Each state becomes a separate Figma frame. Select all frames, right-click → <strong>Create Component Set</strong> to create a Figma Component with Variants.</p>
+          </div>
+        </details>
+
+        <!-- Q14 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How do I import dark mode variants into Figma?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>Open Chrome DevTools → three-dot menu (⋮) → More Tools → Rendering → <strong>Emulate CSS media feature prefers-color-scheme → dark</strong>. The component re-renders with its dark-mode styles applied. Copy outerHTML and convert in html2design. Pair the light and dark frames as Figma Component Variants to create a complete dark-mode component in your design system.</p>
+          </div>
+        </details>
+
+        <!-- Q15 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How do I create Figma Component Variants from imported states?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>Import each component state (default, hover, focus, dark mode, error, disabled) as a separate Figma frame using html2design. Select all imported frames on the canvas, right-click → <strong>Create Component Set</strong>. Figma groups them into a single component with Variants, which you can rename and connect to your design system tokens and styles.</p>
+          </div>
+        </details>
+
+        <!-- Q16 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Can teams use html2design together?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>Yes. Each team member installs the html2design plugin on their own Figma account. The plugin subscription is per-seat. Teams use it to import components into shared Figma files, build design libraries from existing code, and keep Figma files in sync with production UI.</p>
+          </div>
+        </details>
+
+        <!-- Q17 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How do I use html2design for design handoff?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>html2design is often used in <strong>reverse-handoff</strong> workflows: a developer imports the production UI into Figma so a designer can refine it, document it, or migrate it to a design system.</p>
+            <p>Typical workflow: (1) developer copies outerHTML of the live component, (2) pastes into html2design, (3) the resulting Figma frame becomes the source of truth for the designer's review. This eliminates manual recreation and ensures the Figma file reflects what is actually in production. See the <a href="/use-cases/developer-handoff" class="text-accent hover:underline">developer handoff use case</a> for a detailed walkthrough.</p>
+          </div>
+        </details>
+
+        <!-- Q18 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How large can the HTML be that I import?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
+            <p>There is no hard character limit on pasted HTML. A single component converts in 2–5 seconds. A full page section takes 8–15 seconds. A dense full page (entire body element of a complex app) typically takes 20–60 seconds. For best performance on large pages, import sections or individual components rather than the entire page at once.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ── COMPARISON ─────────────────────────────────────────── -->
+    <section id="comparison" class="mb-16" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading" class="text-xs font-mono uppercase tracking-widest text-accent mb-8">Comparison</h2>
+
+      <div class="space-y-0 divide-y divide-gray-100">
+
+        <!-- Q19 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How is html2design different from taking a screenshot?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>A screenshot produces a flat, non-editable image. html2design produces <strong>native Figma layers</strong> — frames, text nodes, rectangles, and vector shapes — that are fully editable in Figma. You can change text, recolor shapes, resize frames, move layers, and connect the result to your design system.</p>
+            <p>Screenshots cannot be edited at all; html2design imports are a starting point for design work. See the <a href="/compare" class="text-accent hover:underline">comparison page</a> for a full breakdown.</p>
+          </div>
+        </details>
+
+        <!-- Q20 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How is html2design different from Figma Dev Mode?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> Figma Dev Mode goes Figma → code (helps developers read design specs). html2design goes code → Figma (imports production HTML into Figma). They work in opposite directions and solve different problems.</p>
+            <p>Figma Dev Mode helps developers <strong>read</strong> Figma designs (inspect measurements, copy CSS). html2design does the opposite — it <strong>imports production code into Figma</strong> so designers can work with it. Dev Mode requires a designer-created Figma file to exist first; html2design creates that Figma file from existing code when no design file exists.</p>
+          </div>
+        </details>
+
+        <!-- Q21 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">How is html2design different from html.to.design?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>html.to.design uses a Chrome extension to capture a live URL from the browser. html2design works by pasting raw HTML directly into the Figma plugin — no Chrome extension, no live URL, no network access required.</p>
+            <p>This means html2design works on localhost, Storybook, auth-gated pages, and any HTML you can copy from DevTools — including cases where html.to.design cannot access the page. See the full <a href="/alternatives" class="text-accent hover:underline">alternatives comparison →</a></p>
+          </div>
+        </details>
+
+        <!-- Q22 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">When should I use html2design instead of rebuilding manually?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p>Use html2design whenever the production HTML and CSS already exist and you need an accurate Figma representation. A component that takes 20–40 minutes to recreate manually converts in under 30 seconds with html2design. A full page section that would take 2–4 hours converts in under a minute.</p>
+            <p>Main use cases: documenting existing UI, building a design system from a live codebase, keeping Figma files in sync with production, and reviewing code changes as a designer.</p>
+          </div>
+        </details>
+
+        <!-- Q23 -->
+        <details class="py-6 group">
+          <summary class="flex items-start justify-between gap-4 cursor-pointer list-none">
+            <h3 class="font-semibold text-content text-base leading-snug">Is my HTML data sent to any server?</h3>
+            <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
+            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> No. All HTML processing happens locally inside the Figma Plugin API sandbox — no user HTML is ever sent to external servers.</p>
+            <p>The html2design plugin runs entirely inside the Figma Plugin API sandbox. This makes html2design safe to use with confidential internal tools, private staging environments, auth-gated pages, and proprietary source code.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- More Resources -->
+    <section class="mb-16 pt-16 border-t border-gray-100" aria-labelledby="resources-heading">
+      <h2 id="resources-heading" class="text-xl font-bold text-content mb-6">Still have questions?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <a href="/guide" class="group block bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-accent/30 hover:bg-accent/5 transition-colors">
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Docs</div>
+          <div class="font-semibold text-content mb-1 group-hover:text-accent transition-colors">Complete Guide</div>
+          <p class="text-sm text-content-muted leading-relaxed">Step-by-step tutorial from install to advanced component workflows.</p>
+        </a>
+
+        <a href="/blog" class="group block bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-accent/30 hover:bg-accent/5 transition-colors">
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Tutorials</div>
+          <div class="font-semibold text-content mb-1 group-hover:text-accent transition-colors">Blog &amp; Tutorials</div>
+          <p class="text-sm text-content-muted leading-relaxed">Framework-specific guides: React, Tailwind, Bootstrap, Storybook, and more.</p>
+        </a>
+
+        <a href="/compare" class="group block bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-accent/30 hover:bg-accent/5 transition-colors">
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Compare</div>
+          <div class="font-semibold text-content mb-1 group-hover:text-accent transition-colors">Tool Comparison</div>
+          <p class="text-sm text-content-muted leading-relaxed">html2design vs screenshots, manual rebuild, and Figma Dev Mode.</p>
+        </a>
+
+        <a href="/alternatives" class="group block bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-accent/30 hover:bg-accent/5 transition-colors">
+          <div class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Alternatives</div>
+          <div class="font-semibold text-content mb-1 group-hover:text-accent transition-colors">Alternatives</div>
+          <p class="text-sm text-content-muted leading-relaxed">See how html2design compares to html.to.design, Figma plugins, and other tools.</p>
+        </a>
+
+      </div>
+      <div class="mt-6">
+        <a href="/contact" class="text-sm text-content-muted hover:text-accent transition-colors">Can't find your answer? Contact us →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pt-16 border-t border-gray-100 text-center">
+      <h2 class="text-2xl font-bold text-content mb-3">Ready to try it?</h2>
+      <p class="text-content-muted mb-8 text-base">Install the plugin from Figma Community and convert your first component in minutes.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-content text-white text-sm font-semibold rounded-full hover:bg-black transition-colors"
+        >
+          Get the Figma Plugin
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+        </a>
+        <a href="/guide" class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-200 text-content text-sm font-semibold rounded-full hover:bg-gray-50 transition-colors">
+          Read the guide
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/faq" class="hover:text-content transition-colors font-medium text-content">FAQ</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

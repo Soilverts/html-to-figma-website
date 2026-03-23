@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Storybook to Figma — Import Storybook Components into Figma</title>
+  <meta name="description" content="Import Storybook components into Figma as editable layers. Sync your UI library with Figma and give designers access to the latest production components." />
+  <meta name="keywords" content="storybook to figma, import storybook components figma, design system storybook figma, storybook figma plugin, storybook figma export, storybook html figma, html2design storybook" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/storybook-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/storybook-to-figma" />
+  <meta property="og:title" content="Storybook to Figma — Import Storybook Components into Figma" />
+  <meta property="og:description" content="Import Storybook components into Figma as editable layers. Sync your UI library with Figma and give designers access to the latest production components." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/storybook-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Storybook component story imported as native Figma layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Storybook to Figma — Import Storybook Components into Figma" />
+  <meta name="twitter:description" content="Import Storybook components into Figma in minutes. Render any story in the browser, copy the outerHTML, and paste into the html2design plugin." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/storybook-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Import Storybook Components into Figma — Storybook to Figma Workflow",
+    "description": "Step-by-step guide for converting Storybook component stories into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/storybook-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/storybook-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Storybook to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/storybook-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I import a Storybook component into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run Storybook locally with npm run storybook, navigate to the story you want to capture, then use the Canvas view (not Docs). Open DevTools, find the root element rendered inside the Storybook iframe, right-click it, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin. The plugin converts the rendered story — with all CSS already applied — into native Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Storybook design system components into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Storybook is an ideal source for Figma imports because each story renders a component in a controlled, isolated state. You can capture button variants, form states, card layouts, and entire page compositions. Render the exact story you need, copy the outerHTML from DevTools, and paste into html2design to get editable Figma frames that match your design system exactly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the html2design plugin work inside the Storybook iframe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The html2design Figma plugin runs inside Figma, not in the browser. To import a Storybook component, you copy the rendered HTML from the browser DevTools (inside the Storybook iframe's document) and paste the raw HTML string into the plugin. You do not need to install anything in your browser or in Storybook itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get the HTML from inside the Storybook canvas iframe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Storybook in Chrome or Firefox. In DevTools, click the source selector icon next to the URL bar — you will see the page document and a nested iframe labeled 'storybook-preview-iframe'. Select that iframe context, then find your component's root element in the Elements panel, right-click, and choose Copy > Copy outerHTML. This gives you the fully rendered HTML with all computed styles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Storybook's CSS addon styles be preserved in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The browser resolves all styles — including styles applied by Storybook decorators, global stylesheets, and CSS-in-JS libraries like Emotion or styled-components — before you copy the outerHTML. The html2design plugin reads computed styles, not source files, so whatever the browser renders is what lands in Figma."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Storybook to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Storybook</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Storybook to Figma —<br />
+        In Two Minutes
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Importing Storybook components into Figma</strong> means rendering the
+        story in the browser, copying the outerHTML from DevTools, and pasting it into the html2design plugin.
+        Every component variant, state, and design token lands in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> — no plugin installation in Storybook,
+        no public URL, no screenshot tools.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/guide"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Complete HTML to Figma Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Storybook to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Storybook to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Storybook to Figma"</strong> refers to the process of taking a component story
+        rendered in Storybook and converting it into a native Figma design. Storybook renders each component in an
+        isolated browser environment with all its styles resolved — making it the ideal source for pixel-accurate
+        Figma imports via the html2design plugin.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        The workflow requires no Storybook addons, no Figma tokens plugin, and no public Storybook URL. You run
+        Storybook on <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>,
+        copy the rendered HTML from the browser's DevTools, and paste it into the html2design Figma plugin.
+        The result is a Figma frame that exactly matches the live component — not a screenshot, not a vector trace.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Storybook to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works with React, Vue, Angular, Svelte, and any Storybook framework.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run Storybook locally</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start your Storybook dev server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run storybook</code>
+              or <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npx storybook dev</code>.
+              Open the Storybook in your browser and navigate to the component story you want to capture.
+            </p>
+            <p>
+              Use the <strong class="text-content">Canvas</strong> tab (not Docs) — the Canvas tab renders the component
+              in an isolated iframe without Storybook's documentation wrapper. This gives you the cleanest HTML to import.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Enter the Storybook iframe context</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>).
+              Storybook renders each story inside an iframe — click the
+              <strong class="text-content">context switcher</strong> (the dropdown that shows
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">top</code>) and select
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">storybook-preview-iframe</code>
+              to enter the story's document context.
+            </p>
+            <p>
+              Alternatively, right-click directly on the rendered component in the Canvas panel and choose
+              <strong class="text-content">Inspect</strong> — Chrome will open DevTools already focused inside the iframe
+              on the element you clicked.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered outerHTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              In the Elements panel, find the root element of your component. Right-click it and choose
+              <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For a full component, select its top-level wrapper. For a page-level story, you can select
+              the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">#storybook-root</code> element.
+            </p>
+            <p>
+              The copied HTML includes all computed CSS — Tailwind utility classes resolved to their final pixel values,
+              CSS-in-JS styles baked in, design tokens expanded. The html2design plugin will read these computed styles
+              and translate them into native Figma fills, strokes, and typography.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. In seconds, you will have a native Figma frame
+              with editable text layers, fills, borders, and a layer hierarchy that mirrors the component structure.
+            </p>
+            <p>
+              Repeat for each component variant or state. Import the default state, hover state, disabled state,
+              and error state as separate Figma frames — then hand them to your designer as a complete component spec.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Storybook-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Storybook-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Storybook's isolated rendering environment makes it ideal for Figma imports. These tips help you get the most from the workflow.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use the Canvas tab, not Docs</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The Docs tab wraps your component in Storybook's documentation layout — headers, description, controls table.
+            Use the Canvas tab to get just the component itself, rendered in the exact same way it will appear in production.
+            This keeps the imported HTML clean and avoids Storybook chrome appearing in your Figma output.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use Storybook controls to set the exact state before copying</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Storybook's Controls addon lets you adjust component props in real time. Set the exact props you want to
+            capture — button label, color variant, disabled state, loading indicator — then copy the outerHTML from
+            DevTools. The component will be rendered with those exact props, so the Figma import reflects the state
+            you configured, not just the default story.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Import multiple story variants as separate Figma frames</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Storybook stories are designed to showcase variants — Primary, Secondary, Destructive, Disabled, Loading.
+            Export each story separately as a Figma frame, then group them as a component set in Figma. This gives your
+            design system a complete component with all variants documented and visually accurate.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Storybook decorators and global styles are preserved</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Storybook decorators inject wrappers — centering containers, theme providers, CSS reset files, font imports.
+            These are all resolved by the browser before you copy the HTML. If your component uses a theme provider
+            (Emotion ThemeProvider, styled-components ThemeProvider, Chakra UI), the resolved design tokens will be
+            reflected in the computed CSS that the plugin reads.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not plugin wrappers.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text node in the Storybook story — button labels, card titles, form field placeholders — becomes
+            a real Figma text layer with the correct font family, size, weight, line height, and color.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Resolved design tokens as fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If your design system uses CSS custom properties or a token library, the browser resolves
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-primary)</code>
+            to its actual hex value. Figma fills reflect your exact token values.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Accurate spacing and layout</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, gap, border-radius, and flex/grid layout are read from computed styles — not source files.
+            The spacing values in Figma exactly match what the browser rendered in Storybook.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Mirrored layer hierarchy</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            HTML element nesting becomes Figma layer nesting. CSS class names become layer names.
+            Your component's internal structure is preserved and navigable in Figma's layer panel.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I import a Storybook component into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run Storybook locally, open the story in Canvas view, enter the iframe context in DevTools,
+            copy the component's outerHTML, and paste it into the html2design Figma plugin.
+            No addons or integrations needed.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import my entire design system from Storybook to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes, but it is done story by story — there is no batch export. The best approach is to export
+            the most commonly referenced components first (buttons, inputs, cards, modals) and build up the
+            Figma component library incrementally. Each export takes under two minutes.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does the html2design plugin work inside the Storybook iframe?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The plugin runs in Figma, not in the browser. You copy the rendered HTML from DevTools and paste
+            the raw HTML string into the plugin. You do not need to install anything in Storybook or the browser.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I get the HTML from inside the Storybook iframe?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            In Chrome DevTools, click the context switcher dropdown (shows "top") and select
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">storybook-preview-iframe</code>.
+            Then find the component element in the Elements panel, right-click, and choose Copy &gt; Copy outerHTML.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Will CSS-in-JS styles from styled-components or Emotion be preserved?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. CSS-in-JS libraries inject styles into the document's
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style&gt;</code> tags at runtime.
+            The browser resolves these to computed values before you copy the HTML. All generated class names
+            and their styles are already baked into the computed CSS that html2design reads.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/tailwind-react-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Tailwind + React to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Tailwind CSS utility components into editable Figma layers.</p>
+        </a>
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components to Figma.</p>
+        </a>
+
+        <a href="/use-cases/vue-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Vue to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Vue.js components with scoped styles into native Figma layers.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Import your Storybook components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, no Chrome extension, no public Storybook URL required.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

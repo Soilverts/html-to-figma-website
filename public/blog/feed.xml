@@ -10,6 +10,54 @@
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
+      <title>Importing Multi-page Websites into Figma: Full Workflow</title>
+      <link>https://www.htmltofigma.io/blog/multi-page-website-to-figma</link>
+      <description>How to import an entire multi-page website into Figma using html2design. Page-by-page workflow, consistency tips, Figma page organization, and sitemap-driven import strategy for redesign projects.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/multi-page-website-to-figma</guid>
+    </item>
+
+    <item>
+      <title>How to Import a Component Library into Figma</title>
+      <link>https://www.htmltofigma.io/blog/component-library-to-figma</link>
+      <description>Step-by-step guide to importing an entire component library into Figma using html2design. Covers preparing components, batch import from Storybook, design token extraction, and publishing a Figma library for your team.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/component-library-to-figma</guid>
+    </item>
+
+    <item>
+      <title>Figma Dev Mode vs html2design: When to Use Which</title>
+      <link>https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design</link>
+      <description>Figma Dev Mode and html2design solve different problems — one goes design-to-code, the other goes code-to-design. Side-by-side feature comparison and the complementary workflow for teams that need both directions.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design</guid>
+    </item>
+
+    <item>
+      <title>Accessibility Audit: From HTML Audit to Figma Redesign</title>
+      <link>https://www.htmltofigma.io/blog/accessibility-audit-to-figma</link>
+      <description>Run a WCAG accessibility audit on your HTML pages, import flagged sections into Figma using html2design, and redesign for compliance. Step-by-step guide covering contrast, focus indicators, touch targets, and annotated developer handoff.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/accessibility-audit-to-figma</guid>
+    </item>
+
+    <item>
+      <title>Design Tokens: Bridging Code and Figma with HTML to Figma</title>
+      <link>https://www.htmltofigma.io/blog/design-tokens-code-to-figma</link>
+      <description>Sync design tokens between your codebase and Figma Variables and Styles using the token reference page pattern and html2design. Covers the code-to-Figma token mapping, rendered-output approach, and sync strategies for design system teams.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-tokens-code-to-figma</guid>
+    </item>
+
+    <item>
+      <title>Webflow to Figma: Import Your Webflow Site into Figma</title>
+      <link>https://www.htmltofigma.io/blog/webflow-to-figma</link>
+      <description>Import any published Webflow site into Figma as native, editable layers using html2design. Covers section-by-section import, capturing interaction states, CMS template pages, and building a Figma design system from Webflow output.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/webflow-to-figma</guid>
+    </item>
+
+    <item>
       <title>Responsive Design to Figma: Converting Breakpoints to Figma Variants</title>
       <link>https://www.htmltofigma.io/blog/responsive-design-to-figma</link>
       <description>Step-by-step guide to converting responsive web designs into Figma Variants. Capture each breakpoint with html2design and build a responsive component library with mobile, tablet, and desktop variants.</description>

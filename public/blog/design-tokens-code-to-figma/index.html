@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Design Tokens: Bridging Code and Figma with HTML to Figma</title>
+  <meta name="description" content="Sync design tokens between code and Figma. Import CSS variables as Figma variables to maintain a single source of truth for colors, spacing, and typography." />
+  <meta name="keywords" content="design tokens figma, code to figma design tokens, sync design tokens, design tokens workflow, figma variables design tokens, design system tokens figma, token-based design figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/design-tokens-code-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/design-tokens-code-to-figma" />
+  <meta property="og:title" content="Design Tokens: Bridging Code and Figma with HTML to Figma" />
+  <meta property="og:description" content="Sync design tokens between code and Figma. Import CSS variables as Figma variables to maintain a single source of truth for colors, spacing, and typography." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/design-tokens-code-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Design tokens workflow from code to Figma using html2design" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="design tokens figma" />
+  <meta property="article:tag" content="design system" />
+  <meta property="article:tag" content="figma variables" />
+  <meta property="article:tag" content="code to figma" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Design Tokens: Bridging Code and Figma with HTML to Figma" />
+  <meta name="twitter:description" content="Sync design tokens between code and Figma. Extract token-based styles into Figma Variables and Styles using html2design — the design system team workflow." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/design-tokens-code-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Design Tokens: Bridging Code and Figma with HTML to Figma",
+    "description": "Step-by-step guide to syncing design tokens from code into Figma Variables and Styles using the html2design plugin. Covers the rendered-output approach for token extraction, token reference page pattern, and a workflow for design system teams.",
+    "url": "https://www.htmltofigma.io/blog/design-tokens-code-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2900,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/design-tokens-code-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/design-tokens-code-to-figma"
+    },
+    "keywords": "design tokens figma, code to figma design tokens, sync design tokens, figma variables design tokens, design system tokens",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT10M",
+    "about": {
+      "@type": "Thing",
+      "name": "Syncing design tokens from code to Figma",
+      "description": "Workflow for extracting token-based styles (colors, typography, spacing, shadows) from HTML/CSS codebases into Figma Variables and Styles using the html2design plugin"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Style Dictionary", "url": "https://amzn.github.io/style-dictionary/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Design Tokens: Code to Figma", "item": "https://www.htmltofigma.io/blog/design-tokens-code-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are design tokens in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Design tokens in Figma are named values stored as Figma Variables or Styles that represent atomic design decisions — a specific color hex, a font size, a spacing unit, a shadow definition. They are the Figma equivalent of CSS custom properties or a token JSON file. When components reference these tokens instead of hardcoded values, updating a single token propagates the change across the entire design file — just as changing a CSS custom property updates every element that references it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I sync design tokens from code to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The rendered-output approach with html2design works for most teams: build a token reference page in your codebase that renders each token visually (color swatches, type samples, spacing blocks), load it in a browser, and import it into Figma with html2design. You get a Figma frame with every token rendered accurately. From there, read the computed values in Figma's Inspect panel and register them as Figma Variables or Styles. For fully automated sync, a separate pipeline using the Figma Variables REST API or the Tokens Studio plugin is required — but this involves more engineering overhead and is best reserved for large-scale design systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design preserve CSS custom properties as Figma Variables?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — html2design reads computed CSS values, not variable names. If your CSS has `color: var(--color-primary)` and the computed value is `#2563EB`, html2design imports `#2563EB` as a fill. It does not import the variable name `--color-primary`. This is by design: html2design works from rendered browser output, which resolves all variables to their computed values. To register Figma Variables, use the Inspect panel on your imported token reference frame and manually create the variables using the computed values you see there."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best way to maintain design token sync between code and Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most teams, a periodic manual sync cadence works well: re-export the token reference page and update Figma Styles/Variables whenever the token set changes significantly. For teams with strict design-development parity requirements, automated pipelines using Style Dictionary (for token export) and the Figma Variables REST API (for import) offer programmatic sync but require dedicated engineering time. The right answer depends on how frequently tokens change and how many designers depend on them staying accurate in real time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use design tokens from Tailwind CSS in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Build a Tailwind token reference page that renders each value from your tailwind.config — colors, type scale, spacing — and import it using html2design. The computed styles (resolved hex colors, exact pixel values) appear as Figma layers you can inspect and register as Figma Variables. The Tailwind class names don't appear in the output because they're compiled away by the browser — only the resolved values remain."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/design-tokens-code-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Design Tokens: Bridging Code and Figma with HTML to Figma (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .token-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .token-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .token-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .token-table tr:last-child td { border-bottom: none; }
+    .token-table code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: #F3F4F6; padding: 0.1rem 0.3rem; border-radius: 3px; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Design Tokens: Code to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 10 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Design Tokens: Bridging Code and Figma with HTML to Figma
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Design tokens live in code. Figma has its own token system in Variables and Styles. Getting them aligned — and keeping them aligned — is the central challenge of every design system team. Here's the workflow that closes the gap.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Design tokens</strong> are named, reusable design decisions stored as key-value pairs — for example, <code>color-primary: #2563EB</code>, <code>font-size-lg: 1.125rem</code>, or <code>spacing-4: 1rem</code>. In code, they live as <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS custom properties</a>, a JSON token file, or a platform-specific config. In <a href="https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a>, they live as Variables (for primitive values) and Styles (for composite values like text styles and shadows). html2design bridges the gap by reading the browser's computed output — where all token references have been resolved to their final values — and generating Figma layers that accurately reflect your token-based design.</p>
+    </div>
+
+    <h2>The Token Gap Problem</h2>
+    <p>
+      Every mature design system has the same tension: tokens are defined once in code (a JSON file, a Tailwind config, CSS custom properties, a Style Dictionary source), but Figma has its own separate token system. Unless there's an active sync process, they drift.
+    </p>
+    <p>
+      The drift looks like this: developers update <code>--color-primary</code> from <code>#1D4ED8</code> to <code>#2563EB</code> in a system-wide update. The code ships. Figma still has the old blue everywhere. Now every mockup shows the wrong brand color. Designers notice the discrepancy in the next design review. Someone spends half a day manually updating every Figma Style.
+    </p>
+    <p>
+      This isn't a failure of process — it's a structural mismatch. Code tokens and Figma tokens are two independent systems with no native connection. The question isn't whether they'll drift but how to minimize drift and recover quickly when it happens.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key principle:</strong> The browser is the single source of truth for what your token-based design actually looks like. If you render your tokens in a browser and import that rendered output into Figma, you're guaranteed to capture the resolved values — not what the token names suggest they should be, but what they actually produce at runtime.</p>
+    </div>
+
+    <h2>What Design Tokens Look Like in Code vs. Figma</h2>
+    <p>
+      Understanding the mapping between code tokens and Figma constructs helps you build an accurate sync workflow.
+    </p>
+
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Token type</th>
+          <th>In code</th>
+          <th>In Figma</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Color</td>
+          <td><code>--color-primary: #2563EB</code></td>
+          <td>Color Variable (primitive) or Color Style</td>
+        </tr>
+        <tr>
+          <td>Font size</td>
+          <td><code>--font-size-lg: 1.125rem</code></td>
+          <td>Number Variable or part of a Text Style</td>
+        </tr>
+        <tr>
+          <td>Font weight</td>
+          <td><code>--font-weight-bold: 700</code></td>
+          <td>Part of a Text Style (Bold variant)</td>
+        </tr>
+        <tr>
+          <td>Line height</td>
+          <td><code>--line-height-relaxed: 1.75</code></td>
+          <td>Part of a Text Style</td>
+        </tr>
+        <tr>
+          <td>Spacing</td>
+          <td><code>--spacing-4: 1rem (16px)</code></td>
+          <td>Number Variable, applied as padding/gap</td>
+        </tr>
+        <tr>
+          <td>Border radius</td>
+          <td><code>--radius-lg: 0.75rem</code></td>
+          <td>Number Variable, applied to corner radius</td>
+        </tr>
+        <tr>
+          <td>Shadow</td>
+          <td><code>--shadow-md: 0 4px 6px rgba(...)</code></td>
+          <td>Effect Style (Drop Shadow)</td>
+        </tr>
+        <tr>
+          <td>Breakpoint</td>
+          <td><code>--breakpoint-md: 768px</code></td>
+          <td>No direct equivalent — document in a frame annotation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The Token Reference Page Pattern</h2>
+    <p>
+      The most reliable way to extract tokens from code into Figma is to render all tokens visually on a dedicated reference page, then import that page using html2design. This gives you the computed values for every token in a format Figma can inspect.
+    </p>
+    <p>
+      A token reference page is a simple HTML file (or a route in your app) that renders every token category as a visual grid:
+    </p>
+    <div class="code-block">&lt;!-- Color tokens --&gt;
+&lt;section&gt;
+  &lt;h2&gt;Colors&lt;/h2&gt;
+  &lt;div class="token-grid"&gt;
+    &lt;div style="background: var(--color-primary); width:48px; height:48px;"&gt;&lt;/div&gt;
+    &lt;span&gt;color-primary&lt;/span&gt;
+    &lt;div style="background: var(--color-secondary); width:48px; height:48px;"&gt;&lt;/div&gt;
+    &lt;span&gt;color-secondary&lt;/span&gt;
+    &lt;!-- ... all color tokens ... --&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Type scale --&gt;
+&lt;section&gt;
+  &lt;h2&gt;Typography&lt;/h2&gt;
+  &lt;p style="font-size: var(--font-size-xs)"&gt;XS: The quick brown fox&lt;/p&gt;
+  &lt;p style="font-size: var(--font-size-sm)"&gt;SM: The quick brown fox&lt;/p&gt;
+  &lt;p style="font-size: var(--font-size-base)"&gt;Base: The quick brown fox&lt;/p&gt;
+  &lt;p style="font-size: var(--font-size-lg)"&gt;LG: The quick brown fox&lt;/p&gt;
+  &lt;!-- ... all size tokens ... --&gt;
+&lt;/section&gt;</div>
+
+    <p>
+      When you load this page in a browser, all <code>var(--token-name)</code> references resolve to their computed values. DevTools → Inspect panel on any element shows the exact pixel or hex value. Import this page with html2design and you have a Figma frame you can use as the source for registering Variables and Styles.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Framework-specific note:</strong> If you're using <a href="/blog/tailwind-to-figma">Tailwind CSS</a>, your token reference page should render each utility class as a colored swatch. If you're using CSS Modules or Styled Components, your tokens likely live as CSS custom properties on <code>:root</code> — load any page in your app and use DevTools → Computed tab to see all resolved custom properties.</p>
+    </div>
+
+    <h2>Extracting Tokens into Figma Variables Step by Step</h2>
+
+    <div class="step-card">
+      <p class="step-num">Step 1</p>
+      <h3>Render your token reference page in the browser</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open the token reference page in Chrome. If you don't have one, create a simple HTML file that renders your CSS custom properties as visual elements. Load it with <code>python3 -m http.server</code> or your dev server — localhost works fine with html2design.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 2</p>
+      <h3>Import the token reference page with html2design</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Copy the outerHTML of the token reference page from DevTools. In Figma, run html2design → Paste HTML. You get a Figma frame with all your tokens rendered as colored rectangles, text samples, and spacing guides.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3</p>
+      <h3>Read computed values from Figma's Inspect panel</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Select a color swatch in the imported frame. Figma's Inspect panel (right sidebar) shows the fill color as a hex value. This is the resolved token value. Use this to register or update your Figma Color Variable or Style.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 4</p>
+      <h3>Register tokens as Figma Variables or Styles</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open the Figma Variables panel (Edit → Variables or the gear icon). Create a Collection named after your token set (e.g., "Brand Tokens"). For each color token, create a Color Variable using the value you read from the Inspect panel. For typography, create Text Styles using the font/size/weight/line-height you observed in the imported text layers.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 5</p>
+      <h3>Apply variables to your component library</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Once your Figma Variables are registered, apply them to components: select a button, change its fill from the hardcoded hex to the <code>color-primary</code> Variable. Now updating the variable propagates to every instance. This is the Figma equivalent of your components referencing CSS custom properties instead of hardcoded values.</p>
+    </div>
+
+    <h2>How html2design Handles Token-Based Styles</h2>
+    <p>
+      html2design reads the browser's <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer">computed CSS</a>, not the authored CSS. This means:
+    </p>
+    <ul>
+      <li><strong>CSS custom properties are resolved</strong> — <code>color: var(--color-primary)</code> becomes <code>color: #2563EB</code> in the computed output. You see the resolved hex, not the variable name.</li>
+      <li><strong>Relative units are converted</strong> — <code>font-size: 1.125rem</code> becomes <code>18px</code> if the root font size is 16px. Figma works in pixels, so this conversion is necessary and automatic.</li>
+      <li><strong>Inherited values are explicit</strong> — If a text element inherits <code>font-family</code> from a parent, the computed output includes the actual font family string. html2design sets the Figma layer's font correctly without needing the inheritance chain.</li>
+      <li><strong>Compound values are decomposed</strong> — A CSS <code>border</code> shorthand (<code>1px solid #E5E7EB</code>) is decomposed into width, style, and color in computed output. html2design maps these to Figma's stroke properties.</li>
+    </ul>
+    <p>
+      The practical implication: html2design gives you the visual truth of your token system — what tokens produce in a real browser, not what you intended them to produce. This catches token inconsistencies that are invisible in the token source file but visible in the rendered UI.
+    </p>
+
+    <h2>Token Sync Strategies for Design System Teams</h2>
+    <p>
+      There's no single right approach to keeping code tokens and Figma tokens in sync. The right strategy depends on your team size, token change frequency, and engineering capacity.
+    </p>
+
+    <h3>Manual sync on cadence (most teams)</h3>
+    <p>
+      Establish a quarterly or sprint-based sync: whenever tokens change significantly (a rebrand, a major palette update, a type scale revision), re-render the token reference page and update Figma Variables/Styles from the imported output. Document the sync date and version in a Figma cover page. This is low-overhead and sufficient for teams where tokens are stable.
+    </p>
+
+    <h3>Rendered-output snapshot on token PR</h3>
+    <p>
+      Set up a lightweight CI step: when a PR modifies token files, generate a screenshot of the token reference page and post it as a PR comment. Designers review it visually before the PR merges. After merge, they know to update Figma Variables. This adds visibility without requiring full automation.
+    </p>
+
+    <h3>Automated Figma Variables API sync (advanced)</h3>
+    <p>
+      For large design systems, a programmatic approach is possible: export tokens to JSON via <a href="https://amzn.github.io/style-dictionary/" target="_blank" rel="noopener noreferrer">Style Dictionary</a>, transform them into Figma Variables API format, and push updates via the Figma REST API on every token change. This requires significant engineering setup but eliminates manual sync entirely. Only invest here if tokens change frequently and many designers depend on pixel-perfect accuracy.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What are design tokens in Figma?</h3>
+    <p>
+      Design tokens in Figma are named values stored as Figma Variables (for primitive values like colors, numbers, booleans) or Styles (for composite values like text styles and shadows). They're the Figma equivalent of CSS custom properties — single definitions that can be applied across many components, so changing one value updates everything that references it.
+    </p>
+
+    <h3>Does html2design preserve CSS variable names?</h3>
+    <p>
+      No. html2design reads computed CSS values — all variable references are resolved before html2design sees them. You get the resolved hex, pixel, or font value, not the variable name. To map back to token names, cross-reference your token source file with the computed values you see in Figma's Inspect panel after import.
+    </p>
+
+    <h3>Can I keep Figma and code tokens in sync automatically?</h3>
+    <p>
+      Fully automated sync requires the Figma Variables API (currently in beta for REST access) and a token transform pipeline like Style Dictionary. For most teams, a periodic manual sync cadence using the token reference page pattern is more practical. See the sync strategies section above for a decision framework.
+    </p>
+
+    <!-- Checklist -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.5rem;margin-top:2rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:1rem;">Token Sync Checklist</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Build a token reference page covering colors, typography, spacing, shadows, and border radius</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import the token reference page with html2design at each sync cycle</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Read computed values from Figma's Inspect panel — not from source token files</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Register tokens as Figma Variables (primitives) and Styles (composites)</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Apply Variables to components — replace hardcoded fills with variable references</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Document the sync date and token version in a Figma cover page</li>
+      </ul>
+    </div>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Design tokens (color, type, spacing) in code map to <a href="https://help.figma.com/hc/en-us/articles/15339657135383-Guide-to-variables-in-Figma" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Variables</a> (primitives) and Styles (composites) — the goal is a one-to-one mapping, not a rebuild</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Build a token reference page (color swatches, type scale, shadow ramp), render it in the browser, then import via html2design — the browser resolves all token references to their final computed values</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Read computed values from the imported Figma layers, not from source token files — use Inspect panel values to populate Figma Variables accurately</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Apply Variables to imported components — replace hardcoded fills with variable references to connect the design system to Figma's theming layer</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Document the sync date and source token version in a Figma cover page — token drift happens; the cover page makes it visible</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/tailwind-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The token reference page pattern in detail for Tailwind CSS — extract utility classes as Figma Variables and Styles.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Migrate your entire design system — tokens, component inventory, and all — from code into a native Figma library.</p>
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The foundational workflow — DevTools, code paste, and output cleanup in Figma.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import React components (with their token-based styles applied) as native Figma layers.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Extract your design tokens into Figma today</h2>
+      <p class="text-content-muted mb-6">Build a token reference page, import it with html2design, and register your color and type tokens as Figma Variables — the fastest path from code tokens to a Figma design system.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

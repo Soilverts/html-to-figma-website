@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Accessibility Audit: From HTML Audit to Figma Redesign</title>
+  <meta name="description" content="Convert HTML accessibility audits into editable Figma redesign files. Import WCAG findings as Figma layers and fix accessibility issues faster in your designs." />
+  <meta name="keywords" content="accessibility figma, wcag figma, accessibility audit redesign, a11y figma, wcag compliance figma, accessible design figma, html accessibility audit figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/accessibility-audit-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/accessibility-audit-to-figma" />
+  <meta property="og:title" content="Accessibility Audit: From HTML Audit to Figma Redesign" />
+  <meta property="og:description" content="Convert HTML accessibility audits into editable Figma redesign files. Import WCAG findings as Figma layers and fix accessibility issues faster in your designs." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/accessibility-audit-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Accessibility audit to Figma redesign workflow using html2design" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="accessibility figma" />
+  <meta property="article:tag" content="wcag figma" />
+  <meta property="article:tag" content="a11y audit" />
+  <meta property="article:tag" content="accessible design" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Accessibility Audit: From HTML Audit to Figma Redesign" />
+  <meta name="twitter:description" content="Run a WCAG audit, import flagged HTML sections into Figma with html2design, and redesign for compliance. The full a11y-to-Figma workflow." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/accessibility-audit-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Accessibility Audit: From HTML Audit to Figma Redesign",
+    "description": "Step-by-step guide to running a WCAG accessibility audit on HTML pages, importing flagged sections into Figma using html2design, and redesigning for compliance. Covers audit tooling, import workflow, and Figma annotation patterns for a11y remediation.",
+    "url": "https://www.htmltofigma.io/blog/accessibility-audit-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 3000,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/accessibility-audit-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/accessibility-audit-to-figma"
+    },
+    "keywords": "accessibility figma, wcag figma, accessibility audit redesign, a11y figma, accessible design figma",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT10M",
+    "about": {
+      "@type": "Thing",
+      "name": "Accessibility audit to Figma redesign workflow",
+      "description": "Process for identifying WCAG violations in HTML/CSS, importing flagged sections into Figma using html2design, and producing accessible redesigns with proper annotations"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "axe DevTools", "url": "https://www.deque.com/axe/devtools/" },
+      { "@type": "SoftwareApplication", "name": "WAVE", "url": "https://wave.webaim.org/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Accessibility Audit to Figma", "item": "https://www.htmltofigma.io/blog/accessibility-audit-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I design accessible components in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with the live HTML for the component that has accessibility issues. Import it into Figma using html2design to get an editable layer set. Then redesign directly on top of the imported frame: adjust contrast ratios using Figma's color picker and a contrast checker plugin, increase touch target sizes to 44x44px minimum, add visible focus indicator styles, and annotate keyboard navigation order. Hand the annotated Figma file to developers as the remediation spec, replacing the non-compliant live implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a WCAG audit and what does it check?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A WCAG (Web Content Accessibility Guidelines) audit evaluates a website against a checklist of success criteria organized under four principles: Perceivable (information must be presentable to users in ways they can perceive), Operable (interface components must be operable), Understandable (information and UI operation must be understandable), and Robust (content must be robust enough to be interpreted by assistive technologies). Common automated audit findings include insufficient color contrast, missing alt text on images, unlabeled form inputs, and keyboard-inaccessible interactive elements. WCAG 2.1 Level AA is the standard required by most accessibility regulations including WCAG 2.2 and EN 301 549."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Figma designs be checked for accessibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Several Figma plugins check for accessibility issues directly in the design file: Able, Contrast, and Stark are the most widely used. They check color contrast ratios against WCAG AA/AAA thresholds, simulate color blindness, and audit focus order. However, these plugins only check what's visible in Figma — they can't audit semantic HTML, ARIA usage, keyboard behavior, or screen reader output. For a complete accessibility assessment, you need to audit the live HTML alongside the Figma design review."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What color contrast ratio is required for WCAG AA compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG 2.1 Level AA requires a minimum contrast ratio of 4.5:1 for normal text (under 18pt / 14pt bold) and 3:1 for large text (18pt+ / 14pt+ bold). UI components and graphical objects (icons, charts, form borders) also require 3:1 against adjacent colors. Level AAA raises the text requirement to 7:1 for normal text and 4.5:1 for large text. Check contrast ratios using browser DevTools (Accessibility panel shows contrast ratio for selected text), axe DevTools, or the Figma plugins Contrast or Stark after importing your live design into Figma with html2design."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I annotate accessibility in Figma for developers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Figma accessibility annotations include: numbered circles indicating focus/reading order (placed on each interactive element in sequence), red overlay rectangles highlighting WCAG violations with the failure criterion listed, text labels for ARIA roles and labels that aren't visually obvious, and touch target size indicators (44x44px minimum rectangles overlaid on small touch targets). The Figma plugins Redlines, Anima, or a custom annotation component library can help standardize this. The goal is a Figma file that gives developers unambiguous instructions for every accessibility remediation required."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/accessibility-audit-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Accessibility Audit: From HTML Audit to Figma Redesign (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .warning-box { background: #FEF9C3; border-left: 3px solid #CA8A04; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .warning-box p { margin-bottom: 0; color: #854D0E; }
+    .wcag-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .wcag-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .wcag-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .wcag-table tr:last-child td { border-bottom: none; }
+    .wcag-table code { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; background: #F3F4F6; padding: 0.1rem 0.3rem; border-radius: 3px; }
+    .wcag-table .aa { color: #15803D; font-weight: 600; }
+    .wcag-table .aaa { color: #1D4ED8; font-weight: 600; }
+    .wcag-table .fail { color: #DC2626; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Accessibility Audit to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 10 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Accessibility Audit: From HTML Audit to Figma Redesign
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      A WCAG audit identifies accessibility failures in your live HTML. Getting those failures into Figma — as editable layers you can redesign against — is where most teams get stuck. Here's the complete audit-to-redesign workflow.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>An accessibility audit to Figma redesign workflow</strong> means running automated and manual <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">WCAG</a> checks on your live HTML, identifying failing components, importing those components into <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> as editable layers using html2design, and redesigning them for compliance — then handing annotated Figma specs to developers as remediation instructions. The key advantage: designers work with the real implementation as their baseline, not a Figma file that may have drifted from the live site.</p>
+    </div>
+
+    <h2>Why Start the Accessibility Redesign in Figma?</h2>
+    <p>
+      Accessibility remediation typically follows one of two paths: fix directly in code (fast for isolated issues like missing alt text) or redesign in Figma and hand off to developers (necessary when failures are visual and systemic — contrast, focus indicators, component structure, touch target sizing).
+    </p>
+    <p>
+      The Figma path makes sense when:
+    </p>
+    <ul>
+      <li>Multiple components fail the same criterion and need a consistent fix (e.g., all buttons have insufficient contrast — the solution is a new color token, not 40 individual code patches)</li>
+      <li>The fix changes the visual design (contrast, spacing, focus ring styling) and needs designer review before developer implementation</li>
+      <li>You need annotated specs for a development team that won't make design decisions independently</li>
+      <li>Stakeholder sign-off on the accessible design is required before code remediation begins</li>
+    </ul>
+    <p>
+      The challenge: your Figma file probably doesn't match the live implementation. You'd be redesigning against an approximation. Importing the actual failing HTML into Figma with html2design gives you the real implementation as your starting point — every pixel, every color, every font value exactly as it exists in production.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key workflow principle:</strong> Import the failing HTML section <em>before</em> designing the fix. The imported Figma frame becomes your "current state" layer. Build the "fixed state" as a separate frame beside it. Showing before/after in the same Figma file makes designer review, stakeholder sign-off, and developer handoff significantly clearer.</p>
+    </div>
+
+    <h2>Step 1: Run the Accessibility Audit</h2>
+    <p>
+      Automated tools catch approximately 30–40% of WCAG failures — the rest require manual review. Start with automation to get a prioritized issue list, then supplement with manual checks.
+    </p>
+
+    <h3>Automated audit tools</h3>
+    <ul>
+      <li><strong><a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer">axe DevTools</a></strong> — Browser extension that runs a WCAG audit on the active page. Shows violations with element selectors, WCAG criterion reference, and suggested fixes. Free tier available; best in class for automation coverage.</li>
+      <li><strong><a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">WAVE</a></strong> — WebAIM's accessibility evaluation tool. Overlays icons directly on the page marking errors, alerts, and structural elements. Good for visual-first audits.</li>
+      <li><strong>Chrome Lighthouse</strong> — Built into DevTools → Lighthouse tab → Accessibility audit. Produces a scored report with specific WCAG references. Fast for initial triage.</li>
+      <li><strong>IBM Equal Access Checker</strong> — Good complement to axe for catching different issue subsets, especially for IBM Design Language patterns.</li>
+    </ul>
+
+    <h3>Manual checks to add</h3>
+    <ul>
+      <li><strong>Keyboard navigation</strong> — Tab through every interactive element. Does focus move in logical order? Is focus always visible? Can everything be activated with Enter/Space?</li>
+      <li><strong>Screen reader test</strong> — Run VoiceOver (macOS) or NVDA (Windows) and navigate to key sections. Listen for missing labels, confusing announcements, or interactive elements that aren't announced correctly.</li>
+      <li><strong>Zoom test</strong> — Set browser zoom to 200% (WCAG 1.4.4). Does content reflow correctly? Does text truncate, overlap, or lose functionality?</li>
+      <li><strong>Motion sensitivity</strong> — Check for auto-playing animations. WCAG 2.3.3 (AAA) and 2.2.2 (AA) address motion; verify there's a pause/stop mechanism for anything that moves for more than 5 seconds.</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>Common trap:</strong> Automated tools score contrast based on the computed background/foreground color pair for each element. They can miss contrast failures on gradient backgrounds, text over images, and semi-transparent overlays — these require manual checking with a contrast analyzer tool like <a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank" rel="noopener noreferrer" style="color:#854D0E;">TPGi Colour Contrast Analyser</a>.</p>
+    </div>
+
+    <h2>Step 2: Prioritize Failures for Figma Redesign</h2>
+    <p>
+      Not every audit failure needs a Figma redesign. Triage your findings:
+    </p>
+
+    <table class="wcag-table">
+      <thead>
+        <tr>
+          <th>Issue type</th>
+          <th>Fix in code directly?</th>
+          <th>Needs Figma redesign?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Missing alt text</td>
+          <td class="aa">Yes — content fix</td>
+          <td class="fail">No</td>
+        </tr>
+        <tr>
+          <td>Missing form labels</td>
+          <td class="aa">Usually yes</td>
+          <td class="fail">Only if visual label needs design change</td>
+        </tr>
+        <tr>
+          <td>Insufficient color contrast</td>
+          <td class="fail">No — visual design decision</td>
+          <td class="aa">Yes</td>
+        </tr>
+        <tr>
+          <td>Focus indicator missing/invisible</td>
+          <td class="fail">No — visual design decision</td>
+          <td class="aa">Yes</td>
+        </tr>
+        <tr>
+          <td>Touch targets too small (&lt;44px)</td>
+          <td class="fail">No — layout/sizing decision</td>
+          <td class="aa">Yes</td>
+        </tr>
+        <tr>
+          <td>Missing ARIA landmarks</td>
+          <td class="aa">Yes — semantic HTML fix</td>
+          <td class="fail">No</td>
+        </tr>
+        <tr>
+          <td>Text spacing overrides fail</td>
+          <td class="aa">Usually code fix</td>
+          <td class="fail">No</td>
+        </tr>
+        <tr>
+          <td>Color as sole info indicator</td>
+          <td class="fail">No — visual design decision</td>
+          <td class="aa">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Focus your Figma work on issues that require visual design decisions: contrast, focus styles, touch targets, and color-as-information patterns. These are the issues where a Figma redesign and annotated spec is genuinely useful to developers.
+    </p>
+
+    <h2>Step 3: Import Failing Sections into Figma</h2>
+
+    <div class="step-card">
+      <p class="step-num">Step 3a</p>
+      <h3>Open the failing page in Chrome</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Navigate to the live page with the accessibility violation. If the issue is on a specific component (a button, a form, a card), scroll to it. Open DevTools → Elements panel and locate the component's root element.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3b</p>
+      <h3>Copy the failing component's outerHTML</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Right-click the root element → Copy → Copy outerHTML. For page-level issues (overall contrast, layout at zoom), copy the entire <code>&lt;main&gt;</code> or relevant section. For component-level issues (button contrast, input focus ring), copy just the failing component.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3c</p>
+      <h3>Import into Figma with html2design</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open Figma, run html2design → Paste HTML. The failing component appears as a native Figma frame. Label this frame "Current State — WCAG Fail" so it's clearly distinct from your redesign work.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3d</p>
+      <h3>Duplicate the frame as your working copy</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Duplicate the imported frame and move the copy beside the original. Label it "Fixed State — WCAG Pass." Work on the copy — the original remains as your before-state reference throughout the redesign process.</p>
+    </div>
+
+    <h2>Step 4: Redesign for Compliance in Figma</h2>
+    <p>
+      With the live implementation as your Figma baseline, you can now redesign precisely for each WCAG criterion.
+    </p>
+
+    <h3>Color contrast (WCAG 1.4.3)</h3>
+    <p>
+      WCAG 2.1 Level AA requires 4.5:1 contrast for normal text and 3:1 for large text (18pt+ or 14pt+ bold). In your imported Figma frame, select a text layer. Open the Stark or Contrast plugin — it reads the fill color and background fill and calculates the ratio instantly. Adjust the text color or background fill until the ratio passes. Record the passing color pair in a Figma annotation beside the frame.
+    </p>
+    <p>
+      For teams on a design token system: this is the moment to update the token, not just the one instance. If your <code>text-muted</code> color fails contrast, every component that uses it needs the fix. Update the Figma Color Variable (or Style) and watch all component instances update automatically.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>WCAG contrast quick reference:</strong> Normal text needs 4.5:1 (AA) or 7:1 (AAA). Large text (18pt+ / 14pt+ bold) needs 3:1 (AA) or 4.5:1 (AAA). UI components and graphical objects need 3:1 against adjacent colors. Decorative elements and disabled UI are exempt.</p>
+    </div>
+
+    <h3>Focus indicators (WCAG 2.4.7 and 2.4.11)</h3>
+    <p>
+      The most common focus indicator failure: the browser default outline was removed with <code>outline: none</code> and nothing replaced it. In Figma:
+    </p>
+    <ol>
+      <li>Select the button, input, or link in the imported frame.</li>
+      <li>Add a stroke to the shape using the Stroke property in Figma. Choose a color with 3:1 contrast against the background (WCAG 2.4.11 minimum area requirement).</li>
+      <li>If the element has a rounded background, make the focus ring a slightly larger rectangle with a gap — matching the WCAG 2.2 "focus appearance" model (2px minimum, offset by 2px).</li>
+      <li>Create the focus state as a Figma Component Variant so developers see both default and focused states.</li>
+    </ol>
+
+    <h3>Touch target sizing (WCAG 2.5.8)</h3>
+    <p>
+      WCAG 2.2 Success Criterion 2.5.8 (Level AA) requires interactive targets to be at least 24x24 CSS pixels (upgraded from the older 44x44px WCAG 2.5.5 AAA guideline, though 44x44px remains best practice for mobile). In Figma:
+    </p>
+    <ol>
+      <li>Select the interactive element in the imported frame.</li>
+      <li>Check its dimensions in the Figma layout panel. If under 44x44px (or 24x24px at minimum), annotate it with a red overlay rectangle showing the minimum size requirement.</li>
+      <li>In the fixed state frame, show the element with sufficient padding or explicit min-width/min-height to meet the target.</li>
+    </ol>
+
+    <h3>Color as sole information indicator (WCAG 1.4.1)</h3>
+    <p>
+      Patterns that fail this criterion: error states shown only in red (no error icon or text), status badges where the label is color-only (a green badge says "active," a red one says "error," but the text inside is the same), required form fields marked only with a colored asterisk.
+    </p>
+    <p>
+      In Figma, redesign to add a second visual cue: an icon, a text label, a shape change, or an underline. The test is: if you convert the design to grayscale, does the same information remain conveyed? If yes, WCAG 1.4.1 passes.
+    </p>
+
+    <h2>Step 5: Annotate the Figma File for Developer Handoff</h2>
+    <p>
+      The goal of the Figma annotation is unambiguous developer instructions — specific enough that the developer doesn't need to make design decisions during implementation.
+    </p>
+
+    <p>
+      Standard accessibility annotation elements in Figma:
+    </p>
+    <ul>
+      <li><strong>Numbered focus order circles</strong> — Place a circle with a number on each interactive element showing the expected tab order. Use a consistent annotation component so numbers are visually distinct from the design.</li>
+      <li><strong>ARIA label callouts</strong> — For icons, icon buttons, and elements where the visible label differs from the accessible name, add a text annotation: "aria-label: 'Close modal'" beside the element.</li>
+      <li><strong>Heading level indicators</strong> — Mark H1, H2, H3 in the Figma layer for each heading element. Developers can verify the visual hierarchy matches the semantic hierarchy.</li>
+      <li><strong>Error state annotations</strong> — Show the error state variant with the error message text, error icon, and aria-describedby association labeled explicitly.</li>
+      <li><strong>Contrast ratio callouts</strong> — For each text/background pair, annotate the passing contrast ratio and the hex values used. "Text: #1F2937, Background: #FFFFFF, Contrast: 16:1 (AA ✓)"</li>
+    </ul>
+
+    <h2>Step 6: Review and Ship the Remediation</h2>
+    <p>
+      Before handing off the Figma file:
+    </p>
+    <ol>
+      <li><strong>Designer review</strong> — Verify the fixed design still meets brand and aesthetic standards. Accessibility fixes shouldn't look like afterthoughts — they should feel native to the design system.</li>
+      <li><strong>Check with a screen reader</strong> — Test the key user flows with VoiceOver or NVDA before the developer implements the fix, so you catch annotation gaps before code is written.</li>
+      <li><strong>Validate contrast with a plugin</strong> — Run Stark or Contrast on the fixed state frames in Figma. Every text/background combination should show a passing ratio.</li>
+      <li><strong>Post-implementation audit</strong> — After the developer implements the fix, re-run axe DevTools on the live page. The fixed criterion should no longer appear in the violations list.</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How do I design accessible components in Figma?</h3>
+    <p>
+      Import the live non-compliant component with html2design to get the real implementation as a Figma baseline. Duplicate the frame, then redesign for the specific WCAG criteria that failed: adjust colors for contrast, add focus indicator styles, increase touch target padding. Use Figma accessibility plugins (Stark, Contrast, Able) to validate the redesign before handoff.
+    </p>
+
+    <h3>What WCAG level should I target?</h3>
+    <p>
+      WCAG 2.1 Level AA is the standard required by most accessibility regulations globally — including the European EN 301 549, Section 508 in the US, and WCAG 2.2 AA (which supersedes 2.1 AA with minor additions). Targeting AA is both the legal baseline and a meaningful accessibility improvement for users. Level AAA is aspirational and not required for compliance — include AAA criteria where achievable without significant design compromise.
+    </p>
+
+    <h3>Can Figma designs be accessibility-checked before developers build them?</h3>
+    <p>
+      Yes — use Stark, Contrast, or Able plugins to check contrast ratios and simulate color blindness directly in Figma. These plugins cover the visual layer of accessibility. Semantic, keyboard, and screen reader accessibility can't be fully validated in Figma — that requires testing the live HTML. The Figma audit catches visual failures early; the code audit catches structural failures after implementation.
+    </p>
+
+    <!-- Checklist -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.5rem;margin-top:2rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:1rem;">Accessibility Audit to Figma Checklist</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Run axe DevTools + Lighthouse on all key pages — capture all violations</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Triage: separate code-only fixes from visual redesign items</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import each failing component into Figma with html2design — label as "Current State"</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Duplicate the frame and redesign the fix — label as "Fixed State"</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Validate contrast ratios on fixed state using Stark or Contrast plugin</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Add accessibility annotations: focus order, ARIA labels, heading levels</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Re-run axe after developer implementation to confirm violations resolved</li>
+      </ul>
+    </div>
+
+    <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Automated tools (<a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">axe DevTools</a>, Lighthouse) catch ~30–40% of <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">WCAG</a> failures — always supplement with keyboard, zoom, and screen-reader checks</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import the failing HTML into Figma as "Current State" before designing the fix — gives you the real production baseline, not an approximation</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use side-by-side before/after frames — "Current State" and "Fixed State" — for cleaner stakeholder sign-off and developer handoff</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design works with localhost and auth-gated pages — copy failing component HTML from DevTools, no public URL needed</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Validate contrast ratios on the fixed state in Figma using the Stark or Contrast plugin before handing off to developers</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The foundational DevTools copy + html2design paste workflow — the core step in the audit-to-Figma pipeline.</p>
+        </a>
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import any page section into Figma as a starting point for accessibility redesign work.</p>
+        </a>
+        <a href="/blog/design-tokens-code-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Tokens: Bridging Code and Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">If contrast failures stem from your color tokens, fixing the Figma Variable propagates the fix across the entire design system.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Migrate your full component library into Figma — a useful companion when accessibility remediation is system-wide.</p>
+        </a>
+        <a href="/blog/responsive-design-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Responsive Design to Figma: Converting Breakpoints to Variants &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Touch target failures often surface specifically on mobile — import the mobile breakpoint for accurate touch target redesign work.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your failing component and redesign for compliance</h2>
+      <p class="text-content-muted mb-6">Copy the non-compliant section's outerHTML from DevTools, paste it into html2design, and get an editable Figma baseline for your accessibility redesign — in under 60 seconds.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -203,9 +203,16 @@
     </div>
   </header>
 
-  <!-- Problem section -->
+  <!-- GEO definition paragraph -->
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "developer-to-designer handoff" with html2design?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">Developer-to-designer handoff with html2design</strong> means copying the <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code> of a shipped component from browser DevTools and pasting it into the html2design Figma plugin — converting the production implementation into editable Figma layers in under 30 seconds. No Chrome extension, no public URL, no manual layer recreation required.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-10">
+        This workflow runs in reverse to the traditional Figma handoff: instead of Figma → developer, it goes developer → Figma. Developers paste live code; designers receive editable, pixel-accurate Figma frames that reflect what actually shipped — not a stale design file or a screenshot.
+      </p>
       <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">Why developer-to-designer handoffs break down</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
@@ -395,7 +402,7 @@
             Render your component via <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code> or in Storybook,
             inspect the rendered HTML in DevTools, copy the outerHTML, and paste it into the plugin.
             Works with JSX, TypeScript, styled-components, CSS Modules, and Tailwind CSS.
-            See also: <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React Component to Figma guide</a>.
+            See also: <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React Component to Figma guide</a> and <a href="/use-cases/storybook-to-figma" class="text-accent hover:underline">Storybook to Figma</a>.
           </p>
         </div>
 
@@ -511,6 +518,13 @@
           <p class="text-sm text-content-muted mt-1 leading-relaxed">See how HTML to Figma compares to html.to.design and manual recreation.</p>
         </a>
 
+        <a href="/use-cases/storybook-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Storybook to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Storybook stories to native Figma designs — ideal for component-level handoff from isolated dev environments.</p>
+        </a>
+
       </div>
     </div>
   </section>
@@ -544,6 +558,7 @@
         <a href="/blog" class="hover:text-content transition-colors">Blog</a>
         <a href="/guide" class="hover:text-content transition-colors">Guide</a>
         <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
         <a href="/about" class="hover:text-content transition-colors">About</a>
         <a href="/contact" class="hover:text-content transition-colors">Contact</a>
         <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>

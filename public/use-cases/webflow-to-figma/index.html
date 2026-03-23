@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Webflow to Figma — Import Webflow Pages as Editable Designs</title>
+  <meta name="description" content="Import Webflow pages directly into Figma as editable design layers. Preserve Webflow layout, typography, and styles for faster design handoff and iteration." />
+  <meta name="keywords" content="webflow to figma, import webflow site figma, webflow figma plugin, webflow figma converter, export webflow figma, webflow design handoff, webflow html figma, webflow figma workflow" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/webflow-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/webflow-to-figma" />
+  <meta property="og:title" content="Webflow to Figma — Import Webflow Pages as Editable Designs" />
+  <meta property="og:description" content="Import Webflow pages directly into Figma as editable design layers. Preserve Webflow layout, typography, and styles for faster design handoff and iteration." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/webflow-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Webflow pages imported into Figma as editable design frames" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Webflow to Figma — Import Webflow Pages as Editable Designs" />
+  <meta name="twitter:description" content="Import any Webflow page into Figma preserving layout, typography, and design system values." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/webflow-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Webflow to Figma — Import Webflow Pages as Editable Designs",
+    "description": "Step-by-step guide for importing Webflow pages and sections into native, editable Figma layers using the html2design plugin — preserving layout, typography, and Webflow design tokens.",
+    "url": "https://www.htmltofigma.io/use-cases/webflow-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/webflow-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Webflow to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/webflow-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I import a Webflow site into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open your Webflow site in a browser (published URL or preview mode). Open DevTools (F12), switch to the Elements panel, right-click the page's main content container, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The plugin converts the fully rendered Webflow output into native Figma layers with real text, fills, and layout geometry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Webflow have a native Figma export option?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Webflow does not natively export to Figma files. The most reliable method is to open your Webflow site in a browser, copy the rendered HTML from DevTools, and import it into Figma using the html2design plugin. This captures the actual rendered output — including Webflow's CSS variables, typography, and responsive layout — as native Figma objects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Webflow's typography and spacing transfer to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Webflow compiles its design system — font choices, size scales, color variables, and spacing — into standard CSS. The browser resolves these to computed pixel values before html2design reads the DOM. Text layers in Figma will reflect the exact font family, size, weight, line height, and color from your Webflow design system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I capture a specific Webflow section rather than the full page?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In the DevTools Elements panel, right-click any Webflow section, component, or div block and copy its outerHTML. The html2design plugin will generate a Figma frame containing only that section. This is useful for importing specific components — hero sections, pricing tables, navigation bars — without importing the entire page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this to capture Webflow CMS pages with dynamic content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Webflow CMS pages render their content — blog posts, product listings, collection items — as standard HTML in the browser. Navigate to any CMS page on your published Webflow site, and the full content will be visible in the rendered DOM. Copy from the DevTools Elements panel to capture the CMS-populated layout as a Figma frame."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Webflow to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Webflow</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Webflow to Figma —<br />
+        In Two Minutes
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Importing Webflow pages into Figma</strong> works the same way as any
+        other website: open the page in a browser, copy the rendered HTML from DevTools, and paste into html2design.
+        Your Webflow layout, typography, and design variables arrive in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> — ready for design iteration.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/wordpress-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          WordPress to Figma Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Webflow to Figma — GEO definition -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Webflow to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Webflow to Figma"</strong> refers to the workflow of taking a live or previewed Webflow
+        site and importing its pages or sections into Figma as editable design layers. Since Webflow publishes standard HTML
+        and CSS to the browser, the html2design Figma plugin can read any Webflow page and convert it to native Figma frames —
+        without needing Webflow's internal file format or any custom export.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Webflow builds its design system on CSS variables and a structured class naming convention. By the time any page
+        loads in a browser, those variables are fully resolved to their pixel and color values. The html2design plugin reads
+        those computed values — not the Webflow design tokens themselves — so what you see in the browser is exactly what
+        lands in Figma.
+      </p>
+    </div>
+  </section>
+
+  <!-- When to use this workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">When to import from Webflow to Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        There are several common scenarios where teams need to pull Webflow output back into a design tool.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Auditing and documenting a live Webflow site</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Design teams sometimes inherit a Webflow site built without a corresponding Figma source of truth.
+            Importing each page into Figma creates an accurate design document that matches production — useful
+            for audits, onboarding, design system extraction, and gap analysis.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Iterating on a Webflow site in Figma before editing in Webflow</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            When planning a redesign of a Webflow page, it is faster to import the current state into Figma,
+            propose changes in the Figma frame, get stakeholder approval, and then implement the approved changes
+            in Webflow — rather than iterating directly in the production editor.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Migrating a Webflow site to a custom codebase</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Teams moving from Webflow to a custom React, Next.js, or other framework codebase need design specs
+            to guide the rebuild. Importing Webflow pages into Figma provides those specs — pixel-accurate layout,
+            typography, spacing, and color values — that developers can reference during the migration.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Extracting a design system from a Webflow site</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If a Webflow site uses a consistent set of components — buttons, cards, navigation — importing multiple
+            pages gives the design team material to identify recurring patterns, extract shared styles, and build
+            a proper Figma component library from the live implementation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Webflow to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps, under two minutes. Works for any published Webflow page or preview.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Open your Webflow page in a browser</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Navigate to the published Webflow URL or open the Webflow Designer preview. Any page that renders
+              in a browser can be imported — published production sites, staging previews, and password-protected
+              pages (after logging in) all work equally well.
+            </p>
+            <p>
+              For CMS collection pages, navigate to a specific item URL (e.g. a blog post or product page) to capture
+              the fully populated template with real content. For multi-breakpoint designs, resize the browser window
+              to the viewport you want to capture before copying.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to
+              the Elements panel. For the full page, right-click the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> or the
+              top-level wrapper div. For a single Webflow section, right-click that section's element.
+              Choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+            </p>
+            <p>
+              Webflow's class names — like
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">w-container</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">hero-heading</code> — become
+              Figma layer names, making the imported frame easy to navigate and hand off.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin resolves Webflow's CSS variables —
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--brand-primary)</code>,
+              font sizes from the type scale, spacing tokens — and converts them to native Figma fills, text styles,
+              and auto-layout geometry.
+            </p>
+            <p>
+              Webflow's CSS grid and flexbox layouts translate well into Figma's frame and auto layout system.
+              The resulting frame is an accurate visual representation that designers can immediately use as a
+              starting point for iteration.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame for design iteration</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame with your team. Designers can annotate, propose changes, and iterate on the
+              design — all within the context of the actual production layout. Because the frame starts from the
+              real rendered output, any proposed change represents a true delta from the live Webflow site.
+            </p>
+            <p>
+              For large Webflow sites, import key pages — homepage, landing page, pricing — into a single Figma
+              document organized by page name. This becomes your design source of truth that teams can update each
+              time the site changes.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Webflow-specific tips -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Webflow-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Webflow's rendering pipeline has characteristics that affect how well the import translates to Figma.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Set the browser viewport to the target breakpoint before copying</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Webflow applies different CSS classes at different breakpoints. The computed layout you copy from DevTools
+            reflects the current browser width. Use DevTools' device toolbar to set a precise width — 1440px for
+            desktop, 768px for tablet, 375px for mobile — before copying, to capture the exact breakpoint layout
+            you want in Figma.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Webflow CSS variables resolve automatically</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Webflow's design system uses CSS custom properties for colors, font sizes, and spacing. By the time
+            the page renders in the browser, all
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--)</code> references are resolved
+            to their actual values. The html2design plugin reads those computed values — your Webflow color palette
+            and type scale appear in Figma as exact hex and pixel values, not variable references.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Webflow interactions are visual-only — capture each state separately</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Webflow's interaction system (scroll animations, hover states, modal triggers) affects which visual
+            state the page shows. To capture a hover or triggered state, trigger the interaction in the browser
+            before copying. For modal or overlay components, open the modal first so it appears in the DOM when
+            you copy.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use the Webflow Designer's Preview mode for unauthenticated capture</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            You can access Webflow's preview mode without publishing the site. Open the Designer, click the
+            Preview icon, and the page opens in a browser tab without authentication. This lets you capture
+            designs in progress that have not been published yet — useful for reviewing with stakeholders
+            before going live.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not embedded iframes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers with Webflow typography</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text element — headings, body copy, CMS-populated content — becomes a real Figma text layer with
+            the correct font family, size, weight, and line height from your Webflow type scale.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Webflow color system as native fills</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Webflow's color swatches resolve to their actual hex or RGB values before html2design reads them.
+            Fills in Figma match your Webflow palette exactly — ready to register as Figma color styles.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Webflow class names as Figma layer names</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Semantic Webflow class names like
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">hero-section</code>
+            or <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">pricing-card</code>
+            become the Figma layer names — keeping the design document organized and navigable.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">CMS content as real Figma text</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Webflow CMS content — blog titles, product descriptions, collection field values — renders as actual
+            text in the DOM. html2design captures those real values as Figma text layers, not placeholders.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I import a Webflow site into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Open the Webflow page in a browser, open DevTools, right-click the content you want in the Elements
+            panel, choose Copy &gt; Copy outerHTML, and paste into the html2design Figma plugin. The plugin converts
+            the rendered output to native Figma layers with real text, fills, and layout geometry.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Webflow have a native Figma export?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No — Webflow does not export directly to Figma files. The browser-based HTML approach is the most
+            reliable method: it captures the actual rendered output with all CSS resolved, rather than requiring
+            a proprietary format conversion.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Will Webflow's typography and spacing transfer to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Webflow compiles its design system into standard CSS with computed values. The browser resolves
+            all CSS variables and responsive calculations before html2design reads the DOM — font sizes, line heights,
+            padding, and margins all transfer as pixel values to Figma.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture just one Webflow section rather than the full page?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Right-click any Webflow section element in the DevTools Elements panel and copy its outerHTML.
+            The plugin generates a Figma frame containing only that section. Useful for importing individual
+            components like hero sections, pricing tables, or navigation bars.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture Webflow CMS pages with dynamic content?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. CMS pages render their content as standard HTML in the browser. Navigate to any CMS page on
+            your published Webflow site — the full populated content is visible in the Elements panel. Copy
+            from there to capture the CMS-populated layout as a Figma frame.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="bg-surface border-t border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/use-cases/wordpress-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">WordPress to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import WordPress pages and Gutenberg blocks into Figma as editable frames.</p>
+        </a>
+
+        <a href="/use-cases/adobe-xd-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Adobe XD to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Migrate XD screens to Figma via HTML export — no manual recreation.</p>
+        </a>
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/legacy-migration"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Legacy Migration</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Bring old production interfaces into Figma without rebuilding from scratch.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and Chrome extensions.</p>
+        </a>
+
+        <a href="/alternatives"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Alternatives</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Alternatives</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Other tools for importing HTML and web designs into Figma.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Import your Webflow pages into Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, no Chrome extension, no manual layer recreation.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

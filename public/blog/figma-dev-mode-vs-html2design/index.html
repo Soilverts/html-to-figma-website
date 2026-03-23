@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Figma Dev Mode vs html2design: When to Use Which (2026)</title>
+  <meta name="description" content="Compare Figma Dev Mode and html2design for code-to-design workflows. Find out which tool fits your handoff process, file size, and team collaboration needs." />
+  <meta name="keywords" content="figma dev mode alternative, figma inspect vs html import, dev mode comparison, html2design vs figma dev mode, figma dev mode html import" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design" />
+  <meta property="og:title" content="Figma Dev Mode vs html2design: When to Use Which (2026)" />
+  <meta property="og:description" content="Compare Figma Dev Mode and html2design for code-to-design workflows. Find out which tool fits your handoff process, file size, and team collaboration needs." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/figma-dev-mode-vs-html2design.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Figma Dev Mode vs html2design comparison diagram" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Comparison" />
+  <meta property="article:tag" content="figma dev mode" />
+  <meta property="article:tag" content="html2design" />
+  <meta property="article:tag" content="figma plugin" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Figma Dev Mode vs html2design: When to Use Which (2026)" />
+  <meta name="twitter:description" content="Two tools, two directions. Figma Dev Mode ships designs to code. html2design imports code back to Figma. Here's when to use each." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/figma-dev-mode-vs-html2design.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Figma Dev Mode vs html2design: When to Use Which",
+    "description": "Figma Dev Mode and html2design solve different problems. Here's the honest breakdown: what each tool does, when to pick it, and how to combine them for the best workflow.",
+    "url": "https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2100,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/figma-dev-mode-vs-html2design.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design"
+    },
+    "keywords": "figma dev mode alternative, figma inspect vs html import, dev mode comparison, html2design"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Figma Dev Mode vs html2design", "item": "https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Figma Dev Mode used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma Dev Mode is a read-only view inside Figma that helps developers inspect designs — extracting CSS values, spacing tokens, assets, and code snippets from completed design files. It is a design-to-code handoff tool, not an import tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Figma Dev Mode import HTML into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Figma Dev Mode does not import HTML or web code into Figma. It goes the other direction — from Figma designs to code output. To import HTML into Figma as editable layers, you need a plugin like html2design."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use html2design instead of Figma Dev Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use html2design when you need to bring existing web UI back into Figma — to document a component library, audit a live product, migrate a legacy codebase, or reverse-engineer shipped designs. Dev Mode is for inspecting designs that already exist in Figma."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["header p", "article.prose-article p"]
+    },
+    "name": "Figma Dev Mode vs html2design: When to Use Which (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .comparison-table th { background: #F9FAFB; padding: 0.75rem 1rem; text-align: left; font-weight: 700; color: #111827; border-bottom: 2px solid #E5E7EB; }
+    .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .tag-yes { display: inline-flex; align-items: center; gap: 0.25rem; color: #16a34a; font-weight: 600; font-size: 0.8rem; }
+    .tag-no { display: inline-flex; align-items: center; gap: 0.25rem; color: #dc2626; font-weight: 600; font-size: 0.8rem; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Figma Dev Mode vs html2design</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Comparison · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Figma Dev Mode vs html2design: When to Use Which
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Two tools, two completely opposite directions. Dev Mode ships designs to developers. html2design imports code back into Figma. Here's how to pick — and when to use both.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>The key difference:</strong> <a href="https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Dev Mode</a> is a <em>design-to-code</em> handoff tool — it helps developers read specs from existing Figma files. <strong>html2design</strong> is a <em>code-to-design</em> import tool — it converts HTML and CSS into editable Figma layers. They work in opposite directions and solve different problems entirely.</p>
+    </div>
+
+    <h2>The One-Line Summary</h2>
+    <p>
+      <strong>Figma Dev Mode</strong> is for reading designs. It generates CSS snippets, spacing values, and export-ready assets from Figma files that designers have already created. It assumes Figma is the source of truth.
+    </p>
+    <p>
+      <strong>html2design</strong> is for importing designs. It converts live HTML and CSS into native Figma layers when the source of truth is in your codebase — not in a design file. It assumes the browser is the source of truth.
+    </p>
+    <p>
+      If you're a developer consuming a design spec: Dev Mode. If you're bringing an existing UI <em>into</em> Figma for documentation or redesign: html2design.
+    </p>
+
+    <h2>What Figma Dev Mode Actually Does</h2>
+    <p>
+      Figma Dev Mode (available on paid plans) adds a developer-focused reading layer on top of existing Figma designs. When activated, it provides:
+    </p>
+    <ul>
+      <li><strong>CSS value extraction</strong> — Click any layer and see the computed CSS: <code>font-size</code>, <code>line-height</code>, <code>color</code>, <code>border-radius</code>, <code>box-shadow</code></li>
+      <li><strong>Spacing and sizing annotations</strong> — Distances between elements, padding, margins</li>
+      <li><strong>Asset export</strong> — Download icons and images in SVG, PNG, or WebP directly from the panel</li>
+      <li><strong>Code Connect</strong> — Link Figma components to your actual code components so developers see the real implementation, not just CSS snippets</li>
+      <li><strong>Redlines and annotations</strong> — Persistent design notes tied to specific frames</li>
+    </ul>
+    <p>
+      Dev Mode works on designs that already exist in Figma. It is entirely about reading and interpreting those designs — you cannot use it to create Figma layers or import anything.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Note on pricing:</strong> As of 2026, Figma Dev Mode requires a paid Figma seat or a Dev Mode-only seat ($25/editor/month on the Professional plan). Free accounts can view in Dev Mode read-only but cannot access all features.</p>
+    </div>
+
+    <h2>What html2design Actually Does</h2>
+    <p>
+      html2design is a Figma plugin that reads HTML and CSS source code and generates native Figma layers: frames, text nodes, shapes, fills, borders, and SVG vectors. You paste raw HTML into the plugin panel, click Convert, and the output appears on the Figma canvas — editable, renameable, and ready for design work.
+    </p>
+    <p>
+      Because it works from pasted code rather than a browser URL or extension, it handles sources that Dev Mode (and most other tools) cannot:
+    </p>
+    <ul>
+      <li><strong>Localhost and dev servers</strong> — <code>localhost:3000</code>, <code>localhost:6006</code> (Storybook), internal staging</li>
+      <li><strong>Auth-gated dashboards</strong> — Copy HTML from DevTools while logged in; paste into html2design</li>
+      <li><strong>Any framework output</strong> — React, Vue, Angular, Svelte, Tailwind, Bootstrap — anything that renders to HTML</li>
+      <li><strong>Legacy codebases</strong> — Import old production UI for redesign without rebuilding from scratch</li>
+    </ul>
+
+    <h2>Side-by-Side Comparison</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Figma Dev Mode</th>
+          <th>html2design</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Direction</strong></td>
+          <td>Figma → Code</td>
+          <td>Code → Figma</td>
+        </tr>
+        <tr>
+          <td><strong>Primary user</strong></td>
+          <td>Developer reading specs</td>
+          <td>Designer/dev importing UI</td>
+        </tr>
+        <tr>
+          <td><strong>Requires existing Figma file</strong></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+          <td><span class="tag-no">✗ No</span></td>
+        </tr>
+        <tr>
+          <td><strong>Creates editable Figma layers</strong></td>
+          <td><span class="tag-no">✗ No</span></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>Works with localhost</strong></td>
+          <td><span class="tag-no">✗ No</span></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>CSS extraction from Figma</strong></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+          <td><span class="tag-no">✗ No</span></td>
+        </tr>
+        <tr>
+          <td><strong>Import live HTML as layers</strong></td>
+          <td><span class="tag-no">✗ No</span></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>Code Connect</strong></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+          <td><span class="tag-no">✗ No</span></td>
+        </tr>
+        <tr>
+          <td><strong>No Chrome extension needed</strong></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pricing</strong></td>
+          <td>Requires paid Figma seat</td>
+          <td>$12/mo or $96/yr</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>When to Use Figma Dev Mode</h2>
+    <p>
+      Dev Mode is the right tool when:
+    </p>
+    <ul>
+      <li>Your design team works in Figma and you need to <strong>hand designs off to developers</strong></li>
+      <li>Developers need to extract exact CSS values, spacing, and typography from a spec without asking the designer</li>
+      <li>You want to link Figma components to their production code counterparts with <strong>Code Connect</strong></li>
+      <li>You're building a workflow where <strong>design is the single source of truth</strong> and code follows design</li>
+    </ul>
+
+    <h2>When to Use html2design</h2>
+    <p>
+      html2design is the right tool when:
+    </p>
+    <ul>
+      <li>You need to <strong>import an existing codebase into Figma</strong> — the UI exists in code but not in a design file</li>
+      <li>You're doing a <strong>legacy migration</strong> and need editable Figma designs from your old UI before rebuilding</li>
+      <li>You need to <strong>document a component library</strong> that was built without design files</li>
+      <li>You're <strong>reverse-engineering a shipped product</strong> to align design and engineering on what's actually in production</li>
+      <li>Your UI lives on <strong>localhost, staging, or behind authentication</strong> — Dev Mode and screenshot tools can't reach it</li>
+      <li>You want to <strong>redesign pages</strong> and need a starting point from the current live site</li>
+    </ul>
+
+    <h2>The Complementary Workflow</h2>
+    <p>
+      Many teams use both tools at different stages of the product lifecycle. Here's a common pattern:
+    </p>
+    <ol>
+      <li><strong>Kickoff:</strong> Use html2design to import your current production UI into Figma. You now have editable designs for every live component.</li>
+      <li><strong>Design iteration:</strong> Designers work in Figma — adjusting, improving, creating new variants.</li>
+      <li><strong>Handoff:</strong> Developers use Dev Mode to inspect the updated designs and extract CSS values, spacing, and assets.</li>
+      <li><strong>Ship:</strong> Code is updated to match the new designs.</li>
+      <li><strong>Re-sync:</strong> After the next sprint, use html2design again to import any ad-hoc code changes that didn't go through the design file, closing the drift loop.</li>
+    </ol>
+    <p>
+      This pattern is especially useful for teams inheriting a legacy codebase with no design files, or for teams where code moves faster than design and the two get out of sync.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Tip:</strong> html2design is particularly useful after a design debt sprint. Import your entire component library with html2design, clean up the resulting Figma file, and set it as the new design system baseline. Then use Dev Mode going forward for all new work.</p>
+    </div>
+
+    <h2>What Figma Dev Mode Cannot Do (and html2design Can)</h2>
+    <p>
+      The most common confusion is assuming Dev Mode can import HTML or generate Figma layers from code. It cannot. Dev Mode is a <strong>viewer and extractor</strong> — it only operates on content that already exists in a Figma file.
+    </p>
+    <p>
+      If you have a situation where:
+    </p>
+    <ul>
+      <li>A developer built a component but no Figma file was ever created</li>
+      <li>Designers need a Figma copy of a live product page for a redesign workshop</li>
+      <li>You want to snapshot a component's current state in Figma for documentation</li>
+    </ul>
+    <p>
+      Dev Mode is not the answer. html2design is.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is Figma Dev Mode a replacement for html2design?</h3>
+    <p>
+      No — they don't overlap. Dev Mode is for reading specs from existing Figma designs. html2design is for creating Figma designs from existing HTML/CSS. You might use both, but for different problems.
+    </p>
+
+    <h3>Can html2design replace Figma Dev Mode for handoff?</h3>
+    <p>
+      Not fully. html2design doesn't produce annotation specs or CSS snippet export from Figma. For handoff from Figma to code, Dev Mode (or a similar spec tool) remains the right choice.
+    </p>
+
+    <h3>Does html2design work if I don't have a Figma Dev Mode subscription?</h3>
+    <p>
+      Yes. html2design is a standalone Figma plugin with its own subscription ($12/mo or $96/yr). It does not require Figma Dev Mode or a paid Figma plan — it works in any Figma file including those on free plans.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Figma Dev Mode</strong> = design-to-code. Inspect existing Figma designs, extract CSS, and hand off to developers.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>html2design</strong> = code-to-design. Import HTML/CSS from any source into editable Figma layers.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> They don't compete — use html2design to <em>create</em> Figma files from code, then Dev Mode to <em>read</em> those files.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design works with localhost, staging, and auth-gated pages — no Chrome extension needed.</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Step-by-step tutorial using the html2design plugin — DevTools workflow, component import, and best practices.</p>
+        </a>
+        <a href="/blog/screenshot-vs-code-import" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Screenshot vs Code Import: Which Figma Method Actually Wins? &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Compares screenshot and code-paste import methods across output quality, editability, and typography accuracy.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import your entire component library into Figma, extract design tokens, and prevent design drift from returning.</p>
+        </a>
+        <a href="/compare" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Full HTML to Figma Tool Comparison &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">How html2design compares against html.to.design, screenshot tools, and manual recreation for every use case.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first component in 30 seconds</h2>
+      <p class="text-content-muted mb-6">Copy HTML from DevTools. Paste into html2design. Get editable Figma layers instantly — no Dev Mode required.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

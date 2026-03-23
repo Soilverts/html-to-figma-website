@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Adobe XD to Figma — Migrate XD Designs via HTML</title>
+  <meta name="description" content="Migrate Adobe XD designs to Figma by exporting via HTML. Preserve layouts, components, and styling as native Figma layers without any manual recreation." />
+  <meta name="keywords" content="adobe xd to figma, migrate xd figma, xd alternative figma, xd to figma migration, export adobe xd html, adobe xd figma plugin, xd figma converter, switch from xd to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/adobe-xd-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/adobe-xd-to-figma" />
+  <meta property="og:title" content="Adobe XD to Figma — Migrate XD Designs via HTML" />
+  <meta property="og:description" content="Migrate Adobe XD designs to Figma by exporting via HTML. Preserve layouts, components, and styling as native Figma layers without any manual recreation." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/adobe-xd-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Adobe XD screens migrated into Figma as editable design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Adobe XD to Figma — Migrate XD Designs via HTML" />
+  <meta name="twitter:description" content="Migrate from Adobe XD to Figma in minutes. Export XD screens to HTML and import as native Figma layers." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/adobe-xd-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Adobe XD to Figma — Migrate XD Designs via HTML",
+    "description": "Step-by-step guide for migrating Adobe XD screens and components into native, editable Figma layers using the html2design plugin — via HTML export.",
+    "url": "https://www.htmltofigma.io/use-cases/adobe-xd-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/adobe-xd-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Adobe XD to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/adobe-xd-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I migrate from Adobe XD to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable path is via HTML. In Adobe XD, use the Publish to Web or Export to HTML option to generate a rendered HTML version of your screens. Open that HTML in a browser, copy the outerHTML from DevTools, and paste it into the html2design Figma plugin. The plugin converts your XD screens into native Figma frames with real text layers, fills, and layout — not a screenshot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Adobe XD files directly into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma does not natively import .xd files. Third-party converters exist but often lose typography, interactions, and component structure. The HTML-via-browser approach is more reliable: it captures what the XD design actually renders — fonts, colors, spacing — as computed values that Figma can recreate faithfully."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will fonts and colors transfer correctly from XD to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when going via HTML. The browser resolves all fonts and CSS color values to their computed equivalents before html2design reads them. If your XD prototype used web fonts, those same fonts will appear in the Figma layers. Solid fills, gradients, and opacity values are all preserved as native Figma fill properties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best alternative to Adobe XD now that it is discontinued?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma is the most widely adopted replacement for Adobe XD, offering real-time collaboration, a strong plugin ecosystem, and developer handoff tools. The html2design plugin makes the migration practical: export your XD prototypes to HTML or open them in a browser, copy the rendered output, and import it into Figma as editable native layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work for XD prototypes with interactions and animations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The html2design plugin captures the static visual state of each screen — layout, typography, fills, and spacing — not interactive animations. For prototypes, capture each screen in its default (or key interaction) state separately. Import each state as a Figma frame, then recreate the interactions natively in Figma using its built-in prototyping tools."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Adobe XD to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Adobe XD</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Adobe XD to Figma —<br />
+        Via HTML
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Migrating from Adobe XD to Figma</strong> is straightforward when you go through HTML.
+        Export your XD screens as a web prototype, open them in a browser, copy the rendered HTML,
+        and paste into html2design — your screens arrive in Figma as
+        <strong class="text-content font-medium">native, editable layers</strong> with real text, fills, and spacing.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/sketch-to-figma"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Sketch Migration Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is XD to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Adobe XD to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Adobe XD to Figma"</strong> refers to the migration workflow for moving design files,
+        screens, and components from Adobe XD — which was discontinued by Adobe in 2023 — into Figma. Because .xd files
+        cannot be opened directly in Figma, the cleanest migration path is via rendered HTML: export or publish your XD
+        prototype as a web preview, open it in a browser, copy the live DOM, and import with the html2design Figma plugin.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        This approach captures what the XD design actually renders in a browser — resolved fonts, computed colors, spacing,
+        and layout — rather than relying on format-conversion heuristics that often drop styles or break component structure.
+        The result is a Figma frame that reflects the visual reality of your XD screen, ready for the design team to refine.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why migrate from XD to Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why move from Adobe XD to Figma?</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Adobe announced the end of XD development in 2023. Teams that built on XD need a stable, maintained platform.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Adobe XD is discontinued — no new features or security updates</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Adobe ended active development of XD in January 2023 and encouraged users to move to other tools.
+            Existing XD subscriptions continue to work for some time, but the product receives no new capabilities
+            and will eventually lose support. Migrating to Figma now protects the team's toolchain investment.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Figma has the strongest design-to-dev handoff ecosystem</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Figma's developer handoff tooling — inspect mode, Dev Mode, and its plugin ecosystem — is the industry
+            standard. Developers reading Figma specs get pixel-accurate measurements, CSS values, and assets without
+            needing to ask designers. XD's handoff workflow was narrower and is no longer actively improved.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Real-time multiplayer collaboration built into Figma's core</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Figma's collaborative model — multiple cursors, live edits, branching, and shared libraries — was designed
+            from the ground up for teams. XD's collaboration model was a later addition and required Creative Cloud
+            for sharing. Figma's free tier already includes real-time co-editing for small teams.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Adobe XD to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps via HTML — works for any XD screen or prototype.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Export your XD screen as a web prototype</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              In Adobe XD, open the artboard you want to migrate. Use <strong class="text-content">Share &gt; Publish to Web</strong>
+              to generate a live prototype URL, or use <strong class="text-content">File &gt; Export &gt; Web</strong> to save HTML
+              files locally. Either option produces a rendered browser view of your XD screen.
+            </p>
+            <p>
+              If your XD file is part of a larger prototype with linked artboards, publish the entire prototype and navigate
+              to the specific screen you want to capture. The web prototype renders each artboard as a browser page.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Open the prototype in a browser and copy the HTML</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open the published prototype URL or the locally exported HTML file in Chrome, Firefox, or Safari.
+              Wait for all fonts and assets to load. Open DevTools
+              (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), switch to the Elements panel,
+              right-click the top-level artboard container, and choose
+              <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+            </p>
+            <p>
+              Do not use View Page Source — it may show template markup before the design assets have loaded.
+              The Elements panel reflects the live, fully-rendered DOM with all fonts, SVGs, and CSS applied.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. The plugin reads the browser-computed styles
+              — resolved font families, pixel sizes, fill colors, and layout geometry — and recreates them as
+              native Figma objects.
+            </p>
+            <p>
+              The result is a Figma frame, not a screenshot. Text becomes real text layers. Shapes become
+              vectors. Backgrounds become fills. You can select, edit, rename, and reorganize everything
+              immediately without any manual cleanup of rasterized content.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Refine layers and rebuild components in Figma</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              The imported frame is an accurate visual replica of your XD screen. Use it as the base for rebuilding
+              proper Figma components: select repeated elements, convert them to components, set up auto layout,
+              and wire up your design system variables and styles.
+            </p>
+            <p>
+              For large migrations with many screens, import one artboard per Figma frame and group them by flow
+              or user journey. This gives the design team an organized Figma document that maps 1-to-1 with the
+              original XD prototype structure.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- XD-specific tips -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">XD-specific tips for a cleaner Figma migration</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Adobe XD prototypes have some rendering quirks worth knowing before you copy.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Wait for web fonts to fully load before copying</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            XD web prototypes load fonts asynchronously. If you copy the HTML before the fonts finish loading,
+            the browser may fall back to a system font, and that fallback will appear in Figma instead of your
+            intended typeface. Wait for the page to fully render — all text should appear in the correct typeface
+            before you open DevTools and copy.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture each artboard state separately for interaction flows</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            XD prototypes often show hover, selected, or overlay states as separate artboards linked by interactions.
+            Navigate to each artboard in the browser prototype and capture its HTML individually. Import each into
+            Figma as a separate frame, then recreate the prototype connections using Figma's native interaction system.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">SVG icons and illustrations import as vector paths</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            XD renders icons and illustration assets as inline SVG or background images in the prototype HTML.
+            The html2design plugin converts inline SVGs to native Figma vector paths — you get scalable, editable
+            vector objects, not embedded images. For raster assets like photos, they appear as image fills on the
+            correct frame dimensions.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use the full artboard root — not the body tag — for accurate dimensions</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            XD prototypes wrap each artboard in a container element with the exact pixel dimensions of the artboard.
+            Right-click that container element (not the
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code>) when copying outerHTML
+            to preserve the correct artboard size in Figma. Copying from the body tag may include prototype chrome
+            or navigation elements that are not part of your design.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every import creates native Figma objects — not screenshots, not embedded images.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text with correct typefaces</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text element from your XD screen becomes a real Figma text layer — with the correct font family,
+            size, weight, line height, letter spacing, and color. Edit text directly in Figma without rasterization.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Pixel-accurate fills and colors</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Solid fills, gradients, and image fills from your XD artboard are captured as browser-computed color values
+            and applied as native Figma fills. Your XD color palette transfers directly.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">SVG icons as editable vector paths</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Icons and illustrations rendered as SVG in the XD prototype convert to scalable Figma vector objects.
+            You can recolor, resize, and modify individual paths without losing quality.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Layout dimensions from the artboard geometry</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The XD artboard dimensions — whether a 375 × 812 mobile frame or a 1440 × 900 desktop screen —
+            are preserved as the Figma frame size. Spacing and positioning reflect the browser's computed layout.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I migrate from Adobe XD to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Publish your XD prototype as a web preview, open it in a browser, copy the outerHTML from DevTools,
+            and paste it into the html2design Figma plugin. Each XD screen becomes a native Figma frame with real
+            text layers, fills, and vectors — no manual recreation needed.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import .xd files directly into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Figma does not natively open .xd files. The HTML-via-browser approach is more reliable than
+            third-party converters: it captures the actual rendered output — resolved fonts, computed colors,
+            and measured spacing — rather than attempting to parse XD's proprietary file format.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Will fonts and colors transfer correctly from XD to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes, when going via HTML. The browser resolves all fonts and CSS values to their computed equivalents
+            before html2design reads them. Your XD typefaces and color fills transfer as accurate values to
+            native Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">What is the best alternative to Adobe XD?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Figma is the most widely adopted replacement for Adobe XD, with real-time collaboration, a rich plugin
+            ecosystem, and the strongest developer handoff tooling. Use html2design to migrate your existing XD
+            screens into Figma as native, editable layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does this work for XD prototypes with interactions?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The plugin captures the visual state of each screen — typography, fills, and layout — not the
+            XD interaction animations. Capture each artboard state separately, import them as individual Figma frames,
+            then recreate the prototype connections using Figma's native prototyping tools.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="bg-surface border-t border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/use-cases/sketch-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Sketch to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Migrate Sketch design systems to Figma via HTML component output.</p>
+        </a>
+
+        <a href="/use-cases/webflow-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Webflow to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import Webflow pages into Figma preserving layout and typography.</p>
+        </a>
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/legacy-migration"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Legacy Migration</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Bring old production interfaces into Figma without rebuilding from scratch.</p>
+        </a>
+
+        <a href="/compare"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and Chrome extensions.</p>
+        </a>
+
+        <a href="/alternatives"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Alternatives</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Alternatives</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Other tools for importing HTML and web designs into Figma.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Migrate your XD screens to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, no Chrome extension, no manual recreation.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

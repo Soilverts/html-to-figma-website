@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#060D1A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="url(#accent)" />
+
+  <!-- Grid pattern overlay -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Top left: brand mark -->
+  <text x="80" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#3B82F6" letter-spacing="1">HTML TO FIGMA</text>
+
+  <!-- Category label -->
+  <rect x="80" y="108" width="120" height="28" rx="14" fill="#2563EB" opacity="0.2" />
+  <text x="96" y="127" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#3B82F6" letter-spacing="0.5">USE CASES HUB</text>
+
+  <!-- Main title -->
+  <text font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="white" letter-spacing="-1">
+    <tspan x="80" y="240">Every Framework.</tspan>
+  </text>
+  <text font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="rgba(255,255,255,0.5)" letter-spacing="-1">
+    <tspan x="80" y="308">One Plugin.</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="80" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="rgba(255,255,255,0.65)" font-weight="400">17 use cases — Vue, React, Angular, Svelte, WordPress, Webflow &amp; more</text>
+
+  <!-- Small tag pills -->
+  <rect x="80" y="415" width="72" height="24" rx="12" fill="rgba(37,99,235,0.25)" />
+  <text x="116" y="431" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#93C5FD" font-weight="500">Frameworks</text>
+
+  <rect x="162" y="415" width="90" height="24" rx="12" fill="rgba(37,99,235,0.25)" />
+  <text x="207" y="431" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#93C5FD" font-weight="500">CSS Libraries</text>
+
+  <rect x="262" y="415" width="72" height="24" rx="12" fill="rgba(37,99,235,0.25)" />
+  <text x="298" y="431" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#93C5FD" font-weight="500">Platforms</text>
+
+  <rect x="344" y="415" width="72" height="24" rx="12" fill="rgba(37,99,235,0.25)" />
+  <text x="380" y="431" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#93C5FD" font-weight="500">Workflows</text>
+
+  <!-- Bottom: URL -->
+  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.35)">htmltofigma.io/use-cases</text>
+
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="100" r="200" fill="#2563EB" opacity="0.06" />
+  <circle cx="1050" cy="520" r="140" fill="#3B82F6" opacity="0.04" />
+  <circle cx="1160" cy="350" r="90" fill="white" opacity="0.02" />
+</svg>

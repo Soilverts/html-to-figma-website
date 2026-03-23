@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Sketch to Figma via HTML — Migrate Your Design System</title>
+  <meta name="description" content="Migrate from Sketch to Figma using HTML export as a bridge. Preserve component structures, typography, and layouts in native Figma without manual recreation." />
+  <meta name="keywords" content="sketch to figma, migrate sketch to figma, sketch figma migration, sketch alternative figma, sketch to figma html, design system migration figma, html2design sketch figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/sketch-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/sketch-to-figma" />
+  <meta property="og:title" content="Sketch to Figma via HTML — Migrate Your Design System" />
+  <meta property="og:description" content="Migrate from Sketch to Figma using HTML export as a bridge. Preserve component structures, typography, and layouts in native Figma without manual recreation." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/sketch-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Migrating a Sketch design system to native Figma components via HTML import" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sketch to Figma via HTML — Migrate Your Design System to Figma" />
+  <meta name="twitter:description" content="Migrating from Sketch to Figma? Use your design system's HTML to build native Figma components via html2design." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/sketch-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sketch to Figma Migration via HTML — Build Native Figma Components from Your Design System",
+    "description": "Step-by-step guide for migrating a Sketch-based design system to Figma using your HTML components as the source of truth, via the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/sketch-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-23",
+    "dateModified": "2026-03-23",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/sketch-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sketch to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/sketch-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I migrate my design system from Sketch to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable approach is to use your design system's HTML as the bridge. Render each component in the browser (from your Storybook, app, or component playground), copy the outerHTML from DevTools, and paste it into the html2design Figma plugin. This creates Figma frames that accurately reflect your live components — with correct spacing, colors, and typography — rather than recreating designs manually or relying on imperfect Sketch-to-Figma file converters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why use HTML instead of a Sketch-to-Figma converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sketch-to-Figma file converters import Sketch's internal file format, which may not match your production code. When you import via HTML, you are importing what actually ships — the browser-rendered output of your real components with real computed styles. The result is Figma components that are in sync with production from day one, not a translation of a Sketch file that may have drifted from the codebase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import my Sketch design system's HTML into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If your Sketch-based design system has a corresponding HTML component library (Storybook, a component playground, or live pages), you can import each component by rendering it in the browser, copying the outerHTML from DevTools, and pasting it into the html2design Figma plugin. This works with React, Vue, Angular, or plain HTML components."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my Sketch design system has no HTML equivalent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For design systems that exist only in Sketch with no corresponding HTML, the html2design approach doesn't apply. In that case, a Sketch-to-Figma file converter (like Figma's own import or the Sketch2Figma plugin) is a better starting point. However, html2design is the preferred migration path for teams whose design system has a code implementation — because it produces Figma components that are accurate to the live product, not to a potentially stale Sketch file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I prioritize which components to migrate first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with the components referenced most often in handoffs: buttons, inputs, cards, modals, navigation, and typography. These are the components designers need in Figma to create new screens. Import the high-frequency components first, establish them as Figma components, and then work through the full inventory. Each import takes under two minutes, so a 20-component core library can be migrated in under an hour."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <span class="hover:text-accent transition-colors">Use Cases</span>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Sketch to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Design System Migration</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Sketch to Figma —<br />
+        Use Your HTML
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Migrating from Sketch to Figma</strong> is faster when your
+        design system already has HTML. Instead of recreating components manually or running a risky file converter,
+        render each component in the browser and paste the HTML into the html2design plugin.
+        The result is <strong class="text-content font-medium">native Figma components</strong> that match your
+        live production code — not a translation of a potentially stale Sketch file.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/legacy-migration"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Legacy Code Migration Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Sketch to Figma via HTML -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">Why use HTML to migrate from Sketch to Figma?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">Most Sketch-to-Figma migrations fail</strong> because they start from the Sketch file,
+        not from the live product. Sketch files drift from the codebase over time — components get renamed, colors get
+        tweaked in code but not in Sketch, spacing values diverge. When you import a stale Sketch file into Figma,
+        you inherit all that drift.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        The HTML approach starts from truth: the browser-rendered output of your real components. Every component
+        you import via html2design is accurate to what your users actually see. This makes the Figma library a reliable
+        handoff tool from day one — designers can iterate on components knowing the Figma frame represents the real thing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Sketch to Figma migration workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps to migrate each component. Start with your highest-priority components and build the library incrementally.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Inventory your components</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              List every component you need in Figma. Start with the core 20 components designers use for most screens:
+              buttons, inputs, cards, modals, navigation, badges, icons, typography styles, and layout containers.
+              Prioritize by frequency of use in design handoffs.
+            </p>
+            <p>
+              For each component, identify its HTML equivalent — a Storybook story, a page in your app, a component
+              playground entry. If your design system has a Storybook, it is the ideal source: each story renders
+              one component in isolation, in exactly the state you want.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Render the component in the browser</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open the component in your browser — via Storybook, your local app, or a component playground.
+              Set the exact state you want to capture: the default state, a hover or focus state, a loading state,
+              an error state. The html2design plugin will import whatever the browser currently renders.
+            </p>
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>),
+              find the component's root element in the Elements panel, right-click it, and choose
+              <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Import into Figma via html2design</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. In seconds you will have a native Figma frame
+              with editable layers, accurate fills, correct typography, and a layer structure that mirrors the component.
+            </p>
+            <p>
+              Repeat for each variant — primary button, secondary button, destructive button, disabled state.
+              Import them as separate frames, then convert them into a Figma component set using Figma's native
+              component tools. Your Figma component will have real variants grounded in production code.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Organize and publish your Figma library</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              After importing your core components, organize them into a Figma library file, set up component properties,
+              and publish to your team. Designers can immediately use the library to compose new screens — and
+              every component they place is a faithful representation of what's in production.
+            </p>
+            <p>
+              When the codebase changes — a spacing update, a color refinement, a border radius tweak —
+              simply re-import the affected components. The HTML-first approach makes updates
+              faster than maintaining Sketch files because the source of truth is always the live code.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HTML vs Sketch converter comparison -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">HTML import vs Sketch-to-Figma converters</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Two approaches to migrating from Sketch to Figma — with very different results.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">File converters start from the Sketch file — which may be stale</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Sketch-to-Figma file converters (Figma's built-in import, third-party tools) translate Sketch's internal
+            data format into Figma objects. If your Sketch file is out of sync with production — and it almost always is —
+            the resulting Figma library inherits that drift. Designers get a library that doesn't match what engineers ship.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">HTML import starts from the live product — which is always accurate</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The html2design approach imports the browser-rendered output of your real components. Whatever your users
+            see is exactly what lands in Figma. There is no drift because you are not translating between file formats —
+            you are capturing the computed output of the browser at the moment of import.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">When to use a file converter vs HTML import</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Use a file converter when your design system exists only in Sketch with no corresponding HTML implementation.
+            Use HTML import when your design system has a code implementation — any Storybook, React app, Vue app, or
+            plain HTML component library. For teams with a code-based design system, HTML import produces more accurate
+            Figma components with less cleanup.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get in Figma -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Every component imported via html2design is a native Figma object — ready to become a published Figma component.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Production-accurate colors</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Colors come from computed CSS — the exact values your production code applies.
+            Not the colors in a Sketch file that may have been updated only on one side.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Real spacing and layout</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Padding, gap, and margin values are read from the browser's computed layout —
+            not approximated from a Sketch artboard. What the browser renders is what Figma gets.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Editable text layers</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Every text node becomes a real Figma text layer with the correct font, size, weight, and color.
+            Designers can update copy directly in Figma without losing the text styling.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Component-ready layer structure</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            The layer hierarchy mirrors the HTML structure. Named layers make it easy to identify
+            elements and convert the imported frame into a proper Figma component with variants.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I migrate my design system from Sketch to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Use your design system's HTML as the bridge. Render each component in the browser, copy its outerHTML
+            from DevTools, and paste into the html2design Figma plugin. This produces Figma frames that match
+            production code, not a potentially stale Sketch file.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Why use HTML instead of a Sketch-to-Figma converter?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            File converters import from Sketch files that may have drifted from the codebase.
+            HTML import uses the browser-rendered output of your real components — accurate to production,
+            not to a potentially outdated design file.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import my Sketch design system's HTML into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. If your design system has a HTML component library (Storybook, a React/Vue app, or a component playground),
+            you can render each component and import it via html2design. No Sketch file needed.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How long does a full design system migration take?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Each component import takes under two minutes. A core library of 20 components
+            (buttons, inputs, cards, modals, navigation, badges, typography) takes under an hour.
+            A full 100-component design system can be migrated incrementally over a few days.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">What if my Sketch design system has no HTML equivalent?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            If there is no HTML implementation, use a Sketch-to-Figma file converter as a starting point,
+            then reconcile the Figma library against production code manually.
+            For teams with a code implementation, html2design is faster and more accurate.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/use-cases/legacy-migration"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Legacy Code Migration</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Modernize legacy HTML and CSS codebases by importing them as editable Figma designs.</p>
+        </a>
+
+        <a href="/use-cases/storybook-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Storybook to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import Storybook component stories as native Figma layers — ideal for design system migration.</p>
+        </a>
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/developer-handoff"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Developer Handoff</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Bridge the design-development gap with accurate code-to-Figma imports.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Start your Sketch to Figma migration today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try. Import your first component in under two minutes.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
