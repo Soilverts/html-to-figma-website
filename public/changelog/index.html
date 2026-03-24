@@ -168,7 +168,89 @@
   <!-- Timeline -->
   <main class="max-w-3xl mx-auto px-6 pb-24">
 
-    <!-- March 23, 2026 -->
+    <!-- March 23, 2026 — Wave 13: 3 new blog posts, GEO TL;DR boxes, meta audit -->
+    <section class="mb-10">
+      <div class="flex items-baseline gap-4 mb-5 border-b border-gray-100 pb-3">
+        <time datetime="2026-03-23" class="font-mono text-xs text-gray-400 shrink-0">March 23, 2026</time>
+        <span class="text-xs font-medium uppercase tracking-wider text-accent">Content · Blog · Use Cases Hub · GEO · Schema · Freshness</span>
+      </div>
+      <ul class="space-y-3">
+        <!-- Wave 13: 3 new blog posts, GEO TL;DR, meta audit -->
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/blog/rapid-prototyping-website-to-figma" class="font-semibold text-content hover:text-accent transition-colors">Rapid Prototyping: From Live Website to Figma Prototype</a>
+            <p class="text-sm text-content-muted mt-1">How to skip the Figma rebuild entirely — import production HTML as native layers with html2design, duplicate and iterate, add Prototype connections, and share with stakeholders. Complete workflow for product teams.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/blog/design-handoff-best-practices" class="font-semibold text-content hover:text-accent transition-colors">Design Handoff Best Practices: Keeping Code and Figma in Sync</a>
+            <p class="text-sm text-content-muted mt-1">Bidirectional sync workflow for preventing design drift — covers Figma→code handoff quality (tokens, states, naming) and code→Figma re-import with html2design after developers ship. Includes failure patterns and per-sprint cadence recommendations.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/blog/atomic-design-to-figma" class="font-semibold text-content hover:text-accent transition-colors">Atomic Design to Figma: Importing Your Component Hierarchy</a>
+            <p class="text-sm text-content-muted mt-1">Bottom-up import workflow for atomic design systems — atoms first from Storybook, then molecules, then organisms. Covers design token registration as Figma Variables, slash-separated naming convention mirroring codebase structure, and maintenance workflow.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/use-cases" class="font-semibold text-content hover:text-accent transition-colors">Use Cases hub page — /use-cases</a>
+            <p class="text-sm text-content-muted mt-1">New hub page grouping all 17 use-case pages by category (Frameworks, CSS Libraries, Platforms, Workflows). Includes CollectionPage + ItemList JSON-LD schema, BreadcrumbList, and compelling category intro copy. Internal links added from blog index.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">GEO citation optimization — TL;DR boxes on all Wave 13 blog posts</span>
+            <p class="text-sm text-content-muted mt-1">Added structured TL;DR summary blocks to the 3 new blog posts. Each block contains a definition of the page's core concept with inline external citations (schema.org, browser vendor docs, framework documentation). These blocks are optimized for AI engine snippet extraction.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">Meta description audit — all pages to 2026-03-23</span>
+            <p class="text-sm text-content-muted mt-1">Synced dateModified in JSON-LD schemas and article:modified_time meta tags across all pages. Updated sitemap lastmod dates. Verified RSS feed integrity with 19 blog posts. Refreshed llms-full.txt with updated page count, blog list, and use-cases hub reference.</p>
+          </div>
+        </li>
+        <!-- Wave 12: Adobe XD / Webflow / Tailwind CSS use-case pages + SiteNavigationElement + ItemList -->
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/use-cases/adobe-xd-to-figma" class="font-semibold text-content hover:text-accent transition-colors">Adobe XD to Figma use-case page</a>
+            <p class="text-sm text-content-muted mt-1">Dedicated landing page for teams migrating Adobe XD screens to Figma via HTML component export — bypasses the XD→Figma native import issues with a battle-tested HTML bridge approach.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/use-cases/webflow-to-figma" class="font-semibold text-content hover:text-accent transition-colors">Webflow to Figma use-case page</a>
+            <p class="text-sm text-content-muted mt-1">Use-case landing page for Webflow teams importing published pages into Figma — complementing the existing /blog/webflow-to-figma tutorial with a shorter, conversion-focused entry point.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">NEW</span>
+          <div>
+            <a href="/use-cases/tailwind-to-figma" class="font-semibold text-content hover:text-accent transition-colors">Tailwind CSS to Figma use-case page</a>
+            <p class="text-sm text-content-muted mt-1">Use-case landing page targeting Tailwind CSS utility-class projects — all utility classes resolve to computed CSS values that html2design captures perfectly.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">SiteNavigationElement schema + ItemList schemas on use-case pages</span>
+            <p class="text-sm text-content-muted mt-1">Added SiteNavigationElement JSON-LD to the homepage header navigation and ItemList schemas to the new use-cases hub page. Improves AI engine understanding of the site's navigation structure and content groupings.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- March 23, 2026 (Wave 8–11) -->
     <section class="mb-10">
       <div class="flex items-baseline gap-4 mb-5 border-b border-gray-100 pb-3">
         <time datetime="2026-03-23" class="font-mono text-xs text-gray-400 shrink-0">March 23, 2026</time>

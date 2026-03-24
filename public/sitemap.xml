@@ -270,6 +270,50 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/rapid-prototyping-website-to-figma.svg</image:loc>
+      <image:title>Rapid Prototyping — From Live Website to Figma Prototype</image:title>
+      <image:caption>Workflow for turning production HTML into editable Figma prototype frames using html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/design-handoff-best-practices</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/design-handoff-best-practices.svg</image:loc>
+      <image:title>Design Handoff Best Practices — Keeping Code and Figma in Sync</image:title>
+      <image:caption>Bidirectional sync workflow for preventing design drift between Figma and production code</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/atomic-design-to-figma</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/atomic-design-to-figma.svg</image:loc>
+      <image:title>Atomic Design to Figma — Component Hierarchy Import</image:title>
+      <image:caption>Bottom-up import of atomic design components (atoms, molecules, organisms) from Storybook into Figma</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases.svg</image:loc>
+      <image:title>HTML to Figma Use Cases — Every Framework and Platform</image:title>
+      <image:caption>Hub page for all html2design use cases — frameworks, CSS libraries, platforms, and design workflows</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.htmltofigma.io/use-cases/legacy-migration</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>monthly</changefreq>

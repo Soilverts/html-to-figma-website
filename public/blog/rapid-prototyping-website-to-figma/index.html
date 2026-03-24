@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Rapid Prototyping: From Live Website to Figma Prototype</title>
+  <meta name="description" content="Turn any live website into an editable Figma prototype in minutes. Import real HTML as native layers, iterate in Figma, and hand off back to code — the rapid prototyping workflow for product teams." />
+  <meta name="keywords" content="rapid prototyping figma, website prototype figma, live site to figma prototype, html to figma prototype, figma prototyping workflow, rapid ui prototyping" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma" />
+  <meta property="og:title" content="Rapid Prototyping: From Live Website to Figma Prototype" />
+  <meta property="og:description" content="Turn any live website into an editable Figma prototype in minutes. Import real HTML as native layers, iterate in Figma, and hand off back to code." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/rapid-prototyping-website-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Rapid prototyping workflow from live website to Figma prototype using html2design" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="rapid prototyping" />
+  <meta property="article:tag" content="figma prototype" />
+  <meta property="article:tag" content="product workflow" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rapid Prototyping: From Live Website to Figma Prototype" />
+  <meta name="twitter:description" content="Turn any live website into an editable Figma prototype in minutes using html2design." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/rapid-prototyping-website-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Rapid Prototyping: From Live Website to Figma Prototype",
+    "description": "How to import any live website as native Figma layers, iterate directly in Figma without rebuilding, and hand the prototype back to developers — the rapid prototyping workflow for product teams.",
+    "url": "https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2600,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/rapid-prototyping-website-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma"
+    },
+    "keywords": "rapid prototyping figma, website prototype figma, live site to figma prototype, html to figma prototype",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Rapid prototyping from live websites to Figma",
+      "description": "Workflow for turning production HTML into editable Figma frames for rapid iteration and prototype creation"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Rapid Prototyping: Website to Figma Prototype", "item": "https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I create a Figma prototype from a live website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the live website in Chrome, open DevTools, right-click the section you want → Copy → Copy outerHTML. Open Figma, run the html2design plugin, paste the HTML, and click Convert. You get native, editable Figma layers in 2–30 seconds. Add Prototype connections between frames to create interactive prototypes without rebuilding any UI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why import HTML into Figma instead of screenshotting for prototyping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Screenshots give you flat image layers — you can't change text, colors, or layout without rebuilding from scratch. Importing via html2design gives you native Figma text layers, editable fills, and positioned frames. When you need to swap a headline, change a CTA color, or try a different layout, you do it directly in Figma in seconds rather than in a photo editor or by rebuilding the component manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use html2design for rapid prototyping of UI changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — this is one of the most productive uses of html2design. Import the current production UI as Figma layers, make your proposed changes (new copy, layout tweaks, color experiments) directly in Figma, add prototype flows between frames, and share the Figma prototype link with stakeholders. The entire cycle — import → edit → prototype → share — typically takes under 30 minutes versus hours of manual Figma rebuilding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I prototype mobile and desktop versions from the same website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In Chrome DevTools, use the Device Toolbar (Cmd+Shift+M) to set the viewport to a mobile size (e.g., 375px). The page reflows to its mobile layout. Copy the outerHTML and import it into html2design — you get the mobile layout as a Figma frame. Do the same at desktop width. Import both, add Figma prototype connections, and you have a responsive prototype showing both layouts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I hand off a Figma prototype back to developers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Share the Figma file link directly — developers can inspect every layer with Figma's Inspect panel to see exact pixel values, font details, colors, and spacing. For production-ready handoff, annotate your changed layers with notes explaining the interaction intent. If you used Figma Variables for colors and typography, developers can extract those as updated design tokens for the codebase."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Rapid Prototyping: From Live Website to Figma Prototype (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .compare-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .compare-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .yes { color: #15803D; font-weight: 600; }
+    .compare-table .no { color: #DC2626; font-weight: 600; }
+    .compare-table .partial { color: #92400E; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Rapid Prototyping</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Rapid Prototyping: From Live Website to Figma Prototype
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Instead of rebuilding your production UI from scratch in Figma, import it directly as native layers using html2design. In under 30 minutes you can go from live website to interactive Figma prototype — with every text layer, color, and frame fully editable.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: TL;DR / Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0 0 0.5rem;color:#1D4ED8;font-size:0.75rem;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Rapid prototyping from a live website</strong> means importing a production page's rendered HTML into <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> as native, editable layers using <strong>html2design</strong>, then iterating directly in Figma — changing copy, layout, and visuals — and adding <a href="https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Prototype</a> connections to create interactive flows. The result is a high-fidelity prototype that starts from the real, live UI rather than a hand-rebuilt approximation.</p>
+    </div>
+
+    <h2>Why Start from Production HTML?</h2>
+    <p>
+      Traditional rapid prototyping in Figma has a hidden time tax: you spend the first hour rebuilding the current state of the product — the nav, the existing page structure, the current button styles — before you can even start exploring the change you actually want to test. That rebuild is busywork. The production codebase already contains all of that information, rendered exactly as users see it.
+    </p>
+    <p>
+      html2design short-circuits that rebuild. You copy the rendered HTML from your browser's DevTools and paste it into the plugin. In 5–30 seconds, Figma contains native layers: real text nodes with the actual font and size, actual fills with the live hex values, frames positioned exactly as the browser laid them out. From that starting point, your prototype work is purely the <em>new</em> thing you're testing.
+    </p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Time to first editable Figma frame</th>
+          <th>Fidelity to production</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Manual rebuild in Figma</td>
+          <td class="no">60–180 min</td>
+          <td class="partial">Approximate</td>
+        </tr>
+        <tr>
+          <td>Screenshot in Figma</td>
+          <td class="yes">&lt;1 min</td>
+          <td class="yes">Pixel-perfect</td>
+        </tr>
+        <tr>
+          <td>Screenshot editability</td>
+          <td class="no">None (flat image)</td>
+          <td class="no">Cannot edit text/colors</td>
+        </tr>
+        <tr>
+          <td>html2design import</td>
+          <td class="yes">&lt;1 min</td>
+          <td class="yes">Pixel-accurate</td>
+        </tr>
+        <tr>
+          <td>html2design editability</td>
+          <td class="yes">Full — text, fills, layout</td>
+          <td class="yes">Native Figma layers</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The Rapid Prototyping Workflow</h2>
+
+    <div class="step-card">
+      <p class="step-num">Step 1</p>
+      <h3>Capture the current UI from the live page</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open the production page (or staging) in Chrome. Open DevTools (<code>Cmd+Option+I</code> on macOS, <code>F12</code> on Windows). Use the element picker to select the section, page region, or full page you want to prototype with. Right-click the element in the Elements panel → <strong>Copy → Copy outerHTML</strong>. For a full-page prototype, copy from the <code>&lt;body&gt;</code> tag.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 2</p>
+      <h3>Import into html2design in Figma</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open Figma and run the html2design plugin (Main Menu → Plugins → html2design). Paste your outerHTML into the plugin input. Click <strong>Convert</strong>. In a few seconds, a Figma frame appears on your canvas containing all the UI elements as native layers. Rename the frame "Current State" to keep your canvas organized.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3</p>
+      <h3>Duplicate and iterate</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Duplicate the imported frame (<code>Cmd+D</code>). The duplicate is your "Proposed State." Make all your design changes here — update copy, try new button colors, rearrange sections, swap images. Because these are real Figma layers, every change takes seconds. The original "Current State" frame remains intact for comparison.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 4</p>
+      <h3>Add Prototype connections</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Switch to the Prototype tab in Figma's right panel. Draw connections from interactive elements (buttons, nav links, CTAs) to the frames they should navigate to. Create flows: a landing page → a product detail page → a checkout page. Use the Figma Prototype feature to set transitions (push, dissolve, smart animate) for a polished demo experience.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 5</p>
+      <h3>Share and get feedback</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Click <strong>Share → Copy prototype link</strong>. Stakeholders open the link in a browser — no Figma account needed to view. For developer handoff, share the file link (not just prototype) so developers can inspect exact values through Figma's Inspect panel.</p>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Speed tip:</strong> For most prototyping work, you don't need the entire page. Import just the component or section you're changing — the hero, the nav, the pricing table. A targeted import gives you fewer layers to manage and faster Figma performance on complex pages.</p>
+    </div>
+
+    <h2>Capturing Multiple States for Prototyping</h2>
+    <p>
+      Many UI interactions require multiple states — a default button and a hover button, an empty cart and a populated cart, a closed dropdown and an open one. html2design makes it easy to capture each state as a separate Figma frame by using DevTools to force CSS states before copying.
+    </p>
+
+    <h3>Hover and focus states</h3>
+    <p>
+      In Chrome DevTools, right-click any element in the Elements panel → <strong>Force State</strong> → <code>:hover</code> (or <code>:focus</code>, <code>:active</code>). The browser applies the hover styles. Copy the outerHTML in that forced state and import it into html2design as a separate frame. Label it "Button — Hover" and place it next to the default "Button — Default" frame. Connect them with a Figma Prototype hover trigger for a realistic hover demo.
+    </p>
+
+    <h3>Expanded and collapsed states</h3>
+    <p>
+      For accordions, dropdowns, or sidebars: interact with the element in the browser to reach the open state, then copy the outerHTML. For programmatic state (e.g., a React state toggle), you can also temporarily override the DOM: in DevTools, find the class that controls open/closed state and add/remove it manually in the Elements panel, then copy.
+    </p>
+
+    <h3>Responsive breakpoints</h3>
+    <p>
+      In DevTools, click the <strong>Device Toolbar</strong> icon or press <code>Cmd+Shift+M</code>. Set the viewport to 375px (mobile) and copy the outerHTML. Then set to 1440px (desktop) and copy again. Import both into html2design to get mobile and desktop frames. In Figma, use these as the start and end states of a responsive prototype or simply as reference frames for the design team.
+    </p>
+    <p>
+      For a deep dive into responsive prototyping, see <a href="/blog/responsive-design-to-figma">Responsive Design to Figma: Converting Breakpoints to Figma Variants</a>.
+    </p>
+
+    <h2>Prototyping Flows: From One Page to the Next</h2>
+    <p>
+      A single-frame import is useful for component iteration. But the real power of this workflow is building multi-screen prototype flows that represent full user journeys — the kind you'd test in a user research session or present to a product review.
+    </p>
+    <p>
+      Here's how to build a complete user flow from a live website:
+    </p>
+    <ol>
+      <li>Identify every screen in the flow (e.g., homepage → product page → cart → checkout → confirmation).</li>
+      <li>For each screen, navigate to it in the browser, copy the relevant HTML, and import it into html2design. Each import becomes one Figma frame.</li>
+      <li>Arrange the frames left-to-right on the canvas in flow order.</li>
+      <li>In Prototype mode, connect each CTA, button, or nav link to the next frame.</li>
+      <li>Set starting frame, add a flow name, and present. The full purchase journey — real production UI, fully interactive in Figma — took less time to build than the 4-hour design review you're about to run.</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>Pro tip:</strong> Import each screen at the same viewport width (e.g., always at 1440px or always at 375px) so your prototype frames are consistent. html2design captures whatever the browser is currently rendering — if you import a desktop page at 375px width, you'll get the mobile layout.</p>
+    </div>
+
+    <h2>Iterating After Import: What to Edit in Figma</h2>
+    <p>
+      After importing, the most common rapid prototyping edits are:
+    </p>
+    <ul>
+      <li><strong>Copy changes</strong> — Double-click any text layer, retype. No font-matching headaches; you're editing the real text layer with the original font already applied.</li>
+      <li><strong>Color changes</strong> — Select a frame or text layer, click the fill color swatch, enter the new hex. Experiment with a button color across 5 prototypes in 2 minutes.</li>
+      <li><strong>Layout adjustments</strong> — Move sections by dragging frames. Use Figma Auto Layout if the import used flexbox — html2design maps flex/grid layouts to Auto Layout where possible.</li>
+      <li><strong>Content swaps</strong> — Replace image fills with new images by selecting the image fill and using Figma's fill panel. Swap SVG icons by replacing vector paths.</li>
+      <li><strong>Adding new elements</strong> — Draw native Figma components (buttons, modals, banners) onto the imported frame. Mix imported production layers with new Figma-designed elements in the same frame.</li>
+    </ul>
+
+    <h2>Handing Off the Prototype Back to Developers</h2>
+    <p>
+      Once the prototype is approved, developers need specifications to implement the changes. Figma's Inspect panel shows exact values for every layer — pixel dimensions, font stack, line height, color in hex/RGB, spacing, border radius. This is enough for most implementation work.
+    </p>
+    <p>
+      For a more structured handoff:
+    </p>
+    <ul>
+      <li><strong>Annotate changed layers</strong> — Add Figma annotation frames (yellow sticky-note style boxes) explaining what changed and why. This is especially useful for interactions that don't fully communicate in static frames.</li>
+      <li><strong>Use Figma Variables for tokens</strong> — If your team uses a design token system, register your prototype's colors and spacing as Figma Variables. Developers can extract these as updated token values for the CSS codebase.</li>
+      <li><strong>Export component specs</strong> — Use Figma's Dev Mode (if available on your plan) to export annotated specs. Developers can click any layer and see every CSS property in a format ready to copy.</li>
+    </ul>
+    <p>
+      For the complete guide to aligning code and Figma post-prototype, see <a href="/blog/design-handoff-best-practices">Design Handoff Best Practices: Keeping Code and Figma in Sync</a>.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How do I create a Figma prototype from a live website?</h3>
+    <p>
+      Copy the outerHTML of the page or section from browser DevTools, paste it into html2design in Figma, and convert. You get native Figma layers. Add Prototype connections between frames to create interactive flows.
+    </p>
+
+    <h3>Why import HTML instead of screenshotting?</h3>
+    <p>
+      Screenshots create flat image layers — no editable text, no changeable colors, no resizable frames. HTML imports create native Figma layers you can edit directly. For prototyping work where you need to change copy and try new designs, native layers are essential.
+    </p>
+
+    <h3>Can I prototype mobile and desktop from the same site?</h3>
+    <p>
+      Yes. Use Chrome's Device Toolbar to set different viewport widths, import at each breakpoint, and get separate frames for mobile and desktop. Connect them in Figma Prototype to show responsive behavior.
+    </p>
+
+    <h3>Does html2design work with React or Next.js apps?</h3>
+    <p>
+      Yes — html2design works with any rendered HTML. React, Next.js, Vue, Angular, and Svelte all produce standard HTML in the browser. Copy the outerHTML of any rendered component or page and it imports cleanly. See <a href="/blog/react-component-to-figma">How to Convert React Components to Figma</a> for the specific workflow.
+    </p>
+
+    <!-- Checklist -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.5rem;margin-top:2rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:1rem;">Rapid Prototyping Checklist</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import at consistent viewport widths across all screens in the flow</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Keep the original "Current State" frame — don't edit it, only duplicate</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use DevTools Force State to capture hover/focus/active frames separately</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Arrange frames left-to-right in flow order on the canvas</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Name frames clearly: "Homepage — Current", "Homepage — Proposed v1"</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Add annotations for interactions not visible from static frames</li>
+      </ul>
+    </div>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import production HTML with html2design instead of rebuilding — go from live site to editable Figma layers in under 1 minute</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Duplicate the imported frame before editing — always keep the original "Current State" intact for comparison and stakeholder review</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use DevTools Force State (<code style="background:#F3F4F6;padding:0.1em 0.4em;border-radius:4px;font-size:0.8em;">:hover</code>, <code style="background:#F3F4F6;padding:0.1em 0.4em;border-radius:4px;font-size:0.8em;">:focus</code>) to capture interaction states as separate Figma frames</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Build multi-screen flows by importing each page in the user journey — arrange left-to-right and connect in Prototype mode</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Share the Figma prototype link for stakeholder review; share the full file link for developer handoff with Inspect panel access</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/design-handoff-best-practices" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Handoff Best Practices: Keeping Code and Figma in Sync &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Systematic approaches to handoff that prevent design drift — from prototype to production.</p>
+        </a>
+        <a href="/blog/import-website-into-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The core import workflow that underlies every rapid prototyping session.</p>
+        </a>
+        <a href="/blog/responsive-design-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Responsive Design to Figma: Converting Breakpoints to Variants &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">How to prototype responsive behavior with separate mobile and desktop frames from the same live site.</p>
+        </a>
+        <a href="/blog/screenshot-vs-code-import" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Screenshot vs Code Import: Which Figma Method Actually Wins? &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Why code import produces editable prototyping-ready layers while screenshots are dead-ends.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Import rendered React, Next.js, or Storybook components as Figma frames for component-level prototyping.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Build your first Figma prototype from a live site</h2>
+      <p class="text-content-muted mb-6">Copy a section's outerHTML from DevTools, paste it into html2design, and get native Figma layers in seconds. Start prototyping from production — no manual rebuilding.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

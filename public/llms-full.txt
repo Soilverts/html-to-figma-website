@@ -583,7 +583,7 @@ This workflow keeps Figma designs in sync with production code without manual re
 
 **URL:** https://www.htmltofigma.io/changelog
 **Title:** html2design Changelog
-**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 42 content pages added through March 2026.
+**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 47 content pages added through March 2026.
 
 **Typical content per entry:** Date, category tag, description of what shipped — new use-case landing pages, new blog post guides, schema additions, internal linking rounds, GEO optimizations.
 

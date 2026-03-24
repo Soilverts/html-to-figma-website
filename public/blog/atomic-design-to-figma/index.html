@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Atomic Design to Figma: Importing Your Component Hierarchy</title>
+  <meta name="description" content="Import your atomic design component hierarchy — atoms, molecules, organisms — into Figma as native layers. Preserve component nesting, maintain structure, and build a Figma design system from your code." />
+  <meta name="keywords" content="atomic design figma, component hierarchy figma, atoms molecules organisms figma, atomic design system figma, import atomic design figma, figma component hierarchy" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/atomic-design-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/atomic-design-to-figma" />
+  <meta property="og:title" content="Atomic Design to Figma: Importing Your Component Hierarchy" />
+  <meta property="og:description" content="Import your atomic design component hierarchy into Figma — atoms, molecules, organisms — as native layers. Build a Figma design system from your code." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/atomic-design-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Atomic design component hierarchy imported into Figma as native layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Design System" />
+  <meta property="article:tag" content="atomic design" />
+  <meta property="article:tag" content="figma design system" />
+  <meta property="article:tag" content="component hierarchy" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atomic Design to Figma: Importing Your Component Hierarchy" />
+  <meta name="twitter:description" content="Import atoms, molecules, and organisms from your codebase into Figma as native layers using html2design." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/atomic-design-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Atomic Design to Figma: Importing Your Component Hierarchy",
+    "description": "How to import an atomic design component hierarchy into Figma using html2design — capturing atoms, molecules, and organisms as native Figma layers and organizing them into a hierarchical Figma design system.",
+    "url": "https://www.htmltofigma.io/blog/atomic-design-to-figma",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2700,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/atomic-design-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/atomic-design-to-figma"
+    },
+    "keywords": "atomic design figma, component hierarchy figma, atoms molecules organisms figma, atomic design system figma",
+    "articleSection": "Design System",
+    "timeRequired": "PT10M",
+    "about": {
+      "@type": "Thing",
+      "name": "Atomic design component hierarchy in Figma",
+      "description": "Workflow for importing an atomic design component library from code into a hierarchically organized Figma design system"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "Book", "name": "Atomic Design", "author": { "@type": "Person", "name": "Brad Frost" } }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Atomic Design to Figma", "item": "https://www.htmltofigma.io/blog/atomic-design-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I import an atomic design system into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most efficient approach is level-by-level import using html2design. Start with atoms (buttons, inputs, badges) rendered in isolation — use Storybook or a component playground to render each atom, copy its outerHTML from DevTools, and import into html2design. Build up through molecules (form groups, card headers) and organisms (full product cards, navigation bars). Each import creates a native Figma frame which you then convert into a Figma Component and organize in a shared library."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is atomic design in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Atomic design in Figma means organizing your component library using Brad Frost's atomic design methodology: atoms (basic UI elements like buttons, icons, inputs), molecules (simple combinations like a labeled input field), organisms (complex UI sections like a product card grid), templates (page layout wireframes), and pages (fully populated templates). In Figma, this maps to a naming convention like 'Atoms / Button / Primary' and a library file where each level has its own Figma page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I maintain atomic design hierarchy when importing from code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Import each component level separately — don't import organisms and then try to decompose them into atoms. Import atoms first, convert to Figma Components, then import molecules (which will include rendered atoms inside them), extract the new molecule-level elements, convert those to Components. This bottom-up approach mirrors how the codebase's component hierarchy works and gives you a Figma library that matches the code structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design preserve component nesting when importing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design imports the rendered HTML output — the DOM tree — as nested Figma frames. It doesn't know which elements are 'atoms' vs 'molecules' at import time. You identify the hierarchy level and create Figma Components manually. The import gives you the correct visual output and layer structure; the atomic organization happens in how you name and publish those Components to your Figma library."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools work best for importing atomic design components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Storybook is the ideal source for atomic design imports because it renders components in isolation at each level. Navigate to any story in Storybook (localhost:6006 or staging), use Chrome DevTools to copy the rendered component's outerHTML, and import into html2design. This gives you each atom, molecule, or organism in a clean isolated context — no page navigation, header, or footer wrapping the component."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/atomic-design-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Atomic Design to Figma: Importing Your Component Hierarchy (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .level-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 999px; margin-right: 0.5rem; }
+    .badge-atom { background: #DBEAFE; color: #1D4ED8; }
+    .badge-molecule { background: #D1FAE5; color: #065F46; }
+    .badge-organism { background: #EDE9FE; color: #5B21B6; }
+    .badge-template { background: #FEF3C7; color: #92400E; }
+    .badge-page { background: #FFE4E6; color: #9F1239; }
+    .hierarchy-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .hierarchy-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .hierarchy-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .hierarchy-table tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Atomic Design to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Design System · 10 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Atomic Design to Figma: Importing Your Component Hierarchy
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      If your codebase follows atomic design — atoms, molecules, organisms — your Figma library should mirror that hierarchy exactly. Here's how to import each level from your rendered components into Figma as native layers, and organize them into a design system that matches your code.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: TL;DR / Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0 0 0.5rem;color:#1D4ED8;font-size:0.75rem;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Importing an atomic design hierarchy into Figma</strong> means capturing each level — atoms, molecules, organisms — from your rendered components using html2design, converting each import into a <a href="https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Component</a>, and organizing them in a shared library using <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Brad Frost's atomic design</a> naming convention. The result is a Figma design system whose structure mirrors the codebase — making handoff bidirectional and unambiguous.</p>
+    </div>
+
+    <h2>Atomic Design in Code vs. Figma: The Gap</h2>
+    <p>
+      Brad Frost's atomic design methodology is widely adopted in frontend codebases. Component libraries organized as atoms (Button, Input, Badge, Icon), molecules (SearchBar, FormGroup, CardHeader), organisms (ProductCard, NavigationBar, CheckoutForm), templates, and pages are standard in React, Vue, and Angular projects.
+    </p>
+    <p>
+      But Figma libraries often don't match. Designers build Figma components from their own mental model — which may not align with the code structure at all. The result is predictable friction: developers get handoffs that reference "Figma components" that don't exist in code, and designers propose changes to components without understanding the code dependency tree.
+    </p>
+    <p>
+      The fix is to bootstrap your Figma library from the actual codebase — importing each component level by level so the Figma hierarchy mirrors the code hierarchy from day one.
+    </p>
+
+    <h2>Mapping Atomic Levels to Figma Pages</h2>
+
+    <table class="hierarchy-table">
+      <thead>
+        <tr>
+          <th>Atomic Level</th>
+          <th>Code examples</th>
+          <th>Figma page name</th>
+          <th>Component naming</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="level-badge badge-atom">Atom</span></td>
+          <td>Button, Input, Badge, Icon, Typography</td>
+          <td>01 — Atoms</td>
+          <td>Atoms / Button / Primary</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge badge-molecule">Molecule</span></td>
+          <td>SearchBar, FormGroup, CardHeader, NavItem</td>
+          <td>02 — Molecules</td>
+          <td>Molecules / SearchBar</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge badge-organism">Organism</span></td>
+          <td>ProductCard, Navigation, CheckoutForm, ArticleCard</td>
+          <td>03 — Organisms</td>
+          <td>Organisms / ProductCard</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge badge-template">Template</span></td>
+          <td>PageLayout, AuthLayout, DashboardLayout</td>
+          <td>04 — Templates</td>
+          <td>Templates / PageLayout</td>
+        </tr>
+        <tr>
+          <td><span class="level-badge badge-page">Page</span></td>
+          <td>Homepage, ProductDetailPage, CheckoutPage</td>
+          <td>05 — Pages</td>
+          <td>(full-page frames, not components)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Why Import Bottom-Up (Atoms First)</h2>
+    <p>
+      Import atoms before molecules before organisms. This mirrors how atomic design works in code — organisms are compositions of molecules which are compositions of atoms. If you import an organism first and try to extract the atoms from it, you're decomposing a complex structure after the fact. It's harder and error-prone.
+    </p>
+    <p>
+      Importing bottom-up also gives you reusable Figma Components at each level before you need them in higher-level compositions. When you import a molecule and convert it to a Figma Component, you can then reference that Component inside organism frames — creating a true nested component hierarchy that matches the code.
+    </p>
+
+    <h2>The Import Workflow: Level by Level</h2>
+
+    <h3>1. Import atoms from Storybook or a component playground</h3>
+    <p>
+      Storybook is the ideal source for atomic imports because it renders components in pure isolation — no page navigation, header, or footer wrapping your Button or Input. For each atom:
+    </p>
+    <ol>
+      <li>Open Storybook at <code>http://localhost:6006</code> (or your staging Storybook URL).</li>
+      <li>Navigate to the component story (e.g., <code>Button → Primary</code>).</li>
+      <li>In the Storybook canvas, right-click the rendered component → Inspect Element.</li>
+      <li>In DevTools, right-click the component's root element → <strong>Copy → Copy outerHTML</strong>.</li>
+      <li>In Figma, run html2design, paste, and convert. You get the atom as a native Figma frame.</li>
+      <li>Rename the frame, right-click → <strong>Create Component</strong>. Name it "Atoms / Button / Primary."</li>
+    </ol>
+    <p>
+      Repeat for every atom variant. A "Button" atom typically has 4–8 variants: Primary, Secondary, Danger, Ghost, Disabled state, Loading state, Icon-only, Icon+Label.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Storybook tip:</strong> Use the Storybook <code>?args</code> query parameters to reach specific component states. For example: <code>http://localhost:6006/?path=/story/atoms-button--primary&args=disabled:true</code> renders the disabled state directly. This avoids needing to manipulate DevTools or interact with the component to reach edge-case states.</p>
+    </div>
+
+    <h3>2. Register atom tokens as Figma Variables</h3>
+    <p>
+      Before moving to molecules, register the design tokens you discovered in the atom imports:
+    </p>
+    <ul>
+      <li><strong>Colors</strong> — Every unique hex value from fills becomes a Figma Variable: <code>Colors / Primary / 600</code>, <code>Colors / Neutral / 100</code>, etc.</li>
+      <li><strong>Typography</strong> — Every unique font/size/weight combination becomes a Figma Text Style: <code>Type / Body / Regular</code>, <code>Type / Label / Bold</code>.</li>
+      <li><strong>Spacing</strong> — If your design system uses a spacing scale (4px grid, 8px grid), register the values as Figma Number Variables: <code>Spacing / 4</code>, <code>Spacing / 8</code>, <code>Spacing / 16</code>.</li>
+    </ul>
+    <p>
+      Re-attach the imported atom Components to use these Variables instead of raw values. This step is the foundation of your design system — without it, molecules and organisms will contain inconsistent raw values that drift from the token spec.
+    </p>
+
+    <h3>3. Import molecules</h3>
+    <p>
+      Molecules compose atoms. When you import a molecule — say a SearchBar (Input + Button) — the rendered outerHTML includes the HTML for both the input and the button. html2design creates a nested Figma frame structure that mirrors the DOM hierarchy.
+    </p>
+    <p>
+      After importing a molecule frame, convert it to a Figma Component ("Molecules / SearchBar"). If the molecule contains atoms you've already created Components for, you can optionally swap the imported atom layers for their Component instances — this creates true component nesting in Figma that matches the code.
+    </p>
+
+    <div class="step-card">
+      <p class="step-num">Molecule Import Workflow</p>
+      <h3>Practical approach for component nesting</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">After converting the molecule to a Figma Component, select the sub-elements inside it that correspond to existing atom Components. Use the Figma "Swap Component" right-click option to replace the imported layers with the actual Component instances. This connects your library so changes to an atom Component propagate to molecules.</p>
+    </div>
+
+    <h3>4. Import organisms</h3>
+    <p>
+      Organisms are the most visually complete components and often the most useful for design work — they look like real product UI. For a ProductCard organism, navigate to the relevant Storybook story or render the component in your component playground, copy the outerHTML, and import.
+    </p>
+    <p>
+      Organism imports typically produce the most complex Figma frame trees — many nested frames reflecting the DOM hierarchy. Focus on getting the visual output right; the layer cleanup (removing empty wrapper divs, flattening unnecessary nesting) can happen after the initial import.
+    </p>
+
+    <h3>5. Build templates and pages</h3>
+    <p>
+      Templates and pages are best imported from the running application rather than Storybook, since they represent full page layouts. For a page import:
+    </p>
+    <ol>
+      <li>Navigate to the page in your browser (production or staging).</li>
+      <li>Set the DevTools viewport to your standard desktop width (typically 1440px).</li>
+      <li>Copy the <code>&lt;main&gt;</code> element's outerHTML (or the full body).</li>
+      <li>Import with html2design. This is your "Pages" level frame.</li>
+      <li>Don't convert pages to Components — they are reference frames, not reusable components.</li>
+    </ol>
+
+    <h2>Maintaining the Hierarchy After Import</h2>
+    <p>
+      The hierarchy you've built is only valuable if it stays current. When the codebase adds a new component variant or changes an atom's styles, the Figma library needs to reflect it. The maintenance workflow:
+    </p>
+    <ul>
+      <li><strong>New components</strong> — Import the new component from Storybook, create the Figma Component at the correct level, publish the library update.</li>
+      <li><strong>Changed atoms</strong> — Re-import the affected atom from Storybook, compare with the existing Component, update fills/fonts/spacing, push the change through the Component so molecules and organisms using it update automatically.</li>
+      <li><strong>Token changes</strong> — Update the Figma Variable, not individual components. If your colors use Variables, every component that uses the variable updates automatically when the variable value changes.</li>
+    </ul>
+    <p>
+      For a deeper treatment of token sync, see <a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a>.
+    </p>
+
+    <h2>Naming and Library Organization Best Practices</h2>
+    <p>
+      The naming convention is the most important structural decision. Use the slash-separated format that Figma uses to create component groups:
+    </p>
+    <ul>
+      <li><code>Atoms / Button / Primary</code></li>
+      <li><code>Atoms / Button / Secondary</code></li>
+      <li><code>Atoms / Input / Default</code></li>
+      <li><code>Atoms / Input / Error</code></li>
+      <li><code>Molecules / SearchBar / With Button</code></li>
+      <li><code>Organisms / ProductCard / Default</code></li>
+      <li><code>Organisms / ProductCard / Featured</code></li>
+    </ul>
+    <p>
+      This naming creates a navigable component tree in Figma's asset panel that directly mirrors your codebase's directory structure — <code>/components/atoms/Button/index.tsx</code> maps to <code>Atoms / Button</code> in Figma.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>How do I import an atomic design system into Figma?</h3>
+    <p>
+      Import bottom-up: atoms first (from Storybook), then molecules, then organisms. Convert each import to a Figma Component with atomic naming ("Atoms / Button / Primary"). Register design tokens as Figma Variables before building higher-level components. The result is a Figma library whose hierarchy mirrors your code.
+    </p>
+
+    <h3>What is atomic design in Figma?</h3>
+    <p>
+      Organizing a Figma component library using Brad Frost's methodology — atoms, molecules, organisms, templates, pages — with slash-separated naming that creates a hierarchy in the Figma assets panel. Each level corresponds to a component complexity level in code.
+    </p>
+
+    <h3>Does html2design preserve component nesting?</h3>
+    <p>
+      html2design imports the rendered DOM tree as nested Figma frames — so nesting is preserved visually. Component identity (which layer is a "Button" vs a "Container") is determined by you when you create Figma Components from the imported layers.
+    </p>
+
+    <h3>Should I import from Storybook or from the live application?</h3>
+    <p>
+      Atoms and molecules: Storybook (isolated context). Organisms and templates: Storybook or the live app (organisms with full surrounding context). Pages: the live application (full page context). Storybook is ideal for atoms because it eliminates surrounding page context and lets you target each variant directly.
+    </p>
+
+    <!-- Checklist -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.5rem;margin-top:2rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:1rem;">Atomic Design Import Checklist</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import atoms first, then molecules, then organisms — never top-down</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Register all design tokens as Figma Variables before building molecules</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use Storybook for atom and molecule imports — isolated context, all variants accessible</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use slash-separated naming that mirrors code directory structure</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Publish library to share atoms/molecules across organism and page files</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Re-import affected components when the codebase changes — don't let Figma drift from code</li>
+      </ul>
+    </div>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Import bottom-up (atoms → molecules → organisms) so each level is available as a Figma Component before it's needed in higher-level compositions</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Storybook is the best source for atom/molecule imports — renders components in clean isolation with every variant accessible via story navigation</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Register design tokens as Figma Variables immediately — before building molecules — so token changes propagate automatically up the hierarchy</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use slash-separated naming ("Atoms / Button / Primary") that mirrors your code directory structure — the Figma asset panel becomes a navigable component tree</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> The hierarchy only stays useful if you maintain it — re-import changed components from Storybook after each sprint, don't let Figma drift from code</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Every framework, every import method, every design system use case — one reference guide.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The broader migration workflow — extract tokens, build components, publish a Figma library.</p>
+        </a>
+        <a href="/blog/component-library-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Component Library into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Batch import workflow for bringing an entire component library into Figma — not just individual atoms.</p>
+        </a>
+        <a href="/blog/design-tokens-code-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Tokens: Bridging Code and Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Register atomic-level design tokens (colors, type, spacing) as Figma Variables for system-wide consistency.</p>
+        </a>
+        <a href="/use-cases/storybook-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Storybook to Figma Use Case &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The dedicated workflow for importing Storybook stories — the ideal source for atomic design imports.</p>
+        </a>
+        <a href="/blog/design-handoff-best-practices" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Handoff Best Practices &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Keep your Figma atomic hierarchy in sync with code using the code-to-Figma re-import workflow.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first atom from Storybook</h2>
+      <p class="text-content-muted mb-6">Navigate to any Storybook story, copy the rendered component's outerHTML, and paste it into html2design. You'll have a native Figma Component in under 60 seconds — the first building block of your Figma design system.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

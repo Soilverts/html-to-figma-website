@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Design Handoff Best Practices: Keeping Code and Figma in Sync</title>
+  <meta name="description" content="Prevent design drift with a proven design handoff workflow. Learn how html2design bridges the gap between code and Figma — keeping designs current, inspectable, and implementation-ready." />
+  <meta name="keywords" content="design handoff figma, figma developer handoff, code to figma sync, design handoff best practices, figma handoff workflow, developer design handoff" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/design-handoff-best-practices" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/design-handoff-best-practices" />
+  <meta property="og:title" content="Design Handoff Best Practices: Keeping Code and Figma in Sync" />
+  <meta property="og:description" content="Prevent design drift. Learn how html2design keeps code and Figma aligned — covering handoff workflows, common failure points, and sync strategies for design-dev teams." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/design-handoff-best-practices.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Design handoff workflow diagram showing code and Figma in sync" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-23T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Workflow" />
+  <meta property="article:tag" content="design handoff" />
+  <meta property="article:tag" content="figma workflow" />
+  <meta property="article:tag" content="code to figma" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Design Handoff Best Practices: Keeping Code and Figma in Sync" />
+  <meta name="twitter:description" content="Prevent design drift. Proven workflows for design-dev teams to keep Figma and code aligned using html2design." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/design-handoff-best-practices.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Design Handoff Best Practices: Keeping Code and Figma in Sync",
+    "description": "How to prevent design drift and keep Figma files aligned with production code. Covers common handoff failure points, the html2design bridge technique, and systematic sync workflows for design-dev teams.",
+    "url": "https://www.htmltofigma.io/blog/design-handoff-best-practices",
+    "datePublished": "2026-03-23T00:00:00Z",
+    "dateModified": "2026-03-23T00:00:00Z",
+    "wordCount": 2700,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/design-handoff-best-practices.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/design-handoff-best-practices"
+    },
+    "keywords": "design handoff figma, figma developer handoff, code to figma sync, design handoff best practices",
+    "articleSection": "Workflow",
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Design handoff between code and Figma",
+      "description": "Practices and tools for keeping Figma design files aligned with production code implementations"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Design Handoff Best Practices", "item": "https://www.htmltofigma.io/blog/design-handoff-best-practices" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are best practices for Figma design handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most important practices are: (1) use Figma Styles and Variables for all design tokens so developers can extract consistent values; (2) annotate non-obvious interactions and states; (3) keep Figma files synced with production by re-importing live HTML periodically using html2design; (4) use a single source of truth — either code or Figma, not both — and make the direction of sync explicit. Design drift happens when Figma and code diverge silently; the fix is a deliberate sync workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you keep Figma in sync with code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable method is periodic re-import: when developers ship changes to production, import the updated rendered HTML into Figma using html2design to update the reference frames. This gives Figma an accurate reflection of the live UI rather than a stale design file. Pair this with design tokens (Figma Variables ↔ CSS custom properties) for systematic value sync."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is design drift and how do you prevent it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Design drift is when the Figma file and the production codebase gradually diverge — developers ship fixes and improvements that aren't reflected in Figma, or designers make Figma changes that are never implemented. Prevention requires: (1) explicit handoff gates at each sprint, (2) a code-to-Figma sync process (e.g., re-importing key screens monthly with html2design), and (3) treating design tokens as the shared source of truth for colors, spacing, and typography."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should developers inspect Figma files for handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Developers should use Figma's Inspect panel (right sidebar when you click a layer). It shows exact pixel dimensions, colors in hex and RGB, font details (family, weight, size, line-height, letter-spacing), padding, border radius, and box shadows. With Figma Dev Mode (paid plans), developers also get auto-generated CSS snippets. For the most accurate handoff, the designer should confirm all values are from Figma Styles/Variables, not arbitrary overrides."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does html2design do for design handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design converts production HTML into native Figma layers — solving the reverse direction of handoff (code → Figma rather than Figma → code). This is critical for keeping Figma reference files current. When developers ship changes, import the updated page with html2design to reflect the real current state in Figma. It also helps onboard new designers: instead of asking 'what does the current product actually look like?', they can import any live page and immediately have an editable Figma reference."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/design-handoff-best-practices",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Design Handoff Best Practices: Keeping Code and Figma in Sync (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .warning-box { background: #FFF7ED; border-left: 3px solid #F59E0B; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .warning-box p { margin-bottom: 0; color: #92400E; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .compare-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .compare-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .yes { color: #15803D; font-weight: 600; }
+    .compare-table .no { color: #DC2626; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Design Handoff Best Practices</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Workflow · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Design Handoff Best Practices: Keeping Code and Figma in Sync
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Design drift — when Figma files and production code silently diverge — costs teams hours of rework and erodes trust between designers and developers. Here's the workflow that prevents it, with html2design as the bridge for keeping both sides current.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: TL;DR / Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0 0 0.5rem;color:#1D4ED8;font-size:0.75rem;font-weight:700;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Design handoff</strong> is the process of transferring design specifications from <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> to developers for implementation — and, critically, keeping the two in sync after the initial build. The most common failure is <em>design drift</em>: Figma shows one thing, production code shows another. The fix is a two-way sync workflow: <strong>Figma → code</strong> (traditional handoff) plus <strong>code → Figma</strong> (re-import via html2design when production changes).</p>
+    </div>
+
+    <h2>The Handoff Problem: Why Figma and Code Drift Apart</h2>
+    <p>
+      The traditional design handoff is one-directional: designers finalize in Figma, developers implement in code. This works well once. But products evolve — developers ship bug fixes that change spacing, product managers request copy updates, engineers optimize the CSS — and those changes almost never flow back into Figma. Within weeks, the Figma file describes a product that no longer exists.
+    </p>
+    <p>
+      This causes real friction:
+    </p>
+    <ul>
+      <li>Designers make proposals on top of stale Figma frames, proposing changes that are already implemented.</li>
+      <li>New team members use Figma as a reference and build incorrect assumptions about the product.</li>
+      <li>Code reviews reference "the Figma design" but the Figma design is out of date.</li>
+      <li>Design system updates in Figma don't reflect the components as they actually exist in code.</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>The root cause:</strong> Most teams treat handoff as a one-time event. Effective handoff is a repeating process — every sprint, changes flow in both directions.</p>
+    </div>
+
+    <h2>The Two Directions of Handoff</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Direction</th>
+          <th>When it happens</th>
+          <th>Tool</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Figma → Code</td>
+          <td>New features, redesigns</td>
+          <td>Figma Inspect / Dev Mode</td>
+          <td>Specs, measurements, CSS values</td>
+        </tr>
+        <tr>
+          <td>Code → Figma</td>
+          <td>After shipped changes</td>
+          <td>html2design</td>
+          <td>Updated Figma reference frames</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Most teams only do the first direction. The second direction — importing production code back into Figma after developers ship — is what prevents drift. html2design makes this practical: copy the rendered HTML of any updated screen, paste it into html2design in Figma, and the reference frame is current again in under 60 seconds.
+    </p>
+
+    <h2>Figma → Code: Making Handoff Inspectable</h2>
+    <p>
+      The quality of a Figma-to-code handoff depends almost entirely on how the Figma file is structured. A well-structured file makes developers confident. A poorly structured file creates ambiguity and back-and-forth.
+    </p>
+
+    <h3>Use Figma Styles and Variables for all design tokens</h3>
+    <p>
+      Any color, typography specification, or spacing value that appears in the Figma file should be attached to a Figma Style or Variable — not entered as a raw value on an individual layer. When developers inspect a layer, they should see "Primary / Blue 600" (a Variable name) rather than a raw hex value like "#2563EB." The Variable name communicates intent; the hex value is just an arbitrary number.
+    </p>
+    <p>
+      For teams using CSS custom properties or design token systems, Figma Variables map directly to tokens: <code>--color-primary: #2563EB</code> becomes the Figma Variable "Primary / Blue 600." See <a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a> for the full token sync workflow.
+    </p>
+
+    <h3>Annotate states and interactions</h3>
+    <p>
+      Static Figma frames can't show hover animations, loading states, error conditions, or empty states. For each component that has non-trivial interaction behavior, add a separate frame showing each state, and use Figma annotation connectors to document the transitions. The rule: if a developer has to guess what happens when a button is hovered, the handoff is incomplete.
+    </p>
+
+    <h3>Name layers descriptively</h3>
+    <p>
+      Layer names appear in Figma's Inspect panel. "Rectangle 42" tells a developer nothing. "Card / Background" tells them this is the background element of a card component. Use the slash-separated naming convention to create a logical hierarchy: "Button / Primary / Background", "Button / Primary / Label", "Button / Primary / Icon."
+    </p>
+
+    <h3>Prepare a handoff frame</h3>
+    <p>
+      For each feature being handed off, create a dedicated "Handoff" frame on a separate Figma page. It should include: all states (default, hover, focus, loading, error, empty), measurements and spacing annotations, interaction notes, and any open questions for the developer. This frame is the developer's single reference — they shouldn't need to hunt through the rest of the file.
+    </p>
+
+    <h2>Code → Figma: The Re-Import Workflow with html2design</h2>
+    <p>
+      After developers implement a feature and it ships to production, the reference Figma frames are stale. Here's the workflow to update them:
+    </p>
+
+    <div class="step-card">
+      <p class="step-num">Step 1</p>
+      <h3>Identify which screens changed</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Review the release notes or the git diff for the sprint. Make a list of every URL where the visual output changed — new components, updated copy, layout changes, color updates.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 2</p>
+      <h3>Import updated screens into Figma</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">For each changed URL, open the live page in Chrome, copy the outerHTML of the relevant sections from DevTools, and paste into html2design in Figma. Each import creates a new frame. Label it: "Homepage — Production — 2026-03-23."</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3</p>
+      <h3>Archive the old reference frame</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Move the previous reference frame to an "Archive" page in the Figma file rather than deleting it. Archiving preserves history while keeping the main pages current. Label archived frames with the archival date.</p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 4</p>
+      <h3>Update the Figma component library if needed</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">If the shipped change affects shared components (a button variant, a card pattern), extract the imported layer into a Figma Component and update the component library. Use "Publish changes" so all Figma files using the shared library receive the update.</p>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Cadence recommendation:</strong> Do a code-to-Figma sync at the end of each sprint, not as a project milestone. A 30-minute sync session every 2 weeks keeps Figma from drifting more than one sprint behind production.</p>
+    </div>
+
+    <h2>Common Handoff Failure Points (and Fixes)</h2>
+
+    <h3>Failure: "The Figma design doesn't match what was built"</h3>
+    <p>
+      <strong>Why it happens:</strong> Developers implement close-but-not-exact versions (spacing off by 4px, wrong font weight, slightly different color), and no one reconciles Figma after the fact.
+    </p>
+    <p>
+      <strong>Fix:</strong> Establish a post-sprint Figma audit. After implementation, compare the Figma frame side-by-side with a browser screenshot (or import the live HTML with html2design). Document discrepancies as comments in the Figma file and decide per-case whether to update Figma to match code or create a bug to fix the code.
+    </p>
+
+    <h3>Failure: "I don't know what the current component looks like in production"</h3>
+    <p>
+      <strong>Why it happens:</strong> The Figma file was created for the initial build and never updated. The component has been modified 10 times since.
+    </p>
+    <p>
+      <strong>Fix:</strong> Import the component's live HTML with html2design to get the current production state as a Figma frame. This is your ground truth. From there, propose changes to the new frame rather than guessing what the current state looks like.
+    </p>
+
+    <h3>Failure: "Developers have to ask designers for spec clarification on every ticket"</h3>
+    <p>
+      <strong>Why it happens:</strong> Handoff frames are incomplete — missing states, no spacing annotations, ambiguous interaction behavior.
+    </p>
+    <p>
+      <strong>Fix:</strong> Adopt a handoff checklist. Before marking any design ticket as "Ready for Dev," verify: all states documented, all values in Figma Styles/Variables, all interactions annotated, all edge cases (empty state, long text, error) shown.
+    </p>
+
+    <h3>Failure: "Design and engineering disagree on what 'done' looks like"</h3>
+    <p>
+      <strong>Why it happens:</strong> No shared baseline. Designers measure against the Figma file; engineers measure against the spec they received. These may not match if Figma was updated after the spec was shared.
+    </p>
+    <p>
+      <strong>Fix:</strong> Agree on a versioned Figma link as the authoritative spec for each feature. Use Figma's branching feature for major redesigns so designers can work in a branch without changing the spec developers are already building against.
+    </p>
+
+    <h2>Design Tokens as the Shared Language</h2>
+    <p>
+      The most durable approach to keeping code and Figma in sync is to make design tokens — named values for colors, spacing, typography, and motion — the single source of truth. When a token changes (e.g., the primary blue shifts from #2563EB to #1D4ED8), the change propagates to both code (via CSS custom properties) and Figma (via Variables) without any manual reconciliation.
+    </p>
+    <p>
+      Tools like <a href="https://tr.designtokens.org/" target="_blank" rel="noopener noreferrer">W3C DTCG format</a> and platforms like Style Dictionary support bidirectional token workflows. For teams not ready for a formal token pipeline, html2design offers a practical workaround: import the rendered token reference page periodically to capture the current computed token values as Figma layers, then manually register them as Variables.
+    </p>
+    <p>
+      See <a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma with HTML to Figma</a> for the complete workflow.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>What are best practices for Figma design handoff?</h3>
+    <p>
+      Use Figma Styles/Variables for all tokens, annotate all interaction states, name layers descriptively, and create a dedicated handoff frame per feature. After implementation, re-import the live HTML with html2design to keep Figma current.
+    </p>
+
+    <h3>How do you keep Figma in sync with production code?</h3>
+    <p>
+      Do a code-to-Figma sync at the end of each sprint: import changed screens with html2design, archive old frames, and update component libraries as needed. This prevents Figma from drifting more than one sprint behind production.
+    </p>
+
+    <h3>What is the role of html2design in design handoff?</h3>
+    <p>
+      html2design solves the reverse handoff problem: getting production code back into Figma as editable layers. It's the practical tool for the "code → Figma" direction, which is what prevents design drift when developers ship changes outside the formal design process.
+    </p>
+
+    <h3>Should design tokens live in Figma or in code?</h3>
+    <p>
+      Ideally, in a shared token source (W3C DTCG JSON or a design token platform) that generates both CSS custom properties and Figma Variables. For teams without that infrastructure, Figma Variables are a good starting point — they can be exported as JSON and used to seed the CSS token file.
+    </p>
+
+    <!-- Checklist -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.5rem;margin-top:2rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:1rem;">Handoff Quality Checklist</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> All colors and typography from Figma Styles/Variables — no raw values</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> All interactive states shown: default, hover, focus, loading, error, empty</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> All layers named with slash-separated hierarchy</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Handoff frame contains all variants, annotations, and open questions</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Post-sprint: re-import changed screens with html2design</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Archive old frames (don't delete — history matters)</li>
+      </ul>
+    </div>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Design drift is caused by treating handoff as one-directional — fix it with a bidirectional sync: Figma→code and code→Figma</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use html2design to re-import production screens into Figma after each sprint — keeps reference frames current without manual rebuilding</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> All design tokens (colors, type, spacing) must be in Figma Variables/Styles — not raw values — for inspectable, unambiguous handoff</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Annotate every non-trivial interaction state — developers should never have to guess what hover/error/loading looks like</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Archive old frames rather than deleting — design history is valuable context when revisiting old decisions</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, method, and handoff workflow.</p>
+        </a>
+        <a href="/blog/design-tokens-code-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Tokens: Bridging Code and Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The complete workflow for syncing design tokens between your codebase and Figma Variables.</p>
+        </a>
+        <a href="/blog/rapid-prototyping-website-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Rapid Prototyping: From Live Website to Figma Prototype &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Use html2design to build prototypes from production HTML — the fastest way to propose UI changes.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">How to migrate your entire component library from code into a Figma design system.</p>
+        </a>
+        <a href="/use-cases/developer-handoff" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Developer Handoff Use Case &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">html2design for the developer-to-designer handoff workflow — importing production code for design audit.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Start syncing code and Figma today</h2>
+      <p class="text-content-muted mb-6">Import any production page as editable Figma layers in seconds. The fastest way to update your Figma reference frames after developers ship changes.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

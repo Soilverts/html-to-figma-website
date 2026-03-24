@@ -10,6 +10,30 @@
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
+      <title>Atomic Design to Figma: Importing Your Component Hierarchy</title>
+      <link>https://www.htmltofigma.io/blog/atomic-design-to-figma</link>
+      <description>Import your atomic design component hierarchy — atoms, molecules, organisms — into Figma as native layers. Bottom-up import workflow using Storybook, with design token registration and slash-separated naming that mirrors your codebase.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/atomic-design-to-figma</guid>
+    </item>
+
+    <item>
+      <title>Design Handoff Best Practices: Keeping Code and Figma in Sync</title>
+      <link>https://www.htmltofigma.io/blog/design-handoff-best-practices</link>
+      <description>Prevent design drift with a bidirectional sync workflow. Covers Figma-to-code handoff best practices (token strategy, state annotation, layer naming) plus the code-to-Figma re-import workflow using html2design to keep Figma current after developers ship changes.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-handoff-best-practices</guid>
+    </item>
+
+    <item>
+      <title>Rapid Prototyping: From Live Website to Figma Prototype</title>
+      <link>https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</link>
+      <description>Turn any live website into an editable Figma prototype in minutes. Import production HTML as native layers using html2design, duplicate and iterate in Figma, add Prototype connections for interactive flows, and share with stakeholders — no manual rebuilding required.</description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</guid>
+    </item>
+
+    <item>
       <title>Importing Multi-page Websites into Figma: Full Workflow</title>
       <link>https://www.htmltofigma.io/blog/multi-page-website-to-figma</link>
       <description>How to import an entire multi-page website into Figma using html2design. Page-by-page workflow, consistency tips, Figma page organization, and sitemap-driven import strategy for redesign projects.</description>
