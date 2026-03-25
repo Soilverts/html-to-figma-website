@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>How to Redesign a Legacy Website Without Starting From Scratch</title>
+  <meta name="description" content="Import your legacy website into Figma, audit components, and redesign iteratively. A practical guide for product managers and agencies modernizing existing sites without a full rebuild." />
+  <meta name="keywords" content="redesign legacy website, legacy site modernization figma, website redesign strategy, import website to figma redesign, legacy website figma, site modernization workflow" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/redesign-legacy-website-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/redesign-legacy-website-figma" />
+  <meta property="og:title" content="How to Redesign a Legacy Website Without Starting From Scratch" />
+  <meta property="og:description" content="Import your legacy website into Figma, audit existing components, and redesign iteratively. A practical workflow guide for product managers and agencies." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/redesign-legacy-website-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Legacy website redesign workflow using Figma" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-24T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-24T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Workflow" />
+  <meta property="article:tag" content="legacy redesign" />
+  <meta property="article:tag" content="figma workflow" />
+  <meta property="article:tag" content="website modernization" />
+  <meta property="article:tag" content="design strategy" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Redesign a Legacy Website Without Starting From Scratch" />
+  <meta name="twitter:description" content="Import your legacy website into Figma, audit components, and redesign iteratively — no full rebuild required." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/redesign-legacy-website-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Redesign a Legacy Website Without Starting From Scratch",
+    "description": "A practical workflow for product managers and agencies redesigning legacy websites iteratively. Covers importing the existing site into Figma using html2design, auditing the component inventory, identifying design debt, and rebuilding in phases without a full rewrite.",
+    "url": "https://www.htmltofigma.io/blog/redesign-legacy-website-figma",
+    "datePublished": "2026-03-24T00:00:00Z",
+    "dateModified": "2026-03-24T00:00:00Z",
+    "wordCount": 2000,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/redesign-legacy-website-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/redesign-legacy-website-figma"
+    },
+    "keywords": "redesign legacy website, legacy site modernization figma, website redesign strategy, import website figma, legacy website redesign workflow"
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".geo-box", "h1", "h2"]
+    },
+    "url": "https://www.htmltofigma.io/blog/redesign-legacy-website-figma"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Redesign Legacy Website in Figma", "item": "https://www.htmltofigma.io/blog/redesign-legacy-website-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I start a legacy website redesign in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start by importing the existing site into Figma using html2design. Navigate to each major page, copy the outerHTML from browser DevTools, and paste into the html2design Figma plugin to get editable frames. This gives you the current state of the site as a Figma baseline — actual layers, not screenshots — which you can use for audit, annotation, and iterative redesign."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is legacy website modernization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Legacy website modernization means updating an existing site's visual design, information architecture, and/or technical implementation without a full rebuild from scratch. The iterative approach — audit existing components, redesign in phases, and ship improvements incrementally — is preferred over a 'big bang' rewrite because it reduces risk, maintains continuity for users, and delivers visible improvements faster."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is an iterative redesign different from a full website rebuild?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An iterative redesign updates components and pages in phases while the existing site stays live. A full rebuild rewrites everything simultaneously and launches a completely new site at once. Iterative redesigns ship value faster (individual pages or components go live as they're completed), carry lower risk (existing pages continue to work), and can be paused or reprioritized more easily. Full rebuilds are appropriate when the existing tech stack must change or the information architecture is fundamentally broken."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I audit UI components from a legacy website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Import the legacy site into Figma using html2design, then walk through the Figma file looking for: duplicate components (three variations of the same button), inconsistent spacing (five different padding values for cards), typography fragmentation (more than 3 font sizes that serve the same purpose), and broken patterns (modals with inconsistent behavior). Create a component inventory spreadsheet listing each component with counts, visual screenshots from the Figma import, and a redesign priority score."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the correct order to redesign a legacy website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The recommended order: (1) Import the existing site into Figma as a baseline. (2) Audit components and document design debt. (3) Define the new design system — tokens, typography, spacing scale. (4) Redesign shared components first (nav, footer, buttons, forms). (5) Redesign high-traffic pages next. (6) Redesign lower-traffic pages last. Ship each phase incrementally rather than waiting for everything to be complete."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+
+    /* GEO Answer Box */
+    .geo-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .geo-box .geo-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .geo-box p { color: #1E3A8A; margin-bottom: 0; font-weight: 500; }
+
+    /* Phase cards */
+    .phase-card { border-left: 3px solid #2563EB; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; background: #F9FAFB; border-radius: 0 0.75rem 0.75rem 0; }
+    .phase-card .phase-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+    .phase-card h3 { margin-top: 0 !important; color: #111827; }
+    .phase-card p { margin-bottom: 0.5rem; color: #374151; }
+
+    /* Audit table */
+    .audit-table-wrap { overflow-x: auto; margin-bottom: 1.75rem; }
+    .audit-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .audit-table th { background: #F9FAFB; border: 1px solid #E5E7EB; padding: 0.75rem 1rem; text-align: left; font-weight: 700; color: #111827; }
+    .audit-table td { border: 1px solid #E5E7EB; padding: 0.75rem 1rem; color: #374151; vertical-align: top; }
+    .audit-table tr:nth-child(even) td { background: #F9FAFB; }
+    .priority-high { color: #DC2626; font-weight: 600; }
+    .priority-med { color: #D97706; font-weight: 600; }
+    .priority-low { color: #059669; font-weight: 600; }
+
+    /* Debt cards */
+    .debt-card { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .debt-card .debt-type { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #C2410C; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+    .debt-card p { color: #78350F; margin-bottom: 0; font-size: 0.875rem; line-height: 1.6; }
+
+    /* Key Takeaways */
+    .takeaway-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .takeaway-box h2 { margin-top: 0 !important; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Redesign Legacy Website in Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-4">Workflow · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      How to Redesign a Legacy Website Without Starting From Scratch
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Import the existing site into Figma, audit what's there, and redesign in phases. This is the playbook for agencies and product teams modernizing a live website without a full-rewrite bet.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-24" class="text-xs text-gray-400 font-mono">March 24, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="prose-article">
+
+      <!-- GEO Answer Box -->
+      <div class="geo-box">
+        <p class="geo-label">Direct Answer</p>
+        <p><strong>Import the legacy site into Figma with html2design, audit the component inventory, then redesign iteratively — one component or page section at a time.</strong> This avoids the risk and cost of a full rebuild. You start with actual working Figma layers from the live site (not screenshots), identify design debt systematically, and ship improvements in phases while the existing site stays live throughout.</p>
+      </div>
+
+      <p>The "start from scratch" impulse is understandable. Legacy codebases are messy. The design is inconsistent. Nobody can find the source files. But full rebuilds routinely take 3–4× longer than estimated, delay feature work, and often end up with a new site that recreates the old site's problems in a shinier codebase. The iterative path is harder to propose but almost always smarter to execute.</p>
+
+      <p>Here's the workflow that makes it work.</p>
+
+      <h2>Why Import First, Design Second</h2>
+      <p>The traditional approach to a legacy redesign is to start with blank Figma frames and redesign pages from memory or from screenshots. This is slower and produces worse results than importing the existing site first, for two reasons.</p>
+      <p>First, you can't audit what you haven't captured. Designers making decisions about the new design system need to know what the old system actually contains — how many button variants exist, how many different card layouts are in use, what the actual font sizes are in production. Screenshots give you a visual impression. Figma layers from html2design give you exact measurements you can act on.</p>
+      <p>Second, the import gives you a working baseline to iterate from. Instead of redrawing a nav from scratch, you import it, see the exact layer structure, understand what CSS it's using, and redesign with full context. The first iteration of the redesigned nav is faster, and it's grounded in what actually exists.</p>
+
+      <h2>Phase 1: Import the Existing Site into Figma</h2>
+
+      <div class="phase-card">
+        <p class="phase-label">Phase 1 — Baseline capture</p>
+        <h3>Import each major page type as a Figma frame</h3>
+        <p>Spend one session importing the current site into Figma. You're not designing yet — you're creating a baseline that the entire redesign process will reference.</p>
+      </div>
+
+      <p>The import workflow using html2design:</p>
+      <ol>
+        <li><strong>Build a page inventory first.</strong> List every distinct page template on the site — home, category, product/article, contact, checkout, error page, etc. For large sites, focus on the top 10 by traffic. You don't need every page — you need every <em>type</em>.</li>
+        <li><strong>Open each page in Chrome.</strong> Navigate to a representative instance of each page type.</li>
+        <li><strong>Import the full page.</strong> Right-click the <code>&lt;body&gt;</code> element in DevTools → Copy outerHTML → paste into html2design in Figma. For very large pages, import key sections separately (hero, nav, footer, content area).</li>
+        <li><strong>Organize in Figma.</strong> Create one Figma page per site template. Name each frame with the page type and date. Keep all baseline frames on a "Current State" page — do not delete them. They're your reference throughout the project.</li>
+        <li><strong>Import at multiple breakpoints.</strong> For responsive sites, import at desktop width and mobile width separately. Use html2design for both — resize the browser between captures.</li>
+      </ol>
+
+      <p>For a full multi-page site import workflow, see <a href="/blog/multi-page-website-to-figma">Importing Multi-page Websites into Figma: Full Workflow</a>.</p>
+
+      <h2>Phase 2: Audit Existing Components</h2>
+
+      <div class="phase-card">
+        <p class="phase-label">Phase 2 — Component audit</p>
+        <h3>Inventory every component and identify design debt</h3>
+        <p>With the site in Figma as editable layers, you can measure exactly what exists. This is where you find out why the site feels inconsistent.</p>
+      </div>
+
+      <p>Walk through the imported Figma frames and build a component inventory. For each component type, count how many variants exist and flag inconsistencies:</p>
+
+      <div class="audit-table-wrap">
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Variants Found</th>
+              <th>Design Debt</th>
+              <th>Redesign Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Buttons (primary)</td>
+              <td>6</td>
+              <td>3 different border-radius values, 2 font sizes</td>
+              <td class="priority-high">High</td>
+            </tr>
+            <tr>
+              <td>Navigation</td>
+              <td>2</td>
+              <td>Mobile nav vs desktop nav use different spacing</td>
+              <td class="priority-high">High</td>
+            </tr>
+            <tr>
+              <td>Cards</td>
+              <td>8</td>
+              <td>5 different padding values, 3 font size scales</td>
+              <td class="priority-high">High</td>
+            </tr>
+            <tr>
+              <td>Forms / inputs</td>
+              <td>4</td>
+              <td>Inconsistent placeholder text styling, 2 border styles</td>
+              <td class="priority-med">Medium</td>
+            </tr>
+            <tr>
+              <td>Tables</td>
+              <td>3</td>
+              <td>Headers use different weights across pages</td>
+              <td class="priority-med">Medium</td>
+            </tr>
+            <tr>
+              <td>Footer</td>
+              <td>1</td>
+              <td>Outdated copyright year; otherwise consistent</td>
+              <td class="priority-low">Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The component audit serves two purposes: it gives you the data to build a new consolidated design system (how many components you're actually replacing), and it gives you a priority ranking for the redesign work.</p>
+
+      <h3>Four Categories of Design Debt to Document</h3>
+
+      <div class="debt-card">
+        <p class="debt-type">Typography fragmentation</p>
+        <p>More than 4–5 distinct font sizes used in production, inconsistent line-heights for body text, or multiple font families where one was intended. In Figma layers from html2design, you can select all text layers and see the actual computed font sizes — no guessing.</p>
+      </div>
+
+      <div class="debt-card">
+        <p class="debt-type">Color entropy</p>
+        <p>Dozens of near-identical hex values that should be the same color but drifted over time. In Figma, right-click any fill → "Select matching fills" to find all uses of a color. Import the site and do this for every brand color to see how many variants exist.</p>
+      </div>
+
+      <div class="debt-card">
+        <p class="debt-type">Spacing inconsistency</p>
+        <p>Padding and margin values that have no relationship to a spacing scale — 13px here, 17px there. This is almost universal in codebases that grew without a design system. The html2design import preserves computed spacing values in the Figma frame dimensions and padding, making it auditable.</p>
+      </div>
+
+      <div class="debt-card">
+        <p class="debt-type">Component fragmentation</p>
+        <p>The same UI pattern reimplemented differently across pages — three button components, two modal implementations, four card layouts that are logically the same component. The audit in Figma makes this visible and measurable.</p>
+      </div>
+
+      <h2>Phase 3: Define the New Design System</h2>
+
+      <div class="phase-card">
+        <p class="phase-label">Phase 3 — Design system definition</p>
+        <h3>Establish tokens, typography scale, and spacing before redesigning a single component</h3>
+        <p>The most common iterative redesign failure mode is starting to redesign components before defining the system they belong to. Every component should use tokens. Every token should be decided before the first component is drawn.</p>
+      </div>
+
+      <p>Decisions to make before opening a new Figma frame:</p>
+      <ul>
+        <li><strong>Spacing scale</strong> — define 4pt or 8pt base grid and token names (space-1 = 4px, space-2 = 8px, etc.)</li>
+        <li><strong>Typography scale</strong> — define type sizes, weights, and line-heights for each semantic role (heading-1, body-default, caption, etc.)</li>
+        <li><strong>Color palette</strong> — primary, secondary, neutral scale, semantic colors (success, warning, error), and their dark mode equivalents if needed</li>
+        <li><strong>Border radius and shadow tokens</strong> — one or two values for each, not per-component variation</li>
+        <li><strong>Component sizing rules</strong> — minimum touch target sizes, maximum content width, breakpoint values</li>
+      </ul>
+      <p>For teams using html2design to bridge code and design, the design tokens should match the CSS custom properties or Tailwind config in the production codebase. See <a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a> for the sync workflow.</p>
+
+      <h2>Phase 4: Redesign Components Iteratively</h2>
+
+      <div class="phase-card">
+        <p class="phase-label">Phase 4 — Component redesign</p>
+        <h3>Redesign shared components first, page-specific sections last</h3>
+        <p>The redesign sequence matters. Redesign global components before page-specific ones. Ship each component to production before moving to the next.</p>
+      </div>
+
+      <p>Recommended redesign sequence:</p>
+      <ol>
+        <li><strong>Design tokens and global styles</strong> — update CSS variables or Tailwind config first. Every subsequent component change will inherit these automatically.</li>
+        <li><strong>Navigation</strong> — appears on every page. A nav redesign has maximum visible impact and validates the token system immediately.</li>
+        <li><strong>Footer</strong> — also global. Ship nav and footer together for cohesive first-impression improvement.</li>
+        <li><strong>Primary CTAs and buttons</strong> — consolidate to 2–3 variants maximum. Update all uses across the site.</li>
+        <li><strong>Form inputs</strong> — high-stakes for conversion. Consolidate variants and apply new spacing/typography tokens.</li>
+        <li><strong>Cards and content modules</strong> — redesign the consolidated version, then replace all variants across the site.</li>
+        <li><strong>Page-specific sections</strong> — hero sections, landing page layouts, etc. These come last because they depend on the shared components being stable.</li>
+      </ol>
+
+      <p>For each component: import the current version from production using html2design → redesign against the new design system in Figma → hand off the Figma frame to development → ship → mark the old variants as deprecated.</p>
+
+      <h2>Phase 5: Validate and Ship Iteratively</h2>
+      <p>Each phase of the redesign should ship to production independently. Do not hold everything back for a "big reveal" launch. Iterative shipping:</p>
+      <ul>
+        <li>Validates the new design with real users before the entire system is committed</li>
+        <li>Lets you catch implementation drift early — when a developer's implementation differs from the Figma spec, you catch it on one component instead of twenty</li>
+        <li>Shows stakeholders visible progress throughout the project, not just at the end</li>
+        <li>Maintains the existing site's SEO, performance, and user familiarity throughout the transition</li>
+      </ul>
+
+      <h2>Using Figma for Before/After Comparisons</h2>
+      <p>The imported baseline frames you created in Phase 1 become invaluable for stakeholder reviews and handoff documentation. Create a "Before / After" Figma page with the original imported frames beside the redesigned frames. This gives stakeholders a direct visual comparison without needing access to the old production site, and gives developers a clear reference for what they're replacing.</p>
+      <p>For teams running A/B tests during the redesign rollout, the Figma baseline frames can also serve as the visual specification for the control variant, and the redesign frames as the treatment variant.</p>
+
+      <h2>When a Full Rebuild Is Actually the Right Call</h2>
+      <p>Iterative redesign is not always the right answer. A full rebuild is justified when:</p>
+      <ul>
+        <li>The underlying technology must change (jQuery → React, server-rendered → SPA) and the component architecture must change with it</li>
+        <li>The information architecture is fundamentally wrong — navigation structure, URL patterns, and content hierarchy need wholesale rethinking that can't be phased</li>
+        <li>The legacy codebase has no test coverage and the technical debt is so severe that incremental changes introduce regressions faster than they ship improvements</li>
+        <li>The site is being migrated to a new CMS or platform that requires a complete content reimport anyway</li>
+      </ul>
+      <p>Even in these cases, importing the legacy site into Figma first is still worthwhile. It gives the new site team a documented audit of what existed, prevents the "we forgot that feature" problem, and provides before/after documentation for stakeholders.</p>
+
+      <!-- Key Takeaways -->
+      <div class="takeaway-box">
+        <h2 style="margin-bottom:0.75rem;">Key Takeaways</h2>
+        <ul>
+          <li><strong>Import before you design</strong> — html2design converts your legacy site into editable Figma layers. Use these as the baseline for your entire redesign process.</li>
+          <li><strong>Audit with data, not impressions</strong> — Figma layers show you exact computed values. Count component variants, identify typography fragmentation, and measure spacing inconsistency before redesigning anything.</li>
+          <li><strong>Define tokens before components</strong> — every design decision in the redesign should reference a token. Components built without tokens become the next generation of design debt.</li>
+          <li><strong>Redesign shared components first</strong> — nav, footer, buttons, and form inputs appear everywhere. Fixing them has the highest ROI and validates your token system before you commit to page-specific work.</li>
+          <li><strong>Ship iteratively</strong> — do not hold back the redesign for a simultaneous launch. Ship each component to production as it's completed.</li>
+          <li><strong>Keep the baseline frames</strong> — your Phase 1 imports are reference material throughout the project. Don't delete them.</li>
+        </ul>
+      </div>
+
+      <!-- Related Links -->
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/blog/multi-page-website-to-figma">Importing Multi-page Websites into Figma: Full Workflow</a></li>
+        <li><a href="/blog/design-system-migration">Design System Migration: From Code to Figma Components</a></li>
+        <li><a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a></li>
+        <li><a href="/blog/design-handoff-best-practices">Design Handoff Best Practices: Keeping Code and Figma in Sync</a></li>
+        <li><a href="/blog/screenshot-vs-code-import">Screenshot vs Code Import: Which Method Wins?</a></li>
+        <li><a href="/use-cases/legacy-migration">Legacy Code Migration to Figma — Use Case Guide</a></li>
+        <li><a href="/guide">The Complete Guide to HTML to Figma Conversion (2026)</a></li>
+      </ul>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

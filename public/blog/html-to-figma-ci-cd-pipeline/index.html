@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>HTML to Figma in Your CI/CD Pipeline (2026 Guide)</title>
+  <meta name="description" content="Automate design sync between production code and Figma using html2design. Covers CI/CD integration patterns, visual regression testing, post-deploy Figma updates, and keeping design files current." />
+  <meta name="keywords" content="figma ci cd, automated design sync, figma automation pipeline, html to figma automation, visual regression testing figma, figma devops, design sync pipeline" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline" />
+  <meta property="og:title" content="HTML to Figma in Your CI/CD Pipeline (2026 Guide)" />
+  <meta property="og:description" content="Automate design sync between production code and Figma using html2design. Covers CI/CD integration patterns, visual regression testing, and post-deploy Figma updates." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/html-to-figma-ci-cd-pipeline.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="HTML to Figma CI/CD pipeline diagram" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-24T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-24T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Advanced" />
+  <meta property="article:tag" content="ci/cd" />
+  <meta property="article:tag" content="figma automation" />
+  <meta property="article:tag" content="design sync" />
+  <meta property="article:tag" content="devops" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HTML to Figma in Your CI/CD Pipeline (2026 Guide)" />
+  <meta name="twitter:description" content="Automate design sync between production code and Figma. CI/CD patterns, visual regression testing, and post-deploy Figma updates." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/html-to-figma-ci-cd-pipeline.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "HTML to Figma in Your CI/CD Pipeline",
+    "description": "How to integrate html2design into build and deploy pipelines. Covers automated design sync patterns, visual regression testing using Figma as a baseline, post-deploy Figma update triggers, and keeping design files current without manual intervention.",
+    "url": "https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline",
+    "datePublished": "2026-03-24T00:00:00Z",
+    "dateModified": "2026-03-24T00:00:00Z",
+    "wordCount": 2200,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/html-to-figma-ci-cd-pipeline.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline"
+    },
+    "keywords": "figma ci cd, automated design sync, figma automation pipeline, visual regression testing figma, html to figma automation"
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".geo-box", "h1", "h2"]
+    },
+    "url": "https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "HTML to Figma in Your CI/CD Pipeline", "item": "https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can html2design be automated in a CI/CD pipeline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design is a Figma plugin that runs interactively. It cannot be called headlessly from a CI/CD script. However, you can automate the surrounding workflow: use Playwright to capture rendered HTML post-deploy, store the captured output, and trigger a notification to update Figma. For fully automated Figma frame creation, use the Figma REST API combined with a custom script that renders the component and calls the Figma API to create or update nodes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep Figma in sync with production code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable approach is a post-deploy Figma sync workflow: after each production deploy, a CI step captures the rendered HTML of key components using Playwright or Puppeteer, stores the captures, and notifies the design team via Slack or email that Figma should be updated. Designers then run html2design to import the updated components. For teams wanting fully automated sync, the Figma REST API can create or update frames programmatically without the plugin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is visual regression testing with Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visual regression testing with Figma means using exported Figma frames as the visual baseline. Before a release, export the component frames from Figma as PNG. After the release, take a screenshot of the live component and compare the two images using a tool like Percy, Chromatic, or a custom pixel-diff script. Any visual difference between what Figma specified and what shipped gets flagged automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I update Figma after code changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Update Figma after any merge to main that changes component visuals. A practical cadence: automatically trigger a Figma update notification after every deploy that touches the components tracked in your Figma file. Use a component change detection script in CI to detect which components changed, then notify designers only for those components. Aim for same-sprint updates — Figma and production should never be more than one sprint out of sync."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools can automate Figma frame creation from code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Figma REST API lets you create and update nodes programmatically. Combined with a headless browser (Playwright or Puppeteer) that renders your components, you can build a pipeline that: renders the component at a target URL, extracts the outerHTML, calls the Figma API to create or update a frame, and posts a notification. This requires engineering setup but gives you fully automated Figma sync without manual plugin usage."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+
+    /* GEO Answer Box */
+    .geo-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .geo-box .geo-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .geo-box p { color: #1E3A8A; margin-bottom: 0; font-weight: 500; }
+
+    /* Code block */
+    .code-block { background: #1E293B; border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; overflow-x: auto; }
+    .code-block pre { margin: 0; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.8rem; line-height: 1.7; color: #E2E8F0; white-space: pre; }
+    .code-block .code-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+    .code-comment { color: #64748B; }
+    .code-keyword { color: #93C5FD; }
+    .code-string { color: #86EFAC; }
+    .code-value { color: #FCA5A5; }
+
+    /* Pipeline steps */
+    .pipeline-step { border-left: 3px solid #2563EB; padding-left: 1.25rem; margin-bottom: 1.5rem; }
+    .pipeline-step .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.25rem; }
+    .pipeline-step h3 { margin-top: 0 !important; color: #111827; }
+    .pipeline-step p { margin-bottom: 0.5rem; }
+
+    /* Key Takeaways */
+    .takeaway-box { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .takeaway-box h2 { margin-top: 0 !important; }
+
+    /* Info box */
+    .info-box { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+    .info-box p { color: #14532D; margin-bottom: 0; font-size: 0.9rem; }
+
+    /* Warning box */
+    .warn-box { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 0.75rem; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+    .warn-box p { color: #78350F; margin-bottom: 0; font-size: 0.9rem; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">HTML to Figma CI/CD Pipeline</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-orange-500 mb-4">Advanced · 10 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      HTML to Figma in Your CI/CD Pipeline
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Every time you ship, your Figma file falls behind. Here's how to close that gap automatically: post-deploy sync workflows, visual regression testing with Figma as baseline, and the engineering patterns that keep design and code aligned.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-24" class="text-xs text-gray-400 font-mono">March 24, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="prose-article">
+
+      <!-- GEO Answer Box -->
+      <div class="geo-box">
+        <p class="geo-label">Direct Answer</p>
+        <p><strong>Automate Figma sync by triggering a design update notification after every deploy that touches tracked components.</strong> html2design is a Figma plugin (not a CLI tool), so full automation requires combining it with a CI step that captures rendered HTML via Playwright, detects visual changes, and either notifies designers to run an import or calls the Figma REST API directly to create/update frames. This keeps design files current without manual Figma maintenance.</p>
+      </div>
+
+      <p>The most common design-engineering friction point isn't the Figma-to-code handoff — it's the gap that opens immediately after that handoff. Developers ship changes, the codebase moves forward, and the Figma file silently becomes wrong. Six months later, the Figma file is a historical artifact, not a live design source.</p>
+
+      <p>A CI/CD-integrated design sync workflow closes this gap. Here's how to build one.</p>
+
+      <h2>Why Figma Drifts After Every Deploy</h2>
+      <p>Figma files drift for a predictable reason: there's no automated feedback loop between what ships to production and what lives in Figma. The typical workflow is one-directional — Figma design → developer implementation — with no mechanism to propagate implementation changes back to Figma.</p>
+      <p>The consequences are real. Developers read an outdated Figma file for specs on a new feature. Designers iterate on a component that has already been refactored in code. The gap between "what Figma says" and "what production ships" grows with every sprint.</p>
+
+      <h2>The Three-Tier Approach</h2>
+      <p>There are three levels of automation for Figma sync, each with different complexity and value:</p>
+
+      <div class="pipeline-step">
+        <p class="step-num">Tier 1 — Simplest</p>
+        <h3>Post-deploy notification</h3>
+        <p>After every deploy that touches UI components, a CI step sends an automated Slack or email notification to the design team with a list of changed components and links to the relevant pages. Designers then run html2design manually to import the updated components.</p>
+      </div>
+
+      <div class="pipeline-step">
+        <p class="step-num">Tier 2 — Automated capture</p>
+        <h3>CI-driven HTML capture + designer import</h3>
+        <p>A post-deploy CI step uses Playwright to render each tracked component at the deployed URL, captures the outerHTML of the root element, and stores the capture as an artifact. The designer then pastes the captured HTML into html2design — eliminating the browser DevTools step and ensuring the import uses the exact post-deploy markup.</p>
+      </div>
+
+      <div class="pipeline-step">
+        <p class="step-num">Tier 3 — Full automation</p>
+        <h3>Figma REST API programmatic update</h3>
+        <p>A post-deploy script renders the component with Playwright, extracts visual properties (computed CSS), and calls the Figma REST API to create or update frames in the design file. No manual plugin step required. Requires more engineering setup but achieves genuinely automated Figma sync.</p>
+      </div>
+
+      <p>Most engineering teams start at Tier 1 and move to Tier 2. Tier 3 is the right investment for teams with large component libraries and monthly design review cycles.</p>
+
+      <h2>Tier 1: Post-Deploy Notification with GitHub Actions</h2>
+      <p>The simplest implementation: detect UI changes in your CI diff and notify the design team.</p>
+
+      <div class="code-block">
+        <p class="code-label">GitHub Actions — detect UI changes and notify</p>
+        <pre><span class="code-keyword">name:</span> <span class="code-string">Design Sync Notification</span>
+<span class="code-keyword">on:</span>
+  <span class="code-keyword">push:</span>
+    <span class="code-keyword">branches:</span> [<span class="code-string">main</span>]
+
+<span class="code-keyword">jobs:</span>
+  <span class="code-keyword">notify-design-team:</span>
+    <span class="code-keyword">runs-on:</span> <span class="code-string">ubuntu-latest</span>
+    <span class="code-keyword">steps:</span>
+      - <span class="code-keyword">uses:</span> <span class="code-string">actions/checkout@v4</span>
+        <span class="code-keyword">with:</span>
+          <span class="code-keyword">fetch-depth:</span> <span class="code-value">2</span>
+
+      - <span class="code-keyword">name:</span> <span class="code-string">Check for UI component changes</span>
+        <span class="code-keyword">id:</span> <span class="code-string">ui-diff</span>
+        <span class="code-keyword">run:</span> |
+          <span class="code-comment"># detect changes in component directories</span>
+          CHANGED=$(git diff --name-only HEAD~1 HEAD \
+            -- 'src/components/**' 'src/pages/**' 'styles/**')
+          echo "changed=$CHANGED" >> $GITHUB_OUTPUT
+          if [ -n "$CHANGED" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - <span class="code-keyword">name:</span> <span class="code-string">Notify design team via Slack</span>
+        <span class="code-keyword">if:</span> <span class="code-string">steps.ui-diff.outputs.has_changes == 'true'</span>
+        <span class="code-keyword">uses:</span> <span class="code-string">slackapi/slack-github-action@v1</span>
+        <span class="code-keyword">with:</span>
+          <span class="code-keyword">channel-id:</span> <span class="code-string">design-sync</span>
+          <span class="code-keyword">slack-message:</span> <span class="code-string">"UI components changed in ${{ github.sha }}.\nUpdate Figma: ${{ env.FIGMA_FILE_URL }}"</span>
+        <span class="code-keyword">env:</span>
+          <span class="code-keyword">SLACK_BOT_TOKEN:</span> <span class="code-string">${{ secrets.SLACK_BOT_TOKEN }}</span></pre>
+      </div>
+
+      <p>This gives the design team a real-time signal every time production diverges from Figma. The Slack message includes the commit link, the list of changed files, and a direct link to the relevant Figma file for updating.</p>
+
+      <h2>Tier 2: Automated HTML Capture with Playwright</h2>
+      <p>Upgrade the CI step to actually capture the rendered HTML for each tracked component. The designer pastes this directly into html2design — no DevTools required.</p>
+
+      <div class="code-block">
+        <p class="code-label">Playwright script — capture component outerHTML post-deploy</p>
+        <pre><span class="code-comment">// scripts/capture-components.js</span>
+<span class="code-keyword">const</span> { chromium } = require(<span class="code-string">'playwright'</span>);
+<span class="code-keyword">const</span> fs = require(<span class="code-string">'fs'</span>);
+
+<span class="code-keyword">const</span> COMPONENTS = [
+  { name: <span class="code-string">'nav'</span>, url: process.env.DEPLOY_URL, selector: <span class="code-string">'nav[aria-label="main"]'</span> },
+  { name: <span class="code-string">'hero'</span>, url: process.env.DEPLOY_URL, selector: <span class="code-string">'[data-component="hero"]'</span> },
+  { name: <span class="code-string">'card'</span>, url: <span class="code-string">`${process.env.DEPLOY_URL}/components`</span>, selector: <span class="code-string">'.card'</span> },
+];
+
+(async () => {
+  <span class="code-keyword">const</span> browser = await chromium.launch();
+  <span class="code-keyword">const</span> page = await browser.newPage();
+  <span class="code-keyword">const</span> captures = {};
+
+  <span class="code-keyword">for</span> (<span class="code-keyword">const</span> comp <span class="code-keyword">of</span> COMPONENTS) {
+    await page.goto(comp.url, { waitUntil: <span class="code-string">'networkidle'</span> });
+    <span class="code-keyword">const</span> el = await page.$(comp.selector);
+    <span class="code-keyword">if</span> (el) {
+      captures[comp.name] = await el.evaluate(
+        node => node.outerHTML
+      );
+    }
+  }
+
+  fs.writeFileSync(
+    <span class="code-string">'captures/components.json'</span>,
+    JSON.stringify(captures, null, 2)
+  );
+  await browser.close();
+})();</pre>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Usage:</strong> The CI step stores <code>captures/components.json</code> as a build artifact. The designer downloads it, opens each HTML string, pastes it into html2design in Figma, and gets updated frames without touching DevTools.</p>
+      </div>
+
+      <h2>Visual Regression Testing with Figma as Baseline</h2>
+      <p>Once your Figma file is kept current, you can use it as the visual source of truth for regression tests. The workflow:</p>
+      <ol>
+        <li><strong>Export Figma frames as PNG baseline.</strong> Before a release sprint, export all tracked component frames from Figma at 2x resolution using the Figma REST API (<code>GET /v1/images/{file_key}</code> with <code>format=png&scale=2</code>).</li>
+        <li><strong>Capture production screenshots post-deploy.</strong> Use Playwright to screenshot the same components at the deployed URL at the same viewport dimensions as the Figma export.</li>
+        <li><strong>Diff the images.</strong> Use a pixel comparison library (such as <code>looks-same</code> or <code>pixelmatch</code>) to compare the Figma export against the production screenshot. Flag any diff above a configured threshold.</li>
+        <li><strong>Report in CI.</strong> Output diff images as CI artifacts. Post a comment on the PR with a visual diff summary.</li>
+      </ol>
+
+      <div class="code-block">
+        <p class="code-label">Figma REST API — export component frames as baseline PNG</p>
+        <pre><span class="code-comment"># Export Figma frames for visual regression baseline</span>
+curl -H <span class="code-string">"X-Figma-Token: $FIGMA_API_TOKEN"</span> \
+  <span class="code-string">"https://api.figma.com/v1/images/$FIGMA_FILE_KEY?ids=$FRAME_IDS&format=png&scale=2"</span> \
+  | jq <span class="code-string">'.images'</span>
+
+<span class="code-comment"># Download each image URL from the response and store as baseline</span>
+<span class="code-comment"># Run before each release sprint to update baselines</span></pre>
+      </div>
+
+      <div class="warn-box">
+        <p><strong>Baseline freshness matters:</strong> Visual regression tests using Figma baselines only work correctly when your Figma file is current. If the Figma file is outdated, every test will fail against the baseline — even correct production code. Keep Figma sync and visual regression testing in sync by always running the Figma update before re-exporting baselines.</p>
+      </div>
+
+      <h2>Tier 3: Figma REST API Programmatic Update</h2>
+      <p>For teams that want fully automated Figma updates without designer intervention, the Figma REST API provides frame creation and update endpoints. The architecture:</p>
+      <ol>
+        <li><strong>Playwright renders the component</strong> at the deployed URL and captures outerHTML + computed styles.</li>
+        <li><strong>A transformer script</strong> converts the computed CSS into Figma API node properties (fills, text styles, effects, constraints).</li>
+        <li><strong>The Figma REST API</strong> (<code>POST /v1/files/{file_key}/nodes</code>) creates or updates the corresponding frame in the design file.</li>
+        <li><strong>A Slack/email notification</strong> alerts the design team that the Figma file was programmatically updated and should be reviewed.</li>
+      </ol>
+
+      <p>This approach requires maintaining a CSS-to-Figma property mapping layer. The core mappings are straightforward (background-color → fill, font-size → fontSize, border-radius → cornerRadius), but complex CSS (gradients, box shadows, pseudo-elements) requires custom handling. Start with the five or ten highest-traffic components and expand incrementally.</p>
+
+      <h2>Component Tracking Strategy</h2>
+      <p>Not every component needs automated sync. A practical tracking strategy:</p>
+      <ul>
+        <li><strong>Tier A (always track):</strong> navigation, header, footer, primary buttons, form inputs — shared across every page, high-stakes for consistency</li>
+        <li><strong>Tier B (track if changed):</strong> card components, tables, modals, banners — important, but change less frequently</li>
+        <li><strong>Tier C (manual only):</strong> one-off page sections, marketing landing pages, admin-only views — low ROI for automated sync</li>
+      </ul>
+      <p>Configure your change detection script to only notify for Tier A and B components. This reduces noise and keeps the design team's attention on meaningful updates.</p>
+
+      <h2>Integration with Design Handoff Workflows</h2>
+      <p>The CI/CD sync workflow complements, not replaces, the standard Figma design handoff process. Think of it as the return path:</p>
+      <ul>
+        <li><strong>Forward path (Figma → code):</strong> Designers create or update Figma components, developers implement them. This is the traditional handoff.</li>
+        <li><strong>Return path (code → Figma):</strong> Developers ship changes (bug fixes, refactors, new features), CI detects the change, Figma gets updated via html2design import or Figma API. This is what CI/CD sync enables.</li>
+      </ul>
+      <p>Together, these two paths create a bidirectional sync loop. For a deeper dive on the design handoff side, see <a href="/blog/design-handoff-best-practices">Design Handoff Best Practices: Keeping Code and Figma in Sync</a>.</p>
+
+      <h2>Keeping the Figma File Structure Clean</h2>
+      <p>Automated imports can produce messy Figma files if the layer structure isn't maintained. Conventions that keep automated imports usable:</p>
+      <ul>
+        <li><strong>Dedicated "Production Sync" page:</strong> Keep automated imports on a separate Figma page from the main design file. Designers review the sync page and promote clean versions to the design system.</li>
+        <li><strong>Version stamps:</strong> Name imported frames with the deploy timestamp — <code>Header / 2026-03-24 14:22</code>. This makes it easy to compare before/after and roll back if needed.</li>
+        <li><strong>Component anchors:</strong> Create a permanent component frame that designers manually maintain. Place the auto-sync import beside it for comparison. Never replace the design system component automatically.</li>
+      </ul>
+
+      <!-- Key Takeaways -->
+      <div class="takeaway-box">
+        <h2 style="margin-bottom:0.75rem;">Key Takeaways</h2>
+        <ul>
+          <li><strong>Start with Tier 1</strong> — a post-deploy Slack notification is zero-infrastructure and immediately reduces design drift.</li>
+          <li><strong>html2design is the import step</strong> — use Playwright in CI to capture the HTML, then html2design in Figma to convert it. This eliminates the DevTools step from the designer's workflow.</li>
+          <li><strong>Figma as visual baseline</strong> — export Figma frames before each sprint to use as visual regression test baselines.</li>
+          <li><strong>Track A/B/C components</strong> — not every component needs automated sync. Focus automation on shared, high-stakes components.</li>
+          <li><strong>Keep a "Production Sync" page</strong> in Figma — separate auto-imported frames from design system components until a designer reviews and promotes them.</li>
+          <li><strong>Tier 3 (full API automation)</strong> requires engineering investment but is the right choice for teams with large component libraries and high sync frequency.</li>
+        </ul>
+      </div>
+
+      <!-- Related Links -->
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/blog/design-handoff-best-practices">Design Handoff Best Practices: Keeping Code and Figma in Sync</a></li>
+        <li><a href="/blog/design-system-migration">Design System Migration: From Code to Figma Components</a></li>
+        <li><a href="/blog/how-to-convert-html-to-figma">How to Convert HTML to Figma: A Developer's Guide</a></li>
+        <li><a href="/blog/react-component-to-figma">How to Convert React Components to Figma Designs</a></li>
+        <li><a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a></li>
+        <li><a href="/guide">The Complete Guide to HTML to Figma Conversion (2026)</a></li>
+      </ul>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

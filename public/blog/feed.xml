@@ -5,9 +5,33 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>How to Redesign a Legacy Website Without Starting From Scratch</title>
+      <link>https://www.htmltofigma.io/blog/redesign-legacy-website-figma</link>
+      <description>Import your legacy website into Figma with html2design, audit the component inventory, and redesign iteratively — one component or page at a time. A practical workflow for agencies and product teams modernizing live websites without a full rebuild.</description>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/redesign-legacy-website-figma</guid>
+    </item>
+
+    <item>
+      <title>HTML to Figma in Your CI/CD Pipeline</title>
+      <link>https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline</link>
+      <description>How to automate Figma sync after every deploy. Covers post-deploy notification workflows, Playwright-based HTML capture for designer import, visual regression testing with Figma as baseline, and a tiered approach from Slack alerts to full Figma REST API automation.</description>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline</guid>
+    </item>
+
+    <item>
+      <title>Top 5 HTML to Figma Tools Compared (2026)</title>
+      <link>https://www.htmltofigma.io/blog/html-to-figma-tools-compared</link>
+      <description>Side-by-side comparison of the five main approaches to importing HTML into Figma: html2design, Anima, Locofy, manual rebuild, and screenshot import. Covers output type, editability, design system integration, and pricing — and explains why Anima and Locofy work in the opposite direction.</description>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-to-figma-tools-compared</guid>
+    </item>
 
     <item>
       <title>Atomic Design to Figma: Importing Your Component Hierarchy</title>

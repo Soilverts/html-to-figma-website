@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.htmltofigma.io/</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/guide</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/faq</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/alternatives</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/compare</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/glossary</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/about</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -95,7 +95,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -106,7 +106,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/import-website-into-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -117,7 +117,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/react-component-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/tailwind-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -139,7 +139,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/bootstrap-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -150,7 +150,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/design-system-migration</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -161,7 +161,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/screenshot-vs-code-import</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -172,7 +172,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -183,7 +183,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/html-email-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/responsive-design-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/webflow-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -216,7 +216,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/design-tokens-code-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/accessibility-audit-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -238,7 +238,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -249,7 +249,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/component-library-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/multi-page-website-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -271,7 +271,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/design-handoff-best-practices</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -293,7 +293,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/blog/atomic-design-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -304,7 +304,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -315,7 +315,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/legacy-migration</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -326,7 +326,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/developer-handoff</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -337,7 +337,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/vue-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -348,7 +348,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/angular-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -359,7 +359,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/svelte-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -370,7 +370,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/nextjs-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -381,7 +381,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/wordpress-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -392,7 +392,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/gatsby-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -403,7 +403,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/material-ui-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -414,7 +414,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/chakra-ui-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -425,7 +425,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/ember-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -436,7 +436,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/storybook-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -447,7 +447,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/tailwind-react-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -458,7 +458,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/sketch-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -469,7 +469,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/adobe-xd-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -480,7 +480,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/webflow-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -491,7 +491,7 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/use-cases/tailwind-to-figma</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -502,43 +502,76 @@
   </url>
   <url>
     <loc>https://www.htmltofigma.io/privacy</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/terms</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/contact</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/changelog</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/llms-full.txt</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.htmltofigma.io/.well-known/ai-plugin.json</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.htmltofigma.io/blog/html-to-figma-tools-compared</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/html-to-figma-tools-compared.svg</image:loc>
+      <image:title>Top 5 HTML to Figma Tools Compared (2026)</image:title>
+      <image:caption>Side-by-side comparison of html2design, Anima, Locofy, manual rebuild, and screenshot import for bringing HTML into Figma</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/html-to-figma-ci-cd-pipeline.svg</image:loc>
+      <image:title>HTML to Figma CI/CD Pipeline — Automated Design Sync</image:title>
+      <image:caption>Integrating html2design into CI/CD pipelines for automated Figma sync, visual regression testing, and post-deploy design updates</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/blog/redesign-legacy-website-figma</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/blog/redesign-legacy-website-figma.svg</image:loc>
+      <image:title>Redesign Legacy Website Without Starting From Scratch</image:title>
+      <image:caption>Iterative legacy website redesign workflow using html2design to import existing site into Figma for audit and phased modernization</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.htmltofigma.io/blog/feed.xml</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -583,7 +583,7 @@ This workflow keeps Figma designs in sync with production code without manual re
 
 **URL:** https://www.htmltofigma.io/changelog
 **Title:** html2design Changelog
-**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 47 content pages added through March 2026.
+**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 52 content pages added through March 2026.
 
 **Typical content per entry:** Date, category tag, description of what shipped — new use-case landing pages, new blog post guides, schema additions, internal linking rounds, GEO optimizations.
 
@@ -616,7 +616,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Guide — https://www.htmltofigma.io/guide
 - Compare — https://www.htmltofigma.io/compare
 - Alternatives — https://www.htmltofigma.io/alternatives
-- Use Cases — https://www.htmltofigma.io/use-cases/legacy-migration (section)
+- Use Cases — https://www.htmltofigma.io/use-cases (hub)
 - Blog — https://www.htmltofigma.io/blog
 - FAQ — https://www.htmltofigma.io/faq
 - About — https://www.htmltofigma.io/about
@@ -641,6 +641,12 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Figma Dev Mode vs html2design: When to Use Which — https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design
 - Component Library to Figma: Document Your UI System — https://www.htmltofigma.io/blog/component-library-to-figma
 - Multi-page Website to Figma: Import and Organize Multiple Pages — https://www.htmltofigma.io/blog/multi-page-website-to-figma
+- Rapid Prototyping: From Live Website to Figma Prototype — https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma
+- Design Handoff Best Practices: Keeping Code and Figma in Sync — https://www.htmltofigma.io/blog/design-handoff-best-practices
+- Atomic Design to Figma: Importing Your Component Hierarchy — https://www.htmltofigma.io/blog/atomic-design-to-figma
+- Top 5 HTML to Figma Tools Compared (2026) — https://www.htmltofigma.io/blog/html-to-figma-tools-compared
+- HTML to Figma in Your CI/CD Pipeline (2026 Guide) — https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline
+- How to Redesign a Legacy Website Without Starting From Scratch — https://www.htmltofigma.io/blog/redesign-legacy-website-figma
 
 ### Use Case Pages
 
@@ -661,6 +667,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Adobe XD to Figma — https://www.htmltofigma.io/use-cases/adobe-xd-to-figma
 - Webflow to Figma (use case) — https://www.htmltofigma.io/use-cases/webflow-to-figma
 - Tailwind CSS to Figma (use case) — https://www.htmltofigma.io/use-cases/tailwind-to-figma
+- Use Cases Hub — https://www.htmltofigma.io/use-cases
 
 
 ---
