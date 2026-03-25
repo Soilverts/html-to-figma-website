@@ -669,6 +669,14 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Tailwind CSS to Figma (use case) — https://www.htmltofigma.io/use-cases/tailwind-to-figma
 - Use Cases Hub — https://www.htmltofigma.io/use-cases
 
+### Comparison Pages
+
+- html2design vs html.to.design — Full Comparison — https://www.htmltofigma.io/compare
+- html2design vs Anima — Head-to-Head Comparison — https://www.htmltofigma.io/compare/html2design-vs-anima
+- html2design vs Locofy — Head-to-Head Comparison — https://www.htmltofigma.io/compare/html2design-vs-locofy
+- html2design vs Figma Dev Mode — Head-to-Head Comparison — https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode
+- html2design vs TeleportHQ — Head-to-Head Comparison — https://www.htmltofigma.io/compare/html2design-vs-teleporthq
+
 
 ---
 
