@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>html2design vs Figma Dev Mode (2026) — Import HTML vs Inspect Designs</title>
+  <meta name="description" content="Figma Dev Mode helps developers inspect Figma designs for CSS values. html2design imports HTML/CSS into Figma as editable layers. They solve different problems — here's which one you need." />
+  <meta name="keywords" content="html2design vs figma dev mode, figma dev mode alternative, figma dev mode html import, html to figma dev mode, figma inspect vs html2design, figma dev mode comparison" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode" />
+  <meta property="og:title" content="html2design vs Figma Dev Mode (2026) — Import HTML vs Inspect Designs" />
+  <meta property="og:description" content="Figma Dev Mode is a design inspection tool for developers. html2design is an HTML import tool for Figma. These are not alternatives — they solve completely different problems." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/compare.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="html2design vs Figma Dev Mode comparison" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="html2design vs Figma Dev Mode — Two Different Problems, Two Different Tools" />
+  <meta name="twitter:description" content="Dev Mode lets developers inspect Figma designs. html2design lets you import HTML into Figma. You might need both." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/compare.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "html2design vs Figma Dev Mode (2026)",
+    "description": "Comparison of html2design (HTML import plugin) and Figma Dev Mode (design inspection tool). Covers workflow direction, feature parity, pricing, and when each tool is appropriate.",
+    "url": "https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode",
+    "inLanguage": "en",
+    "datePublished": "2026-03-25",
+    "dateModified": "2026-03-25",
+    "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://www.htmltofigma.io" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": { "@type": "ImageObject", "url": "https://www.htmltofigma.io/favicon.svg" }
+    },
+    "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://www.htmltofigma.io/" }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.htmltofigma.io/compare" },
+      { "@type": "ListItem", "position": 3, "name": "html2design vs Figma Dev Mode", "item": "https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Figma Dev Mode import HTML into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Figma Dev Mode is a design inspection panel that lets developers read CSS values, spacing, and measurements from existing Figma designs. It does not import HTML or CSS into Figma. For importing HTML/CSS into Figma as editable layers, html2design (htmltofigma.io) is the purpose-built plugin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Figma Dev Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma Dev Mode is a developer-facing view inside Figma that makes it easier to inspect designs and extract CSS properties, spacing values, font details, and asset exports. It works on existing Figma design files and helps bridge the gap between design and implementation. It does not create or import Figma content — it reads existing content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does html2design do that Figma Dev Mode cannot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design converts HTML and CSS code into native, editable Figma layers — frames, text, fills, and auto layout. It is an import tool, not an inspection tool. Figma Dev Mode cannot bring HTML into Figma at all. If you want to take an existing HTML component or website and create a Figma representation of it, html2design is the tool you need."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Figma Professional plan to use Figma Dev Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Figma Dev Mode requires a Figma Professional or Organization plan. Developers can be invited as Dev Mode viewers, but the feature is not available on the Free plan. html2design is a Figma plugin that works on any Figma plan and charges $12/month or $96/year for unlimited HTML imports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use html2design and Figma Dev Mode together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — they complement each other. Use html2design to import existing HTML/CSS into Figma as editable layers. After design iteration in Figma, use Dev Mode to hand off the updated design to developers with accurate CSS values, spacing, and measurements. This gives you a full code → design → code workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Figma Dev Mode give you editable Figma layers from HTML?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Figma Dev Mode reads from existing Figma designs — it does not create or import Figma content from HTML. For getting editable Figma layers from HTML and CSS, html2design is the correct tool."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .geo-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .geo-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .geo-box p { color: #1E3A8A; margin-bottom: 0; font-weight: 500; }
+    .check-yes { color: #2563EB; font-weight: 700; }
+    .check-no  { color: #D1D5DB; font-weight: 700; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/compare" class="hover:text-accent transition-colors">Compare</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">html2design vs Figma Dev Mode</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tool Comparison · 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        html2design vs<br />Figma Dev Mode
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        These tools are often searched together — but they solve <strong class="text-content font-medium">completely different problems</strong>.
+        html2design imports HTML into Figma. Figma Dev Mode helps developers inspect what's already in Figma.
+      </p>
+    </div>
+  </header>
+
+  <!-- GEO Answer Box -->
+  <section class="max-w-5xl mx-auto px-6 mb-10">
+    <div class="geo-box">
+      <p class="geo-label">Direct Answer</p>
+      <p><strong>html2design and Figma Dev Mode are not alternatives — they solve different problems.</strong> html2design is an HTML import tool: it converts HTML and CSS code into native, editable Figma layers. Figma Dev Mode is a design inspection panel: it lets developers read CSS values, spacing, and measurements from an existing Figma file. If you want to bring HTML into Figma, you need html2design. If you want to inspect a Figma design and extract CSS properties, you need Dev Mode.</p>
+    </div>
+  </section>
+
+  <!-- TL;DR Cards -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14" aria-label="Summary comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">TL;DR — Pick Your Tool</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+        <div class="bg-white border-2 border-accent rounded-2xl p-6 shadow-sm relative">
+          <div class="absolute top-4 right-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full">HTML → Figma</span>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">html2design</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Import HTML.<br />Create Figma layers.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Paste raw HTML/CSS into the Figma plugin. Gets you native frames, text, and fills — not screenshots. Works with localhost, Storybook, email templates, and any HTML source from DevTools.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Converts HTML to editable Figma layers</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Works with localhost / dev server</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> No Chrome extension required</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> $12/mo or $96/yr</li>
+          </ul>
+          <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+             target="_blank" rel="noopener noreferrer"
+             class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline">
+            Install from Figma Community &rarr;
+          </a>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Figma Dev Mode</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Inspect designs.<br />Extract CSS values.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            A built-in Figma panel that lets developers read CSS properties, spacing, fonts, and measurements from an existing Figma design file. Helps bridge design and implementation — but does not create or import Figma content.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm text-content-muted">
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Cannot import HTML into Figma</li>
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Does not create Figma layers from code</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Requires Figma Professional plan</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison Table -->
+  <section class="py-14 md:py-20" aria-label="Detailed feature comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Feature-by-feature breakdown</h2>
+      <p class="text-content-muted mb-10">Every row is based on publicly documented capabilities as of 2026.</p>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-200">
+        <table class="w-full min-w-[640px] text-sm border-collapse">
+          <thead class="bg-surface">
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-4 px-5 font-semibold text-content text-xs uppercase tracking-wider w-[42%]">Feature</th>
+              <th class="py-4 px-4 font-semibold text-accent text-xs uppercase tracking-wider text-center w-[29%]">html2design</th>
+              <th class="py-4 px-4 font-semibold text-content text-xs uppercase tracking-wider text-center w-[29%]">Figma Dev Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Core purpose -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Core Purpose</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Primary function</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">Import HTML → Figma</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Inspect Figma → CSS</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Creates new Figma layers from HTML</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Reads CSS values from Figma designs</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Shows spacing / padding measurements</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- HTML import -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">HTML Import Capabilities</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Accepts pasted HTML/CSS</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Works with localhost / dev server</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Produces native editable Figma layers</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Flexbox layout preserved</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+
+            <!-- Dev handoff -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Developer Handoff</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">CSS property inspection</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Asset export from Figma</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Figma component linking</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Setup -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Setup &amp; Access</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Available as Figma plugin</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Built into Figma</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Works on Figma Free plan</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Requires Figma Professional plan</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Pricing -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Pricing</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Separate pricing</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">$12/mo · $96/yr</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Included in Figma Professional</td>
+            </tr>
+            <tr class="hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Unlimited usage</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs font-mono text-gray-400 mt-5 max-w-3xl leading-relaxed">
+        ✓ = fully supported &nbsp;|&nbsp; ✗ = not supported or not applicable
+      </p>
+    </div>
+  </section>
+
+  <!-- Pros / Cons -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Pros and cons">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Pros &amp; Cons</h2>
+      <p class="text-content-muted mb-10">An honest look at each tool's strengths and limitations.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-4">html2design</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> The only plugin that imports HTML/CSS directly into Figma as editable layers</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Works with localhost — no live URL needed</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Works on Figma Free plan, not just Professional</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Flexbox layouts preserved from computed CSS</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> No extension, no browser tab, no live URL</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Does not inspect or export from existing Figma designs</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> $12/mo cost — not free</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-4">Figma Dev Mode</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Built into Figma — no extra install for Professional users</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Accurate CSS property extraction from Figma components</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Asset export, redline annotations, and developer links</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Figma MCP integration for AI-assisted development</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Cannot import HTML into Figma — it only reads from Figma</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Requires Figma Professional plan</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Not useful if you don't already have a Figma design file</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- When to use each -->
+  <section class="py-14 md:py-20" aria-label="When to use each tool">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">When to use each tool</h2>
+      <p class="text-content-muted mb-10">These tools solve different problems — you may need both in your workflow.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-accent border border-gray-100 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-3">Use html2design when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You have HTML/CSS and need <strong class="text-content">editable Figma layers</strong> from it</li>
+            <li>You're <a href="/use-cases/legacy-migration" class="text-accent hover:underline">migrating a legacy HTML codebase</a> to a design system in Figma</li>
+            <li>You're working on <strong class="text-content">localhost</strong> or behind authentication</li>
+            <li>You need to import a <strong class="text-content">Storybook component</strong> or email template into Figma</li>
+            <li>You're doing a <a href="/use-cases/developer-handoff" class="text-accent hover:underline">developer handoff audit</a> comparing live HTML to the original design spec</li>
+            <li>You're on a <strong class="text-content">Figma Free plan</strong> and can't access Dev Mode</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-gray-200 border border-gray-100">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-3">Use Figma Dev Mode when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You have a <strong class="text-content">Figma design file</strong> and developers need to implement it in code</li>
+            <li>You need to extract <strong class="text-content">precise CSS values</strong> — font-size, line-height, padding — from a design</li>
+            <li>You're handing off a <strong class="text-content">Figma component library</strong> to a development team</li>
+            <li>You need design assets (SVGs, PNGs) exported from Figma at specific sizes</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-8 p-5 bg-accent/10 rounded-2xl border border-accent/20">
+        <p class="text-sm font-medium text-accent mb-1">Use them together for a complete roundtrip</p>
+        <p class="text-sm text-content-muted">Use html2design to bring existing HTML into Figma → iterate on the design in Figma → use Dev Mode to hand the updated design specs back to developers. html2design feeds into Figma; Dev Mode reads from Figma. Together they close the loop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Frequently asked questions">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+      <div class="space-y-4 max-w-3xl">
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden" open>
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Can Figma Dev Mode import HTML into Figma?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            No. Figma Dev Mode is a design inspection panel — it reads from existing Figma designs. It does not import HTML or CSS into Figma. For importing HTML/CSS into Figma as editable layers, <a href="https://www.htmltofigma.io" class="text-accent hover:underline">html2design</a> is the purpose-built plugin.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            What is Figma Dev Mode?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            Figma Dev Mode is a developer-facing view inside Figma that makes it easier to inspect designs and extract CSS properties, spacing values, font details, and asset exports. It works on existing Figma design files and helps bridge the gap between design and implementation. It does not create or import Figma content — it reads existing content.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            What does html2design do that Figma Dev Mode cannot?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design converts HTML and CSS code into native, editable Figma layers — frames, text, fills, and auto layout. It is an import tool. Figma Dev Mode cannot bring HTML into Figma at all. If you want to take an existing HTML component or website and create a Figma representation of it, html2design is the tool you need.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Do I need a Figma Professional plan to use Figma Dev Mode?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            Yes. Figma Dev Mode requires a Figma Professional or Organization plan. html2design is a Figma plugin that works on any Figma plan and charges $12/month or $96/year for unlimited HTML imports.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Can I use html2design and Figma Dev Mode together?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            Yes — and that's the ideal workflow. Use html2design to import existing HTML/CSS into Figma as editable layers. After design iteration in Figma, use Dev Mode to hand off the updated design to developers with accurate CSS values, spacing, and measurements. This gives you a full code → design → code workflow.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Does Figma Dev Mode give you editable Figma layers from HTML?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            No. Figma Dev Mode reads from existing Figma designs — it does not create or import Figma content from HTML. For getting editable Figma layers from HTML and CSS, html2design is the correct tool.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="py-14 md:py-20" aria-label="Related comparisons and guides">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xl md:text-2xl font-black tracking-tighter mb-8">Explore more comparisons &amp; guides</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="/compare" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Compare Hub</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">All HTML to Figma Comparisons</p>
+        </a>
+        <a href="/compare/html2design-vs-anima" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Anima</p>
+        </a>
+        <a href="/compare/html2design-vs-locofy" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Locofy</p>
+        </a>
+        <a href="/compare/html2design-vs-teleporthq" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs TeleportHQ</p>
+        </a>
+        <a href="/blog/figma-dev-mode-vs-html2design" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Blog</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Figma Dev Mode vs html2design (deep dive)</p>
+        </a>
+        <a href="/guide" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Guide</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Complete HTML to Figma Guide</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Ready to import HTML into Figma?</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install HTML to Figma from the Figma Community and convert your first HTML/CSS in under 2 minutes.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+      <p class="text-white/30 text-xs mt-6">See all comparisons at the <a href="/compare" class="underline text-white/50 hover:text-white/80 transition-colors">Compare hub &rarr;</a></p>
+      <p class="text-white/30 text-xs mt-2">Want the full picture? <a href="/guide" class="underline text-white/50 hover:text-white/80 transition-colors">Read the Complete Guide &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors font-medium text-content">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

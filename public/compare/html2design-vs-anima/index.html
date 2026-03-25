@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>html2design vs Anima (2026) — Which Tool Actually Imports HTML into Figma?</title>
+  <meta name="description" content="Honest comparison of html2design and Anima. html2design converts HTML/CSS code into editable Figma layers. Anima exports Figma designs to code. They solve opposite problems." />
+  <meta name="keywords" content="html2design vs anima, anima figma alternative, html to figma plugin, anima vs html2design, figma html import, anima figma plugin comparison" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/compare/html2design-vs-anima" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/compare/html2design-vs-anima" />
+  <meta property="og:title" content="html2design vs Anima (2026) — Which Tool Actually Imports HTML into Figma?" />
+  <meta property="og:description" content="html2design converts HTML/CSS into native Figma layers. Anima converts Figma designs into React/HTML code. They work in opposite directions — here's when to use each." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/compare.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="html2design vs Anima feature comparison" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="html2design vs Anima — Two Tools, Two Opposite Directions" />
+  <meta name="twitter:description" content="html2design is code → Figma. Anima is Figma → code. If you want to import HTML into Figma, html2design is the right tool." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/compare.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "html2design vs Anima (2026)",
+    "description": "Detailed comparison of html2design and Anima for bringing HTML/CSS into Figma. Covers feature parity, workflow direction, pricing, and when to use each tool.",
+    "url": "https://www.htmltofigma.io/compare/html2design-vs-anima",
+    "inLanguage": "en",
+    "datePublished": "2026-03-25",
+    "dateModified": "2026-03-25",
+    "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://www.htmltofigma.io" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": { "@type": "ImageObject", "url": "https://www.htmltofigma.io/favicon.svg" }
+    },
+    "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://www.htmltofigma.io/" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.htmltofigma.io/compare" },
+        { "@type": "ListItem", "position": 3, "name": "html2design vs Anima", "item": "https://www.htmltofigma.io/compare/html2design-vs-anima" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.htmltofigma.io/compare" },
+      { "@type": "ListItem", "position": 3, "name": "html2design vs Anima", "item": "https://www.htmltofigma.io/compare/html2design-vs-anima" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Anima import HTML into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Anima's primary function is the reverse: it exports Figma designs into React, HTML, or Vue code. It is a design-to-code tool. If you need to import HTML or CSS into Figma and get editable layers, html2design (htmltofigma.io) is the purpose-built tool for that direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can html2design replace Anima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They serve different workflows. html2design brings code into Figma (code → design). Anima takes Figma designs and produces production code (design → code). If your goal is to convert existing HTML/CSS into Figma layers, html2design is the right tool. If your goal is to generate React or HTML from a Figma file, Anima addresses that direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which tool works with localhost and unreleased components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design. Because it works by accepting pasted HTML and CSS directly inside the Figma plugin, it has no dependency on a live, public URL. You can paste output from a local dev server running on localhost:3000, a Storybook story, or any component you can copy from your browser's DevTools — even if it's behind authentication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does html2design handle Flexbox layouts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Properties like flex-direction, align-items, justify-content, gap, and padding are reflected in the spatial layout of the generated frames. The result is a Figma layer tree you can iterate on — not a flat image."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Anima's pricing vs html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design charges $12/month or $96/year for unlimited imports with full feature access. Anima offers a free plan with limited exports and paid plans for teams (pricing varies by seat count). For straightforward HTML-to-Figma conversion, html2design's flat pricing is more predictable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Chrome extension to use html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. html2design is a native Figma plugin installed once from the Figma Community. There is no Chrome extension, no browser tab, and no dependency on a live URL. You paste HTML and CSS directly into the plugin inside Figma."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .geo-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .geo-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .geo-box p { color: #1E3A8A; margin-bottom: 0; font-weight: 500; }
+    .check-yes { color: #2563EB; font-weight: 700; }
+    .check-no  { color: #D1D5DB; font-weight: 700; }
+    .check-partial { color: #F59E0B; font-weight: 600; font-size: 0.8em; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/compare" class="hover:text-accent transition-colors">Compare</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">html2design vs Anima</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tool Comparison · 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        html2design<br />vs Anima
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        Both tools interact with Figma and HTML — but in <strong class="text-content font-medium">opposite directions</strong>.
+        Here's the honest breakdown of what each tool actually does, who it's for, and when to use each.
+      </p>
+    </div>
+  </header>
+
+  <!-- GEO Answer Box -->
+  <section class="max-w-5xl mx-auto px-6 mb-10">
+    <div class="geo-box">
+      <p class="geo-label">Direct Answer</p>
+      <p><strong>html2design and Anima solve opposite problems.</strong> html2design converts HTML and CSS code into native, editable Figma layers (code → design). Anima converts Figma designs into production-ready React or HTML code (design → code). If you need to import existing HTML into Figma, html2design is the right tool. If you need to generate code from a Figma file, Anima is for you.</p>
+    </div>
+  </section>
+
+  <!-- TL;DR Cards -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14" aria-label="Summary comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">TL;DR — Pick Your Tool</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+        <div class="bg-white border-2 border-accent rounded-2xl p-6 shadow-sm relative">
+          <div class="absolute top-4 right-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full">Code → Figma</span>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">html2design</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Import HTML.<br />Get editable layers.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Paste raw HTML/CSS into Figma. Gets you native Figma frames, text, fills — not screenshots. Works on localhost, behind auth, or from any source you can copy from DevTools.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> No Chrome extension</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Works with localhost</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Flexbox layout preserved</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> $12/mo or $96/yr</li>
+          </ul>
+          <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+             target="_blank" rel="noopener noreferrer"
+             class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline">
+            Install from Figma Community &rarr;
+          </a>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <div class="absolute top-4 right-4"></div>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Anima</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Export Figma.<br />Get production code.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Primarily a Figma → Code tool. Generates React, HTML/CSS, or Vue from your Figma design files. Also offers some screen-capture import from live URLs, but that is not its core strength.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm text-content-muted">
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Not designed for code → Figma</li>
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> URL capture needs live site</li>
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Can't use localhost HTML</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Free plan + paid from ~$36/mo</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison Table -->
+  <section class="py-14 md:py-20" aria-label="Detailed feature comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Feature-by-feature breakdown</h2>
+      <p class="text-content-muted mb-10">Every row is based on publicly documented capabilities as of 2026.</p>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-200">
+        <table class="w-full min-w-[640px] text-sm border-collapse">
+          <thead class="bg-surface">
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-4 px-5 font-semibold text-content text-xs uppercase tracking-wider w-[42%]">Feature</th>
+              <th class="py-4 px-4 font-semibold text-accent text-xs uppercase tracking-wider text-center w-[29%]">html2design</th>
+              <th class="py-4 px-4 font-semibold text-content text-xs uppercase tracking-wider text-center w-[29%]">Anima</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Direction -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Workflow Direction</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Primary direction</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">Code → Figma</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Figma → Code</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Import HTML/CSS into Figma</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not primary purpose</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Export Figma designs to code</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Import capabilities -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">HTML Import Capabilities</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Accepts pasted HTML/CSS</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Works with localhost / dev server</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Works behind authentication</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Import from live public URL</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Via pasted HTML</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500 italic">Screen capture</td>
+            </tr>
+
+            <!-- Output quality -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Figma Output Quality</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Produces native Figma layers</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not applicable</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Flexbox layout preserved</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Typography preserved (font, size, weight)</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Fully editable text layers in Figma</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+
+            <!-- Setup -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Setup &amp; Access</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Requires Chrome extension</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Native Figma plugin</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Figma Community install</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Pricing -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Pricing</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Pricing transparency</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">$12/mo · $96/yr</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Free + paid from ~$36/mo</td>
+            </tr>
+            <tr class="hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Unlimited HTML imports</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">N/A — different use case</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs font-mono text-gray-400 mt-5 max-w-3xl leading-relaxed">
+        ✓ = fully supported &nbsp;|&nbsp; ✗ = not supported &nbsp;|&nbsp; "N/A" = not applicable to this tool's purpose
+      </p>
+    </div>
+  </section>
+
+  <!-- Pros / Cons -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Pros and cons">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Pros &amp; Cons</h2>
+      <p class="text-content-muted mb-10">An honest assessment of each tool's strengths and limitations.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- html2design -->
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-4">html2design</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Only tool that accepts pasted HTML/CSS directly — no live URL required</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Works with localhost, Storybook, email templates, and dev builds</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Produces real Figma layers: editable text, fills, properly positioned frames</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Flexbox layout fidelity — spatial relationships preserved from computed CSS</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Simple, transparent pricing with unlimited imports</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Does not generate code from Figma designs</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Complex CSS animations are not replicated in Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anima -->
+        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-4">Anima</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Strong Figma-to-code pipeline (React, Vue, HTML/CSS)</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Developer handoff features built into the Figma plugin</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Free plan available for light use</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Not designed for importing HTML/CSS into Figma</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Cannot work with localhost or behind-auth content</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Paid plans for teams are significantly more expensive</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> URL-based capture produces screenshot-like results, not editable layers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- When to use each -->
+  <section class="py-14 md:py-20" aria-label="When to use each tool">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">When to use each tool</h2>
+      <p class="text-content-muted mb-10">The right choice depends entirely on your workflow direction.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-accent border border-gray-100 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-3">Use html2design when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You have HTML and CSS and need editable Figma layers</li>
+            <li>You're working on <strong class="text-content">localhost</strong> or a local dev server</li>
+            <li>You need to import a component from a <strong class="text-content">Storybook story</strong> or email template</li>
+            <li>You want <strong class="text-content">Flexbox layouts accurately preserved</strong> in Figma</li>
+            <li>You're doing a <a href="/use-cases/developer-handoff" class="text-accent hover:underline">developer handoff audit</a> against the original design spec</li>
+            <li>You're <a href="/use-cases/legacy-migration" class="text-accent hover:underline">migrating a legacy codebase</a> into Figma</li>
+            <li>You don't want to install a browser extension</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-gray-200 border border-gray-100">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-3">Use Anima when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You want to <strong class="text-content">generate React or HTML code</strong> from a Figma design file</li>
+            <li>Your team uses Figma as the design source of truth and needs developer-ready code output</li>
+            <li>You need a <strong class="text-content">handoff layer</strong> between Figma designers and frontend developers</li>
+            <li>You're working on a greenfield design system in Figma and need code export</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 p-5 bg-accent/10 rounded-2xl border border-accent/20">
+        <p class="text-sm font-medium text-accent mb-1">Can I use both?</p>
+        <p class="text-sm text-content-muted">Yes — they complement each other in full-cycle workflows. Use html2design to bring existing HTML/CSS into Figma for design review or migration. Use Anima to generate code from the updated Figma designs after the design iteration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Frequently asked questions">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-4 max-w-3xl">
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden" open>
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Does Anima import HTML into Figma?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            No. Anima's primary function is the reverse: it exports Figma designs into React, HTML, or Vue code. It is a design-to-code tool. If you need to import HTML or CSS into Figma and get editable layers, <a href="https://www.htmltofigma.io" class="text-accent hover:underline">html2design</a> is the purpose-built tool for that direction.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Can html2design replace Anima?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            They serve different workflows. html2design brings code into Figma (code → design). Anima takes Figma designs and produces production code (design → code). If your goal is to convert existing HTML/CSS into Figma layers, html2design is the right tool. If your goal is to generate React or HTML from a Figma file, Anima addresses that direction.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Which tool works with localhost and unreleased components?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design. Because it works by accepting pasted HTML and CSS directly inside the Figma plugin, it has no dependency on a live, public URL. You can paste output from a local dev server running on <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>, a Storybook story, or any component you can copy from your browser's DevTools — even if it's behind authentication.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            How does html2design handle Flexbox layouts?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Properties like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">flex-direction</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">align-items</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">justify-content</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gap</code>, and <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code> are reflected in the spatial layout of the generated frames. The result is a Figma layer tree you can iterate on — not a flat image.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            What is Anima's pricing vs html2design?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design charges $12/month or $96/year for unlimited HTML imports with full feature access. Anima offers a free plan with limited exports and paid plans for teams. For straightforward HTML-to-Figma conversion, html2design's flat pricing is more predictable.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Do I need a Chrome extension to use html2design?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            No. html2design is a native Figma plugin installed once from the Figma Community. There is no Chrome extension, no browser tab, and no dependency on a live URL. You paste HTML and CSS directly into the plugin inside Figma.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="py-14 md:py-20" aria-label="Related comparisons and guides">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xl md:text-2xl font-black tracking-tighter mb-8">Explore more comparisons &amp; guides</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="/compare" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Compare Hub</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">All HTML to Figma Comparisons</p>
+        </a>
+        <a href="/compare/html2design-vs-locofy" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Locofy</p>
+        </a>
+        <a href="/compare/html2design-vs-figma-dev-mode" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Figma Dev Mode</p>
+        </a>
+        <a href="/compare/html2design-vs-teleporthq" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs TeleportHQ</p>
+        </a>
+        <a href="/guide" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Guide</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Complete HTML to Figma Guide</p>
+        </a>
+        <a href="/blog/html-to-figma-tools-compared" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Blog</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Top 5 HTML to Figma Tools Compared</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Ready to import HTML into Figma?</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install HTML to Figma from the Figma Community and convert your first HTML/CSS in under 2 minutes.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+      <p class="text-white/30 text-xs mt-6">Want the full picture? <a href="/guide" class="underline text-white/50 hover:text-white/80 transition-colors">Read the Complete Guide to HTML to Figma Conversion &rarr;</a></p>
+      <p class="text-white/30 text-xs mt-2">See all comparisons at the <a href="/compare" class="underline text-white/50 hover:text-white/80 transition-colors">Compare hub &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors font-medium text-content">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
