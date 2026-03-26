@@ -166,7 +166,7 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - HTML to Figma in Your CI/CD Pipeline (2026 Guide) — https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline
 - How to Redesign a Legacy Website Without Starting From Scratch — https://www.htmltofigma.io/blog/redesign-legacy-website-figma
 
-## Use case pages (17 total)
+## Use case pages (21 total)
 
 - Legacy Website Migration to Figma — https://www.htmltofigma.io/use-cases/legacy-migration
 - Developer Handoff Audit — https://www.htmltofigma.io/use-cases/developer-handoff
@@ -185,14 +185,22 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Adobe XD to Figma — https://www.htmltofigma.io/use-cases/adobe-xd-to-figma
 - Webflow to Figma — https://www.htmltofigma.io/use-cases/webflow-to-figma
 - Tailwind CSS to Figma — https://www.htmltofigma.io/use-cases/tailwind-to-figma
+- Astro to Figma — https://www.htmltofigma.io/use-cases/astro-to-figma
+- Remix to Figma — https://www.htmltofigma.io/use-cases/remix-to-figma
+- Shopify to Figma — https://www.htmltofigma.io/use-cases/shopify-to-figma
+- Alpine.js to Figma — https://www.htmltofigma.io/use-cases/alpine-to-figma
 
-## Comparison pages
+## Comparison pages (9 total)
 
 - html2design vs html.to.design — Full Comparison — https://www.htmltofigma.io/compare
 - html2design vs Anima — https://www.htmltofigma.io/compare/html2design-vs-anima
 - html2design vs Locofy — https://www.htmltofigma.io/compare/html2design-vs-locofy
 - html2design vs Figma Dev Mode — https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode
 - html2design vs TeleportHQ — https://www.htmltofigma.io/compare/html2design-vs-teleporthq
+- html2design vs html.to.design (direct) — https://www.htmltofigma.io/compare/html2design-vs-html-to-design
+- html2design vs Screenshot Tools — https://www.htmltofigma.io/compare/html2design-vs-screenshot-tools
+- html2design vs Zeplin — https://www.htmltofigma.io/compare/html2design-vs-zeplin
+- html2design vs UXPin — https://www.htmltofigma.io/compare/html2design-vs-uxpin
 
 ## RSS Feed
 
