@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>html2design vs Zeplin (2026) — Design Import vs Developer Handoff</title>
+  <meta name="description" content="Honest comparison of html2design and Zeplin. html2design converts HTML/CSS into editable Figma layers. Zeplin annotates existing Figma designs for developer handoff. They serve different stages of the design-development workflow." />
+  <meta name="keywords" content="html2design vs zeplin, zeplin figma alternative, html to figma plugin, zeplin vs html2design, figma html import, developer handoff figma, zeplin comparison" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/compare/html2design-vs-zeplin" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/compare/html2design-vs-zeplin" />
+  <meta property="og:title" content="html2design vs Zeplin (2026) — Design Import vs Developer Handoff" />
+  <meta property="og:description" content="html2design brings HTML/CSS into Figma as editable layers. Zeplin takes finished Figma designs and annotates them for developer handoff. They solve different problems at different stages." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/compare.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="html2design vs Zeplin comparison" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="html2design vs Zeplin — Opposite Stages of the Same Workflow" />
+  <meta name="twitter:description" content="html2design is code → Figma. Zeplin is Figma → developer annotations. If you want to import HTML into Figma, html2design is the right tool." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/compare.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "html2design vs Zeplin (2026)",
+    "description": "Detailed comparison of html2design and Zeplin for design-development workflows. Covers workflow direction, developer handoff features, import capabilities, and when to use each tool.",
+    "url": "https://www.htmltofigma.io/compare/html2design-vs-zeplin",
+    "inLanguage": "en",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://www.htmltofigma.io" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": { "@type": "ImageObject", "url": "https://www.htmltofigma.io/favicon.svg" }
+    },
+    "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://www.htmltofigma.io/" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.htmltofigma.io/compare" },
+        { "@type": "ListItem", "position": 3, "name": "html2design vs Zeplin", "item": "https://www.htmltofigma.io/compare/html2design-vs-zeplin" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://www.htmltofigma.io/compare" },
+      { "@type": "ListItem", "position": 3, "name": "html2design vs Zeplin", "item": "https://www.htmltofigma.io/compare/html2design-vs-zeplin" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Zeplin import HTML into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Zeplin is a developer handoff tool — it takes finished Figma (or Sketch, XD) designs and annotates them with CSS snippets, measurements, spacing values, and color codes for developers to inspect. Zeplin does not import HTML or CSS into Figma. If you need to bring HTML or CSS code into Figma as editable layers, html2design (htmltofigma.io) is the purpose-built tool for that direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can html2design replace Zeplin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They serve different stages of the design-development workflow. html2design is for the import stage: it brings existing HTML and CSS into Figma as editable layers (code → design). Zeplin is for the handoff stage: it takes finished Figma designs and generates annotated specs for developers (design → developer). If your goal is to import code into Figma, use html2design. If your goal is to share final Figma designs with developers, Zeplin addresses that."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Zeplin used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zeplin is a developer handoff platform. Designers export screens from Figma (or Sketch) to Zeplin, where developers can inspect dimensions, colors, fonts, spacing, and auto-generated CSS or Swift snippets. It helps bridge the communication gap between design and engineering teams. It is not used to import code into Figma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does html2design fit into a design-development workflow with Zeplin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design and Zeplin can be used in sequence. Use html2design to import the existing HTML/CSS codebase into Figma — this lets designers see and iterate on what the code actually renders. After design revisions are complete in Figma, use Zeplin to export those updated designs as annotated developer specs. html2design handles the intake; Zeplin handles the output."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Figma's Dev Mode replace Zeplin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma's built-in Dev Mode (available on Figma's paid plans) provides many of the same developer inspection features that Zeplin offers — CSS code snippets, spacing annotations, asset export. For many teams, Figma Dev Mode has reduced or eliminated the need for Zeplin. html2design complements either setup by providing the import leg of the workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is html2design's pricing compared to Zeplin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "html2design charges $12/month or $96/year per user for unlimited HTML imports. Zeplin has a free tier and paid team plans that scale by seat count (typically $8–$17+ per user per month depending on the plan). html2design's flat pricing is more predictable for individuals; Zeplin's costs scale with team size."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .geo-box { background: #EFF6FF; border: 1.5px solid #BFDBFE; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .geo-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .geo-box p { color: #1E3A8A; margin-bottom: 0; font-weight: 500; }
+    .check-yes { color: #2563EB; font-weight: 700; }
+    .check-no  { color: #D1D5DB; font-weight: 700; }
+    .check-partial { color: #F59E0B; font-weight: 600; font-size: 0.8em; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/compare" class="hover:text-accent transition-colors">Compare</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">html2design vs Zeplin</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tool Comparison · 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        html2design<br />vs Zeplin
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        html2design brings code <em>into</em> Figma. Zeplin takes finished Figma designs <em>out</em> to developers.
+        They operate at <strong class="text-content font-medium">opposite ends of the same workflow</strong>.
+      </p>
+    </div>
+  </header>
+
+  <!-- GEO Answer Box -->
+  <section class="max-w-5xl mx-auto px-6 mb-10">
+    <div class="geo-box">
+      <p class="geo-label">Direct Answer</p>
+      <p><strong>html2design and Zeplin serve different stages of the design-development workflow.</strong> html2design converts HTML and CSS code into native, editable Figma layers (code → design). Zeplin takes finished Figma designs and generates annotated developer specs — CSS snippets, spacing values, color codes — for developer handoff (design → developer). If you need to import HTML into Figma, html2design is the right tool. If you need to ship annotated design specs to your engineering team, Zeplin addresses that.</p>
+    </div>
+  </section>
+
+  <!-- TL;DR Cards -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14" aria-label="Summary comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">TL;DR — Pick Your Tool</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+        <div class="bg-white border-2 border-accent rounded-2xl p-6 shadow-sm relative">
+          <div class="absolute top-4 right-4">
+            <span class="text-[10px] font-mono uppercase tracking-widest bg-accent text-white px-2 py-0.5 rounded-full">Code → Figma</span>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">html2design</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Import HTML.<br />Get editable layers.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Paste HTML and CSS into Figma. Gets you native Figma frames, editable text, fills, and Flexbox layouts — not screenshots. Works on localhost, behind auth, or from any source you can copy from DevTools.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm">
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Import stage (code → design)</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Works with localhost &amp; Storybook</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Editable Figma layers</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> $12/mo or $96/yr</li>
+          </ul>
+          <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+             target="_blank" rel="noopener noreferrer"
+             class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline">
+            Install from Figma Community &rarr;
+          </a>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-2xl p-6">
+          <div class="absolute top-4 right-4"></div>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Zeplin</p>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Export Figma.<br />Get developer specs.</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Developer handoff platform. Designers push screens from Figma to Zeplin; developers inspect dimensions, CSS snippets, spacing, and colors. Solves the communication gap at the end of the design process.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-sm text-content-muted">
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Not designed to import HTML into Figma</li>
+            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Requires finished Figma designs as input</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Handoff stage (design → developer)</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Free tier + team plans from ~$8/mo/seat</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison Table -->
+  <section class="py-14 md:py-20" aria-label="Detailed feature comparison">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Feature-by-feature breakdown</h2>
+      <p class="text-content-muted mb-10">Every row is based on publicly documented capabilities as of 2026.</p>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-200">
+        <table class="w-full min-w-[640px] text-sm border-collapse">
+          <thead class="bg-surface">
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-4 px-5 font-semibold text-content text-xs uppercase tracking-wider w-[42%]">Feature</th>
+              <th class="py-4 px-4 font-semibold text-accent text-xs uppercase tracking-wider text-center w-[29%]">html2design</th>
+              <th class="py-4 px-4 font-semibold text-content text-xs uppercase tracking-wider text-center w-[29%]">Zeplin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Direction -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Workflow Direction</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Primary workflow stage</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">Import (code → design)</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Handoff (design → dev)</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Import HTML/CSS into Figma</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Generate developer specs from Figma</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">CSS code snippet generation for devs</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Import capabilities -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">HTML Import Capabilities</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Accepts pasted HTML/CSS</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Works with localhost / dev server</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Produces editable Figma layers</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not applicable</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Flexbox layout preserved</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not applicable</td>
+            </tr>
+
+            <!-- Handoff features -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Developer Handoff Features</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Inspect spacing, dimensions, colors</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Comment &amp; annotation workflow for devs</td>
+              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Setup -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Setup</td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Native Figma plugin</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
+            </tr>
+
+            <!-- Pricing -->
+            <tr class="border-b border-gray-100 bg-gray-50/50">
+              <td class="py-3 px-5 text-xs font-mono uppercase tracking-widest text-gray-400" colspan="3">Pricing</td>
+            </tr>
+            <tr class="hover:bg-surface transition-colors">
+              <td class="py-4 px-5 font-medium text-content">Pricing</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">$12/mo · $96/yr</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Free + from ~$8/mo/seat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs font-mono text-gray-400 mt-5 max-w-3xl leading-relaxed">
+        ✓ = fully supported &nbsp;|&nbsp; ✗ = not supported &nbsp;|&nbsp; "N/A" = not applicable to this tool's purpose
+      </p>
+    </div>
+  </section>
+
+  <!-- Pros / Cons -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Pros and cons">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Pros &amp; Cons</h2>
+      <p class="text-content-muted mb-10">An honest assessment of each tool's strengths and limitations.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- html2design -->
+        <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-4">html2design</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Only tool that accepts pasted HTML/CSS directly — no live URL required</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Works with localhost, Storybook, email templates, and dev builds</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Produces real Figma layers: editable text, fills, properly positioned frames</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Enables design audit by comparing live code to original design spec</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Simple, transparent pricing with unlimited imports</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Does not generate developer specs or CSS snippets from Figma</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Complex CSS animations are not replicated in Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zeplin -->
+        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-4">Zeplin</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Excellent developer inspection: CSS, spacing, colors, assets in one place</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Annotation and comment workflow specifically for design–dev handoff</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Integrations with Jira, Slack, GitHub for team coordination</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Free tier available for small teams</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
+              <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Cannot import HTML or CSS into Figma — requires finished designs as input</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Adds a separate tool in the workflow outside Figma</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Team plan costs scale per seat — can be expensive for larger orgs</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Figma Dev Mode covers much of the same functionality natively</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- When to use each -->
+  <section class="py-14 md:py-20" aria-label="When to use each tool">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">When to use each tool</h2>
+      <p class="text-content-muted mb-10">These tools serve different stages — the choice depends on where you are in your workflow.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-accent border border-gray-100 shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-3">Use html2design when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You have HTML and CSS and need <strong class="text-content">editable Figma layers</strong></li>
+            <li>You're <strong class="text-content">migrating an existing codebase</strong> or component library into Figma</li>
+            <li>You're working on <strong class="text-content">localhost</strong> or a local dev server</li>
+            <li>You want to <strong class="text-content">audit the live implementation</strong> against the original Figma design</li>
+            <li>You need to import a component from <strong class="text-content">Storybook</strong> or an internal design system</li>
+            <li>You're doing <a href="/use-cases/developer-handoff" class="text-accent hover:underline">developer handoff prep</a> or <a href="/use-cases/legacy-migration" class="text-accent hover:underline">legacy migration</a></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border-l-4 border-gray-200 border border-gray-100">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-3">Use Zeplin when…</p>
+          <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>Your <strong class="text-content">Figma designs are finalized</strong> and need to be shared with developers</li>
+            <li>Your dev team needs <strong class="text-content">CSS snippets, spacing values, and color codes</strong> without opening Figma</li>
+            <li>You need a <strong class="text-content">comment and annotation workflow</strong> for the design–dev review process</li>
+            <li>You want Jira/Slack/GitHub integrations for <strong class="text-content">coordinating handoff across tools</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 p-5 bg-accent/10 rounded-2xl border border-accent/20">
+        <p class="text-sm font-medium text-accent mb-1">Can I use both?</p>
+        <p class="text-sm text-content-muted">Yes — html2design and Zeplin work in sequence. Use html2design to bring existing HTML/CSS into Figma for design review and iteration. Once the Figma designs are updated and approved, use Zeplin to export annotated developer specs for implementation. html2design handles the intake; Zeplin handles the output.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20" aria-label="Frequently asked questions">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-4 max-w-3xl">
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden" open>
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Does Zeplin import HTML into Figma?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            No. Zeplin is a developer handoff tool — it takes finished Figma designs and annotates them with CSS snippets, measurements, and color codes for developers to inspect. It does not import HTML or CSS into Figma. If you need to bring HTML into Figma as editable layers, <a href="https://www.htmltofigma.io" class="text-accent hover:underline">html2design</a> is the purpose-built tool for that direction.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Can html2design replace Zeplin?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            They serve different stages. html2design is for the import stage (code → design). Zeplin is for the handoff stage (design → developer). html2design does not generate developer specs; Zeplin does not import code. They are complementary, not interchangeable.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            What is Zeplin used for?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            Zeplin is a developer handoff platform. Designers push screens from Figma to Zeplin, where developers inspect dimensions, colors, fonts, spacing, and auto-generated CSS snippets. It bridges the communication gap between designers and developers at the end of the design process.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            How does html2design fit into a design-development workflow with Zeplin?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design and Zeplin can be used in sequence. Use html2design to import the existing HTML/CSS codebase into Figma — this lets designers see and iterate on what the code actually renders. After design revisions are complete in Figma, use Zeplin to export those updated designs as annotated developer specs. html2design handles the intake; Zeplin handles the output.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            Does Figma's Dev Mode replace Zeplin?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            Figma's built-in Dev Mode provides many of the same developer inspection features as Zeplin — CSS snippets, spacing annotations, asset export. For many teams, Figma Dev Mode has reduced or eliminated the need for Zeplin. html2design complements either setup by providing the import leg of the workflow.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
+            What is html2design's pricing compared to Zeplin?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
+            html2design charges $12/month or $96/year per user for unlimited HTML imports. Zeplin has a free tier and paid team plans that scale by seat count (typically $8–$17+ per user per month). html2design's flat pricing is more predictable for individuals; Zeplin's costs scale with team size.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="py-14 md:py-20" aria-label="Related comparisons and guides">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xl md:text-2xl font-black tracking-tighter mb-8">Explore more comparisons &amp; guides</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="/compare" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Compare Hub</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">All HTML to Figma Comparisons</p>
+        </a>
+        <a href="/compare/html2design-vs-anima" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Anima</p>
+        </a>
+        <a href="/compare/html2design-vs-figma-dev-mode" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs Figma Dev Mode</p>
+        </a>
+        <a href="/compare/html2design-vs-uxpin" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Comparison</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">html2design vs UXPin Merge</p>
+        </a>
+        <a href="/guide" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Guide</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Complete HTML to Figma Guide</p>
+        </a>
+        <a href="/use-cases/developer-handoff" class="group bg-surface hover:bg-white border border-gray-100 hover:border-accent/30 rounded-2xl p-5 transition-all hover:shadow-sm">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-1">Use Case</p>
+          <p class="font-semibold text-content group-hover:text-accent transition-colors text-sm">Developer Handoff with html2design</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Ready to import HTML into Figma?</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install HTML to Figma from the Figma Community and convert your first HTML/CSS in under 2 minutes.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+      <p class="text-white/30 text-xs mt-6">Want the full picture? <a href="/guide" class="underline text-white/50 hover:text-white/80 transition-colors">Read the Complete Guide to HTML to Figma Conversion &rarr;</a></p>
+      <p class="text-white/30 text-xs mt-2">See all comparisons at the <a href="/compare" class="underline text-white/50 hover:text-white/80 transition-colors">Compare hub &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors font-medium text-content">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
