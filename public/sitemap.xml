@@ -406,6 +406,50 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.htmltofigma.io/use-cases/astro-to-figma</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/astro-to-figma.svg</image:loc>
+      <image:title>Astro to Figma</image:title>
+      <image:caption>Import Astro site and island component markup as native Figma design layers using html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/remix-to-figma</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/remix-to-figma.svg</image:loc>
+      <image:title>Remix to Figma</image:title>
+      <image:caption>Convert Remix app routes with loader data as native Figma design layers using html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/shopify-to-figma</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/shopify-to-figma.svg</image:loc>
+      <image:title>Shopify to Figma</image:title>
+      <image:caption>Import Shopify theme HTML as native Figma design layers using html2design — works with Dawn, Liquid, and Headless Commerce</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.htmltofigma.io/use-cases/alpine-to-figma</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.htmltofigma.io/og/use-cases/alpine-to-figma.svg</image:loc>
+      <image:title>Alpine.js to Figma</image:title>
+      <image:caption>Capture Alpine.js component states as native Figma design layers using html2design</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.htmltofigma.io/use-cases/svelte-to-figma</loc>
     <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>

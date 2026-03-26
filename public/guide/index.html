@@ -498,6 +498,26 @@
         <div class="fw-title">Sketch Migration</div>
         <div class="fw-desc">Migrate a Sketch-based design system to Figma using your HTML components as source of truth.</div>
       </a>
+      <a href="/use-cases/astro-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Astro</div>
+        <div class="fw-desc">Convert Astro sites and island components — zero JS by default, ultra-clean Figma output.</div>
+      </a>
+      <a href="/use-cases/remix-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Remix</div>
+        <div class="fw-desc">Import Remix routes with real loader data as native Figma layers — no placeholder text.</div>
+      </a>
+      <a href="/use-cases/shopify-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Shopify</div>
+        <div class="fw-desc">Import Shopify themes — Dawn, custom Liquid, or Headless Commerce — as editable Figma layers.</div>
+      </a>
+      <a href="/use-cases/alpine-to-figma" class="framework-card">
+        <div class="fw-label">Use Case</div>
+        <div class="fw-title">Alpine.js</div>
+        <div class="fw-desc">Capture Alpine.js components in any interactive state as Figma frames — works with any backend.</div>
+      </a>
     </div>
 
     <h3>React and Next.js</h3>
@@ -532,6 +552,18 @@
 
     <h3>Gatsby</h3>
     <p>Gatsby pre-renders pages to static HTML at build time. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">gatsby develop</code> or serve the built output, open the page in a browser, and copy the fully rendered outerHTML from DevTools. GraphQL-populated content (images, rich text, dynamic data) is captured exactly as rendered. → <a href="/use-cases/gatsby-to-figma">Gatsby to Figma →</a></p>
+
+    <h3>Astro</h3>
+    <p>Astro ships zero JavaScript by default, producing clean semantic HTML that maps directly to Figma layer names. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>, open the page, and copy the outerHTML. For Astro Island components (React, Vue, Svelte), wait for hydration to complete in DevTools before copying. Astro's scoped styles compile to unique class identifiers that the browser resolves to computed values — fully transparent to the import. → <a href="/use-cases/astro-to-figma">Astro to Figma →</a></p>
+
+    <h3>Remix</h3>
+    <p>Remix is a full-stack React framework that performs server-side rendering on every request. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>, navigate to the route (including auth-protected routes you're logged into), and copy the outerHTML from the DevTools Elements panel. Remix loaders populate pages with real data from your database — so Figma imports contain actual product names, user details, and prices rather than placeholder text. → <a href="/use-cases/remix-to-figma">Remix to Figma →</a></p>
+
+    <h3>Shopify</h3>
+    <p>Shopify renders Liquid templates on the server into standard HTML. Open the storefront (live, theme preview, or Shopify CLI dev server), navigate to the page template you want (homepage, product page, collection, cart), and copy the outerHTML of the Shopify section wrapper from DevTools. Dawn and modern Shopify themes use CSS custom properties for brand colors and fonts — these resolve to the exact values from your theme customizer settings. Works with Dawn, any marketplace theme, and Headless Commerce (Hydrogen, Next.js Commerce). → <a href="/use-cases/shopify-to-figma">Shopify to Figma →</a></p>
+
+    <h3>Alpine.js</h3>
+    <p>Alpine.js enriches server-rendered HTML with interactivity directly in the browser — no build step, no virtual DOM. Trigger the component state you want to capture (open dropdown, active tab, error state), then copy the outerHTML from DevTools. Alpine modifies the real DOM, so DevTools always shows the current state. Particularly useful for capturing multiple component variants: import each state separately and convert to Figma Component Variants. Works with any backend that renders HTML — Laravel Blade, Django, Rails, plain PHP. → <a href="/use-cases/alpine-to-figma">Alpine.js to Figma →</a></p>
 
     <!-- Section 4 -->
     <h2 id="design-system">4. Design System Migration Workflow</h2>

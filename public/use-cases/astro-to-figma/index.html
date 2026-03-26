@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Astro to Figma — Convert Astro Sites &amp; Components to Designs</title>
+  <meta name="description" content="Convert Astro sites and components into editable Figma designs. html2design captures Astro's zero-JS island output — copy outerHTML from DevTools and get fully layered Figma frames." />
+  <meta name="keywords" content="astro to figma, astro component figma, convert astro site figma, astro figma plugin, astro design handoff figma, astro html to figma, astro figma export, astrojs to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/astro-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/astro-to-figma" />
+  <meta property="og:title" content="Astro to Figma — Convert Astro Sites &amp; Components to Designs" />
+  <meta property="og:description" content="Astro ships zero JavaScript by default, producing clean semantic HTML that maps perfectly to Figma layers. Copy outerHTML from DevTools and paste into html2design for instant native Figma frames." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/astro-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Astro component markup converted to Figma design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Astro to Figma — Convert Astro Sites &amp; Components to Designs" />
+  <meta name="twitter:description" content="Astro's zero-JS HTML output makes it ideal for Figma conversion. Copy outerHTML from DevTools, paste into html2design, get native Figma layers instantly." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/astro-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Astro Sites to Figma Designs — Astro to Figma Workflow",
+    "description": "Step-by-step guide for converting Astro sites and components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/astro-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/astro-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Astro to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/astro-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an Astro site to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Astro dev server with npm run dev. Open the page in a browser, use DevTools (F12 → Elements) to find the section you want, right-click → Copy outerHTML, and paste it into the html2design Figma plugin. Astro ships zero JavaScript by default — the browser renders clean, semantic HTML that maps directly to Figma layers. The plugin generates native Figma frames from the rendered output."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Astro's CSS scoping and View Transitions affect the Figma import?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Astro scopes component styles using unique class identifiers (similar to Vue and Svelte), but the browser resolves these to their computed CSS values before you copy the outerHTML. html2design reads computed CSS, not source stylesheets, so scoped styles appear correctly in Figma. View Transitions are JavaScript-driven animations and are captured as a static snapshot of the current DOM state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Astro Island components that use React, Vue, or Svelte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Astro Islands are hydrated in the browser — the component renders to standard HTML regardless of whether it uses React, Vue, Svelte, or any other UI framework. Once the island has hydrated, copy the outerHTML from the DevTools Elements panel and paste it into html2design. The import captures the rendered output, not the framework source."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Astro's static site generation (SSG) work differently from SSR mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both work identically with html2design. Whether you run Astro in static output mode (npm run build + preview) or server mode (npm run dev with SSR), the browser receives and renders HTML. Use the DevTools Elements panel in either case — always copy from DevTools rather than page source to get the fully rendered, hydrated DOM state."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Astro to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Astro</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Astro to Figma —<br />
+        Zero-JS, Pure HTML
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Astro sites to Figma</strong> is especially clean because
+        Astro ships zero JavaScript by default — pages render as pure, semantic HTML in the browser.
+        Run the dev server, copy the rendered HTML from DevTools, paste it into html2design, and get
+        <strong class="text-content font-medium">native Figma layers</strong> that reflect exactly what the browser renders.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Astro to Figma — GEO definition paragraph -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Astro to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Astro to Figma"</strong> refers to exporting a rendered Astro page or component —
+        with its styles, layout, and content — into a native Figma design that designers can edit directly.
+        Astro is an island-architecture framework that generates minimal HTML with zero JavaScript overhead by default.
+        Pages are pre-rendered to static HTML at build time, and interactive UI islands are hydrated only where needed.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
+        native Figma frames. Astro scopes component styles using unique class identifiers that the browser resolves to
+        computed CSS values before the plugin reads them. The result is a pixel-accurate
+        representation of your Astro page — with real text layers, accurate spacing, and correct colors from your
+        design tokens or Tailwind configuration.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Astro to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Astro 3+, Astro 4+, static output, SSR mode, and any UI framework used as Astro Islands.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run the Astro dev server</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start the dev server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>
+              or <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npx astro dev</code>.
+              Astro's dev server starts in seconds and serves pages with hot module replacement.
+              Navigate to the page or section you want to capture.
+            </p>
+            <p>
+              For static sites, you can also run
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run build &amp;&amp; npm run preview</code>
+              to capture the final production output. Use the dev server for iteration speed
+              and the preview build when you need the exact final rendered state.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to
+              the Elements panel. Find the root element of the section you want — typically a
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section&gt;</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;header&gt;</code>, or
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element.
+            </p>
+            <p>
+              Right-click the element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For an Astro Island (a hydrated React, Vue, or Svelte component), wait for the island to
+              hydrate before copying — you'll see the client-side content rendered in the Elements panel
+              once hydration is complete.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. Astro's scoped styles are compiled to
+              unique identifiers at build time and resolved by the browser before you copy.
+              The plugin reads computed CSS values directly — not the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.astro</code> source files —
+              so the output is a true representation of the rendered page.
+            </p>
+            <p>
+              If your Astro project uses Tailwind CSS, every utility class is already resolved to pixel values
+              by the browser. You get exact spacing, colors, and typography in Figma without any manual mapping.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer gets an editable version of the exact page —
+              not a screenshot, not a wireframe — and can iterate on spacing, typography, and color directly in Figma.
+              No Astro experience required on their end.
+            </p>
+            <p>
+              When the Astro page changes, re-import: run the dev server, copy the updated outerHTML, paste into
+              html2design. The workflow takes under two minutes and keeps Figma in sync with the live codebase.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Astro-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Astro-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Astro's island architecture and zero-JS default have some unique characteristics — here's how to work with them for the cleanest import.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Copy from DevTools, not page source</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro pages may include Island components that hydrate after the initial HTML load.
+            Always copy from the browser's DevTools Elements panel — not from "View Page Source" —
+            to ensure you capture the fully hydrated state. Islands using
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">client:load</code>,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">client:visible</code>, or
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">client:idle</code>
+            render their content in DevTools once hydration completes.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Scoped styles compile to unique identifiers</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro scopes
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style&gt;</code>
+            blocks in <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.astro</code>
+            component files using unique class suffixes (e.g.,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.astro-XXXXXXXX</code>).
+            The browser resolves these to their computed values — html2design reads the computed CSS,
+            so scoped styles are completely transparent to the import process and appear correctly in Figma.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Tailwind + Astro: zero extra steps</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro has first-class Tailwind CSS integration via
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@astrojs/tailwind</code>.
+            When you copy outerHTML from an Astro + Tailwind page, every utility class is already resolved
+            to its pixel value by the browser. You get exact spacing, colors from your
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">tailwind.config</code>,
+            and typography in Figma — without any manual design token mapping.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Content Collections: capture the rendered output</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro's Content Collections power blog posts, documentation pages, and data-driven layouts.
+            The collection data is fetched at build time and embedded into the rendered HTML.
+            Navigate to the page in your browser, wait for it to fully render, then copy the outerHTML —
+            the content (headings, paragraphs, images) will be fully present in the DevTools output.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Astro output is especially clean -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Astro output is especially clean in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Astro's ship-zero-JS philosophy produces lean, semantic HTML — which means cleaner Figma imports than framework-runtime models.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Zero JavaScript overhead in the output</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro removes all framework runtime code from static pages by default. No React fiber,
+            no Vue reactivity runtime, no Angular decorators — just clean HTML and CSS.
+            The imported Figma layers reflect pure semantic structure.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Semantic HTML output</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro encourages using semantic HTML elements —
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;header&gt;</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section&gt;</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;article&gt;</code>,
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;nav&gt;</code>.
+            These map to meaningful Figma layer names without the noise of framework-generated wrapper divs.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">CSS custom properties resolve cleanly</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Astro projects often use CSS custom properties for design tokens — colors, spacing, typography.
+            The browser resolves
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-brand)</code>
+            to its real hex value, so Figma fills reflect your actual design system.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Islands are captured at hydration state</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Interactive islands (React, Vue, Svelte components embedded in Astro) are captured as
+            their current rendered state. Toggle a UI state, fill a form, or expand an accordion —
+            then copy the outerHTML to capture that exact visual state in Figma.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert an Astro site to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>,
+            open the page in a browser, copy the section's outerHTML from DevTools, and paste into html2design in Figma.
+            The plugin converts the rendered HTML into native Figma layers — no extension, no public URL required.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Do Astro's scoped styles affect the Figma import?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. Astro compiles scoped styles to unique class identifiers that the browser resolves to computed CSS values.
+            html2design reads computed CSS — not source stylesheets — so scoped styles appear correctly in Figma
+            without any special handling.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import Astro Island components into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Astro Islands hydrate in the browser — once hydrated, the component's HTML is visible in the
+            DevTools Elements panel. Copy the outerHTML after hydration and paste into html2design to import
+            the island's rendered output as native Figma layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Astro's static output differ from SSR mode for Figma import?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No difference. Both modes render HTML in the browser. Use the DevTools Elements panel in either case —
+            always copy from there rather than page source to capture the fully rendered, hydrated state.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/nextjs-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Next.js to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import Next.js server-rendered and client-rendered pages into Figma.</p>
+        </a>
+
+        <a href="/use-cases/remix-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Remix to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Remix apps with nested routes and loader data into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/svelte-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Svelte to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Capture Svelte and SvelteKit component renders as native Figma designs.</p>
+        </a>
+
+        <a href="/blog/css-grid-to-figma-auto-layout"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">CSS Grid &amp; Flexbox to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How Astro's layout components convert to Figma Auto Layout — preserving spacing and alignment.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Astro site to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with Astro 3+, Astro 4+, and any UI framework used as Islands.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Remix to Figma — Convert Remix Apps to Editable Designs</title>
+  <meta name="description" content="Convert Remix apps and routes into editable Figma designs. html2design captures Remix's server-rendered HTML — copy outerHTML from DevTools and get fully layered Figma frames in seconds." />
+  <meta name="keywords" content="remix to figma, remix react figma, convert remix app figma, remix figma plugin, remix design handoff figma, remix html to figma, remix figma export, remix.run to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/remix-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/remix-to-figma" />
+  <meta property="og:title" content="Remix to Figma — Convert Remix Apps to Editable Designs" />
+  <meta property="og:description" content="Remix is a full-stack React framework with SSR by default. Copy outerHTML from your dev server's DevTools and paste into html2design for instant native Figma frames." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/remix-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Remix app routes converted to Figma design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Remix to Figma — Convert Remix Apps to Editable Designs" />
+  <meta name="twitter:description" content="Remix renders full pages server-side on every request. Copy outerHTML from DevTools, paste into html2design, get native Figma layers — no public URL required." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/remix-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Remix Apps to Figma Designs — Remix to Figma Workflow",
+    "description": "Step-by-step guide for converting Remix routes and components into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/remix-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/remix-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Remix to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/remix-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Remix app to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run your Remix dev server with npm run dev. Open the route in a browser, use DevTools (F12 → Elements) to find the element you want, right-click → Copy outerHTML, and paste it into the html2design Figma plugin. Remix renders pages server-side and hydrates them client-side — always copy from the DevTools Elements panel (not page source) to get the fully hydrated React output. The plugin generates native Figma frames from the rendered HTML."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Remix's loader data affect the Figma import?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, it works to your advantage. Remix loaders fetch data server-side and embed it into the rendered HTML. When you copy outerHTML from the browser, the loader data (user names, product details, prices, etc.) is already rendered as real HTML text. You get a Figma frame with actual content — not placeholder lorem ipsum — which is far more useful for design review and handoff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Remix nested routes into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Remix's nested routing renders multiple route segments into a single page layout. Navigate to the full composed page in your browser, then copy the outerHTML from the DevTools Elements panel. The entire page — including parent and child route segments — is present in the rendered DOM and will be imported as a single Figma frame."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I import a Remix auth-protected route into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run Remix locally with npm run dev, log in to the app in your browser, navigate to the protected route, and copy the outerHTML from DevTools. Because html2design works with your local browser session — not a URL crawler — it can access any page your browser can load, including auth-gated routes. No public URL or authentication bypass needed."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Remix to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Remix</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Remix to Figma —<br />
+        From SSR Output
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Remix apps to Figma</strong> is straightforward because
+        Remix renders full pages server-side on every request, producing HTML with real data from your loaders.
+        Run the dev server, copy the rendered HTML from your browser, paste it into html2design, and get
+        <strong class="text-content font-medium">native Figma layers</strong> with actual content — not placeholders.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Remix to Figma -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Remix to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Remix to Figma"</strong> refers to exporting a rendered Remix route —
+        with its loader data, nested layout, and styles — into a native Figma design that designers can edit directly.
+        Remix is a full-stack React meta-framework built on web standards. It performs server-side rendering on every
+        request by default, meaning each page arrives in the browser as fully-formed HTML with real data from your loaders.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
+        native Figma frames. Remix routes use standard React rendering — so inline styles, CSS Modules, Tailwind classes,
+        or any other styling approach is resolved to computed CSS values by the browser before the plugin reads them.
+        The result in Figma is a pixel-accurate representation of your Remix route with real content from your database or API.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Remix to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Remix v2+, React Router v7, and any styling approach — CSS Modules, Tailwind, styled-components.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Run the Remix dev server</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Start the dev server with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>.
+              Remix starts a local HTTP server that renders routes server-side with live reload.
+              Navigate to the route you want to capture — including routes behind authentication.
+            </p>
+            <p>
+              If the route requires a logged-in user, simply log in to the local app in your browser first.
+              html2design works with your browser session, not a URL crawler — so any page your browser
+              can load is available for import.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to
+              the Elements panel. Find the root element of the section you want — Remix renders a
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;div id="root"&gt;</code>
+              that contains the fully composed route tree.
+            </p>
+            <p>
+              Right-click the element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              For a specific section or component, navigate to the element in the tree and copy from there.
+              Always copy from the Elements panel (not page source) to get the hydrated React output.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. Remix uses standard React rendering —
+              CSS Modules compile to unique class names, Tailwind utilities resolve to pixel values,
+              and styled-components inline their styles. The browser resolves all of these before you copy.
+            </p>
+            <p>
+              You get a native Figma frame with editable text layers populated by your real loader data —
+              actual user names, product titles, prices, and content rather than placeholder text.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame with your designer</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame link. Your designer gets an editable version of the exact route —
+              not a PNG, not a wireframe — populated with real content. They can iterate on spacing,
+              typography, and color directly in Figma without needing Remix or React experience.
+            </p>
+            <p>
+              When the route changes, re-import: run the dev server, navigate to the route, copy the
+              updated outerHTML, paste into html2design. The workflow takes under two minutes.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Remix-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Remix-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Remix has some unique patterns — nested routes, loaders, actions — here's how to work with them for the cleanest import.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Loaders populate real content — use it</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix loaders run on the server and populate routes with real data from your database or API.
+            When you capture the rendered HTML, the content is already real — product names, user profiles,
+            prices. Design reviews in Figma with actual content catch layout issues that lorem ipsum masks.
+            Seed your local database with representative data before capturing for best results.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Nested routes compose in the browser</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix's nested routing system composes parent and child route segments into a single page layout.
+            Navigate to the full composed URL (e.g.,
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">/dashboard/projects/123</code>)
+            and copy the full page outerHTML from the
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> or root element.
+            The entire composed layout — header, sidebar, nested content — is present in the rendered DOM.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Access protected routes locally</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix applications often have auth-protected routes that redirect unauthenticated users.
+            Run the app locally, log in with a test account, and then navigate to the protected route.
+            Your browser session maintains authentication — html2design copies from the rendered,
+            authenticated DOM, so protected routes work exactly like public ones.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture error boundaries and loading states</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix has built-in
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">ErrorBoundary</code> and
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">HydrateFallback</code> components.
+            To capture these states for design review, trigger the condition in your browser (throw an error,
+            use a slow network preset in DevTools), then copy the outerHTML when the desired state renders.
+            This lets you design error and loading states with real layout context in Figma.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Remix output works well -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Remix apps work well in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Remix's SSR-first architecture and standard React rendering produce clean, data-rich HTML that imports accurately into Figma.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Real data from loaders, not placeholders</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix's server-side data loading means your Figma imports contain actual content —
+            not lorem ipsum. Design reviews with real data reveal text overflow, wrapping,
+            and layout edge cases that placeholder content never exposes.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Full-page SSR on every request</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix renders complete pages on the server — no client-side data-fetching spinners
+            or empty states to work around. Navigate to any route and the full page is immediately
+            available to copy from DevTools.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Works with any CSS approach</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Remix works with CSS Modules, Tailwind CSS, Vanilla Extract, styled-components, and plain CSS.
+            All styling approaches resolve to computed CSS values in the browser — html2design reads those
+            computed values, so the Figma output is accurate regardless of your styling stack.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Auth-gated pages are accessible locally</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            URL-based screenshot tools and web crawlers cannot access authenticated routes.
+            html2design works with your local browser session — so dashboard pages, account settings,
+            and any auth-protected UI are all available for Figma import during local development.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Remix app to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Run <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>,
+            open the route in a browser, copy the outerHTML from the DevTools Elements panel, and paste into html2design.
+            Always copy from DevTools (not page source) to capture the fully hydrated React output.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Remix's loader data show up in Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Loader data is server-rendered into the HTML before the browser receives it.
+            When you copy outerHTML from DevTools, the real data (names, prices, content) is already
+            present as HTML text and renders accurately as Figma text layers.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import Remix nested routes into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Navigate to the full composed URL in your browser. Remix renders the complete route tree —
+            parent layout, child segments, and outlets — into a single page. Copy the outerHTML of the
+            root element to capture the entire composed layout as one Figma frame.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does Remix v2 work the same as React Router v7?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. React Router v7 (which absorbed Remix) uses the same file-based routing and SSR model.
+            The html2design workflow — run dev server, copy outerHTML from DevTools, paste into plugin —
+            is identical for both Remix v2 and React Router v7 projects.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/blog/react-component-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React Component to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Full guide for converting React and Next.js components — core patterns also apply to Remix.</p>
+        </a>
+
+        <a href="/use-cases/nextjs-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Next.js to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import Next.js App Router and Pages Router pages into Figma.</p>
+        </a>
+
+        <a href="/use-cases/astro-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Astro to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Astro sites with island architecture into editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/developer-handoff"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Workflow</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Developer Handoff</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Bridge the design-development gap with live-code Figma imports for accurate handoff.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Remix app to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with Remix v2, React Router v7, and any CSS approach.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

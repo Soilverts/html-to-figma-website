@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Shopify to Figma — Convert Shopify Themes &amp; Stores to Designs</title>
+  <meta name="description" content="Convert Shopify themes into editable Figma designs. html2design captures any Shopify storefront — Dawn, custom Liquid themes, or Headless — as native Figma layers. No Shopify Partner account needed." />
+  <meta name="keywords" content="shopify to figma, shopify theme figma, convert shopify store figma, shopify figma plugin, shopify design handoff figma, shopify html to figma, shopify figma export, shopify liquid to figma, dawn theme figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/shopify-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/shopify-to-figma" />
+  <meta property="og:title" content="Shopify to Figma — Convert Shopify Themes &amp; Stores to Designs" />
+  <meta property="og:description" content="Import any Shopify storefront — Dawn, custom Liquid themes, or Headless Commerce — as editable Figma layers. Copy outerHTML from the live store or theme preview and paste into html2design." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/shopify-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shopify theme rendered HTML converted to Figma design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shopify to Figma — Convert Shopify Themes &amp; Stores to Designs" />
+  <meta name="twitter:description" content="Import any Shopify store — live site, theme preview, or headless frontend — as native Figma layers. No special access required. Works with Dawn, Debut, Impulse, and custom themes." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/shopify-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Shopify Themes to Figma Designs — Shopify to Figma Workflow",
+    "description": "Step-by-step guide for converting Shopify themes and storefronts into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/shopify-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/shopify-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Shopify to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/shopify-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert a Shopify store to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the Shopify store (live site, theme preview, or Shopify CLI dev server) in a browser. Use DevTools (F12 → Elements) to find the section you want, right-click → Copy outerHTML, and paste it into the html2design Figma plugin. No Shopify Partner account or API access needed — you work directly from the rendered page in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Shopify's Liquid templating affect the Figma import?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Shopify renders Liquid templates on the server into standard HTML before sending them to the browser. By the time you open DevTools, the Liquid tags ({{ product.title }}, {% for %}) are fully rendered as real HTML content — product names, prices, and descriptions are present as text. html2design reads the rendered HTML, so Liquid is completely transparent to the import process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import the Dawn theme into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Dawn is Shopify's reference theme and uses standard HTML, CSS, and Web Components. Open your Dawn-powered store in a browser, find the section you want in DevTools, copy the outerHTML, and paste into html2design. Dawn's CSS custom properties (--color-background, --font-heading-family, etc.) are resolved to their computed values by the browser, so your Figma import reflects the actual theme settings from your Shopify customizer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use html2design with a Shopify Headless store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Shopify Headless Commerce (using Hydrogen, Next.js Commerce, or any custom frontend) renders standard HTML in the browser. The workflow is the same — open the headless frontend in a browser, copy the outerHTML of the section you want from DevTools, and paste into html2design. The import captures the rendered output regardless of whether the frontend is Liquid, React, or any other framework."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Shopify to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Shopify</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Shopify to Figma —<br />
+        Any Theme, Any Store
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Shopify themes to Figma</strong> is straightforward because
+        Shopify renders Liquid templates into standard HTML before sending them to the browser.
+        Open the store, copy the rendered HTML from DevTools, paste into html2design, and get
+        <strong class="text-content font-medium">native Figma layers</strong> with real product data.
+        Works with Dawn, any theme marketplace theme, headless Commerce, and custom Liquid builds.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Shopify to Figma -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Shopify to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Shopify to Figma"</strong> refers to importing a rendered Shopify storefront page —
+        homepage, product page, collection page, cart — into Figma as a native, editable design.
+        Shopify merchants, theme developers, and agencies use this workflow to redesign existing stores,
+        audit UI consistency across themes, create design documentation for clients, and build custom themes
+        in Figma before implementing them in Liquid.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Shopify renders Liquid templates on the server, producing standard HTML that any browser receives.
+        The html2design Figma plugin accepts that rendered HTML — copied from the browser's DevTools Elements panel —
+        and converts it into native Figma frames. Shopify's CSS custom properties, section styles, and block styles
+        are all resolved to computed values by the browser before you copy, so the Figma import accurately reflects
+        your theme customizer settings including brand colors and font choices.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Shopify to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with any Shopify theme — Dawn, Debut, Impulse, Brooklyn, custom Liquid builds, and Headless Commerce.
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Open the Shopify store in a browser</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Navigate to the Shopify storefront you want to import — the live store URL, a theme preview URL
+              from the Shopify admin, or a local Shopify CLI dev server running with
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">shopify theme dev</code>.
+            </p>
+            <p>
+              Navigate to the specific page type you want to capture: homepage, a product page
+              (navigate to an actual product, not a placeholder), a collection listing,
+              or the cart page after adding items. The richer the real content, the more useful
+              the resulting Figma frame will be for design review.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>) and switch to
+              the Elements panel. For a full page import, find the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> element
+              or the outermost section container. For a specific Shopify section, find the
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section id="shopify-section-*"&gt;</code>
+              wrapper that Shopify adds to every section.
+            </p>
+            <p>
+              Right-click the element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              Shopify's section wrappers are great targets because they capture a single,
+              semantically complete page section — hero, featured collection, testimonials, footer — in one copy.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. Shopify themes use CSS custom properties
+              for design tokens — the Dawn theme's
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">--color-background</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">--color-foreground</code>, and
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">--font-heading-family</code>
+              are all resolved to their actual values by the browser.
+            </p>
+            <p>
+              You get a native Figma frame with real product images (as image fills), actual product names and prices
+              as text layers, and your brand colors from the Shopify theme customizer.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Share the Figma frame for design review</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Share the Figma frame with your client, designer, or merchant. They get an editable version
+              of the actual store page — not a screenshot — and can annotate changes to color, typography,
+              layout, and content directly in Figma without needing Shopify admin access.
+            </p>
+            <p>
+              For ongoing theme development, re-import after each significant change: navigate to the updated
+              section in the theme preview, copy the outerHTML, and paste into html2design to keep the
+              Figma documentation in sync with the live theme.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopify-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Shopify-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Shopify themes have unique structure and patterns — here's how to work with them for the most useful Figma imports.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use Shopify section wrappers as import targets</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Shopify wraps every Online Store 2.0 section in a
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;section id="shopify-section-[id]"&gt;</code>
+            element. These are perfect import targets — semantically complete, scoped to one section,
+            and easy to find in DevTools. Import section by section to build a Figma file that mirrors
+            the page builder structure of your theme.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Dawn CSS custom properties reflect your customizer settings</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Shopify's Dawn theme (and most modern Shopify themes) uses CSS custom properties for brand colors,
+            font families, and spacing. The theme customizer writes these into a
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;style&gt;</code> block at the top of the page.
+            The browser resolves
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">var(--color-button)</code>
+            to the exact hex color you set in the customizer — so your Figma import reflects your actual brand settings.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use a theme preview URL for client-safe imports</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            From the Shopify admin, go to Online Store → Themes → Actions → Preview. The preview URL lets you
+            browse an unpublished theme customization without affecting the live store. Copy outerHTML from the
+            preview to import design iterations into Figma for client review before publishing — a clean way
+            to present proposed changes without touching the live site.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Product and collection pages: navigate to real items</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            For product page imports, navigate to an actual product URL (not a placeholder).
+            Product pages with real titles, images, prices, variant selectors, and descriptions produce
+            far more useful Figma frames than empty templates. Choose a product that represents your
+            typical catalog — long titles, multiple variants, and real product photography make the
+            Figma import reflect real-world use cases.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Shopify works well -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Shopify theme import use cases</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        The Shopify to Figma workflow is used across agencies, freelancers, and in-house Shopify teams for these common scenarios.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Store redesign auditing</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Import the current theme into Figma as a starting point for a redesign brief.
+            Annotate what stays, what changes, and what gets replaced — with the exact current design
+            as the reference, not a rough recreation.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Client design presentations</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Present proposed changes to a Shopify merchant in Figma — their actual store layout
+            with design modifications overlaid. Clients understand Figma comments on their own
+            storefront far better than abstract mockups.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Theme documentation</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Build a Figma file that documents every page template, section type, and block variant
+            in your custom Shopify theme. Import each page type once, organize by template,
+            and maintain as a living design reference.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Headless Commerce design system</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Import your Shopify Hydrogen or Next.js Commerce frontend into Figma section by section.
+            Build a Figma component library that mirrors your headless frontend components —
+            product cards, cart drawers, navigation bars — as editable Figma frames.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert a Shopify store to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Open the Shopify store in a browser, use DevTools (F12 → Elements) to find the section you want,
+            right-click → Copy outerHTML, and paste into html2design in Figma. No Shopify Partner account
+            or API access needed — it works from any URL your browser can load.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does the Dawn theme import cleanly into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Dawn uses CSS custom properties for brand colors and fonts — the browser resolves these to
+            their actual values from your theme customizer settings. The Figma import reflects the exact
+            colors, fonts, and spacing you've configured in the Shopify Theme Editor.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I import a Shopify theme preview into Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Navigate to the theme preview URL from Shopify Admin → Online Store → Themes → Preview,
+            open DevTools, copy the outerHTML of the desired section, and paste into html2design.
+            Theme preview pages render the same HTML as the live store.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Does this work with Shopify Hydrogen (Headless Commerce)?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Shopify Hydrogen is a React-based headless framework that renders standard HTML in the browser.
+            Run the Hydrogen dev server locally, open the page in a browser, copy the outerHTML from DevTools,
+            and paste into html2design — the same workflow as any other React framework.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/wordpress-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">WordPress to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Extract WordPress themes and block editor layouts into Figma for redesign.</p>
+        </a>
+
+        <a href="/use-cases/webflow-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Webflow to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import Webflow published pages into Figma — preserves layout, typography, and tokens.</p>
+        </a>
+
+        <a href="/use-cases/remix-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Remix to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Convert Remix apps — a good reference for Shopify Hydrogen headless workflows.</p>
+        </a>
+
+        <a href="/use-cases/legacy-migration"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Workflow</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Legacy Website Migration</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Modernize legacy codebases by importing them as editable Figma designs.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Import your Shopify store into Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with Dawn, any Liquid theme, and Shopify Headless Commerce.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>

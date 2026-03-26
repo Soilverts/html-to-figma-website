@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Alpine.js to Figma — Convert Alpine Components to Designs</title>
+  <meta name="description" content="Convert Alpine.js components and interactive UI into editable Figma designs. html2design captures Alpine's rendered DOM — copy outerHTML from DevTools and get fully layered Figma frames instantly." />
+  <meta name="keywords" content="alpine.js to figma, alpine js figma, convert alpine component figma, alpine figma plugin, alpine design handoff figma, alpine html to figma, alpinejs figma export, alpine.js component figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/use-cases/alpine-to-figma" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/use-cases/alpine-to-figma" />
+  <meta property="og:title" content="Alpine.js to Figma — Convert Alpine Components to Designs" />
+  <meta property="og:description" content="Alpine.js adds interactivity directly in HTML without a build step. Copy outerHTML from DevTools in any reactive state and paste into html2design for native Figma layers." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/use-cases/alpine-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alpine.js component HTML converted to Figma design layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alpine.js to Figma — Convert Alpine Components to Designs" />
+  <meta name="twitter:description" content="Alpine.js enriches HTML in place — no virtual DOM, no build step. Every state is visible in DevTools. Copy outerHTML, paste into html2design, get native Figma layers." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/use-cases/alpine-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Convert Alpine.js Components to Figma Designs — Alpine.js to Figma Workflow",
+    "description": "Step-by-step guide for converting Alpine.js components and interactive UI into native, editable Figma layers using the html2design plugin.",
+    "url": "https://www.htmltofigma.io/use-cases/alpine-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/use-cases/alpine-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.htmltofigma.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Use Cases",
+        "item": "https://www.htmltofigma.io/use-cases"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Alpine.js to Figma",
+        "item": "https://www.htmltofigma.io/use-cases/alpine-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an Alpine.js component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open your page in a browser, trigger the UI state you want to capture (open a modal, expand an accordion, select a tab), then open DevTools (F12 → Elements), find the component's root element, right-click → Copy outerHTML, and paste it into the html2design Figma plugin. Alpine.js modifies the DOM directly using standard HTML — the current state is fully visible in DevTools. The plugin generates native Figma layers from the rendered output."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I capture an Alpine.js component in a specific state (open modal, selected tab)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trigger the state in the browser before copying. Click to open the dropdown, expand the accordion, select the tab, or fill in the form. Alpine.js updates the DOM directly when state changes — x-show toggles visibility, x-class adds/removes classes, and x-bind updates attributes. Once the component is in the target state, copy the outerHTML from DevTools. You can capture multiple states by triggering each one separately and pasting each into html2design as a separate Figma frame."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Alpine.js work with html2design if the page uses a backend (Laravel, PHP, Django)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Alpine.js is commonly used with server-rendered backends — Laravel Blade, PHP templates, Django, Rails views. The backend renders the HTML, and Alpine.js adds interactivity in the browser. html2design captures the browser's current rendered state regardless of what backend generated the HTML. Open the page in a browser, trigger the state you want, and copy the outerHTML from DevTools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I capture Alpine.js x-show and x-if states in Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with a simple approach. For x-show elements, Alpine.js toggles CSS display values — when shown, the element is fully present in the DOM and captures correctly. For x-if, Alpine.js adds or removes the element from the DOM based on the condition. Navigate to the state where the element is visible, then copy the outerHTML. For hidden states, capture with the element shown, import into Figma, then manually set the layer to invisible to represent the hidden state."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Alpine.js to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Alpine.js</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Alpine.js to Figma —<br />
+        Every State Captured
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Converting Alpine.js components to Figma</strong> is particularly direct
+        because Alpine enriches HTML in place — there's no virtual DOM, no build step, and no compiled output.
+        Trigger the state you want in the browser, copy the outerHTML from DevTools,
+        paste into html2design, and get <strong class="text-content font-medium">native Figma layers</strong>
+        representing exactly that UI state.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">
+          Install Free on Figma Community &rarr;
+        </a>
+        <a href="/use-cases/developer-handoff"
+           class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">
+          Developer Handoff Guide
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What is Alpine.js to Figma -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Alpine.js to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Alpine.js to Figma"</strong> refers to capturing the rendered state of an
+        Alpine.js-powered component — a dropdown, modal, accordion, tab panel, or form with validation states —
+        and importing it into Figma as a native, editable design frame.
+        Alpine.js is a lightweight JavaScript framework that adds interactivity directly to HTML using
+        <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-data</code>,
+        <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-show</code>,
+        <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-bind</code>,
+        and other directives — without a build step or virtual DOM.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Because Alpine.js modifies the actual DOM directly, every interactive state is visible in the browser's
+        DevTools Elements panel. The html2design Figma plugin accepts that rendered HTML — captured at any state —
+        and converts it into native Figma frames. Alpine's directives (
+        <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-data</code>,
+        <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-show</code>)
+        are HTML attributes that don't affect the CSS rendering — the plugin reads computed CSS values and ignores the directives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step workflow -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Alpine.js to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Four steps. Works with Alpine.js 3+, any backend (Laravel, PHP, Django, Rails), and any CSS approach (Tailwind, plain CSS, Bootstrap).
+      </p>
+
+      <div class="space-y-10">
+
+        <!-- Step 1 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
+            <h3 class="text-xl font-bold tracking-tight">Open the page and trigger the target state</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open your page in a browser — localhost, staging, or production. Navigate to the component
+              you want to capture and trigger the specific state you want in Figma:
+              open the dropdown menu, expand the accordion panel, select a tab, open the modal, or fill the form.
+            </p>
+            <p>
+              Alpine.js updates the DOM directly when state changes — there's no re-render cycle or virtual DOM diffing.
+              What you see in the browser is exactly what's in the Elements panel. Each state you want in Figma
+              requires its own copy — capture the open state and the closed state separately.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 2 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
+            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>)
+              while the component is in the desired state. Find the component's root element in the Elements panel —
+              the element with
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-data</code> is usually the root.
+            </p>
+            <p>
+              Right-click the element → <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              The copied HTML will include the current state — open dropdown items will be visible,
+              active tab panels will be present, and
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-show</code> elements
+              will have their current
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">display</code> value.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 3 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
+            <h3 class="text-xl font-bold tracking-tight">Paste into html2design and generate Figma layers</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
+              and click <strong class="text-content">Generate</strong>. Alpine's
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-data</code>,
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-bind</code>, and
+              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-show</code> attributes
+              are HTML attributes — the plugin reads the computed CSS values, not the directives,
+              so the import process is identical to any plain HTML component.
+            </p>
+            <p>
+              If your Alpine components use Tailwind CSS, all utility classes are resolved to pixel values.
+              If you use plain CSS or a CSS framework, the browser resolves those too.
+              You get a native Figma frame representing the exact visual state you captured.
+            </p>
+          </div>
+        </article>
+
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Step 4 -->
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
+            <h3 class="text-xl font-bold tracking-tight">Build a state library in Figma</h3>
+          </div>
+          <div class="text-content-muted leading-relaxed space-y-3">
+            <p>
+              Alpine components often have multiple interactive states — default, open, error, loading, empty.
+              Import each state as a separate Figma frame, then use Figma Components and Variants to organize them
+              under a single component with named states. Your designer gets the full interaction spec
+              directly from the live code.
+            </p>
+            <p>
+              For Alpine components that appear across multiple pages (navigation, modals, toast notifications),
+              import from one page and use the Figma Component across the rest of the file —
+              keeping the design documentation DRY and consistent.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Alpine-specific tips -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Alpine.js-specific tips for better Figma output</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Alpine.js's direct DOM manipulation gives you precise control over what state you capture. Here's how to get the most from it.
+      </p>
+
+      <div class="space-y-6">
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Capture each component state as a separate Figma frame</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine components often have 3–5 meaningful states: default, hover, focus, active, error, loading, empty.
+            Trigger each state in the browser and paste into html2design separately. You'll build a set of Figma frames
+            that become Variants when you convert them to a Figma Component — giving your design system a complete
+            interactive spec derived directly from the live component.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Use DevTools Console to force a state</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            To capture a specific Alpine state without manually triggering it through the UI,
+            use the DevTools Console. Select the Alpine component element in the Elements panel,
+            then in the Console run:
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">$el._x_dataStack[0].open = true</code>
+            (adjusting the property name to match your
+            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-data</code> definition).
+            Alpine will immediately update the DOM to that state — then copy the outerHTML.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Alpine + Tailwind: perfect pairing for Figma</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine.js and Tailwind CSS are commonly used together — Alpine for interactivity,
+            Tailwind for styling. This combination imports exceptionally cleanly: Tailwind utilities
+            resolve to exact pixel values, and Alpine's state toggling (adding/removing Tailwind classes
+            with <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-bind:class</code>)
+            is reflected in the computed CSS at the moment you copy. Each state captures its actual applied classes.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Works with any server-rendered backend</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine.js is popular with Laravel Blade, Livewire, PHP templates, Django, and Rails views —
+            any backend that renders HTML server-side. html2design doesn't care what generated the HTML:
+            open the rendered page in a browser, trigger the Alpine state you want, copy outerHTML from DevTools.
+            The backend framework is completely transparent to the import process.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Alpine works well -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Alpine.js imports are especially accurate in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">
+        Alpine's direct DOM mutation model means the DevTools always shows the exact current state — no virtual DOM, no diffing lag.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">No virtual DOM — the DOM is always current</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine.js manipulates the real DOM directly, not a virtual DOM representation.
+            When Alpine toggles a class or shows/hides an element, DevTools shows the change immediately.
+            There's no reconciliation lag or hydration delay — copy the outerHTML at any moment
+            and get the precise current state.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">No build step required</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine.js loads from a CDN
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;script&gt;</code>
+            tag — no Node.js, no npm, no build process needed to run the page.
+            You can capture Alpine components directly from staging, production, or any URL
+            without setting up a local dev environment.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">x-bind:class changes are captured accurately</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine's
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">x-bind:class</code>
+            conditionally adds or removes CSS classes based on state.
+            When you copy outerHTML, the element's
+            <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">class</code>
+            attribute reflects the current state. The browser resolves the applied classes to computed CSS values —
+            so the Figma import shows the correct active, selected, or error styling.
+          </p>
+        </div>
+
+        <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
+          <h3 class="text-base font-bold tracking-tight">Works with any backend or hosting</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Alpine.js enhances server-rendered HTML from any backend.
+            Import from your Laravel, Django, Rails, or PHP application running locally
+            or from a staging URL — html2design captures whatever the browser renders,
+            regardless of the stack behind it.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+
+      <div class="space-y-6">
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I convert an Alpine.js component to Figma?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Open your page in a browser, trigger the component state you want (open dropdown, active tab, etc.),
+            open DevTools (F12), find the component root element, right-click → Copy outerHTML,
+            and paste into html2design in Figma. Alpine updates the real DOM directly —
+            DevTools always reflects the current state.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">How do I capture multiple Alpine states (open, closed, error)?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Trigger each state in the browser and paste each into html2design separately.
+            You'll have multiple Figma frames — one per state. Convert them to Figma Component Variants
+            to create a complete, interactive component spec for your design system.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Do Alpine.js directives (x-data, x-show) affect the Figma import?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            No. Alpine directives are HTML attributes — html2design reads computed CSS values from the rendered DOM,
+            not the HTML attributes. The directives are invisible to the import process.
+            What matters is the current visual state: which elements are visible, which classes are applied,
+            what the computed styles are.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-accent pl-6">
+          <h3 class="text-base font-bold mb-2">Can I capture Alpine.js components from a Laravel or Django app?</h3>
+          <p class="text-sm text-content-muted leading-relaxed">
+            Yes. Alpine.js is framework-agnostic — it works with any backend that renders HTML.
+            Run your Laravel, Django, or Rails app locally, log in if needed, navigate to the page,
+            and copy the outerHTML from DevTools. html2design captures the browser's output
+            regardless of what backend generated the HTML.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="/guide"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p>
+        </a>
+
+        <a href="/use-cases/tailwind-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Tailwind CSS to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Alpine + Tailwind is a common pairing — convert the full stack to Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/svelte-to-figma"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Svelte to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Another lightweight, no-runtime framework — similar approach for capturing states.</p>
+        </a>
+
+        <a href="/use-cases/developer-handoff"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Workflow</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Developer Handoff</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Bridge the design-development gap with live-code Figma imports for accurate handoff.</p>
+        </a>
+
+        <a href="/blog/css-grid-to-figma-auto-layout"
+           class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">CSS Grid &amp; Flexbox to Figma</h3>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">How Alpine.js layouts using CSS Grid and Flexbox convert to Figma Auto Layout.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Export your Alpine.js components to Figma today</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
+        Install html2design from the Figma Community — free to try, works with Alpine.js 3+, any backend, and any CSS framework.
+      </p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">
+        Install Free on Figma Community
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
