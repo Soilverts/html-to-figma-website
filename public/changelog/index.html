@@ -11,7 +11,7 @@
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <link rel="canonical" href="https://www.htmltofigma.io/changelog" />
-  <meta name="dateModified" content="2026-03-26" />
+  <meta name="dateModified" content="2026-03-27" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -42,7 +42,7 @@
     "name": "HTML to Figma Changelog",
     "description": "Latest updates, new guides, GEO optimizations, comparison tools, and feature releases for html2design.",
     "url": "https://www.htmltofigma.io/changelog",
-    "dateModified": "2026-03-26",
+    "dateModified": "2026-03-27",
     "inLanguage": "en",
     "speakable": {
       "@type": "SpeakableSpecification",
@@ -169,6 +169,37 @@
 
   <!-- Timeline -->
   <main class="max-w-3xl mx-auto px-6 pb-24">
+
+    <!-- March 27, 2026 — Wave 18c: Performance audit, content freshness, LLM discovery update -->
+    <section class="mb-10">
+      <div class="flex items-baseline gap-4 mb-5 border-b border-gray-100 pb-3">
+        <time datetime="2026-03-27" class="font-mono text-xs text-gray-400 shrink-0">March 27, 2026</time>
+        <span class="text-xs font-medium uppercase tracking-wider text-accent">Performance · Freshness · LLM</span>
+      </div>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">Performance audit — CSS size, page weight, font loading, OG images, caching</span>
+            <p class="text-sm text-content-muted mt-1">static.css is 63KB (under 100KB threshold — no purge needed). All 65 HTML pages are under 100KB. Font preload and font-display: swap confirmed across all pages. OG images are SVGs (1.9–2.3KB each) — no large PNGs in the /og/ directory. Caching headers verified in _headers file for static assets.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">Content freshness — dateModified synced to 2026-03-27 across all pages</span>
+            <p class="text-sm text-content-muted mt-1">Updated dateModified in JSON-LD schemas and article:modified_time meta tags across all 65 pages. Synced all sitemap lastmod dates to 2026-03-27 for consistent freshness signaling to search engines and AI crawlers.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 text-xs font-mono text-accent shrink-0">IMPROVED</span>
+          <div>
+            <span class="font-semibold text-content">LLM discovery files — llms.txt and llms-full.txt updated with pricing and reviews pages</span>
+            <p class="text-sm text-content-muted mt-1">Added /pricing and /reviews to the Links sections of both llms.txt and llms-full.txt. Updated llms-full.txt site navigation to include Pricing and Reviews. Updated page count to 65+. Updated RSS feed lastBuildDate to March 27, 2026.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
     <!-- March 26, 2026 — Wave 17: 8 new pages (4 comparison + 4 use-case), content freshness, LLM discovery update -->
     <section class="mb-10">

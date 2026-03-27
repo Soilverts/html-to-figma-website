@@ -134,6 +134,8 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Figma Community plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
 - Blog and tutorials: https://www.htmltofigma.io/blog
 - Comparison page: https://www.htmltofigma.io/compare
+- Pricing: https://www.htmltofigma.io/pricing
+- User reviews: https://www.htmltofigma.io/reviews
 - Glossary: https://www.htmltofigma.io/glossary
 - Quick-start guide: https://www.htmltofigma.io/guide
 - Changelog: https://www.htmltofigma.io/changelog

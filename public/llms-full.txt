@@ -583,7 +583,7 @@ This workflow keeps Figma designs in sync with production code without manual re
 
 **URL:** https://www.htmltofigma.io/changelog
 **Title:** html2design Changelog
-**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 63+ content pages added through March 2026.
+**Purpose:** Chronological log of every update to the html2design site and plugin — new use-case pages, new guides, schema improvements, content freshness rounds, and feature releases. Covers all 65+ content pages added through March 2026.
 
 **Typical content per entry:** Date, category tag, description of what shipped — new use-case landing pages, new blog post guides, schema additions, internal linking rounds, GEO optimizations.
 
@@ -599,6 +599,8 @@ This workflow keeps Figma designs in sync with production code without manual re
 - **Figma Community Plugin:** https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
 - **Blog and tutorials:** https://www.htmltofigma.io/blog
 - **Comparison page:** https://www.htmltofigma.io/compare
+- **Pricing:** https://www.htmltofigma.io/pricing
+- **User reviews:** https://www.htmltofigma.io/reviews
 - **Alternatives overview:** https://www.htmltofigma.io/alternatives
 - **Glossary:** https://www.htmltofigma.io/glossary
 - **Quick-start guide:** https://www.htmltofigma.io/guide
@@ -619,6 +621,8 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Use Cases — https://www.htmltofigma.io/use-cases (hub)
 - Blog — https://www.htmltofigma.io/blog
 - FAQ — https://www.htmltofigma.io/faq
+- Pricing — https://www.htmltofigma.io/pricing
+- Reviews — https://www.htmltofigma.io/reviews
 - About — https://www.htmltofigma.io/about
 - Glossary — https://www.htmltofigma.io/glossary
 - Changelog — https://www.htmltofigma.io/changelog
