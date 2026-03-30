@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)</title>
+  <meta name="description" content="Most teams only think about design-to-code. But for teams with existing codebases, the code-to-design direction — html2design's specialty — is often more valuable. Here's how to choose." />
+  <meta name="keywords" content="design to code, code to design, design to code vs code to design, figma to code, html to figma workflow, design workflow 2026, html2design workflow" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design" />
+  <meta property="og:title" content="Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)" />
+  <meta property="og:description" content="Most teams only think about design-to-code. But for teams with existing codebases, the code-to-design direction is often more valuable. Here's the framework for choosing." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/design-to-code-vs-code-to-design.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Design-to-code vs code-to-design workflow comparison diagram" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-03-30T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-03-30T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Workflow" />
+  <meta property="article:tag" content="design workflow" />
+  <meta property="article:tag" content="html2design" />
+  <meta property="article:tag" content="design to code" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)" />
+  <meta name="twitter:description" content="Design-to-code is well understood. Code-to-design is underused. Here's a framework for knowing which direction your team actually needs — and when to run both." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/design-to-code-vs-code-to-design.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Design-to-Code vs Code-to-Design: Choosing the Right Direction",
+    "description": "Design-to-code is the workflow every team knows. Code-to-design is the workflow most teams need but rarely use. Here's the framework for choosing the right direction — and the tools that support each.",
+    "url": "https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design",
+    "datePublished": "2026-03-30T00:00:00Z",
+    "dateModified": "2026-03-30T00:00:00Z",
+    "wordCount": 2300,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/design-to-code-vs-code-to-design.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design"
+    },
+    "keywords": "design to code, code to design, html to figma, figma dev mode, html2design, design workflow"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Design-to-Code vs Code-to-Design", "item": "https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the design-to-code workflow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Design-to-code is the traditional workflow where designers create UI in a tool like Figma, then developers implement that design in code. Tools like Figma Dev Mode, Anima, and Locofy support the design-to-code direction — extracting CSS values, specs, and sometimes generated code from Figma designs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the code-to-design workflow?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Code-to-design is the reverse workflow: starting from existing HTML and CSS, importing that into a design tool like Figma, and using the result for documentation, redesign, or design system bootstrapping. html2design is the primary tool for code-to-design work — it converts any HTML and CSS into native, editable Figma layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use code-to-design instead of design-to-code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use code-to-design when your product UI exists in code but not in a Figma file — for example, legacy products built without design files, components shipped directly by engineers, or any situation where code is the source of truth and Figma doesn't reflect what's actually in production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I run design-to-code and code-to-design in the same team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and most mature product teams do. Design-to-code is used for new feature design: Figma → Dev Mode → code. Code-to-design is used for resync after shipping: production HTML → html2design → Figma. Together they form a bidirectional loop that prevents design drift."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["header p", "article.prose-article p"]
+    },
+    "name": "Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .direction-card { border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .direction-card.d2c { border-color: #C4B5FD; background: #FAF5FF; }
+    .direction-card.c2d { border-color: #A7F3D0; background: #F0FDF4; }
+    .direction-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .direction-card.d2c .direction-label { color: #7C3AED; }
+    .direction-card.c2d .direction-label { color: #059669; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Design-to-Code vs Code-to-Design</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-4">Workflow · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Design-to-Code vs Code-to-Design: Choosing the Right Direction
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Design-to-code is the workflow everyone knows. Code-to-design is the workflow most teams need but rarely use. Here's the framework for choosing — and the tools that support each direction.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-03-30" class="text-xs text-gray-400 font-mono">March 30, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: Definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>The core distinction:</strong> <em>Design-to-code</em> starts in Figma and ends in a codebase — designers create the design, developers implement it. <em>Code-to-design</em> starts in the codebase and ends in Figma — existing HTML and CSS are imported as editable design layers. Both directions are legitimate workflows. Choosing the wrong one for your situation wastes weeks of effort.</p>
+    </div>
+
+    <h2>Why the Direction Matters</h2>
+    <p>
+      When teams talk about "design and development workflow," they almost always mean design-to-code: Figma → handoff → code. This is the default mental model, and it's the one most tooling is built around.
+    </p>
+    <p>
+      But it's the wrong model for a large class of real-world situations. If your product already exists — if there's a live codebase producing a working UI — then the gap isn't between design and code. The gap is between the code that exists and the design files that don't. The right direction to fix that gap is code-to-design, not design-to-code.
+    </p>
+    <p>
+      Choosing the wrong direction is expensive. Teams that try to use design-to-code tools on products that need code-to-design end up with designers rebuilding UI from scratch in Figma, spending weeks recreating what already works in production. Teams that run both directions simultaneously without intentional process end up with two sources of truth and no clear authority.
+    </p>
+
+    <h2>Design-to-Code: When Figma Is the Source of Truth</h2>
+
+    <div class="direction-card d2c">
+      <div class="direction-label">Design-to-Code Direction</div>
+      <p style="margin:0;color:#374151;font-size:0.9rem;line-height:1.7;"><strong>Flow:</strong> Figma design → Dev Mode / handoff → code implementation</p>
+    </div>
+
+    <p>
+      Design-to-code is the right workflow when designers create designs before any code is written — or when a team has committed to Figma as the authoritative source of truth for all UI decisions. The design file is the blueprint; the code is the implementation.
+    </p>
+
+    <h3>Tools in the design-to-code stack</h3>
+    <ul>
+      <li><strong>Figma Dev Mode</strong> — Developers inspect designs, extract CSS values, spacing, and assets from Figma files</li>
+      <li><strong>Figma Code Connect</strong> — Links Figma components to actual code components for handoff</li>
+      <li><strong>Anima, Locofy, Builder.io</strong> — Generate code directly from Figma designs (varying quality and fidelity)</li>
+      <li><strong>Zeplin, Avocode</strong> — Design-spec handoff tools that output annotations and measurements</li>
+    </ul>
+
+    <h3>When design-to-code works best</h3>
+    <ul>
+      <li><strong>Greenfield products</strong> — No existing codebase, building from scratch with design driving decisions</li>
+      <li><strong>Teams with dedicated designers</strong> — Full-time design function that creates specs before engineering begins</li>
+      <li><strong>Design system teams</strong> — Where the Figma library is the canonical design specification and all new components flow from it</li>
+      <li><strong>Agency and consulting work</strong> — Where a client approves designs before development begins and changes are managed through the design layer</li>
+    </ul>
+
+    <h3>Where design-to-code breaks down</h3>
+    <p>
+      Design-to-code struggles whenever code gets ahead of Figma — which happens constantly in practice:
+    </p>
+    <ul>
+      <li>A developer fixes a visual bug directly in code without updating the Figma file</li>
+      <li>An engineer builds a component in a sprint without a designer spec</li>
+      <li>The product moves fast and design files go stale within days of shipping</li>
+      <li>There are legacy sections of the product that predate any Figma files</li>
+    </ul>
+    <p>
+      In all these cases, Figma is no longer the source of truth — the code is. Trying to run design-to-code workflows in this environment means designers are constantly playing catch-up, reimplementing what already exists, or making decisions based on outdated specs.
+    </p>
+
+    <h2>Code-to-Design: When Code Is the Source of Truth</h2>
+
+    <div class="direction-card c2d">
+      <div class="direction-label">Code-to-Design Direction</div>
+      <p style="margin:0;color:#374151;font-size:0.9rem;line-height:1.7;"><strong>Flow:</strong> Existing HTML/CSS → html2design → editable Figma layers</p>
+    </div>
+
+    <p>
+      Code-to-design is the workflow for situations where the UI exists in code but not in a design file — and where the codebase, not Figma, reflects the actual current state of the product.
+    </p>
+    <p>
+      Instead of rebuilding the UI in Figma from screenshots or memory, html2design imports the rendered HTML and CSS directly into Figma as native, editable layers. The result is an accurate, editable design document that reflects what's actually in production — not a designer's reconstruction of it.
+    </p>
+
+    <h3>The code-to-design workflow with html2design</h3>
+    <ol>
+      <li><strong>Open your browser</strong> to the page, component, or section you want to import. This works with live sites, localhost, Storybook, staging environments, or any page accessible via DevTools — including auth-gated dashboards.</li>
+      <li><strong>Select the element</strong> in DevTools and copy the outerHTML. For full pages, copy the <code>&lt;body&gt;</code> element's outerHTML.</li>
+      <li><strong>Paste into html2design</strong> in Figma. The plugin parses the HTML and CSS and generates native Figma frames, text nodes, fills, borders, and shapes.</li>
+      <li><strong>Edit in Figma</strong> — rename layers, extract design tokens to Variables and Styles, build components, or use the import as a redesign baseline.</li>
+    </ol>
+
+    <h3>When code-to-design is the right choice</h3>
+    <ul>
+      <li><strong>Legacy products</strong> — UI built years ago, no Figma files exist, and the product needs a redesign or documentation</li>
+      <li><strong>Design debt sprints</strong> — Team needs to align Figma with what's actually shipped across multiple sprints of direct code changes</li>
+      <li><strong>Component library documentation</strong> — Engineers built a component library without design files; import the components to create a Figma library</li>
+      <li><strong>Redesign kickoff</strong> — Before redesigning any page, import the current state as the baseline — saves hours of reconstruction</li>
+      <li><strong>Reverse-engineering shipped UI</strong> — An acquisition, an inherited codebase, or a period of fast engineering iteration has left Figma completely out of sync</li>
+      <li><strong>Agency audits</strong> — Document a client's live site before proposing a redesign, without rebuilding every component manually</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Key advantage:</strong> html2design works with any source you can open in a browser — localhost, staging, and auth-gated pages that screenshot tools can't reach. There's no Chrome extension required; the workflow is: DevTools → copy outerHTML → paste into the plugin.</p>
+    </div>
+
+    <h2>The Drift Problem: Why Both Directions Are Needed</h2>
+    <p>
+      Most teams start with design-to-code — Figma leads, code follows. But after months of shipping, the gap grows:
+    </p>
+    <ul>
+      <li>Developers fix visual bugs directly in CSS without a designer spec</li>
+      <li>Copy changes happen in the CMS or codebase without touching Figma</li>
+      <li>Performance optimizations change layout details that aren't reflected in the design file</li>
+      <li>New components are added in a fast sprint, Figma file update deferred</li>
+    </ul>
+    <p>
+      This accumulation is called <strong>design drift</strong>: the gap between what the design file says and what production renders. Over time, design drift makes the Figma file increasingly unreliable as a reference — and teams either ignore Figma entirely or spend cycles maintaining it manually.
+    </p>
+    <p>
+      The solution isn't to pick one direction. It's to run both on a planned cadence:
+    </p>
+    <ul>
+      <li><strong>New feature work</strong> → design-to-code: Figma spec → Dev Mode → engineer implements</li>
+      <li><strong>Post-sprint sync</strong> → code-to-design: html2design imports what shipped → Figma file updated to match production</li>
+    </ul>
+    <p>
+      This bidirectional approach keeps Figma accurate as a living document — not a historical artifact.
+    </p>
+
+    <h2>Choosing the Right Direction: A Decision Framework</h2>
+    <p>
+      Use these questions to identify which direction (or combination) your team needs:
+    </p>
+
+    <h3>Does a Figma file exist for the UI you're working on?</h3>
+    <ul>
+      <li><strong>Yes, and it's current</strong> → design-to-code is working. Use Dev Mode for handoff.</li>
+      <li><strong>Yes, but it's stale</strong> → run code-to-design to resync Figma, then resume design-to-code going forward.</li>
+      <li><strong>No</strong> → code-to-design is the only viable direction. Import from the codebase.</li>
+    </ul>
+
+    <h3>Where is the source of truth for your UI decisions?</h3>
+    <ul>
+      <li><strong>Figma</strong> → design-to-code. Protect this state by enforcing that all UI changes go through the design file.</li>
+      <li><strong>The codebase</strong> → code-to-design. Import into Figma, establish it as a design reference, then decide whether to flip to Figma-first going forward.</li>
+      <li><strong>Neither — it's ambiguous</strong> → run a code-to-design audit first to establish a verified baseline, then choose a governance model.</li>
+    </ul>
+
+    <h3>Is your product greenfield or does it have existing UI?</h3>
+    <ul>
+      <li><strong>Greenfield</strong> → design-to-code. Design before building.</li>
+      <li><strong>Existing product, new feature</strong> → typically design-to-code for the new feature, code-to-design to document surrounding context.</li>
+      <li><strong>Existing product, no design files</strong> → start with code-to-design to establish the full baseline before any design work begins.</li>
+    </ul>
+
+    <h2>Tools for Each Direction</h2>
+
+    <h3>Design-to-code tools</h3>
+    <ul>
+      <li><strong>Figma Dev Mode</strong> — Best for extracting CSS values, spacing, and assets from Figma files for developer handoff</li>
+      <li><strong>Figma Code Connect</strong> — Links Figma components to production code components</li>
+      <li><strong>Anima</strong> — Generates React/HTML code from Figma designs (with varying fidelity)</li>
+      <li><strong>Builder.io / Locofy</strong> — AI-powered Figma-to-code generation</li>
+    </ul>
+
+    <h3>Code-to-design tools</h3>
+    <ul>
+      <li><strong>html2design</strong> — The primary code-to-design tool. Converts any HTML/CSS into native Figma layers. Works with all frameworks, localhost, staging, and auth-gated pages.</li>
+    </ul>
+    <p>
+      There are very few tools that do code-to-design well — most of the tooling ecosystem is oriented toward design-to-code. This asymmetry is why code-to-design workflows remain underused even when they're the right choice.
+    </p>
+
+    <h2>The Combined Workflow for Mature Teams</h2>
+    <p>
+      Teams that manage design at scale typically run a bidirectional loop:
+    </p>
+    <ol>
+      <li><strong>Sprint planning:</strong> Designers create specs in Figma for planned features. Dev Mode used for handoff to engineering.</li>
+      <li><strong>Sprint execution:</strong> Engineers implement from spec. Occasional direct fixes go to code without a design update.</li>
+      <li><strong>Sprint close:</strong> Use html2design to import the production state of changed components. Compare against the Figma file. Update the Figma file to match where they diverge.</li>
+      <li><strong>Repeat:</strong> Figma stays accurate. The design team has a reliable reference. Engineers trust the design system.</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>Practical cadence:</strong> Many teams find that running the code-to-design resync once per sprint is sufficient to keep design drift under control. For teams shipping multiple times per day, a weekly sync works well. The key is making it a scheduled process — not an ad-hoc catch-up after drift has already compounded.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is code-to-design only for legacy products?</h3>
+    <p>
+      No. Code-to-design is valuable any time code and design diverge — which happens regularly in fast-moving products, regardless of age. Even teams with strong design-to-code practices use html2design after sprints where direct code fixes accumulated.
+    </p>
+
+    <h3>Does running code-to-design mean giving up on Figma as a source of truth?</h3>
+    <p>
+      Not at all. Code-to-design is used to <em>restore</em> Figma as a source of truth after code has moved ahead of it. Once the Figma file is accurate again, the team can resume design-to-code governance — with the resync process as a safety net.
+    </p>
+
+    <h3>Can html2design handle dynamic and interactive UI?</h3>
+    <p>
+      html2design imports the rendered HTML at a specific state — you choose which state to capture (hover, active, loading) by triggering it in the browser before copying the outerHTML. For components with multiple states, import each state separately and organize them as component variants in Figma.
+    </p>
+
+    <h3>What's the fastest way to tell which direction my team needs?</h3>
+    <p>
+      Open your production website. Compare it with your Figma file. If they match closely — design-to-code is working. If there are visible differences — run code-to-design first to restore accuracy, then decide on a governance model.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Design-to-code</strong> (Figma → Dev Mode → code) works when Figma is the source of truth and design leads development.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Code-to-design</strong> (HTML → html2design → Figma) works when the codebase holds UI that doesn't exist in a design file.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Design drift</strong> is inevitable without a code-to-design resync process — most teams underestimate how fast Figma goes stale.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Mature teams run <strong>both directions</strong>: design-to-code for new features, code-to-design to resync after every sprint.</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/blog/figma-dev-mode-vs-html2design" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Figma Dev Mode vs html2design: When to Use Which &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The two tools that represent each direction — side-by-side breakdown with a feature comparison table.</p>
+        </a>
+        <a href="/blog/design-handoff-best-practices" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design Handoff Best Practices: Keeping Code and Figma in Sync &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The per-sprint sync cadence, token strategy, and annotation practices that prevent design drift from compounding.</p>
+        </a>
+        <a href="/blog/figma-ai-2026" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Figma AI works within the design-to-code direction. Here's what it can and cannot do — and where html2design fills the gap.</p>
+        </a>
+        <a href="/blog/design-system-migration" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Design System Migration: From Code to Figma Components &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The full code-to-design playbook for teams building a Figma design system from an existing component library.</p>
+        </a>
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Every framework covered. Every method compared. The single reference for all HTML to Figma work.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Start the code-to-design workflow</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first UI from code in 30 seconds</h2>
+      <p class="text-content-muted mb-6">Copy outerHTML from DevTools. Paste into html2design. Get editable Figma layers — the fastest way to close the gap between code and design.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">
+        Install from Figma Community &rarr;
+      </a>
+      <p class="mt-4 text-xs text-gray-400">$12/mo · $96/yr · Cancel anytime</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-10 pt-8 border-t border-gray-100">
+      <a href="/blog" class="text-sm text-content-muted hover:text-accent transition-colors inline-flex items-center gap-1.5">
+        &larr; Back to Blog
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/pricing" class="hover:text-content transition-colors">Pricing</a>
+        <a href="/reviews" class="hover:text-content transition-colors">Reviews</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/alternatives" class="hover:text-content transition-colors">Alternatives</a>
+        <a href="/glossary" class="hover:text-content transition-colors">Glossary</a>
+        <a href="/blog" class="hover:text-content transition-colors font-medium text-content">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/changelog" class="hover:text-content transition-colors">Changelog</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/about" class="hover:text-content transition-colors">About</a>
+        <a href="/contact" class="hover:text-content transition-colors">Contact</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 pt-6 border-t border-gray-50">
+        <p class="text-xs text-content-muted">Convert HTML &amp; CSS into editable Figma layers.</p>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-accent text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-accent-dark transition-colors whitespace-nowrap">
+          Install Plugin — Free to Try &rarr;
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

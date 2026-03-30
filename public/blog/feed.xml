@@ -5,9 +5,25 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits</title>
+      <link>https://www.htmltofigma.io/blog/figma-ai-2026</link>
+      <description>Figma AI can auto-rename layers, generate layouts from prompts, and lint design inconsistencies — but it cannot import HTML, capture production UI, or bootstrap a design system from live code. html2design fills that gap as the code-to-design bridge that Figma AI doesn't include.</description>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-ai-2026</guid>
+    </item>
+
+    <item>
+      <title>Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)</title>
+      <link>https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design</link>
+      <description>Design-to-code (Figma → code) and code-to-design (code → Figma) solve different problems. This guide explains when each direction is appropriate, how design drift happens when you only go one way, and the combined sprint workflow that keeps Figma and production in sync.</description>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design</guid>
+    </item>
 
     <item>
       <title>How to Redesign a Legacy Website Without Starting From Scratch</title>
