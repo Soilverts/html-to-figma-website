@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide)</title>
+      <link>https://www.htmltofigma.io/blog/ai-web-design-workflow</link>
+      <description>AI design tools generate layouts from prompts but cannot import existing codebases. Here's how AI web design workflows work in 2026 and where html2design fills the gap as the code-to-design bridge that AI tools don't include.</description>
+      <pubDate>Thu, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/ai-web-design-workflow</guid>
+    </item>
 
     <item>
       <title>Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits</title>
