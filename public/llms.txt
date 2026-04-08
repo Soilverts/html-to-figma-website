@@ -171,6 +171,7 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026) — https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design
 - AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide) — https://www.htmltofigma.io/blog/ai-web-design-workflow
 - Best Figma Plugins for Developers in 2026 — https://www.htmltofigma.io/blog/figma-plugins-for-developers
+- Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://www.htmltofigma.io/blog/design-system-from-existing-code
 
 ## Use case pages (21 total)
 

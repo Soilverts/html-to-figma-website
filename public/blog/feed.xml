@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Build a Design System from Existing Code: Reverse-Engineering Guide (2026)</title>
+      <link>https://www.htmltofigma.io/blog/design-system-from-existing-code</link>
+      <description>Step-by-step guide for teams reverse-engineering a design system from an existing codebase. Six-phase workflow: token audit, component inventory, reference page build, html2design import, Figma Variable registration, and Component conversion. Covers which frameworks work best, common pitfalls, and how to maintain the system after extraction.</description>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-system-from-existing-code</guid>
+    </item>
 
     <item>
       <title>Best Figma Plugins for Developers in 2026</title>
