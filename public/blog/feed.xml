@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps</title>
+      <link>https://www.htmltofigma.io/blog/website-redesign-checklist</link>
+      <description>A comprehensive eight-step checklist for planning a website redesign in 2026 — from site audit and Figma baseline capture (using html2design) to IA planning, design, implementation, testing, and post-launch monitoring. Includes a redirect strategy guide and redesign timeline by site size.</description>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/website-redesign-checklist</guid>
+    </item>
 
     <item>
       <title>Build a Design System from Existing Code: Reverse-Engineering Guide (2026)</title>
