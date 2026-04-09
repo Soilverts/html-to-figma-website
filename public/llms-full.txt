@@ -771,6 +771,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide) — https://www.htmltofigma.io/blog/ai-web-design-workflow
 - Best Figma Plugins for Developers in 2026 — https://www.htmltofigma.io/blog/figma-plugins-for-developers
 - Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://www.htmltofigma.io/blog/design-system-from-existing-code
+- Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://www.htmltofigma.io/blog/website-redesign-checklist
 
 ### Use Case Pages (21 total)
 
