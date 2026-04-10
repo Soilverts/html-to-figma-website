@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>How to Convert a Live Website to Figma in Minutes (2026)</title>
+      <link>https://www.htmltofigma.io/blog/convert-website-to-figma</link>
+      <description>Step-by-step guide to converting any live website into editable Figma layers using html2design. Covers both methods — Chrome extension for public sites and HTML paste for localhost and private pages — plus five real-world use cases: redesign baseline, client handoff, competitive analysis, rapid prototyping, and design-system audit. Includes a comparison with manual recreation and troubleshooting for common import issues.</description>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/convert-website-to-figma</guid>
+    </item>
 
     <item>
       <title>Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps</title>

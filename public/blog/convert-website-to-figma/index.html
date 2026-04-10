@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>How to Convert a Live Website to Figma in Minutes (2026)</title>
+  <meta name="description" content="Step-by-step guide to converting any live website into editable Figma layers using the html2design plugin. Covers both methods (Chrome extension and code paste), real-world use cases, and how it compares to rebuilding manually." />
+  <meta name="keywords" content="convert website to figma, convert live website to figma, website to figma, import website figma, html to figma live site, figma website import, html2design tutorial, website figma conversion" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/convert-website-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/convert-website-to-figma" />
+  <meta property="og:title" content="How to Convert a Live Website to Figma in Minutes (2026)" />
+  <meta property="og:description" content="Two methods for converting any live website to editable Figma layers — Chrome extension for public sites, HTML paste for localhost and private URLs. With use cases, comparison table, and step-by-step walkthrough." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/convert-website-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Convert a live website to Figma — step-by-step guide with html2design" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-04-10T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-04-10T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="convert website to figma" />
+  <meta property="article:tag" content="html to figma" />
+  <meta property="article:tag" content="tutorial" />
+  <meta property="article:tag" content="figma workflow" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Convert a Live Website to Figma in Minutes (2026)" />
+  <meta name="twitter:description" content="Convert any live website to editable Figma layers in minutes — Chrome extension or HTML paste method, with use cases and comparison to manual rebuild." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/convert-website-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Convert a Live Website to Figma in Minutes (2026)",
+    "description": "Step-by-step guide to converting any live website into editable Figma layers using html2design. Covers the Chrome extension method for public sites and the HTML paste method for localhost, staging, and auth-gated pages. Includes real-world use cases and a comparison with manual recreation.",
+    "url": "https://www.htmltofigma.io/blog/convert-website-to-figma",
+    "datePublished": "2026-04-10T00:00:00Z",
+    "dateModified": "2026-04-10T00:00:00Z",
+    "wordCount": 1900,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/convert-website-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/convert-website-to-figma"
+    },
+    "keywords": "convert website to figma, convert live website to figma, website to figma, html2design tutorial, figma website import",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT8M",
+    "about": {
+      "@type": "Thing",
+      "name": "Converting live websites to Figma",
+      "description": "The process of importing any live website into Figma as editable native layers using the html2design plugin — enabling designers to redesign, prototype, or audit real production sites."
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert a Live Website to Figma",
+    "description": "Step-by-step instructions for converting any live website into editable Figma layers using the html2design plugin.",
+    "totalTime": "PT10M",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Figma" },
+      { "@type": "HowToTool", "name": "Chrome browser" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Open the target website in Chrome",
+        "text": "Navigate to the page you want to convert in Chrome. For public sites, this is all you need to start. For localhost or staging environments, ensure the page is fully loaded before proceeding."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Install and open the html2design Figma plugin",
+        "text": "In Figma, open the plugins panel and install html2design from the Figma Community. Open it in your current file — the plugin will be ready to accept input from your browser."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Choose your import method",
+        "text": "For public websites: use the Chrome extension method — the extension copies the rendered HTML and computed styles directly, then sends them to the Figma plugin. For localhost, staging, or auth-gated pages: use the HTML paste method — open DevTools, copy the outerHTML of the element you want, and paste it into the plugin's code input."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Run the conversion",
+        "text": "Click Convert. The plugin processes the HTML and CSS and generates native Figma frames. Text becomes editable text layers. Colors become fill values. Images are embedded. Layout is reflected as positioned frames."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Organize the imported layers",
+        "text": "Rename the imported frame to match the page (e.g., 'Homepage — Desktop'). Group related sections. For full site imports, repeat per page and organize each import as a separate section or page in the Figma file."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you convert a website to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To convert a website to Figma, use the html2design plugin. For public sites, the Chrome extension captures the rendered HTML and computed styles and sends them to the Figma plugin, generating native editable layers in seconds. For localhost or private pages, open DevTools, copy the outerHTML of the body or specific section, paste it into the html2design plugin's code input, and click Convert. The result is a native Figma frame with editable text, real colors, and accurately positioned layers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you import a live website into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The html2design plugin can import any live website into Figma as editable native layers. It works with public websites via the Chrome extension, and with localhost, staging, or auth-gated pages via the HTML paste method. The import captures computed styles — the actual rendered values — so the Figma output reflects the live site accurately, not the raw CSS source."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is converting a website to Figma the same as taking a screenshot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — they produce very different results. A screenshot of a website in Figma is a flat, non-editable image. Converting the website with html2design produces native Figma layers: real text layers you can edit, color fills you can modify, and a layer structure that roughly mirrors the HTML structure. You can change text, recolor sections, and redesign individual components — none of which is possible with a screenshot."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the main use cases for converting a live website to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main use cases are: (1) redesign baseline — import the existing site before starting a redesign so you're working from production truth rather than memory or old Figma files; (2) client design handoff — convert a client's live site to Figma so you can propose design changes with real content; (3) competitive analysis — import competitor sites to audit their design systems and layouts; (4) rapid prototyping — import a page, modify it in Figma, and share as an interactive prototype without rebuilding from scratch; (5) design-system reverse engineering — import the live site to extract the actual token values that are shipping in production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work with JavaScript-rendered pages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design reads the rendered DOM — the fully hydrated HTML after JavaScript has executed — not the source HTML. This means it works correctly with React, Vue, Angular, Next.js, and other JS-rendered pages. The import captures what the browser actually renders, including dynamic content, conditional UI states, and any DOM modifications JavaScript makes on load."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "How to Convert a Live Website to Figma", "item": "https://www.htmltofigma.io/blog/convert-website-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/convert-website-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "How to Convert a Live Website to Figma in Minutes (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .warning-box { background: #FFFBEB; border-left: 3px solid #F59E0B; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .warning-box p { margin-bottom: 0; color: #92400E; }
+    .method-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .method-table th { background: #F9FAFB; color: #374151; font-weight: 600; padding: 0.6rem 1rem; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    .method-table td { padding: 0.55rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .method-table tr:last-child td { border-bottom: none; }
+    .check { color: #16a34a; font-weight: 700; }
+    .cross { color: #dc2626; font-weight: 700; }
+    .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+    @media (max-width: 640px) { .use-case-grid { grid-template-columns: 1fr; } }
+    .use-case-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; }
+    .use-case-card h4 { font-size: 0.875rem; font-weight: 700; color: #111827; margin: 0 0 0.4rem 0; }
+    .use-case-card p { font-size: 0.8rem; color: #6B7280; line-height: 1.6; margin: 0; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Convert Website to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 8 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      How to Convert a Live Website to Figma in Minutes
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Converting a live website to editable Figma layers takes under ten minutes with the right method. This guide covers both approaches — Chrome extension for public sites, HTML paste for localhost and private pages — plus the five use cases where this workflow saves hours.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-04-10" class="text-xs text-gray-400 font-mono">April 10, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: April 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: TL;DR citation box -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0 0 0.5rem 0;color:#1E3A8A;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;">To convert a live website to Figma: install the <a href="https://www.htmltofigma.io/guide" style="color:#2563EB;">html2design plugin</a>, open the target page in Chrome, and use the Chrome extension to capture it directly — or copy the page's outerHTML from DevTools and paste it into the plugin. The result is a native Figma frame with editable text, accurate colors, and a layer structure that mirrors the rendered HTML. The whole process takes under 10 minutes for a single page.</p>
+    </div>
+
+    <h2>Why Convert a Live Website to Figma?</h2>
+    <p>
+      The standard design workflow starts in Figma and ends in code. But that direction doesn't work when the code is already ahead of Figma — which is most of the time in established products. Developers ship features, designers update the Figma file later (or don't), and within a few sprints the Figma file no longer reflects what's actually live.
+    </p>
+    <p>
+      Converting the live website back to Figma closes that gap. Instead of re-creating pages from scratch in Figma based on screenshots and memory, you import the rendered HTML directly — getting a Figma file that is, by definition, accurate to what ships.
+    </p>
+    <p>
+      The workflow also has value outside of sync situations. Competitive analysis, client handoffs, rapid prototyping, and redesign audits all benefit from having the live site available as editable Figma layers rather than static reference screenshots. We'll cover the specific use cases in detail after the how-to.
+    </p>
+
+    <h2>Two Methods: Which One to Use</h2>
+    <p>
+      <a href="/guide">html2design</a> offers two import paths for live websites. They produce identical Figma output — the difference is in how you extract the HTML from the page.
+    </p>
+
+    <table class="method-table">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Best for</th>
+          <th>Requires</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Chrome extension</strong></td>
+          <td>Public websites, marketing pages, competitor sites, any page you can open in Chrome</td>
+          <td>Chrome + html2design extension installed</td>
+        </tr>
+        <tr>
+          <td><strong>HTML code paste</strong></td>
+          <td>Localhost, staging environments, auth-gated dashboards, internal tools</td>
+          <td>Chrome DevTools (built-in, no install)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      If the page is publicly accessible, the Chrome extension is faster — one click and it handles everything. If the page requires login, runs on localhost, or is behind a staging URL that the extension can't reach, use the HTML paste method. See the <a href="/blog/import-website-into-figma">full method comparison guide</a> for a detailed breakdown of edge cases.
+    </p>
+
+    <h2>Step-by-Step: Convert a Website to Figma</h2>
+
+    <div class="step-card">
+      <p class="step-num">Step 1</p>
+      <h3>Set up html2design in Figma</h3>
+      <p>
+        Open Figma and go to <strong>Plugins → Browse plugins in Community</strong>. Search for "html2design" and install it. Once installed, open any Figma file and launch the plugin from <strong>Plugins → html2design</strong>. Leave Figma open — you'll come back to it after extracting the HTML from the browser.
+      </p>
+      <div class="tip-box">
+        <p><strong>Create a dedicated Figma file</strong> for site imports rather than importing into an active design file. This keeps imported layers separate from your design work and makes it easy to reference or delete the import later without affecting in-progress designs.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 2</p>
+      <h3>Open the target page in Chrome and let it fully load</h3>
+      <p>
+        Navigate to the page you want to convert in Chrome. Wait for all content to load — especially if the page has lazy-loaded images, sticky headers that change state on scroll, or JavaScript-rendered sections. The import captures the DOM at the moment you trigger it, so partial renders produce partial imports.
+      </p>
+      <p>
+        For pages with above-the-fold vs below-the-fold content that renders differently, decide upfront what you want to capture. You can capture the page at a specific scroll position by scrolling to that point before triggering the extension. For full-page imports of long pages, the <a href="/blog/multi-page-website-to-figma">multi-page import workflow</a> covers how to handle sections systematically.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3a</p>
+      <h3>Chrome extension method — capture directly from the page</h3>
+      <p>
+        If you installed the html2design Chrome extension, click the extension icon in your Chrome toolbar while on the target page. The extension reads the rendered HTML and computed CSS styles for the full page and sends them to the Figma plugin automatically.
+      </p>
+      <p>
+        Switch to Figma. The plugin will show a preview of the incoming import. Click <strong>Convert</strong>. The plugin generates native Figma frames from the HTML and CSS data the extension sent.
+      </p>
+      <div class="tip-box">
+        <p><strong>If the extension doesn't capture images:</strong> Some sites serve images with restrictive CORS headers that prevent the extension from embedding them. The frames will still be accurate in every other respect — text, colors, layout, spacing — with placeholder rectangles where images would be. This is typically fine for redesign and audit work.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 3b</p>
+      <h3>HTML paste method — copy outerHTML from DevTools</h3>
+      <p>
+        If the page is behind a login, on localhost, or otherwise not reachable by the extension: open Chrome DevTools with <kbd>Cmd+Option+I</kbd> (Mac) or <kbd>Ctrl+Shift+I</kbd> (Windows/Linux). Go to the <strong>Elements</strong> tab.
+      </p>
+      <p>
+        Right-click the <code>&lt;body&gt;</code> element (or the specific section you want to import) and choose <strong>Copy → Copy outerHTML</strong>. Switch to Figma, open the html2design plugin, click the <strong>Code</strong> tab, paste the HTML, and click <strong>Convert</strong>.
+      </p>
+      <p>
+        For sections where computed styles matter (particularly for fonts and colors that don't appear directly in the HTML), html2design reads the computed CSS alongside the HTML, so the output accurately reflects the browser-rendered values even for utility-class frameworks like Tailwind.
+      </p>
+      <div class="tip-box">
+        <p><strong>Targeting a specific component</strong> instead of the full page: right-click the component in the page, choose <strong>Inspect</strong>, right-click the highlighted element in the Elements panel, and choose <strong>Copy → Copy outerHTML</strong>. This gives you a focused import of just that component — useful for auditing individual UI elements.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <p class="step-num">Step 4</p>
+      <h3>Organize the imported layers in Figma</h3>
+      <p>
+        After conversion, you have a native Figma frame on your canvas. The layer names come from the HTML structure (IDs, class names, semantic tags) — they'll be more or less readable depending on the site's markup quality.
+      </p>
+      <p>
+        For single-page imports, rename the top-level frame to something descriptive: <code>Homepage — Desktop — 2026-04-10</code> is a good pattern that shows what it is and when it was captured. For multi-page imports, use Figma pages to separate each site page and name them to match the site's URL structure (<code>/home</code>, <code>/pricing</code>, <code>/blog</code>).
+      </p>
+      <p>
+        You don't need to clean up the layer structure for most use cases. The import is a reference, not a deliverable — use it as a baseline to work from, not an output to ship.
+      </p>
+    </div>
+
+    <h2>What You Get in Figma</h2>
+    <p>
+      The Figma output from a website conversion is a native frame with:
+    </p>
+    <ul>
+      <li><strong>Editable text layers</strong> — every text node on the page is a Figma text layer with the correct font, size, weight, line height, and color. You can edit text directly.</li>
+      <li><strong>Accurate color fills</strong> — background colors, border colors, and text colors are all the computed values from the rendered page, not the CSS source. If a utility class like <code>bg-blue-600</code> renders to <code>#2563EB</code>, that's what you get in Figma.</li>
+      <li><strong>Positioned frames</strong> — each element is positioned and sized to match its rendered dimensions. Padding and margin are reflected in the layer spacing.</li>
+      <li><strong>Embedded images</strong> — images are embedded as Figma image fills (subject to CORS restrictions on the source site).</li>
+      <li><strong>Layer structure</strong> — the layer hierarchy roughly mirrors the HTML DOM structure, making it possible to navigate the Figma file using knowledge of the site's markup.</li>
+    </ul>
+
+    <p>
+      What you <em>don't</em> get is Auto Layout, Figma Variables, or Component definitions — those require manual work after import. For most use cases (redesign, audit, prototyping), the flat imported structure is sufficient. For design-system extraction work that requires Variables and Components, the <a href="/blog/design-system-from-existing-code">design system from existing code guide</a> covers that workflow.
+    </p>
+
+    <h2>Five Use Cases for Converting Live Sites to Figma</h2>
+
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <h4>Redesign baseline</h4>
+        <p>Import the current site before starting a redesign. Work from production truth instead of outdated Figma files or screenshots. Covers what the site actually ships, not what was designed.</p>
+      </div>
+      <div class="use-case-card">
+        <h4>Client design handoff</h4>
+        <p>Convert a client's live site to Figma, duplicate the frames, and redesign on top of real content. Proposals feel grounded because they show actual pages being improved, not generic mocks.</p>
+      </div>
+      <div class="use-case-card">
+        <h4>Competitive analysis</h4>
+        <p>Import competitor sites to audit their design systems: type scales, color tokens, component patterns, spacing rhythms. More accurate than visual inspection alone.</p>
+      </div>
+      <div class="use-case-card">
+        <h4>Rapid prototyping</h4>
+        <p>Import a production page, make changes in Figma, add Prototype connections, and share with stakeholders — without rebuilding the page from scratch in a design tool.</p>
+      </div>
+      <div class="use-case-card">
+        <h4>Design-system audit</h4>
+        <p>Import the live site to see what's actually shipping. Compare against the Figma design system. Document the drift before the next design system review sprint.</p>
+      </div>
+      <div class="use-case-card">
+        <h4>Onboarding new designers</h4>
+        <p>New designers joining a team can import the live product to understand the actual design language — rather than relying on a Figma file that may not reflect current production state.</p>
+      </div>
+    </div>
+
+    <h2>How It Compares to Manual Recreation</h2>
+    <p>
+      The alternative to importing a live website into Figma is rebuilding the page manually in Figma from screenshots. This is the standard approach when no conversion tool is available, and it has significant drawbacks:
+    </p>
+    <ul>
+      <li><strong>Time:</strong> Manually recreating a single marketing page in Figma typically takes 2–4 hours for an experienced designer. A homepage with a complex hero, feature grid, and testimonials section could take longer. html2design converts the same page in under 5 minutes.</li>
+      <li><strong>Accuracy:</strong> Manual recreation introduces approximation. Font sizes are eyeballed. Spacing is guessed. Colors are sampled from screenshots with inherent lossy compression. html2design reads computed styles directly, so font sizes, spacing values, and colors are exact.</li>
+      <li><strong>Maintenance:</strong> A manually recreated Figma file becomes stale the moment the site changes. With html2design, you can re-import a page at any time to update the Figma baseline to the current production state.</li>
+    </ul>
+    <p>
+      The main advantage of manual recreation is that you produce a cleaner Figma file — with proper Auto Layout, named components, and an organized layer structure. If the goal is a production Figma file for an active design team, manual cleanup after an html2design import produces the same result in less total time than full manual recreation.
+    </p>
+
+    <h2>Common Issues and Fixes</h2>
+    <p>
+      Most imports work cleanly. When they don't, the issues follow a predictable pattern:
+    </p>
+
+    <h3>Fonts not rendering correctly</h3>
+    <p>
+      If the page uses a web font that Figma doesn't have installed locally, text will fall back to a system font. Fix: install the font on your machine (Google Fonts, Adobe Fonts) or replace the text layers with your team's shared font after import.
+    </p>
+
+    <h3>Images appear as gray rectangles</h3>
+    <p>
+      This happens when the site serves images with CORS headers that block cross-origin reads. The layout is still accurate — you can replace image placeholders manually in Figma, or use the DevTools method to capture the outerHTML with img src attributes and substitute images after import.
+    </p>
+
+    <h3>Fixed-position elements (navs, overlays) out of place</h3>
+    <p>
+      CSS <code>position: fixed</code> elements are placed at their visual position on screen at the time of import. If a fixed navigation overlaps the page content in the import, move it to a separate layer group. For imports where the nav position matters, trigger the import at the top of the page (scroll position 0) so the fixed nav is correctly positioned relative to the content.
+    </p>
+
+    <h3>Large pages produce complex layer trees</h3>
+    <p>
+      A long page with many sections will produce a deep layer hierarchy. For redesign work, it's often better to import sections independently rather than the full page — capture the hero, then the feature grid, then the footer as separate imports, and compose them in the Figma file manually. This produces a cleaner working file without sacrificing accuracy.
+    </p>
+
+    <h2>Next Steps</h2>
+    <p>
+      Once you have the live site in Figma, the most common next steps are:
+    </p>
+    <ul>
+      <li>Starting a redesign from the import — the <a href="/blog/website-redesign-checklist">website redesign checklist</a> covers the full workflow from import to launch.</li>
+      <li>Extracting design tokens from the import — see the <a href="/blog/design-tokens-code-to-figma">design tokens guide</a> for how to register Variables from imported values.</li>
+      <li>Auditing the import for design debt — the <a href="/blog/design-system-from-existing-code">design system from existing code guide</a> covers systematic component extraction.</li>
+      <li>Building a multi-page site import — the <a href="/blog/multi-page-website-to-figma">multi-page import guide</a> covers the full page-by-page workflow for an entire site.</li>
+    </ul>
+
+    <!-- FAQ Section -->
+    <h2>FAQ: Converting Websites to Figma</h2>
+
+    <h3>How do you convert a website to Figma?</h3>
+    <p>
+      Install the html2design Figma plugin. For public sites, use the Chrome extension — it captures the rendered HTML and computed styles and sends them to Figma automatically. For private or localhost pages, open DevTools, copy the outerHTML, and paste it into the plugin's code input. The plugin generates native Figma frames in seconds.
+    </p>
+
+    <h3>Can you import a live website into Figma?</h3>
+    <p>
+      Yes. html2design imports any live website into Figma as editable native layers. Public sites work via the Chrome extension. Localhost, staging, and auth-gated pages work via the HTML paste method. The import reads computed styles — so the Figma output reflects what the browser actually renders, not just the CSS source.
+    </p>
+
+    <h3>Is it better to screenshot a site or import it into Figma?</h3>
+    <p>
+      Import is significantly more useful. A screenshot produces a flat, non-editable image in Figma. An html2design import produces native text layers (editable), accurate color fills (extracted from computed styles), and a layer structure you can work with. If you need to make changes to the design — even small ones — an import is the right choice.
+    </p>
+
+    <h3>Does this work with JavaScript-rendered sites (React, Next.js)?</h3>
+    <p>
+      Yes. html2design reads the rendered DOM after JavaScript has executed, not the source HTML. React, Next.js, Vue, Angular, and any other JS-rendered framework all work — the import captures what the browser displays, including dynamic content and JS-modified DOM state.
+    </p>
+
+    <h3>How long does it take to convert a website to Figma?</h3>
+    <p>
+      Under 5 minutes for a single page once you have the plugin installed. The conversion itself takes 10–30 seconds depending on page complexity. Most of the time goes to setting up the Figma file and organizing the import afterward. Compare that to 2–4 hours for a manually recreated page.
+    </p>
+
+  </article>
+
+  <!-- Related Articles -->
+  <section class="max-w-3xl mx-auto px-6 pb-20">
+    <div class="border-t border-gray-100 pt-10">
+      <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/import-website-into-figma"
+           class="group block bg-gray-50 border border-gray-100 rounded-xl p-5 hover:border-accent/30 hover:shadow-sm transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-sm font-bold text-content group-hover:text-accent transition-colors leading-snug">How to Import a Website into Figma: Two Methods Compared</h3>
+        </a>
+        <a href="/blog/multi-page-website-to-figma"
+           class="group block bg-gray-50 border border-gray-100 rounded-xl p-5 hover:border-accent/30 hover:shadow-sm transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
+          <h3 class="text-sm font-bold text-content group-hover:text-accent transition-colors leading-snug">Importing Multi-page Websites into Figma</h3>
+        </a>
+        <a href="/blog/website-redesign-checklist"
+           class="group block bg-gray-50 border border-gray-100 rounded-xl p-5 hover:border-accent/30 hover:shadow-sm transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-emerald-600 mb-2">Workflow</p>
+          <h3 class="text-sm font-bold text-content group-hover:text-accent transition-colors leading-snug">Website Redesign Checklist 2026</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-3xl mx-auto px-6 pb-24">
+    <div class="bg-content text-white rounded-2xl p-8 text-center">
+      <p class="text-xs font-mono uppercase tracking-widest text-white/50 mb-4">Get the Plugin</p>
+      <h2 class="text-2xl font-black tracking-tighter mb-3">Convert your first website to Figma</h2>
+      <p class="text-white/70 text-sm leading-relaxed mb-6 max-w-md mx-auto">Install html2design from the Figma Community. Free to try — import any public website as editable Figma layers in minutes.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-white text-content font-semibold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-opacity">
+        Install html2design &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-12">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+        <p class="text-xs text-gray-400 mt-1 font-mono">Import any website as editable Figma layers.</p>
+      </div>
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-content-muted">
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/use-cases" class="hover:text-content transition-colors">Use Cases</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/pricing" class="hover:text-content transition-colors">Pricing</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
