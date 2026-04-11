@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Figma to HTML: The Complete Developer Handoff Guide (2026)</title>
+      <link>https://www.htmltofigma.io/blog/figma-to-html-developer-handoff</link>
+      <description>The complete Figma-to-HTML developer handoff guide for 2026. Covers Figma Dev Mode inspection, code-generation plugins (Anima, Locofy, TeleportHQ), naming conventions, auto-layout best practices, and the html2design reverse loop that keeps Figma current after each deploy. Includes a tool comparison table, sprint-end sync workflow, and FAQ.</description>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-to-html-developer-handoff</guid>
+    </item>
 
     <item>
       <title>How to Convert a Live Website to Figma in Minutes (2026)</title>

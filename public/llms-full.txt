@@ -774,6 +774,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://www.htmltofigma.io/blog/design-system-from-existing-code
 - Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://www.htmltofigma.io/blog/website-redesign-checklist
 - How to Convert a Live Website to Figma in Minutes (2026) — https://www.htmltofigma.io/blog/convert-website-to-figma
+- Figma to HTML: The Complete Developer Handoff Guide (2026) — https://www.htmltofigma.io/blog/figma-to-html-developer-handoff
 
 ### Use Case Pages (21 total)
 

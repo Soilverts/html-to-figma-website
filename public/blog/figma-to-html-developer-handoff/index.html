@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Figma to HTML: The Complete Developer Handoff Guide (2026)</title>
+  <meta name="description" content="The complete guide to Figma-to-HTML developer handoff in 2026. Covers Figma Dev Mode, code-generation plugins (Anima, Locofy), manual implementation best practices, naming conventions, auto-layout tips, and how html2design closes the loop by importing shipped HTML back into Figma." />
+  <meta name="keywords" content="figma to html, developer handoff figma, figma to code, figma dev mode, figma developer handoff, figma to html export, figma code generation, design handoff workflow, html2design, figma naming conventions, auto-layout best practices" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/figma-to-html-developer-handoff" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/figma-to-html-developer-handoff" />
+  <meta property="og:title" content="Figma to HTML: The Complete Developer Handoff Guide (2026)" />
+  <meta property="og:description" content="From Figma Dev Mode inspection to code-generation plugins to bidirectional sync — the complete playbook for Figma-to-HTML handoff that keeps code and design in sync." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/figma-to-html-developer-handoff.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Figma to HTML developer handoff guide — complete 2026 workflow" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-04-11T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-04-11T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Workflow" />
+  <meta property="article:tag" content="figma to html" />
+  <meta property="article:tag" content="developer handoff" />
+  <meta property="article:tag" content="figma workflow" />
+  <meta property="article:tag" content="design to code" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Figma to HTML: The Complete Developer Handoff Guide (2026)" />
+  <meta name="twitter:description" content="Dev Mode, code-gen plugins, naming conventions, auto-layout tips, and the bidirectional sync loop — everything a team needs to ship from Figma to HTML without losing fidelity." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/figma-to-html-developer-handoff.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Figma to HTML: The Complete Developer Handoff Guide (2026)",
+    "description": "The complete guide to Figma-to-HTML developer handoff in 2026. Covers Figma Dev Mode, code-generation plugins, manual implementation best practices, naming conventions, auto-layout tips, and how html2design closes the loop by re-importing shipped HTML back into Figma.",
+    "url": "https://www.htmltofigma.io/blog/figma-to-html-developer-handoff",
+    "datePublished": "2026-04-11T00:00:00Z",
+    "dateModified": "2026-04-11T00:00:00Z",
+    "wordCount": 2100,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/figma-to-html-developer-handoff.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/figma-to-html-developer-handoff"
+    },
+    "keywords": "figma to html, developer handoff figma, figma to code, figma dev mode, design handoff workflow, html2design",
+    "articleSection": "Workflow",
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Figma to HTML developer handoff",
+      "description": "The workflow by which designers hand off Figma designs to developers as HTML and CSS, including inspection tools, code-generation plugins, naming conventions, and reverse-sync techniques."
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Figma Dev Mode", "url": "https://www.figma.com/dev-mode/" },
+      { "@type": "SoftwareApplication", "name": "Anima", "url": "https://www.animaapp.com/" },
+      { "@type": "SoftwareApplication", "name": "Locofy", "url": "https://www.locofy.ai/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you export Figma designs to HTML?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are three main methods: (1) Figma Dev Mode — developers inspect designs directly in Figma and hand-code the HTML/CSS from the spec values shown; (2) code-generation plugins like Anima, Locofy, or TeleportHQ — these export Figma frames as React or HTML files automatically; (3) manual implementation — developers use the design as a reference and write HTML from scratch. Each method has different fidelity and maintenance trade-offs. Dev Mode is most common for production teams; code-gen plugins work well for prototyping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Figma developer handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma developer handoff is the process of transferring a completed Figma design to a development team for implementation. It typically involves sharing a Figma file link, granting Dev Mode access, annotating components with states and edge cases, and defining a token strategy for spacing, color, and typography. A complete handoff package includes spec values (dimensions, colors, font sizes), component states (default, hover, active, disabled), responsive behavior, and any motion specs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Figma Dev Mode and html2design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Figma Dev Mode goes design-to-code: it lets developers inspect Figma designs and read CSS/dimension values so they can implement the design in HTML. html2design goes in the opposite direction — code-to-design: it imports existing HTML from a live site or codebase back into Figma as editable native layers. They solve complementary problems. Dev Mode helps teams implement new designs; html2design helps teams sync Figma with what was actually shipped."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What naming conventions should I use in Figma for better developer handoff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use semantic, component-oriented names that mirror your codebase naming. Prefer PascalCase for components (Button, NavBar, CardGrid), camelCase or kebab-case for variants and states (Button/primary, Button/disabled). Use slash notation to group related components — this creates organized groups in Dev Mode and maps naturally to file paths. Avoid generic names like 'Frame 42' or 'Rectangle 7'. Name every layer that a developer might need to reference — not just top-level components."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you keep Figma in sync with production code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable approach is bidirectional sync: use Figma Dev Mode (or a code-gen plugin) for the initial Figma→HTML handoff, then use html2design to re-import the shipped HTML back into Figma after each sprint. This closes the loop — instead of Figma drifting further from production with each release, you periodically update Figma to match what was actually built. Add a 30-minute 'Figma sync' slot at the end of each sprint: import changed pages, compare layers, and update components that diverged."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Figma to HTML: The Complete Developer Handoff Guide", "item": "https://www.htmltofigma.io/blog/figma-to-html-developer-handoff" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/figma-to-html-developer-handoff",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Figma to HTML: The Complete Developer Handoff Guide (2026)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; }
+    .tip-box strong { color: #1E40AF; }
+    .tldr-box { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+    .tldr-box h2 { font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #15803D; margin-top: 0; margin-bottom: 0.75rem; }
+    .tldr-box ul li::before { color: #16A34A; }
+    .method-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .method-card .method-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .method-card h3 { margin-top: 0 !important; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .comparison-table th { background: #F3F4F6; padding: 0.6rem 1rem; text-align: left; font-weight: 700; color: #111827; border-bottom: 2px solid #E5E7EB; }
+    .comparison-table td { padding: 0.6rem 1rem; border-bottom: 1px solid #F3F4F6; color: #374151; vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table td:first-child { font-weight: 600; color: #111827; white-space: nowrap; }
+    .tag-yes { color: #16A34A; font-weight: 600; }
+    .tag-partial { color: #D97706; font-weight: 600; }
+    .tag-no { color: #DC2626; font-weight: 600; }
+    .loop-diagram { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .loop-box { background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem; text-align: center; }
+    .loop-box .loop-label { font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: #9CA3AF; margin-bottom: 0.25rem; }
+    .loop-box .loop-title { font-size: 0.9rem; font-weight: 700; color: #111827; }
+    .loop-arrow { text-align: center; color: #2563EB; font-size: 1.25rem; }
+    @media (max-width: 640px) {
+      .loop-diagram { grid-template-columns: 1fr; }
+      .loop-arrow { transform: rotate(90deg); }
+      .comparison-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="/compare" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Compare</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Figma to HTML Handoff</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-8 pb-6">
+    <div class="flex items-center gap-3 mb-5">
+      <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Workflow</span>
+      <span class="text-xs text-gray-400 font-mono">9 min read</span>
+      <span class="text-gray-200">·</span>
+      <time datetime="2026-04-11" class="text-xs text-gray-400 font-mono">Apr 11, 2026</time>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-black tracking-tighter leading-[1.08] text-content mb-5">
+      Figma to HTML:<br />The Complete Developer Handoff Guide (2026)
+    </h1>
+    <p class="text-lg text-content-muted font-light leading-relaxed mb-0">
+      Designers ship Figma. Developers need HTML. Here is every method — from Dev Mode inspection to code-generation plugins — plus the reverse workflow that keeps Figma current after each deploy.
+    </p>
+  </header>
+
+  <!-- Article Body -->
+  <main class="max-w-3xl mx-auto px-6 pb-24">
+    <article class="prose-article">
+
+      <!-- TL;DR / GEO Citation Box -->
+      <div class="tldr-box">
+        <h2>TL;DR</h2>
+        <ul>
+          <li><strong>The problem:</strong> Figma files diverge from production HTML within weeks of handoff.</li>
+          <li><strong>Figma → HTML (3 methods):</strong> Dev Mode inspection (most common), code-generation plugins (Anima, Locofy, TeleportHQ), or manual implementation from design specs.</li>
+          <li><strong>HTML → Figma (closing the loop):</strong> Use <a href="/">html2design</a> to re-import shipped HTML back into Figma after each sprint — this prevents design drift without extra tooling.</li>
+          <li><strong>Before you hand off:</strong> Apply Auto Layout everywhere, name every component semantically, document states and tokens.</li>
+          <li><strong>Key comparison:</strong> <a href="/compare/html2design-vs-figma-dev-mode">Dev Mode vs html2design</a> — they go in opposite directions and complement each other.</li>
+        </ul>
+      </div>
+
+      <h2>The Handoff Problem</h2>
+
+      <p>The standard designer-developer relationship works like this: designers build a Figma file, share a link, developers implement the design in HTML and CSS, and the product ships. On paper, it is clean. In practice, it is leaky.</p>
+
+      <p>Within the first sprint, small divergences appear. Developers push back on an animation that is too complex to implement. A spacing value gets rounded to the nearest 4px grid. A hover state was not specified, so the developer invents one. Six months later, the Figma file and the production site are meaningfully different — and nobody is sure which is the source of truth.</p>
+
+      <p>A complete Figma-to-HTML handoff strategy has two parts: a reliable method for translating Figma designs into HTML on the way out, and a mechanism for re-importing what was actually built back into Figma. This guide covers both.</p>
+
+      <h2>What "Figma to HTML" Means in 2026</h2>
+
+      <p>The phrase covers a spectrum of intent. At one end: a developer manually reading values from Figma and writing HTML by hand. At the other end: a plugin that reads the Figma file and generates deployable React components automatically. Between those extremes are several practical options, each with different trade-offs on fidelity, flexibility, and maintenance cost.</p>
+
+      <div class="loop-diagram" role="img" aria-label="Bidirectional workflow: Figma to HTML (Dev Mode / code-gen) and HTML to Figma (html2design)">
+        <div class="loop-box">
+          <div class="loop-label">Design source</div>
+          <div class="loop-title">Figma file</div>
+        </div>
+        <div class="loop-arrow" aria-hidden="true">⇄</div>
+        <div class="loop-box">
+          <div class="loop-label">Production</div>
+          <div class="loop-title">Shipped HTML</div>
+        </div>
+      </div>
+
+      <p>The loop in the diagram above is intentional. Figma-to-HTML is not a one-time handoff event — it is an ongoing sync. The healthiest teams run both directions: design ships to code, and code flows back into Figma.</p>
+
+      <h2>Method 1 — Figma Dev Mode (Inspect and Implement)</h2>
+
+      <p>Figma Dev Mode is the built-in tool for developer handoff. It converts the default editing interface into an inspection view where developers can read CSS property values, dimensions, spacing, and export assets directly from the Figma canvas.</p>
+
+      <div class="method-card">
+        <p class="method-label" style="color: #2563EB;">How it works</p>
+        <h3>Dev Mode inspection workflow</h3>
+        <ol>
+          <li>Designer shares the Figma file link and grants Dev Mode access.</li>
+          <li>Developer opens the file in Dev Mode (toggle in the top toolbar).</li>
+          <li>Developer clicks any layer to see CSS properties: font-size, color, line-height, border-radius, gap, padding.</li>
+          <li>Developer hand-writes the HTML/CSS using the spec values as reference.</li>
+          <li>Assets (icons, illustrations, images) are exported directly from the panel.</li>
+        </ol>
+      </div>
+
+      <p><strong>When to use it:</strong> Dev Mode is the right default for production teams building new features from new designs. It keeps the developer in control of the implementation decisions and does not generate brittle auto-generated code.</p>
+
+      <p><strong>Limitation:</strong> Dev Mode is read-only inspection — it does not write code for you. It also only goes one direction: Figma → developer. After the developer ships, Dev Mode cannot tell you how the implementation diverged from the design. For that, you need the reverse direction. See the <a href="/compare/html2design-vs-figma-dev-mode">full Dev Mode vs html2design comparison</a>.</p>
+
+      <h2>Method 2 — Code-Generation Plugins</h2>
+
+      <p>Code-generation plugins read the Figma file's layer tree and attempt to output HTML, CSS, or React components automatically. They reduce implementation time for standard UI patterns and are especially useful for prototyping and design-system bootstrapping.</p>
+
+      <table class="comparison-table" role="grid" aria-label="Figma code-generation plugin comparison">
+        <thead>
+          <tr>
+            <th>Plugin</th>
+            <th>Output</th>
+            <th>Auto Layout → Flexbox</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anima</td>
+            <td>React, HTML/CSS, Vue</td>
+            <td class="tag-yes">Yes</td>
+            <td>Interactive prototypes, SPA scaffolding</td>
+          </tr>
+          <tr>
+            <td>Locofy</td>
+            <td>React, Next.js, HTML</td>
+            <td class="tag-yes">Yes</td>
+            <td>Full page generation, responsive breakpoints</td>
+          </tr>
+          <tr>
+            <td>TeleportHQ</td>
+            <td>React, Vue, Angular, plain HTML</td>
+            <td class="tag-partial">Partial</td>
+            <td>Multi-framework export, design system tokens</td>
+          </tr>
+          <tr>
+            <td>Builder.io Visual Copilot</td>
+            <td>React, Vue, Svelte, HTML</td>
+            <td class="tag-yes">Yes</td>
+            <td>AI-assisted component generation</td>
+          </tr>
+          <tr>
+            <td>Figma Dev Mode (built-in)</td>
+            <td>CSS snippets (inspect only)</td>
+            <td class="tag-partial">Read-only</td>
+            <td>Manual implementation reference</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>When to use code-gen plugins:</strong> Prototyping and design-system scaffolding. Code-generation output usually needs cleanup before it is production-ready — the plugins excel at giving you 80% of the structure so you can fill in the remaining 20%. For a detailed breakdown, see the <a href="/compare/html2design-vs-anima">html2design vs Anima comparison</a> and the <a href="/compare/html2design-vs-locofy">html2design vs Locofy comparison</a>.</p>
+
+      <div class="tip-box">
+        <p><strong>Tip:</strong> Code-generation quality improves significantly when the Figma file uses Auto Layout consistently, follows semantic layer naming, and uses Figma Variables for tokens. If your file uses absolute positioning and unnamed frames, generated code will be deeply nested and unmaintainable. The tips in the next section apply equally to inspect-mode and code-gen workflows.</p>
+      </div>
+
+      <h2>Method 3 — Manual Implementation</h2>
+
+      <p>Manual implementation — a developer reads the Figma file (via Dev Mode or the standard Figma view) and writes HTML/CSS from scratch — remains the most common approach for production codebases. It produces the cleanest, most maintainable output because a developer makes every structural decision deliberately.</p>
+
+      <p>Manual implementation does not mean ignoring the design. A good manual workflow uses Dev Mode for exact values (colors, spacing, border-radius), but relies on the developer's judgment for semantic HTML structure, accessibility, responsive behaviour, and performance. The <a href="/guide">complete HTML to Figma conversion guide</a> covers the full workflow including how to structure the handoff annotation process.</p>
+
+      <h2>Practical Tips for a Cleaner Handoff</h2>
+
+      <p>Regardless of which Figma-to-HTML method your team uses, the quality of the Figma file determines the quality of the output. Here are the most impactful practices.</p>
+
+      <h3>Auto Layout everywhere</h3>
+
+      <p>Auto Layout is the single highest-leverage practice for developer handoff. A Figma frame using Auto Layout maps directly to a CSS Flexbox container — the direction, gap, padding, and alignment all translate. Absolute-positioned frames give developers no layout signal at all.</p>
+
+      <ul>
+        <li>Use horizontal Auto Layout for nav bars, button groups, and card rows.</li>
+        <li>Use vertical Auto Layout for form stacks, list items, and page sections.</li>
+        <li>Set Hug Contents on components that should size to their content.</li>
+        <li>Set Fill Container on items that should stretch to available space.</li>
+        <li>Use Gap instead of spacer frames — Gap maps directly to CSS <code>gap</code>.</li>
+      </ul>
+
+      <h3>Semantic component naming</h3>
+
+      <p>Layer names are the first thing a developer sees in Dev Mode. Generic names like "Frame 42" force developers to infer structure. Semantic names communicate intent and map to component names in code.</p>
+
+      <div class="code-block">
+&#x2F;&#x2F; Good — semantic, mirrors codebase naming
+Button/primary
+Button/secondary
+Button/disabled
+NavBar/desktop
+NavBar/mobile
+CardGrid/three-column
+ProductCard/default
+ProductCard/out-of-stock
+
+&#x2F;&#x2F; Avoid — generic, gives developers no signal
+Frame 42
+Rectangle 7
+Group 3
+Vector
+      </div>
+
+      <p>Use slash notation to group related variants. This creates organized panels in Dev Mode and maps naturally to component subdirectories in your codebase.</p>
+
+      <h3>Document all states</h3>
+
+      <p>An unspecified state is an invitation for inconsistency. At a minimum, every interactive component needs designs for: default, hover, focus, active, disabled, loading, and error states. Designers often deliver default and hover; developers invent the rest.</p>
+
+      <ul>
+        <li>Use Figma Variants to model each state as a variant property.</li>
+        <li>Include focus-visible styles — a common accessibility gap in shipped code.</li>
+        <li>Document empty states for lists, dashboards, and search results.</li>
+        <li>Specify skeleton/loading states for async components.</li>
+      </ul>
+
+      <h3>Use Figma Variables for design tokens</h3>
+
+      <p>Figma Variables (the replacement for Styles) let you define design tokens — color, spacing, radius, typography — once and reference them everywhere. When a developer sees a token name like <code>color/brand/primary</code> or <code>spacing/md</code> in Dev Mode, they can map it directly to the corresponding CSS custom property or token in the codebase. Raw hex values require a lookup every time.</p>
+
+      <p>For a deep dive on token sync, see <a href="/blog/design-tokens-code-to-figma">Design Tokens: Bridging Code and Figma</a>.</p>
+
+      <h3>Annotate with a handoff checklist</h3>
+
+      <p>Add a page in the Figma file called "Handoff Notes" with a simple checklist. Cover: responsive breakpoints and which components reflow, motion specs (duration, easing, which properties animate), truncation behaviour for long strings, and accessibility requirements (ARIA labels, minimum touch targets, color-contrast requirements). Developers check this page first.</p>
+
+      <h2>Closing the Loop: HTML Back Into Figma</h2>
+
+      <p>The handoff problem is not solved at the moment of delivery — it compounds over time. Every sprint that ships without a Figma update adds to the divergence debt. Six months of unsynced sprints produce a Figma file that describes an older, different product.</p>
+
+      <p>The solution is a regular reverse-sync: importing the shipped HTML back into Figma using <a href="/">html2design</a>. At the end of each sprint, a designer or developer opens the shipped page in browser DevTools, copies the outerHTML of changed sections, pastes them into the html2design plugin in Figma, and runs the conversion. The result is a native Figma frame that matches the live page exactly — updated text, real colors, accurate spacing.</p>
+
+      <div class="method-card">
+        <p class="method-label" style="color: #10B981;">Sprint sync workflow</p>
+        <h3>End-of-sprint Figma sync (30 min)</h3>
+        <ol>
+          <li>Open the deployed page in Chrome. Navigate to each section changed this sprint.</li>
+          <li>Open DevTools (Cmd+Option+I) → Elements tab. Right-click the section → Copy → Copy outerHTML.</li>
+          <li>In Figma, open the html2design plugin. Paste the HTML and click Convert.</li>
+          <li>Rename the resulting frame to match the page section (e.g., "Pricing — Apr 11 deployed").</li>
+          <li>Place the imported frame next to the original design frame. Compare layers. Update the design to match any intentional changes the developer made during implementation.</li>
+          <li>Archive or delete the old design frame. The imported frame is now the new source of truth.</li>
+        </ol>
+      </div>
+
+      <p>This 30-minute process prevents design drift from compounding. After three months of sprint syncs, your Figma file reflects the actual product — not a six-month-old design intention.</p>
+
+      <p>For the full bidirectional workflow pattern, see <a href="/blog/design-handoff-best-practices">Design Handoff Best Practices: Keeping Code and Figma in Sync</a>.</p>
+
+      <h2>Tool Summary: The Complete Figma ↔ HTML Stack</h2>
+
+      <table class="comparison-table" role="grid" aria-label="Complete Figma to HTML tool comparison">
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Direction</th>
+            <th>Use case</th>
+            <th>Production-ready output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Figma Dev Mode</td>
+            <td>Figma → Developer</td>
+            <td>Inspection, spec reading</td>
+            <td class="tag-partial">Manual implementation required</td>
+          </tr>
+          <tr>
+            <td>Anima</td>
+            <td>Figma → HTML/React</td>
+            <td>Prototyping, scaffolding</td>
+            <td class="tag-partial">Cleanup required</td>
+          </tr>
+          <tr>
+            <td>Locofy</td>
+            <td>Figma → React/Next.js</td>
+            <td>Full-page generation</td>
+            <td class="tag-partial">Cleanup required</td>
+          </tr>
+          <tr>
+            <td>Manual implementation</td>
+            <td>Figma → HTML (hand-coded)</td>
+            <td>Production features</td>
+            <td class="tag-yes">Yes — developer controls output</td>
+          </tr>
+          <tr>
+            <td>html2design</td>
+            <td>HTML → Figma</td>
+            <td>Sync, drift repair, audit</td>
+            <td class="tag-yes">Yes — native Figma layers</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The tools in the top four rows handle Figma → HTML. html2design handles HTML → Figma. A complete handoff strategy uses at least one tool from each direction.</p>
+
+      <p>For a side-by-side analysis of the full tool landscape, see the <a href="/compare">html2design comparison hub</a>.</p>
+
+      <h2>Summary</h2>
+
+      <p>A Figma-to-HTML handoff is not a single event — it is a repeating workflow that needs structure on both sides of the direction. Designers need to deliver Figma files that translate cleanly: Auto Layout for layout signal, semantic naming for component mapping, Figma Variables for token alignment, and full state coverage. Developers need a reliable method to implement those designs — Dev Mode for manual implementation, code-gen plugins for scaffolding.</p>
+
+      <p>And both sides need the reverse loop. Shipping HTML without updating Figma is how design files become artifacts of a previous product version. A 30-minute sprint-end sync using html2design closes that loop and keeps the design file current with zero annotation overhead.</p>
+
+      <p>Start with the <a href="/guide">complete HTML to Figma conversion guide</a> for the full workflow reference, or install the <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" rel="noopener noreferrer" target="_blank">html2design Figma plugin</a> to run your first import today.</p>
+
+      <!-- FAQ Section -->
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="method-card" style="margin-bottom: 0.75rem;">
+        <h3 style="margin-top:0">How do you export Figma designs to HTML?</h3>
+        <p style="margin-bottom:0">The three main paths: (1) Dev Mode — developers inspect Figma and hand-write HTML/CSS from the spec values; (2) code-gen plugins (Anima, Locofy, TeleportHQ) — they generate React or HTML from the Figma layer tree automatically; (3) manual implementation — the developer uses the design as a visual reference and writes HTML from scratch. Dev Mode is most common for production teams; code-gen plugins work best for prototyping.</p>
+      </div>
+
+      <div class="method-card" style="margin-bottom: 0.75rem;">
+        <h3 style="margin-top:0">What is the difference between Dev Mode and html2design?</h3>
+        <p style="margin-bottom:0">They go in opposite directions. Figma Dev Mode goes <strong>Figma → developer</strong>: developers read CSS values from a Figma design to implement it in code. html2design goes <strong>HTML → Figma</strong>: it imports an existing website or component into Figma as editable native layers. They complement each other. Use Dev Mode for new designs; use html2design to sync Figma with what was actually shipped. Full comparison: <a href="/compare/html2design-vs-figma-dev-mode">Dev Mode vs html2design</a>.</p>
+      </div>
+
+      <div class="method-card" style="margin-bottom: 0.75rem;">
+        <h3 style="margin-top:0">What naming conventions should I use in Figma for developer handoff?</h3>
+        <p style="margin-bottom:0">Use PascalCase for component names (Button, NavBar, CardGrid) that mirror your codebase. Use slash notation for variants — Button/primary, Button/disabled — this creates organized groups in Dev Mode. Name every layer a developer might reference. Avoid generic names like "Frame 42" or "Rectangle 7".</p>
+      </div>
+
+      <div class="method-card" style="margin-bottom: 0.75rem;">
+        <h3 style="margin-top:0">How do you keep Figma in sync with production code after handoff?</h3>
+        <p style="margin-bottom:0">Schedule a 30-minute "Figma sync" at the end of each sprint. Open the deployed pages in Chrome, copy the outerHTML of changed sections via DevTools, paste into html2design in Figma, and replace the old design frames with the imported production frames. This prevents design drift from compounding sprint over sprint.</p>
+      </div>
+
+      <div class="method-card">
+        <h3 style="margin-top:0">Are code-generation plugins like Anima and Locofy production-ready?</h3>
+        <p style="margin-bottom:0">For prototyping and scaffolding — yes. For production codebases — usually not without cleanup. Generated code tends to be deeply nested and contains implementation details (inline styles, auto-generated class names) that conflict with team conventions. Use code-gen output as a starting point, not a final artifact. See the <a href="/compare/html2design-vs-anima">Anima comparison</a> and <a href="/compare/html2design-vs-locofy">Locofy comparison</a> for specifics.</p>
+      </div>
+
+    </article>
+
+    <!-- Related Articles -->
+    <div class="border-t border-gray-100 pt-10 mt-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Articles</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <a href="/blog/design-handoff-best-practices"
+           class="group block bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-emerald-600 mb-2">Workflow · 9 min</p>
+          <h3 class="text-sm font-bold text-content mb-2 group-hover:text-accent transition-colors leading-snug">Design Handoff Best Practices</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Keeping code and Figma in sync with a bidirectional workflow.</p>
+        </a>
+
+        <a href="/compare/html2design-vs-figma-dev-mode"
+           class="group block bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-purple-500 mb-2">Comparison · 8 min</p>
+          <h3 class="text-sm font-bold text-content mb-2 group-hover:text-accent transition-colors leading-snug">html2design vs Figma Dev Mode</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Two tools, two directions. When to use each — and when to use both.</p>
+        </a>
+
+        <a href="/guide"
+           class="group block bg-gray-50 border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide · 15 min</p>
+          <h3 class="text-sm font-bold text-content mb-2 group-hover:text-accent transition-colors leading-snug">Complete HTML to Figma Guide (2026)</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Every framework, every method — the single reference for all HTML-to-Figma work.</p>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 bg-content text-white rounded-2xl p-8 text-center">
+      <p class="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-3">Close the loop</p>
+      <h2 class="text-2xl font-black tracking-tighter mb-3">Import your shipped HTML back into Figma</h2>
+      <p class="text-white/70 text-sm leading-relaxed mb-6 max-w-lg mx-auto">html2design converts any live page or component into native, editable Figma layers in seconds. Keep your design file current with what was actually built — no manual recreation required.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 bg-white text-content text-sm font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+        Install html2design &rarr;
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-content-muted">&copy; 2026 HTML to Figma. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="text-sm text-content-muted hover:text-content transition-colors">Guide</a>
+        <a href="/compare" class="text-sm text-content-muted hover:text-content transition-colors">Compare</a>
+        <a href="/privacy.html" class="text-sm text-content-muted hover:text-content transition-colors">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

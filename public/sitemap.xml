@@ -716,8 +716,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.htmltofigma.io/blog/figma-to-html-developer-handoff</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.htmltofigma.io/blog/feed.xml</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
