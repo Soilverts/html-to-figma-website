@@ -143,7 +143,7 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Privacy policy: https://www.htmltofigma.io/privacy
 - AI plugin manifest: https://www.htmltofigma.io/.well-known/ai-plugin.json
 
-## Tutorial articles (29 total)
+## Tutorial articles (30 total)
 
 - How to Convert HTML to Figma: A Developer's Guide — https://www.htmltofigma.io/blog/how-to-convert-html-to-figma
 - How to Import a Website into Figma — https://www.htmltofigma.io/blog/import-website-into-figma
