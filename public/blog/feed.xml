@@ -5,9 +5,17 @@
     <link>https://www.htmltofigma.io/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
     <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>How to Keep Figma Designs and Code in Sync (2026 Guide)</title>
+      <link>https://www.htmltofigma.io/blog/figma-design-code-sync</link>
+      <description>Practical 2026 guide to eliminating design drift between Figma and your codebase. Covers four root causes, design token strategy, component libraries, automated visual regression testing, and the html2design reverse-sync loop that re-imports shipped HTML back into Figma after every sprint. Includes a tool comparison table and sprint-end checklist.</description>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-design-code-sync</guid>
+    </item>
 
     <item>
       <title>Figma to HTML: The Complete Developer Handoff Guide (2026)</title>

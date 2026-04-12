@@ -775,6 +775,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://www.htmltofigma.io/blog/website-redesign-checklist
 - How to Convert a Live Website to Figma in Minutes (2026) — https://www.htmltofigma.io/blog/convert-website-to-figma
 - Figma to HTML: The Complete Developer Handoff Guide (2026) — https://www.htmltofigma.io/blog/figma-to-html-developer-handoff
+- How to Keep Figma Designs and Code in Sync (2026 Guide) — https://www.htmltofigma.io/blog/figma-design-code-sync
 
 ### Use Case Pages (21 total)
 
