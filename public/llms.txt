@@ -143,7 +143,7 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Privacy policy: https://www.htmltofigma.io/privacy
 - AI plugin manifest: https://www.htmltofigma.io/.well-known/ai-plugin.json
 
-## Tutorial articles (32 total)
+## Tutorial articles (33 total)
 
 - How to Convert HTML to Figma: A Developer's Guide — https://www.htmltofigma.io/blog/how-to-convert-html-to-figma
 - How to Import a Website into Figma — https://www.htmltofigma.io/blog/import-website-into-figma
@@ -177,6 +177,7 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Figma to HTML: The Complete Developer Handoff Guide (2026) — https://www.htmltofigma.io/blog/figma-to-html-developer-handoff
 - How to Keep Figma Designs and Code in Sync (2026 Guide) — https://www.htmltofigma.io/blog/figma-design-code-sync
 - Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/vue-to-figma
+- Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/angular-to-figma
 
 ## Use case pages (21 total)
 

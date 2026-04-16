@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Angular to Figma: Import Angular Components into Figma (2026 Guide)</title>
+  <meta name="description" content="Convert Angular components into editable Figma designs with html2design. Works with localhost, Angular Universal, Angular Material, and any Angular 17/18 setup — no live URL required. Step-by-step workflow for Angular developers." />
+  <meta name="keywords" content="angular to figma, import angular components figma, angular figma plugin, angular material figma, angular 17 figma, angular 18 figma, angular universal figma, nx angular figma, angular standalone components figma, export angular to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://www.htmltofigma.io/blog/angular-to-figma" />
+
+  <!-- Open Graph (article) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.htmltofigma.io/blog/angular-to-figma" />
+  <meta property="og:title" content="Angular to Figma: Import Angular Components into Figma (2026 Guide)" />
+  <meta property="og:description" content="Angular renders to HTML and CSS in the browser — and that output converts to native, editable Figma layers in seconds. Here's the exact workflow for Angular 17/18, Angular Material, and Nx monorepos." />
+  <meta property="og:image" content="https://www.htmltofigma.io/og/blog/angular-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Angular to Figma component import workflow — 2026 guide" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="2026-04-17T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-04-17T00:00:00Z" />
+  <meta property="article:author" content="HTML to Figma" />
+  <meta property="article:section" content="Tutorial" />
+  <meta property="article:tag" content="angular to figma" />
+  <meta property="article:tag" content="angular figma plugin" />
+  <meta property="article:tag" content="design workflow" />
+  <meta property="article:tag" content="angular components" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Angular to Figma: Import Angular Components into Figma (2026)" />
+  <meta name="twitter:description" content="Convert Angular components into editable Figma designs with html2design. Works with localhost, Angular Material, and any Angular 17/18 setup — no live URL required." />
+  <meta name="twitter:image" content="https://www.htmltofigma.io/og/blog/angular-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Angular to Figma: Import Angular Components into Figma (2026 Guide)",
+    "description": "Step-by-step guide to converting Angular components into native, editable Figma layers using the html2design plugin. Works with localhost, Angular Universal, Angular Material, and any Angular 17/18 dev server.",
+    "url": "https://www.htmltofigma.io/blog/angular-to-figma",
+    "datePublished": "2026-04-17T00:00:00Z",
+    "dateModified": "2026-04-17T00:00:00Z",
+    "wordCount": 2900,
+    "inLanguage": "en",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.htmltofigma.io/og/blog/angular-to-figma.svg",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HTML to Figma",
+      "url": "https://www.htmltofigma.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.htmltofigma.io/favicon.svg"
+      }
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "HTML to Figma Blog",
+      "url": "https://www.htmltofigma.io/blog"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.htmltofigma.io/blog/angular-to-figma"
+    },
+    "keywords": "angular to figma, convert angular component to figma, angular figma plugin, angular material figma, angular 17 figma, angular universal figma",
+    "articleSection": "Tutorial",
+    "timeRequired": "PT9M",
+    "about": {
+      "@type": "Thing",
+      "name": "Converting Angular components to Figma",
+      "description": "Workflow for exporting rendered Angular component output into native, editable Figma design layers"
+    },
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "html2design", "url": "https://www.htmltofigma.io/" },
+      { "@type": "WebApplication", "name": "Figma", "url": "https://www.figma.com/" },
+      { "@type": "SoftwareApplication", "name": "Angular", "url": "https://angular.dev/" },
+      { "@type": "SoftwareApplication", "name": "Angular Material", "url": "https://material.angular.io/" },
+      { "@type": "SoftwareApplication", "name": "Nx", "url": "https://nx.dev/" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.htmltofigma.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.htmltofigma.io/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Angular to Figma", "item": "https://www.htmltofigma.io/blog/angular-to-figma" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I convert an Angular component to Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Angular renders to standard HTML and CSS in the browser. You copy the rendered component output from browser DevTools, then paste it into the html2design Figma plugin to get fully editable Figma layers. No special Angular plugin, build step, or code change is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Angular to Figma work with localhost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. html2design processes HTML you paste directly into the plugin — it doesn't need a public URL. You can run your Angular dev server on localhost:4200 (the Angular CLI default), open the component in a browser, copy its HTML via DevTools, and paste it into the plugin. This works with the Angular CLI, Nx workspaces, and any other Angular setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work with Angular Material components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Angular Material components render to standard HTML with Material-specific class names and computed CSS. html2design reads the computed styles the browser has resolved — not the Angular-specific class names — so all Angular Material components, along with PrimeNG, NG-ZORRO, and plain custom components, produce accurate results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import Angular Universal (SSR) pages into Figma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Angular Universal server-renders components before they reach the browser. By the time you inspect a page in DevTools, the fully resolved HTML is already in the DOM — including any server-fetched data. Copy it exactly as you would for a client-side Angular component."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does html2design work with Angular standalone components?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Whether your Angular app uses NgModules, standalone components (the Angular 17+ default), or a mix of both, html2design only sees the HTML and CSS the browser produces. The architectural pattern — standalone, module-based, or lazy-loaded — makes no difference to the rendered output the plugin processes."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert an Angular Component to Figma",
+    "description": "Convert any Angular component into editable Figma designs by rendering it locally, copying the HTML output from DevTools, and pasting into the html2design plugin.",
+    "totalTime": "PT5M",
+    "tool": [
+      { "@type": "HowToTool", "name": "html2design Figma plugin" },
+      { "@type": "HowToTool", "name": "Browser DevTools" },
+      { "@type": "HowToTool", "name": "Figma" },
+      { "@type": "HowToTool", "name": "Angular CLI development server (ng serve)" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Run your Angular app locally",
+        "text": "Start your Angular development server with `ng serve`. Navigate to the route or page that renders the component you want to convert.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Open DevTools and locate the component",
+        "text": "Open browser DevTools (Cmd+Option+I on Mac, F12 on Windows). Switch to the Elements panel. Use the element picker (Cmd+Shift+C) to click on the component's root host element in the page.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Copy the rendered HTML",
+        "text": "In the Elements panel, right-click the host element → Copy → Copy outerHTML. This copies the fully rendered HTML with all computed styles, Angular host attributes, and resolved class names.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Open html2design in Figma",
+        "text": "Switch to your Figma file. Open the plugin via Main Menu → Plugins → html2design. Make sure you are signed in with an active subscription.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Paste and convert",
+        "text": "Paste the copied HTML into the plugin's input field (Cmd+V on Mac, Ctrl+V on Windows). Click Convert. The plugin generates native Figma frames, text layers, fills, SVG paths, and border radius from the HTML.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "name": "Clean up and promote to a component",
+        "text": "Rename auto-generated layer names to match your Angular component vocabulary. Select the root frame and press Cmd+Alt+K (Mac) or Ctrl+Alt+K (Windows) to promote it to a Figma Component.",
+        "url": "https://www.htmltofigma.io/blog/angular-to-figma"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.htmltofigma.io/blog/angular-to-figma",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "header p",
+        "article.prose-article p"
+      ]
+    },
+    "name": "Angular to Figma: Import Angular Components into Figma (2026 Guide)"
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+  <style>
+    .prose-article h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #111827; }
+    .prose-article h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.5rem; color: #111827; }
+    .prose-article p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+    .prose-article ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+    .prose-article ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; color: #374151; line-height: 1.7; }
+    .prose-article ul li::before { content: '—'; position: absolute; left: 0; color: #2563EB; font-weight: 700; }
+    .prose-article ol { counter-reset: step; padding: 0; margin-bottom: 1rem; }
+    .prose-article ol li { counter-increment: step; padding-left: 2.25rem; position: relative; margin-bottom: 0.75rem; color: #374151; line-height: 1.7; }
+    .prose-article ol li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.5rem; height: 1.5rem; background: #2563EB; color: white; border-radius: 50%; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; }
+    .prose-article strong { color: #111827; font-weight: 600; }
+    .prose-article a { color: #2563EB; text-decoration: underline; text-underline-offset: 2px; }
+    .prose-article a:hover { color: #1E40AF; }
+    .code-block { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1rem 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #374151; overflow-x: auto; margin-bottom: 1rem; }
+    .step-card { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .step-card .step-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: #2563EB; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .step-card h3 { margin-top: 0 !important; }
+    .tip-box { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 0 0.75rem 0.75rem 0; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .tip-box p { margin-bottom: 0; color: #1E40AF; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .compare-table th { background: #F3F4F6; font-weight: 700; color: #111827; padding: 0.6rem 0.875rem; text-align: left; border: 1px solid #E5E7EB; }
+    .compare-table td { padding: 0.6rem 0.875rem; border: 1px solid #E5E7EB; color: #374151; vertical-align: top; }
+    .compare-table tr:nth-child(even) td { background: #F9FAFB; }
+  </style>
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="/blog" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Blog</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">
+          Get Plugin &rarr;
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-3xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Angular to Figma</span>
+    </nav>
+  </div>
+
+  <!-- Article Header -->
+  <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
+    <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Tutorial · 9 min read</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+      Angular to Figma: Import Angular Components into Figma
+    </h1>
+    <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
+      Angular renders to HTML and CSS — and that output converts to native, editable Figma layers in seconds. Here's the exact workflow for Angular 17/18 developers, including Angular Material, Angular Universal, and Nx monorepos.
+    </p>
+    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
+      <div>
+        <p class="text-sm font-medium">HTML to Figma Team</p>
+        <time datetime="2026-04-17" class="text-xs text-gray-400 font-mono">April 17, 2026</time>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: April 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-6 pb-20 prose-article">
+
+    <!-- GEO: TL;DR definition block -->
+    <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>Converting Angular components to Figma</strong> means capturing a rendered <a href="https://angular.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Angular</a> component's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">DOM output</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> and importing it into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> layers. Because Angular compiles to standard HTML, you can copy the rendered output from any running Angular app — <a href="https://material.angular.io" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Angular Material</a>, <a href="https://nx.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Nx</a>, Angular Universal, localhost — via browser DevTools, then paste it into html2design without touching any source code. The workflow takes approximately <strong>30 seconds per component</strong>.</p>
+    </div>
+
+    <h2>The Angular/Figma Gap</h2>
+    <p>
+      Angular teams deal with a design-dev disconnect that compounds over time. Your component library — buttons, data tables, modals, navigation shells, form controls — has been carefully built, tested, and iterated over months or years. Meanwhile, the Figma file reflects a design sprint from six months ago that nobody has kept up to date.
+    </p>
+    <p>
+      Designers are forced to work from stale mockups. They spend hours reconciling the "Figma version" of a component with what the team actually shipped. Every sprint, the gap between the live application and the design file grows wider.
+    </p>
+    <p>
+      The intuitive fix is to import the real, running components into Figma. But Angular components are TypeScript classes that depend on a compiler, a dependency injection container, and the Angular runtime — they don't exist as static assets. The few tools that claim to automate Angular-to-Figma conversion require adding custom decorators, build plugins, or maintaining a parallel Storybook setup just to capture component output.
+    </p>
+    <p>
+      There is a simpler path. <strong>Angular already renders to HTML and CSS.</strong> The browser produces a standard DOM with computed styles — and that output is all html2design needs. You can capture any Angular component from any running dev server, without changing a single line of code, in about 30 seconds.
+    </p>
+
+    <h2>Why This Works</h2>
+    <p>
+      When an Angular component renders in the browser, the framework compiles the template, resolves bindings, applies styles via ViewEncapsulation, and produces a standard HTML DOM with computed CSS. At that moment, the output is just HTML — Angular's compiler and runtime are no longer visible.
+    </p>
+    <p>
+      The html2design Figma plugin processes raw HTML and CSS. It reads the computed styles the browser has resolved and maps them to native Figma layers: frames, text, fills, vector paths, and border radii. The plugin is completely indifferent to how the HTML was generated — Angular 17 standalone components, NgModule-based apps, server-rendered Angular Universal output, or any other Angular setup all produce the same kind of DOM.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Key insight:</strong> You don't need an "Angular to Figma" plugin. You need an "HTML to Figma" plugin — because that's exactly what Angular produces after compilation. html2design is built precisely for this workflow.</p>
+    </div>
+
+    <h2>Prerequisites</h2>
+    <ul>
+      <li>A Figma account (free or paid)</li>
+      <li>The <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design plugin</a> installed from Figma Community</li>
+      <li>An active html2design subscription ($12/mo or $96/yr)</li>
+      <li>A running Angular dev server (<code>ng serve</code> on localhost:4200, or your Nx workspace equivalent)</li>
+    </ul>
+
+    <h2>Step-by-Step: Convert an Angular Component to Figma</h2>
+
+    <div class="step-card">
+      <div class="step-num">Step 1</div>
+      <h3>Run your Angular app locally</h3>
+      <p>Start your Angular development server with the Angular CLI:</p>
+      <div class="code-block"># Angular CLI (default port 4200)
+ng serve
+
+# Nx monorepo — target a specific app
+npx nx serve my-app
+
+# Angular with a custom port
+ng serve --port 4300</div>
+      <p>
+        Navigate to the route that renders the component you want to capture. If the component is deep in the navigation hierarchy, route directly to it — Angular Router supports deep links without a full page reload.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 2</div>
+      <h3>Open DevTools and locate the component</h3>
+      <p>
+        Open browser DevTools with <kbd>Cmd+Option+I</kbd> (Mac) or <kbd>F12</kbd> (Windows/Linux). Switch to the <strong>Elements</strong> panel.
+      </p>
+      <p>
+        Use the element picker (<kbd>Cmd+Shift+C</kbd> on Mac) to click directly on the component you want to capture. DevTools highlights the matching DOM node.
+      </p>
+      <p>
+        Navigate up the DOM tree to find the component's <strong>host element</strong>. In Angular, each component has a host element that corresponds to its selector tag — e.g., <code>&lt;app-card&gt;</code>, <code>&lt;mat-button&gt;</code>, <code>&lt;app-data-table&gt;</code>. This is the element you want to copy, not a child element inside it.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 3</div>
+      <h3>Copy the rendered HTML</h3>
+      <p>
+        In the Elements panel, right-click the host element → <strong>Copy → Copy outerHTML</strong>.
+      </p>
+      <p>
+        This copies the fully rendered HTML — with Angular host attributes, resolved bindings, and computed class names. For an Angular component styled with Angular Material, the output looks like:
+      </p>
+      <div class="code-block">&lt;mat-card _nghost-ng-c3874619021 class="mat-mdc-card mdc-card ng-star-inserted"&gt;
+  &lt;mat-card-header _ngcontent-ng-c3874619021&gt;
+    &lt;div mat-card-avatar _ngcontent-ng-c3874619021
+         class="mat-mdc-card-avatar user-avatar"&gt;&lt;/div&gt;
+    &lt;mat-card-title _ngcontent-ng-c3874619021&gt;
+      &lt;span class="mdc-card__title"&gt;Sophie Martin&lt;/span&gt;
+    &lt;/mat-card-title&gt;
+    &lt;mat-card-subtitle _ngcontent-ng-c3874619021&gt;Lead Designer&lt;/mat-card-subtitle&gt;
+  &lt;/mat-card-header&gt;
+  &lt;mat-card-content _ngcontent-ng-c3874619021 class="mat-mdc-card-content"&gt;
+    &lt;p&gt;Saved hours on our design sync process.&lt;/p&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</div>
+      <p>
+        Angular adds <code>_nghost-*</code> and <code>_ngcontent-*</code> attributes for ViewEncapsulation. These are harmless — html2design ignores unknown attributes and reads the computed CSS values instead of relying on class name selectors.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 4</div>
+      <h3>Open html2design in Figma</h3>
+      <p>
+        Switch to your Figma file. Open the plugin via <em>Main Menu → Plugins → html2design</em>. The plugin panel appears on the right side of the canvas.
+      </p>
+      <p>
+        Make sure you are signed in with an active subscription. If not subscribed yet, install the plugin from Figma Community and start a subscription — it takes about two minutes.
+      </p>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 5</div>
+      <h3>Paste and convert</h3>
+      <p>
+        Paste the copied HTML into the plugin's input field (<kbd>Cmd+V</kbd> on Mac, <kbd>Ctrl+V</kbd> on Windows). Click <strong>Convert</strong>.
+      </p>
+      <p>The plugin generates a native Figma frame on the canvas with:</p>
+      <ul>
+        <li><strong>Positioned frames</strong> preserving the visual layout of every Flexbox container</li>
+        <li><strong>Text layers</strong> with font, size, weight, line-height, and color preserved</li>
+        <li><strong>Fills and strokes</strong> matching background colors, borders, and box shadows</li>
+        <li><strong>SVG vector paths</strong> for Material icons and inline SVG elements</li>
+        <li><strong>Border radius</strong> mapped from CSS or Angular Material theme values</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">Step 6</div>
+      <h3>Clean up and promote to a component</h3>
+      <p>
+        Select the generated frame. Review the layer names in the Layers panel — auto-generated names like <code>mat-card._nghost</code> should be renamed to match your Angular component vocabulary (<code>UserCard</code>, <code>DataTable/Row</code>, etc.).
+      </p>
+      <p>
+        When the layers look right, select the root frame and press <kbd>Cmd+Alt+K</kbd> (Mac) or <kbd>Ctrl+Alt+K</kbd> (Windows) to promote it to a Figma Component. Capture additional component states (hover, focused, disabled, loading) separately and combine them as Figma Variants.
+      </p>
+    </div>
+
+    <h2>Angular-Specific Workflows</h2>
+
+    <h3>Working with Angular Material</h3>
+    <p>
+      Angular Material is the most widely used Angular component library. Its components (<code>mat-button</code>, <code>mat-card</code>, <code>mat-table</code>, <code>mat-dialog</code>, etc.) render to fully styled HTML with MDC-based class names. The import workflow is identical to any other Angular component: open the component in the browser, copy its outerHTML, and paste into html2design.
+    </p>
+    <p>
+      Angular Material applies theme colors through CSS custom properties and computed values. html2design reads those resolved values — so your brand theme (primary, accent, warn colors) comes through accurately in the Figma output. Material's elevation (box-shadow) and border-radius system are also preserved.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Angular Material tip:</strong> For components that exist in a dialog or overlay (<code>mat-dialog</code>, <code>mat-menu</code>, <code>mat-tooltip</code>), Angular renders the overlay content in a CDK overlay container at the root of the document — outside your component's DOM tree. Inspect the <code>div.cdk-overlay-container</code> element at the bottom of <code>&lt;body&gt;</code> to find and copy dialog or menu content.</p>
+    </div>
+
+    <h3>Angular ViewEncapsulation</h3>
+    <p>
+      Angular's default ViewEncapsulation (<code>Emulated</code> mode) scopes component styles by adding <code>_nghost-*</code> and <code>_ngcontent-*</code> attributes to elements. When you copy a component's outerHTML, the browser has already applied those scoped styles as computed CSS values. html2design reads the resolved computed output — not the attribute selectors — so Emulated encapsulation, <code>None</code> encapsulation, and global styles all produce the same result.
+    </p>
+
+    <h3>Angular standalone components (Angular 17+)</h3>
+    <p>
+      Angular 17 made standalone components the default. Whether your app uses standalone components, NgModule-based architecture, or a mix, html2design only sees the HTML the browser produces. The structural difference between <code>@Component({ standalone: true })</code> and a module-declared component is invisible in the rendered DOM — both produce the same kind of HTML output.
+    </p>
+
+    <h3>Angular Universal and @angular/ssr</h3>
+    <p>
+      Angular Universal server-renders component templates before the browser receives them. By the time you inspect a Universal page in DevTools, the full HTML is already in the DOM — including data resolved from server-side HTTP calls. Copy it exactly as you would for a client-rendered component.
+    </p>
+    <p>
+      Angular 17+ ships built-in SSR via <code>@angular/ssr</code>. Pages rendered by this mechanism also produce complete HTML in the browser. One thing to note: Angular SSR apps use hydration, which means the initial server-rendered DOM is patched by the client on load. Wait for the page to fully hydrate before opening DevTools and copying — this ensures all bindings have resolved.
+    </p>
+
+    <h3>Capturing different component states</h3>
+    <p>
+      Angular components often have multiple visual states driven by <code>@Input()</code> properties, RxJS observables, or NgRx/Signals state. To capture each state for Figma:
+    </p>
+    <ul>
+      <li><strong>Default state</strong> — the base render</li>
+      <li><strong>Disabled state</strong> — pass <code>[disabled]="true"</code> via Angular DevTools' component property editor, or force via the attribute in the Elements panel</li>
+      <li><strong>Loading state</strong> — trigger via an <code>@Input()</code> that controls a skeleton or spinner</li>
+      <li><strong>Error state</strong> — inject through Angular DevTools or add a temporary mock in your component's service</li>
+      <li><strong>Hover / focus states</strong> — use DevTools' <em>Force element state → :hover</em> or <em>:focus</em> before copying</li>
+    </ul>
+    <p>
+      In Figma, import each state as a separate frame, then combine them as Variants under a single Component. This mirrors your Angular component's <code>@Input()</code> API directly in the Figma component structure.
+    </p>
+
+    <div class="tip-box">
+      <p><strong>Angular DevTools tip:</strong> The <a href="https://angular.dev/tools/devtools" target="_blank" rel="noopener noreferrer" style="color:#1E40AF;">Angular DevTools</a> browser extension shows you the component tree for the current page and lets you inspect and modify component inputs and state in real time. Use it to trigger specific component states before switching to the Elements panel to copy the rendered output.</p>
+    </div>
+
+    <h3>Nx monorepo workflows</h3>
+    <p>
+      If your Angular applications live in an Nx workspace, the serve workflow is identical — just target the specific app with <code>npx nx serve &lt;app-name&gt;</code>. Nx's build caching and module federation don't affect the rendered HTML in the browser. For shared Nx component libraries, serve the Storybook or demo app for that library:
+    </p>
+    <div class="code-block"># Serve a shared UI library's Storybook
+npx nx storybook ui-components
+
+# Storybook default port
+open http://localhost:4400</div>
+    <p>
+      This gives you isolated, single-component renders without navigating through a full application — ideal for batch-importing an entire component library into Figma.
+    </p>
+
+    <h2>What Gets Converted from Angular Components</h2>
+
+    <p>html2design accurately converts the vast majority of what Angular components produce. Here's what to expect:</p>
+
+    <ul>
+      <li><strong>Flexbox layouts</strong> → Accurately positioned Figma frames (spacing, padding, and alignment preserved visually; Auto Layout not applied automatically)</li>
+      <li><strong>Typography</strong> → Font family, size, weight, line-height, letter-spacing, color, text alignment</li>
+      <li><strong>Colors</strong> → Fills, gradients, box shadows, borders — all preserved as Figma styles</li>
+      <li><strong>Border radius</strong> → Mapped from CSS values or Angular Material's shape system</li>
+      <li><strong>Material icons (SVG)</strong> → Native Figma vector paths, fully editable</li>
+      <li><strong>Background images</strong> → Captured as image fills where accessible</li>
+      <li><strong>CSS Grid</strong> → Approximated with nested frames (partial support; positions preserved, no Auto Layout)</li>
+      <li><strong>Angular animations / transitions</strong> → Static snapshot only; capture the component at rest or in a specific animated state</li>
+      <li><strong>ViewEncapsulation styles</strong> → Fully supported via computed style resolution — Angular's scoped attributes are transparent to html2design</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Component-level beats full-page.</strong> Convert one component at a time rather than the full page HTML. Smaller input produces a cleaner Figma layer tree that's easier to name, organize, and promote to a reusable Component.</p>
+    </div>
+
+    <h2>Angular vs. Other Frameworks: What's Different</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Dev server</th>
+          <th>Default port</th>
+          <th>Notes for html2design import</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Angular</strong></td>
+          <td><code>ng serve</code></td>
+          <td>4200</td>
+          <td><code>_nghost-*</code> / <code>_ngcontent-*</code> attributes are harmless; CDK overlay container holds dialogs/menus</td>
+        </tr>
+        <tr>
+          <td>React</td>
+          <td><code>npm run dev</code></td>
+          <td>3000 / 5173</td>
+          <td>No host element wrapping; copy from the component's outermost <code>div</code></td>
+        </tr>
+        <tr>
+          <td>Vue</td>
+          <td><code>npm run dev</code></td>
+          <td>5173</td>
+          <td><code>data-v-*</code> scoped CSS attributes are harmless</td>
+        </tr>
+        <tr>
+          <td>Any HTML/CSS</td>
+          <td>Any server</td>
+          <td>Any</td>
+          <td>Works the same — html2design only sees the rendered DOM output</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Building an Angular Design System in Figma</h2>
+    <p>
+      Once you have a reliable workflow for converting individual Angular components, you can systematically build a Figma design system that mirrors your real component library. A practical sequencing:
+    </p>
+    <ul>
+      <li><strong>Primitives first</strong> — buttons, chips, badges, inputs, icons. Small, composable, and easy to import and clean up.</li>
+      <li><strong>Compound components next</strong> — cards, dialogs, data tables, forms. These use the primitives you have already captured.</li>
+      <li><strong>Page shells and layouts last</strong> — sidebars, navigation, toolbars, dashboards. Larger and denser, but changed less often in day-to-day design work.</li>
+    </ul>
+    <p>
+      For each component, capture three or four key states: default, hover (force via DevTools), disabled, and loading or error. These cover the vast majority of what designers need to produce accurate mockups and handoff specs.
+    </p>
+    <p>
+      Once your core component set is in Figma as reusable Components, publish the Figma file as a Team Library. Designers can use components from the library in new mocks — and you can update the library by re-importing components after shipping changes, keeping Figma in sync with the live Angular codebase. See our guide on <a href="/blog/figma-design-code-sync">keeping Figma designs and code in sync</a> for the full maintenance workflow.
+    </p>
+    <p>
+      Angular teams maintaining a shared design system (via Nx or a standalone npm package) benefit especially here: the source of truth is the running code, and Figma becomes an accurate mirror rather than a slowly diverging artifact.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I convert an Angular component to Figma?</h3>
+    <p>
+      Yes. Angular renders to standard HTML and CSS in the browser. You copy that rendered output using DevTools and paste it into the html2design Figma plugin. No special Angular plugin, build annotation, or code change is needed.
+    </p>
+
+    <h3>Does Angular to Figma work with localhost?</h3>
+    <p>
+      Yes. html2design works from HTML you paste directly into the plugin — it does not need to reach a URL. Your Angular dev server on <code>localhost:4200</code> works exactly the same as a live URL. See our guide on <a href="/blog/how-to-convert-html-to-figma">converting HTML to Figma</a> for the general workflow.
+    </p>
+
+    <h3>Does html2design work with Angular Material components?</h3>
+    <p>
+      Yes. Angular Material renders to standard HTML with Material Design class names and CSS custom properties for theming. html2design reads the browser's computed styles — so your Angular Material theme's primary color, shape, and elevation values all come through accurately in the Figma output.
+    </p>
+
+    <h3>Can I import Angular Universal (SSR) pages into Figma?</h3>
+    <p>
+      Yes. Angular Universal and <code>@angular/ssr</code> both server-render to HTML that you can inspect in DevTools after the page loads. The HTML in DevTools is the fully resolved output — copy it and paste it into html2design exactly as you would for any client-rendered component. See our guide on <a href="/blog/import-website-into-figma">importing a website into Figma</a> for full-page strategies.
+    </p>
+
+    <h3>Does html2design work with Angular standalone components?</h3>
+    <p>
+      Yes. Standalone components (the Angular 17+ default) and NgModule-based components produce identical DOM output in the browser. html2design only processes the rendered HTML — the Angular architecture behind it is transparent to the plugin.
+    </p>
+
+    <!-- GEO: Key Takeaways -->
+    <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://angular.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Angular</a> renders to HTML — capture any component state from <code>ng serve</code>, <a href="https://nx.dev" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Nx</a>, or localhost in ~30 seconds</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> No code changes, no build plugins — works from your existing running dev server without touching any TypeScript or template files</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://material.angular.io" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Angular Material</a>, PrimeNG, NG-ZORRO, and plain custom components all work via computed style resolution</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Capture specific states (hover, disabled, loading, error) using Angular DevTools' property editor before copying outerHTML</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Standalone components, NgModules, Angular Universal SSR, and Nx monorepos all work — the plugin only sees the rendered DOM</li>
+      </ul>
+    </div>
+
+    <hr class="my-10 border-gray-100" />
+
+    <!-- Related Articles -->
+    <div class="bg-surface rounded-2xl p-6 border border-gray-100 mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Related Articles</p>
+      <div class="flex flex-col gap-4">
+        <a href="/guide" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">The Complete Guide to HTML to Figma Conversion (2026) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The pillar guide covering every framework, every method, and every use case — all in one place.</p>
+        </a>
+        <a href="/blog/how-to-convert-html-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The core workflow — DevTools, code paste, and cleaning up the output in Figma.</p>
+        </a>
+        <a href="/blog/react-component-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The same workflow for React — Storybook, Next.js, Vite, and Tailwind all covered.</p>
+        </a>
+        <a href="/blog/vue-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Vue to Figma: Import Vue.js Components into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The same workflow for Vue 3 — Nuxt, Vite, Vuetify, and PrimeVue all covered.</p>
+        </a>
+        <a href="/blog/figma-design-code-sync" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Keep Figma Designs and Code in Sync (2026 Guide) &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">The full maintenance workflow: design tokens, component sync, and the html2design reverse-sync loop.</p>
+        </a>
+        <a href="/blog/component-library-to-figma" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Component Library into Figma &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Scale the single-component workflow into a full library import — batch import, token extraction, and Figma library publishing.</p>
+        </a>
+        <a href="/blog/design-system-from-existing-code" class="block group">
+          <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Build a Design System from Existing Code: Reverse-Engineering Guide &rarr;</p>
+          <p class="text-xs text-content-muted mt-0.5">Audit an existing Angular codebase, extract design tokens, and assemble a Figma design system from the real running product.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-content rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-black tracking-tighter text-white mb-3 mt-0">Import your Angular components now</h2>
+      <p class="text-gray-300 mb-6 text-sm">html2design converts any Angular component — Material, standalone, Nx, Universal — into editable Figma layers in seconds.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-white text-content font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
+        Get the Plugin &rarr;
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-12 mt-0">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-content-muted">&copy; 2026 HTML to Figma. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-sm text-content-muted">
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/use-cases" class="hover:text-content transition-colors">Use Cases</a>
+        <a href="/pricing" class="hover:text-content transition-colors">Pricing</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

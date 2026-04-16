@@ -777,6 +777,7 @@ Primary navigation structure of https://www.htmltofigma.io/:
 - Figma to HTML: The Complete Developer Handoff Guide (2026) — https://www.htmltofigma.io/blog/figma-to-html-developer-handoff
 - How to Keep Figma Designs and Code in Sync (2026 Guide) — https://www.htmltofigma.io/blog/figma-design-code-sync
 - Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/vue-to-figma
+- Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/angular-to-figma
 
 ### Use Case Pages (21 total)
 
