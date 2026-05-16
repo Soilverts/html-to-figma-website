@@ -22,7 +22,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         period="/mo"
                         description="Flexible for short sprints and single projects."
                         features={["Unlimited Imports", "Typography Mirroring"]}
-                        checkoutUrl="https://gumroad.com/checkout?product=tqnzys&option=1kEWOYV-7AMz_YlmOADMRw%3D%3D&recurrence=monthly"
+                        checkoutUrl="https://api.htmltofigma.io/v1/checkout/monthly"
                     />
                     <PriceCard
                         title="Yearly"
@@ -33,7 +33,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         description="Best for continuous design operations. Save 33%."
                         features={["Unlimited Imports", "Typography Mirroring", "Priority Support"]}
                         isPopular
-                        checkoutUrl="https://gumroad.com/checkout?product=tqnzys&option=1kEWOYV-7AMz_YlmOADMRw%3D%3D&recurrence=yearly"
+                        checkoutUrl="https://api.htmltofigma.io/v1/checkout/yearly"
                     />
                 </div>
             </div>
