@@ -80,7 +80,7 @@
     "name": "HTML to Figma Use Case Pages",
     "description": "All html2design use-case landing pages — grouped by framework, CSS library, platform, and workflow",
     "url": "https://html2design.com/use-cases",
-    "numberOfItems": 22,
+    "numberOfItems": 24,
     "itemListElement": [
       { "@type": "ListItem", "position": 1,  "name": "Vue to Figma",                "url": "https://html2design.com/use-cases/vue-to-figma" },
       { "@type": "ListItem", "position": 2,  "name": "Angular to Figma",            "url": "https://html2design.com/use-cases/angular-to-figma" },
@@ -103,7 +103,9 @@
       { "@type": "ListItem", "position": 19, "name": "Astro to Figma",              "url": "https://html2design.com/use-cases/astro-to-figma" },
       { "@type": "ListItem", "position": 20, "name": "Remix to Figma",              "url": "https://html2design.com/use-cases/remix-to-figma" },
       { "@type": "ListItem", "position": 21, "name": "Shopify to Figma",            "url": "https://html2design.com/use-cases/shopify-to-figma" },
-      { "@type": "ListItem", "position": 22, "name": "Alpine.js to Figma",          "url": "https://html2design.com/use-cases/alpine-to-figma" }
+      { "@type": "ListItem", "position": 22, "name": "Alpine.js to Figma",          "url": "https://html2design.com/use-cases/alpine-to-figma" },
+      { "@type": "ListItem", "position": 23, "name": "Claude to Figma",             "url": "https://html2design.com/use-cases/claude-to-figma" },
+      { "@type": "ListItem", "position": 24, "name": "v0 to Figma",                 "url": "https://html2design.com/use-cases/v0-to-figma" }
     ]
   }
   </script>
@@ -213,6 +215,30 @@
 
   <!-- Use Cases Grid -->
   <main class="max-w-5xl mx-auto px-6 pb-24">
+
+    <!-- Category: AI Design Tools -->
+    <section class="mb-14" id="ai-tools">
+      <div class="border-t border-gray-100 pt-10 mb-8">
+        <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-1">Category</p>
+        <h2 class="text-2xl font-black tracking-tighter text-content">AI Design Tools</h2>
+        <p class="text-sm text-content-muted mt-1">AI tools generate UI as HTML &amp; CSS. Bring Claude, v0, and other AI-designed output into Figma as native, editable layers.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+        <a href="/use-cases/claude-to-figma" class="group block bg-white border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p>
+          <h3 class="text-base font-bold tracking-tight text-content mb-1.5 group-hover:text-accent transition-colors">Claude to Figma</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Turn Claude Artifacts and Claude Code output into native, editable Figma layers.</p>
+        </a>
+
+        <a href="/use-cases/v0-to-figma" class="group block bg-white border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p>
+          <h3 class="text-base font-bold tracking-tight text-content mb-1.5 group-hover:text-accent transition-colors">v0 to Figma</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Convert Vercel v0's React + Tailwind output into pixel-accurate Figma layers.</p>
+        </a>
+
+      </div>
+    </section>
 
     <!-- Category: Frameworks -->
     <section class="mb-14" id="frameworks">
