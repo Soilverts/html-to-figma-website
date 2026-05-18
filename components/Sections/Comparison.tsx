@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const rows = [
   { feature: "Native Figma layers (not screenshots)", ours: true, manual: false, others: false },
-  { feature: "Flexbox to Auto-Layout (optional)", ours: true, manual: false, others: false },
+  { feature: "Flexbox layout preserved (pixel-accurate frames)", ours: true, manual: false, others: false },
   { feature: "Typography preservation (font, weight, line-height)", ours: true, manual: true, others: false },
   { feature: "Styling fidelity (colors, shadows, gradients)", ours: true, manual: true, others: false },
   { feature: "SVG imported as vector paths", ours: true, manual: true, others: true },

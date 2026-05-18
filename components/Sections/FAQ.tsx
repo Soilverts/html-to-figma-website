@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: "How does HTML to Figma work?",
-    answer: "HTML to Figma works in three simple steps: (1) Input \u2014 select an HTML file or paste raw HTML/CSS code, (2) Configure \u2014 adjust scale and import settings, (3) Generate \u2014 receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles using Figma\u2019s Plugin API, then recreates them as clean frames, text layers, and vector shapes. The entire process takes under 2 minutes compared to 2\u20134 hours of manual recreation."
+    answer: "HTML to Figma works in three simple steps: (1) Input \u2014 select an HTML file or paste raw HTML/CSS code, (2) Configure \u2014 set the scale factor (images and fonts import automatically), (3) Generate \u2014 receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles using Figma\u2019s Plugin API, then recreates them as clean frames, text layers, and vector shapes. The entire process takes under 2 minutes compared to 2\u20134 hours of manual recreation."
   },
   {
     question: "Does HTML to Figma preserve CSS layouts like Flexbox?",

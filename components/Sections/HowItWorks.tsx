@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const steps = [
     { number: "01", title: "Input", desc: "Select an HTML file or paste raw HTML/CSS code directly into the Figma plugin." },
-    { number: "02", title: "Configure", desc: "Adjust scale, toggle image and font imports, and set your preferences." },
+    { number: "02", title: "Configure", desc: "Set the scale factor. Images and fonts are imported automatically." },
     { number: "03", title: "Generate", desc: "Receive native, editable Figma layers \u2014 frames, text, vector paths, and image fills in under 2 minutes." },
 ];
 
