@@ -46,6 +46,10 @@ const faqs = [
   {
     question: "Can I use HTML to Figma with VS Code or my IDE?",
     answer: "Yes. Open your component or page in a browser preview (for example, a local dev server or Storybook), then use browser DevTools to copy the rendered HTML of the element you want to import. Paste that HTML directly into the HTML to Figma plugin in Figma. The workflow is IDE-agnostic and works with any editor or framework."
+  },
+  {
+    question: "Can I convert Claude, v0, or other AI-generated designs to Figma?",
+    answer: "Yes — this is one of the most popular workflows. AI tools like Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT all generate UI as HTML and CSS. Open the AI-generated UI in a browser (the live Artifact or preview, or a local dev server), copy the rendered HTML from DevTools, and paste it into the HTML to Figma plugin. The browser resolves all styles to computed values first, so the AI output transfers as native, editable Figma layers — text, vector paths, and pixel-accurate frames. See the dedicated Claude to Figma and v0 to Figma guides for step-by-step instructions."
   }
 ];
 
