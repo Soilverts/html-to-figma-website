@@ -22,7 +22,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         period="/mo"
                         description="Flexible for short sprints and single projects."
                         features={["Unlimited Imports", "Typography Mirroring"]}
-                        checkoutUrl="https://api.htmltofigma.io/v1/checkout/monthly"
+                        checkoutUrl="https://api.html2design.com/v1/checkout/monthly"
                     />
                     <PriceCard
                         title="Yearly"
@@ -33,7 +33,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         description="Best for continuous design operations. Save 33%."
                         features={["Unlimited Imports", "Typography Mirroring", "Priority Support"]}
                         isPopular
-                        checkoutUrl="https://api.htmltofigma.io/v1/checkout/yearly"
+                        checkoutUrl="https://api.html2design.com/v1/checkout/yearly"
                     />
                 </div>
             </div>
