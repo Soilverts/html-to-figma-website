@@ -2,259 +2,259 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTML to Figma Blog</title>
-    <link>https://www.htmltofigma.io/blog</link>
+    <link>https://html2design.com/blog</link>
     <description>Practical tutorials and guides for designers and developers using the HTML to Figma plugin. Learn how to convert HTML, CSS, and web components into editable Figma designs.</description>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>HTML to Figma</generator>
-    <atom:link href="https://www.htmltofigma.io/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://html2design.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
       <title>How to Keep Figma Designs and Code in Sync (2026 Guide)</title>
-      <link>https://www.htmltofigma.io/blog/figma-design-code-sync</link>
+      <link>https://html2design.com/blog/figma-design-code-sync</link>
       <description>Practical 2026 guide to eliminating design drift between Figma and your codebase. Covers four root causes, design token strategy, component libraries, automated visual regression testing, and the html2design reverse-sync loop that re-imports shipped HTML back into Figma after every sprint. Includes a tool comparison table and sprint-end checklist.</description>
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-design-code-sync</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/figma-design-code-sync</guid>
     </item>
 
     <item>
       <title>Figma to HTML: The Complete Developer Handoff Guide (2026)</title>
-      <link>https://www.htmltofigma.io/blog/figma-to-html-developer-handoff</link>
+      <link>https://html2design.com/blog/figma-to-html-developer-handoff</link>
       <description>The complete Figma-to-HTML developer handoff guide for 2026. Covers Figma Dev Mode inspection, code-generation plugins (Anima, Locofy, TeleportHQ), naming conventions, auto-layout best practices, and the html2design reverse loop that keeps Figma current after each deploy. Includes a tool comparison table, sprint-end sync workflow, and FAQ.</description>
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-to-html-developer-handoff</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/figma-to-html-developer-handoff</guid>
     </item>
 
     <item>
       <title>How to Convert a Live Website to Figma in Minutes (2026)</title>
-      <link>https://www.htmltofigma.io/blog/convert-website-to-figma</link>
+      <link>https://html2design.com/blog/convert-website-to-figma</link>
       <description>Step-by-step guide to converting any live website into editable Figma layers using html2design. Covers both methods — Chrome extension for public sites and HTML paste for localhost and private pages — plus five real-world use cases: redesign baseline, client handoff, competitive analysis, rapid prototyping, and design-system audit. Includes a comparison with manual recreation and troubleshooting for common import issues.</description>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/convert-website-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/convert-website-to-figma</guid>
     </item>
 
     <item>
       <title>Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps</title>
-      <link>https://www.htmltofigma.io/blog/website-redesign-checklist</link>
+      <link>https://html2design.com/blog/website-redesign-checklist</link>
       <description>A comprehensive eight-step checklist for planning a website redesign in 2026 — from site audit and Figma baseline capture (using html2design) to IA planning, design, implementation, testing, and post-launch monitoring. Includes a redirect strategy guide and redesign timeline by site size.</description>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/website-redesign-checklist</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/website-redesign-checklist</guid>
     </item>
 
     <item>
       <title>Build a Design System from Existing Code: Reverse-Engineering Guide (2026)</title>
-      <link>https://www.htmltofigma.io/blog/design-system-from-existing-code</link>
+      <link>https://html2design.com/blog/design-system-from-existing-code</link>
       <description>Step-by-step guide for teams reverse-engineering a design system from an existing codebase. Six-phase workflow: token audit, component inventory, reference page build, html2design import, Figma Variable registration, and Component conversion. Covers which frameworks work best, common pitfalls, and how to maintain the system after extraction.</description>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-system-from-existing-code</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/design-system-from-existing-code</guid>
     </item>
 
     <item>
       <title>Best Figma Plugins for Developers in 2026</title>
-      <link>https://www.htmltofigma.io/blog/figma-plugins-for-developers</link>
+      <link>https://html2design.com/blog/figma-plugins-for-developers</link>
       <description>A curated guide to the top Figma plugins for developer workflows — html2design for code-to-design import, Tokens Studio for design tokens, Figma Dev Mode for handoff, A11y Checker for accessibility, and version control options compared.</description>
       <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-plugins-for-developers</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/figma-plugins-for-developers</guid>
     </item>
 
     <item>
       <title>AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide)</title>
-      <link>https://www.htmltofigma.io/blog/ai-web-design-workflow</link>
+      <link>https://html2design.com/blog/ai-web-design-workflow</link>
       <description>AI design tools generate layouts from prompts but cannot import existing codebases. Here's how AI web design workflows work in 2026 and where html2design fills the gap as the code-to-design bridge that AI tools don't include.</description>
       <pubDate>Thu, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/ai-web-design-workflow</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/ai-web-design-workflow</guid>
     </item>
 
     <item>
       <title>Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits</title>
-      <link>https://www.htmltofigma.io/blog/figma-ai-2026</link>
+      <link>https://html2design.com/blog/figma-ai-2026</link>
       <description>Figma AI can auto-rename layers, generate layouts from prompts, and lint design inconsistencies — but it cannot import HTML, capture production UI, or bootstrap a design system from live code. html2design fills that gap as the code-to-design bridge that Figma AI doesn't include.</description>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-ai-2026</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/figma-ai-2026</guid>
     </item>
 
     <item>
       <title>Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026)</title>
-      <link>https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design</link>
+      <link>https://html2design.com/blog/design-to-code-vs-code-to-design</link>
       <description>Design-to-code (Figma → code) and code-to-design (code → Figma) solve different problems. This guide explains when each direction is appropriate, how design drift happens when you only go one way, and the combined sprint workflow that keeps Figma and production in sync.</description>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/design-to-code-vs-code-to-design</guid>
     </item>
 
     <item>
       <title>How to Redesign a Legacy Website Without Starting From Scratch</title>
-      <link>https://www.htmltofigma.io/blog/redesign-legacy-website-figma</link>
+      <link>https://html2design.com/blog/redesign-legacy-website-figma</link>
       <description>Import your legacy website into Figma with html2design, audit the component inventory, and redesign iteratively — one component or page at a time. A practical workflow for agencies and product teams modernizing live websites without a full rebuild.</description>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/redesign-legacy-website-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/redesign-legacy-website-figma</guid>
     </item>
 
     <item>
       <title>HTML to Figma in Your CI/CD Pipeline</title>
-      <link>https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline</link>
+      <link>https://html2design.com/blog/html-to-figma-ci-cd-pipeline</link>
       <description>How to automate Figma sync after every deploy. Covers post-deploy notification workflows, Playwright-based HTML capture for designer import, visual regression testing with Figma as baseline, and a tiered approach from Slack alerts to full Figma REST API automation.</description>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/html-to-figma-ci-cd-pipeline</guid>
     </item>
 
     <item>
       <title>Top 5 HTML to Figma Tools Compared (2026)</title>
-      <link>https://www.htmltofigma.io/blog/html-to-figma-tools-compared</link>
+      <link>https://html2design.com/blog/html-to-figma-tools-compared</link>
       <description>Side-by-side comparison of the five main approaches to importing HTML into Figma: html2design, Anima, Locofy, manual rebuild, and screenshot import. Covers output type, editability, design system integration, and pricing — and explains why Anima and Locofy work in the opposite direction.</description>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-to-figma-tools-compared</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/html-to-figma-tools-compared</guid>
     </item>
 
     <item>
       <title>Atomic Design to Figma: Importing Your Component Hierarchy</title>
-      <link>https://www.htmltofigma.io/blog/atomic-design-to-figma</link>
+      <link>https://html2design.com/blog/atomic-design-to-figma</link>
       <description>Import your atomic design component hierarchy — atoms, molecules, organisms — into Figma as native layers. Bottom-up import workflow using Storybook, with design token registration and slash-separated naming that mirrors your codebase.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/atomic-design-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/atomic-design-to-figma</guid>
     </item>
 
     <item>
       <title>Design Handoff Best Practices: Keeping Code and Figma in Sync</title>
-      <link>https://www.htmltofigma.io/blog/design-handoff-best-practices</link>
+      <link>https://html2design.com/blog/design-handoff-best-practices</link>
       <description>Prevent design drift with a bidirectional sync workflow. Covers Figma-to-code handoff best practices (token strategy, state annotation, layer naming) plus the code-to-Figma re-import workflow using html2design to keep Figma current after developers ship changes.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-handoff-best-practices</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/design-handoff-best-practices</guid>
     </item>
 
     <item>
       <title>Rapid Prototyping: From Live Website to Figma Prototype</title>
-      <link>https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</link>
+      <link>https://html2design.com/blog/rapid-prototyping-website-to-figma</link>
       <description>Turn any live website into an editable Figma prototype in minutes. Import production HTML as native layers using html2design, duplicate and iterate in Figma, add Prototype connections for interactive flows, and share with stakeholders — no manual rebuilding required.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/rapid-prototyping-website-to-figma</guid>
     </item>
 
     <item>
       <title>Importing Multi-page Websites into Figma: Full Workflow</title>
-      <link>https://www.htmltofigma.io/blog/multi-page-website-to-figma</link>
+      <link>https://html2design.com/blog/multi-page-website-to-figma</link>
       <description>How to import an entire multi-page website into Figma using html2design. Page-by-page workflow, consistency tips, Figma page organization, and sitemap-driven import strategy for redesign projects.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/multi-page-website-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/multi-page-website-to-figma</guid>
     </item>
 
     <item>
       <title>How to Import a Component Library into Figma</title>
-      <link>https://www.htmltofigma.io/blog/component-library-to-figma</link>
+      <link>https://html2design.com/blog/component-library-to-figma</link>
       <description>Step-by-step guide to importing an entire component library into Figma using html2design. Covers preparing components, batch import from Storybook, design token extraction, and publishing a Figma library for your team.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/component-library-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/component-library-to-figma</guid>
     </item>
 
     <item>
       <title>Figma Dev Mode vs html2design: When to Use Which</title>
-      <link>https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design</link>
+      <link>https://html2design.com/blog/figma-dev-mode-vs-html2design</link>
       <description>Figma Dev Mode and html2design solve different problems — one goes design-to-code, the other goes code-to-design. Side-by-side feature comparison and the complementary workflow for teams that need both directions.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/figma-dev-mode-vs-html2design</guid>
     </item>
 
     <item>
       <title>Accessibility Audit: From HTML Audit to Figma Redesign</title>
-      <link>https://www.htmltofigma.io/blog/accessibility-audit-to-figma</link>
+      <link>https://html2design.com/blog/accessibility-audit-to-figma</link>
       <description>Run a WCAG accessibility audit on your HTML pages, import flagged sections into Figma using html2design, and redesign for compliance. Step-by-step guide covering contrast, focus indicators, touch targets, and annotated developer handoff.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/accessibility-audit-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/accessibility-audit-to-figma</guid>
     </item>
 
     <item>
       <title>Design Tokens: Bridging Code and Figma with HTML to Figma</title>
-      <link>https://www.htmltofigma.io/blog/design-tokens-code-to-figma</link>
+      <link>https://html2design.com/blog/design-tokens-code-to-figma</link>
       <description>Sync design tokens between your codebase and Figma Variables and Styles using the token reference page pattern and html2design. Covers the code-to-Figma token mapping, rendered-output approach, and sync strategies for design system teams.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-tokens-code-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/design-tokens-code-to-figma</guid>
     </item>
 
     <item>
       <title>Webflow to Figma: Import Your Webflow Site into Figma</title>
-      <link>https://www.htmltofigma.io/blog/webflow-to-figma</link>
+      <link>https://html2design.com/blog/webflow-to-figma</link>
       <description>Import any published Webflow site into Figma as native, editable layers using html2design. Covers section-by-section import, capturing interaction states, CMS template pages, and building a Figma design system from Webflow output.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/webflow-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/webflow-to-figma</guid>
     </item>
 
     <item>
       <title>Responsive Design to Figma: Converting Breakpoints to Figma Variants</title>
-      <link>https://www.htmltofigma.io/blog/responsive-design-to-figma</link>
+      <link>https://html2design.com/blog/responsive-design-to-figma</link>
       <description>Step-by-step guide to converting responsive web designs into Figma Variants. Capture each breakpoint with html2design and build a responsive component library with mobile, tablet, and desktop variants.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/responsive-design-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/responsive-design-to-figma</guid>
     </item>
 
     <item>
       <title>HTML Email Template to Figma: Import &amp; Edit Email Designs</title>
-      <link>https://www.htmltofigma.io/blog/html-email-to-figma</link>
+      <link>https://html2design.com/blog/html-email-to-figma</link>
       <description>Step-by-step guide to converting HTML email templates into editable Figma designs using html2design. Covers table-based layouts, inline styles, gotchas, and email-specific Figma workflow tips.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/html-email-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/html-email-to-figma</guid>
     </item>
 
     <item>
       <title>CSS Grid &amp; Flexbox to Figma Auto Layout: Conversion Guide</title>
-      <link>https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</link>
+      <link>https://html2design.com/blog/css-grid-to-figma-auto-layout</link>
       <description>Step-by-step guide to converting CSS Grid and Flexbox layouts into Figma Auto Layout. Covers layout import, post-conversion cleanup, and applying Figma Auto Layout for true responsiveness.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/css-grid-to-figma-auto-layout</guid>
     </item>
 
     <item>
       <title>Design System Migration: From Code to Figma Components</title>
-      <link>https://www.htmltofigma.io/blog/design-system-migration</link>
+      <link>https://html2design.com/blog/design-system-migration</link>
       <description>Step-by-step guide to migrating a design system from code to Figma. Extract design tokens from HTML/CSS, identify components, and build a native Figma component library.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/design-system-migration</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/design-system-migration</guid>
     </item>
 
     <item>
       <title>Screenshot vs Code Import: Which Figma Conversion Method Actually Wins?</title>
-      <link>https://www.htmltofigma.io/blog/screenshot-vs-code-import</link>
+      <link>https://html2design.com/blog/screenshot-vs-code-import</link>
       <description>Side-by-side comparison of screenshot and code import methods for Figma. Covers output quality, editability, typography, layer structure, and a practical decision framework.</description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/screenshot-vs-code-import</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/screenshot-vs-code-import</guid>
     </item>
 
     <item>
       <title>Bootstrap to Figma: A Migration Guide for Bootstrap Teams</title>
-      <link>https://www.htmltofigma.io/blog/bootstrap-to-figma</link>
+      <link>https://html2design.com/blog/bootstrap-to-figma</link>
       <description>How to convert Bootstrap components and grid layouts into editable Figma designs using html2design. Covers outerHTML export, responsive breakpoints, and Bootstrap utility mapping.</description>
       <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/bootstrap-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/bootstrap-to-figma</guid>
     </item>
 
     <item>
       <title>Tailwind to Figma: Build a Design System from Your Tailwind Components</title>
-      <link>https://www.htmltofigma.io/blog/tailwind-to-figma</link>
+      <link>https://html2design.com/blog/tailwind-to-figma</link>
       <description>Extract Tailwind design tokens as Figma Variables and Styles, convert your component library to native Figma layers, and keep code and design in sync.</description>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/tailwind-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/tailwind-to-figma</guid>
     </item>
 
     <item>
       <title>How to Convert React Components to Figma Designs</title>
-      <link>https://www.htmltofigma.io/blog/react-component-to-figma</link>
+      <link>https://html2design.com/blog/react-component-to-figma</link>
       <description>Step-by-step guide to converting React components into native, editable Figma layers using html2design. Works with localhost, Storybook, Next.js, and Tailwind.</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/react-component-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/react-component-to-figma</guid>
     </item>
 
     <item>
       <title>How to Import a Website into Figma: Two Methods Compared</title>
-      <link>https://www.htmltofigma.io/blog/import-website-into-figma</link>
+      <link>https://html2design.com/blog/import-website-into-figma</link>
       <description>Step-by-step guide to importing any website into Figma as editable layers. Compares Chrome extension and code-paste approaches.</description>
       <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/import-website-into-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/import-website-into-figma</guid>
     </item>
 
     <item>
       <title>How to Convert HTML to Figma: A Developer's Guide</title>
-      <link>https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</link>
+      <link>https://html2design.com/blog/how-to-convert-html-to-figma</link>
       <description>Step-by-step guide to converting HTML and CSS code into native, editable Figma designs using the html2design plugin.</description>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://www.htmltofigma.io/blog/how-to-convert-html-to-figma</guid>
+      <guid isPermaLink="true">https://html2design.com/blog/how-to-convert-html-to-figma</guid>
     </item>
 
   </channel>

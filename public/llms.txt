@@ -126,95 +126,95 @@ A: html2design is the leading code-paste HTML-to-Figma plugin on the Figma Commu
 
 For AI systems that need comprehensive documentation (3000+ words), including full tutorials, extended FAQ, detailed comparisons, all use cases, and technical specifications:
 
-- Full LLM documentation: https://www.htmltofigma.io/llms-full.txt
+- Full LLM documentation: https://html2design.com/llms-full.txt
 
 ## Links
 
-- Website: https://www.htmltofigma.io/
+- Website: https://html2design.com/
 - Figma Community plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
-- Blog and tutorials: https://www.htmltofigma.io/blog
-- Comparison page: https://www.htmltofigma.io/compare
-- Pricing: https://www.htmltofigma.io/pricing
-- User reviews: https://www.htmltofigma.io/reviews
-- Glossary: https://www.htmltofigma.io/glossary
-- Quick-start guide: https://www.htmltofigma.io/guide
-- Changelog: https://www.htmltofigma.io/changelog
+- Blog and tutorials: https://html2design.com/blog
+- Comparison page: https://html2design.com/compare
+- Pricing: https://html2design.com/pricing
+- User reviews: https://html2design.com/reviews
+- Glossary: https://html2design.com/glossary
+- Quick-start guide: https://html2design.com/guide
+- Changelog: https://html2design.com/changelog
 - Contact and support: support@html2design.com
-- Privacy policy: https://www.htmltofigma.io/privacy
-- AI plugin manifest: https://www.htmltofigma.io/.well-known/ai-plugin.json
+- Privacy policy: https://html2design.com/privacy
+- AI plugin manifest: https://html2design.com/.well-known/ai-plugin.json
 
 ## Tutorial articles (33 total)
 
-- How to Convert HTML to Figma: A Developer's Guide — https://www.htmltofigma.io/blog/how-to-convert-html-to-figma
-- How to Import a Website into Figma — https://www.htmltofigma.io/blog/import-website-into-figma
-- How to Convert React Components to Figma Designs — https://www.htmltofigma.io/blog/react-component-to-figma
-- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://www.htmltofigma.io/blog/tailwind-to-figma
-- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://www.htmltofigma.io/blog/bootstrap-to-figma
-- Design System Migration: From Code to Figma Components — https://www.htmltofigma.io/blog/design-system-migration
-- Screenshot vs Code Import: Which Figma Conversion Method Actually Wins? — https://www.htmltofigma.io/blog/screenshot-vs-code-import
-- CSS Grid & Flexbox to Figma Auto Layout: Conversion Guide — https://www.htmltofigma.io/blog/css-grid-to-figma-auto-layout
-- HTML Email Template to Figma: Import & Edit Email Designs — https://www.htmltofigma.io/blog/html-email-to-figma
-- Responsive Design to Figma: Converting Breakpoints to Figma Variants — https://www.htmltofigma.io/blog/responsive-design-to-figma
-- Webflow to Figma: Import Your Webflow Site into Figma — https://www.htmltofigma.io/blog/webflow-to-figma
-- Design Tokens: Bridging Code and Figma with HTML to Figma — https://www.htmltofigma.io/blog/design-tokens-code-to-figma
-- Accessibility Audit: From HTML Audit to Figma Redesign — https://www.htmltofigma.io/blog/accessibility-audit-to-figma
-- Figma Dev Mode vs html2design: When to Use Which — https://www.htmltofigma.io/blog/figma-dev-mode-vs-html2design
-- Component Library to Figma: Document Your UI System — https://www.htmltofigma.io/blog/component-library-to-figma
-- Multi-page Website to Figma: Import and Organize Multiple Pages — https://www.htmltofigma.io/blog/multi-page-website-to-figma
-- Rapid Prototyping: From Live Website to Figma Prototype — https://www.htmltofigma.io/blog/rapid-prototyping-website-to-figma
-- Design Handoff Best Practices: Keeping Code and Figma in Sync — https://www.htmltofigma.io/blog/design-handoff-best-practices
-- Atomic Design to Figma: Importing Your Component Hierarchy — https://www.htmltofigma.io/blog/atomic-design-to-figma
-- Top 5 HTML to Figma Tools Compared (2026) — https://www.htmltofigma.io/blog/html-to-figma-tools-compared
-- HTML to Figma in Your CI/CD Pipeline (2026 Guide) — https://www.htmltofigma.io/blog/html-to-figma-ci-cd-pipeline
-- How to Redesign a Legacy Website Without Starting From Scratch — https://www.htmltofigma.io/blog/redesign-legacy-website-figma
-- Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits — https://www.htmltofigma.io/blog/figma-ai-2026
-- Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026) — https://www.htmltofigma.io/blog/design-to-code-vs-code-to-design
-- AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide) — https://www.htmltofigma.io/blog/ai-web-design-workflow
-- Best Figma Plugins for Developers in 2026 — https://www.htmltofigma.io/blog/figma-plugins-for-developers
-- Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://www.htmltofigma.io/blog/design-system-from-existing-code
-- Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://www.htmltofigma.io/blog/website-redesign-checklist
-- How to Convert a Live Website to Figma in Minutes (2026) — https://www.htmltofigma.io/blog/convert-website-to-figma
-- Figma to HTML: The Complete Developer Handoff Guide (2026) — https://www.htmltofigma.io/blog/figma-to-html-developer-handoff
-- How to Keep Figma Designs and Code in Sync (2026 Guide) — https://www.htmltofigma.io/blog/figma-design-code-sync
-- Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/vue-to-figma
-- Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://www.htmltofigma.io/blog/angular-to-figma
+- How to Convert HTML to Figma: A Developer's Guide — https://html2design.com/blog/how-to-convert-html-to-figma
+- How to Import a Website into Figma — https://html2design.com/blog/import-website-into-figma
+- How to Convert React Components to Figma Designs — https://html2design.com/blog/react-component-to-figma
+- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://html2design.com/blog/tailwind-to-figma
+- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://html2design.com/blog/bootstrap-to-figma
+- Design System Migration: From Code to Figma Components — https://html2design.com/blog/design-system-migration
+- Screenshot vs Code Import: Which Figma Conversion Method Actually Wins? — https://html2design.com/blog/screenshot-vs-code-import
+- CSS Grid & Flexbox to Figma Auto Layout: Conversion Guide — https://html2design.com/blog/css-grid-to-figma-auto-layout
+- HTML Email Template to Figma: Import & Edit Email Designs — https://html2design.com/blog/html-email-to-figma
+- Responsive Design to Figma: Converting Breakpoints to Figma Variants — https://html2design.com/blog/responsive-design-to-figma
+- Webflow to Figma: Import Your Webflow Site into Figma — https://html2design.com/blog/webflow-to-figma
+- Design Tokens: Bridging Code and Figma with HTML to Figma — https://html2design.com/blog/design-tokens-code-to-figma
+- Accessibility Audit: From HTML Audit to Figma Redesign — https://html2design.com/blog/accessibility-audit-to-figma
+- Figma Dev Mode vs html2design: When to Use Which — https://html2design.com/blog/figma-dev-mode-vs-html2design
+- Component Library to Figma: Document Your UI System — https://html2design.com/blog/component-library-to-figma
+- Multi-page Website to Figma: Import and Organize Multiple Pages — https://html2design.com/blog/multi-page-website-to-figma
+- Rapid Prototyping: From Live Website to Figma Prototype — https://html2design.com/blog/rapid-prototyping-website-to-figma
+- Design Handoff Best Practices: Keeping Code and Figma in Sync — https://html2design.com/blog/design-handoff-best-practices
+- Atomic Design to Figma: Importing Your Component Hierarchy — https://html2design.com/blog/atomic-design-to-figma
+- Top 5 HTML to Figma Tools Compared (2026) — https://html2design.com/blog/html-to-figma-tools-compared
+- HTML to Figma in Your CI/CD Pipeline (2026 Guide) — https://html2design.com/blog/html-to-figma-ci-cd-pipeline
+- How to Redesign a Legacy Website Without Starting From Scratch — https://html2design.com/blog/redesign-legacy-website-figma
+- Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits — https://html2design.com/blog/figma-ai-2026
+- Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026) — https://html2design.com/blog/design-to-code-vs-code-to-design
+- AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide) — https://html2design.com/blog/ai-web-design-workflow
+- Best Figma Plugins for Developers in 2026 — https://html2design.com/blog/figma-plugins-for-developers
+- Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://html2design.com/blog/design-system-from-existing-code
+- Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://html2design.com/blog/website-redesign-checklist
+- How to Convert a Live Website to Figma in Minutes (2026) — https://html2design.com/blog/convert-website-to-figma
+- Figma to HTML: The Complete Developer Handoff Guide (2026) — https://html2design.com/blog/figma-to-html-developer-handoff
+- How to Keep Figma Designs and Code in Sync (2026 Guide) — https://html2design.com/blog/figma-design-code-sync
+- Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://html2design.com/blog/vue-to-figma
+- Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://html2design.com/blog/angular-to-figma
 
 ## Use case pages (21 total)
 
-- Legacy Website Migration to Figma — https://www.htmltofigma.io/use-cases/legacy-migration
-- Developer Handoff Audit — https://www.htmltofigma.io/use-cases/developer-handoff
-- Vue to Figma — https://www.htmltofigma.io/use-cases/vue-to-figma
-- Angular to Figma — https://www.htmltofigma.io/use-cases/angular-to-figma
-- Svelte to Figma — https://www.htmltofigma.io/use-cases/svelte-to-figma
-- Next.js to Figma — https://www.htmltofigma.io/use-cases/nextjs-to-figma
-- WordPress to Figma — https://www.htmltofigma.io/use-cases/wordpress-to-figma
-- Gatsby to Figma — https://www.htmltofigma.io/use-cases/gatsby-to-figma
-- Material UI to Figma — https://www.htmltofigma.io/use-cases/material-ui-to-figma
-- Chakra UI to Figma — https://www.htmltofigma.io/use-cases/chakra-ui-to-figma
-- Ember to Figma — https://www.htmltofigma.io/use-cases/ember-to-figma
-- Storybook to Figma — https://www.htmltofigma.io/use-cases/storybook-to-figma
-- Tailwind + React to Figma — https://www.htmltofigma.io/use-cases/tailwind-react-to-figma
-- Sketch to Figma via HTML — https://www.htmltofigma.io/use-cases/sketch-to-figma
-- Adobe XD to Figma — https://www.htmltofigma.io/use-cases/adobe-xd-to-figma
-- Webflow to Figma — https://www.htmltofigma.io/use-cases/webflow-to-figma
-- Tailwind CSS to Figma — https://www.htmltofigma.io/use-cases/tailwind-to-figma
-- Astro to Figma — https://www.htmltofigma.io/use-cases/astro-to-figma
-- Remix to Figma — https://www.htmltofigma.io/use-cases/remix-to-figma
-- Shopify to Figma — https://www.htmltofigma.io/use-cases/shopify-to-figma
-- Alpine.js to Figma — https://www.htmltofigma.io/use-cases/alpine-to-figma
+- Legacy Website Migration to Figma — https://html2design.com/use-cases/legacy-migration
+- Developer Handoff Audit — https://html2design.com/use-cases/developer-handoff
+- Vue to Figma — https://html2design.com/use-cases/vue-to-figma
+- Angular to Figma — https://html2design.com/use-cases/angular-to-figma
+- Svelte to Figma — https://html2design.com/use-cases/svelte-to-figma
+- Next.js to Figma — https://html2design.com/use-cases/nextjs-to-figma
+- WordPress to Figma — https://html2design.com/use-cases/wordpress-to-figma
+- Gatsby to Figma — https://html2design.com/use-cases/gatsby-to-figma
+- Material UI to Figma — https://html2design.com/use-cases/material-ui-to-figma
+- Chakra UI to Figma — https://html2design.com/use-cases/chakra-ui-to-figma
+- Ember to Figma — https://html2design.com/use-cases/ember-to-figma
+- Storybook to Figma — https://html2design.com/use-cases/storybook-to-figma
+- Tailwind + React to Figma — https://html2design.com/use-cases/tailwind-react-to-figma
+- Sketch to Figma via HTML — https://html2design.com/use-cases/sketch-to-figma
+- Adobe XD to Figma — https://html2design.com/use-cases/adobe-xd-to-figma
+- Webflow to Figma — https://html2design.com/use-cases/webflow-to-figma
+- Tailwind CSS to Figma — https://html2design.com/use-cases/tailwind-to-figma
+- Astro to Figma — https://html2design.com/use-cases/astro-to-figma
+- Remix to Figma — https://html2design.com/use-cases/remix-to-figma
+- Shopify to Figma — https://html2design.com/use-cases/shopify-to-figma
+- Alpine.js to Figma — https://html2design.com/use-cases/alpine-to-figma
 
 ## Comparison pages (9 total)
 
-- html2design vs html.to.design — Full Comparison — https://www.htmltofigma.io/compare
-- html2design vs Anima — https://www.htmltofigma.io/compare/html2design-vs-anima
-- html2design vs Locofy — https://www.htmltofigma.io/compare/html2design-vs-locofy
-- html2design vs Figma Dev Mode — https://www.htmltofigma.io/compare/html2design-vs-figma-dev-mode
-- html2design vs TeleportHQ — https://www.htmltofigma.io/compare/html2design-vs-teleporthq
-- html2design vs html.to.design (direct) — https://www.htmltofigma.io/compare/html2design-vs-html-to-design
-- html2design vs Screenshot Tools — https://www.htmltofigma.io/compare/html2design-vs-screenshot-tools
-- html2design vs Zeplin — https://www.htmltofigma.io/compare/html2design-vs-zeplin
-- html2design vs UXPin — https://www.htmltofigma.io/compare/html2design-vs-uxpin
+- html2design vs html.to.design — Full Comparison — https://html2design.com/compare
+- html2design vs Anima — https://html2design.com/compare/html2design-vs-anima
+- html2design vs Locofy — https://html2design.com/compare/html2design-vs-locofy
+- html2design vs Figma Dev Mode — https://html2design.com/compare/html2design-vs-figma-dev-mode
+- html2design vs TeleportHQ — https://html2design.com/compare/html2design-vs-teleporthq
+- html2design vs html.to.design (direct) — https://html2design.com/compare/html2design-vs-html-to-design
+- html2design vs Screenshot Tools — https://html2design.com/compare/html2design-vs-screenshot-tools
+- html2design vs Zeplin — https://html2design.com/compare/html2design-vs-zeplin
+- html2design vs UXPin — https://html2design.com/compare/html2design-vs-uxpin
 
 ## RSS Feed
 
-- Blog RSS feed (for syndication and crawl frequency): https://www.htmltofigma.io/blog/feed.xml
+- Blog RSS feed (for syndication and crawl frequency): https://html2design.com/blog/feed.xml

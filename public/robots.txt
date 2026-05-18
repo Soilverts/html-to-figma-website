@@ -38,4 +38,4 @@ Allow: /
 User-agent: Brave
 Allow: /
 
-Sitemap: https://www.htmltofigma.io/sitemap.xml
+Sitemap: https://html2design.com/sitemap.xml

@@ -22,7 +22,7 @@
     <tspan x="80" y="240">HTML to Figma Changelog</tspan>
   </text>
   <text x="80" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">Plugin updates, new features, and improvements</text>
-  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">htmltofigma.io</text>
+  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">html2design.com</text>
   <circle cx="1100" cy="100" r="180" fill="#94A3B8" opacity="0.08" />
   <circle cx="1050" cy="500" r="120" fill="#94A3B8" opacity="0.05" />
   <circle cx="1150" cy="350" r="80" fill="white" opacity="0.03" />

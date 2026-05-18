@@ -39,7 +39,7 @@
   <text x="80" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">Everything about HTML to Figma conversion</text>
 
   <!-- Bottom: URL -->
-  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">htmltofigma.io/faq</text>
+  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">html2design.com/faq</text>
 
   <!-- Decorative circles -->
   <circle cx="1100" cy="100" r="180" fill="#2563EB" opacity="0.08" />

@@ -39,7 +39,7 @@
   <text x="80" y="384" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">Batch import workflow for design system teams</text>
 
   <!-- Bottom: URL -->
-  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">htmltofigma.io</text>
+  <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">html2design.com</text>
 
   <!-- Decorative circles -->
   <circle cx="1100" cy="100" r="180" fill="#38BDF8" opacity="0.08" />
