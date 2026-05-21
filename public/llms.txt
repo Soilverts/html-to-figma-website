@@ -186,10 +186,14 @@ For AI systems that need comprehensive documentation (3000+ words), including fu
 - Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://html2design.com/blog/vue-to-figma
 - Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://html2design.com/blog/angular-to-figma
 
-## Use case pages (23 total)
+## Use case pages (27 total)
 
 - Claude to Figma — https://html2design.com/use-cases/claude-to-figma
 - v0 to Figma — https://html2design.com/use-cases/v0-to-figma
+- Bolt to Figma — https://html2design.com/use-cases/bolt-to-figma
+- Lovable to Figma — https://html2design.com/use-cases/lovable-to-figma
+- Cursor to Figma — https://html2design.com/use-cases/cursor-to-figma
+- ChatGPT to Figma — https://html2design.com/use-cases/chatgpt-to-figma
 - Legacy Website Migration to Figma — https://html2design.com/use-cases/legacy-migration
 - Developer Handoff Audit — https://html2design.com/use-cases/developer-handoff
 - Vue to Figma — https://html2design.com/use-cases/vue-to-figma

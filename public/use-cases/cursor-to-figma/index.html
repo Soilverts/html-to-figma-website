@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cursor to Figma — Turn Cursor-Built UI Into Figma Layers</title>
+  <meta name="description" content="Convert UI you built with Cursor into native, editable Figma layers. Run the project, copy the rendered HTML, and html2design rebuilds it in Figma pixel-accurately." />
+  <meta name="keywords" content="cursor to figma, cursor ai to figma, convert cursor code to figma, cursor ide figma, ai code to figma, ai to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/cursor-to-figma" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/cursor-to-figma" />
+  <meta property="og:title" content="Cursor to Figma — Turn Cursor-Built UI Into Figma Layers" />
+  <meta property="og:description" content="Cursor writes real frontend code. Run it, copy the rendered HTML, and html2design turns it into native, editable Figma layers." />
+  <meta property="og:image" content="https://html2design.com/og/use-cases/cursor-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cursor-built UI imported into Figma as native editable layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cursor to Figma — Turn Cursor-Built UI Into Figma Layers" />
+  <meta name="twitter:description" content="Cursor writes real frontend code. Run it in a browser, copy the HTML; html2design rebuilds it as native Figma layers." />
+  <meta name="twitter:image" content="https://html2design.com/og/use-cases/cursor-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cursor to Figma — Turn Cursor-Built UI Into Editable Figma Layers",
+    "description": "Step-by-step guide for converting UI you built with the Cursor AI editor into native, editable Figma layers using the html2design plugin.",
+    "url": "https://html2design.com/use-cases/cursor-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-05-21",
+    "dateModified": "2026-05-21",
+    "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
+    "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
+    "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
+    "primaryImageOfPage": { "@type": "ImageObject", "url": "https://html2design.com/og/use-cases/cursor-to-figma.svg", "width": 1200, "height": 630 }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://html2design.com/use-cases" },
+      { "@type": "ListItem", "position": 3, "name": "Cursor to Figma", "item": "https://html2design.com/use-cases/cursor-to-figma" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert UI built with Cursor to Figma?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cursor is an AI code editor that writes real frontend code into your project. Run the project's dev server (for example npm run dev), open the page in a browser, open DevTools (F12), right-click the root element in the Elements panel, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The browser resolves the code Cursor wrote to computed CSS, which html2design rebuilds as native, editable Figma layers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the framework Cursor used matter?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Cursor can write React, Vue, Svelte, plain HTML/CSS, or anything else. html2design reads the rendered DOM and its computed styles, not the source files, so any framework imports the same way once it is running in a browser." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import a single component instead of the whole page?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. In the Elements panel, right-click the specific component's root element rather than the body, and copy its outerHTML. Storybook or a component preview route in your Cursor project works well for isolating one component at a time." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the imported designs editable in Figma?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The import produces native Figma layers — editable text, vector paths for SVG icons, image fills, and measured frames — not a screenshot or flat image." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">Get Plugin &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Cursor to Figma</span>
+    </nav>
+  </div>
+
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · AI Design</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: May 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Cursor to Figma —<br />
+        AI-Coded UI, Made Editable
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Cursor wrote the code; now design on top of it.</strong>
+        Cursor builds real frontend code in your editor — run it, and the browser resolves it to computed CSS.
+        Copy the rendered HTML, paste into html2design, and get
+        <strong class="text-content font-medium">native, editable Figma layers</strong> in under two minutes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
+        <a href="/use-cases/claude-to-figma" class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">Other AI tools &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Cursor to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
+        <strong class="text-content">"Cursor to Figma"</strong> is the workflow of taking UI you built with
+        Cursor — the AI-powered code editor — and importing it into Figma as editable design layers. Cursor
+        writes real frontend code into your project; you run it like any app, and html2design reads the
+        rendered DOM's computed styles. The framework Cursor used is irrelevant — only the rendered output matters.
+      </p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">
+        Unlike hosted AI builders, Cursor produces code in a normal local project, so the path to Figma is the
+        classic developer workflow: run the dev server, copy the rendered HTML, paste into html2design — then
+        refine the result in Figma instead of rebuilding it by hand.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Cursor output imports cleanly</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Cursor produces a normal local project that renders to a standard browser DOM.</p>
+      <div class="space-y-6">
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">It's a real local project — run it like any app</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Cursor edits files in your repo. Start the dev server and open the page; the browser computes every style, which is exactly what html2design reads — no special export.</p>
+        </div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Framework-agnostic</h3>
+          <p class="text-sm text-content-muted leading-relaxed">React, Vue, Svelte, Astro, or plain HTML — html2design reads the rendered output, not the source, so anything Cursor writes imports the same way.</p>
+        </div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">Works on localhost &amp; auth-gated pages</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Because you paste HTML rather than a URL, it works on <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>, Storybook, or pages behind login — no public deploy needed.</p>
+        </div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
+          <h3 class="text-lg font-bold tracking-tight mb-2">SVG icons import as vector paths</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as native Figma vector paths — crisp and editable at any scale, never rasterized.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Cursor to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Four steps, under two minutes.</p>
+      <div class="space-y-10">
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Run the project Cursor built</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>Start the dev server (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code> or your project's command) and open the page in a browser. For a single component, use a component route or Storybook (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:6006</code>).</p></div>
+        </article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or the component's wrapper), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading first.</p></div>
+        </article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the HTML, and click <strong class="text-content">Generate</strong>. Each element's computed style becomes a native Figma object — text, fills, SVG vector paths, and measured frames.</p></div>
+        </article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>You now have a pixel-accurate, editable frame of the UI Cursor coded. Refine it, align it to your design system, and prepare it for review and handoff.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Native Figma objects mirroring the rendered output — not a screenshot.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">Copy becomes real Figma text layers with computed font, size, weight, line height, and color.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Exact colors &amp; styling</h3><p class="text-sm text-content-muted leading-relaxed">Backgrounds, borders, shadows, and gradients resolve to precise computed values as Figma fills, strokes, and effects.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">SVG icons as vector paths</h3><p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as editable Figma vector paths, sharp at any scale.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Pixel-accurate frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, and sizing recreated as measured Figma frames matching the browser render.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with Cursor to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Cursor built, open the page in a browser, open DevTools, right-click the root element, Copy &gt; Copy outerHTML, and paste into the html2design plugin. The rendered output transfers as pixel-accurate, editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does the framework Cursor used matter?</h3><p class="text-sm text-content-muted leading-relaxed">No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, or plain HTML all import the same way.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — right-click the component's root element (or use Storybook) and copy its outerHTML instead of the whole body.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/use-cases/claude-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Claude to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Claude Artifacts and Claude Code output into editable Figma layers.</p></a>
+        <a href="/use-cases/v0-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">v0 to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Vercel v0's React + Tailwind output into editable Figma layers.</p></a>
+        <a href="/use-cases/react-component-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert rendered React components into native Figma layers.</p></a>
+        <a href="/use-cases/storybook-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Storybook to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Import Storybook stories — no public URL required.</p></a>
+        <a href="/guide" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p></a>
+        <a href="/compare" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and extensions.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Bring your Cursor-built UI into Figma</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">Install html2design from the Figma Community — free to try, no Chrome extension, no manual rebuild.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">Install Free on Figma Community<span aria-hidden="true">&rarr;</span></a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/pricing" class="hover:text-content transition-colors">Pricing</a>
+        <a href="/use-cases" class="hover:text-content transition-colors">Use Cases</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
