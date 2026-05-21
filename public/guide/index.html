@@ -50,7 +50,7 @@
     "description": "The definitive guide to converting HTML and CSS into native, editable Figma designs. Covers React, Vue, Angular, Svelte, Tailwind, Bootstrap, design system migration, and a comparison of every method.",
     "url": "https://html2design.com/guide",
     "datePublished": "2026-03-23T00:00:00Z",
-    "dateModified": "2026-04-17T00:00:00Z",
+    "dateModified": "2026-05-21T00:00:00Z",
     "inLanguage": "en",
     "image": {
       "@type": "ImageObject",
@@ -362,11 +362,12 @@
       <ul class="toc-list">
         <li><a href="#why-convert"><span class="toc-num">01</span> Why Convert HTML to Figma</a></li>
         <li><a href="#how-it-works"><span class="toc-num">02</span> How It Works — Step by Step</a></li>
-        <li><a href="#frameworks"><span class="toc-num">03</span> Framework Guides</a></li>
-        <li><a href="#design-system"><span class="toc-num">04</span> Design System Migration</a></li>
-        <li><a href="#methods-compared"><span class="toc-num">05</span> Comparison of Methods</a></li>
-        <li><a href="#faq"><span class="toc-num">06</span> FAQ</a></li>
-        <li><a href="#takeaways"><span class="toc-num">07</span> Key Takeaways</a></li>
+        <li><a href="#ai-tools"><span class="toc-num">03</span> AI Design Tools (Claude, v0)</a></li>
+        <li><a href="#frameworks"><span class="toc-num">04</span> Framework Guides</a></li>
+        <li><a href="#design-system"><span class="toc-num">05</span> Design System Migration</a></li>
+        <li><a href="#methods-compared"><span class="toc-num">06</span> Comparison of Methods</a></li>
+        <li><a href="#faq"><span class="toc-num">07</span> FAQ</a></li>
+        <li><a href="#takeaways"><span class="toc-num">08</span> Key Takeaways</a></li>
       </ul>
     </nav>
 
@@ -433,7 +434,26 @@
     <p>The entire process for a single component takes two to five minutes. For a full page, plan for ten to fifteen minutes including layer clean-up.</p>
 
     <!-- Section 3 -->
-    <h2 id="frameworks">3. Framework Guides</h2>
+    <h2 id="ai-tools">3. AI Design Tools (Claude, v0)</h2>
+
+    <p>The fastest-growing way to start a Figma design is to let an AI tool generate it. Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT all produce real HTML, CSS, and React — which means html2design can bring their output straight into Figma as native, editable layers. Render the AI-generated UI in a browser, copy the outerHTML, and paste it into the plugin. Because the browser resolves every style to a computed value first, the import is model- and framework-agnostic.</p>
+
+    <p>This closes the loop of the AI design era: the model produces a strong first version in seconds, and html2design hands it to your team in Figma to refine, align to a design system, and ship — instead of rebuilding the AI output by hand.</p>
+
+    <div class="framework-grid">
+      <a href="/use-cases/claude-to-figma" class="framework-card">
+        <div class="fw-label">AI Tool</div>
+        <div class="fw-title">Claude</div>
+        <div class="fw-desc">Turn Claude Artifacts and Claude Code output into native, editable Figma layers.</div>
+      </a>
+      <a href="/use-cases/v0-to-figma" class="framework-card">
+        <div class="fw-label">AI Tool</div>
+        <div class="fw-title">Vercel v0</div>
+        <div class="fw-desc">Convert v0's React + Tailwind output into pixel-accurate, editable Figma layers.</div>
+      </a>
+    </div>
+
+    <h2 id="frameworks">4. Framework Guides</h2>
 
     <p>html2design works with every web framework because it reads the browser's computed output, not the source code. The workflow is the same regardless of what built the page: run a dev server, open a browser, copy the outerHTML, paste into Figma. Below are dedicated guides for each major framework.</p>
 
@@ -566,7 +586,7 @@
     <p>Alpine.js enriches server-rendered HTML with interactivity directly in the browser — no build step, no virtual DOM. Trigger the component state you want to capture (open dropdown, active tab, error state), then copy the outerHTML from DevTools. Alpine modifies the real DOM, so DevTools always shows the current state. Particularly useful for capturing multiple component variants: import each state separately and convert to Figma Component Variants. Works with any backend that renders HTML — Laravel Blade, Django, Rails, plain PHP. → <a href="/use-cases/alpine-to-figma">Alpine.js to Figma →</a></p>
 
     <!-- Section 4 -->
-    <h2 id="design-system">4. Design System Migration Workflow</h2>
+    <h2 id="design-system">5. Design System Migration Workflow</h2>
 
     <p>One of the most powerful applications of HTML to Figma conversion is migrating an existing code-based design system into Figma. If your team has been building components in code without a Figma counterpart, this workflow lets you catch up in days rather than weeks.</p>
 
@@ -588,7 +608,7 @@
     <p>For a complete, step-by-step walkthrough of this process, see the <a href="/blog/design-system-migration">Design System Migration guide</a>.</p>
 
     <!-- Section 5 -->
-    <h2 id="methods-compared">5. Comparison of Methods</h2>
+    <h2 id="methods-compared">6. Comparison of Methods</h2>
 
     <p>There are several ways to get HTML content into Figma. Understanding the trade-offs helps you pick the right tool for the job. See also: <a href="/compare">detailed feature comparison</a>, <a href="/alternatives">Figma import alternatives</a>, and the <a href="/blog/screenshot-vs-code-import">screenshot vs code import deep-dive</a>.</p>
 
@@ -651,7 +671,7 @@
     <p>AI tools that convert screenshots to Figma layers use computer vision to infer layout, which introduces approximation errors in spacing, font sizes, and colours. Code import reads exact computed values directly from the browser — no inference required. For production-grade work, code import is more accurate.</p>
 
     <!-- Section 6 -->
-    <h2 id="faq">6. Frequently Asked Questions</h2>
+    <h2 id="faq">7. Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <h3>What is HTML to Figma conversion?</h3>
