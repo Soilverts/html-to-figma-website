@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Windsurf to Figma — Turn Windsurf-Built UI Into Figma Layers</title>
+  <meta name="description" content="Convert UI built with Windsurf (Codeium's AI-native IDE and Cascade agent) into native, editable Figma layers. Run locally, copy the rendered HTML, html2design rebuilds it pixel-accurately." />
+  <meta name="keywords" content="windsurf to figma, codeium to figma, cascade to figma, ai ide to figma, ai code to figma, ai generated ui to figma" />
+  <meta name="author" content="HTML to Figma" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://html2design.com/use-cases/windsurf-to-figma" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://html2design.com/use-cases/windsurf-to-figma" />
+  <meta property="og:title" content="Windsurf to Figma — Turn Windsurf-Built UI Into Figma Layers" />
+  <meta property="og:description" content="Windsurf shipped the code; html2design ships the design. Run, copy the rendered HTML, and get native, editable Figma layers." />
+  <meta property="og:image" content="https://html2design.com/og/use-cases/windsurf-to-figma.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Windsurf-built UI imported into Figma as native editable layers" />
+  <meta property="og:site_name" content="HTML to Figma" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Windsurf to Figma — Turn Windsurf-Built UI Into Figma Layers" />
+  <meta name="twitter:description" content="Codeium's Windsurf builds real frontend code. Run it; the browser computes the styles; html2design rebuilds them as native Figma layers." />
+  <meta name="twitter:image" content="https://html2design.com/og/use-cases/windsurf-to-figma.svg" />
+
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Windsurf to Figma — Turn Windsurf-Built UI Into Figma Layers",
+    "description": "Convert UI built with Windsurf (Codeium's AI-native IDE and Cascade agent) into native, editable Figma layers. Run locally, copy the rendered HTML, html2design rebuilds it pixel-accurately.",
+    "url": "https://html2design.com/use-cases/windsurf-to-figma",
+    "inLanguage": "en",
+    "datePublished": "2026-05-26",
+    "dateModified": "2026-05-26",
+    "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
+    "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
+    "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
+    "primaryImageOfPage": { "@type": "ImageObject", "url": "https://html2design.com/og/use-cases/windsurf-to-figma.svg", "width": 1200, "height": 630 }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://html2design.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://html2design.com/use-cases" },
+      { "@type": "ListItem", "position": 3, "name": "Windsurf to Figma", "item": "https://html2design.com/use-cases/windsurf-to-figma" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I convert UI built with Windsurf to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the project Windsurf built (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Windsurf's rendered output transfers as pixel-accurate, editable Figma layers." } },
+      { "@type": "Question", "name": "Does it matter which framework Cascade generated?", "acceptedAnswer": { "@type": "Answer", "text": "No. html2design reads the rendered DOM and computed styles, not the source. Whatever Cascade picked imports the same way once it runs in a browser." } },
+      { "@type": "Question", "name": "Can I go image → code → Figma using Windsurf and html2design?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — this is a powerful round-trip. Windsurf takes an image/prompt and generates code; you run it and copy the rendered HTML; html2design rebuilds it as editable Figma layers ready for refinement." } },
+      { "@type": "Question", "name": "Are the imported designs editable in Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot." } }
+    ]
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/static.css" />
+</head>
+<body class="bg-white text-content font-sans antialiased">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="font-bold tracking-tighter text-lg">HTML<span class="text-accent">2</span>FIGMA</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-content-muted hover:text-content transition-colors hidden sm:block">Home</a>
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="text-sm font-medium bg-content text-white px-4 py-1.5 rounded-full hover:bg-black transition-colors">Get Plugin &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto px-6 pt-24 pb-0">
+    <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-400">
+      <a href="/" class="hover:text-accent transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/use-cases" class="hover:text-accent transition-colors">Use Cases</a>
+      <span class="mx-2">/</span>
+      <span class="text-content-muted">Windsurf to Figma</span>
+    </nav>
+  </div>
+
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · AI Design</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: May 2026</p>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
+        Windsurf to Figma —<br />
+        Cascade Coded It, Figma Edits It
+      </h1>
+      <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
+        <strong class="text-content font-medium">Cascade shipped your feature in minutes.</strong> Windsurf — Codeium's AI-native IDE — writes real frontend code into your project. Run it, and the browser resolves all of it to computed CSS. Copy the rendered HTML, paste into html2design, and get <strong class="text-content font-medium">native, editable Figma layers</strong> in under two minutes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
+        <a href="/use-cases/claude-to-figma" class="inline-flex items-center justify-center gap-2 border border-gray-200 text-content font-medium px-6 py-3 rounded-full hover:border-accent/30 hover:bg-surface transition-colors text-sm">Other AI tools &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Windsurf to Figma"?</h2>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"Windsurf to Figma"</strong> is the workflow of taking UI you built with Windsurf — Codeium's AI-native IDE, including the Cascade agent — and importing it into Figma as editable design layers. Windsurf writes real frontend code into your local project; you run it like any app, and html2design reads the rendered DOM's computed styles. The framework Cascade chose is irrelevant.</p>
+      <p class="text-content-muted leading-relaxed max-w-3xl">Windsurf is great at "image and prompt → working UI in your repo." html2design closes the design loop: bring the running output into Figma so a team can refine, align to a design system, and review with the tools they already use.</p>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Windsurf output imports cleanly</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Built on a browser-rendered DOM — exactly what the import approach reads.</p>
+      <div class="space-y-6">
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Windsurf produces real code in a real project</h3><p class="text-sm text-content-muted leading-relaxed">Cascade edits files locally. Run the dev server and open the page; the browser computes every style — which is exactly what html2design reads.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Image-to-code in, design-to-figma out</h3><p class="text-sm text-content-muted leading-relaxed">Windsurf supports turning a screenshot prompt into code; html2design completes the loop the other way — code into Figma. The two pair naturally.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Framework-agnostic</h3><p class="text-sm text-content-muted leading-relaxed">React, Vue, Svelte, Astro, plain HTML — html2design reads the rendered output, not the source.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Works on localhost & auth-gated pages</h3><p class="text-sm text-content-muted leading-relaxed">You paste HTML, not a URL — works on <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>, Storybook, or pages behind login.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The windsurf to figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Four steps, under two minutes.</p>
+      <div class="space-y-10">
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Run the project Windsurf built</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Start the dev server (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code> or your project's command) and open the page. For a single component, use a route or Storybook.</p></div></article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element, choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading first.</p></div></article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. Each element's computed style becomes a native Figma object.</p></div></article>
+        <div class="border-t border-gray-100"></div>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a pixel-accurate, editable frame of the UI Cascade coded. Refine, align to your design system, prep for review and handoff.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Native Figma objects mirroring the rendered output — not a screenshot.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">Copy becomes real Figma text layers with computed font, size, weight, line height, and color.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Exact colors & styling</h3><p class="text-sm text-content-muted leading-relaxed">Backgrounds, borders, shadows, gradients resolve to precise computed values as Figma fills, strokes, and effects.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">SVG icons as vector paths</h3><p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as editable Figma vector paths, sharp at any scale.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Pixel-accurate frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, sizing recreated as measured Figma frames matching the browser render.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with Windsurf to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Windsurf built (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Windsurf's rendered output transfers as pixel-accurate, editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does it matter which framework Cascade generated?</h3><p class="text-sm text-content-muted leading-relaxed">No. html2design reads the rendered DOM and computed styles, not the source. Whatever Cascade picked imports the same way once it runs in a browser.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I go image → code → Figma using Windsurf and html2design?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — this is a powerful round-trip. Windsurf takes an image/prompt and generates code; you run it and copy the rendered HTML; html2design rebuilds it as editable Figma layers ready for refinement.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/use-cases/cursor-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Cursor to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert UI built with the Cursor AI editor into editable Figma layers.</p></a>
+        <a href="/use-cases/github-copilot-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">GitHub Copilot to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert UI written by GitHub Copilot or Copilot Workspace into editable Figma layers.</p></a>
+        <a href="/use-cases/claude-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Claude to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Claude Artifacts and Claude Code output into editable Figma layers.</p></a>
+        <a href="/use-cases/react-component-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert rendered React components into native Figma layers.</p></a>
+        <a href="/guide" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p></a>
+        <a href="/compare" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and extensions.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-content text-white py-14 md:py-20" aria-label="Get started with HTML to Figma">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Bring your Windsurf-built UI into Figma</h2>
+      <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">Install html2design from the Figma Community — free to try, no Chrome extension, no manual rebuild.</p>
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white text-content font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors text-base">Install Free on Figma Community<span aria-hidden="true">&rarr;</span></a>
+      <p class="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Free to try · $12/mo to unlock all features</p>
+    </div>
+  </section>
+
+  <footer class="border-t border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="/" class="font-bold tracking-tighter text-sm">HTML<span class="text-accent">2</span>FIGMA</a>
+      <nav class="flex flex-wrap items-center gap-6 text-xs text-content-muted">
+        <a href="/" class="hover:text-content transition-colors">Home</a>
+        <a href="/pricing" class="hover:text-content transition-colors">Pricing</a>
+        <a href="/use-cases" class="hover:text-content transition-colors">Use Cases</a>
+        <a href="/compare" class="hover:text-content transition-colors">Compare</a>
+        <a href="/blog" class="hover:text-content transition-colors">Blog</a>
+        <a href="/guide" class="hover:text-content transition-colors">Guide</a>
+        <a href="/faq" class="hover:text-content transition-colors">FAQ</a>
+        <a href="/privacy" class="hover:text-content transition-colors">Privacy</a>
+        <a href="/terms" class="hover:text-content transition-colors">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-400">&copy; 2026 HTML to Figma</p>
+    </div>
+  </footer>
+
+</body>
+</html>
