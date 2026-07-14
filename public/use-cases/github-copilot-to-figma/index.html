@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers</title>
-  <meta name="description" content="Import a Copilot-built interface into Figma from localhost HTML or a public preview, using lossless Pixel or best-effort Editable output." />
+  <meta name="description" content="Import a Copilot-built interface into Figma from localhost HTML or a public preview, using Pixel or best-effort Editable output." />
   <meta name="keywords" content="github copilot to figma, copilot workspace to figma, github copilot figma, ai code to figma, ai generated ui to figma, copilot ui to figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -36,11 +36,11 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers",
-    "description": "Convert UI written by GitHub Copilot (and Copilot Workspace) into native, editable Figma layers. Run your project, copy the rendered HTML, and html2design rebuilds it in Figma pixel-accurately.",
+    "description": "Import a Copilot-built interface into Figma from localhost HTML or a public preview, using Pixel or best-effort Editable output.",
     "url": "https://html2design.com/use-cases/github-copilot-to-figma",
     "inLanguage": "en",
-    "datePublished": "2026-05-26",
-    "dateModified": "2026-05-26",
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
     "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
@@ -102,13 +102,13 @@
   <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
     <div class="max-w-3xl">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · AI Design</p>
-      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: May 2026</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: July 2026</p>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
         GitHub Copilot to Figma —<br />
         AI-Coded UI, Made Editable
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        <strong class="text-content font-medium">Copilot wrote the code; now design on top of it.</strong> GitHub Copilot — and Copilot Workspace — generate real frontend code in your IDE. Run it, and the browser resolves it to computed CSS. Copy the rendered HTML, paste into html2design, and get <strong class="text-content font-medium">native, editable Figma layers</strong> in under two minutes.
+        <strong class="text-content font-medium">Copilot wrote the code; now inspect it in Figma.</strong> Run the interface in a browser, then import copied HTML or an accessible preview as a Pixel reference or as best-effort editable layers for supported content.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -127,7 +127,7 @@
 
   <section class="py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why GitHub Copilot output imports cleanly</h2>
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">How GitHub Copilot import works</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Built on a browser-rendered DOM — exactly what the import approach reads.</p>
       <div class="space-y-6">
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Copilot writes real code; it's a normal project</h3><p class="text-sm text-content-muted leading-relaxed">Copilot edits files in your repo. Start the dev server and open the page; the browser computes every style, which is exactly what html2design reads. No special export.</p></div>
@@ -140,14 +140,14 @@
 
   <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The github copilot to figma workflow</h2>
-      <p class="text-content-muted mb-10 max-w-2xl">Four steps, under two minutes.</p>
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The GitHub Copilot to Figma workflow</h2>
+      <p class="text-content-muted mb-10 max-w-2xl">Four steps, followed by review and cleanup.</p>
       <div class="space-y-10">
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Run the project Copilot wrote</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Start the dev server (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>, or your project's command) and open the page in a browser. For a single component, use a component route or Storybook (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:6006</code>).</p></div></article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or the component wrapper), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. The plugin converts each element's computed style into native Figma objects.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. The plugin maps supported elements and styles to native Figma objects.</p></div></article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a best-effort editable frame of what Copilot built. Refine it, align it to your design system, and prepare it for review and handoff.</p></div></article>
       </div>
@@ -159,10 +159,10 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What you get in Figma</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Native Figma objects mirroring the rendered output — not a screenshot.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">All copy becomes real Figma text layers with the correct font, size, weight, line height, and color.</p></div>
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Exact colors & styling</h3><p class="text-sm text-content-muted leading-relaxed">Backgrounds, borders, shadows, gradients resolve to precise computed values from your CSS / styles.</p></div>
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">SVG icons as vector paths</h3><p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as editable Figma vector paths, sharp at any scale.</p></div>
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Pixel-accurate frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, sizing recreated as measured Figma frames matching the browser render.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">Supported copy becomes Figma text layers; unavailable fonts and browser/Figma metric differences may require cleanup.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Supported colors & styling</h3><p class="text-sm text-content-muted leading-relaxed">Backgrounds, borders, shadows, gradients resolve to supported computed values from your CSS / styles.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Supported SVG content</h3><p class="text-sm text-content-muted leading-relaxed">Compatible inline SVG content can become editable Figma vectors; complex or external assets may need cleanup.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Measured editable frames</h3><p class="text-sm text-content-muted leading-relaxed">Supported layout, spacing, and sizing become measured Figma frames that should be compared with the browser source.</p></div>
       </div>
     </div>
   </section>
@@ -186,7 +186,7 @@
         <a href="/use-cases/cursor-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Cursor to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert UI built with the Cursor AI editor into editable Figma layers.</p></a>
         <a href="/use-cases/windsurf-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Windsurf to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Cascade-built UI from Codeium's AI IDE into editable Figma layers.</p></a>
         <a href="/use-cases/claude-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">AI Tool</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Claude to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Claude Artifacts and Claude Code output into editable Figma layers.</p></a>
-        <a href="/blog/react-component-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Guide</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert rendered React components into native Figma layers.</p></a>
+        <a href="/blog/react-component-to-figma" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Use Case</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">React to Figma</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">Convert rendered React components into native Figma layers.</p></a>
         <a href="/guide" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Pillar Guide</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Complete Guide</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">The definitive HTML to Figma guide — every framework and method.</p></a>
         <a href="/compare" class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all"><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Compare</p><h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Compare Methods</h3><p class="text-sm text-content-muted mt-1 leading-relaxed">How html2design compares to screenshot tools and extensions.</p></a>
       </div>

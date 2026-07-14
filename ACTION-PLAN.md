@@ -22,7 +22,7 @@ Updated: 2026-07-14
 
 ## Owner-account actions
 
-- [ ] Export fresh Search Console query, page, country, and device data.
+- [x] Export and analyze fresh Search Console query, page, country, and device data (2026-07-14 baseline).
 - [ ] Request indexing/recrawl for the homepage, URL page, output-quality page, reviews page, and updated comparison pages.
 - [ ] Update the Figma Community listing using `GEO-DISTRIBUTION-KIT.md`.
 - [ ] Publish the real fixture demo on YouTube and record the URL.
@@ -42,3 +42,4 @@ Updated: 2026-07-14
 - [ ] Re-run plugin coverage and E2E before publishing conversion-quality metrics.
 - [ ] Never publish user counts, ratings, fixed timing, or universal accuracy without dated evidence.
 - [ ] Keep manual-import privacy statements separate from URL-import data flow.
+- [ ] Compare the next 28-day GSC window against `GSC-PERFORMANCE-2026-07-14.md`; avoid changing newly deployed titles before enough post-deploy data accumulates.

@@ -47,6 +47,6 @@ Public search found a small number of organic Reddit mentions of HTML-to-Figma w
 
 ## Measurement limits
 
-- No live Search Console, Bing Webmaster, Moz, GA4, CrUX, or DataForSEO credentials were available.
-- The latest local Search Console export is dated 2026-05-26.
+- A manual Search Console export dated 2026-07-14 is available; API credentials are still not configured.
+- Bing Webmaster, Moz, GA4, CrUX, and DataForSEO credentials were not available.
 - GEO scores reflect technical and content readiness, not confirmed AI citation share.

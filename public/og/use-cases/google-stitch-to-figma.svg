@@ -21,7 +21,7 @@
   <text font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="800" fill="white" letter-spacing="-1">
     <tspan x="80" y="240">Google Stitch to Figma</tspan>
   </text>
-  <text x="80" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">Editable layers beyond the native export</text>
+  <text x="80" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" font-weight="400">HTML and public preview import workflow</text>
   <text x="80" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)">html2design.com/use-cases/google-stitch-to-figma</text>
   <circle cx="1100" cy="100" r="180" fill="#FFFFFF" opacity="0.08" />
   <circle cx="1050" cy="500" r="120" fill="#FFFFFF" opacity="0.05" />

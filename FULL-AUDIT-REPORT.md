@@ -12,7 +12,7 @@ GEO readiness score: **94/100**
 
 The site now presents the current two-workflow product consistently: manual HTML/file input for local or private sources, and public URL capture with Pixel or Editable modes. Technical discovery, metadata, schema, internal links, AI crawler access, and machine-readable product facts pass automated checks. A real browser-to-Figma case now documents output quality and limitations.
 
-The largest remaining risk is authority, not on-site implementation. No current Search Console, Bing Webmaster, Moz, GA4, CrUX, or DataForSEO connection was available, and Common Crawl did not yet include the domain in its Jan-Mar 2026 graph.
+The largest remaining risk is authority, not on-site implementation. A current manual Search Console export is now available, but automated Search Console, Bing Webmaster, Moz, GA4, CrUX, and DataForSEO connections are not configured. Common Crawl did not include the domain in its Jan-Mar 2026 graph.
 
 ## Scores
 
@@ -58,7 +58,7 @@ These are local Lighthouse lab measurements, not CrUX field data.
 - 11/11 Playwright end-to-end tests passed
 - Statements 94.10%, branches 83.76%, functions 98.61%, lines 97.27%
 - TypeScript, ESLint, production build, Worker health, render-service health, missing-token rejection, and invalid-license rejection passed
-- Licensed URL capture was not run because `HTML2DESIGN_TEST_LICENSE` was unavailable
+- Licensed URL smoke capture passed against `https://example.com`, returning 4 editable primitives and 1 raster tile; Worker/render health and authentication-boundary checks also passed
 
 ## Major changes
 
@@ -73,13 +73,13 @@ These are local Lighthouse lab measurements, not CrUX field data.
 
 ## Search evidence
 
-The newest local Search Console export is dated 2026-05-26. It showed strong branded CTR but weak non-branded positions and CTR for `html to figma`, `convert html to figma`, and `import html into figma`. The new URL page and linked cluster target those workflows without creating duplicate thin pages.
+The latest Search Console export covers 2026-04-13 through 2026-07-12: 700 clicks, 33,911 impressions, and 2.06% CTR. The latest 28 days produced 360 clicks and 17,678 impressions, versus 94 clicks and 5,325 impressions in the first 28 days. Strict html2design brand variants perform strongly, while `html to figma`, `convert html to figma`, and `import html into figma` remain weak non-brand opportunities. See `GSC-PERFORMANCE-2026-07-14.md` for the baseline and guardrails.
 
 Current public search confirms Figma now promotes an official Chrome extension for capturing webpages as editable layers. html2design differentiation is therefore the combined manual/private HTML and direct public URL workflows, plus explicit Pixel versus Editable output and documented limitations.
 
 ## Remaining dependencies
 
-1. Export current Search Console query/page/country/device data and request recrawl after deployment.
+1. Request recrawl after deployment and compare the next complete 28-day window with the July 14 baseline.
 2. Connect Bing Webmaster and Moz or DataForSEO for a scoreable backlink profile.
 3. Publish the prepared Figma Community, YouTube, Reddit, and directory materials through owner-controlled accounts.
 4. Measure homepage CrUX field data before considering a static/SSR architecture migration.
