@@ -32,6 +32,11 @@ function pageLabel(path) {
   return relative(ROOT, path) || 'index.html';
 }
 
+function localAssetPath(url) {
+  if (!url.startsWith(`${ORIGIN}/`)) return '';
+  return join(PUBLIC, new URL(url).pathname.replace(/^\/+/, ''));
+}
+
 const htmlFiles = [
   join(ROOT, 'index.html'),
   ...walk(PUBLIC).filter(
@@ -62,6 +67,17 @@ for (const path of htmlFiles) {
   }
   if (title.length > 65) warnings.push(`${label}: title is ${title.length} characters`);
   if (description.length > 165) warnings.push(`${label}: description is ${description.length} characters`);
+
+  for (const imageType of ['og:image', 'twitter:image']) {
+    const imageTag = findTag(html, 'meta', (tag) =>
+      [attribute(tag, 'property'), attribute(tag, 'name')]
+        .map((value) => value.toLowerCase())
+        .includes(imageType),
+    );
+    const imageUrl = attribute(imageTag, 'content');
+    const assetPath = localAssetPath(imageUrl);
+    if (assetPath && !existsSync(assetPath)) errors.push(`${label}: missing local ${imageType} asset ${imageUrl}`);
+  }
 
   if (canonical) {
     if (canonicals.has(canonical)) errors.push(`${label}: duplicate canonical also used by ${canonicals.get(canonical)}`);
@@ -106,6 +122,11 @@ const sitemap = readFileSync(join(PUBLIC, 'sitemap.xml'), 'utf8');
 const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim()));
 for (const canonical of indexableCanonicals) {
   if (!sitemapUrls.has(canonical)) errors.push(`sitemap.xml: missing ${canonical}`);
+}
+for (const match of sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
+  const imageUrl = match[1].trim();
+  const assetPath = localAssetPath(imageUrl);
+  if (assetPath && !existsSync(assetPath)) errors.push(`sitemap.xml: missing local image asset ${imageUrl}`);
 }
 
 const requiredFiles = ['robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', '.well-known/ai-plugin.json'];
