@@ -4,7 +4,7 @@
 User-agent: *
 Allow: /
 
-# Google
+# Google Search, including AI Overviews and AI Mode
 User-agent: Googlebot
 Allow: /
 
@@ -16,21 +16,31 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# ChatGPT browsing
+# OpenAI Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# User-requested ChatGPT browsing
 User-agent: ChatGPT-User
 Allow: /
 
-# OpenAI crawler
+# OpenAI model crawler
 User-agent: GPTBot
 Allow: /
 
-# Claude / Anthropic
+# Anthropic Search and user-requested browsing
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Anthropic model crawler
 User-agent: ClaudeBot
 Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# Google AI Overview
+# Google-Extended does not control Google Search or AI Overviews
 User-agent: Google-Extended
 Allow: /
 

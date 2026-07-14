@@ -6,7 +6,7 @@ const posts = [
     href: '/blog/how-to-convert-html-to-figma',
     label: 'Tutorial · 8 min read',
     title: 'How to Convert HTML to Figma: A Developer\'s Guide',
-    description: 'Paste raw HTML and CSS directly into Figma and get fully editable layers — no Chrome extension, no live URL required.',
+    description: 'Paste rendered HTML for native layers, or use public URL capture when you need an entire deployed page.',
     tags: 'html2design · tutorial',
     date: 'Mar 16, 2026',
     datetime: '2026-03-16',
@@ -65,9 +65,9 @@ export const BlogPreview: React.FC<{ id: string }> = ({ id }) => {
                   {post.description}
                 </p>
                 <div className="flex items-center gap-3 mt-auto">
-                  <time dateTime={post.datetime} className="text-xs text-gray-400 font-mono">{post.date}</time>
+                  <time dateTime={post.datetime} className="text-xs text-gray-600 font-mono">{post.date}</time>
                   <span className="text-gray-200">·</span>
-                  <span className="text-xs text-gray-400">{post.tags}</span>
+                  <span className="text-xs text-gray-600">{post.tags}</span>
                 </div>
               </a>
             </article>

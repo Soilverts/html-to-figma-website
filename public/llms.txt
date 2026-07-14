@@ -1,240 +1,78 @@
 # HTML to Figma (html2design)
 
-> Convert HTML and CSS code into native, editable Figma layers instantly — no Chrome extension required.
+> html2design is a Figma plugin for importing pasted HTML or a public website URL into Figma. It offers editable native layers and a lossless Pixel mode for URL captures.
 
-## What it is
+Last updated: 2026-07-14
 
-HTML to Figma (branded as **html2design**) is a Figma plugin that converts HTML and CSS source code into native Figma design layers. It parses HTML structure and computed CSS styles, then recreates them as Figma frames, text layers, rectangles, and vector shapes — all fully editable.
+## Product facts
 
-**Core value proposition:** Reverse-engineer any web UI into Figma in seconds, not hours. A component that takes 20–40 minutes to recreate manually converts in under 30 seconds. Full pages that would take 2–4 hours convert in under a minute.
+- Product: HTML to Figma, branded as html2design
+- Type: Figma plugin; no browser extension is required
+- Figma plugin ID: 1591359863857120491
+- Monthly plan: $12/month
+- Yearly plan: $96/year
+- Trial: 10 conversions before a license is required
+- URL allowance: 50 captures/day on Monthly; 200 captures/day on Yearly
+- Support: support@html2design.com
 
-## How it works
+## Two import workflows
 
-1. Open any web page or component in your browser (localhost, staging, or live)
-2. Open browser DevTools (Cmd+Option+I on Mac, F12 on Windows)
-3. Right-click the element you want → Copy → Copy outerHTML
-4. Open the html2design plugin in Figma (Main Menu → Plugins → html2design)
-5. Paste the HTML into the plugin input field
-6. Click Convert — native Figma layers appear on the canvas in 2–15 seconds
+### Manual HTML import
 
-The plugin reads computed CSS values (not class names), so it works with any CSS framework: Tailwind CSS, Bootstrap, plain CSS, CSS Modules, CSS-in-JS (styled-components, Emotion), or Sass.
+Paste HTML, load an HTML file, or copy rendered markup from browser DevTools. This workflow processes the supplied markup inside the Figma plugin. It works with localhost, Storybook, private staging pages, and authenticated applications because html2design does not need to fetch the source URL.
 
-## Key capabilities
+Manual import creates native Figma frames, text, shapes, images, and a layer hierarchy. It is best for editable output. CSS layouts are reproduced with fixed positioning; html2design does not automatically generate Figma Auto Layout, Components, Variants, Variables, or interactions.
 
-- Converts HTML elements to native Figma frames, rectangles, and text layers
-- Preserves typography: font families, weights, sizes, line-heights, letter-spacing
-- Preserves styling: colors, borders, shadows, gradients, opacity, border-radius
-- Imports images as high-resolution fills and SVGs as native vector paths
-- Generates a structured Figma layer hierarchy matching the HTML DOM tree
-- Works with localhost, staging, and production HTML — no live URL required
-- Works with JavaScript-rendered content (React, Vue, Angular, Svelte) captured post-execution via DevTools
-- Works with Storybook component previews (http://localhost:6006)
-- Captures dark mode variants by toggling prefers-color-scheme in DevTools Rendering tab
-- Works with auth-gated pages and internal tools (no URL access needed — you paste the HTML)
+### Public URL import
 
-## Supported frameworks
+Enter a public HTTP or HTTPS URL directly in the plugin. The URL is sent through html2design's Cloudflare Worker to a remote browser-rendering service. Private network addresses, localhost, and unsupported URL schemes are blocked.
 
-- Tailwind CSS (reads compiled computed values, not class names; custom theme fully preserved)
-- Bootstrap 4 and Bootstrap 5 (custom Sass variables and theme overrides preserved)
-- React (any renderer: Next.js, Vite, Create React App, Remix)
-- Vue.js and Nuxt.js
-- Angular
-- Svelte and SvelteKit
-- Plain HTML/CSS
-- Email templates (MJML, HTML email)
-- Any CSS framework that outputs standard computed CSS
+URL import has two modes:
 
-## What it does NOT do
+- Pixel mode: creates lossless raster tiles of the rendered page. This is the highest-fidelity option, but the page is not editable element by element.
+- Editable mode: extracts text, layout, images, SVG content, and computed visual styles into Figma layers. It is best effort because browsers and Figma use different rendering models.
 
-- Does not convert CSS Flexbox to Figma Auto Layout (elements are positioned absolutely to match the rendered layout; you can apply Auto Layout manually after import)
-- Does not extract Figma Variables from CSS custom properties (manual population required)
-- Does not preserve CSS animations or transitions (static snapshot only)
-- Does not fetch live URLs (you paste the HTML — the plugin does not crawl)
-- Does not support CSS Grid as Figma Auto Layout (falls back to absolute positioning)
-- Does not capture video or canvas elements (empty placeholder only)
-- Does not capture hover states automatically (force hover in DevTools first, then copy)
+Canvas, WebGL, video, and complex large SVG content may be rasterized in URL captures while surrounding text and layout remain editable. Pages that require login, defeat automated browsers, use DRM, or never load content into the DOM may be incomplete.
 
-## Use cases
+## Privacy and network behavior
 
-- **AI-generated UI to Figma** — Bring output from AI design tools (Claude Artifacts & Claude Code, Vercel v0, Bolt, Lovable, ChatGPT) into Figma as native, editable layers. These tools generate standard HTML/CSS/React; render it in a browser, copy the outerHTML, paste into html2design. Dedicated guides: https://html2design.com/use-cases/claude-to-figma and https://html2design.com/use-cases/v0-to-figma
-- **Legacy website migration to Figma** — Document or redesign a codebase that predates the design system, with no source Figma file
-- **Developer-to-designer handoff audit** — Verify that shipped components match the original design file spec
-- **Design system kickstart** — Bootstrap a Figma component library from an existing product rather than rebuilding from scratch
-- **Competitor layout analysis** — Pull a competitor's UI into Figma to study spacing, typography scale, and component patterns
-- **React/Vue/Angular component documentation** — Capture every component state (default, hover, disabled, loading, error) from Storybook and import into Figma
-- **Tailwind token extraction** — Render a token reference page and use the Inspect panel to populate Figma Variables and Styles
-- **Bootstrap migration** — Convert Bootstrap 4/5 projects with custom Sass themes to Figma without a generic kit
-- **Mobile responsive design capture** — Resize browser to 375px, copy outerHTML, import the mobile layout as a separate Figma frame
-- **Dark mode variant capture** — Toggle prefers-color-scheme in DevTools, re-copy HTML, import as a Component Variant in Figma
+- Manual HTML/file/paste conversion stays within the Figma plugin workflow; the supplied HTML is not sent to html2design's URL-rendering service.
+- URL import necessarily sends the requested URL to html2design's Worker and remote rendering service so a browser can load and capture it.
+- License verification communicates with api.html2design.com.
+- Payments are processed by Waffo, the Merchant of Record. License emails are delivered through Resend.
+- Full policy: https://html2design.com/privacy
 
-## Comparison with alternatives
+## Supported inputs
 
-**html2design vs. html.to.design:**
-- html2design: code-first, paste HTML/CSS directly. No Chrome extension required. Works with localhost, staging, and auth-gated pages. Fully self-contained in the Figma plugin context — no external server receives your markup.
-- html.to.design: URL-based Chrome extension captures a live public page. Easier for quick one-click imports of public pages, but cannot access localhost or auth-gated environments.
+- Public websites through URL import
+- Rendered HTML from React, Next.js, Vue, Nuxt, Angular, Svelte, Astro, Remix, and other web frameworks
+- Tailwind CSS, Bootstrap, CSS-in-JS, CSS Modules, Sass output, and plain CSS after browser rendering
+- Localhost, Storybook, authenticated pages, and private tools through manual HTML import
+- Static HTML files and pasted HTML/CSS
 
-**html2design vs. manual recreation:**
-- Manual recreation: full control, no automation. Typical time: 20–40 minutes per component, 2–4 hours per page.
-- html2design: 2–15 seconds per component, under 1 minute per full section. 50–500× faster.
+## Accuracy boundaries
 
-**html2design vs. config-reader Tailwind plugins:**
-- Config-reader tools parse tailwind.config and populate Figma Variables but cannot capture rendered component layouts.
-- html2design captures the full visual output — tokens applied to components in context — including hover states, dark mode, and responsive variants.
+- Pixel mode targets visual fidelity to the browser-rendered capture.
+- Editable mode prioritizes useful native layers and may require cleanup.
+- Font availability, browser-only effects, animation state, cross-origin restrictions, lazy loading, and Figma API limitations can affect results.
+- Imported text and layout are static snapshots; animations and interactive behavior are not recreated.
+- Claims of perfect editable conversion for every website are not accurate.
 
-## Pricing
+## Primary pages
 
-- Monthly plan: **$12/month** — unlimited imports, no watermarks
-- Annual plan: **$96/year** ($8/month effective) — best value
-- No free tier with clean output (some extension tools offer free tiers with watermarks or import caps)
-- Cancel anytime
+- [Website](https://html2design.com/): Product overview
+- [URL to Figma](https://html2design.com/use-cases/url-to-figma): URL workflow, modes, limits, and troubleshooting
+- [Guide](https://html2design.com/guide): Manual HTML workflow
+- [Pricing](https://html2design.com/pricing): Plans, trial, and URL allowances
+- [FAQ](https://html2design.com/faq): Product questions and limitations
+- [Comparison](https://html2design.com/compare): html2design and alternative workflows
+- [Use cases](https://html2design.com/use-cases): Framework and workflow directory
+- [Privacy](https://html2design.com/privacy): Data handling by workflow
+- [Changelog](https://html2design.com/changelog): Product changes
+- [Full LLM documentation](https://html2design.com/llms-full.txt): Expanded technical reference
 
-## Technical details
+## Official links
 
-- Figma plugin (runs inside Figma, not as a browser extension)
-- Processes HTML within the Figma Plugin API sandbox
-- No external server receives user HTML (privacy-safe for internal tools)
-- Works on Figma Web and Figma Desktop (Mac and Windows)
-- Requires an active Figma account (free or paid)
-- Subscription activates on plugin installation
-
-## Common questions
-
-**Q: Does html2design work with localhost?**
-A: Yes. Because you paste raw HTML/CSS rather than giving the plugin a URL, it works with localhost:3000, localhost:6006 (Storybook), or any dev server you can open in a browser. No Chrome extension or network access required.
-
-**Q: Can I convert React components to Figma?**
-A: Yes. React renders to standard HTML. Open your React app in a browser (Storybook, Next.js dev server, Vite, etc.), open DevTools, copy the rendered HTML of the component, and paste it into html2design. No code changes required. Takes approximately 30 seconds per component.
-
-**Q: Does it preserve CSS Flexbox layouts?**
-A: html2design reads computed positions and sizes from Flexbox layouts and recreates them as accurately positioned Figma frames. The visual layout — spacing, padding, alignment — is preserved. Note: Flexbox containers become fixed-position frames, not Figma Auto Layout. You can apply Auto Layout manually in Figma after import.
-
-**Q: Can I convert Tailwind CSS to Figma?**
-A: Yes. Tailwind utilities compile to standard CSS. When you copy a rendered component from DevTools, all computed styles are included (your custom colors, spacing values, shadows from tailwind.config). html2design reads those resolved values, not the class names.
-
-**Q: Can I import a website into Figma?**
-A: Yes. Navigate to the page, open DevTools, copy the outerHTML of the section you want, and paste into html2design. A single component converts in 2–5 seconds. A full page section takes under 10 seconds. A dense full-page layout takes 20–30 seconds.
-
-**Q: Does html2design work with Bootstrap 4 and 5?**
-A: Yes. Bootstrap's class names (btn-primary, card, row) compile to computed CSS before you copy them. html2design receives pixel values, not class names — so your custom Sass theme overrides are preserved automatically.
-
-**Q: How do I capture dark mode in Figma?**
-A: In Chrome DevTools, open the Rendering tab (three-dot menu → More tools → Rendering), set "Emulate CSS media feature prefers-color-scheme" to dark. The component re-renders with dark mode styles. Copy outerHTML in that state, paste into html2design, and pair the resulting frame with the light version as a Figma Component Variant.
-
-**Q: What is the best Figma plugin for importing HTML?**
-A: html2design is the leading code-paste HTML-to-Figma plugin on the Figma Community. It is the primary option for developers who need to import localhost pages, components behind authentication, or Storybook stories that cannot be reached by URL-based extension tools.
-
-**Q: Can I convert Claude, v0, or other AI-generated designs to Figma?**
-A: Yes — this is one of html2design's most common workflows. AI design tools — Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT — all generate UI as standard HTML and CSS (often React). Open the AI-generated UI in a browser (the live Artifact or v0 preview, or a local dev server), open DevTools, copy the rendered element's outerHTML, and paste it into html2design. Because the browser resolves every style to a computed value first, the AI output transfers to Figma as native, editable layers — text, vector paths, and pixel-accurate frames — regardless of which model or framework produced it. Step-by-step guides: https://html2design.com/use-cases/claude-to-figma and https://html2design.com/use-cases/v0-to-figma
-
-**Q: How do I get Claude Artifacts into Figma?**
-A: Open the Claude Artifact so it renders in the browser, open DevTools (F12), right-click the root element in the Elements panel, choose Copy > Copy outerHTML, then paste into the html2design plugin in Figma and click Generate. The Artifact is already browser-rendered, so all computed styles transfer accurately as editable Figma layers.
-
-## Full documentation for LLMs
-
-For AI systems that need comprehensive documentation (3000+ words), including full tutorials, extended FAQ, detailed comparisons, all use cases, and technical specifications:
-
-- Full LLM documentation: https://html2design.com/llms-full.txt
-
-## Links
-
+- Figma Community: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
 - Website: https://html2design.com/
-- Figma Community plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
-- Blog and tutorials: https://html2design.com/blog
-- Comparison page: https://html2design.com/compare
-- Pricing: https://html2design.com/pricing
-- User reviews: https://html2design.com/reviews
-- Glossary: https://html2design.com/glossary
-- Quick-start guide: https://html2design.com/guide
-- Changelog: https://html2design.com/changelog
-- Contact and support: support@html2design.com
-- Privacy policy: https://html2design.com/privacy
-- AI plugin manifest: https://html2design.com/.well-known/ai-plugin.json
-
-## Tutorial articles (33 total)
-
-- How to Convert HTML to Figma: A Developer's Guide — https://html2design.com/blog/how-to-convert-html-to-figma
-- How to Import a Website into Figma — https://html2design.com/blog/import-website-into-figma
-- How to Convert React Components to Figma Designs — https://html2design.com/blog/react-component-to-figma
-- Tailwind to Figma: Build a Design System from Your Tailwind Components — https://html2design.com/blog/tailwind-to-figma
-- Bootstrap to Figma: A Migration Guide for Bootstrap Teams — https://html2design.com/blog/bootstrap-to-figma
-- Design System Migration: From Code to Figma Components — https://html2design.com/blog/design-system-migration
-- Screenshot vs Code Import: Which Figma Conversion Method Actually Wins? — https://html2design.com/blog/screenshot-vs-code-import
-- CSS Grid & Flexbox to Figma Auto Layout: Conversion Guide — https://html2design.com/blog/css-grid-to-figma-auto-layout
-- HTML Email Template to Figma: Import & Edit Email Designs — https://html2design.com/blog/html-email-to-figma
-- Responsive Design to Figma: Converting Breakpoints to Figma Variants — https://html2design.com/blog/responsive-design-to-figma
-- Webflow to Figma: Import Your Webflow Site into Figma — https://html2design.com/blog/webflow-to-figma
-- Design Tokens: Bridging Code and Figma with HTML to Figma — https://html2design.com/blog/design-tokens-code-to-figma
-- Accessibility Audit: From HTML Audit to Figma Redesign — https://html2design.com/blog/accessibility-audit-to-figma
-- Figma Dev Mode vs html2design: When to Use Which — https://html2design.com/blog/figma-dev-mode-vs-html2design
-- Component Library to Figma: Document Your UI System — https://html2design.com/blog/component-library-to-figma
-- Multi-page Website to Figma: Import and Organize Multiple Pages — https://html2design.com/blog/multi-page-website-to-figma
-- Rapid Prototyping: From Live Website to Figma Prototype — https://html2design.com/blog/rapid-prototyping-website-to-figma
-- Design Handoff Best Practices: Keeping Code and Figma in Sync — https://html2design.com/blog/design-handoff-best-practices
-- Atomic Design to Figma: Importing Your Component Hierarchy — https://html2design.com/blog/atomic-design-to-figma
-- Top 5 HTML to Figma Tools Compared (2026) — https://html2design.com/blog/html-to-figma-tools-compared
-- HTML to Figma in Your CI/CD Pipeline (2026 Guide) — https://html2design.com/blog/html-to-figma-ci-cd-pipeline
-- How to Redesign a Legacy Website Without Starting From Scratch — https://html2design.com/blog/redesign-legacy-website-figma
-- Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits — https://html2design.com/blog/figma-ai-2026
-- Design-to-Code vs Code-to-Design: Choosing the Right Direction (2026) — https://html2design.com/blog/design-to-code-vs-code-to-design
-- AI-Powered Web Design Workflows: How html2design Fits In (2026 Guide) — https://html2design.com/blog/ai-web-design-workflow
-- Best Figma Plugins for Developers in 2026 — https://html2design.com/blog/figma-plugins-for-developers
-- Build a Design System from Existing Code: Reverse-Engineering Guide (2026) — https://html2design.com/blog/design-system-from-existing-code
-- Website Redesign Checklist 2026: Plan Your Redesign in 8 Steps — https://html2design.com/blog/website-redesign-checklist
-- How to Convert a Live Website to Figma in Minutes (2026) — https://html2design.com/blog/convert-website-to-figma
-- Figma to HTML: The Complete Developer Handoff Guide (2026) — https://html2design.com/blog/figma-to-html-developer-handoff
-- How to Keep Figma Designs and Code in Sync (2026 Guide) — https://html2design.com/blog/figma-design-code-sync
-- Vue to Figma: Import Vue.js Components into Figma (2026 Guide) — https://html2design.com/blog/vue-to-figma
-- Angular to Figma: Import Angular Components into Figma (2026 Guide) — https://html2design.com/blog/angular-to-figma
-
-## Use case pages (34 total)
-
-- Claude to Figma — https://html2design.com/use-cases/claude-to-figma
-- v0 to Figma — https://html2design.com/use-cases/v0-to-figma
-- MagicPath to Figma — https://html2design.com/use-cases/magicpath-to-figma
-- GitHub Copilot to Figma — https://html2design.com/use-cases/github-copilot-to-figma
-- Windsurf to Figma — https://html2design.com/use-cases/windsurf-to-figma
-- Magic Patterns to Figma — https://html2design.com/use-cases/magic-patterns-to-figma
-- Google Stitch to Figma — https://html2design.com/use-cases/google-stitch-to-figma
-- Visily to Figma — https://html2design.com/use-cases/visily-to-figma
-- Replit Agent to Figma — https://html2design.com/use-cases/replit-agent-to-figma
-- Bolt to Figma — https://html2design.com/use-cases/bolt-to-figma
-- Lovable to Figma — https://html2design.com/use-cases/lovable-to-figma
-- Cursor to Figma — https://html2design.com/use-cases/cursor-to-figma
-- ChatGPT to Figma — https://html2design.com/use-cases/chatgpt-to-figma
-- Legacy Website Migration to Figma — https://html2design.com/use-cases/legacy-migration
-- Developer Handoff Audit — https://html2design.com/use-cases/developer-handoff
-- Vue to Figma — https://html2design.com/use-cases/vue-to-figma
-- Angular to Figma — https://html2design.com/use-cases/angular-to-figma
-- Svelte to Figma — https://html2design.com/use-cases/svelte-to-figma
-- Next.js to Figma — https://html2design.com/use-cases/nextjs-to-figma
-- WordPress to Figma — https://html2design.com/use-cases/wordpress-to-figma
-- Gatsby to Figma — https://html2design.com/use-cases/gatsby-to-figma
-- Material UI to Figma — https://html2design.com/use-cases/material-ui-to-figma
-- Chakra UI to Figma — https://html2design.com/use-cases/chakra-ui-to-figma
-- Ember to Figma — https://html2design.com/use-cases/ember-to-figma
-- Storybook to Figma — https://html2design.com/use-cases/storybook-to-figma
-- Tailwind + React to Figma — https://html2design.com/use-cases/tailwind-react-to-figma
-- Sketch to Figma via HTML — https://html2design.com/use-cases/sketch-to-figma
-- Adobe XD to Figma — https://html2design.com/use-cases/adobe-xd-to-figma
-- Webflow to Figma — https://html2design.com/use-cases/webflow-to-figma
-- Tailwind CSS to Figma — https://html2design.com/use-cases/tailwind-to-figma
-- Astro to Figma — https://html2design.com/use-cases/astro-to-figma
-- Remix to Figma — https://html2design.com/use-cases/remix-to-figma
-- Shopify to Figma — https://html2design.com/use-cases/shopify-to-figma
-- Alpine.js to Figma — https://html2design.com/use-cases/alpine-to-figma
-
-## Comparison pages (9 total)
-
-- html2design vs html.to.design — Full Comparison — https://html2design.com/compare
-- html2design vs Anima — https://html2design.com/compare/html2design-vs-anima
-- html2design vs Locofy — https://html2design.com/compare/html2design-vs-locofy
-- html2design vs Figma Dev Mode — https://html2design.com/compare/html2design-vs-figma-dev-mode
-- html2design vs TeleportHQ — https://html2design.com/compare/html2design-vs-teleporthq
-- html2design vs html.to.design (direct) — https://html2design.com/compare/html2design-vs-html-to-design
-- html2design vs Screenshot Tools — https://html2design.com/compare/html2design-vs-screenshot-tools
-- html2design vs Zeplin — https://html2design.com/compare/html2design-vs-zeplin
-- html2design vs UXPin — https://html2design.com/compare/html2design-vs-uxpin
-
-## RSS Feed
-
-- Blog RSS feed (for syndication and crawl frequency): https://html2design.com/blog/feed.xml
+- Support: support@html2design.com

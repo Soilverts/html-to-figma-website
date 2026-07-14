@@ -18,7 +18,7 @@ export const UseCases: React.FC<{ id: string }> = ({ id }) => {
                     <div className="max-w-3xl">
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1] text-content">
                             Built for <br className="hidden md:block" />
-                            <span className="text-gray-300">Design Operations.</span>
+                            <span className="text-gray-500">Design Operations.</span>
                         </h2>
                     </div>
                     <div className="lg:max-w-sm pb-2">

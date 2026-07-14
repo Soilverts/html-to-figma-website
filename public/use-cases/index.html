@@ -43,7 +43,7 @@
     "description": "Complete directory of html2design use cases — covering every major frontend framework, CSS library, and platform supported for HTML-to-Figma import.",
     "url": "https://html2design.com/use-cases",
     "inLanguage": "en",
-    "dateModified": "2026-04-17",
+    "dateModified": "2026-07-14",
     "author": {
       "@type": "Organization",
       "name": "HTML to Figma",
@@ -80,7 +80,7 @@
     "name": "HTML to Figma Use Case Pages",
     "description": "All html2design use-case landing pages — grouped by framework, CSS library, platform, and workflow",
     "url": "https://html2design.com/use-cases",
-    "numberOfItems": 35,
+    "numberOfItems": 36,
     "itemListElement": [
       { "@type": "ListItem", "position": 1,  "name": "Vue to Figma",                "url": "https://html2design.com/use-cases/vue-to-figma" },
       { "@type": "ListItem", "position": 2,  "name": "Angular to Figma",            "url": "https://html2design.com/use-cases/angular-to-figma" },
@@ -116,7 +116,8 @@
       { "@type": "ListItem", "position": 32, "name": "Magic Patterns to Figma",          "url": "https://html2design.com/use-cases/magic-patterns-to-figma" },
       { "@type": "ListItem", "position": 33, "name": "Google Stitch to Figma",          "url": "https://html2design.com/use-cases/google-stitch-to-figma" },
       { "@type": "ListItem", "position": 34, "name": "Visily to Figma",          "url": "https://html2design.com/use-cases/visily-to-figma" },
-      { "@type": "ListItem", "position": 35, "name": "Replit Agent to Figma",          "url": "https://html2design.com/use-cases/replit-agent-to-figma" }
+      { "@type": "ListItem", "position": 35, "name": "Replit Agent to Figma",          "url": "https://html2design.com/use-cases/replit-agent-to-figma" },
+      { "@type": "ListItem", "position": 36, "name": "URL to Figma", "url": "https://html2design.com/use-cases/url-to-figma" }
     ]
   }
   </script>
@@ -205,7 +206,7 @@
       html2design Works With<br class="hidden md:block" /> Your Entire Stack
     </h1>
     <p class="text-lg text-content-muted font-light leading-relaxed max-w-2xl">
-      Every major frontend framework, CSS library, and publishing platform renders standard HTML in the browser — which means every one of them imports into Figma as native, editable layers using html2design. No Chrome extension, no URL crawling, no rebuilding.
+      Import a public URL directly, or supply rendered HTML from any major frontend framework, CSS library, or publishing platform. Choose lossless Pixel capture or best-effort editable Figma layers without a Chrome extension.
     </p>
     <div class="flex flex-wrap gap-2 mt-6">
       <span class="text-xs font-mono bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">React</span>
@@ -482,6 +483,12 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
+        <a href="/use-cases/url-to-figma" class="group block bg-white border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
+          <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Workflow</p>
+          <h3 class="text-base font-bold tracking-tight text-content mb-1.5 group-hover:text-accent transition-colors">URL to Figma</h3>
+          <p class="text-xs text-content-muted leading-relaxed">Import a public website in lossless Pixel mode or as best-effort editable Figma layers.</p>
+        </a>
+
         <a href="/use-cases/legacy-migration" class="group block bg-white border border-gray-100 rounded-2xl p-5 hover:border-accent/30 hover:shadow-md transition-all duration-200">
           <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Workflow</p>
           <h3 class="text-base font-bold tracking-tight text-content mb-1.5 group-hover:text-accent transition-colors">Legacy Website Migration</h3>
@@ -505,7 +512,7 @@
           html2design reads the browser's <strong>computed CSS</strong> — the final, resolved style values after all cascades, variables, and preprocessors have run. It doesn't matter whether the styles came from Tailwind utility classes, Bootstrap components, CSS-in-JS like emotion, or plain CSS — the browser resolves them all to <code class="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">color: #1a1a1a</code> and <code class="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">font-size: 16px</code>. html2design reads those computed values and maps them to Figma fills, text properties, and frame dimensions.
         </p>
         <p class="text-content-muted leading-relaxed mt-3">
-          The workflow is always the same: open the page in Chrome, copy the <code class="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">outerHTML</code> of the element you want from DevTools, paste it into the html2design plugin in Figma, and click Convert.
+          For a public page, paste its URL into the plugin and choose Pixel or Editable mode. For localhost, authenticated pages, or a focused component, copy the rendered <code class="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">outerHTML</code> from DevTools and use manual import.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="/guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-dark transition-colors">

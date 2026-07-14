@@ -335,7 +335,7 @@
     </p>
 
     <div class="tip-box">
-      <p><strong>Developer note:</strong> The URL-based method sends your page's HTML to a third-party server for processing. The code-paste method (html2design) runs entirely within the Figma plugin context — no external server receives your markup. For internal tools or proprietary UI, this matters.</p>
+      <p><strong>Developer note:</strong> html2design now supports both methods. Manual paste/file import does not send the supplied markup to its remote URL renderer. Direct URL import sends the requested public URL through html2design infrastructure so a remote browser can capture it. Use manual import for internal or proprietary UI.</p>
     </div>
 
     <h2>Method B: How to Import a Website into Figma with html2design</h2>

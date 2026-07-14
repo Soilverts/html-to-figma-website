@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test:seo": "node scripts/seo-audit.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler pages deploy dist",
     "cf:dev": "wrangler pages dev ./dist"

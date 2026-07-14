@@ -130,6 +130,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
             >
               <button
                 onClick={() => handleScrollTo(id)}
+                tabIndex={isOpen ? 0 : -1}
                 className={`text-4xl font-light tracking-tight capitalize transition-colors ${
                   activeSection === id ? 'text-black font-normal' : 'text-gray-400'
                 }`}
@@ -153,6 +154,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
             >
               <a
                 href={href}
+                tabIndex={isOpen ? 0 : -1}
                 className="text-4xl font-light tracking-tight capitalize transition-colors text-gray-400 hover:text-black"
                 onClick={() => setIsOpen(false)}
               >

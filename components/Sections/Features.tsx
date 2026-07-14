@@ -24,7 +24,7 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-sm md:text-base text-gray-400 font-light max-w-xl text-center mt-6"
           >
-            HTML to Figma converts every DOM node into native, editable Figma elements — preserving CSS layout, typography, and styling with precision.
+            Editable mode maps browser content to native Figma layers. Pixel mode preserves the rendered appearance when visual fidelity matters most.
           </motion.p>
         </div>
 
@@ -37,7 +37,7 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
           >
             <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Native structures</h3>
             <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-              Layers aren't flattened. Every DOM node breathes as native Figma elements—editable text layers, crisp SVG paths, and properly grouped frames mirroring your exact structural intent.
+              Editable mode creates text, images, shapes, and grouped frames. Browser-only media and complex SVG regions may be rasterized when a native Figma equivalent is not reliable.
             </p>
           </motion.div>
 
@@ -50,7 +50,7 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
           >
             <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Pixel-accurate positioning</h3>
             <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
-              Your design stays true to the original. The engine reads computed CSS positions, sizes, and spacing from the browser and recreates them as precisely positioned Figma frames — preserving the visual layout exactly as rendered.
+              Pixel mode imports lossless raster tiles of the browser-rendered page. Editable mode reads computed positions and visual styles, then recreates them as best-effort Figma layers.
             </p>
           </motion.div>
         </div>

@@ -9,7 +9,7 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                     Design <br /><span className="text-gray-500">Waitless.</span>
                 </h2>
                 <p className="text-base md:text-xl text-content-muted max-w-2xl mx-auto mb-10 md:mb-12 font-light">
-                    Join 2,000+ designers and developers using HTML to Figma to bridge the gap between code and design.
+                    Start with 10 trial conversions. Import a public URL or supply HTML from your own workflow.
                 </p>
 
                 <div className="flex flex-col items-center gap-6">

@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const steps = [
-    { number: "01", title: "Input", desc: "Select an HTML file or paste raw HTML/CSS code directly into the Figma plugin." },
-    { number: "02", title: "Configure", desc: "Set the scale factor. Images and fonts are imported automatically." },
-    { number: "03", title: "Generate", desc: "Receive native, editable Figma layers \u2014 frames, text, vector paths, and image fills in under 2 minutes." },
+    { number: "01", title: "Input", desc: "Enter a public URL, select an HTML file, or paste rendered HTML directly into the Figma plugin." },
+    { number: "02", title: "Choose", desc: "For URL capture, choose lossless Pixel mode or best-effort Editable mode." },
+    { number: "03", title: "Review", desc: "Inspect the capture in Figma. Editable output can require cleanup on complex pages." },
 ];
 
 export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
@@ -33,7 +33,7 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
                     transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="text-lg md:text-2xl text-content-muted font-light leading-relaxed mb-12 md:mb-20"
                 >
-                    Skip the tedious setup. Copy raw HTML from your inspector or open a local file. The engine instantly repaints the browser DOM onto your canvas in one seamless motion.
+                    Paste a public URL for remote browser capture, or supply HTML from DevTools or a local file when the source is private or running on localhost.
                 </motion.p>
 
                 {/* Elegant subtle line animation */}
@@ -90,7 +90,7 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="text-xs text-gray-400 font-mono mt-12 md:mt-16"
                 >
-                    Manual page recreation: 2\u20134 hours &middot; HTML to Figma: under 2 minutes &middot; 98% time reduction
+                    Public URL: Pixel or Editable &middot; Private source: manual HTML import
                 </motion.p>
             </div>
         </section>

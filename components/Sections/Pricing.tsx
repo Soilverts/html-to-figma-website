@@ -21,7 +21,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         price="$12"
                         period="/mo"
                         description="Flexible for short sprints and single projects."
-                        features={["Unlimited Imports", "Typography Mirroring"]}
+                        features={["Manual HTML import", "50 URL captures per day", "Pixel and Editable URL modes"]}
                         checkoutUrl="https://api.html2design.com/v1/checkout/monthly"
                     />
                     <PriceCard
@@ -31,7 +31,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         period="/mo"
                         label="Most Popular"
                         description="Best for continuous design operations. Save 33%."
-                        features={["Unlimited Imports", "Typography Mirroring", "Priority Support"]}
+                        features={["Manual HTML import", "200 URL captures per day", "Pixel and Editable URL modes"]}
                         isPopular
                         checkoutUrl="https://api.html2design.com/v1/checkout/yearly"
                     />

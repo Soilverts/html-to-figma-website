@@ -38,6 +38,7 @@ const CTA = lazy(() =>
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
+  const [showBackground, setShowBackground] = useState(false);
   const isNavigatingRef = useRef(false);
   const sections = ['home', 'features', 'how-it-works', 'use-cases', 'pricing'];
 
@@ -48,6 +49,12 @@ const App: React.FC = () => {
       isNavigatingRef.current = false;
     }, 1000);
   };
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setTimeout(() => setShowBackground(true), 5000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   // Handle Keyboard Navigation
   useEffect(() => {
@@ -97,9 +104,11 @@ const App: React.FC = () => {
 
       {/* Background Visuals — lazy-loaded, Three.js deferred until idle */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
-        <Suspense fallback={null}>
-          <ParticleField />
-        </Suspense>
+        {showBackground && (
+          <Suspense fallback={null}>
+            <ParticleField />
+          </Suspense>
+        )}
       </div>
 
       {/* UI Overlay */}

@@ -192,7 +192,7 @@
         "name": "What is the difference between html2design and html.to.design?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design and html.to.design take fundamentally different approaches. html2design is a code-first Figma plugin: you paste raw HTML/CSS into the plugin and it generates native Figma layers — no Chrome extension, no live URL, works with localhost. html.to.design is a Chrome extension that screenshots and captures a live web page at a given URL. html2design wins for developer workflows (local builds, unreleased features, email templates). html.to.design wins for quick imports of already-deployed public pages."
+          "text": "html2design is a Figma plugin with both manual HTML and public URL import, without a Chrome extension. Its Pixel mode captures browser-rendered appearance; Editable mode creates best-effort native layers. Manual import also supports localhost and private source. html.to.design uses a browser extension workflow."
         }
       },
       {
@@ -431,7 +431,7 @@
         <span class="badge badge-best">#1 — Best Overall</span>
         <h3 style="margin-top:0.25rem">html2design — Code-First, No Extension</h3>
         <p>
-          <strong>html2design</strong> (available at <a href="https://html2design.com" target="_blank" rel="noopener noreferrer">html2design.com</a> and on Figma Community) is the only tool in this list that works entirely from pasted HTML and CSS — no Chrome extension, no live URL, no browser capture. You open the plugin inside Figma, paste your markup, and get fully editable native Figma layers.
+          <strong>html2design</strong> (available at <a href="https://html2design.com" target="_blank" rel="noopener noreferrer">html2design.com</a> and on Figma Community) supports pasted HTML and direct public URL capture without a Chrome extension. Pixel mode prioritizes fidelity; Editable mode creates native layers that may require cleanup.
         </p>
         <p>
           This matters most for developers. If you're working on a local dev build at <code>localhost:3000</code>, you can copy the rendered HTML from DevTools (right-click → Inspect → Copy outerHTML) and paste it straight into html2design. The same works for email templates, unreleased feature branches, design system components in Storybook — any HTML you can copy. No deployment required.
@@ -687,7 +687,7 @@
 
         <div class="faq-item" role="listitem">
           <p class="faq-question">What is the best alternative to html.to.design?</p>
-          <p class="faq-answer"><strong>html2design</strong> is the best alternative to html.to.design for most developer workflows. It's a native Figma plugin that works by pasting HTML/CSS directly — no Chrome extension required, works with localhost and private builds, and produces fully editable Auto Layout frames. html.to.design requires a publicly accessible URL and a browser extension. html2design is $12/month or $96/year.</p>
+          <p class="faq-answer"><strong>html2design</strong> is a native Figma plugin with manual HTML and public URL workflows. It requires no Chrome extension, supports localhost through manual import, and offers Pixel or Editable URL capture. It does not automatically create Auto Layout. html2design is $12/month or $96/year.</p>
         </div>
 
         <div class="faq-item" role="listitem">

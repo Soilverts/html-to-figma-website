@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "How much does HTML to Figma cost?",
-    answer: "HTML to Figma offers two pricing plans: a Monthly plan at $12/month for flexible short sprints, and a Yearly plan at $96/year ($8/month equivalent) which includes priority support. Both plans include unlimited imports and full typography preservation."
+    answer: "HTML to Figma costs $12/month or $96/year. Both plans include manual HTML import. Monthly includes up to 50 public URL captures per day; Yearly includes up to 200. The plugin includes 10 trial conversions before a license is required."
   },
   {
     question: "What are the main use cases for HTML to Figma?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Does HTML to Figma handle images and SVGs?",
-    answer: "Yes. HTML to Figma preserves high-resolution image fills and imports SVG elements as native Figma vector paths rather than rasterized images. This ensures your imported designs remain fully scalable and editable within Figma."
+    answer: "HTML to Figma preserves image fills and SVG content where supported. In URL capture, canvas, video, WebGL, and complex large SVG regions may be rasterized so visible content is not lost."
   },
   {
     question: "Can I convert React/JSX components to Figma?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     question: "How does HTML to Figma compare to URL-based tools like html.to.design?",
-    answer: "HTML to Figma takes a code-first approach: you paste HTML/CSS directly into the plugin, so no browser extension is required and no live URL is needed. This means it works with local development builds, unreleased components, email templates, and any HTML that isn't publicly accessible. URL-based tools are limited to pages that are already live on the web."
+    answer: "HTML to Figma supports both workflows without a browser extension. Paste HTML for localhost, private builds, and email templates, or enter a public URL and choose lossless Pixel mode or best-effort Editable mode."
   },
   {
     question: "Can I use HTML to Figma with VS Code or my IDE?",

@@ -81,7 +81,7 @@
   <main class="max-w-3xl mx-auto px-6 pt-8 pb-24">
     <header class="mb-16">
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Privacy Policy</h1>
-      <p class="text-content-muted text-lg">Last updated: March 5, 2026</p>
+      <p class="text-content-muted text-lg">Last updated: July 14, 2026</p>
     </header>
 
     <div class="prose prose-gray max-w-none space-y-10 text-[15px] leading-relaxed text-content-muted">
@@ -104,14 +104,16 @@
         <h3 class="text-base font-semibold text-content mb-2 mt-6">2.2 Information Collected Automatically</h3>
         <ul class="list-disc pl-6 space-y-2">
           <li><strong class="text-content">Usage Data:</strong> Our website is hosted on Cloudflare Pages. Cloudflare may collect standard web analytics data such as IP address, browser type, pages visited, and time spent. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Cloudflare's Privacy Policy</a>.</li>
-          <li><strong class="text-content">Plugin Data:</strong> The Figma plugin processes HTML/CSS content locally within your browser. We do not transmit, store, or have access to the HTML/CSS code you convert, nor the resulting Figma designs.</li>
+          <li><strong class="text-content">Manual Import Data:</strong> HTML supplied by paste or file is processed in the Figma plugin workflow and is not sent to our remote URL-rendering service. We do not access or store the resulting Figma designs.</li>
+          <li><strong class="text-content">URL Import Data:</strong> When you choose URL import, the public URL is sent through our Cloudflare Worker to a remote browser-rendering service. That service loads the page and returns rendered capture data to the plugin. Do not use URL import for confidential or private-network content.</li>
+          <li><strong class="text-content">License Data:</strong> The plugin contacts our license API to verify a license and enforce plan allowances. We may process the license key, plan, verification timestamps, and URL-capture usage counters.</li>
         </ul>
 
         <h3 class="text-base font-semibold text-content mb-2 mt-6">2.3 Information We Do NOT Collect</h3>
         <ul class="list-disc pl-6 space-y-2">
           <li>We do not collect personal data beyond what is described above.</li>
           <li>We do not use cookies for tracking or advertising purposes on html2design.com.</li>
-          <li>We do not access, store, or transmit the content of your Figma files.</li>
+          <li>We do not access or store the content of your Figma files.</li>
         </ul>
       </section>
 
@@ -153,8 +155,13 @@
               </tr>
               <tr class="border-b border-gray-100">
                 <td class="py-3 pr-4 font-medium text-content">Cloudflare</td>
-                <td class="py-3 pr-4">Website, license server &amp; CDN</td>
-                <td class="py-3">IP address, web analytics</td>
+                <td class="py-3 pr-4">Website, license API, URL routing &amp; CDN</td>
+                <td class="py-3">IP address, request metadata, public URL, web analytics</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 pr-4 font-medium text-content">Remote browser service</td>
+                <td class="py-3 pr-4">Render public URLs selected by the user</td>
+                <td class="py-3">Requested public URL and rendered page capture</td>
               </tr>
               <tr class="border-b border-gray-100">
                 <td class="py-3 pr-4 font-medium text-content">Figma</td>
@@ -173,8 +180,9 @@
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-content mb-4">6. Data Security & Local Processing</h2>
-        <p>HTML to Figma processes all HTML/CSS content <strong class="text-content">100% locally</strong> within your browser. Your code and generated Figma designs never leave your device — nothing is uploaded to or processed on our servers. We have no ability to access, view, or store any content you convert.</p>
+        <h2 class="text-xl font-bold text-content mb-4">6. Data Security &amp; Processing Modes</h2>
+        <p><strong class="text-content">Manual HTML, file, and paste import</strong> does not send the supplied markup to our remote URL-rendering service. <strong class="text-content">URL import</strong> uses our infrastructure and a remote browser because the requested public page must be loaded outside Figma. Localhost, private network addresses, and unsupported URL schemes are blocked.</p>
+        <p class="mt-4">Capture data is returned to the plugin to create the selected result. We use HTTPS for network communication and restrict access to the rendering service. No network service can provide an absolute security guarantee, so confidential content should use manual import rather than URL import.</p>
         <p class="mt-4">The only personal data we hold is your email address and transaction record from Waffo, which is the minimum required to manage your subscription. Our website and license server are served over HTTPS via Cloudflare.</p>
       </section>
 
