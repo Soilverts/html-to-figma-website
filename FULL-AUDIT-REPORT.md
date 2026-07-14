@@ -1,42 +1,43 @@
 # html2design SEO and GEO Audit
 
-Audit date: 2026-07-14  
-Domain: https://html2design.com  
-Business type: SaaS / Figma plugin  
-Scope: 92 HTML documents, 91 indexable canonicals, 94 sitemap URLs
+Audit date: 2026-07-14
+Domain: https://html2design.com
+Business type: SaaS / Figma plugin
+Scope: 93 HTML documents, 92 indexable canonicals, 95 sitemap URLs
 
 ## Executive summary
 
-SEO health score: **88/100**
+SEO health score: **96/100**
+GEO readiness score: **94/100**
 
-The site is crawlable and has broad topic coverage, but the product changed faster than its marketing content. The highest-risk issue was factual inconsistency: several authoritative pages still said html2design could not import URLs, all processing was local, payments used Figma billing, and imports were unrestricted. Those claims conflicted with the current product and weakened both user trust and AI citation quality.
+The site now presents the current two-workflow product consistently: manual HTML/file input for local or private sources, and public URL capture with Pixel or Editable modes. Technical discovery, metadata, schema, internal links, AI crawler access, and machine-readable product facts pass automated checks. A real browser-to-Figma case now documents output quality and limitations.
 
-This pass established a current product-fact layer, created a dedicated URL-to-Figma page, fixed broken internal links, corrected core commercial and privacy pages, and added an automated SEO regression test. No index-blocking errors remain in the local production build.
+The largest remaining risk is authority, not on-site implementation. No current Search Console, Bing Webmaster, Moz, GA4, CrUX, or DataForSEO connection was available, and Common Crawl did not yet include the domain in its Jan-Mar 2026 graph.
 
 ## Scores
 
 | Category | Score | Notes |
 |---|---:|---|
-| Technical SEO | 96 | Canonicals, robots, sitemap, JSON-LD parsing, and internal links pass automated checks |
-| Content quality | 78 | Core facts are corrected; 44 title/description length warnings remain across long-tail pages |
-| On-page SEO | 85 | New URL intent page is strong; legacy pages still need query-led metadata iteration |
-| Schema | 88 | Valid JSON-LD; unsupported HowTo markup and unverified aggregate ratings removed from the homepage |
-| Performance | 91 | URL page scores 99; homepage scores 82 due to its existing React/Framer/font architecture |
-| AI search readiness | 96 | Current crawler policies, llms files, clear answer blocks, and honest capability boundaries |
-| Images | 90 | Existing social images are present; future product pages need more real output examples |
+| Technical SEO | 100 | Canonicals, sitemap, robots, JSON-LD, internal links, and product facts pass |
+| Content quality | 95 | Metadata warnings are zero; stale core comparison and unsupported social-proof claims removed |
+| On-page SEO | 97 | URL/import/screenshot/editable intents form one linked cluster |
+| Schema | 98 | Visible, supportable WebPage, TechArticle, Breadcrumb, FAQ, and software facts only |
+| Performance | 95 | Homepage 87; URL page 99; output-quality page 99 |
+| Accessibility | 100 | Tested pages score 100 and mobile layouts have no horizontal overflow |
+| AI search readiness | 94 | Static facts, crawler policies, LLM files, answer blocks, and real evidence |
+| Off-site authority | Not scoreable | Insufficient backlink/API data and limited third-party mentions |
 
 ## Verified results
 
-### Automated site audit
+### Site audit
 
-- 92 HTML files parsed
-- 91 indexable canonical URLs found in the sitemap
-- 94 sitemap URLs
-- All JSON-LD blocks parse successfully
-- Required discovery files exist: robots, sitemap, llms, llms-full, AI manifest
-- Explicit policies exist for OAI-SearchBot, GPTBot, Claude-SearchBot, Claude-User, and PerplexityBot
-- Internal-link existence check passes
-- Product-fact regression patterns pass
+- 93 HTML files parsed
+- 92 indexable canonical URLs
+- 95 sitemap URLs
+- Zero title or description warnings
+- All JSON-LD parses
+- All checked internal links resolve to a local file
+- Product-fact and unsupported-claim regression rules pass
 - Production Vite build passes
 
 ### Lighthouse lab results
@@ -44,53 +45,41 @@ This pass established a current product-fact layer, created a dedicated URL-to-F
 | Page | Performance | Accessibility | Best Practices | SEO |
 |---|---:|---:|---:|---:|
 | `/use-cases/url-to-figma` | 99 | 100 | 100 | 100 |
-| `/` | 82 | 100 | 100 | 100 |
+| `/result-quality` | 99 | 100 | 100 | 100 |
+| `/` | 87 | 100 | 100 | 100 |
 
-URL page Core Web Vitals lab signals: LCP 2.0s, CLS 0, TBT 0ms.  
-Homepage lab signals: LCP 3.8s, CLS 0, TBT 0ms.
+Homepage FCP improved from 3.3s to 2.9s and LCP from 3.8s to 3.3s. Framer Motion and Three.js are no longer module-preloaded on the initial route. The output-quality page has FCP 1.5s, LCP 1.9s, CLS 0, and TBT 0ms.
 
-These are local Lighthouse lab measurements, not Chrome UX Report field data.
+These are local Lighthouse lab measurements, not CrUX field data.
 
-## Changes completed
+### Plugin reliability evidence
 
-- Added `npm run test:seo` as a commit-blocking quality gate.
-- Added canonical, sitemap, JSON-LD, AI crawler, stale-claim, and internal-link checks.
-- Corrected robots directives for current OpenAI, Anthropic, Perplexity, and Google behavior.
-- Rebuilt `llms.txt`, `llms-full.txt`, and the AI plugin manifest around the current two-workflow product.
-- Added `/use-cases/url-to-figma` with clear Pixel versus Editable guidance, quotas, privacy, and limitations.
-- Added the URL page to the sitemap and use-case hub.
-- Corrected homepage, pricing, FAQ, privacy, comparison, alternatives, About, Reviews, and the main website-import tutorial.
-- Removed unverified homepage rating markup and deprecated HowTo schema.
-- Fixed five broken internal links to nonexistent use-case pages.
-- Fixed homepage mobile-menu focus behavior and low-contrast text.
-- Deferred the decorative Three.js background until after the initial rendering window.
+- 75/75 unit tests passed across 14 files
+- 11/11 Playwright end-to-end tests passed
+- Statements 94.10%, branches 83.76%, functions 98.61%, lines 97.27%
+- TypeScript, ESLint, production build, Worker health, render-service health, missing-token rejection, and invalid-license rejection passed
+- Licensed URL capture was not run because `HTML2DESIGN_TEST_LICENSE` was unavailable
 
-## GEO assessment
+## Major changes
 
-Google does not require special GEO markup for AI Overviews or AI Mode. The useful work is conventional SEO: indexable text, accurate visible content, sound internal linking, and structured data that matches the page. `Google-Extended` does not control Google Search inclusion.
+- Added `/result-quality` with real original/import images, visible differences, test method, and coverage evidence.
+- Replaced fabricated/stale ratings and subscriber counts with an evidence-based review checklist and live Figma listing link.
+- Corrected comparison pages after Figma's official browser-extension capture changed the competitive landscape.
+- Removed unsupported `only`, ranking, universal fidelity, automatic Auto Layout, fixed conversion-time, and free-product claims from critical surfaces.
+- Rewrote 53 long metadata fields and fixed the audit parser that previously misread apostrophes.
+- Added unsupported-claim regression checks across all HTML and React copy.
+- Deferred below-fold React sections and removed Framer/Three module preloads from the initial route.
+- Added GEO, backlink, and distribution reports.
 
-For ChatGPT search, `OAI-SearchBot` is the important search crawler. `GPTBot` and user-triggered browsing have separate purposes. Anthropic and Perplexity also publish distinct crawler identities. The site now states explicit allow policies for search crawlers while preserving clear product documentation in normal server-rendered text.
+## Search evidence
 
-The new URL page is designed for passage-level citation: direct answers appear before supporting detail, limitations are explicit, and facts such as plan allowances and processing behavior can be quoted without surrounding context.
+The newest local Search Console export is dated 2026-05-26. It showed strong branded CTR but weak non-branded positions and CTR for `html to figma`, `convert html to figma`, and `import html into figma`. The new URL page and linked cluster target those workflows without creating duplicate thin pages.
 
-Primary references:
+Current public search confirms Figma now promotes an official Chrome extension for capturing webpages as editable layers. html2design differentiation is therefore the combined manual/private HTML and direct public URL workflows, plus explicit Pixel versus Editable output and documented limitations.
 
-- https://developers.google.com/search/docs/appearance/ai-features
-- https://platform.openai.com/docs/bots
-- https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
-- https://docs.perplexity.ai/guides/bots
+## Remaining dependencies
 
-## Remaining risks
-
-1. **Homepage performance:** the React entry bundle, Framer Motion, font loading, and delayed Three.js visual keep mobile lab performance below the new static URL page. A future architecture pass should server-render or statically render more homepage content and load animation code only after interaction or idle.
-2. **Metadata backlog:** 44 warnings remain for titles over 65 characters or descriptions over 165 characters. These are not indexing errors, but the highest-impression pages should be rewritten using current Search Console data.
-3. **Legacy editorial wording:** some long-tail framework and comparison pages correctly describe manual import as not requiring a live URL, but they predate direct URL capture. They should be updated when refreshed so the two workflows are consistently explained.
-4. **Field data unavailable:** the newest local Search Console export is from May 2026. July query, page, country, and device exports are needed before making broad CTR changes.
-5. **Authority evidence:** claims about ratings, user counts, conversion time, and market leadership should not return unless backed by a current verifiable source.
-
-## Data limitations
-
-- No current CrUX field data was available.
-- No authenticated live Search Console API session was available.
-- The audit used the local production build plus existing May 2026 Search Console exports.
-- Backlink and external brand-mention analysis were not included in this implementation pass.
+1. Export current Search Console query/page/country/device data and request recrawl after deployment.
+2. Connect Bing Webmaster and Moz or DataForSEO for a scoreable backlink profile.
+3. Publish the prepared Figma Community, YouTube, Reddit, and directory materials through owner-controlled accounts.
+4. Measure homepage CrUX field data before considering a static/SSR architecture migration.

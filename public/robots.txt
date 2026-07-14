@@ -44,7 +44,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Brave Search (used by Claude)
+# Brave Search
 User-agent: Brave
 Allow: /
 

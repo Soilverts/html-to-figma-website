@@ -39,12 +39,17 @@ const CTA = lazy(() =>
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [showBackground, setShowBackground] = useState(false);
+  const [showSections, setShowSections] = useState(false);
   const isNavigatingRef = useRef(false);
   const sections = ['home', 'features', 'how-it-works', 'use-cases', 'pricing'];
 
   const handleNavigate = (id: string) => {
+    setShowSections(true);
     setActiveSection(id);
     isNavigatingRef.current = true;
+    window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
     setTimeout(() => {
       isNavigatingRef.current = false;
     }, 1000);
@@ -54,6 +59,33 @@ const App: React.FC = () => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const timer = window.setTimeout(() => setShowBackground(true), 5000);
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      setShowSections(true);
+      const targetId = decodeURIComponent(window.location.hash.slice(1));
+      let frame = 0;
+      let attempts = 0;
+      const scrollToHash = () => {
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'auto' });
+          return;
+        }
+        if (attempts++ < 60) frame = window.requestAnimationFrame(scrollToHash);
+      };
+      frame = window.requestAnimationFrame(scrollToHash);
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const reveal = () => setShowSections(true);
+    const timer = window.setTimeout(reveal, 3000);
+    window.addEventListener('scroll', reveal, { once: true, passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('scroll', reveal);
+    };
   }, []);
 
   // Handle Keyboard Navigation
@@ -117,33 +149,37 @@ const App: React.FC = () => {
       {/* Content */}
       <main className="relative z-10">
         <Hero id="home" />
-        <Suspense fallback={<div className="h-screen" />}>
-          <Features id="features" />
-        </Suspense>
-        <Suspense fallback={<div className="h-screen" />}>
-          <HowItWorks id="how-it-works" />
-        </Suspense>
-        <Suspense fallback={<div className="h-64" />}>
-          <Stats id="stats" />
-        </Suspense>
-        <Suspense fallback={<div className="h-screen" />}>
-          <UseCases id="use-cases" />
-        </Suspense>
-        <Suspense fallback={<div className="h-screen" />}>
-          <Comparison id="comparison" />
-        </Suspense>
-        <Suspense fallback={<div className="h-screen" />}>
-          <Pricing id="pricing" />
-        </Suspense>
-        <Suspense fallback={<div className="h-64" />}>
-          <FAQ id="faq" />
-        </Suspense>
-        <Suspense fallback={<div className="h-64" />}>
-          <BlogPreview id="blog" />
-        </Suspense>
-        <Suspense fallback={<div className="h-64" />}>
-          <CTA id="cta" />
-        </Suspense>
+        {showSections && (
+          <>
+            <Suspense fallback={<div className="h-screen" />}>
+              <Features id="features" />
+            </Suspense>
+            <Suspense fallback={<div className="h-screen" />}>
+              <HowItWorks id="how-it-works" />
+            </Suspense>
+            <Suspense fallback={<div className="h-64" />}>
+              <Stats id="stats" />
+            </Suspense>
+            <Suspense fallback={<div className="h-screen" />}>
+              <UseCases id="use-cases" />
+            </Suspense>
+            <Suspense fallback={<div className="h-screen" />}>
+              <Comparison id="comparison" />
+            </Suspense>
+            <Suspense fallback={<div className="h-screen" />}>
+              <Pricing id="pricing" />
+            </Suspense>
+            <Suspense fallback={<div className="h-64" />}>
+              <FAQ id="faq" />
+            </Suspense>
+            <Suspense fallback={<div className="h-64" />}>
+              <BlogPreview id="blog" />
+            </Suspense>
+            <Suspense fallback={<div className="h-64" />}>
+              <CTA id="cta" />
+            </Suspense>
+          </>
+        )}
       </main>
     </div>
   );

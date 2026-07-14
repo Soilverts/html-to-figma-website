@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>HTML to Figma — Complete Step-by-Step Guide for 2026</title>
-  <meta name="description" content="Step-by-step guide to convert HTML and CSS — from any site or any framework's rendered output — into native, editable Figma layers in under 2 minutes." />
+  <meta name="description" content="Convert rendered HTML and CSS into editable Figma layers. Learn manual import, public URL capture, output modes, cleanup, privacy, and limitations." />
   <meta name="keywords" content="html to figma, convert html to figma, html to figma guide, html2design, figma import html, react to figma, vue to figma, tailwind to figma, design system migration figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/guide" />
   <meta property="og:title" content="HTML to Figma — Complete Step-by-Step Guide for 2026" />
-  <meta property="og:description" content="Step-by-step guide to convert HTML and CSS — from any site or any framework's rendered output — into native, editable Figma layers in under 2 minutes." />
+  <meta property="og:description" content="Learn manual HTML import, public URL capture, output modes, cleanup, privacy, and limitations." />
   <meta property="og:image" content="https://html2design.com/og/guide.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -248,7 +248,7 @@
         "name": "What are the alternatives to html2design for importing HTML into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The main alternatives are: (1) Screenshot tools like Figma's built-in 'Copy as PNG' or browser screenshot extensions — these produce flat, non-editable images. (2) Manual recreation — building Figma frames by hand from design specs. (3) Auto Layout generators — tools that try to infer layout from screenshots using AI, but with limited accuracy. html2design is the only method that reads the browser's computed DOM directly to produce real, editable Figma layers."
+          "text": "The main alternatives are flat screenshot capture, browser-extension workflows that create editable layers, AI-assisted screenshot reconstruction, and manual recreation. Compare whether the source is public or private, whether fidelity or editability matters more, and how much cleanup the result needs."
         }
       }
     ]
@@ -449,7 +449,7 @@
       <a href="/use-cases/v0-to-figma" class="framework-card">
         <div class="fw-label">AI Tool</div>
         <div class="fw-title">Vercel v0</div>
-        <div class="fw-desc">Convert v0's React + Tailwind output into pixel-accurate, editable Figma layers.</div>
+        <div class="fw-desc">Convert v0's React + Tailwind output into best-effort editable Figma layers.</div>
       </a>
     </div>
 
@@ -690,7 +690,7 @@
 
     <div class="faq-item">
       <h3>Does html2design work with Tailwind CSS?</h3>
-      <p>Yes. Tailwind utilities are resolved by the browser to exact CSS values before you copy the outerHTML. html2design receives the fully computed styles — pixel-perfect colours, spacing, and typography — regardless of the Tailwind version or JIT mode. See the <a href="/blog/tailwind-to-figma">Tailwind to Figma guide</a> for token extraction.</p>
+      <p>Tailwind utilities resolve to browser CSS before import. html2design can recreate supported colors, spacing, typography, and layout, but font metrics and browser-only effects can still differ in Figma. See the <a href="/blog/tailwind-to-figma">Tailwind to Figma guide</a> for token extraction.</p>
     </div>
 
     <div class="faq-item">
@@ -730,7 +730,7 @@
 
     <div class="faq-item">
       <h3>What are the alternatives to html2design?</h3>
-      <p>The main alternatives are screenshot-based browser extensions (non-editable output), manual recreation (very slow), and AI screenshot-to-Figma tools (approximate values). html2design is the only tool that reads the browser's computed DOM to produce exact, editable Figma layers. See the full <a href="/alternatives">alternatives comparison</a>.</p>
+      <p>The main alternatives are flat screenshot capture, browser-extension workflows that create editable layers, AI-assisted screenshot reconstruction, and manual recreation. Compare source access, output structure, fidelity, and cleanup needs. See the <a href="/alternatives">alternatives comparison</a> and the <a href="/result-quality">real output example</a>.</p>
     </div>
 
     <div class="faq-item">

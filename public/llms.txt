@@ -62,6 +62,7 @@ Canvas, WebGL, video, and complex large SVG content may be rasterized in URL cap
 
 - [Website](https://html2design.com/): Product overview
 - [URL to Figma](https://html2design.com/use-cases/url-to-figma): URL workflow, modes, limits, and troubleshooting
+- [Output quality](https://html2design.com/result-quality): Real browser-to-Figma comparison, visible differences, and current automated test coverage
 - [Guide](https://html2design.com/guide): Manual HTML workflow
 - [Pricing](https://html2design.com/pricing): Plans, trial, and URL allowances
 - [FAQ](https://html2design.com/faq): Product questions and limitations

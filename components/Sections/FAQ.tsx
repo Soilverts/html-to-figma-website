@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: "How does HTML to Figma work?",
-    answer: "HTML to Figma works in three simple steps: (1) Input \u2014 select an HTML file or paste raw HTML/CSS code, (2) Configure \u2014 set the scale factor (images and fonts import automatically), (3) Generate \u2014 receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles using Figma\u2019s Plugin API, then recreates them as clean frames, text layers, and vector shapes. The entire process takes under 2 minutes compared to 2\u20134 hours of manual recreation."
+    answer: "HTML to Figma accepts pasted/file HTML or a public URL. Public URL capture offers Pixel mode for a lossless visual reference and Editable mode for best-effort native layers. Manual input creates editable frames, text, shapes, and images from supplied markup. Review fonts, media, and complex effects after conversion."
   },
   {
     question: "Does HTML to Figma preserve CSS layouts like Flexbox?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "What are the main use cases for HTML to Figma?",
-    answer: "HTML to Figma is used for four primary workflows: (1) Legacy Migration \u2014 rebuild old websites in Figma without starting from scratch, saving an estimated 2\u20134 hours per page, (2) Developer Handoff \u2014 reverse engineer implementations back into design files, (3) Competitor Analysis \u2014 import competitor layouts to deconstruct design patterns and spacing systems, (4) Design Kickstart \u2014 import existing page layouts as a starting point for design iteration."
+    answer: "HTML to Figma is used for four primary workflows: (1) Legacy Migration \u2014 start from an imported website instead of redrawing every layer, (2) Developer Handoff \u2014 compare implementation with design files, (3) Competitor Analysis \u2014 inspect layout and visual patterns, (4) Design Kickstart \u2014 use an existing page as a starting point for iteration."
   },
   {
     question: "Does HTML to Figma handle images and SVGs?",

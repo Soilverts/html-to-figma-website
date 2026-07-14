@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>How to Keep Figma Designs and Code in Sync (2026 Guide)</title>
-  <meta name="description" content="Practical 2026 guide to eliminating design drift between Figma and your codebase. Covers root causes of drift, design token strategy, component libraries, automated visual regression, and the html2design reverse-sync loop that closes the Figma-code gap after every deploy." />
+  <meta name="description" content="Keep Figma and shipped code aligned with design tokens, component reviews, visual regression, and browser-output audits after deployment." />
   <meta name="keywords" content="figma code sync, design development alignment, design drift, keep figma in sync, figma design sync workflow, design code drift, figma sync guide, html2design sync" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -425,7 +425,7 @@
 
       <h2>How html2design Closes the Sync Loop</h2>
 
-      <p>The fundamental challenge with the code-to-design direction is tooling. Until recently, there was no practical way to get shipped HTML back into Figma as editable native layers — the only option was manual recreation, which is too slow to run every sprint.</p>
+      <p>The fundamental challenge with the code-to-design direction is tooling. Browser capture, DOM-based conversion, and manual recreation now offer different tradeoffs, but none creates a permanent two-way sync between shipped code and a production Figma system.</p>
 
       <p><a href="/">html2design</a> solves this by parsing HTML and computed CSS and generating native Figma layers that match the rendered output. A full page section that would take two to four hours to recreate manually imports in under sixty seconds. A component takes two to fifteen seconds. This makes the sprint-end sync ritual practical at any team size.</p>
 
@@ -520,12 +520,12 @@
     <!-- CTA -->
     <div class="mt-16 p-8 bg-gray-50 border border-gray-100 rounded-2xl text-center">
       <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-3">Close the sync loop</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3">Import your shipped HTML into Figma in seconds</h2>
-      <p class="text-sm text-content-muted mb-6 max-w-md mx-auto">Copy any component's outerHTML from DevTools, paste into html2design, and get native Figma layers that match production exactly. No URL required.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3">Import shipped HTML as a design starting point</h2>
+      <p class="text-sm text-content-muted mb-6 max-w-md mx-auto">Copy a component's outerHTML from DevTools, paste it into html2design, and review the resulting native Figma layers. No public URL is required for manual import.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-block bg-content text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-black transition-colors">
-        Get the free plugin &rarr;
+        Open the plugin &rarr;
       </a>
     </div>
 

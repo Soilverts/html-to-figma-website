@@ -24,6 +24,14 @@ export default defineConfig(({ mode }) => {
         }
       },
       build: {
+        modulePreload: {
+          resolveDependencies: (_filename, dependencies) =>
+            dependencies.filter(
+              (dependency) =>
+                !dependency.includes('vendor-framer') &&
+                !dependency.includes('vendor-three'),
+            ),
+        },
         rollupOptions: {
           output: {
             manualChunks: {

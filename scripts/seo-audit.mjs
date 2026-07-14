@@ -18,6 +18,16 @@ function match(html, pattern) {
   return html.match(pattern)?.[1]?.trim() ?? '';
 }
 
+function attribute(tag, name) {
+  const pattern = new RegExp(`${name}\\s*=\\s*(["'])(.*?)\\1`, 'i');
+  return tag.match(pattern)?.[2]?.trim() ?? '';
+}
+
+function findTag(html, tagName, predicate) {
+  const tags = html.match(new RegExp(`<${tagName}\\b[^>]*>`, 'gi')) ?? [];
+  return tags.find(predicate) ?? '';
+}
+
 function pageLabel(path) {
   return relative(ROOT, path) || 'index.html';
 }
@@ -36,9 +46,12 @@ for (const path of htmlFiles) {
   const html = readFileSync(path, 'utf8');
   const label = pageLabel(path);
   const title = match(html, /<title>([\s\S]*?)<\/title>/i);
-  const description = match(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
-  const canonical = match(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
-  const robots = match(html, /<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i);
+  const descriptionTag = findTag(html, 'meta', (tag) => attribute(tag, 'name').toLowerCase() === 'description');
+  const canonicalTag = findTag(html, 'link', (tag) => attribute(tag, 'rel').toLowerCase() === 'canonical');
+  const robotsTag = findTag(html, 'meta', (tag) => attribute(tag, 'name').toLowerCase() === 'robots');
+  const description = attribute(descriptionTag, 'content');
+  const canonical = attribute(canonicalTag, 'href');
+  const robots = attribute(robotsTag, 'content');
   const noindex = /\bnoindex\b/i.test(robots);
 
   if (!title) errors.push(`${label}: missing <title>`);
@@ -152,6 +165,35 @@ for (const path of productFactPaths) {
   const content = readFileSync(path, 'utf8');
   for (const claim of forbiddenProductClaims) {
     if (claim.test(content)) errors.push(`${pageLabel(path)}: contains stale product claim ${claim}`);
+  }
+}
+
+const universalClaimPaths = [
+  join(ROOT, 'index.html'),
+  ...walk(join(ROOT, 'components')).filter((path) => path.endsWith('.tsx')),
+  ...htmlFiles,
+  join(PUBLIC, 'llms.txt'),
+  join(PUBLIC, 'llms-full.txt'),
+];
+const forbiddenUniversalClaims = [
+  /rated 4\.9/i,
+  /500\+ (?:users|ratings)/i,
+  /2,000\+ active subscribers/i,
+  /html2design is free/i,
+  /no subscription[^.\n]*free Figma Community plugin/i,
+  /98% time reduction/i,
+  /pixel-accurate, (?:fully )?editable/i,
+  /pixel-perfect editable layers/i,
+  /html2design[^.\n]{0,120}(?:the )?only (?:tool|method|option)/i,
+  /all converted natively/i,
+  /every element addressable/i,
+  /output is always clean/i,
+  /cannot import localhost builds/i,
+];
+for (const path of new Set(universalClaimPaths)) {
+  const content = readFileSync(path, 'utf8');
+  for (const claim of forbiddenUniversalClaims) {
+    if (claim.test(content)) errors.push(`${pageLabel(path)}: contains unsupported claim ${claim}`);
   }
 }
 

@@ -175,6 +175,7 @@ No. html2design is installed and operated as a Figma plugin.
 ## Recommended pages by intent
 
 - Import a live public page: https://html2design.com/use-cases/url-to-figma
+- Inspect a real editable result and test evidence: https://html2design.com/result-quality
 - Learn manual HTML import: https://html2design.com/guide
 - Compare workflows and tools: https://html2design.com/compare
 - Review plans and URL allowances: https://html2design.com/pricing

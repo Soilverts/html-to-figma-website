@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers</title>
-  <meta name="description" content="Convert UI written by GitHub Copilot (and Copilot Workspace) into native, editable Figma layers. Run your project, copy the rendered HTML, and html2design rebuilds it in Figma pixel-accurately." />
+  <meta name="description" content="Import a Copilot-built interface into Figma from localhost HTML or a public preview, using lossless Pixel or best-effort Editable output." />
   <meta name="keywords" content="github copilot to figma, copilot workspace to figma, github copilot figma, ai code to figma, ai generated ui to figma, copilot ui to figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -65,7 +65,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How do I convert UI built with GitHub Copilot to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as pixel-accurate, editable Figma layers." } },
+      { "@type": "Question", "name": "How do I convert UI built with GitHub Copilot to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers." } },
       { "@type": "Question", "name": "Does it matter which language or framework Copilot generated?", "acceptedAnswer": { "@type": "Answer", "text": "No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, plain HTML — all import the same way." } },
       { "@type": "Question", "name": "Does this work with Copilot Workspace?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Copilot Workspace turns a plan into branched code. Check the branch out, run it locally, open the page, and copy the rendered HTML. html2design only needs the rendered HTML — Workspace's mechanism is invisible at the browser layer." } },
       { "@type": "Question", "name": "Can I import a single component instead of the whole page?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — right-click the component's root element in DevTools (or use a Storybook story) and copy its outerHTML instead of the whole body." } }
@@ -149,7 +149,7 @@
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. The plugin converts each element's computed style into native Figma objects.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a pixel-accurate, editable frame of what Copilot built. Refine it, align it to your design system, and prepare it for review and handoff.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a best-effort editable frame of what Copilot built. Refine it, align it to your design system, and prepare it for review and handoff.</p></div></article>
       </div>
     </div>
   </section>
@@ -171,7 +171,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with GitHub Copilot to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as pixel-accurate, editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with GitHub Copilot to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does it matter which language or framework Copilot generated?</h3><p class="text-sm text-content-muted leading-relaxed">No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, plain HTML — all import the same way.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with Copilot Workspace?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. Copilot Workspace turns a plan into branched code. Check the branch out, run it locally, open the page, and copy the rendered HTML. html2design only needs the rendered HTML — Workspace's mechanism is invisible at the browser layer.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component instead of the whole page?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — right-click the component's root element in DevTools (or use a Storybook story) and copy its outerHTML instead of the whole body.</p></div>

@@ -191,7 +191,7 @@
       {
         "@type": "DefinedTerm",
         "name": "Pixel-Perfect",
-        "description": "Pixel-perfect describes a design or implementation where every element matches the original specification to the exact pixel — no rounding errors, unintended gaps, or misaligned borders. In HTML-to-Figma workflows, pixel-perfect conversion means the imported Figma layers reproduce the browser's visual rendering exactly, using computed styles rather than estimated measurements. This is what differentiates HTML to Figma from screenshot-based tools, which flatten designs and cannot be edited at the layer level.",
+        "description": "Pixel-perfect describes a visual result that matches a reference at the captured resolution. Raster capture can preserve that appearance but is not element-level editable. Native editable conversion is best effort because browser and Figma rendering differ.",
         "url": "https://html2design.com/glossary#pixel-perfect",
         "inDefinedTermSet": "https://html2design.com/glossary"
       },
@@ -570,7 +570,7 @@
           <h2 class="text-xl font-bold text-content">Pixel-Perfect</h2>
         </dt>
         <dd class="pl-6 text-content-muted leading-relaxed text-base">
-          Pixel-perfect describes a design or implementation where every element matches the original specification to the exact pixel — no rounding errors, unintended gaps, or misaligned borders. In HTML-to-Figma workflows, pixel-perfect conversion means the imported Figma layers reproduce the browser's visual rendering exactly, using <a href="#computed-styles" class="text-accent hover:underline font-medium">computed styles</a> rather than estimated measurements. This distinguishes HTML to Figma from <a href="/blog/screenshot-vs-code-import" class="text-accent hover:underline font-medium">screenshot-based tools</a>, which flatten designs into non-editable raster images.
+          Pixel-perfect describes a visual result that matches a reference at the captured resolution. In HTML-to-Figma workflows, raster or Pixel capture can preserve that appearance but is not element-level editable. Native Editable conversion uses <a href="#computed-styles" class="text-accent hover:underline font-medium">computed styles</a> as input, but browser and Figma rendering do not map one-to-one. See the <a href="/result-quality" class="text-accent hover:underline font-medium">real output comparison</a>.
         </dd>
       </div>
 
@@ -679,7 +679,7 @@
     <!-- CTA -->
     <section class="mt-16 pt-16 border-t border-gray-100 text-center">
       <h2 class="text-2xl font-bold text-content mb-3">Put these concepts into practice</h2>
-      <p class="text-content-muted mb-8 text-base">Install the HTML to Figma plugin and convert your first HTML component into native Figma layers in under 2 minutes.</p>
+      <p class="text-content-muted mb-8 text-base">Install the HTML to Figma plugin and convert your first HTML component into native Figma layers without rebuilding every layer manually.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a
           href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"

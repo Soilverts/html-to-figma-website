@@ -256,7 +256,7 @@
       Top 5 HTML to Figma Tools Compared (2026)
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Five ways to get HTML and CSS into Figma. One gives you pixel-perfect editable layers. Two are built for the opposite direction. One produces a flat image. Here's the honest breakdown.
+      Five ways to move web output into Figma. Compare Pixel reference, best-effort editable layers, browser-tab capture, opposite-direction tools, and manual reconstruction.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
@@ -300,7 +300,7 @@
               <td class="winner">Native Figma layers</td>
               <td class="winner">Yes — text, fills, frames</td>
               <td class="winner">Yes</td>
-              <td>Free plugin</td>
+              <td>$12/mo or $96/yr</td>
             </tr>
             <tr>
               <td class="tool-col">Anima</td>
@@ -346,10 +346,10 @@
         <p><strong>What it does:</strong> A Figma plugin that converts HTML and CSS into native Figma layers. Paste any outerHTML from browser DevTools and get a Figma frame with real text layers, real fills, and a structured frame hierarchy mirroring the DOM.</p>
         <ul>
           <li>Works with any HTML/CSS — React, Vue, Angular, static sites, email templates</li>
-          <li>Reads computed CSS values from the browser — exact font, color, and spacing</li>
-          <li>Produces fully editable Figma layers — text, shapes, and fills</li>
+          <li>Reads rendered styles and recreates supported values in Figma</li>
+          <li>Produces editable text, frames, shapes, and image fills where supported</li>
           <li>Works offline, on localhost, and on auth-gated pages</li>
-          <li>No subscription — free Figma Community plugin</li>
+          <li>10 trial conversions, then $12/month or $96/year</li>
         </ul>
       </div>
 
@@ -471,7 +471,7 @@
 
       <h2>How to Get Started with html2design</h2>
       <ol>
-        <li>Install html2design from the <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">Figma Community</a> (free).</li>
+        <li>Install html2design from the <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">Figma Community</a> and use the trial on representative pages.</li>
         <li>Open your target page in Chrome or Firefox. Navigate to the section or component you want to import.</li>
         <li>Right-click the root element → Inspect → right-click the highlighted node in the Elements panel → Copy → Copy outerHTML.</li>
         <li>In Figma, go to Plugins → html2design. Paste your HTML into the panel and click Convert.</li>
@@ -483,12 +483,12 @@
       <div class="takeaway-box">
         <h2 style="margin-bottom:0.75rem;">Key Takeaways</h2>
         <ul>
-          <li><strong>html2design is the only dedicated HTML → Figma tool</strong> — it reads actual code and produces native Figma layers.</li>
+          <li><strong>html2design supports pasted/file HTML and direct public URLs</strong> — choose Pixel or Editable output based on the job.</li>
           <li><strong>Anima and Locofy are Figma → Code tools</strong> — they work in the opposite direction and are not designed for HTML import.</li>
           <li><strong>Screenshot import produces a flat image</strong> — not editable, not useful for design system work.</li>
-          <li><strong>Manual rebuild produces the cleanest output</strong> but takes 4–20× longer than import-based approaches.</li>
+          <li><strong>Manual rebuild provides the most control</strong> but requires more design work than a usable import.</li>
           <li><strong>The best workflow</strong> for most teams: import the bulk with html2design, manually refine the highest-priority components.</li>
-          <li><strong>html2design is free</strong> — a Figma Community plugin with no subscription required.</li>
+          <li><strong>html2design is paid after the trial</strong> — $12/month or $96/year, with daily allowances for public URL capture.</li>
         </ul>
       </div>
 

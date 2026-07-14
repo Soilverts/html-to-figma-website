@@ -240,14 +240,14 @@
         <!-- Card: html.to.design -->
         <div class="bg-white border border-gray-200 rounded-2xl p-6">
           <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">html.to.design</p>
-          <h3 class="text-xl font-bold tracking-tight mb-3">URL-based.<br />Needs extension.</h3>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Browser-tab<br />capture.</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Captures a live web page via a Chrome extension. Good for importing public sites you can open in your browser. Requires a publicly accessible URL.
+            Captures the page state rendered in a supported browser tab and transfers it to Figma. Access depends on extension permissions and the visible browser session.
           </p>
           <ul class="mt-4 space-y-1.5 text-sm text-content-muted">
             <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Requires Chrome extension</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Needs live, public URL</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Can't access localhost</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Local/private access is browser-dependent</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Captures the current rendered state</li>
             <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Free tier + paid plans</li>
           </ul>
         </div>
@@ -404,8 +404,8 @@
               <td class="py-4 px-4 text-center text-sm text-gray-500">$0 (your time)</td>
             </tr>
             <tr class="hover:bg-surface transition-colors">
-              <td class="py-4 px-5 font-medium text-content">Unlimited imports</td>
-              <td class="py-4 px-4 text-center text-2xl text-accent">✓</td>
+              <td class="py-4 px-5 font-medium text-content">Published usage limits</td>
+              <td class="py-4 px-4 text-center text-sm text-accent">Manual + daily URL allowance</td>
               <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Limits on free tier</td>
               <td class="py-4 px-4 text-center text-2xl text-accent">✓</td>
             </tr>
@@ -603,7 +603,7 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Ready to try the code-first approach?</h2>
       <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
-        Install HTML to Figma from the Figma Community and convert your first HTML/CSS in under 2 minutes.
+        Install HTML to Figma from the Figma Community and convert your first HTML/CSS without rebuilding every layer manually.
       </p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"

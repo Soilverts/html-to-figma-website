@@ -104,7 +104,7 @@
           "name": "How does HTML to Figma work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma works in three simple steps: (1) Input - select an HTML file or paste raw HTML/CSS code, (2) Configure - adjust scale and import settings, (3) Generate - receive native, editable Figma layers. The plugin parses your HTML structure and CSS styles using Figma's Plugin API (https://www.figma.com/plugin-docs/), then recreates them as clean vector rectangles, frames, and text layers in Figma. The entire process takes under 2 minutes compared to 2-4 hours of manual recreation."
+            "text": "HTML to Figma accepts pasted/file HTML or a public URL. Public URL capture offers Pixel mode for a lossless visual reference and Editable mode for best-effort native layers. Manual input creates editable frames, text, shapes, and images from supplied markup. Review fonts, media, and complex effects after conversion."
           }
         },
         {
@@ -349,7 +349,7 @@
     </script>
 
     <!-- JSON-LD: Product Schema for Figma Plugin (Rich Results: price, rating) -->
-    <!-- DEPLOY: Update aggregateRating values below with actual Figma Community data.
+    <!-- DEPLOY: Do not add AggregateRating without current, publicly verifiable Figma Community data.
          Retrieve from: https://www.figma.com/community/plugin/1591359863857120491/
          Fields to update: ratingValue (out of 5), ratingCount, reviewCount -->
     <script type="application/ld+json">
@@ -462,10 +462,10 @@
         <section>
           <h2>Key Features</h2>
           <ul>
-            <li><strong>Native Figma Layers</strong> - Creates real Figma frames, rectangles, and text layers — not flattened screenshots. Manual recreation of a single web page typically takes 2–4 hours; HTML to Figma reduces this to under 2 minutes.</li>
+            <li><strong>Native Figma Layers</strong> - Editable mode creates real Figma frames, rectangles, and text layers rather than a single flattened screenshot.</li>
             <li><strong>Typography Preserved</strong> - Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced per the <a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4 specification</a></li>
             <li><strong>Flexbox Layout Fidelity</strong> - Reads computed positions and sizes from <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox</a> layouts and recreates them as accurately positioned Figma frames</li>
-            <li><strong>Styling Fidelity</strong> - Colors, borders, shadows, gradients, and opacity carried over accurately. Supports 100% of CSS box-model properties</li>
+            <li><strong>Styling Fidelity</strong> - Supported colors, borders, shadows, gradients, and opacity are recreated where browser and Figma features map reliably.</li>
             <li><strong>Image Handling</strong> - High-res fills preserved at up to 2x resolution, SVGs imported as native vector paths</li>
             <li><strong>Structured Output</strong> - HTML hierarchy mapped to a clean, organized Figma layer tree with meaningful layer names</li>
           </ul>
@@ -483,7 +483,7 @@
         <section>
           <h2>Use Cases</h2>
           <ul>
-            <li><strong><a href="/use-cases/legacy-migration">Legacy Migration</a></strong> - Rebuild old sites without starting from scratch. Save 2–4 hours per page.</li>
+            <li><strong><a href="/use-cases/legacy-migration">Legacy Migration</a></strong> - Use an imported page as a starting point instead of rebuilding every layer from scratch.</li>
             <li><strong><a href="/use-cases/developer-handoff">Developer Handoff</a></strong> - Reverse engineer implementation back to design for design-development alignment.</li>
             <li><strong>Competitor Analysis</strong> - Import competitor layouts to deconstruct patterns</li>
             <li><strong>Design Kickstart</strong> - Import existing page layouts as a starting point for design iteration</li>
@@ -492,7 +492,7 @@
 
         <section>
           <h2>HTML to Figma vs. Alternatives</h2>
-          <p>According to design workflow research, manual recreation of HTML layouts in Figma takes 2–4 hours per page and introduces human error in spacing, typography, and color values. Screenshot-based capture tools produce flat, non-editable images that cannot be iterated on. HTML to Figma delivers fully editable, layered Figma files with preserved typography and styling in under 2 minutes — a 98% time reduction.</p>
+          <p>Manual recreation provides full control but requires design work. Flat screenshots preserve appearance but not editable elements. html2design offers a lossless Pixel reference or best-effort editable layers; complex pages can still require cleanup.</p>
           <table>
             <thead><tr><th>Feature</th><th>HTML to Figma</th><th>Manual Rebuild</th><th>Screenshot Tools</th></tr></thead>
             <tbody>

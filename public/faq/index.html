@@ -73,7 +73,7 @@
         "name": "How do I install the HTML to Figma plugin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Open Figma and go to the Community tab (or visit the Figma Community page for html2design). Search for 'html2design' or 'HTML to Figma'. Click 'Install'. The plugin then appears under Main Menu → Plugins → html2design inside any Figma file. Installation takes under 30 seconds."
+          "text": "Open the Figma Community page for html2design and run the plugin. It then appears in Figma's plugin menu for supported files and accounts."
         }
       },
       {
@@ -153,7 +153,7 @@
         "name": "Can I convert HTML email templates with html2design?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. MJML, HTML email, and table-based email layouts can be imported. Open the email template in a browser (most email preview tools and browser-based email clients render standard HTML), copy the outerHTML, and paste into html2design. The resulting Figma layers preserve the table-based layout, fonts, and colors exactly as rendered in the browser."
+          "text": "Yes. MJML output, HTML email, and table-based layouts can be supplied through manual HTML import. Review the Figma result because email-client rendering, unavailable fonts, remote images, and table layout can differ from the browser preview."
         }
       },
       {
@@ -201,7 +201,7 @@
         "name": "How large can the HTML be that I import?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "There is no hard character limit on pasted HTML. A single component converts in 2–5 seconds. A full page section takes 8–15 seconds. A dense full page (entire body element of a complex app) typically takes 20–60 seconds. For best performance on large pages, import sections or individual components rather than the entire page at once."
+          "text": "Practical limits depend on DOM size, nesting, images, SVGs, fonts, and Figma API work. For large or complex pages, import representative sections or components and review them before attempting the entire body."
         }
       },
       {
@@ -233,7 +233,7 @@
         "name": "When should I use html2design instead of rebuilding manually?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use html2design whenever the production HTML and CSS already exist and you need an accurate Figma representation. A component that takes 20–40 minutes to recreate manually converts in under 30 seconds with html2design. A full page section that would take 2–4 hours converts in under a minute. The main cases are: documenting existing UI, building a design system from a live codebase, keeping Figma files in sync with production, and reviewing code changes as a designer."
+          "text": "Use html2design when production HTML already exists and an import plus cleanup requires less work than rebuilding. Common cases include documenting existing UI, starting a design-system audit, comparing production with Figma, and reviewing code changes. Test representative sources because conversion time and cleanup vary by page."
         }
       },
       {
@@ -354,7 +354,7 @@
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
             <p>Open Figma and go to the Community tab (or visit the Figma Community page for html2design). Search for <strong>html2design</strong> or <strong>HTML to Figma</strong>. Click <strong>Install</strong>.</p>
-            <p>The plugin then appears under Main Menu → Plugins → html2design inside any Figma file. Installation takes under 30 seconds.</p>
+            <p>The plugin then appears in Figma's plugin menu for supported files and accounts.</p>
           </div>
         </details>
 
@@ -477,7 +477,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
-            <p>Yes. MJML, HTML email, and table-based email layouts can be imported. Open the email template in a browser (most email preview tools render standard HTML), copy the outerHTML, and paste into html2design. The resulting Figma layers preserve the table-based layout, fonts, and colors exactly as rendered in the browser.</p>
+            <p>Yes. MJML output, HTML email, and table-based layouts can be supplied through manual HTML import. Review the Figma result because email-client rendering, unavailable fonts, remote images, and table layout can differ from the browser preview.</p>
           </div>
         </details>
 
@@ -554,7 +554,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
-            <p>There is no hard character limit on pasted HTML. A single component converts in 2–5 seconds. A full page section takes 8–15 seconds. A dense full page (entire body element of a complex app) typically takes 20–60 seconds. For best performance on large pages, import sections or individual components rather than the entire page at once.</p>
+            <p>Practical limits depend on DOM size, nesting, images, SVGs, fonts, and Figma API work. For large or complex pages, import representative sections or components and review them before attempting the entire body.</p>
           </div>
         </details>
 
@@ -610,7 +610,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p>Use html2design whenever the production HTML and CSS already exist and you need an accurate Figma representation. A component that takes 20–40 minutes to recreate manually converts in under 30 seconds with html2design. A full page section that would take 2–4 hours converts in under a minute.</p>
+            <p>Use html2design when production HTML already exists and an import plus cleanup requires less work than rebuilding. Conversion time and cleanup vary by DOM size, fonts, images, effects, and desired output.</p>
             <p>Main use cases: documenting existing UI, building a design system from a live codebase, keeping Figma files in sync with production, and reviewing code changes as a designer.</p>
           </div>
         </details>

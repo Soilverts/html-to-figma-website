@@ -97,12 +97,12 @@
       {
         "@type": "Question",
         "name": "Can I import a website into Figma for free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Some Chrome-extension-based tools offer free tiers with limitations (watermarks, page count caps). html2design, the code-paste approach, starts at $12/month with unlimited imports. There is no permanently free option that produces clean, editable Figma layers without significant trade-offs." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Some browser-extension tools offer free tiers or usage limits. html2design includes 10 trial conversions, then costs $12/month or $96/year. URL capture is limited to 50 per day on Monthly and 200 per day on Yearly; manual HTML import uses a separate workflow." }
       },
       {
         "@type": "Question",
         "name": "Can I import a localhost website into Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — but only with the code-paste method. Open your local dev server in a browser, use DevTools to copy the HTML of the element you want, then paste it into the html2design plugin in Figma. Chrome extension tools that work from a URL cannot reach localhost because extensions don't have access to local network addresses." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. With html2design, open the local page, copy rendered HTML from DevTools, and paste it into the Figma plugin. Some browser-extension workflows may also capture localhost when the extension has permission; support varies by browser and product." }
       },
       {
         "@type": "Question",
@@ -331,7 +331,7 @@
     </div>
 
     <p>
-      The right choice depends on what you're importing. If you need a live, public marketing page and prefer a one-click workflow, a Chrome extension may be faster. For everything else — localhost, staging environments, auth-gated dashboards, email templates, or component-level imports — the code-paste approach is the only option that consistently works.
+      The right choice depends on what you're importing. A browser extension can be fast when the source is already rendered in a supported browser tab. Manual HTML import gives you a more explicit path for localhost, component fixtures, email templates, private builds, and sources you do not want a remote URL service to fetch.
     </p>
 
     <div class="tip-box">
@@ -475,8 +475,8 @@
       For a detailed breakdown of html2design vs. URL-based tools like html.to.design vs. manual recreation, see our <a href="/compare">full comparison page</a>. The short version:
     </p>
     <ul>
-      <li><strong>html2design (code-paste)</strong>: works everywhere, including localhost and auth-gated pages. No browser extension. Code-first.</li>
-      <li><strong>URL-based tools</strong>: convenient for live public pages. Require a Chrome extension. Can't reach localhost or private URLs.</li>
+      <li><strong>html2design</strong>: manual paste/file input for local or private HTML, plus direct public URL capture in Pixel or Editable mode. No browser extension.</li>
+      <li><strong>Browser-extension tools</strong>: convenient when the desired state is already visible in a supported browser tab. Capabilities vary by extension and plan.</li>
       <li><strong>Manual recreation</strong>: full control, no automation. Only practical for simple components or when pixel-perfect accuracy matters more than speed.</li>
     </ul>
 
@@ -484,7 +484,7 @@
 
     <h3>Can I import a website into Figma for free?</h3>
     <p>
-      Some Chrome extension tools have free tiers with watermarks or import limits. html2design starts at <strong>$12/month</strong> with unlimited imports and no watermarks.
+      Some browser-extension tools have free tiers or usage limits. html2design includes 10 trial conversions, then starts at <strong>$12/month</strong>. URL captures have daily plan allowances; manual HTML import uses a separate workflow.
     </p>
 
     <h3>Can I import a localhost website into Figma?</h3>
@@ -504,18 +504,18 @@
 
     <h3>How long does it take to import a page?</h3>
     <p>
-      A single component converts in <strong>2–5 seconds</strong>. A full section takes under 10 seconds. A dense full-page layout may take 20–30 seconds. This compares to <strong>2–4 hours</strong> of manual Figma recreation — a 100–500× speed improvement for large pages.
+      Conversion time depends on DOM size, remote assets, fonts, SVG complexity, and the selected mode. Test representative pages in the trial instead of relying on a universal timing claim.
     </p>
 
     <!-- GEO: Key Takeaways — frequently extracted as AI snippets -->
     <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;margin-top:1.5rem;">
       <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
       <ul style="list-style:none;padding:0;margin:0;">
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Figma has no built-in website import — you need a plugin (Chrome extension or code-paste)</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Code-paste (html2design) is the only method that works with <strong>localhost, staging, and auth-gated pages</strong></li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Conversion time: <strong>2–5 seconds</strong> per component vs. 2–4 hours manually</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Preserves: typography, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Flexbox</a> layout, colors, borders, <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">SVG vectors</a>, and JS-rendered content</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Pricing: <strong>$12/month</strong> or <strong>$96/year</strong> — no extension install, no watermarks, unlimited imports</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Figma offers an official browser extension, and third-party plugins provide additional browser-tab, URL, HTML, and screenshot workflows</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design manual input is designed for <strong>localhost, staging, and authenticated pages</strong> whose rendered HTML you can copy</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Pixel mode favors visual reference; Editable mode favors native layers and may require cleanup</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Commonly preserved: text, layout, colors, borders, images, and SVG content where browser and Figma features map reliably</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Pricing: <strong>$12/month</strong> or <strong>$96/year</strong>; public URL capture has daily plan allowances</li>
       </ul>
     </div>
 

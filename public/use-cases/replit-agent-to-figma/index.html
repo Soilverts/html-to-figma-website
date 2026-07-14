@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Replit Agent to Figma — Turn Replit-Built Apps Into Editable Figma</title>
-  <meta name="description" content="Convert UI built by Replit Agent into native, editable Figma layers. Open the Replit preview, copy the rendered HTML, and html2design rebuilds it as native Figma layers." />
+  <title>Replit Agent to Figma: Import a Rendered App</title>
+  <meta name="description" content="Import a Replit Agent interface into Figma from a public preview or copied HTML, with lossless Pixel or best-effort Editable output." />
   <meta name="keywords" content="replit agent to figma, replit to figma, ai agent to figma, replit ai to figma, ai app to figma, ai generated ui to figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -65,7 +65,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How do I convert a Replit Agent app to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the Replit project Agent built, open its webview (ideally in a new browser tab), open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Replit's running app transfers as pixel-accurate, editable Figma layers." } },
+      { "@type": "Question", "name": "How do I convert a Replit Agent app to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the Replit project Agent built, open its webview (ideally in a new browser tab), open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Replit's running app transfers as best-effort editable Figma layers." } },
       { "@type": "Question", "name": "Doesn't Replit Agent go the other direction (Figma → app)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Replit has tools to import Figma designs into a Replit app. This page covers the reverse: when you want what Replit Agent built shown in Figma for design refinement." } },
       { "@type": "Question", "name": "Do I need to deploy the Replit project first?", "acceptedAnswer": { "@type": "Answer", "text": "No. Copy the rendered HTML directly from Replit's in-browser webview — no deployment or public URL required." } },
       { "@type": "Question", "name": "Are the imported designs editable in Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot." } }
@@ -149,7 +149,7 @@
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. Each element's computed style becomes a native Figma object.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a pixel-accurate, editable frame of the Replit Agent app. Refine, align it to your design system, and prep for review and handoff.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a best-effort editable frame of the Replit Agent app. Refine, align it to your design system, and prep for review and handoff.</p></div></article>
       </div>
     </div>
   </section>
@@ -171,7 +171,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Replit Agent app to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the Replit project Agent built, open its webview (ideally in a new browser tab), open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Replit's running app transfers as pixel-accurate, editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Replit Agent app to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the Replit project Agent built, open its webview (ideally in a new browser tab), open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. Replit's running app transfers as best-effort editable Figma layers.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Doesn't Replit Agent go the other direction (Figma → app)?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — Replit has tools to import Figma designs into a Replit app. This page covers the reverse: when you want what Replit Agent built shown in Figma for design refinement.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Do I need to deploy the Replit project first?</h3><p class="text-sm text-content-muted leading-relaxed">No. Copy the rendered HTML directly from Replit's in-browser webview — no deployment or public URL required.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>

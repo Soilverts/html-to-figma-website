@@ -23,13 +23,14 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
 
                 <footer className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-gray-200 w-full flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-500 font-mono tracking-widest uppercase">
                     <p>&copy; 2026 HTML to Figma.</p>
-                    <div className="flex gap-8 mt-6 md:mt-0">
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-6 md:mt-0">
                         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Figma Plugin</a>
                         <a href="/guide" className="hover:text-accent transition-colors">Guide</a>
                         <a href="/blog" className="hover:text-accent transition-colors">Blog</a>
                         <a href="/glossary" className="hover:text-accent transition-colors">Glossary</a>
                         <a href="/alternatives" className="hover:text-accent transition-colors">Alternatives</a>
                         <a href="/compare" className="hover:text-accent transition-colors">Compare</a>
+                        <a href="/result-quality" className="hover:text-accent transition-colors">Output Quality</a>
                         <a href="/changelog" className="hover:text-accent transition-colors">Changelog</a>
                         <a href="/about" className="hover:text-accent transition-colors">About</a>
                         <a href="/privacy" className="hover:text-accent transition-colors">Privacy</a>

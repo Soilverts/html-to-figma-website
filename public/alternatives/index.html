@@ -108,7 +108,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "html.to.design",
-        "description": "Chrome extension that captures live web pages by URL. Requires a publicly accessible URL and an installed browser extension. Free tier + paid plans.",
+        "description": "Browser-extension workflow for capturing a rendered webpage as editable Figma layers. Free and paid options may vary over time.",
         "url": "https://html2design.com/alternatives"
       },
       {
@@ -428,7 +428,7 @@
 
       <!-- 1: html2design -->
       <div class="tool-card recommended" id="html2design">
-        <span class="badge badge-best">#1 — Best Overall</span>
+        <span class="badge badge-best">Hybrid Input Option</span>
         <h3 style="margin-top:0.25rem">html2design — Code-First, No Extension</h3>
         <p>
           <strong>html2design</strong> (available at <a href="https://html2design.com" target="_blank" rel="noopener noreferrer">html2design.com</a> and on Figma Community) supports pasted HTML and direct public URL capture without a Chrome extension. Pixel mode prioritizes fidelity; Editable mode creates native layers that may require cleanup.
@@ -437,7 +437,7 @@
           This matters most for developers. If you're working on a local dev build at <code>localhost:3000</code>, you can copy the rendered HTML from DevTools (right-click → Inspect → Copy outerHTML) and paste it straight into html2design. The same works for email templates, unreleased feature branches, design system components in Storybook — any HTML you can copy. No deployment required.
         </p>
         <p>
-          The output quality is the best we tested. Flexbox auto-layouts are recreated as Figma's native Auto Layout frames. Typography, fills, border-radius, box shadows, and spacing are all transferred accurately. The result is a clean Figma layer tree your design team can actually edit — not a screenshot, not a flattened group, not a visual approximation.
+          Editable mode recreates typography, fills, border radii, shadows, spacing, and layout as native Figma nodes where the source maps reliably to the Figma API. It uses positioned frames rather than automatically generating Auto Layout. Complex effects, unavailable fonts, and remote media can require cleanup; see the <a href="/result-quality">documented output example</a> before choosing a workflow.
         </p>
         <div class="pros-cons">
           <div class="pros-cons-col pros-col">
@@ -445,8 +445,8 @@
             <ul>
               <li>No Chrome extension required</li>
               <li>Works with localhost and private builds</li>
-              <li>Native Figma Auto Layout output</li>
-              <li>Flexbox + CSS Grid preserved</li>
+              <li>Native text, frames, shapes, and images</li>
+              <li>Flexbox + CSS Grid appearance preserved as positioned layers</li>
               <li>Email template support</li>
               <li>Runs inside Figma — no tab-switching</li>
             </ul>
@@ -473,7 +473,7 @@
           <strong>html.to.design</strong> is the most well-known tool in this space and the most frequent search people are trying to find an alternative to. It works as a Chrome extension: install it, navigate to a live web page, click the extension, and it imports that page into Figma as a layer tree.
         </p>
         <p>
-          The key limitation is hard: it requires a publicly accessible URL. You cannot use it on localhost without extra tunneling setup (ngrok, etc.), and you cannot use it on internal tools, staging environments behind auth, or unreleased features. The Chrome extension adds browser context to every design session, which some teams prefer to avoid.
+          Because its browser extension captures the currently rendered tab, access depends on the extension's current permissions and the state visible in that browser. This can be convenient for live pages and may also work with local or authenticated pages. Check its current official documentation for supported browsers, modes, and plan limits.
         </p>
         <p>
           The output quality is good for public pages. It does a visual capture combined with layer detection, so the result is typically an accurate-looking but sometimes shallowly structured layer tree. Complex Flexbox layouts may be interpreted differently than their computed CSS positions.
@@ -492,8 +492,8 @@
             <h4>Cons</h4>
             <ul>
               <li>Requires Chrome extension install</li>
-              <li>Needs a publicly accessible URL</li>
-              <li>Cannot import localhost builds</li>
+              <li>Requires a supported browser extension workflow</li>
+              <li>Local access depends on browser permissions and page state</li>
               <li>Cannot import auth-protected pages</li>
               <li>Less predictable layer structure</li>
             </ul>
@@ -632,7 +632,7 @@
             <ul>
               <li>Free — no subscriptions</li>
               <li>Full control over every layer</li>
-              <li>Output is always clean</li>
+              <li>Designer controls the final layer structure</li>
               <li>Works for anything you can see</li>
             </ul>
           </div>
@@ -712,7 +712,7 @@
 
         <div class="faq-item" role="listitem">
           <p class="faq-question">What's the difference between html2design and html.to.design?</p>
-          <p class="faq-answer">html2design is code-first: paste raw HTML/CSS into the plugin inside Figma and get editable layers. No Chrome extension. Works with localhost, private builds, email templates. html.to.design is URL-first: install a Chrome extension, navigate to a live public page, capture it. The core difference is that html2design works with any HTML you can copy, while html.to.design requires a publicly accessible URL. Full comparison: <a href="/compare">html2design vs html.to.design</a>.</p>
+          <p class="faq-answer">html2design supports two inputs inside one Figma plugin: pasted/file HTML for private or local sources, and direct public URL capture with Pixel or Editable output. html.to.design uses a browser-extension capture workflow. Compare the input method, privacy path, output mode, and current plan limits rather than assuming either tool fits every page. Full comparison: <a href="/compare/html2design-vs-html-to-design">html2design vs html.to.design</a>.</p>
         </div>
 
       </div>

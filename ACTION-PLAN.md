@@ -2,47 +2,43 @@
 
 Updated: 2026-07-14
 
-## Critical - completed
+## Completed in code
 
-- [x] Establish current product facts for manual and URL import.
-- [x] Correct privacy language for remote URL rendering.
-- [x] Correct Waffo payment and URL allowance language.
-- [x] Remove stale no-URL claims from core commercial pages.
-- [x] Add current AI search crawler policies.
-- [x] Fix broken internal links.
-- [x] Add automated SEO and product-fact regression checks.
+- [x] Establish current facts for manual HTML and public URL import.
+- [x] Correct pricing, quotas, Waffo, privacy, and remote rendering language.
+- [x] Add and validate AI search crawler policies, `llms.txt`, and `llms-full.txt`.
+- [x] Add `/use-cases/url-to-figma` and its import/screenshot/editable topic cluster.
+- [x] Add `/result-quality` with original evidence images and honest limitations.
+- [x] Replace stale ratings/subscriber claims with an evaluation checklist.
+- [x] Remove unsupported ranking, uniqueness, timing, accuracy, and automatic Auto Layout claims from critical pages.
+- [x] Rewrite all flagged titles and descriptions; current warning count is zero.
+- [x] Fix internal links, schema, mobile focus, contrast, and homepage loading architecture.
+- [x] Reach 100 Accessibility, Best Practices, and SEO on tested pages.
+- [x] Reach 99 Performance on the URL and output-quality pages.
+- [x] Raise homepage Performance from 82 to 87 without removing the interactive design.
+- [x] Add SEO and unsupported-claim regression tests.
+- [x] Verify plugin unit coverage above 80% and pass all available E2E tests.
+- [x] Prepare GEO distribution and backlink reports.
 
-## High priority - completed
+## Owner-account actions
 
-- [x] Publish a dedicated `/use-cases/url-to-figma` intent page.
-- [x] Add the page to sitemap, use-case hub, homepage fallback, and LLM documents.
-- [x] Explain Pixel versus Editable output without absolute fidelity claims.
-- [x] Remove deprecated HowTo schema and unverified homepage ratings.
-- [x] Reach Lighthouse 100 for accessibility, best practices, and SEO on the new page.
-- [x] Reach Lighthouse 100 for accessibility, best practices, and SEO on the homepage.
+- [ ] Export fresh Search Console query, page, country, and device data.
+- [ ] Request indexing/recrawl for the homepage, URL page, output-quality page, reviews page, and updated comparison pages.
+- [ ] Update the Figma Community listing using `GEO-DISTRIBUTION-KIT.md`.
+- [ ] Publish the real fixture demo on YouTube and record the URL.
+- [ ] Submit accurate profiles to Product Hunt and AlternativeTo after duplicate checks.
+- [ ] Post the disclosed Reddit test discussion only where it directly answers an existing community need.
 
-## High priority - next
+## Data connections
 
-- [ ] Export fresh July 2026 Search Console query, page, country, and device data.
-- [ ] Rewrite metadata for high-impression pages using current CTR and position data.
-- [ ] Refresh `/compare`, `/alternatives`, and direct competitor pages with dated, sourced testing.
-- [ ] Add real before/after output images for Pixel and Editable URL capture.
-- [ ] Request indexing for the URL page after production deployment.
+- [ ] Add Bing Webmaster API credentials.
+- [ ] Add a Moz API key or DataForSEO for backlink scoring and competitor gaps.
+- [ ] Add Search Console and GA4 credentials for automated reporting.
 
-## Medium priority
+## Ongoing gates
 
-- [ ] Reduce homepage mobile LCP by statically rendering more above-fold content.
-- [ ] Split or defer Framer Motion from the homepage critical path.
-- [ ] Reassess font loading and remove unnecessary font subsets from the initial request graph.
-- [ ] Review the remaining 44 metadata length warnings in order of Search Console impressions.
-- [ ] Add author/reviewer identity and update dates to high-value tutorials.
-- [ ] Build query clusters around `URL to Figma`, `import webpage into Figma`, `website screenshot to Figma`, and `editable website to Figma` without creating duplicate thin pages.
-
-## Ongoing quality gates
-
-- [ ] Run `npm run test:seo` on every site change.
-- [ ] Run `npm run build` before push.
-- [ ] Re-run Lighthouse on homepage and new intent pages after visual changes.
-- [ ] Verify production robots, sitemap, llms files, canonical, and status codes after deployment.
-- [ ] Never publish user counts, ratings, timing, or accuracy claims without a dated source.
+- [ ] Run `npm run test:seo` and `npm run build` before every deploy.
+- [ ] Run Lighthouse after homepage or media changes.
+- [ ] Re-run plugin coverage and E2E before publishing conversion-quality metrics.
+- [ ] Never publish user counts, ratings, fixed timing, or universal accuracy without dated evidence.
 - [ ] Keep manual-import privacy statements separate from URL-import data flow.
