@@ -337,6 +337,7 @@
       Before touching Figma, spend an hour auditing your CSS for the raw material of your design system. You're looking for three categories of tokens:
     </p>
 
+    <div class="overflow-x-auto">
     <table class="token-table">
       <thead>
         <tr>
@@ -368,6 +369,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <p>
       If your codebase uses CSS custom properties on <code>:root</code>, you can extract the full token list in seconds by opening DevTools, selecting the <code>&lt;html&gt;</code> element, and scanning the Computed panel. Every <code>--</code> prefixed variable is a potential Figma Variable.
@@ -491,6 +493,7 @@ Badge / Warning</div>
       If your codebase doesn't use CSS custom properties, you can still extract tokens from the computed CSS values in DevTools. Here's what to look for across common CSS frameworks:
     </p>
 
+    <div class="overflow-x-auto">
     <table class="token-table">
       <thead>
         <tr>
@@ -522,6 +525,7 @@ Badge / Warning</div>
         </tr>
       </tbody>
     </table>
+    </div>
 
     <h2>When to Migrate vs. Build from Scratch</h2>
     <p>

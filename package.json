@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:static-css": "tailwindcss -i ./index.css -o ./public/static.css --minify",
+    "build": "npm run build:static-css && vite build",
     "test:seo": "node scripts/seo-audit.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler pages deploy dist",

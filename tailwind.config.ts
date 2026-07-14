@@ -3,8 +3,10 @@ import type { Config } from 'tailwindcss'
 export default {
   content: [
     './index.html',
+    './public/**/*.html',
     './**/*.{js,ts,jsx,tsx}',
     '!./node_modules/**',
+    '!./dist/**',
   ],
   theme: {
     extend: {
