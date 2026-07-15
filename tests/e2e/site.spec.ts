@@ -1,0 +1,167 @@
+import { expect, test, type Page } from '@playwright/test';
+
+const FIGMA_PLUGIN = 'https://www.figma.com/community/plugin/1591359863857120491/';
+
+function watchPageErrors(page: Page) {
+  const errors: string[] = [];
+  page.on('console', (message: { type: () => string; text: () => string }) => {
+    if (message.type() === 'error') errors.push(message.text());
+  });
+  page.on('pageerror', (error: Error) => errors.push(error.message));
+  return errors;
+}
+
+async function expectNoHorizontalOverflow(page: Page) {
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+}
+
+test('homepage exposes the install path and loads sections on intent', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const errors = watchPageErrors(page);
+  const requestedUrls: string[] = [];
+  page.on('request', (request) => requestedUrls.push(request.url()));
+
+  const response = await page.goto('/');
+  expect(response?.status()).toBe(200);
+  await expect(page.getByRole('heading', { level: 1, name: 'Code to Design.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open in Figma' })).toHaveAttribute('href', new RegExp(`^${FIGMA_PLUGIN}`));
+  await expect(page.getByRole('link', { name: 'See real results' })).toHaveAttribute('href', '/result-quality');
+  expect(await page.locator('h1').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
+  expect(await page.locator('link[rel="preload"][href="/index.css"]').count()).toBe(0);
+  expect(requestedUrls.some((url) => url.endsWith('/index.css'))).toBe(false);
+  expect(requestedUrls.some((url) => /\/assets\/(?:proxy|vendor-framer)-/.test(url))).toBe(false);
+  await expectNoHorizontalOverflow(page);
+
+  await page.mouse.wheel(0, 700);
+  await expect(page.locator('#features')).toBeAttached();
+  await expect(page.locator('#features h2')).toContainText('Retain the soul of your architecture.');
+  await expect.poll(() => requestedUrls.some((url) => /\/assets\/(?:proxy|vendor-framer)-/.test(url))).toBe(true);
+  expect(errors).toEqual([]);
+});
+
+test('mobile homepage keeps the hero and menu usable', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  const errors = watchPageErrors(page);
+  await page.goto('/');
+
+  const headingBox = await page.getByRole('heading', { level: 1 }).boundingBox();
+  expect(headingBox?.y).toBeLessThan(300);
+  const menu = page.getByRole('button', { name: 'Open menu' });
+  const menuBox = await menu.boundingBox();
+  expect(menuBox?.width).toBeGreaterThanOrEqual(48);
+  expect(menuBox?.height).toBeGreaterThanOrEqual(48);
+
+  await menu.click();
+  await expect(page.getByRole('button', { name: 'Close menu' })).toHaveAttribute('aria-expanded', 'true');
+  expect(await page.locator('body').evaluate((element) => getComputedStyle(element).overflow)).toBe('hidden');
+  await expect(page.getByRole('link', { name: 'Guide', exact: true })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
+  await expectNoHorizontalOverflow(page);
+  expect(errors).toEqual([]);
+});
+
+test('key static pages have canonical metadata, responsive headers, and no runtime errors', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  const routes = [
+    '/use-cases/url-to-figma',
+    '/pricing',
+    '/result-quality',
+    '/use-cases/bolt-to-figma',
+    '/use-cases/lovable-to-figma',
+  ];
+
+  for (const route of routes) {
+    const errors = watchPageErrors(page);
+    const response = await page.goto(route);
+    expect(response?.status(), route).toBe(200);
+    expect(await page.title(), route).not.toBe('');
+    await expect(page.locator('link[rel="canonical"]'), route).toHaveAttribute('href', `https://html2design.com${route}`);
+    expect(await page.locator('h1').count(), route).toBe(1);
+    await expect(page.locator('h1'), route).toBeVisible();
+    const headerCta = page.locator('body > nav.fixed a').last();
+    const ctaBox = await headerCta.boundingBox();
+    expect(ctaBox?.height, route).toBeGreaterThanOrEqual(48);
+    expect(await headerCta.evaluate((element) => getComputedStyle(element).whiteSpace), route).toBe('nowrap');
+    const mobileHiddenLinks = page.locator('body > nav.fixed a.hidden');
+    for (let index = 0; index < await mobileHiddenLinks.count(); index += 1) {
+      await expect(mobileHiddenLinks.nth(index), route).toBeHidden();
+    }
+    await expectNoHorizontalOverflow(page);
+    expect(errors, route).toEqual([]);
+  }
+});
+
+test('result evidence and sitemap remain inspectable', async ({ page, request }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/result-quality');
+  await page.getByRole('link', { name: /View the side-by-side evidence/ }).click();
+  await expect(page.locator('#side-by-side')).toBeInViewport();
+
+  const images = page.locator('#side-by-side img');
+  await expect(images).toHaveCount(2);
+  for (let index = 0; index < 2; index += 1) {
+    const image = images.nth(index);
+    await expect(image).toBeVisible();
+    const dimensions = await image.evaluate((element: HTMLImageElement) => ({
+      complete: element.complete,
+      naturalWidth: element.naturalWidth,
+      renderedWidth: element.getBoundingClientRect().width,
+    }));
+    expect(dimensions.complete).toBe(true);
+    expect(dimensions.naturalWidth).toBe(1425);
+    expect(dimensions.renderedWidth).toBeLessThanOrEqual(dimensions.naturalWidth);
+  }
+
+  const sitemapResponse = await request.get('/sitemap.xml');
+  expect(sitemapResponse.status()).toBe(200);
+  const sitemap = await sitemapResponse.text();
+  expect([...sitemap.matchAll(/<loc>/g)]).toHaveLength(92);
+  expect(sitemap).not.toMatch(/<(?:priority|changefreq)>/);
+  expect(sitemap).not.toContain('/llms-full.txt');
+  expect(sitemap).not.toContain('/.well-known/ai-plugin.json');
+  expect(sitemap).not.toContain('/blog/feed.xml');
+});
+
+test('comparison and current-product pages stay factual and responsive', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  const routes = [
+    '/alternatives',
+    '/compare',
+    '/compare/html2design-vs-html-to-design',
+    '/compare/html2design-vs-anima',
+    '/blog/figma-ai-2026',
+    '/blog/html-to-figma-tools-compared',
+  ];
+
+  for (const route of routes) {
+    const errors = watchPageErrors(page);
+    const response = await page.goto(route);
+    expect(response?.status(), route).toBe(200);
+    await expect(page.locator('h1'), route).toBeVisible();
+    await expectNoHorizontalOverflow(page);
+    expect(errors, route).toEqual([]);
+  }
+
+  await page.goto('/alternatives');
+  await expect(page.getByRole('heading', { name: '7 HTML to Figma Alternatives to Evaluate' })).toBeVisible();
+
+  await page.goto('/compare/html2design-vs-anima');
+  await expect(page.getByRole('link', { name: /Anima's official announcement/ })).toHaveAttribute(
+    'href',
+    /animaapp\.com\/blog\/ai-design-en\/figma-import-image-html-code-to-layers/,
+  );
+  await expect(page.locator('body')).not.toContainText('Anima is not designed for importing HTML');
+
+  await page.goto('/blog/figma-ai-2026');
+  await expect(page.getByRole('link', { name: 'official Chrome extension' })).toHaveAttribute(
+    'href',
+    'https://www.figma.com/downloads/chrome-extension/',
+  );
+  await expect(page.locator('body')).not.toContainText('Figma AI cannot import');
+
+  await page.goto('/blog/html-to-figma-tools-compared');
+  await expect(page.getByRole('heading', { name: /Tool 3: Figma Chrome Extension/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Tool 5: html.to.design/ })).toBeVisible();
+});

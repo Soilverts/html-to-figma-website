@@ -140,7 +140,7 @@
         "name": "What is the best Figma plugin for Tailwind?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design works from rendered browser output, which means it captures Tailwind's actual compiled result — not just class names — including your customized theme values, dark mode variants, and arbitrary values. Other plugins that read Tailwind config files directly don't account for responsive overrides, JIT-generated values, or custom utility plugins. For converting real Tailwind UIs to Figma, the rendered-output approach gives the most accurate visual fidelity."
+          "text": "html2design works from rendered browser output rather than class names alone. Browser-computed values can include customized themes, active variants, and arbitrary values. The resulting Figma layers remain best effort because fonts, effects, and responsive behavior do not map one-to-one."
         }
       },
       {
@@ -278,7 +278,7 @@
     </p>
 
     <div class="tip-box">
-      <p><strong>Key insight:</strong> Tailwind class names are never in the HTML that reaches Figma. By the time a browser paints a Tailwind component, all utility classes have been compiled to computed CSS values. html2design reads those resolved values — the exact hex color, the exact pixel spacing — not the class names. Your custom theme is captured automatically.</p>
+      <p><strong>Key insight:</strong> Tailwind utilities resolve to browser CSS before conversion. html2design uses computed visual values rather than interpreting utility class names, but the resulting Figma nodes still need review for fonts, effects, layout, and token mapping.</p>
     </div>
 
     <h2>Phase 1: Extract Your Tailwind Design Tokens into Figma</h2>
@@ -533,7 +533,7 @@ npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch
 
     <h3>What is the best Figma plugin for Tailwind?</h3>
     <p>
-      html2design captures Tailwind's actual compiled output — including your customized theme, arbitrary values, and multi-level utility overrides — not just the default config. For converting real Tailwind UIs (with all your custom design decisions applied) to editable Figma layers, rendered-output conversion gives the most accurate results. For a feature-by-feature breakdown, see our <a href="/compare">comparison page</a>.
+      html2design reads the active rendered output — including customized theme values, arbitrary values, and applied utility overrides — rather than the default config alone. Review the editable result for font substitution, effects, and responsive behavior. For workflow tradeoffs, see the <a href="/compare">comparison page</a>.
     </p>
 
     <h3>How do I keep Figma in sync with Tailwind changes?</h3>

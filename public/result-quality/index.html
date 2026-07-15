@@ -21,18 +21,20 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": "https://html2design.com/result-quality#article",
     "headline": "HTML to Figma Result Quality: Real Storefront Example",
     "description": "A source-to-Figma comparison using a real editorial jewelry storefront.",
     "url": "https://html2design.com/result-quality",
     "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
-    "author": { "@type": "Organization", "name": "html2design" },
+    "dateModified": "2026-07-15",
+    "author": { "@type": "Organization", "name": "html2design", "url": "https://html2design.com/about" },
     "publisher": { "@type": "Organization", "name": "html2design", "url": "https://html2design.com/" },
     "image": [
       "https://html2design.com/results/linea/browser-viewport.png",
       "https://html2design.com/results/linea/figma-editable-full.png"
     ],
-    "about": { "@type": "SoftwareApplication", "name": "HTML to Figma", "applicationCategory": "DesignApplication" }
+    "about": { "@type": "SoftwareApplication", "@id": "https://html2design.com/#software", "name": "HTML to Figma", "applicationCategory": "DesignApplication" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://html2design.com/result-quality#webpage" }
   }
   </script>
   <script type="application/ld+json">
@@ -62,19 +64,21 @@
   </nav>
 
   <main>
-    <header class="max-w-5xl mx-auto px-6 pt-28 pb-14">
+    <header class="max-w-5xl mx-auto px-6 pt-28 pb-10 md:pb-14">
       <nav aria-label="Breadcrumb" class="text-xs font-mono text-gray-600 mb-10"><a href="/" class="hover:text-accent">Home</a><span class="mx-2">/</span><span>Result Quality</span></nav>
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-5">Real URL import · Editable mode</p>
       <h1 class="text-4xl md:text-6xl font-black leading-tight max-w-4xl mb-6">A real storefront, before and after HTML to Figma</h1>
       <p class="text-xl text-content-muted leading-relaxed max-w-3xl">This comparison uses LINEA, an image-led jewelry storefront with editorial photography, product grids, typography, and long-form sections. The Figma result below came from the same page at the same desktop viewport, with no visual retouching.</p>
       <div class="mt-7 flex flex-wrap gap-6 text-sm text-content-muted">
         <span>Captured July 14, 2026</span>
+        <span>Reviewed July 15, 2026</span>
         <span>1425 px desktop viewport</span>
         <span>90 editable layers</span>
       </div>
+      <a href="#side-by-side" class="mt-7 min-h-11 inline-flex items-center font-semibold text-sm underline underline-offset-4 hover:text-accent">View the side-by-side evidence &darr;</a>
     </header>
 
-    <section class="border-y border-gray-100 bg-gray-50">
+    <section id="side-by-side" class="scroll-mt-20 border-y border-gray-100 bg-gray-50">
       <div class="max-w-6xl mx-auto px-6 py-14 md:py-16">
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <figure>
@@ -94,6 +98,13 @@
         </div>
         <p class="mt-9 max-w-3xl text-sm leading-relaxed text-content-muted">The previews use 1425 px source images and are displayed below their native width. The previous page enlarged sub-300 px thumbnails, which caused the blur; these previews do not upscale.</p>
       </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-14 border-b border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Evidence summary</p>
+      <h2 class="text-3xl font-black mb-5">How closely does Editable mode match the browser?</h2>
+      <p class="max-w-4xl text-content-muted leading-relaxed">Editable mode produced a recognizable, workable Figma version of this LINEA storefront, but it was not browser-identical. At the same 1425 px desktop viewport, the import contained 90 selectable layers, including all 16 visible image layers and 57 text layers. The two-image hero, product grid, section order, borders, backgrounds, and editorial photography remained visually aligned enough for inspection and redesign work. The comparison also exposes real differences: an available Figma font replaced the browser font and changed some navigation wrapping, image-fill crops shifted slightly, and responsive rules, links, hover states, and carousel behavior were not transferred. Pixel mode is the better choice when the captured appearance must remain lossless as a raster reference. Editable mode is a best-effort conversion for changing copy, images, colors, and layout. The side-by-side previews above are unretouched, and both full-page source files are linked for inspection.</p>
+      <p class="mt-5 text-sm text-content-muted">Method: same page, same viewport, no visual retouching. Reviewed by html2design engineering.</p>
     </section>
 
     <section class="max-w-5xl mx-auto px-6 py-16">

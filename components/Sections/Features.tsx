@@ -48,7 +48,7 @@ export const Features: React.FC<{ id: string }> = ({ id }) => {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="md:mt-32"
           >
-            <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Pixel-accurate positioning</h3>
+            <h3 className="text-xl md:text-3xl font-medium tracking-tight mb-4 md:mb-6">Measured positioning</h3>
             <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
               Pixel mode imports lossless raster tiles of the browser-rendered page. Editable mode reads computed positions and visual styles, then recreates them as best-effort Figma layers.
             </p>

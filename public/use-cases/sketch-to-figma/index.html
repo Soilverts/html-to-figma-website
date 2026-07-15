@@ -144,7 +144,7 @@
         "name": "How do I prioritize which components to migrate first?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Start with the components referenced most often in handoffs: buttons, inputs, cards, modals, navigation, and typography. These are the components designers need in Figma to create new screens. Import the high-frequency components first, establish them as Figma components, and then work through the full inventory. Each import takes under two minutes, so a 20-component core library can be migrated in under an hour."
+          "text": "Start with the components referenced most often in handoffs: buttons, inputs, cards, modals, navigation, and typography. Import the high-frequency components first, establish the useful results as Figma components, and then work through the inventory incrementally. Each source component requires its own import and review."
         }
       }
     ]
@@ -294,8 +294,8 @@
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
               Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
-              and click <strong class="text-content">Generate</strong>. In seconds you will have a native Figma frame
-              with editable layers, accurate fills, correct typography, and a layer structure that mirrors the component.
+              and click <strong class="text-content">Generate</strong>. The plugin creates a native Figma frame
+              with editable nodes for supported content; compare fills, typography, and structure with the browser.
             </p>
             <p>
               Repeat for each variant — primary button, secondary button, destructive button, disabled state.
@@ -455,9 +455,9 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">How long does a full design system migration take?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Each component import takes under two minutes. A core library of 20 components
-            (buttons, inputs, cards, modals, navigation, badges, typography) takes under an hour.
-            A full 100-component design system can be migrated incrementally over a few days.
+            Each source component requires its own import and review. Start with a focused core library
+            (buttons, inputs, cards, modals, navigation, badges, typography), validate the mapping quality,
+            and migrate the rest incrementally rather than promising a fixed schedule.
           </p>
         </div>
 
@@ -531,7 +531,7 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Start your Sketch to Figma migration today</h2>
       <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
-        Install html2design from the Figma Community — free to try. Import your first component in under two minutes.
+        Install html2design from the Figma Community — free to try. Import your first component in a few manual steps.
       </p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"

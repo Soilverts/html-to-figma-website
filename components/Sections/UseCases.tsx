@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const cases = [
-    { title: "Claude → Figma", desc: "Claude Artifacts and Claude Code generate real HTML & CSS. Bring that AI-designed UI into Figma as native, editable layers in seconds.", href: "/use-cases/claude-to-figma" },
+    { title: "Claude → Figma", desc: "Claude Artifacts and Claude Code generate browser-rendered HTML and CSS. Import supported content as best-effort editable Figma layers.", href: "/use-cases/claude-to-figma" },
     { title: "v0 → Figma", desc: "Vercel v0 ships React + Tailwind. Convert the rendered output into best-effort editable Figma layers — no manual rebuild.", href: "/use-cases/v0-to-figma" },
     { title: "Legacy Migration", desc: "Rebuild old websites in Figma without starting from scratch. Import existing layouts and iterate directly in your design tool.", href: "/use-cases/legacy-migration" },
     { title: "Developer Handoff", desc: "Reverse engineer live implementations back into editable design files. Bridge the gap between what was coded and what was designed.", href: "/use-cases/developer-handoff" },

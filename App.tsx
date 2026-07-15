@@ -2,10 +2,7 @@ import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { Hero } from './components/Sections/Hero';
 import { Navigation } from './components/Layout/Navigation';
 
-// Lazy-load Three.js particle field — biggest LCP/TBT win
-const ParticleField = lazy(() =>
-  import('./components/Visuals/ParticleField').then(m => ({ default: m.ParticleField }))
-);
+const sections = ['home', 'features', 'how-it-works', 'use-cases', 'pricing'];
 
 // Lazy-load all below-fold sections — defers framer-motion from initial bundle
 const Features = lazy(() =>
@@ -38,10 +35,8 @@ const CTA = lazy(() =>
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
-  const [showBackground, setShowBackground] = useState(false);
   const [showSections, setShowSections] = useState(false);
   const isNavigatingRef = useRef(false);
-  const sections = ['home', 'features', 'how-it-works', 'use-cases', 'pricing'];
 
   const handleNavigate = (id: string) => {
     setShowSections(true);
@@ -54,12 +49,6 @@ const App: React.FC = () => {
       isNavigatingRef.current = false;
     }, 1000);
   };
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setTimeout(() => setShowBackground(true), 5000);
-    return () => window.clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -80,11 +69,15 @@ const App: React.FC = () => {
     }
 
     const reveal = () => setShowSections(true);
-    const timer = window.setTimeout(reveal, 3000);
     window.addEventListener('scroll', reveal, { once: true, passive: true });
+    window.addEventListener('wheel', reveal, { once: true, passive: true });
+    window.addEventListener('pointerdown', reveal, { once: true, passive: true });
+    window.addEventListener('touchstart', reveal, { once: true, passive: true });
     return () => {
-      window.clearTimeout(timer);
       window.removeEventListener('scroll', reveal);
+      window.removeEventListener('wheel', reveal);
+      window.removeEventListener('pointerdown', reveal);
+      window.removeEventListener('touchstart', reveal);
     };
   }, []);
 
@@ -95,9 +88,11 @@ const App: React.FC = () => {
 
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
         e.preventDefault();
+        setShowSections(true);
         const nextIndex = Math.min(currentIndex + 1, sections.length - 1);
-        const nextSection = document.getElementById(sections[nextIndex]);
-        nextSection?.scrollIntoView({ behavior: 'smooth' });
+        window.setTimeout(() => {
+          document.getElementById(sections[nextIndex])?.scrollIntoView({ behavior: 'smooth' });
+        }, 0);
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
         e.preventDefault();
         const prevIndex = Math.max(currentIndex - 1, 0);
@@ -133,15 +128,6 @@ const App: React.FC = () => {
 
   return (
     <div className="relative w-full min-h-screen bg-white text-content selection:bg-accent/10 selection:text-accent overflow-hidden font-sans">
-
-      {/* Background Visuals — lazy-loaded, Three.js deferred until idle */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
-        {showBackground && (
-          <Suspense fallback={null}>
-            <ParticleField />
-          </Suspense>
-        )}
-      </div>
 
       {/* UI Overlay */}
       <Navigation activeSection={activeSection} sections={sections} onNavigate={handleNavigate} />

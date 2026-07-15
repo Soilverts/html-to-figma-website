@@ -218,7 +218,7 @@
         The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
         native Figma frames. Remix routes use standard React rendering — so inline styles, CSS Modules, Tailwind classes,
         or any other styling approach is resolved to computed CSS values by the browser before the plugin reads them.
-        The result in Figma is a pixel-accurate representation of your Remix route with real content from your database or API.
+        The result is a best-effort editable representation of your Remix route with the content rendered by your database or API.
       </p>
     </div>
   </section>
@@ -314,7 +314,7 @@
             </p>
             <p>
               When the route changes, re-import: run the dev server, navigate to the route, copy the
-              updated outerHTML, paste into html2design. The workflow takes under two minutes.
+              updated outerHTML, and paste it into html2design. Repeat these manual steps whenever the route changes.
             </p>
           </div>
         </article>

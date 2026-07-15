@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About HTML to Figma — The Code-to-Design Plugin" />
-  <meta name="twitter:description" content="HTML to Figma converts HTML and CSS code into native, editable Figma layers in seconds." />
+  <meta name="twitter:description" content="HTML to Figma imports supplied HTML or a public URL as best-effort editable layers or a lossless Pixel reference." />
   <meta name="twitter:image" content="https://html2design.com/og/about.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -271,7 +271,7 @@
             <h3 class="font-semibold text-content mb-1">The plugin reads computed styles</h3>
             <p class="text-sm text-content-muted leading-relaxed">
               HTML to Figma renders the HTML in a sandbox and reads the browser's computed styles —
-              exact pixel positions, fonts, colors, and spacing — from every DOM node.
+              computed positions, fonts, colors, and spacing from supported rendered nodes.
             </p>
           </div>
         </li>
@@ -282,7 +282,7 @@
             <h3 class="font-semibold text-content mb-1">Native Figma layers appear</h3>
             <p class="text-sm text-content-muted leading-relaxed">
               Each element becomes a real Figma layer — frames, text nodes, rectangles, and vectors.
-              Fully editable, properly named, and ready to use in your design system.
+              Supported nodes remain editable and can be reorganized into your design system.
             </p>
           </div>
         </li>
@@ -309,13 +309,13 @@
       <h2 id="why-heading" class="text-2xl font-bold text-content mb-6">Why teams use HTML to Figma</h2>
       <div class="space-y-4 text-content-muted leading-relaxed text-base">
         <p>
-          Design and engineering teams often face the same problem: the design file falls out of sync with the production codebase. Designers work from an outdated Figma file, developers implement changes, and nobody has time to manually keep both in sync. HTML to Figma closes that gap by generating an accurate Figma representation of any HTML component in seconds.
+          Design and engineering teams often face the same problem: the design file falls out of sync with the production codebase. HTML to Figma provides a measured, editable starting point from rendered HTML, which teams can compare with production and refine in Figma.
         </p>
         <p>
           Unlike screenshot-based tools that flatten your UI into an uneditable image, HTML to Figma creates real Figma layers. Text remains editable text. Colors become Figma fill styles. Spacing becomes actual frame padding. The result is a design file you can work with, not just reference.
         </p>
         <p>
-          The plugin is framework-agnostic. Whether your codebase uses React, Vue, Angular, Svelte, Tailwind CSS, Bootstrap, or plain HTML, the conversion process is identical: paste the component HTML, run the plugin, and receive native Figma layers that match the browser's rendered output exactly.
+          The plugin is framework-agnostic. Whether your codebase uses React, Vue, Angular, Svelte, Tailwind CSS, Bootstrap, or plain HTML, the workflow is the same: paste the rendered component HTML, run the plugin, and compare the resulting native Figma layers with the browser source. Fonts, media, effects, and complex layout can still require cleanup.
         </p>
       </div>
     </section>

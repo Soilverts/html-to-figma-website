@@ -15,8 +15,8 @@
   <!-- Open Graph (article) -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/blog/figma-ai-2026" />
-  <meta property="og:title" content="Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits" />
-  <meta property="og:description" content="Figma AI can generate layouts and rename layers — but it can't import your existing HTML. Here's what Figma AI actually does in 2026 and where html2design fills the gap." />
+  <meta property="og:title" content="Figma AI and Web Capture in 2026: Where html2design Fits" />
+  <meta property="og:description" content="Figma now offers AI design tools, an official webpage-capture extension, and code-to-canvas. Compare those workflows with html2design's HTML, URL, Pixel, and Editable modes." />
   <meta property="og:image" content="https://html2design.com/og/blog/figma-ai-2026.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="HTML to Figma" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-04-03T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-04-12T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-07-15T00:00:00Z" />
   <meta property="article:author" content="HTML to Figma" />
   <meta property="article:section" content="Comparison" />
   <meta property="article:tag" content="figma ai" />
@@ -33,8 +33,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits" />
-  <meta name="twitter:description" content="Figma AI generates designs from prompts. html2design imports your existing HTML as editable layers. They do different things — here's the breakdown." />
+  <meta name="twitter:title" content="Figma AI and Web Capture in 2026: Where html2design Fits" />
+  <meta name="twitter:description" content="Compare Figma's AI, Chrome capture, and code-to-canvas workflows with html2design's direct HTML and URL imports." />
   <meta name="twitter:image" content="https://html2design.com/og/blog/figma-ai-2026.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -46,11 +46,11 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits",
-    "description": "Figma AI can generate layouts and rename layers — but it cannot import your existing HTML codebase. Here's what Figma AI actually does in 2026, its key limitations, and where html2design fills the gap for teams with live products.",
+    "headline": "Figma AI and Web Capture in 2026: Where html2design Fits",
+    "description": "A current comparison of Figma AI, Figma's webpage capture options, and html2design's direct HTML, public URL, Pixel, and Editable import workflows.",
     "url": "https://html2design.com/blog/figma-ai-2026",
     "datePublished": "2026-03-30T00:00:00Z",
-    "dateModified": "2026-04-17T00:00:00Z",
+    "dateModified": "2026-07-15T00:00:00Z",
     "wordCount": 2200,
     "inLanguage": "en",
     "image": {
@@ -107,10 +107,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can Figma AI import HTML into Figma?",
+        "name": "Can Figma import a webpage as editable layers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Figma AI features (Make Designs, First Draft, auto-rename, design lint) work within existing Figma files. None of them can read HTML or CSS from your codebase. To import HTML as editable Figma layers, you need a plugin like html2design."
+          "text": "Yes. Figma's official Chrome extension captures a webpage or selected element as design layers, and Figma's MCP code-to-canvas workflow can capture live UI as editable frames. These are capture workflows rather than a raw HTML paste field inside Figma AI."
         }
       },
       {
@@ -118,7 +118,7 @@
         "name": "What can Figma AI actually do in 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In 2026, Figma AI can generate UI layouts from text prompts (Make Designs), auto-rename messy layer names, suggest design lint fixes, rewrite placeholder copy, and assist with design tokens via Figma Variables. It works entirely within Figma's canvas using existing assets and design systems."
+          "text": "Figma's current AI tools include an agent for generating and editing design directions, First Draft, layer renaming, text tools, image editing, prototyping assistance, search, and Figma Make. Feature access and AI-credit usage vary by plan."
         }
       },
       {
@@ -126,7 +126,7 @@
         "name": "How does html2design work differently from Figma AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Figma AI generates new designs from scratch inside Figma. html2design imports existing HTML and CSS from your codebase — production sites, localhost builds, Storybook, or any live UI — and converts it into native, editable Figma layers. They work in opposite directions and solve different problems."
+          "text": "html2design accepts pasted or file-based HTML without requiring a browser extension, and it also accepts public URLs. Pixel mode captures lossless raster tiles for visual reference; Editable mode reconstructs supported text, images, layout, and computed styles as Figma nodes. Figma's extension and MCP instead capture rendered pages through browser or agent workflows."
         }
       },
       {
@@ -134,7 +134,7 @@
         "name": "Should I use Figma AI or html2design?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use Figma AI when designing something new from scratch or when you need help with layout generation, copy, and naming within an existing Figma file. Use html2design when you have an existing HTML/CSS codebase and need to import that UI into Figma as editable layers — for documentation, redesign, or design system bootstrapping."
+          "text": "Use Figma AI for generation and canvas editing. Use Figma's extension or MCP when browser-based capture fits your workflow. Use html2design when you need direct HTML input, a public URL workflow inside the plugin, or a choice between lossless Pixel output and best-effort Editable nodes. Compare results on the same source before standardizing."
         }
       }
     ]
@@ -215,17 +215,17 @@
   <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 md:pt-12">
     <p class="text-xs font-mono uppercase tracking-widest text-purple-500 mb-4">Comparison · 8 min read</p>
     <h1 class="text-4xl md:text-5xl font-black tracking-tighter leading-[1.05] text-content mb-6">
-      Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits
+      Figma AI and Web Capture in 2026: Where html2design Fits
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Figma AI can generate layouts from prompts and rename your layers. What it cannot do is import your existing codebase. Here's the honest breakdown — and where html2design fills the gap.
+      Figma now combines AI-assisted design with official webpage-capture workflows. This guide separates those capabilities and compares them with html2design's direct HTML, URL, Pixel, and Editable modes.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
       <div>
         <p class="text-sm font-medium">HTML to Figma Team</p>
         <time datetime="2026-03-30" class="text-xs text-gray-400 font-mono">March 30, 2026</time>
-        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: March 2026</p>
+        <p class="text-xs text-gray-400 font-mono mt-0.5">Last reviewed: July 15, 2026</p>
       </div>
     </div>
   </header>
@@ -235,7 +235,7 @@
 
     <!-- GEO: Definition block -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>The short answer:</strong> Figma AI generates new designs from within Figma. <strong>html2design</strong> imports your existing HTML and CSS into Figma as editable layers. They work in opposite directions — Figma AI goes <em>inside-out</em> (prompts → canvas), html2design goes <em>outside-in</em> (codebase → canvas). Both have a place in a modern design workflow; neither replaces the other.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>The short answer:</strong> Figma AI is no longer the whole comparison. Figma also offers an official Chrome extension and MCP code-to-canvas for turning rendered webpages into design layers. <strong>html2design</strong> remains distinct because it accepts pasted or file-based HTML and public URLs inside a Figma plugin, then lets you choose lossless Pixel output or best-effort Editable nodes.</p>
     </div>
 
     <h2>What Figma AI Can Do in 2026</h2>
@@ -243,12 +243,12 @@
       Figma has been steadily expanding its AI feature set. In 2026, the main capabilities grouped under the Figma AI umbrella include:
     </p>
 
-    <h3>Make Designs (formerly First Draft)</h3>
+    <h3>First Draft and the Figma Agent</h3>
     <p>
-      Figma's most prominent AI feature lets you describe a UI in plain text and generates a rough layout on the canvas. You can prompt something like "a SaaS pricing page with three tiers" and Figma AI assembles frames, text blocks, and basic shapes as a starting point. The output uses your existing design system components and Variables when they're available.
+      First Draft turns a prompt into an editable wireframe or basic design using Figma-built libraries. Figma's current AI offering also includes an agent for generating and editing design directions. These are starting points for exploration, not a claim that the output matches an existing production page.
     </p>
     <p>
-      Make Designs is genuinely useful for kickstarting greenfield work — particularly early exploration phases where speed matters more than precision. The outputs require significant cleanup before they're handoff-ready.
+      First Draft is useful for kickstarting greenfield exploration where speed matters more than precision. Generated output still needs product, accessibility, brand, and implementation review before handoff.
     </p>
 
     <h3>Auto-Rename Layers</h3>
@@ -256,9 +256,9 @@
       Figma AI can scan your file and rename layers based on their visual content — replacing "Group 47" with "Hero section / CTA button" automatically. This is one of the more immediately practical features: it saves time on files that have accumulated messy layer structures from rapid iteration.
     </p>
 
-    <h3>Design Lint Suggestions</h3>
+    <h3>Search and Prototype Assistance</h3>
     <p>
-      Figma AI can flag design inconsistencies — off-grid elements, colors that don't match your Variables, text styles that aren't linked to a style — and suggest corrections. This works best in files with a well-defined design system already in place.
+      AI search can locate assets and designs from a visual reference or description. Figma can also add interactions to turn static screens into a prototype, reducing the manual work needed for an early flow.
     </p>
 
     <h3>Copy and Content Rewriting</h3>
@@ -266,54 +266,46 @@
       Text layers with placeholder content (Lorem ipsum, "Button text", "Enter title here") can be rewritten by Figma AI to be contextually appropriate for the design. It's a minor but useful time-saver for presentations and prototypes.
     </p>
 
-    <h3>Variables and Token Suggestions</h3>
+    <h3>Image Tools</h3>
     <p>
-      When you have Figma Variables defined, AI can suggest mapping detached color or spacing values to existing tokens — helping enforce design system consistency across large files.
+      Figma's AI image tools cover generation and editing tasks such as background removal, object erasing, expansion, and resolution enhancement. Availability and credit cost vary by feature and plan.
     </p>
 
-    <h2>What Figma AI Cannot Do</h2>
+    <h2>What Figma Offers for Existing Webpages</h2>
     <p>
-      The capabilities above are real and growing. But there's a significant category of work that Figma AI doesn't touch at all — and that's where many teams hit a wall.
+      Web capture is now a first-party Figma workflow, but it is separate from prompt-based AI generation. The input method matters when comparing tools.
     </p>
 
-    <h3>It Cannot Import Existing HTML or CSS</h3>
+    <h3>The Official Chrome Extension Captures Webpages</h3>
     <p>
-      Figma AI works entirely within Figma's canvas. It cannot read your codebase, connect to your dev server, or convert existing HTML and CSS into editable layers. If your product UI lives in code — React components, a Django template, a Bootstrap site, a Storybook library — Figma AI has no way to bring that into Figma.
-    </p>
-    <p>
-      This is the single most common misunderstanding. Teams hear "Figma AI" and assume it can bridge the gap between code and design. It cannot. Not in 2026, and not on the current roadmap.
+      Figma's <a href="https://www.figma.com/downloads/chrome-extension/" target="_blank" rel="noopener noreferrer">official Chrome extension</a> can capture a webpage or a selected element and bring it onto the canvas as structured design layers. Because it runs in the browser, it is suited to rendered page state rather than raw source files.
     </p>
 
-    <h3>It Cannot Capture Production or Staging UIs</h3>
+    <h3>Code to Canvas Captures Live UI Through MCP</h3>
     <p>
-      If your team shipped features directly in code — bypassing the design file — Figma AI cannot recover those designs. There's no mechanism to point Figma AI at a URL or a localhost server and get editable Figma layers back.
+      Figma's <a href="https://developers.figma.com/docs/figma-mcp-server/code-to-canvas/" target="_blank" rel="noopener noreferrer">code-to-canvas documentation</a> describes an agent workflow that captures a single screen or multi-step flow as standard Figma layers. It is useful when a supported MCP client is already part of the development workflow.
     </p>
 
-    <h3>It Cannot Bootstrap a Design System from Code</h3>
+    <h3>Capture Is Not the Same as Preserving Application Logic</h3>
     <p>
-      Many teams reach a point where they want to build a proper Figma design system from their existing component library. Figma AI cannot help here: it doesn't know what your components look like, how they're structured, or what tokens drive them. It can help organize a design system that already exists in Figma — but it cannot create one from code.
+      A captured design represents rendered visual state. JavaScript behavior, data loading, responsive rules across every breakpoint, video playback, WebGL, and application state do not become equivalent Figma behavior. Text, fonts, complex SVG, canvas content, and layout still need review after any automated conversion.
     </p>
 
-    <h3>It Cannot Document What's Actually in Production</h3>
+    <h2>Where html2design Fits Alongside Figma</h2>
     <p>
-      Product teams frequently need a "design snapshot" of what's live — for redesign planning, for auditing component drift, for client presentations. Figma AI generates hypothetical designs. It has no mechanism to show you what's actually deployed.
+      html2design focuses on an extension-free plugin workflow for pasted or file-based HTML, plus direct public URL import. It offers two outputs: Pixel mode for a lossless visual reference and Editable mode for supported text, images, layout, and computed styles as native nodes.
     </p>
 
-    <h2>Where html2design Fills the Gap</h2>
+    <h3>Import Existing UI from Different Sources</h3>
     <p>
-      html2design is a Figma plugin that does exactly what Figma AI cannot: it takes HTML and CSS — from any source — and converts it into native, editable Figma layers.
-    </p>
-
-    <h3>Import Any Existing UI</h3>
-    <p>
-      Copy the outerHTML of any element from your browser's DevTools and paste it into html2design. Within seconds, that UI appears on the Figma canvas as frames, text nodes, shapes, and fills — each individually editable. You can work with:
+      Paste an element's outerHTML, load an HTML file, or enter a public URL. Supported content in Editable mode appears as frames, text nodes, shapes, and fills; Pixel mode instead prioritizes browser appearance. Sources include:
     </p>
     <ul>
-      <li><strong>Production websites</strong> — any live public or internal page</li>
-      <li><strong>Localhost and dev servers</strong> — <code>localhost:3000</code>, <code>localhost:6006</code> (Storybook), internal staging</li>
-      <li><strong>Auth-gated dashboards</strong> — copy HTML from DevTools while logged in, paste into the plugin</li>
+      <li><strong>Public websites</strong> — enter a URL directly in the plugin</li>
+      <li><strong>Localhost and dev servers</strong> — copy rendered HTML from DevTools or use an exported file</li>
+      <li><strong>Auth-gated dashboards</strong> — copy the rendered element while logged in and review external assets</li>
       <li><strong>Any framework</strong> — React, Vue, Angular, Svelte, Tailwind, Bootstrap, plain HTML</li>
-      <li><strong>HTML email templates</strong> — table-based layouts, inline styles, and all</li>
+      <li><strong>HTML email templates</strong> — including table-based layouts and inline styles, with cleanup where needed</li>
     </ul>
 
     <h3>Bootstrap a Design System from Code</h3>
@@ -323,7 +315,7 @@
 
     <h3>Capture What's Actually Shipped</h3>
     <p>
-      After a sprint where developers shipped features directly (without updating the Figma file), use html2design to import the current production state. Compare it against the design file, identify drift, and decide what to reconcile. Figma AI cannot do this; html2design makes it routine.
+      After a sprint where developers shipped features directly, use html2design, Figma's extension, or code to canvas to capture the current state. Compare outputs on a representative page, then choose the workflow that best balances visual fidelity, editability, access requirements, and cleanup time.
     </p>
 
     <h2>Feature Comparison</h2>
@@ -332,7 +324,7 @@
       <thead>
         <tr>
           <th>Task</th>
-          <th>Figma AI</th>
+          <th>Figma native workflows</th>
           <th>html2design</th>
         </tr>
       </thead>
@@ -353,43 +345,43 @@
           <td><span class="tag-no">✗ No</span></td>
         </tr>
         <tr>
-          <td><strong>Import existing HTML/CSS as Figma layers</strong></td>
-          <td><span class="tag-no">✗ No</span></td>
+          <td><strong>Capture a rendered webpage as layers</strong></td>
+          <td><span class="tag-yes">✓ Extension or MCP</span></td>
+          <td><span class="tag-yes">✓ URL or Editable mode</span></td>
+        </tr>
+        <tr>
+          <td><strong>Accept pasted or file-based HTML</strong></td>
+          <td><span class="tag-no">✗ Not the extension workflow</span></td>
           <td><span class="tag-yes">✓ Yes</span></td>
         </tr>
         <tr>
-          <td><strong>Work with localhost and staging</strong></td>
-          <td><span class="tag-no">✗ No</span></td>
+          <td><strong>Capture a multi-step live flow</strong></td>
+          <td><span class="tag-yes">✓ MCP code to canvas</span></td>
+          <td><span class="tag-no">✗ One state per import</span></td>
+        </tr>
+        <tr>
+          <td><strong>Choose lossless raster output</strong></td>
+          <td><span class="tag-no">✗ Structured capture focus</span></td>
+          <td><span class="tag-yes">✓ Pixel mode</span></td>
+        </tr>
+        <tr>
+          <td><strong>Import a public URL inside Figma</strong></td>
+          <td><span class="tag-no">✗ Uses extension or MCP</span></td>
           <td><span class="tag-yes">✓ Yes</span></td>
         </tr>
         <tr>
-          <td><strong>Import auth-gated dashboards</strong></td>
-          <td><span class="tag-no">✗ No</span></td>
-          <td><span class="tag-yes">✓ Yes</span></td>
-        </tr>
-        <tr>
-          <td><strong>Bootstrap design system from component library</strong></td>
-          <td><span class="tag-no">✗ No</span></td>
-          <td><span class="tag-yes">✓ Yes</span></td>
-        </tr>
-        <tr>
-          <td><strong>Capture current production state as Figma layers</strong></td>
-          <td><span class="tag-no">✗ No</span></td>
-          <td><span class="tag-yes">✓ Yes</span></td>
-        </tr>
-        <tr>
-          <td><strong>Design lint suggestions</strong></td>
+          <td><strong>AI generation and canvas assistance</strong></td>
           <td><span class="tag-yes">✓ Yes</span></td>
           <td><span class="tag-no">✗ No</span></td>
         </tr>
         <tr>
-          <td><strong>Works without pasting HTML</strong></td>
+          <td><strong>Works without a browser extension</strong></td>
           <td><span class="tag-yes">✓ Yes</span></td>
-          <td><span class="tag-no">✗ No — requires HTML input</span></td>
+          <td><span class="tag-yes">✓ Yes</span></td>
         </tr>
         <tr>
           <td><strong>Pricing</strong></td>
-          <td>Included in paid Figma plans</td>
+          <td>Varies by plan and AI-credit use</td>
           <td>$12/mo or $96/yr</td>
         </tr>
       </tbody>
@@ -401,9 +393,9 @@
     </p>
     <ul>
       <li>You're designing something <strong>new from scratch</strong> and need a starting-point layout quickly</li>
-      <li>You want to <strong>clean up a messy Figma file</strong> — rename layers, fix lint errors, map values to tokens</li>
+      <li>You want to <strong>clean up a Figma file</strong> by renaming layers or replacing placeholder content</li>
       <li>You're working on <strong>content-heavy designs</strong> and need placeholder copy that fits the context</li>
-      <li>You have a <strong>design system in Figma</strong> and want AI to work within those constraints</li>
+      <li>You need <strong>AI-assisted text, image, search, or prototyping work</strong> on the canvas</li>
     </ul>
 
     <h2>When to Use html2design</h2>
@@ -415,7 +407,7 @@
       <li>You're starting a <strong>redesign project</strong> and need the current state in Figma before making changes</li>
       <li>Developers have <strong>shipped features</strong> that never went through the design file and you need to resync</li>
       <li>You want to <strong>build a Figma component library</strong> from Storybook or a live dev server</li>
-      <li>You're working with <strong>localhost, staging, or auth-gated pages</strong> that screenshot tools can't access</li>
+      <li>You have <strong>localhost, staging, or auth-gated HTML</strong> that you can paste or export without publishing publicly</li>
     </ul>
 
     <h2>The Combined Workflow</h2>
@@ -423,46 +415,46 @@
       In practice, Figma AI and html2design complement each other at different stages of the product lifecycle:
     </p>
     <ol>
-      <li><strong>Audit current state:</strong> Use html2design to import your existing production UI into Figma. You now have an accurate baseline of what's live.</li>
-      <li><strong>Design new features:</strong> Use Figma AI's Make Designs to generate layout concepts for new screens, then refine within your design system.</li>
-      <li><strong>Maintain consistency:</strong> Use Figma AI's lint suggestions to keep the design file clean and token-compliant as it grows.</li>
-      <li><strong>Re-sync after shipping:</strong> When developers implement changes directly in code, use html2design again to capture the updated production state and close the drift loop.</li>
+      <li><strong>Audit current state:</strong> Capture the same representative page with the workflows you can access, then compare visual fidelity, layer structure, and cleanup time.</li>
+      <li><strong>Design new features:</strong> Use the Figma agent or First Draft to explore new screens, then refine the result manually.</li>
+      <li><strong>Choose the right import:</strong> Use Pixel mode for a lossless reference, Editable mode for supported native nodes, or Figma's extension/MCP when browser capture fits better.</li>
+      <li><strong>Re-sync after shipping:</strong> Capture production again and annotate material drift instead of assuming any converted frame is a permanent source of truth.</li>
     </ol>
 
     <div class="tip-box">
-      <p><strong>Practical tip:</strong> Many teams find that html2design is most valuable at project kickoff (capturing the baseline) and after every major sprint (capturing what shipped). Figma AI is most useful during the design phase in between. Neither replaces the other; they cover opposite ends of the design-development loop.</p>
+      <p><strong>Practical tip:</strong> Run a small bake-off with one public page, one authenticated state, and one component. Record missing fonts, images, effects, and cleanup time. The fastest workflow on a simple landing page may not be the best choice for a product dashboard.</p>
     </div>
 
     <h2>Frequently Asked Questions</h2>
 
-    <h3>Will Figma AI eventually be able to import HTML?</h3>
+    <h3>Can Figma import webpages without a third-party plugin?</h3>
     <p>
-      Figma has not announced HTML import as a planned AI feature. Importing HTML requires parsing CSS, layout engines, font metrics, and browser rendering — capabilities that go well beyond what Figma AI currently does. Until Figma builds this natively, html2design remains the purpose-built solution.
+      Yes. Figma offers an official Chrome extension for webpage and element capture, and its MCP server provides code to canvas for supported agent clients. These workflows capture rendered UI; they do not preserve the original application's behavior or source-code semantics.
     </p>
 
     <h3>Does html2design use AI?</h3>
     <p>
-      html2design uses deterministic CSS parsing and layout calculation to convert HTML into Figma layers — it doesn't rely on a generative AI model. This means the output is highly predictable and accurate to the actual rendered HTML, rather than an AI's interpretation of what a UI might look like.
+      The conversion pipeline is based on browser capture, HTML analysis, computed visual styles, and Figma node construction rather than generative image synthesis. Editable conversion is still best effort: unsupported browser content and font differences can change the result, while Pixel mode is intended for visual-reference fidelity.
     </p>
 
     <h3>Can I use Figma AI and html2design in the same file?</h3>
     <p>
-      Yes, and this is the recommended approach. Use html2design to import your existing UI as the starting point, then use Figma AI to help with new screen generation, layer cleanup, and design linting as you iterate on the redesign.
+      Yes. An imported frame can be the baseline for AI-assisted copy, imagery, exploration, or prototyping. Keep the captured source beside the edited version so reviewers can distinguish observed production state from a proposed redesign.
     </p>
 
     <h3>Is Figma AI included in the free plan?</h3>
     <p>
-      Some Figma AI features are available on free plans in limited capacity; others require a paid Figma seat. html2design is a separate plugin subscription ($12/mo or $96/yr) that works in any Figma file, including free-plan files.
+      Figma feature availability and AI-credit consumption vary by plan and action, so check Figma's current pricing and AI-credit documentation. html2design is a separate plugin with 10 trial conversions, then $12/month or $96/year at the time this page was reviewed.
     </p>
 
     <!-- GEO: Key Takeaways -->
     <div style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:1rem;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
       <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
       <ul style="list-style:none;padding:0;margin:0;">
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Figma AI</strong> generates UI from prompts and cleans up files — it works entirely within Figma.</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Figma AI cannot</strong> import your existing HTML, read your codebase, or capture production UI.</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>html2design</strong> imports existing HTML/CSS from any source into native Figma layers — localhost, staging, production, or any framework.</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Use both tools together: html2design to capture the current state, Figma AI to design what comes next.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Figma AI</strong> covers generation, canvas editing, search, text, imagery, and prototyping assistance.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>Figma native capture</strong> now includes the official Chrome extension and MCP code to canvas.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <strong>html2design</strong> is differentiated by direct HTML/file input, public URL import, and separate Pixel and Editable outputs.</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Every conversion needs review; choose from measured output quality and cleanup cost on your own pages.</li>
       </ul>
     </div>
 
@@ -498,8 +490,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your existing UI into Figma in 30 seconds</h2>
-      <p class="text-content-muted mb-6">Copy HTML from DevTools. Paste into html2design. Get editable Figma layers — the part Figma AI can't do.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Compare capture workflows on your own page</h2>
+      <p class="text-content-muted mb-6">Try the same source in Pixel and Editable modes, then inspect visual differences, layer structure, and cleanup effort.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

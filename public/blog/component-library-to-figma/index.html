@@ -133,30 +133,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Import a Component Library into Figma",
-    "description": "Import an existing HTML/CSS component library into native Figma layers using the html2design plugin.",
-    "totalTime": "PT3H",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Storybook or component dev server" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Audit and categorize your component library", "text": "List all components. Group by type: atoms (buttons, inputs), molecules (cards, form groups), organisms (headers, sidebars). Prioritize import order by frequency of use.", "url": "https://html2design.com/blog/component-library-to-figma" },
-      { "@type": "HowToStep", "position": 2, "name": "Set up your component render environment", "text": "Use Storybook, a dedicated component showcase page, or individual test pages to render each component in isolation. A clean background and zero page chrome make the import cleaner.", "url": "https://html2design.com/blog/component-library-to-figma" },
-      { "@type": "HowToStep", "position": 3, "name": "Copy component HTML from DevTools", "text": "Right-click the component root in the browser, Inspect, then Copy > Copy outerHTML. Include both the component element and any wrapper that provides sizing or spacing context.", "url": "https://html2design.com/blog/component-library-to-figma" },
-      { "@type": "HowToStep", "position": 4, "name": "Paste and convert in html2design", "text": "Open the html2design plugin in Figma. Paste the HTML. Click Convert. Rename the resulting frame to match your component name (e.g. Button/Primary/Default).", "url": "https://html2design.com/blog/component-library-to-figma" },
-      { "@type": "HowToStep", "position": 5, "name": "Organize into a Figma component library", "text": "Group imported frames by component type on a dedicated Figma page. Use Create Component on each frame. Set up a Figma library file and publish it for team use.", "url": "https://html2design.com/blog/component-library-to-figma" }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: Speakable -->
   <script type="application/ld+json">
   {
@@ -259,7 +235,7 @@
       The manual path — recreating every button variant, every form state, every card layout from scratch in Figma — is prohibitively slow. A 40-component library with 3–5 variants each means <strong>120–200 individual frames to draw by hand</strong>. At 20–40 minutes per frame, that's weeks of work.
     </p>
     <p>
-      html2design cuts that to hours. You render the component in a browser, copy its outerHTML from DevTools, paste it into the plugin, and get a native Figma frame with preserved typography, spacing, colors, and borders. <strong>One component in under 60 seconds.</strong>
+      html2design cuts that to hours. You render the component in a browser, copy its outerHTML from DevTools, paste it into the plugin, and get a native Figma frame with preserved typography, spacing, colors, and borders. <strong>One component in a few manual steps.</strong>
     </p>
 
     <h2>Prerequisites</h2>
@@ -470,8 +446,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first component in 30 seconds</h2>
-      <p class="text-content-muted mb-6">Copy any component from Storybook or DevTools. Paste into html2design. Get a native Figma frame with preserved design tokens instantly.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first component</h2>
+      <p class="text-content-muted mb-6">Copy a component from Storybook or DevTools, paste it into html2design, and inspect the browser-derived fills, text, and spacing in Figma.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

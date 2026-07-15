@@ -107,7 +107,7 @@
       {
         "@type": "DefinedTerm",
         "name": "Computed Styles",
-        "description": "Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. Unlike authored styles (which may use relative units or shorthand), computed styles are absolute — pixel dimensions, resolved colors, and exact font sizes. HTML to Figma reads computed styles directly from the browser's rendering engine to produce pixel-accurate Figma layers.",
+        "description": "Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. HTML to Figma uses those measured values as inputs for best-effort editable Figma layers.",
         "url": "https://html2design.com/glossary#computed-styles",
         "inDefinedTermSet": "https://html2design.com/glossary"
       },
@@ -415,7 +415,7 @@
           <h2 class="text-xl font-bold text-content">Computed Styles</h2>
         </dt>
         <dd class="pl-6 text-content-muted leading-relaxed text-base">
-          Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. Unlike authored styles (which may use relative units or shorthand), computed styles are absolute — pixel dimensions, resolved colors, and exact font sizes. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma reads computed styles</a> directly from the browser's rendering engine to produce <a href="#pixel-perfect" class="text-accent hover:underline font-medium">pixel-accurate</a> Figma layers.
+          Computed styles are the final, resolved CSS property values a browser assigns to a DOM element after applying the cascade, inheritance, and layout algorithms. Unlike authored styles, they expose measured dimensions, resolved colors, and font values. <a href="/blog/how-to-convert-html-to-figma" class="text-accent hover:underline font-medium">HTML to Figma reads computed styles</a> as inputs for best-effort editable layers; browser and Figma rendering can still differ.
         </dd>
       </div>
 

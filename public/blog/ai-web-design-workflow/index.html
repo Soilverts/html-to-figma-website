@@ -134,7 +134,7 @@
         "name": "Is html2design an AI tool?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. html2design uses deterministic CSS parsing and layout calculation to convert HTML into Figma layers. This means the output is pixel-accurate to the actual rendered HTML, rather than an AI interpretation. It complements AI tools by handling the precise code-to-design conversion that generative AI cannot do reliably."
+          "text": "No. html2design uses deterministic CSS parsing and browser measurements rather than generative interpretation. Editable output is still best effort because browser and Figma rendering do not map one-to-one."
         }
       }
     ]
@@ -392,7 +392,7 @@
       <li><strong>Install the plugin</strong> from the <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">Figma Community</a></li>
       <li><strong>Open DevTools</strong> on any page you want to import (production, localhost, or Storybook)</li>
       <li><strong>Copy the outerHTML</strong> of the section or full page</li>
-      <li><strong>Paste into html2design</strong> inside Figma — editable layers appear in seconds</li>
+      <li><strong>Paste into html2design</strong> inside Figma — supported content becomes editable nodes for review</li>
     </ol>
     <p>
       From there, use whatever AI tools you prefer for the creative work. html2design handles the accurate capture; AI handles the creative generation. Together they cover the full loop.
@@ -420,7 +420,7 @@
 
     <h3>Is html2design an AI tool?</h3>
     <p>
-      No. html2design uses deterministic CSS parsing and layout calculation — not generative AI. The output matches the rendered HTML exactly, which is the point: you need pixel-accurate imports, not an AI's approximation of what your site might look like.
+      No. html2design uses deterministic CSS parsing and layout measurement, not generative AI. Editable output is derived from the rendered HTML and preserves supported content as native Figma nodes, but fonts, media, effects, and complex layout can still differ and should be checked against the browser source.
     </p>
 
     <!-- GEO: Key Takeaways -->
@@ -430,7 +430,7 @@
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">1</span> AI design tools generate new UI from prompts — they cannot import existing codebases.</li>
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">2</span> <strong>html2design</strong> fills the code-to-design gap: it imports HTML/CSS into Figma as native, editable layers.</li>
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">3</span> The most effective 2026 workflow uses both: html2design to capture what exists, AI tools to design what comes next.</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">4</span> html2design is deterministic (pixel-accurate); AI tools are probabilistic (creative but approximate).</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">4</span> html2design is measurement-based; generative AI tools are probabilistic and intended for different tasks.</li>
       </ul>
     </div>
 
@@ -467,7 +467,7 @@
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
       <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Add code-to-design to your AI workflow</h2>
-      <p class="text-content-muted mb-6">Install html2design and import your existing UI into Figma in 30 seconds — the step AI tools skip.</p>
+      <p class="text-content-muted mb-6">Install html2design and import your existing UI into Figma — the step AI tools skip.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

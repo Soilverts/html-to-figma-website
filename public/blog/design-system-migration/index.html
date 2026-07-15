@@ -98,66 +98,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Migrate a Design System from Code to Figma",
-    "description": "Extract design tokens and components from an HTML/CSS codebase and import them into a native Figma design system using html2design.",
-    "totalTime": "PT2H",
-    "tool": [
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "html2design (Figma plugin)" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Audit your codebase for design tokens",
-        "text": "Identify all CSS custom properties (--color-*, --spacing-*, --font-*), hardcoded color and spacing values, and typography declarations. List every token that appears in more than one component."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Build a token reference page",
-        "text": "Create a single HTML page that renders a swatch for every color, a scale for every spacing value, and a specimen for every text style in your system. This becomes your Figma Variables source of truth."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Import the token reference page into Figma",
-        "text": "Open the token reference page in a browser, copy its outerHTML from DevTools, and paste it into the html2design plugin in Figma. You get one Figma frame per token group with exact computed values."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Register tokens as Figma Variables and Styles",
-        "text": "Use the imported frames as reference to create Color Variables, Number Variables (for spacing), and Text Styles in Figma. Bind them to the same names as your CSS custom properties for traceability."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Identify and prioritize components",
-        "text": "List all UI components in your codebase. Rank by usage frequency and business criticality. Start with atoms (buttons, inputs, badges), then molecules (cards, forms), then organisms (navbars, hero sections)."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 6,
-        "name": "Import components one by one",
-        "text": "For each component, open it in a browser, copy the outerHTML from DevTools (including all states), and import via html2design. You get a native Figma frame preserving every spacing, color, and typography value."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 7,
-        "name": "Organize components in Figma",
-        "text": "Convert imported frames to Figma Components. Group them under a published Figma Library. Use the naming convention Category / Component / Variant (e.g., Button / Primary / Default) to match your codebase structure."
-      }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
   {
@@ -206,7 +146,7 @@
         "name": "What is the best Figma plugin for design system migration?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design is the best Figma plugin for migrating a design system from code to Figma. It reads the browser's computed styles directly from any HTML — including components from React, Tailwind, Bootstrap, or plain CSS — and generates native Figma layers with accurate colors, spacing, and typography. Unlike screenshot-based tools, the output is fully editable as real Figma frames and text nodes. You install html2design from Figma Community and paste HTML directly into the plugin — no browser extension or live URL required."
+          "text": "html2design can provide measured source material when migrating a design system from rendered HTML to Figma. It uses DOM structure and browser-computed styles to create native nodes for supported content. Review and rebuild approved patterns with Figma Variables, Styles, Components, and Auto Layout."
         }
       }
     ]
@@ -598,7 +538,7 @@ Badge / Warning</div>
         </a>
         <a href="/blog/how-to-convert-html-to-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert HTML to Figma: A Developer's Guide &rarr;</p>
-          <p class="text-xs text-content-muted mt-0.5">The complete step-by-step walkthrough: install html2design, copy outerHTML from DevTools, and get editable Figma layers in under a minute.</p>
+          <p class="text-xs text-content-muted mt-0.5">The complete step-by-step walkthrough: install html2design, copy outerHTML from DevTools, and get editable Figma layers in a few manual steps.</p>
         </a>
         <a href="/blog/tailwind-to-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">Tailwind to Figma: Build a Design System from Your Tailwind Components &rarr;</p>

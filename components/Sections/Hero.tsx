@@ -28,7 +28,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
     <section
       id={id}
       aria-label="HTML to Figma - Convert code to design"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-16 md:py-20 pt-28 md:pt-32 overflow-hidden"
+      className="relative min-h-[88svh] md:min-h-screen flex flex-col justify-start md:justify-center px-6 md:px-12 pb-12 md:py-20 pt-32 md:pt-32 overflow-hidden"
     >
       <div
         style={{ opacity, transform: `translateY(${yOffset}px)` }}
@@ -36,7 +36,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
       >
         {/* Left: Editorial Content */}
         <div className="flex-1 space-y-10">
-          <div className="hero-fade-up flex flex-col items-start">
+          <div className="flex flex-col items-start">
             <Badge
               variant="outline"
               className="mb-4 md:mb-6 text-[10px] font-mono tracking-widest border-gray-200 text-content-muted px-3 py-1 uppercase"
@@ -54,16 +54,20 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
             </p>
           </div>
 
-          <div className="hero-fade-in flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <Button size="lg" className="h-14 px-8 text-base shadow-xl shadow-black/10 group" asChild>
-              <a href="#pricing">
-                Get Access
+              <a
+                href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Figma
                 <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
 
-            <a href="#how-it-works" className="group flex items-center gap-2 text-content-muted hover:text-content transition-colors px-4 py-2">
-              <span className="border-b border-transparent group-hover:border-content pb-0.5 text-sm font-medium">See how it works</span>
+            <a href="/result-quality" className="group min-h-11 flex items-center gap-2 text-content-muted hover:text-content transition-colors px-4 py-2">
+              <span className="border-b border-transparent group-hover:border-content pb-0.5 text-sm font-medium">See real results</span>
               <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

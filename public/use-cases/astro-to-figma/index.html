@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/astro-to-figma" />
   <meta property="og:title" content="Astro to Figma — Convert Astro Sites &amp; Components to Designs" />
-  <meta property="og:description" content="Astro ships zero JavaScript by default, producing clean semantic HTML that maps perfectly to Figma layers. Copy outerHTML from DevTools and paste into html2design for instant native Figma frames." />
+  <meta property="og:description" content="Import a rendered Astro page or island into Figma from copied HTML. Browser-computed styles become the source for best-effort native layers." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/astro-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -27,7 +27,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Astro to Figma — Convert Astro Sites &amp; Components to Designs" />
-  <meta name="twitter:description" content="Astro's zero-JS HTML output makes it ideal for Figma conversion. Copy outerHTML from DevTools, paste into html2design, get native Figma layers instantly." />
+  <meta name="twitter:description" content="Import a rendered Astro page or island into Figma from copied HTML, with no browser extension required." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/astro-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -217,9 +217,8 @@
       <p class="text-content-muted leading-relaxed max-w-3xl">
         The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
         native Figma frames. Astro scopes component styles using unique class identifiers that the browser resolves to
-        computed CSS values before the plugin reads them. The result is a pixel-accurate
-        representation of your Astro page — with real text layers, accurate spacing, and correct colors from your
-        design tokens or Tailwind configuration.
+        computed CSS values before the plugin reads them. The result is a best-effort editable representation with
+        real text and shape layers; fonts, complex effects, and responsive behavior can need cleanup.
       </p>
     </div>
   </section>
@@ -296,11 +295,11 @@
               unique identifiers at build time and resolved by the browser before you copy.
               The plugin reads computed CSS values directly — not the
               <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.astro</code> source files —
-              so the output is a true representation of the rendered page.
+              so the output is based on rendered visual values rather than Astro source syntax.
             </p>
             <p>
               If your Astro project uses Tailwind CSS, every utility class is already resolved to pixel values
-              by the browser. You get exact spacing, colors, and typography in Figma without any manual mapping.
+              by the browser. Supported spacing, colors, and typography can become Figma nodes, but fonts, effects, and token mapping still need review.
             </p>
           </div>
         </article>
@@ -321,7 +320,7 @@
             </p>
             <p>
               When the Astro page changes, re-import: run the dev server, copy the updated outerHTML, paste into
-              html2design. The workflow takes under two minutes and keeps Figma in sync with the live codebase.
+              html2design. Repeat the same manual steps whenever you need a fresh Figma reference from the live codebase.
             </p>
           </div>
         </article>
@@ -362,7 +361,7 @@
             component files using unique class suffixes (e.g.,
             <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.astro-XXXXXXXX</code>).
             The browser resolves these to their computed values — html2design reads the computed CSS,
-            so scoped styles are completely transparent to the import process and appear correctly in Figma.
+            so scoped selectors do not need framework-specific parsing. Review the resulting styles in Figma.
           </p>
         </div>
 
@@ -372,9 +371,9 @@
             Astro has first-class Tailwind CSS integration via
             <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">@astrojs/tailwind</code>.
             When you copy outerHTML from an Astro + Tailwind page, every utility class is already resolved
-            to its pixel value by the browser. You get exact spacing, colors from your
+            to a computed value by the browser. html2design can recreate supported spacing, colors from your
             <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">tailwind.config</code>,
-            and typography in Figma — without any manual design token mapping.
+            and typography in Figma, then you can map approved values into design tokens manually.
           </p>
         </div>
 

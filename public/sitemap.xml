@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://html2design.com/</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og-image.png</image:loc>
       <image:title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs</image:title>
@@ -18,21 +15,15 @@
   </url>
   <url>
     <loc>https://html2design.com/pricing</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/reviews</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/guide</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/guide.svg</image:loc>
       <image:title>Complete Guide to HTML to Figma</image:title>
@@ -41,9 +32,7 @@
   </url>
   <url>
     <loc>https://html2design.com/faq</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/faq.svg</image:loc>
       <image:title>HTML to Figma FAQ — Frequently Asked Questions</image:title>
@@ -52,9 +41,7 @@
   </url>
   <url>
     <loc>https://html2design.com/alternatives</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/alternatives.svg</image:loc>
       <image:title>HTML to Figma Alternatives Comparison</image:title>
@@ -63,9 +50,7 @@
   </url>
   <url>
     <loc>https://html2design.com/compare</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/compare.svg</image:loc>
       <image:title>HTML to Figma Plugin Feature Comparison</image:title>
@@ -74,57 +59,39 @@
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-anima</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-locofy</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-figma-dev-mode</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-teleporthq</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-html-to-design</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-screenshot-tools</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-zeplin</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/compare/html2design-vs-uxpin</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/glossary</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/glossary.svg</image:loc>
       <image:title>HTML to Figma Glossary</image:title>
@@ -133,9 +100,7 @@
   </url>
   <url>
     <loc>https://html2design.com/about</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/about.svg</image:loc>
       <image:title>About HTML to Figma</image:title>
@@ -144,9 +109,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog.svg</image:loc>
       <image:title>HTML to Figma Blog</image:title>
@@ -155,9 +118,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/how-to-convert-html-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/how-to-convert-html-to-figma.svg</image:loc>
       <image:title>How to Convert HTML to Figma — Step-by-Step Guide</image:title>
@@ -166,9 +127,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/import-website-into-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/import-website-into-figma.svg</image:loc>
       <image:title>Import Website into Figma</image:title>
@@ -177,9 +136,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/react-component-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/react-component-to-figma.svg</image:loc>
       <image:title>React Component to Figma</image:title>
@@ -188,9 +145,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/tailwind-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/tailwind-to-figma.svg</image:loc>
       <image:title>Tailwind CSS to Figma</image:title>
@@ -199,9 +154,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/bootstrap-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/bootstrap-to-figma.svg</image:loc>
       <image:title>Bootstrap to Figma</image:title>
@@ -210,9 +163,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/design-system-migration</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/design-system-migration.svg</image:loc>
       <image:title>Design System Migration to Figma</image:title>
@@ -221,9 +172,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/screenshot-vs-code-import</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/screenshot-vs-code-import.svg</image:loc>
       <image:title>Screenshot vs Code Import — HTML to Figma Methods Compared</image:title>
@@ -232,9 +181,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/css-grid-to-figma-auto-layout</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/css-grid-to-figma-auto-layout.svg</image:loc>
       <image:title>CSS Grid and Flexbox to Figma Auto Layout</image:title>
@@ -243,9 +190,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/html-email-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/html-email-to-figma.svg</image:loc>
       <image:title>HTML Email Template to Figma</image:title>
@@ -254,9 +199,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/responsive-design-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/responsive-design-to-figma.svg</image:loc>
       <image:title>Responsive Design to Figma — Converting Breakpoints to Variants</image:title>
@@ -265,9 +208,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/webflow-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/webflow-to-figma.svg</image:loc>
       <image:title>Webflow to Figma — Import Your Webflow Site into Figma</image:title>
@@ -276,9 +217,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/design-tokens-code-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/design-tokens-code-to-figma.svg</image:loc>
       <image:title>Design Tokens from Code to Figma</image:title>
@@ -287,9 +226,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/accessibility-audit-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/accessibility-audit-to-figma.svg</image:loc>
       <image:title>Accessibility Audit to Figma Redesign</image:title>
@@ -298,9 +235,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-dev-mode-vs-html2design</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/figma-dev-mode-vs-html2design.svg</image:loc>
       <image:title>Figma Dev Mode vs html2design Comparison</image:title>
@@ -309,9 +244,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/component-library-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/component-library-to-figma.svg</image:loc>
       <image:title>Import Component Library into Figma</image:title>
@@ -320,9 +253,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/multi-page-website-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/multi-page-website-to-figma.svg</image:loc>
       <image:title>Importing Multi-page Websites into Figma</image:title>
@@ -331,9 +262,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/rapid-prototyping-website-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/rapid-prototyping-website-to-figma.svg</image:loc>
       <image:title>Rapid Prototyping — From Live Website to Figma Prototype</image:title>
@@ -342,9 +271,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/design-handoff-best-practices</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/design-handoff-best-practices.svg</image:loc>
       <image:title>Design Handoff Best Practices — Keeping Code and Figma in Sync</image:title>
@@ -353,9 +280,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/atomic-design-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/atomic-design-to-figma.svg</image:loc>
       <image:title>Atomic Design to Figma — Component Hierarchy Import</image:title>
@@ -364,9 +289,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases.svg</image:loc>
       <image:title>HTML to Figma Use Cases — Every Framework and Platform</image:title>
@@ -376,14 +299,10 @@
   <url>
     <loc>https://html2design.com/use-cases/url-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://html2design.com/result-quality</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/results/piggywise/browser-original.png</image:loc>
       <image:title>Browser original used for HTML to Figma quality testing</image:title>
@@ -397,9 +316,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/legacy-migration</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/legacy-migration.svg</image:loc>
       <image:title>Legacy Code Migration to Figma</image:title>
@@ -408,9 +325,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/developer-handoff</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/developer-handoff.svg</image:loc>
       <image:title>Developer Handoff to Figma</image:title>
@@ -419,9 +334,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/vue-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/vue-to-figma.svg</image:loc>
       <image:title>Vue.js to Figma</image:title>
@@ -430,9 +343,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/angular-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/angular-to-figma.svg</image:loc>
       <image:title>Angular to Figma</image:title>
@@ -441,9 +352,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/astro-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/astro-to-figma.svg</image:loc>
       <image:title>Astro to Figma</image:title>
@@ -452,9 +361,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/remix-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/remix-to-figma.svg</image:loc>
       <image:title>Remix to Figma</image:title>
@@ -463,9 +370,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/shopify-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-14</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/shopify-to-figma.svg</image:loc>
       <image:title>Shopify to Figma</image:title>
@@ -474,9 +379,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/alpine-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/alpine-to-figma.svg</image:loc>
       <image:title>Alpine.js to Figma</image:title>
@@ -485,9 +388,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/svelte-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/svelte-to-figma.svg</image:loc>
       <image:title>Svelte to Figma</image:title>
@@ -496,9 +397,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/nextjs-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/nextjs-to-figma.svg</image:loc>
       <image:title>Next.js to Figma</image:title>
@@ -507,9 +406,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/wordpress-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/wordpress-to-figma.svg</image:loc>
       <image:title>WordPress to Figma</image:title>
@@ -518,9 +415,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/gatsby-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/gatsby-to-figma.svg</image:loc>
       <image:title>Gatsby to Figma</image:title>
@@ -529,9 +424,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/material-ui-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/material-ui-to-figma.svg</image:loc>
       <image:title>Material UI to Figma</image:title>
@@ -540,9 +433,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/chakra-ui-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-18</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/chakra-ui-to-figma.svg</image:loc>
       <image:title>Chakra UI to Figma</image:title>
@@ -551,9 +442,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/ember-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/ember-to-figma.svg</image:loc>
       <image:title>Ember to Figma</image:title>
@@ -562,9 +451,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/storybook-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/storybook-to-figma.svg</image:loc>
       <image:title>Storybook to Figma</image:title>
@@ -573,9 +460,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/tailwind-react-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/tailwind-react-to-figma.svg</image:loc>
       <image:title>Tailwind + React to Figma</image:title>
@@ -584,9 +469,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/sketch-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/sketch-to-figma.svg</image:loc>
       <image:title>Sketch to Figma via HTML</image:title>
@@ -595,9 +478,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/adobe-xd-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/adobe-xd-to-figma.svg</image:loc>
       <image:title>Adobe XD to Figma via HTML</image:title>
@@ -606,9 +487,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/webflow-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/webflow-to-figma.svg</image:loc>
       <image:title>Webflow to Figma</image:title>
@@ -617,9 +496,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/tailwind-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/tailwind-to-figma.svg</image:loc>
       <image:title>Tailwind CSS to Figma</image:title>
@@ -628,45 +505,23 @@
   </url>
   <url>
     <loc>https://html2design.com/privacy</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/terms</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-05-18</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/contact</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2026-05-18</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/changelog</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://html2design.com/llms-full.txt</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://html2design.com/.well-known/ai-plugin.json</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/html-to-figma-tools-compared</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/html-to-figma-tools-compared.svg</image:loc>
       <image:title>Top 5 HTML to Figma Tools Compared (2026)</image:title>
@@ -675,9 +530,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/html-to-figma-ci-cd-pipeline</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/html-to-figma-ci-cd-pipeline.svg</image:loc>
       <image:title>HTML to Figma CI/CD Pipeline — Automated Design Sync</image:title>
@@ -686,9 +539,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/redesign-legacy-website-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/redesign-legacy-website-figma.svg</image:loc>
       <image:title>Redesign Legacy Website Without Starting From Scratch</image:title>
@@ -697,81 +548,51 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-ai-2026</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/design-to-code-vs-code-to-design</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/ai-web-design-workflow</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-plugins-for-developers</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/design-system-from-existing-code</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-14</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/website-redesign-checklist</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/convert-website-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-to-html-developer-handoff</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-design-code-sync</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/vue-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/angular-to-figma</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://html2design.com/blog/feed.xml</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-16</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/claude-to-figma</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/claude-to-figma.svg</image:loc>
       <image:title>Claude to Figma</image:title>
@@ -780,9 +601,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/v0-to-figma</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/v0-to-figma.svg</image:loc>
       <image:title>v0 to Figma</image:title>
@@ -791,9 +610,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/bolt-to-figma</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/bolt-to-figma.svg</image:loc>
       <image:title>Bolt to Figma</image:title>
@@ -802,9 +619,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/lovable-to-figma</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/lovable-to-figma.svg</image:loc>
       <image:title>Lovable to Figma</image:title>
@@ -813,9 +628,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/cursor-to-figma</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/cursor-to-figma.svg</image:loc>
       <image:title>Cursor to Figma</image:title>
@@ -824,9 +637,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/chatgpt-to-figma</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-16</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/chatgpt-to-figma.svg</image:loc>
       <image:title>ChatGPT to Figma</image:title>
@@ -836,8 +647,6 @@
   <url>
     <loc>https://html2design.com/use-cases/magicpath-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/magicpath-to-figma.svg</image:loc>
       <image:title>MagicPath to Figma</image:title>
@@ -847,8 +656,6 @@
   <url>
     <loc>https://html2design.com/use-cases/github-copilot-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/github-copilot-to-figma.svg</image:loc>
       <image:title>GitHub Copilot to Figma</image:title>
@@ -858,8 +665,6 @@
   <url>
     <loc>https://html2design.com/use-cases/windsurf-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/windsurf-to-figma.svg</image:loc>
       <image:title>Windsurf to Figma</image:title>
@@ -869,8 +674,6 @@
   <url>
     <loc>https://html2design.com/use-cases/magic-patterns-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/magic-patterns-to-figma.svg</image:loc>
       <image:title>Magic Patterns to Figma</image:title>
@@ -880,8 +683,6 @@
   <url>
     <loc>https://html2design.com/use-cases/google-stitch-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/google-stitch-to-figma.svg</image:loc>
       <image:title>Google Stitch to Figma</image:title>
@@ -891,8 +692,6 @@
   <url>
     <loc>https://html2design.com/use-cases/visily-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/visily-to-figma.svg</image:loc>
       <image:title>Visily to Figma</image:title>
@@ -902,8 +701,6 @@
   <url>
     <loc>https://html2design.com/use-cases/replit-agent-to-figma</loc>
     <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/replit-agent-to-figma.svg</image:loc>
       <image:title>Replit Agent to Figma</image:title>

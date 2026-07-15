@@ -209,7 +209,7 @@
         "name": "How is html2design different from taking a screenshot?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A screenshot produces a flat, non-editable image. html2design produces native Figma layers — frames, text nodes, rectangles, and vector shapes — that are fully editable in Figma. You can change text, recolor shapes, resize frames, move layers, and connect the result to your design system. Screenshots cannot be edited at all; html2design imports are a starting point for design work."
+          "text": "A screenshot produces a flat image. html2design Editable mode creates native frames, text nodes, shapes, and images for supported content. Those nodes can be changed in Figma, while unsupported effects and browser behavior can require cleanup or raster fallback."
         }
       },
       {
@@ -340,7 +340,7 @@
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
             <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> html2design imports supplied HTML or a public website URL into Figma. Choose editable layers or a lossless Pixel capture without a Chrome extension.</p>
-            <p>You paste raw HTML into the plugin — copied from a live website, a local dev server, or a static file — and it generates Figma frames, text nodes, and rectangles that match the browser's computed layout. Every layer is fully editable in Figma without any plugin dependency.</p>
+            <p>You paste supplied HTML into the plugin — copied from a website, local dev server, or static file — and it creates native frames, text nodes, shapes, and images for supported content. Review fonts, effects, image crops, and layout after import.</p>
             <p>Use manual import for localhost and private source, or direct URL import for a public page. <a href="/use-cases/url-to-figma" class="text-accent hover:underline">Compare Pixel and Editable URL modes &rarr;</a></p>
             <p class="mt-2"><a href="/guide" class="text-accent hover:underline font-medium">Read the full guide →</a></p>
           </div>
@@ -574,7 +574,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p>A screenshot produces a flat, non-editable image. html2design produces <strong>native Figma layers</strong> — frames, text nodes, rectangles, and vector shapes — that are fully editable in Figma. You can change text, recolor shapes, resize frames, move layers, and connect the result to your design system.</p>
+            <p>A screenshot produces a flat image. html2design Editable mode creates <strong>native Figma layers</strong> for supported frames, text, shapes, and images. Those nodes can be changed in Figma; unsupported effects and browser behaviors can require cleanup or raster fallback.</p>
             <p>Screenshots cannot be edited at all; html2design imports are a starting point for design work. See the <a href="/compare" class="text-accent hover:underline">comparison page</a> for a full breakdown.</p>
           </div>
         </details>

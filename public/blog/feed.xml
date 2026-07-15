@@ -68,7 +68,7 @@
     <item>
       <title>Figma AI in 2026: What It Does, What It Doesn't, and Where html2design Fits</title>
       <link>https://html2design.com/blog/figma-ai-2026</link>
-      <description>Figma AI can auto-rename layers, generate layouts from prompts, and lint design inconsistencies — but it cannot import HTML, capture production UI, or bootstrap a design system from live code. html2design fills that gap as the code-to-design bridge that Figma AI doesn't include.</description>
+      <description>Figma now combines AI-assisted design with official webpage capture through its Chrome extension and MCP code to canvas. Compare those workflows with html2design direct HTML, public URL, Pixel, and Editable modes.</description>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://html2design.com/blog/figma-ai-2026</guid>
     </item>
@@ -100,7 +100,7 @@
     <item>
       <title>Top 5 HTML to Figma Tools Compared (2026)</title>
       <link>https://html2design.com/blog/html-to-figma-tools-compared</link>
-      <description>Side-by-side comparison of the five main approaches to importing HTML into Figma: html2design, Anima, Locofy, manual rebuild, and screenshot import. Covers output type, editability, design system integration, and pricing — and explains why Anima and Locofy work in the opposite direction.</description>
+      <description>Compare five current HTML and webpage-to-Figma workflows: html2design, Figma Chrome Extension, Anima Buddy, html.to.design, and manual reconstruction.</description>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       <guid isPermaLink="true">https://html2design.com/blog/html-to-figma-tools-compared</guid>
     </item>

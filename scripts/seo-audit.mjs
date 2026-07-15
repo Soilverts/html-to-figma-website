@@ -86,13 +86,24 @@ for (const path of htmlFiles) {
   }
 
   const schemas = [...html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)];
+  const parsedSchemas = [];
   schemas.forEach((schema, index) => {
     try {
-      JSON.parse(schema[1]);
+      const data = JSON.parse(schema[1]);
+      parsedSchemas.push(data);
+      const types = Array.isArray(data['@type']) ? data['@type'] : [data['@type']];
+      if (types.includes('HowTo')) errors.push(`${label}: deprecated HowTo schema is not allowed`);
+      if (types.includes('WebPage') && !data.name) errors.push(`${label}: WebPage schema is missing name`);
     } catch (error) {
       errors.push(`${label}: invalid JSON-LD block ${index + 1}: ${error.message}`);
     }
   });
+  const articleTypes = parsedSchemas.flatMap((data) =>
+    Array.isArray(data['@type']) ? data['@type'] : [data['@type']],
+  );
+  if (articleTypes.includes('Article') && articleTypes.includes('BlogPosting')) {
+    errors.push(`${label}: duplicate Article and BlogPosting entities describe the same page`);
+  }
 
   for (const hrefMatch of html.matchAll(/<a\s[^>]*href=["']([^"']+)["']/gi)) {
     const href = hrefMatch[1];
@@ -123,6 +134,12 @@ const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m
 for (const canonical of indexableCanonicals) {
   if (!sitemapUrls.has(canonical)) errors.push(`sitemap.xml: missing ${canonical}`);
 }
+for (const url of sitemapUrls) {
+  if (!indexableCanonicals.has(url)) errors.push(`sitemap.xml: non-indexable or non-page URL ${url}`);
+}
+if (/<(?:changefreq|priority)>/i.test(sitemap)) {
+  errors.push('sitemap.xml: remove ignored changefreq and priority fields');
+}
 for (const match of sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
   const imageUrl = match[1].trim();
   const assetPath = localAssetPath(imageUrl);
@@ -132,6 +149,11 @@ for (const match of sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
 const requiredFiles = ['robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', '.well-known/ai-plugin.json'];
 for (const file of requiredFiles) {
   if (!existsSync(join(PUBLIC, file))) errors.push(`public/${file}: required discovery file is missing`);
+}
+
+const headers = readFileSync(join(PUBLIC, '_headers'), 'utf8');
+for (const header of ['Strict-Transport-Security:', 'Content-Security-Policy:']) {
+  if (!headers.includes(header)) errors.push(`public/_headers: missing ${header.slice(0, -1)}`);
 }
 
 const robots = readFileSync(join(PUBLIC, 'robots.txt'), 'utf8');
@@ -210,11 +232,55 @@ const forbiddenUniversalClaims = [
   /every element addressable/i,
   /output is always clean/i,
   /cannot import localhost builds/i,
+  /\bunder (?:\d+(?:[–-]\d+)?|two|an?) (?:seconds?|minutes?|hours?)\b/i,
+  /\b(?:output|result)[^.\n]{0,100}matches?[^.\n]{0,60}(?:exactly|pixel-perfect)/i,
+  /match the browser(?:'s)? rendered output exactly/i,
+  /(?:native|editable) Figma layers[^.\n]{0,100}pixel-accurate/i,
+  /\b(?:50[–-]80|98)%?x? (?:speed improvement|time reduction)\b/i,
+  /\b(?:html2design|HTML to Figma)[^.\n]{0,140}\bin seconds\b/i,
+  /\b(?:get|generates?|produces?)[^.\n]{0,80}fully editable (?:Figma )?layers\b/i,
+  /\bworks entirely from pasted HTML\b/i,
+  /\bURL-based (?:import )?tools cannot reach\b/i,
+  /\bAnima[^.\n]{0,140}(?:cannot|can't|does not|not designed)[^.\n]{0,100}(?:import HTML|HTML import|code[^.\n]{0,20}Figma)\b/i,
+  /\bFigma AI[^.\n]{0,140}(?:cannot|can't|does not)[^.\n]{0,100}(?:HTML|webpage|production UI)\b/i,
+  /\bhtml\.to\.design[^.\n]{0,140}(?:requires|needs)[^.\n]{0,80}(?:live URL|Chrome extension)\b/i,
+  /\bhtml2design is the best\b/i,
 ];
 for (const path of new Set(universalClaimPaths)) {
   const content = readFileSync(path, 'utf8');
   for (const claim of forbiddenUniversalClaims) {
     if (claim.test(content)) errors.push(`${pageLabel(path)}: contains unsupported claim ${claim}`);
+  }
+}
+
+const currentFactRequirements = new Map([
+  ['blog/figma-ai-2026/index.html', [
+    /figma\.com\/downloads\/chrome-extension/i,
+    /developers\.figma\.com\/docs\/figma-mcp-server\/code-to-canvas/i,
+    /Pixel mode/i,
+    /Editable mode/i,
+  ]],
+  ['compare/html2design-vs-anima/index.html', [
+    /Anima Buddy/i,
+    /animaapp\.com\/blog\/ai-design-en\/figma-import-image-html-code-to-layers/i,
+    /HTML, URLs, screenshots, images, and Claude artifacts/i,
+  ]],
+  ['compare/html2design-vs-html-to-design/index.html', [
+    /html\.to\.design accepts public URLs/i,
+    /extension (?:is used )?for private/i,
+    /Pixel or Editable/i,
+  ]],
+  ['blog/html-to-figma-tools-compared/index.html', [
+    /Figma Chrome Extension/i,
+    /Anima Buddy/i,
+    /html\.to\.design/i,
+    /Manual Rebuild/i,
+  ]],
+]);
+for (const [relativePath, requirements] of currentFactRequirements) {
+  const content = readFileSync(join(PUBLIC, relativePath), 'utf8');
+  for (const requirement of requirements) {
+    if (!requirement.test(content)) errors.push(`public/${relativePath}: missing current fact ${requirement}`);
   }
 }
 

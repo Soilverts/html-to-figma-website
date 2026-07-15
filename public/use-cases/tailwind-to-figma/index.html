@@ -112,7 +112,7 @@
         "name": "How do I convert a Tailwind CSS page to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run your app locally (or open the live site in a browser). Open DevTools (F12), switch to the Elements panel, right-click the root element, and choose Copy > Copy outerHTML. Paste the HTML into the html2design Figma plugin and click Generate. All Tailwind utility classes — padding, color, typography, flex/grid — are resolved to computed CSS values by the browser before the plugin reads them, so they transfer as pixel-accurate fills, text styles, and layout to Figma."
+          "text": "Run your app locally (or open the live site in a browser). Open DevTools (F12), switch to the Elements panel, right-click the root element, and choose Copy > Copy outerHTML. Paste the HTML into the html2design Figma plugin and click Generate. Tailwind utilities are represented by browser-computed values, which become inputs for best-effort editable fills, text styles, and layout in Figma."
         }
       },
       {
@@ -297,7 +297,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Tailwind CSS to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">
-        Four steps, under two minutes. Works for any Tailwind version and any backend framework.
+        Four manual steps. Works for any Tailwind version and any backend framework.
       </p>
 
       <div class="space-y-10">
@@ -386,7 +386,7 @@
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              After importing, you have a pixel-accurate Figma frame. To build a proper Figma design system from it,
+              After importing, you have a measured, editable Figma frame. To build a proper Figma design system from it,
               select recurring fill colors and register them as Figma color styles, select text instances with the
               same font settings and register them as text styles, and set up Figma variables that mirror your
               Tailwind theme config values.
@@ -511,13 +511,12 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
-          <h3 class="text-base font-bold tracking-tight">Arbitrary values preserve exact dimensions</h3>
+          <h3 class="text-base font-bold tracking-tight">Arbitrary values provide measured dimensions</h3>
           <p class="text-sm text-content-muted leading-relaxed">
             One-off sizes like
             <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">w-[340px]</code> or
             <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">mt-[3.25rem]</code>
-            compile to exact CSS values the browser measures precisely. They land in Figma as the exact pixel dimensions
-            the design intended.
+            compile to CSS dimensions the browser can measure. Those measurements inform Figma node geometry, which should be checked against the source.
           </p>
         </div>
 
@@ -537,7 +536,7 @@
           <p class="text-sm text-content-muted leading-relaxed">
             Open the page in a browser, open DevTools, right-click the root element in the Elements panel,
             choose Copy &gt; Copy outerHTML, and paste into the html2design Figma plugin. All Tailwind utility
-            classes are already compiled to computed CSS — they transfer as pixel-accurate fills, text styles,
+            classes are already compiled to computed CSS — those values become inputs for editable fills, text styles,
             and layout to Figma.
           </p>
         </div>

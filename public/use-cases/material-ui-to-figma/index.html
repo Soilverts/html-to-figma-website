@@ -234,7 +234,7 @@
         <strong class="text-content font-medium">Converting MUI components to Figma</strong> means running your React app,
         opening the component in your browser, and copying the rendered HTML into the html2design plugin. MUI's
         <strong class="text-content font-medium">emotion CSS-in-JS, theme tokens, and variant props</strong>
-        are all resolved by the browser before the plugin reads a single character — so Figma gets pixel-accurate fills,
+        are all resolved by the browser before the plugin reads a single character — so Figma receives measured fills,
         spacing, and typography from your real design system.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -494,7 +494,7 @@
             MUI's spacing scale (8px base unit) produces computed
             <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code> and
             <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">margin</code> values.
-            The Figma import reflects those exact pixel values in frame padding and auto-layout gaps.
+            Those computed values inform frame placement and spacing. Review the generated geometry before converting it into components.
           </p>
         </div>
 

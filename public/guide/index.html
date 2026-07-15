@@ -101,54 +101,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert HTML to Figma",
-    "description": "Step-by-step process for converting HTML and CSS code into native, editable Figma designs using the html2design plugin.",
-    "totalTime": "PT15M",
-    "tool": [
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "html2design (Figma plugin)" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Open the page you want to convert in a browser",
-        "text": "Navigate to the URL or open a local dev server for the HTML page, React component, or CSS component you want to bring into Figma. Any modern browser works — Chrome, Firefox, Edge."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Copy the rendered HTML",
-        "text": "Right-click the element in the browser, choose Inspect, right-click the root node in DevTools, and select Copy → Copy outerHTML. This captures the fully rendered, computed HTML with all applied CSS classes."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Open html2design in Figma",
-        "text": "In Figma, go to Plugins → html2design (or search 'html2design' in the Community). Run the plugin. You will see a text input area."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Paste and import",
-        "text": "Paste the copied HTML into the plugin input field and click Import. The plugin reads the browser-computed styles and generates native Figma frames, groups, text nodes, and shapes — no screenshots, fully editable."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Organise and rename layers",
-        "text": "Review the imported frame in Figma. Rename layers to match your design system conventions. Convert frames to Components where appropriate. Apply Figma Variables to link colours and spacing to your token library."
-      }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
@@ -160,7 +112,7 @@
         "name": "What is HTML to Figma conversion?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HTML to Figma conversion is the process of taking a live or locally rendered web page — built with HTML, CSS, and any JavaScript framework — and importing it into Figma as fully editable native layers. The result is a Figma frame that preserves the exact computed colours, spacing, typography, and layout of the original, without any screenshots. It bridges the gap between production code and Figma design files, making it possible to build a design system from an existing codebase."
+          "text": "HTML to Figma conversion uses browser-rendered HTML and computed styles as inputs for native Figma frames, text, shapes, and images. Supported nodes remain editable, while fonts, complex effects, runtime states, and responsive behavior can require cleanup."
         }
       },
       {
@@ -168,7 +120,7 @@
         "name": "How do I convert HTML to Figma for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Install html2design from the Figma Community — it is free to try. Open any web page in a browser, copy the outerHTML from DevTools, paste it into the plugin in Figma, and click Import. The free tier covers standard conversions. A paid plan ($12/month) unlocks batch imports, higher resolution, and advanced token extraction."
+          "text": "Install html2design from the Figma Community and use the 10 trial conversions on representative pages. After the trial, the listed price is $12/month or $96/year. Manual HTML conversion and public URL capture use separate allowances."
         }
       },
       {
@@ -184,7 +136,7 @@
         "name": "Does html2design work with Tailwind CSS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Tailwind utility classes are resolved by the browser at render time, so when you copy the outerHTML the html2design plugin receives the fully computed styles — exact pixel values, colour codes, and spacing — regardless of the Tailwind version or whether you use JIT mode. You can also extract Tailwind's design tokens directly into Figma Variables."
+          "text": "Yes. Tailwind components render to ordinary browser HTML and CSS. html2design can recreate supported colors, spacing, typography, and layout, but font metrics and browser-only effects can differ in Figma. Register approved design-token values as Figma Variables during cleanup."
         }
       },
       {
@@ -216,7 +168,7 @@
         "name": "How do I migrate a design system from code to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Start by building a token reference page that renders all your CSS custom properties (colours, spacing, typography) as visible blocks, then import it with html2design to seed Figma Variables and Styles. Next, import your atomic components (buttons, inputs, badges) one by one, convert them to Figma Components, and publish the library. Work upward through molecules and organisms. A medium-sized design system typically takes one to two days to migrate."
+          "text": "Start with a token reference page that renders CSS custom properties as visible blocks. Import it as evidence, then register approved values as Figma Variables and Styles manually. Pilot atomic, stateful, and composite components before estimating the full migration."
         }
       },
       {
@@ -224,7 +176,7 @@
         "name": "Does html2design support Vue and Nuxt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Vue and Nuxt components render to standard HTML in the browser. Run your dev server (npm run dev), open the component URL, copy outerHTML from DevTools, and paste into html2design. Scoped styles defined with <style scoped> are fully resolved by the browser before copy, so they import correctly."
+          "text": "Yes. Vue and Nuxt components render to browser HTML and CSS. Run the dev server, open the component, copy its rendered outerHTML, and paste it into html2design. Scoped selectors and external assets still need output review."
         }
       },
       {
@@ -353,7 +305,7 @@
 
     <!-- GEO: Definition block -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML to Figma conversion</strong> is the process of taking any web page or component — rendered by a browser from HTML and CSS — and importing it into <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> as fully editable, native layers. The output is not a screenshot: it is real Figma frames, text nodes, and shapes with the exact computed colours, spacing, and typography of the original. This makes it possible to build a Figma design system from an existing codebase, eliminate design-development drift, and bridge the handoff gap — all without rebuilding anything from scratch.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML to Figma conversion</strong> uses a browser-rendered page or component as the source for native <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> frames, text, shapes, and images. Supported nodes remain editable, but browser and Figma rendering do not map one-to-one. Review fonts, complex effects, image crops, runtime states, and responsive behavior after import.</p>
     </div>
 
     <!-- Table of Contents -->
@@ -376,7 +328,7 @@
 
     <p>Every engineering team that ships a product eventually faces the same problem: the Figma file and the live codebase have diverged. A design was updated in code but not in Figma, or a new component was built by a developer without a design counterpart. Over time, Figma becomes a stale record of what was once intended, not what actually exists.</p>
 
-    <p>HTML to Figma conversion solves this by making code the source of truth. You capture the browser's rendered output — fully resolved styles, exact pixel values — and import it into Figma. The result is a design file that reflects reality, not memory.</p>
+    <p>HTML to Figma conversion uses rendered output as evidence instead of rebuilding from memory. It can create a useful visual baseline, but the browser and Figma have different rendering models, so fonts, effects, responsive behavior, and unsupported content still need review.</p>
 
     <p>Here are the most common reasons teams convert HTML to Figma:</p>
 
@@ -422,7 +374,7 @@
     <div class="step-card">
       <div class="step-num">Step 4</div>
       <h3>Paste and import</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Paste the copied HTML into the plugin's input field and click <em>Import</em>. The plugin processes the markup, resolves all CSS, and generates a Figma frame on your canvas within seconds.</p>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Paste the copied HTML into the plugin's input field and click <em>Import</em>. The plugin processes supported markup and computed styles, then creates a Figma frame for review.</p>
     </div>
 
     <div class="step-card">
@@ -438,7 +390,7 @@
 
     <p>The fastest-growing way to start a Figma design is to let an AI tool generate it. Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT all produce real HTML, CSS, and React — which means html2design can bring their output straight into Figma as native, editable layers. Render the AI-generated UI in a browser, copy the outerHTML, and paste it into the plugin. Because the browser resolves every style to a computed value first, the import is model- and framework-agnostic.</p>
 
-    <p>This closes the loop of the AI design era: the model produces a strong first version in seconds, and html2design hands it to your team in Figma to refine, align to a design system, and ship — instead of rebuilding the AI output by hand.</p>
+    <p>This closes part of the AI design loop: generated HTML can become a Figma baseline for review, refinement, and design-system alignment instead of being treated as a finished design artifact.</p>
 
     <div class="framework-grid">
       <a href="/use-cases/claude-to-figma" class="framework-card">
@@ -481,7 +433,7 @@
       <a href="/blog/tailwind-to-figma" class="framework-card">
         <div class="fw-label">Tutorial</div>
         <div class="fw-title">Tailwind CSS</div>
-        <div class="fw-desc">Extract design tokens as Figma Variables from your Tailwind config.</div>
+        <div class="fw-desc">Import rendered Tailwind components, then map approved values to Figma Variables.</div>
       </a>
       <a href="/blog/bootstrap-to-figma" class="framework-card">
         <div class="fw-label">Tutorial</div>
@@ -511,7 +463,7 @@
       <a href="/use-cases/tailwind-react-to-figma" class="framework-card">
         <div class="fw-label">Use Case</div>
         <div class="fw-title">Tailwind + React</div>
-        <div class="fw-desc">Focused workflow for React + Tailwind teams — import components and extract tokens as Figma Variables.</div>
+        <div class="fw-desc">Focused workflow for React + Tailwind teams: import components and map approved tokens during cleanup.</div>
       </a>
       <a href="/use-cases/sketch-to-figma" class="framework-card">
         <div class="fw-label">Use Case</div>
@@ -544,22 +496,22 @@
     <p>React renders to the DOM just like any other framework. Run your dev server (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>), open the component in Chrome, copy its outerHTML from DevTools, and paste into html2design. Works with Next.js App Router, Pages Router, and Storybook. The full tutorial walks through converting a complex component with hover states, dark mode, and responsive variants. → <a href="/blog/react-component-to-figma">React Component to Figma →</a></p>
 
     <h3>Storybook</h3>
-    <p>Storybook is the ideal source for component-level conversion because each story renders an isolated component variant at a predictable localhost URL. Open the story in Canvas mode, select the component root in DevTools, and copy its outerHTML. Because Storybook runs on <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">localhost:6006</code>, URL-based import tools cannot reach it — the code-paste method is the only approach that works. A common team workflow: export every component story to Figma systematically, then build a Figma component library from the captures. → <a href="/use-cases/storybook-to-figma">Storybook to Figma →</a></p>
+    <p>Storybook is useful for component-level conversion because each story renders an isolated variant at a predictable localhost URL. Open the story in Canvas mode and copy the component's rendered outerHTML for an extension-free workflow. Browser extensions may also capture localhost when their permissions and product workflow support it. → <a href="/use-cases/storybook-to-figma">Storybook to Figma →</a></p>
 
     <h3>Vue and Nuxt</h3>
     <p>Vue's scoped CSS is resolved by the browser before you copy the outerHTML, so scoped styles import correctly with no extra steps. Start your Nuxt or Vite dev server, navigate to the component's URL, and copy the root element's outerHTML. Scoped class names like <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">data-v-xxxx</code> are already resolved to their computed values by the time you copy. → <a href="/use-cases/vue-to-figma">Vue to Figma →</a></p>
 
     <h3>Angular</h3>
-    <p>Angular's View Encapsulation generates unique attribute selectors (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">_nghost-xxx</code>), but these are fully resolved by the browser. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code>, navigate to the component, and copy the outerHTML. Outputs from Angular Material and CDK components import accurately. → <a href="/use-cases/angular-to-figma">Angular to Figma →</a></p>
+    <p>Angular's View Encapsulation generates unique attribute selectors (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">_nghost-xxx</code>). Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code>, navigate to the component, copy the rendered outerHTML, and review Material or CDK output for fonts, overlays, and runtime state. → <a href="/use-cases/angular-to-figma">Angular to Figma →</a></p>
 
     <h3>Svelte and SvelteKit</h3>
     <p>Svelte compiles its scoped styles into unique class names at build time. Open your SvelteKit dev server, navigate to the page, and copy the outerHTML. All styles are fully inlined by the browser. Svelte's reactive animations and transitions are captured as static snapshots of the current state. → <a href="/use-cases/svelte-to-figma">Svelte to Figma →</a></p>
 
     <h3>Tailwind CSS</h3>
-    <p>Tailwind is ideal for HTML to Figma conversion because its utility classes map cleanly to Figma properties: spacing utilities become layout values, colour utilities become fill/stroke colours, and font utilities become text styles. Import a Tailwind component and you get a Figma frame whose design tokens are directly readable. The Tailwind tutorial also covers extracting your design token configuration into Figma Variables. → <a href="/blog/tailwind-to-figma">Tailwind to Figma →</a></p>
+    <p>Tailwind components render to ordinary browser CSS. Editable import can recreate supported spacing, color, typography, and layout values, but the output does not automatically become a token-connected design system. Review the frame and map approved values to Figma Variables and Styles manually. → <a href="/blog/tailwind-to-figma">Tailwind to Figma →</a></p>
 
     <h3>Tailwind CSS + React</h3>
-    <p>Teams using React with Tailwind get a particularly smooth workflow: run your dev server or Storybook instance, copy the rendered component's outerHTML from DevTools, and paste into html2design. Every utility class is already resolved to pixel values by the browser — you get exact spacing, colors, and typography in Figma without any manual mapping. The dedicated use case page covers token extraction and building a Figma component library from your Tailwind design system. → <a href="/use-cases/tailwind-react-to-figma">Tailwind + React to Figma →</a></p>
+    <p>For React with Tailwind, run the dev server or Storybook, copy the rendered component's outerHTML, and paste it into html2design. The browser provides computed values, but Figma text metrics and unsupported effects can differ. Use the result as a baseline, then map approved values and variants into the design system. → <a href="/use-cases/tailwind-react-to-figma">Tailwind + React to Figma →</a></p>
 
     <h3>Bootstrap</h3>
     <p>Bootstrap's component library imports cleanly because every component follows a predictable HTML structure with well-named CSS classes. Import a Bootstrap button, card, or navbar and you get a Figma frame that accurately mirrors the component's visual output. The Bootstrap guide covers mapping imported frames to a reusable Figma component library. → <a href="/blog/bootstrap-to-figma">Bootstrap to Figma →</a></p>
@@ -588,12 +540,12 @@
     <!-- Section 4 -->
     <h2 id="design-system">5. Design System Migration Workflow</h2>
 
-    <p>One of the most powerful applications of HTML to Figma conversion is migrating an existing code-based design system into Figma. If your team has been building components in code without a Figma counterpart, this workflow lets you catch up in days rather than weeks.</p>
+    <p>One application of HTML to Figma conversion is migrating an existing code-based design system into Figma. Imported frames can accelerate visual inventory work, but the final library still needs deliberate components, variants, variables, naming, and documentation.</p>
 
     <p>The workflow has three phases:</p>
 
-    <h3>Phase 1 — Extract design tokens</h3>
-    <p>Build a token reference page — a single HTML page that renders every CSS custom property (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--color-*</code>, <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--spacing-*</code>, <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--font-*</code>) as a visible block. Open it in a browser, copy the outerHTML, and import it into Figma. You now have a Figma frame with exact computed values for every token. Register them as Figma Variables and Styles.</p>
+    <h3>Phase 1 — Inventory and approve design tokens</h3>
+    <p>Build a token reference page — a single HTML page that renders every CSS custom property (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--color-*</code>, <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--spacing-*</code>, <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">--font-*</code>) as a visible block. Open it in a browser, copy the outerHTML, and import it into Figma. Review the browser-derived values in the resulting frame, then register the approved values as Figma Variables and Styles.</p>
 
     <h3>Phase 2 — Import atomic components</h3>
     <p>Start with the smallest, most reused components: buttons, inputs, badges, checkboxes. Import each state (default, hover, focus, disabled, error) as a separate Figma frame. Convert each frame to a Figma Component and organise them under a published library using the naming convention <em>Category / Component / Variant</em>.</p>
@@ -602,7 +554,7 @@
     <p>Move from atoms to molecules (form rows, card headers) to organisms (navigation bars, hero sections, data tables). At each level, bind the imported colours and spacing to your Figma Variables from Phase 1 so the entire library is token-connected.</p>
 
     <div class="tip-box">
-      <p><strong>Time estimate:</strong> A medium design system (50–100 components) typically takes one to two full days to migrate using this workflow. A small system (10–20 components) can be done in a morning.</p>
+      <p><strong>Measure before planning:</strong> Pilot one simple component, one stateful component, and one composite section. Use the observed import and cleanup time to estimate the full library instead of applying a generic migration estimate.</p>
     </div>
 
     <p>For a complete, step-by-step walkthrough of this process, see the <a href="/blog/design-system-migration">Design System Migration guide</a>.</p>
@@ -665,22 +617,22 @@
     <p>A screenshot is a raster image placed on the Figma canvas. It looks right but you cannot edit text, change colours, or resize without distortion. A code import produces real Figma objects: text nodes you can re-type, rectangles you can recolour, frames you can re-layout with Auto Layout. For any design work beyond a static reference, code import is the correct choice.</p>
 
     <h3>Code import vs manual recreation</h3>
-    <p>Manual recreation gives full control but is extremely slow for anything more than a handful of components. A typical button component with five states might take 30–60 minutes to rebuild manually in Figma. With code import, that same button is imported in under a minute. Manual recreation is appropriate only for greenfield design work where no code exists yet.</p>
+    <p>Manual recreation gives full control but is extremely slow for anything more than a handful of components. A typical button component with five states might take 30–60 minutes to rebuild manually in Figma. With code import, that same button is imported in a few manual steps. Manual recreation is appropriate only for greenfield design work where no code exists yet.</p>
 
     <h3>Code import vs AI screenshot tools</h3>
-    <p>AI tools that convert screenshots to Figma layers use computer vision to infer layout, which introduces approximation errors in spacing, font sizes, and colours. Code import reads exact computed values directly from the browser — no inference required. For production-grade work, code import is more accurate.</p>
+    <p>Screenshot-to-layer tools infer structure from pixels. Code import can instead use DOM structure and browser-computed values, but Figma rendering still differs from the browser. Compare the output modes on the actual page you plan to redesign.</p>
 
     <!-- Section 6 -->
     <h2 id="faq">7. Frequently Asked Questions</h2>
 
     <div class="faq-item">
       <h3>What is HTML to Figma conversion?</h3>
-      <p>HTML to Figma conversion is the process of importing a browser-rendered web page or component into Figma as fully editable native layers. Using the html2design plugin, you copy the outerHTML from DevTools and paste it into Figma. The plugin reads the browser's computed styles and generates real Figma frames, text nodes, and shapes — not screenshots.</p>
+      <p>HTML to Figma conversion uses browser-rendered HTML and computed styles to create native Figma frames, text nodes, shapes, and images for supported content. These nodes remain editable, while unsupported effects and browser behaviors may need cleanup or raster fallback.</p>
     </div>
 
     <div class="faq-item">
       <h3>How do I convert HTML to Figma for free?</h3>
-      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a> — it is free to try. Copy the outerHTML from your browser's DevTools, paste it into the plugin in Figma, and click Import. No account or sign-up required for the free tier.</p>
+      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a> and use the 10 trial conversions on representative sources. Copy rendered outerHTML into the plugin or test a public URL, then inspect the output before subscribing.</p>
     </div>
 
     <div class="faq-item">
@@ -690,7 +642,7 @@
 
     <div class="faq-item">
       <h3>Does html2design work with Tailwind CSS?</h3>
-      <p>Tailwind utilities resolve to browser CSS before import. html2design can recreate supported colors, spacing, typography, and layout, but font metrics and browser-only effects can still differ in Figma. See the <a href="/blog/tailwind-to-figma">Tailwind to Figma guide</a> for token extraction.</p>
+      <p>Tailwind utilities resolve to browser CSS before import. html2design can recreate supported colors, spacing, typography, and layout, but font metrics and browser-only effects can still differ in Figma. See the <a href="/blog/tailwind-to-figma">Tailwind to Figma guide</a> for the review and manual token-mapping workflow.</p>
     </div>
 
     <div class="faq-item">
@@ -752,12 +704,12 @@
     <div id="takeaways" class="key-takeaways">
       <h2>Key Takeaways</h2>
       <ul>
-        <li><strong>Code import beats screenshots</strong> — html2design produces real, editable Figma layers with exact computed values, not flat images.</li>
-        <li><strong>Works with every framework</strong> — React, Vue, Angular, Svelte, Tailwind, Bootstrap, and any other framework that renders to HTML in a browser.</li>
-        <li><strong>The workflow is always the same</strong> — run a dev server, copy outerHTML from DevTools, paste into html2design in Figma.</li>
-        <li><strong>Design system migration is fast</strong> — a medium system (50–100 components) can be migrated in one to two days.</li>
-        <li><strong>Token extraction is built-in</strong> — import a token reference page to seed Figma Variables and Styles directly from your CSS custom properties.</li>
-        <li><strong>Free to start</strong> — install html2design from Figma Community and try it immediately with no sign-up required.</li>
+        <li><strong>Choose by output need</strong> — use editable import when individual supported nodes matter, or Pixel mode when visual fidelity matters more.</li>
+        <li><strong>Framework labels are secondary</strong> — the important input is rendered browser output, external assets, fonts, and runtime state.</li>
+        <li><strong>Choose the input workflow</strong> — paste/export HTML for non-public content or enter a public URL directly.</li>
+        <li><strong>Estimate migrations from a pilot</strong> — measure import and cleanup on representative component types.</li>
+        <li><strong>Token mapping is a review task</strong> — use imported values as evidence, then register approved Figma Variables and Styles deliberately.</li>
+        <li><strong>Use the trial deliberately</strong> — spend the 10 trial conversions on representative simple, complex, and stateful sources.</li>
       </ul>
     </div>
 
@@ -871,7 +823,7 @@
          class="framework-card">
         <div class="fw-label">Tutorial</div>
         <div class="fw-title">Design Tokens to Figma</div>
-        <div class="fw-desc">Extract color, spacing, and typography tokens from code as Figma Variables.</div>
+        <div class="fw-desc">Review code-defined values and map approved colors, spacing, and typography into Figma Variables.</div>
       </a>
       <a href="/blog/figma-dev-mode-vs-html2design"
          class="framework-card">
@@ -901,7 +853,7 @@
          class="framework-card">
         <div class="fw-label">Workflow</div>
         <div class="fw-title">Rapid Prototyping from Website</div>
-        <div class="fw-desc">Turn any live website into an editable Figma prototype in under 5 minutes.</div>
+        <div class="fw-desc">Turn any live website into an editable Figma prototype in a few manual steps.</div>
       </a>
       <a href="/blog/redesign-legacy-website-figma"
          class="framework-card">
@@ -943,7 +895,7 @@
          class="framework-card">
         <div class="fw-label">Use Case</div>
         <div class="fw-title">Tailwind CSS to Figma</div>
-        <div class="fw-desc">Import any Tailwind-styled component and extract tokens as Figma Variables.</div>
+        <div class="fw-desc">Import Tailwind-styled components, then map approved values to Figma Variables.</div>
       </a>
       <a href="/use-cases/webflow-to-figma"
          class="framework-card">
@@ -960,7 +912,7 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="text-3xl md:text-5xl font-black tracking-tighter mb-4">Convert your first component in 5 minutes</h2>
       <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto font-light">
-        Install html2design from Figma Community. Free to try. No browser extension required. Works with React, Vue, Angular, Tailwind, and every other web framework.
+        Install html2design from Figma Community and test the 10 trial conversions on representative rendered pages. Manual HTML import does not require a browser extension.
       </p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"

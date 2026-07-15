@@ -110,7 +110,7 @@
         "name": "Can I import an entire website into Figma at once?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not in a single operation, but you can import each page's HTML in one paste per page. For a 10-page site, that's 10 convert operations — each taking under 30 seconds. The page-by-page workflow is fast and produces cleaner, more manageable Figma frames than trying to batch everything into one import."
+          "text": "Not in a single operation. Import each page separately, review the result, and organize the resulting frames in Figma. A 10-page site requires at least 10 conversion operations plus cleanup, naming, and quality checks."
         }
       },
       {
@@ -129,29 +129,6 @@
           "text": "With the html2design workflow, a 20-page website typically takes 3–6 hours including import, frame naming, and basic organization. Manual recreation of the same site would take 2–4 weeks. The exact time depends on page complexity and how much cleanup you do after each import."
         }
       }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Import a Multi-page Website into Figma",
-    "description": "Import all pages of a website into Figma as editable design frames using the html2design plugin and a page-by-page workflow.",
-    "totalTime": "PT4H",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Build your page inventory from the sitemap", "text": "Use the sitemap.xml or a manual crawl to list all pages. Categorize by template type. Identify which pages share layouts.", "url": "https://html2design.com/blog/multi-page-website-to-figma" },
-      { "@type": "HowToStep", "position": 2, "name": "Set up a consistent Figma file structure", "text": "Create one Figma page per website section. Use consistent frame naming. Set canvas width to 1440px (desktop) or 390px (mobile).", "url": "https://html2design.com/blog/multi-page-website-to-figma" },
-      { "@type": "HowToStep", "position": 3, "name": "Import shared sections first", "text": "Import the navigation bar and footer before any full pages. Use these as reference layers so you can compare consistency across page imports.", "url": "https://html2design.com/blog/multi-page-website-to-figma" },
-      { "@type": "HowToStep", "position": 4, "name": "Import pages one at a time", "text": "For each page, set browser viewport to 1440px wide, copy outerHTML from the body element in DevTools, and paste into html2design. Name each resulting frame with the page name.", "url": "https://html2design.com/blog/multi-page-website-to-figma" },
-      { "@type": "HowToStep", "position": 5, "name": "Organize and link Figma pages", "text": "Arrange page frames vertically on the canvas. Add Figma prototype connections between pages to create a navigable wireframe. Set up a Figma Cover page with a site map for orientation.", "url": "https://html2design.com/blog/multi-page-website-to-figma" }
     ]
   }
   </script>
@@ -417,7 +394,7 @@
 
     <h3>Can I import an entire website into Figma at once?</h3>
     <p>
-      Not in a single operation, but the page-by-page workflow is fast — each page takes under 60 seconds to import. A 20-page site typically takes 3–6 hours total, including organization and naming. That's a fraction of the time it would take to manually recreate even a single page.
+      Not in a single operation. Each page requires a separate import, review, cleanup, and naming pass. Estimate the project from a representative page rather than applying a fixed time promise across sites with different fonts, media, effects, and page lengths.
     </p>
 
     <h3>How do I handle pages that look different across browsers?</h3>
@@ -474,8 +451,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first page in 30 seconds</h2>
-      <p class="text-content-muted mb-6">Copy any page's HTML from DevTools. Paste into html2design. Get a full editable Figma design instantly — no rebuilding from scratch.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first page</h2>
+      <p class="text-content-muted mb-6">Copy a page's HTML from DevTools, paste it into html2design, and use the editable import as a measured redesign starting point.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

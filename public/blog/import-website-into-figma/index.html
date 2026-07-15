@@ -117,60 +117,7 @@
       {
         "@type": "Question",
         "name": "How long does it take to import a website page into Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "With html2design, a single component converts in 2–5 seconds. A full above-the-fold section typically takes under 10 seconds. A full page with many elements may take up to 20–30 seconds. This compares to 2–4 hours of manual recreation in Figma." }
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Import a Website into Figma",
-    "description": "Import any website into Figma as editable layers using the html2design code-paste method — works with localhost, staging, and auth-gated pages.",
-    "totalTime": "PT5M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Install the html2design Figma plugin",
-        "text": "Open Figma. In the Community tab, search for html2design. Click Install. Requires an active subscription ($12/mo or $96/yr).",
-        "url": "https://html2design.com/blog/import-website-into-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Open the target website in your browser",
-        "text": "Navigate to whatever page or component you want to import. This can be a live website, your local dev server (localhost:3000), a Storybook story, or any page you're logged into.",
-        "url": "https://html2design.com/blog/import-website-into-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Copy the HTML using browser DevTools",
-        "text": "Open DevTools (Cmd+Option+I on Mac, F12 on Windows). In the Elements panel, locate the root element of the section or component. Right-click the element → Copy → Copy outerHTML.",
-        "url": "https://html2design.com/blog/import-website-into-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Paste into the html2design plugin in Figma",
-        "text": "In your Figma file, open the plugin via Main Menu → Plugins → html2design. Paste the copied HTML into the input field. Click Convert. The plugin creates native Figma layers — frames, text layers, shapes, and vector paths.",
-        "url": "https://html2design.com/blog/import-website-into-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Review and clean up the imported layers",
-        "text": "After import, you get a fully editable layer tree. Rename auto-generated layer names, check flex container frames for accurate spacing, detach and replace web fonts not in your Figma team library, and remove any utility layers you don't need.",
-        "url": "https://html2design.com/blog/import-website-into-figma"
+        "acceptedAnswer": { "@type": "Answer", "text": "Conversion time varies with element count, images, fonts, SVG complexity, and page length. A component is usually faster to import and review than a complete page. Test a representative source and include cleanup time when estimating the workflow." }
       }
     ]
   }
@@ -398,7 +345,7 @@
       <div class="step-num">Step 5</div>
       <h3>Review and clean up the imported layers</h3>
       <p>
-        After import, you get a fully editable layer tree. Common cleanup steps:
+        Editable mode creates supported native nodes, while unsupported content may be rasterized or omitted. Common cleanup steps:
       </p>
       <ul>
         <li>Rename auto-generated layer names to match your component vocabulary</li>
@@ -559,8 +506,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first page in under a minute</h2>
-      <p class="text-content-muted mb-6">Open DevTools. Copy outerHTML. Paste into html2design. Get editable Figma layers instantly — no extension needed.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first page in a few manual steps</h2>
+      <p class="text-content-muted mb-6">Open DevTools, copy outerHTML, and import supported content as editable Figma layers — no extension needed.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

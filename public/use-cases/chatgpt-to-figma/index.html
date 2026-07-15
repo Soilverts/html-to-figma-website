@@ -14,7 +14,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/chatgpt-to-figma" />
   <meta property="og:title" content="ChatGPT to Figma — Turn ChatGPT-Generated UI Into Figma Layers" />
-  <meta property="og:description" content="ChatGPT generates HTML/CSS/React. html2design turns the rendered output into native, editable Figma layers — pixel-accurate, in under two minutes." />
+  <meta property="og:description" content="Import ChatGPT browser output into Figma as best-effort editable layers for supported text, images, styling, and layout." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/chatgpt-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -127,7 +127,7 @@
         <strong class="text-content font-medium">ChatGPT designed your UI in HTML.</strong> Canvas previews and
         code blocks are real HTML/CSS/React — and the browser resolves them to computed CSS before html2design
         reads anything. Render it, copy the HTML, paste into the plugin, and get
-        <strong class="text-content font-medium">native, editable Figma layers</strong> in under two minutes.
+        <strong class="text-content font-medium">native, editable Figma layers</strong> in a few manual steps.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -181,7 +181,7 @@
   <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The ChatGPT to Figma workflow</h2>
-      <p class="text-content-muted mb-10 max-w-2xl">Four steps, under two minutes.</p>
+      <p class="text-content-muted mb-10 max-w-2xl">Four manual steps.</p>
       <div class="space-y-10">
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Render ChatGPT's UI in a browser</h3></div>
@@ -214,7 +214,7 @@
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">Copy becomes real Figma text layers with computed font, size, weight, line height, and color.</p></div>
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Exact colors &amp; styling</h3><p class="text-sm text-content-muted leading-relaxed">Backgrounds, borders, shadows, and gradients resolve to precise computed values as Figma fills, strokes, and effects.</p></div>
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">SVG icons as vector paths</h3><p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as editable Figma vector paths, sharp at any scale.</p></div>
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Pixel-accurate frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, and sizing recreated as measured Figma frames matching the browser render.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Measured editable frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, and sizing are recreated from browser measurements, with cleanup expected for unsupported effects.</p></div>
       </div>
     </div>
   </section>

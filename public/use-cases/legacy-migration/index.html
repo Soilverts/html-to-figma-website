@@ -112,7 +112,7 @@
         "name": "Can I convert an old website to Figma without a Chrome extension?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. HTML to Figma (html2design) is a native Figma plugin that requires no Chrome extension. You copy the HTML from your browser's DevTools or directly from the legacy codebase, paste it into the plugin, and it generates fully editable Figma layers."
+          "text": "Yes. html2design requires no Chrome extension. Copy rendered HTML from DevTools or use suitable source markup, then import supported content as editable Figma nodes. Review legacy fonts, effects, and layout behavior after conversion."
         }
       },
       {
@@ -120,7 +120,7 @@
         "name": "Does the old website need to be live to convert it to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. HTML to Figma works entirely from pasted HTML and CSS code. You can convert a legacy site even if it only exists as files on disk — no live server or public URL required."
+          "text": "No public URL is required for manual import. You can paste or load rendered HTML from a legacy site that exists locally. html2design also offers a separate public URL workflow when the page is reachable online."
         }
       },
       {
@@ -452,7 +452,7 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Does the old website need to be live to convert it to Figma?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            No. HTML to Figma works entirely from pasted HTML and CSS — not from a URL or a live server.
+            No public URL is required for manual import: paste or load rendered HTML from local files or a development server. Public URL import is available as a separate workflow.
             You can open an archived <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.html</code> file directly in your browser,
             copy the HTML from DevTools, and paste it into the plugin. No deployment required.
           </p>

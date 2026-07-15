@@ -120,7 +120,7 @@
         "name": "Does Tailwind CSS work with the html2design plugin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Tailwind CSS works perfectly. The plugin reads computed CSS, not utility class names. When you copy the rendered HTML, the browser has already translated every utility class — text-sm, font-bold, bg-blue-500, rounded-lg — into its final computed value. The plugin never sees the Tailwind class names; it only sees the final CSS values the browser computed."
+          "text": "Yes. Tailwind utilities resolve to browser CSS before conversion, so the plugin can use computed visual values rather than interpreting utility class names. Review the Figma result for fonts, effects, layout, and token mapping."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "Will my Tailwind CSS theme colors be accurate in Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Tailwind theme customizations defined in tailwind.config.js — custom colors, spacing scales, border radii — are resolved by the browser to their final values. If you defined primary: '#2563EB' in your theme, any element using bg-primary will have a fill of exactly #2563EB in Figma. The plugin reads what the browser computed, not the source configuration."
+          "text": "Tailwind theme customizations resolve to browser CSS before conversion. Supported colors, spacing, and radii can be recreated as Figma properties, but compare the result with the source and map approved values to Variables manually."
         }
       },
       {
@@ -190,7 +190,7 @@
       <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
         Tailwind + React to Figma —<br />
-        In Two Minutes
+        A Reviewable Workflow
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">Converting Tailwind CSS and React components to Figma</strong> works
@@ -198,7 +198,7 @@
         <code class="text-sm bg-surface border border-gray-200 px-1.5 py-0.5 rounded font-mono">rounded-xl</code>,
         <code class="text-sm bg-surface border border-gray-200 px-1.5 py-0.5 rounded font-mono">gap-4</code> — into computed CSS.
         Paste the rendered HTML into the html2design plugin and get
-        <strong class="text-content font-medium">native, editable Figma layers</strong> with exact spacing, colors, and typography.
+        <strong class="text-content font-medium">supported native Figma layers</strong>, then review spacing, colors, fonts, and effects against the source.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
@@ -240,7 +240,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Tailwind + React to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">
-        Four steps, under two minutes. Works with any React + Tailwind stack and any Tailwind component library.
+        Four manual steps. Works with any React + Tailwind stack and any Tailwind component library.
       </p>
 
       <div class="space-y-10">
@@ -415,17 +415,17 @@
           <h3 class="text-base font-bold tracking-tight">Exact Tailwind theme colors</h3>
           <p class="text-sm text-content-muted leading-relaxed">
             Custom colors from your <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">tailwind.config.js</code>
-            — brand primaries, neutral scales, semantic tokens — are resolved by the browser and
-            appear as exact hex fills in Figma.
+            — brand primaries, neutral scales, semantic tokens — resolve to browser CSS and can
+            become supported fills in Figma, subject to review.
           </p>
         </div>
 
         <div class="bg-surface border border-gray-200 rounded-2xl p-6 space-y-3">
-          <h3 class="text-base font-bold tracking-tight">Pixel-perfect spacing</h3>
+          <h3 class="text-base font-bold tracking-tight">Computed spacing baseline</h3>
           <p class="text-sm text-content-muted leading-relaxed">
             Tailwind's spacing scale (<code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">p-4</code> = 16px,
             <code class="bg-white border border-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gap-6</code> = 24px)
-            appears as exact pixel values in Figma. Consistent with your design system spacing.
+            provides computed dimensions that inform node placement. Compare the result with the rendered component.
           </p>
         </div>
 
@@ -470,8 +470,8 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Does Tailwind CSS work with the html2design plugin?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Yes, Tailwind CSS works perfectly. The plugin reads computed CSS, not utility class names.
-            Custom themes, extended palettes, and spacing overrides all resolve correctly.
+            Yes. The plugin uses computed CSS rather than utility class names. Custom themes, extended palettes,
+            and spacing overrides still need source-to-Figma review.
           </p>
         </div>
 

@@ -24,7 +24,7 @@ const posts = [
     href: '/blog/react-component-to-figma',
     label: 'Tutorial · 8 min read',
     title: 'How to Convert React Components to Figma Designs',
-    description: 'React renders to HTML — and that output converts to editable Figma layers in seconds. Covers Storybook, Next.js, and Tailwind.',
+    description: 'React renders to HTML that can be imported as best-effort editable Figma layers. Covers Storybook, Next.js, and Tailwind.',
     tags: 'react · tutorial',
     date: 'Mar 18, 2026',
     datetime: '2026-03-18',

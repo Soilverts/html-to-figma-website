@@ -110,7 +110,7 @@
         "name": "Does html2design convert CSS Grid to Figma Auto Layout automatically?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No — html2design converts CSS Grid and Flexbox layouts into accurately positioned Figma frames that preserve the visual layout. To get true Figma Auto Layout, you apply it manually in Figma after import. This two-step approach gives you a pixel-accurate starting point plus full Figma responsiveness."
+          "text": "No — html2design converts CSS Grid and Flexbox layouts into measured Figma frames. To get true Figma Auto Layout, apply it manually after import. Review the measured starting point before rebuilding responsive behavior."
         }
       },
       {
@@ -136,59 +136,6 @@
           "@type": "Answer",
           "text": "Figma Auto Layout uses a single 'gap' value (called 'spacing' in Figma). CSS Grid supports separate row-gap and column-gap values. When applying Auto Layout in Figma, use the gap value from your CSS row-gap or column-gap — or use 'space between' mode to distribute items evenly without a fixed gap."
         }
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert CSS Grid & Flexbox to Figma Auto Layout",
-    "description": "Import CSS Grid or Flexbox layouts into Figma using html2design, then apply Figma Auto Layout for a responsive, editable design file.",
-    "totalTime": "PT10M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Copy outerHTML of the layout container",
-        "text": "In browser DevTools, right-click the Flexbox or Grid container element. Select Copy → Copy outerHTML. Include all child elements — rows, columns, and grid cells.",
-        "url": "https://html2design.com/blog/css-grid-to-figma-auto-layout"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Paste into html2design and convert",
-        "text": "Open html2design in Figma via Plugins → html2design. Paste the HTML into the input field and click Convert. The plugin creates a frame matching the computed CSS layout.",
-        "url": "https://html2design.com/blog/css-grid-to-figma-auto-layout"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Identify layout containers in the Figma layers",
-        "text": "In the layers panel, locate the frame corresponding to your Flexbox or Grid container. Child frames represent your row/column items. Review their positions and sizes before applying Auto Layout.",
-        "url": "https://html2design.com/blog/css-grid-to-figma-auto-layout"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Apply Figma Auto Layout to the container",
-        "text": "Select the parent container frame. Press Shift+A (or click + in the Design panel under Auto Layout). Set direction (horizontal or vertical), gap, padding, and alignment to match your original CSS values.",
-        "url": "https://html2design.com/blog/css-grid-to-figma-auto-layout"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Set child fill/hug/fixed sizing",
-        "text": "Select each child frame inside the Auto Layout container. Set width and height to Fill, Hug, or Fixed as appropriate. Use Fill to replicate flex: 1, and Hug to match content-sized items.",
-        "url": "https://html2design.com/blog/css-grid-to-figma-auto-layout"
       }
     ]
   }
@@ -509,7 +456,7 @@
 
     <h3>Does html2design convert CSS Grid to Figma Auto Layout automatically?</h3>
     <p>
-      No — html2design imports CSS Grid as accurately positioned frames. Applying Figma Auto Layout is a manual step. This is intentional: automatic layout conversion would lose precision in complex grids. The import gives you a pixel-accurate reference to work from.
+      No — html2design imports CSS Grid as measured frames. Applying Figma Auto Layout is a manual step. Review the imported geometry, then rebuild responsive constraints and interactions in Figma.
     </p>
 
     <h3>What's the difference between CSS Flexbox and Figma Auto Layout?</h3>
@@ -575,8 +522,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first layout in 30 seconds</h2>
-      <p class="text-content-muted mb-6">Paste any Flexbox or Grid component into html2design and get accurately positioned Figma frames instantly.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first layout</h2>
+      <p class="text-content-muted mb-6">Paste a Flexbox or Grid component into html2design and review its measured Figma frame before applying Auto Layout.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

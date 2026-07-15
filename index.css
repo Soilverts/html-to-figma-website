@@ -34,17 +34,6 @@ body {
   scrollbar-width: none;
 }
 
-/* Hero entrance animations — replaces framer-motion for above-fold content */
-@keyframes fadeUp {
-  from { transform: translateY(20px); }
-  to   { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
 @keyframes slideInLeft {
   from { opacity: 0; transform: rotateY(25deg) rotateX(5deg) translateX(-120px); }
   to   { opacity: 1; transform: rotateY(25deg) rotateX(5deg) translateX(-80px); }
@@ -53,14 +42,6 @@ body {
 @keyframes slideInRight {
   from { opacity: 0; transform: rotateY(25deg) rotateX(5deg) translateX(40px); }
   to   { opacity: 1; transform: rotateY(25deg) rotateX(5deg) translateX(80px); }
-}
-
-.hero-fade-up {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.hero-fade-in {
-  animation: fadeIn 0.8s ease 0.2s both;
 }
 
 .visual-slide-left {
@@ -82,4 +63,15 @@ body {
 
 .nav-slide-down:nth-child(2) {
   animation-delay: 0.1s;
+}
+
+/* Static pages share a compact fixed header. Keep the primary action tappable. */
+body > nav.fixed a {
+  white-space: nowrap;
+}
+
+body > nav.fixed a[class*="bg-content"] {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
 }

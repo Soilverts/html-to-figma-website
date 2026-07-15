@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>Svelte to Figma — Convert Svelte Components to Designs</title>
-  <meta name="description" content="Convert Svelte and SvelteKit components into editable Figma designs. html2design handles scoped CSS — paste outerHTML and get fully layered Figma frames." />
+  <meta name="description" content="Import rendered Svelte and SvelteKit components into Figma from copied HTML. Scoped CSS is read from browser-computed styles; unsupported effects may need cleanup." />
   <meta name="keywords" content="svelte to figma, sveltekit to figma, convert svelte component figma, svelte figma plugin, svelte design handoff figma, svelte html to figma, svelte figma export" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/svelte-to-figma" />
   <meta property="og:title" content="Svelte to Figma — Convert Svelte Components to Designs" />
-  <meta property="og:description" content="Convert Svelte and SvelteKit components into editable Figma designs. html2design handles scoped CSS — paste outerHTML and get fully layered Figma frames.'s compiled scoped CSS is already resolved by the browser — paste the rendered HTML into html2design and get editable Figma frames instantly." />
+  <meta property="og:description" content="Import rendered Svelte and SvelteKit components into Figma from copied HTML, using browser-computed styles as the source for best-effort editable layers." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/svelte-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -27,7 +27,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Svelte to Figma — Convert Svelte Components to Designs" />
-  <meta name="twitter:description" content="Convert Svelte and SvelteKit components into editable Figma designs. html2design handles scoped CSS — paste outerHTML and get fully layered Figma frames.'s compiled output and scoped CSS work perfectly with html2design — no extension needed." />
+  <meta name="twitter:description" content="Import rendered Svelte and SvelteKit components into Figma from copied HTML, with no browser extension required." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/svelte-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -219,8 +219,8 @@
         The html2design Figma plugin accepts the rendered HTML you copy from your browser's DevTools and converts it into
         native Figma frames. Svelte's scoped CSS is compiled into hashed class names (e.g.,
         <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">svelte-1a2b3c</code>)
-        that the browser resolves to computed values before the plugin reads them. The result in Figma is a pixel-accurate
-        representation of the Svelte component — complete with real text layers, accurate spacing, and correct colors.
+        that the browser resolves to computed values before the plugin reads them. The result is a best-effort editable
+        representation with real text and shape layers; fonts, complex effects, and responsive behavior can need cleanup.
       </p>
     </div>
   </section>
@@ -321,7 +321,7 @@
             </p>
             <p>
               When the Svelte component changes, re-import: run the dev server, copy the updated outerHTML, paste into
-              html2design. The workflow takes under two minutes and keeps Figma in sync with the live codebase.
+              html2design. Repeat the same manual steps whenever you need a fresh Figma reference from the live codebase.
             </p>
           </div>
         </article>

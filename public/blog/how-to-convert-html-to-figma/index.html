@@ -34,7 +34,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Convert HTML to Figma: A Developer's Guide (2026)" />
-  <meta name="twitter:description" content="Paste raw HTML/CSS into Figma and get fully editable layers. Step-by-step guide for developers and designers." />
+  <meta name="twitter:description" content="Paste supplied HTML/CSS into Figma and create editable nodes for supported content. Step-by-step guide for developers and designers." />
   <meta name="twitter:image" content="https://html2design.com/og/blog/how-to-convert-html-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -141,59 +141,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert HTML to Figma",
-    "description": "Convert HTML and CSS into native, editable Figma layers using the html2design plugin — no Chrome extension required.",
-    "totalTime": "PT5M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Install the html2design plugin",
-        "text": "Open Figma and go to the Community tab. Search for html2design or HTML to Figma. Click Install. Once installed, find it under Plugins → html2design in any Figma file.",
-        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Open DevTools and copy the HTML",
-        "text": "Navigate to the element you want to convert. Right-click the element → Inspect. In the Elements panel, right-click the root node of your component → Copy → Copy outerHTML.",
-        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Open html2design in Figma",
-        "text": "In your Figma file, open the plugin via Main Menu → Plugins → html2design. The plugin panel opens on the right side of the canvas. Make sure you're logged in with your subscription active.",
-        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Paste your HTML and convert",
-        "text": "In the plugin panel, paste your copied HTML into the input field. Click Convert (or press Cmd+Enter). The plugin processes your markup and generates native Figma layers on the canvas.",
-        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Review and clean up the output",
-        "text": "Select the generated frame on the canvas. Review positioned frames, text layers, shape fills, and images. Rename layers, merge redundant groups, and swap placeholder fills with your design system tokens.",
-        "url": "https://html2design.com/blog/how-to-convert-html-to-figma"
-      }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: Speakable -->
   <script type="application/ld+json">
   {
@@ -271,7 +218,7 @@
       How to Convert HTML to Figma: A Developer's Guide
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Paste raw HTML and CSS directly into Figma and get fully editable layers — no Chrome extension, no live URL required. Here's exactly how.
+      Paste supplied HTML and CSS directly into Figma and create editable nodes for supported content — no Chrome extension or live URL required.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
@@ -299,7 +246,7 @@
       The manual path is painful. Recreating a single component by hand can take <strong>20–40 minutes</strong>. For an entire design system with dozens of states and breakpoints, that's weeks of work just to have a starting point.
     </p>
     <p>
-      <strong>html2design</strong> solves this. You copy HTML and CSS — from <a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank" rel="noopener noreferrer">browser DevTools</a>, a local dev server, or any source — paste it into the Figma plugin, and get back native, editable Figma layers. Positions, sizes, and spacing are preserved accurately. What took <strong>40 minutes now takes under 30 seconds</strong> — a 50–80× speed improvement for documentation-heavy workflows.
+      <strong>html2design</strong> addresses this workflow. Copy rendered HTML from <a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank" rel="noopener noreferrer">browser DevTools</a>, a local dev server, or another source, then paste it into the Figma plugin. Supported content becomes native, editable Figma layers with measured positions and sizes. Review fonts, media, effects, and complex layout against the browser source.
     </p>
 
     <h2>Prerequisites</h2>
@@ -392,7 +339,7 @@
     </p>
 
     <div class="tip-box">
-      <p><strong>Localhost works fine.</strong> html2design doesn't need to reach your URL — it just processes the HTML string you paste. This means it works perfectly with <code>localhost:3000</code>, <code>localhost:6006</code> (Storybook), or any dev server you can't expose publicly.</p>
+      <p><strong>Manual import does not require a public URL.</strong> Copy or export rendered HTML from <code>localhost:3000</code>, <code>localhost:6006</code> (Storybook), or another development server, then review external assets and fonts after import.</p>
     </div>
 
     <h2>What Gets Converted — and What Doesn't</h2>
@@ -400,7 +347,7 @@
     <p>html2design handles the vast majority of production UI, but a few things need manual follow-up:</p>
 
     <ul>
-      <li><strong>Flexbox layouts</strong> → Accurately positioned Figma frames (visual layout preserved; Auto Layout not applied automatically)</li>
+      <li><strong>Flexbox layouts</strong> → Best-effort Figma frame placement; compare spacing and alignment with the source</li>
       <li><strong>Typography</strong> → Text layers with font, size, weight, line-height (fully supported)</li>
       <li><strong>Colors and borders</strong> → Fills, strokes, border radius (fully supported)</li>
       <li><strong>CSS Grid</strong> → Approximated with nested frames (partial; positions preserved, no Auto Layout)</li>
@@ -496,8 +443,8 @@
     <!-- CTA -->
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
-      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Convert your first component in 30 seconds</h2>
-      <p class="text-content-muted mb-6">Install html2design from the Figma Community. Paste any HTML. Get editable Figma layers instantly.</p>
+      <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Convert your first component</h2>
+      <p class="text-content-muted mb-6">Install html2design from the Figma Community, paste supplied HTML, and review the resulting editable Figma layers.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

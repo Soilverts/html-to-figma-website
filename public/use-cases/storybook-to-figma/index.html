@@ -220,14 +220,14 @@
       <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
         <strong class="text-content">"Storybook to Figma"</strong> refers to the process of taking a component story
         rendered in Storybook and converting it into a native Figma design. Storybook renders each component in an
-        isolated browser environment with all its styles resolved — making it the ideal source for pixel-accurate
-        Figma imports via the html2design plugin.
+        isolated browser environment with its styles resolved — making it a useful source for measured,
+        best-effort editable Figma imports via the html2design plugin.
       </p>
       <p class="text-content-muted leading-relaxed max-w-3xl">
         The workflow requires no Storybook addons, no Figma tokens plugin, and no public Storybook URL. You run
         Storybook on <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>,
         copy the rendered HTML from the browser's DevTools, and paste it into the html2design Figma plugin.
-        The result is a Figma frame that exactly matches the live component — not a screenshot, not a vector trace.
+        The result is an editable Figma frame derived from the live component. Fonts, effects, and layout behaviors can still require cleanup.
       </p>
     </div>
   </section>
@@ -237,7 +237,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Storybook to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">
-        Four steps, under two minutes. Works with React, Vue, Angular, Svelte, and any Storybook framework.
+        Four manual steps. Works with React, Vue, Angular, Svelte, and any Storybook framework.
       </p>
 
       <div class="space-y-10">
@@ -321,8 +321,8 @@
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
               Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML,
-              and click <strong class="text-content">Generate</strong>. In seconds, you will have a native Figma frame
-              with editable text layers, fills, borders, and a layer hierarchy that mirrors the component structure.
+              and click <strong class="text-content">Generate</strong>. The plugin creates a native Figma frame
+              with editable nodes for supported text, fills, borders, and component structure.
             </p>
             <p>
               Repeat for each component variant or state. Import the default state, hover state, disabled state,
@@ -418,7 +418,7 @@
           <h3 class="text-base font-bold tracking-tight">Accurate spacing and layout</h3>
           <p class="text-sm text-content-muted leading-relaxed">
             Padding, gap, border-radius, and flex/grid layout are read from computed styles — not source files.
-            The spacing values in Figma exactly match what the browser rendered in Storybook.
+            Figma spacing is derived from the browser's computed values and should be reviewed after import.
           </p>
         </div>
 
@@ -455,7 +455,7 @@
           <p class="text-sm text-content-muted leading-relaxed">
             Yes, but it is done story by story — there is no batch export. The best approach is to export
             the most commonly referenced components first (buttons, inputs, cards, modals) and build up the
-            Figma component library incrementally. Each export takes under two minutes.
+            Figma component library incrementally. Each export requires a few manual steps.
           </p>
         </div>
 

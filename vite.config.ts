@@ -23,27 +23,5 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      build: {
-        modulePreload: {
-          resolveDependencies: (_filename, dependencies) =>
-            dependencies.filter(
-              (dependency) =>
-                !dependency.includes('vendor-framer') &&
-                !dependency.includes('vendor-three'),
-            ),
-        },
-        rollupOptions: {
-          output: {
-            manualChunks: {
-              // Three.js in its own chunk — loaded only when ParticleField is visible
-              'vendor-three': ['three'],
-              // Framer Motion in its own chunk — loaded only for below-fold sections
-              'vendor-framer': ['framer-motion'],
-              // React core — keep stable for caching
-              'vendor-react': ['react', 'react-dom'],
-            },
-          },
-        },
-      },
     };
 });

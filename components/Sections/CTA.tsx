@@ -13,8 +13,13 @@ export const CTA: React.FC<{ id: string }> = ({ id }) => {
                 </p>
 
                 <div className="flex flex-col items-center gap-6">
-                    <a href="#pricing" className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-lg text-white transition-all duration-300 bg-content rounded-full hover:bg-black hover:scale-105 hover:shadow-2xl hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                        <span className="mr-8">Get Access</span>
+                    <a
+                        href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-lg text-white transition-all duration-300 bg-content rounded-full hover:bg-black hover:scale-105 hover:shadow-2xl hover:shadow-black/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    >
+                        <span className="mr-8">Open in Figma</span>
                         <div className="absolute right-2 top-2 bottom-2 aspect-square bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-300 delay-100">
                             <ArrowRight size={20} className="text-white group-hover:text-black transition-colors duration-300 delay-100" />
                         </div>

@@ -26,6 +26,15 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [isOpen]);
+
   const formatLabel = (id: string) => id.replace(/-/g, ' ');
 
   const handleScrollTo = (id: string) => {
@@ -105,7 +114,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
           variant="outline"
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full bg-white/80 backdrop-blur-md shadow-sm border-gray-200"
+          className="h-12 w-12 rounded-full bg-white/80 backdrop-blur-md shadow-sm border-gray-200"
           aria-expanded={isOpen}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
@@ -121,7 +130,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
         aria-hidden={!isOpen}
         {...(!isOpen ? { inert: '' } : {})}
       >
-        <div className="flex flex-col gap-6 text-center">
+        <div className="max-h-[calc(100svh-7rem)] overflow-y-auto no-scrollbar flex flex-col gap-5 px-6 py-4 text-center">
           {sections.map((id, i) => (
             <div
               key={id}
@@ -131,7 +140,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
               <button
                 onClick={() => handleScrollTo(id)}
                 tabIndex={isOpen ? 0 : -1}
-                className={`text-4xl font-light tracking-tight capitalize transition-colors ${
+                className={`min-h-12 text-3xl font-light tracking-normal capitalize transition-colors ${
                   activeSection === id ? 'text-black font-normal' : 'text-gray-400'
                 }`}
               >
@@ -155,7 +164,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
               <a
                 href={href}
                 tabIndex={isOpen ? 0 : -1}
-                className="text-4xl font-light tracking-tight capitalize transition-colors text-gray-400 hover:text-black"
+                className="min-h-12 inline-flex items-center text-3xl font-light tracking-normal capitalize transition-colors text-gray-400 hover:text-black"
                 onClick={() => setIsOpen(false)}
               >
                 {label}

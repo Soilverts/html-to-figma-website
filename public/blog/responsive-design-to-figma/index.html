@@ -141,59 +141,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert Responsive Design Breakpoints to Figma Variants",
-    "description": "Capture a responsive web component at multiple CSS breakpoints using html2design and assemble the results as Figma Variants in a Component Set.",
-    "totalTime": "PT15M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Identify your breakpoints",
-        "text": "Check your CSS or design system for the breakpoints you want to capture. Common breakpoints: 375px (mobile), 768px (tablet), 1280px (desktop). Note the exact pixel values.",
-        "url": "https://html2design.com/blog/responsive-design-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Capture mobile layout",
-        "text": "Resize your browser to 375px wide. In DevTools, right-click the component root element and select Copy → Copy outerHTML. Paste into html2design and convert. Label the resulting frame 'Viewport=Mobile'.",
-        "url": "https://html2design.com/blog/responsive-design-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Capture tablet and desktop layouts",
-        "text": "Repeat step 2 at 768px for tablet and 1280px for desktop. Each conversion produces a separate Figma frame. Name them consistently: 'Viewport=Tablet' and 'Viewport=Desktop'.",
-        "url": "https://html2design.com/blog/responsive-design-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Convert each frame to a component",
-        "text": "Select the mobile frame and press Cmd+Alt+K to Create Component. Repeat for tablet and desktop. You now have three separate components — one per breakpoint.",
-        "url": "https://html2design.com/blog/responsive-design-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Combine into a Figma Component Set (Variants)",
-        "text": "Select all three components on the canvas. Right-click → Combine as Variants. Figma creates a Component Set with a Viewport property (Mobile, Tablet, Desktop). Designers can now switch between breakpoints using the Variants panel.",
-        "url": "https://html2design.com/blog/responsive-design-to-figma"
-      }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: Speakable -->
   <script type="application/ld+json">
   {
@@ -308,7 +255,7 @@
       <li>Maintain only the desktop design, ignoring mobile — <strong>incomplete documentation</strong></li>
     </ul>
     <p>
-      <strong>html2design</strong> changes this. Because it captures computed HTML/CSS at the current viewport size, you can import mobile, tablet, and desktop layouts as separate editable frames in under 5 minutes — then assemble them as Figma Variants for a single, browsable component.
+      <strong>html2design</strong> changes this. Because it captures computed HTML/CSS at the current viewport size, you can import mobile, tablet, and desktop layouts as separate editable frames in a few manual steps — then assemble them as Figma Variants for a single, browsable component.
     </p>
 
     <h2>Standard Breakpoints for Figma Variants</h2>
@@ -523,7 +470,7 @@
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
       <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your first responsive layout in minutes</h2>
-      <p class="text-content-muted mb-6">Resize your browser, copy the HTML, paste into html2design. Get editable breakpoint frames in seconds.</p>
+      <p class="text-content-muted mb-6">Resize your browser, copy the rendered HTML at each target viewport, and compare the resulting editable breakpoint frames.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

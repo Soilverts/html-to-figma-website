@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "Does HTML to Figma preserve CSS layouts like Flexbox?",
-    answer: "HTML to Figma reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Each element\u2019s width, height, padding, and spacing are preserved in the resulting Figma layers. Note: Flexbox containers are converted to fixed-position frames, not Figma Auto-Layout. You can manually apply Auto-Layout in Figma after import if needed."
+    answer: "HTML to Figma reads computed positions and sizes from Flexbox layouts and maps supported geometry to measured Figma frames. Fonts, effects, responsive behavior, and complex layout can still differ, so compare the result with the browser. Flexbox containers become positioned frames rather than automatic Figma Auto Layout; apply Auto Layout manually when needed."
   },
   {
     question: "What typography features are preserved when converting HTML to Figma?",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     question: "Can I convert Claude, v0, or other AI-generated designs to Figma?",
-    answer: "Yes — this is one of the most popular workflows. AI tools like Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT all generate UI as HTML and CSS. Open the AI-generated UI in a browser (the live Artifact or preview, or a local dev server), copy the rendered HTML from DevTools, and paste it into the HTML to Figma plugin. The browser resolves all styles to computed values first, so the AI output transfers as native, editable Figma layers — text, vector paths, and pixel-accurate frames. See the dedicated Claude to Figma and v0 to Figma guides for step-by-step instructions."
+    answer: "Yes. AI tools such as Claude, Vercel v0, Bolt, Lovable, and ChatGPT can generate browser-rendered HTML and CSS. Open the generated UI in a browser, copy the rendered HTML from DevTools, and paste it into the plugin. Supported text, fills, vectors, and measured frames become editable Figma layers; fonts, media, browser-only effects, and complex layouts can require cleanup. See the Claude to Figma and v0 to Figma guides for the full workflow."
   }
 ];
 

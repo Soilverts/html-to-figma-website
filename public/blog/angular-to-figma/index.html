@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/blog/angular-to-figma" />
   <meta property="og:title" content="Angular to Figma: Import Angular Components into Figma (2026 Guide)" />
-  <meta property="og:description" content="Angular renders to HTML and CSS in the browser — and that output converts to native, editable Figma layers in seconds. Here's the exact workflow for Angular 17/18, Angular Material, and Nx monorepos." />
+  <meta property="og:description" content="Use rendered Angular HTML and browser-computed styles as inputs for best-effort editable Figma layers. Covers Angular Material and Nx projects." />
   <meta property="og:image" content="https://html2design.com/og/blog/angular-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -125,7 +125,7 @@
         "name": "Can I convert an Angular component to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Angular renders to standard HTML and CSS in the browser. You copy the rendered component output from browser DevTools, then paste it into the html2design Figma plugin to get fully editable Figma layers. No special Angular plugin, build step, or code change is needed."
+          "text": "Yes. Angular renders to standard HTML and CSS in the browser. Copy the rendered component output with DevTools, then paste it into html2design to create editable Figma nodes for supported content. Review fonts, effects, and responsive behavior after import."
         }
       },
       {
@@ -159,67 +159,6 @@
           "@type": "Answer",
           "text": "Yes. Whether your Angular app uses NgModules, standalone components (the Angular 17+ default), or a mix of both, html2design only sees the HTML and CSS the browser produces. The architectural pattern — standalone, module-based, or lazy-loaded — makes no difference to the rendered output the plugin processes."
         }
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert an Angular Component to Figma",
-    "description": "Convert any Angular component into editable Figma designs by rendering it locally, copying the HTML output from DevTools, and pasting into the html2design plugin.",
-    "totalTime": "PT5M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Browser DevTools" },
-      { "@type": "HowToTool", "name": "Figma" },
-      { "@type": "HowToTool", "name": "Angular CLI development server (ng serve)" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Run your Angular app locally",
-        "text": "Start your Angular development server with `ng serve`. Navigate to the route or page that renders the component you want to convert.",
-        "url": "https://html2design.com/blog/angular-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Open DevTools and locate the component",
-        "text": "Open browser DevTools (Cmd+Option+I on Mac, F12 on Windows). Switch to the Elements panel. Use the element picker (Cmd+Shift+C) to click on the component's root host element in the page.",
-        "url": "https://html2design.com/blog/angular-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Copy the rendered HTML",
-        "text": "In the Elements panel, right-click the host element → Copy → Copy outerHTML. This copies the fully rendered HTML with all computed styles, Angular host attributes, and resolved class names.",
-        "url": "https://html2design.com/blog/angular-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Open html2design in Figma",
-        "text": "Switch to your Figma file. Open the plugin via Main Menu → Plugins → html2design. Make sure you are signed in with an active subscription.",
-        "url": "https://html2design.com/blog/angular-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Paste and convert",
-        "text": "Paste the copied HTML into the plugin's input field (Cmd+V on Mac, Ctrl+V on Windows). Click Convert. The plugin generates native Figma frames, text layers, fills, SVG paths, and border radius from the HTML.",
-        "url": "https://html2design.com/blog/angular-to-figma"
-      },
-      {
-        "@type": "HowToStep",
-        "position": 6,
-        "name": "Clean up and promote to a component",
-        "text": "Rename auto-generated layer names to match your Angular component vocabulary. Select the root frame and press Cmd+Alt+K (Mac) or Ctrl+Alt+K (Windows) to promote it to a Figma Component.",
-        "url": "https://html2design.com/blog/angular-to-figma"
       }
     ]
   }
@@ -306,7 +245,7 @@
       Angular to Figma: Import Angular Components into Figma
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Angular renders to HTML and CSS — and that output converts to native, editable Figma layers in seconds. Here's the exact workflow for Angular 17/18 developers, including Angular Material, Angular Universal, and Nx monorepos.
+      Angular renders to HTML and CSS, which can be used as the source for best-effort editable Figma layers. This workflow covers Angular Material, Angular Universal, and Nx projects.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
@@ -681,7 +620,7 @@ open http://localhost:4400</div>
     <!-- CTA -->
     <div class="bg-content rounded-2xl p-8 text-center">
       <h2 class="text-2xl font-black tracking-tighter text-white mb-3 mt-0">Import your Angular components now</h2>
-      <p class="text-gray-300 mb-6 text-sm">html2design converts any Angular component — Material, standalone, Nx, Universal — into editable Figma layers in seconds.</p>
+      <p class="text-gray-300 mb-6 text-sm">Import rendered Angular components as editable Figma nodes for supported content, then review the result against the browser.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-block bg-white text-content font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">

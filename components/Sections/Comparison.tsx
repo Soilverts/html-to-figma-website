@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const rows = [
   { feature: "Native Figma layers (not screenshots)", ours: true, manual: false, others: false },
-  { feature: "Flexbox layout preserved (pixel-accurate frames)", ours: true, manual: false, others: false },
+  { feature: "Flexbox geometry mapped to measured frames", ours: true, manual: false, others: false },
   { feature: "Typography preservation (font, weight, line-height)", ours: true, manual: true, others: false },
   { feature: "Styling fidelity (colors, shadows, gradients)", ours: true, manual: true, others: false },
   { feature: "SVG imported as vector paths", ours: true, manual: true, others: true },
@@ -25,7 +25,7 @@ export const Comparison: React.FC<{ id: string }> = ({ id }) => {
             Why HTML to Figma vs. alternatives?
           </h2>
           <p className="text-content-muted text-base md:text-lg font-light max-w-2xl">
-            Manual recreation takes hours and introduces errors. Screenshot-based tools produce flat images you cannot edit. We deliver the real thing.
+            Manual recreation offers full control. Screenshot tools preserve appearance as a flat image. Editable mode maps supported browser content to native Figma nodes that still require review.
           </p>
         </div>
 

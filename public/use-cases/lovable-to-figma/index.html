@@ -14,7 +14,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/lovable-to-figma" />
   <meta property="og:title" content="Lovable to Figma — Turn Lovable AI Apps Into Figma Layers" />
-  <meta property="og:description" content="Lovable builds React + Tailwind apps. html2design turns the rendered output into native, editable Figma layers — pixel-accurate, in under two minutes." />
+  <meta property="og:description" content="Import Lovable browser output into Figma as best-effort editable layers for supported text, images, styling, and layout." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/lovable-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -118,7 +118,7 @@
   <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
     <div class="max-w-3xl">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · AI Design</p>
-      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: May 2026</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: July 15, 2026</p>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
         Lovable to Figma —<br />
         From Prompt-Built App to Design
@@ -126,8 +126,8 @@
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">Lovable shipped your app from a prompt.</strong> It generates
         React + Tailwind and renders a live preview — and the browser resolves all of it to computed CSS before
-        html2design reads it. Copy the rendered HTML, paste into the plugin, and get
-        <strong class="text-content font-medium">native, editable Figma layers</strong> in under two minutes.
+        html2design reads it. Copy the rendered HTML, paste it into the plugin, and create
+        <strong class="text-content font-medium">best-effort editable Figma layers</strong> for supported content.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -155,33 +155,34 @@
 
   <section class="py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Why Lovable output imports cleanly</h2>
-      <p class="text-content-muted mb-10 max-w-2xl">Lovable renders to a standard browser DOM — exactly what the import approach reads.</p>
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">Choose the right Lovable handoff</h2>
+      <p class="text-content-muted mb-10 max-w-3xl">Lovable separates editor access, temporary previews, permanent publishing, and source-code sync. That distinction determines which import route is reliable.</p>
       <div class="space-y-6">
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">Tailwind &amp; shadcn/ui resolve to computed CSS</h3>
-          <p class="text-sm text-content-muted leading-relaxed">By the time Lovable's preview renders, every Tailwind utility and shadcn component variant is resolved to real CSS — exact colors, spacing, and type. html2design reads those resolved values.</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Permanent public app: use the published URL</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Lovable publishes to a permanent <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">lovable.app</code> URL or a custom domain. When website access is public, paste that URL into html2design. A workspace-only published app is authenticated and should use the supplied-HTML workflow instead.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">The preview is already rendered</h3>
-          <p class="text-sm text-content-muted leading-relaxed">Lovable shows a live, painted preview. Copy the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code> from DevTools and paste — no build or publish step.</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Shared preview: useful but temporary</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Lovable's shared preview link is public and view-only, but official documentation says it expires after up to seven days. It can support a quick test; use the permanent published URL for repeatable imports and documentation.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">SVG icons import as vector paths</h3>
-          <p class="text-sm text-content-muted leading-relaxed">Inline SVG icons (Lucide and others) import as native Figma vector paths — crisp and editable, never rasterized.</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Private project: use GitHub or the rendered preview</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Lovable supports two-way GitHub sync on the default branch. Clone and run that repository locally for a stable source, or copy rendered <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code> from the editor preview. Project access and published website access are separate settings.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">Private by design</h3>
-          <p class="text-sm text-content-muted leading-relaxed">html2design parses your pasted HTML locally inside Figma. Unreleased Lovable projects never need to be published to import them.</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Check the editable mapping</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Supported text, fills, borders, images, compatible inline SVG, and measured geometry can become native nodes. Fonts, remote application data, canvas, video, complex SVG, and browser-only effects may differ, rasterize, or require cleanup.</p>
         </div>
       </div>
+      <p class="mt-7 text-xs text-content-muted leading-relaxed">Sources checked July 15, 2026: <a class="underline hover:text-content" href="https://docs.lovable.dev/features/publish" target="_blank" rel="noopener noreferrer">Lovable publishing</a>, <a class="underline hover:text-content" href="https://docs.lovable.dev/features/share-project" target="_blank" rel="noopener noreferrer">temporary preview links</a>, <a class="underline hover:text-content" href="https://docs.lovable.dev/features/project-visibility" target="_blank" rel="noopener noreferrer">project and website access</a>, and <a class="underline hover:text-content" href="https://docs.lovable.dev/integrations/github" target="_blank" rel="noopener noreferrer">GitHub sync</a>.</p>
     </div>
   </section>
 
   <section class="bg-surface border-y border-gray-100 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Lovable to Figma workflow</h2>
-      <p class="text-content-muted mb-10 max-w-2xl">Four steps, under two minutes.</p>
+      <p class="text-content-muted mb-10 max-w-2xl">Four manual steps.</p>
       <div class="space-y-10">
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the Lovable preview</h3></div>
@@ -195,7 +196,7 @@
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div>
-          <div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the HTML, and click <strong class="text-content">Generate</strong>. Each element's computed style becomes a native Figma object — text, fills, SVG vector paths, and measured frames.</p></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the HTML, and click <strong class="text-content">Generate</strong>. Supported text, fills, images, compatible SVG content, and measured frames become native Figma objects.</p></div>
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
@@ -214,7 +215,7 @@
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Editable text layers</h3><p class="text-sm text-content-muted leading-relaxed">Copy becomes real Figma text layers with computed font, size, weight, line height, and color.</p></div>
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Exact colors &amp; styling</h3><p class="text-sm text-content-muted leading-relaxed">Tailwind/shadcn backgrounds, borders, shadows, and gradients resolve to precise computed values as Figma fills, strokes, and effects.</p></div>
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">SVG icons as vector paths</h3><p class="text-sm text-content-muted leading-relaxed">Inline SVG icons import as editable Figma vector paths, sharp at any scale.</p></div>
-        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Pixel-accurate frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, and sizing recreated as measured Figma frames matching the browser render.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3"><h3 class="text-base font-bold tracking-tight">Measured editable frames</h3><p class="text-sm text-content-muted leading-relaxed">Layout, spacing, and sizing are recreated from browser measurements, with cleanup expected for unsupported effects.</p></div>
       </div>
     </div>
   </section>

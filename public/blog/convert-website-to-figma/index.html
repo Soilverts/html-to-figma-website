@@ -98,54 +98,6 @@
   }
   </script>
 
-  <!-- JSON-LD: HowTo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Convert a Live Website to Figma",
-    "description": "Step-by-step instructions for converting any live website into editable Figma layers using the html2design plugin.",
-    "totalTime": "PT10M",
-    "tool": [
-      { "@type": "HowToTool", "name": "html2design Figma plugin" },
-      { "@type": "HowToTool", "name": "Figma" },
-      { "@type": "HowToTool", "name": "Chrome browser" }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Open the target website in Chrome",
-        "text": "Navigate to the page you want to convert in Chrome. For public sites, this is all you need to start. For localhost or staging environments, ensure the page is fully loaded before proceeding."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Install and open the html2design Figma plugin",
-        "text": "In Figma, open the plugins panel and install html2design from the Figma Community. Open it in your current file — the plugin will be ready to accept input from your browser."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Choose your import method",
-        "text": "For public websites: use the Chrome extension method — the extension copies the rendered HTML and computed styles directly, then sends them to the Figma plugin. For localhost, staging, or auth-gated pages: use the HTML paste method — open DevTools, copy the outerHTML of the element you want, and paste it into the plugin's code input."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 4,
-        "name": "Run the conversion",
-        "text": "Click Convert. The plugin processes the HTML and CSS and generates native Figma frames. Text becomes editable text layers. Colors become fill values. Images are embedded. Layout is reflected as positioned frames."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 5,
-        "name": "Organize the imported layers",
-        "text": "Rename the imported frame to match the page (e.g., 'Homepage — Desktop'). Group related sections. For full site imports, repeat per page and organize each import as a separate section or page in the Figma file."
-      }
-    ]
-  }
-  </script>
-
   <!-- JSON-LD: FAQPage -->
   <script type="application/ld+json">
   {
@@ -157,7 +109,7 @@
         "name": "How do you convert a website to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To convert a website to Figma, use the html2design plugin. For public sites, the Chrome extension captures the rendered HTML and computed styles and sends them to the Figma plugin, generating native editable layers in seconds. For localhost or private pages, open DevTools, copy the outerHTML of the body or specific section, paste it into the html2design plugin's code input, and click Convert. The result is a native Figma frame with editable text, real colors, and accurately positioned layers."
+          "text": "For a public site, paste its URL into html2design and choose lossless Pixel mode or best-effort Editable mode. For localhost or private sources, copy the rendered outerHTML from DevTools and use manual HTML import. Review fonts, effects, image crops, and responsive behavior after editable conversion."
         }
       },
       {
@@ -165,7 +117,7 @@
         "name": "Can you import a live website into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The html2design plugin can import any live website into Figma as editable native layers. It works with public websites via the Chrome extension, and with localhost, staging, or auth-gated pages via the HTML paste method. The import captures computed styles — the actual rendered values — so the Figma output reflects the live site accurately, not the raw CSS source."
+          "text": "html2design can capture publicly reachable website URLs in lossless Pixel mode or best-effort Editable mode. For localhost, staging, or authenticated sources, copy rendered outerHTML and use manual import. Not every browser effect or runtime behavior maps to editable Figma nodes."
         }
       },
       {
@@ -317,7 +269,7 @@
     <!-- GEO: TL;DR citation box -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
       <p style="margin:0 0 0.5rem 0;color:#1E3A8A;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;">To convert a live website to Figma: install the <a href="https://html2design.com/guide" style="color:#2563EB;">html2design plugin</a>, open the target page in Chrome, and use the Chrome extension to capture it directly — or copy the page's outerHTML from DevTools and paste it into the plugin. The result is a native Figma frame with editable text, accurate colors, and a layer structure that mirrors the rendered HTML. The whole process takes under 10 minutes for a single page.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;">To convert a website to Figma, install the <a href="https://html2design.com/guide" style="color:#2563EB;">html2design plugin</a>. Paste a public URL for Pixel or best-effort Editable capture, or copy rendered outerHTML from DevTools for local and private source. Review the resulting text, images, styles, and measured frames against the browser page.</p>
     </div>
 
     <h2>Why Convert a Live Website to Figma?</h2>
@@ -481,8 +433,8 @@
       The alternative to importing a live website into Figma is rebuilding the page manually in Figma from screenshots. This is the standard approach when no conversion tool is available, and it has significant drawbacks:
     </p>
     <ul>
-      <li><strong>Time:</strong> Manually recreating a single marketing page in Figma typically takes 2–4 hours for an experienced designer. A homepage with a complex hero, feature grid, and testimonials section could take longer. html2design converts the same page in under 5 minutes.</li>
-      <li><strong>Accuracy:</strong> Manual recreation introduces approximation. Font sizes are eyeballed. Spacing is guessed. Colors are sampled from screenshots with inherent lossy compression. html2design reads computed styles directly, so font sizes, spacing values, and colors are exact.</li>
+      <li><strong>Time:</strong> Manually recreating a single marketing page in Figma typically takes 2–4 hours for an experienced designer. A homepage with a complex hero, feature grid, and testimonials section could take longer. html2design converts the same page in a few manual steps.</li>
+      <li><strong>Accuracy:</strong> Manual recreation introduces approximation. html2design reads rendered geometry and supported computed styles directly, but browser and Figma features do not map one-to-one, so the result still requires comparison and cleanup.</li>
       <li><strong>Maintenance:</strong> A manually recreated Figma file becomes stale the moment the site changes. With html2design, you can re-import a page at any time to update the Figma baseline to the current production state.</li>
     </ul>
     <p>
@@ -530,17 +482,17 @@
 
     <h3>How do you convert a website to Figma?</h3>
     <p>
-      Install the html2design Figma plugin. For public sites, use the Chrome extension — it captures the rendered HTML and computed styles and sends them to Figma automatically. For private or localhost pages, open DevTools, copy the outerHTML, and paste it into the plugin's code input. The plugin generates native Figma frames in seconds.
+      Install the html2design Figma plugin. For public sites, paste the URL and choose lossless Pixel mode or best-effort Editable mode. For private or localhost pages, copy rendered outerHTML from DevTools and use manual HTML import.
     </p>
 
     <h3>Can you import a live website into Figma?</h3>
     <p>
-      Yes. html2design imports any live website into Figma as editable native layers. Public sites work via the Chrome extension. Localhost, staging, and auth-gated pages work via the HTML paste method. The import reads computed styles — so the Figma output reflects what the browser actually renders, not just the CSS source.
+      Publicly reachable URLs can be captured in Pixel or Editable mode. Localhost, staging, and authenticated sources use copied HTML instead. Editable output uses browser measurements as inputs but still requires review for fonts, effects, image crops, and runtime behavior.
     </p>
 
     <h3>Is it better to screenshot a site or import it into Figma?</h3>
     <p>
-      Import is significantly more useful. A screenshot produces a flat, non-editable image in Figma. An html2design import produces native text layers (editable), accurate color fills (extracted from computed styles), and a layer structure you can work with. If you need to make changes to the design — even small ones — an import is the right choice.
+      Choose by output need. Pixel mode or a screenshot preserves a flat visual reference. Editable mode creates native nodes for supported content, which is useful when you need to change copy, fills, images, or layout and can accept cleanup.
     </p>
 
     <h3>Does this work with JavaScript-rendered sites (React, Next.js)?</h3>
@@ -550,7 +502,7 @@
 
     <h3>How long does it take to convert a website to Figma?</h3>
     <p>
-      Under 5 minutes for a single page once you have the plugin installed. The conversion itself takes 10–30 seconds depending on page complexity. Most of the time goes to setting up the Figma file and organizing the import afterward. Compare that to 2–4 hours for a manually recreated page.
+      Conversion time depends on page length, element count, images, fonts, SVG, and browser-only effects. Include the time needed to organize layers, replace unavailable fonts or media, and compare Editable output with the browser source.
     </p>
 
   </article>

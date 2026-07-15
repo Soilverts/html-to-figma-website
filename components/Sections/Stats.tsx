@@ -17,7 +17,7 @@ export const Stats: React.FC<{ id: string }> = ({ id }) => {
             Everything out<br /> of the box.
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-xs font-light leading-relaxed">
-            Converts code into native layers — preserving typography, styling, images, and structure instantly.
+            Recreates supported typography, styling, images, and structure as native Figma layers.
           </p>
         </div>
 

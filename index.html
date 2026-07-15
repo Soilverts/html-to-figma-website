@@ -7,7 +7,6 @@
     <!-- Primary SEO -->
     <title>HTML to Figma - Import a Website URL or HTML</title>
     <meta name="description" content="Import a public website URL or pasted HTML into Figma. Choose lossless Pixel capture or best-effort editable layers. No browser extension required." />
-    <meta name="keywords" content="HTML to Figma, convert HTML to Figma, Claude to Figma, AI to Figma, v0 to Figma, AI design to Figma, convert AI generated HTML to Figma, code to design, HTML CSS to Figma, Figma plugin, design handoff, developer handoff, design system" />
     <meta name="author" content="HTML to Figma" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://html2design.com/" />
@@ -26,7 +25,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HTML to Figma - Convert Code to Design Instantly" />
+    <meta name="twitter:title" content="HTML to Figma - Import a Website URL or HTML" />
     <meta name="twitter:description" content="Import a public website URL or pasted HTML into Figma as a lossless Pixel capture or best-effort editable layers." />
     <meta name="twitter:image" content="https://html2design.com/og-image.png" />
     <meta name="twitter:image:alt" content="HTML to Figma plugin showing code-to-design conversion" />
@@ -40,11 +39,9 @@
     <!-- Favicon (generate and place in /public) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/fonts.css" />
 
     <link rel="alternate" type="application/rss+xml" title="HTML to Figma Blog" href="https://html2design.com/blog/feed.xml" />
-
-    <!-- Preload critical stylesheet -->
-    <link rel="preload" href="/index.css" as="style" />
 
     <!-- JSON-LD: SoftwareApplication Schema -->
     <script type="application/ld+json">
@@ -62,7 +59,7 @@
       "featureList": [
         "Convert HTML/CSS to native Figma frames, rectangles, and text layers",
         "Preserve typography including font families, weights, sizes, line-heights, and letter-spacing",
-        "Recreate CSS Flexbox layouts as accurately positioned Figma frames",
+        "Map supported CSS Flexbox geometry to measured Figma frames",
         "Preserve colors, borders, shadows, gradients, and opacity",
         "Preserve images and SVG content where supported",
         "Capture public URLs in lossless Pixel or best-effort Editable mode",
@@ -112,7 +109,7 @@
           "name": "Does HTML to Figma preserve CSS layouts like Flexbox?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. HTML to Figma reads the computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. The visual result — element dimensions, spacing, and alignment — matches the browser rendering. You can then apply Figma's Auto Layout manually to the imported frames if needed."
+            "text": "HTML to Figma reads computed positions and sizes from Flexbox layouts and maps supported geometry to measured Figma frames. Compare the result with the browser because fonts, responsive rules, effects, and complex layout can differ. Apply Figma Auto Layout manually when needed."
           }
         },
         {
@@ -136,7 +133,7 @@
           "name": "What are the main use cases for HTML to Figma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HTML to Figma is used for four primary workflows: (1) Legacy Migration - rebuild old websites in Figma without starting from scratch, saving an estimated 2-4 hours per page, (2) Developer Handoff - reverse engineer implementations back into design files for design-development alignment, (3) Competitor Analysis - import competitor layouts to deconstruct design patterns, spacing systems, and component hierarchies, (4) Design Kickstart - import existing page layouts as a starting point for design iteration and design system creation."
+            "text": "HTML to Figma supports four primary workflows: legacy migration from an imported baseline, developer handoff that compares implementation with design, visual pattern analysis, and design kickstarts that use an existing page as source material."
           }
         },
         {
@@ -228,7 +225,7 @@
       "@type": "WebSite",
       "name": "HTML to Figma",
       "url": "https://html2design.com/",
-      "description": "Convert HTML and CSS code into native, editable Figma layers instantly.",
+      "description": "Convert supplied HTML and CSS into native Figma layers for supported text, shapes, images, and visual styles.",
       "publisher": {
         "@type": "Organization",
         "name": "HTML to Figma"
@@ -400,7 +397,7 @@
       "url": "https://html2design.com/",
       "inLanguage": "en",
       "datePublished": "2025-01-01",
-      "dateModified": "2026-07-14",
+      "dateModified": "2026-07-15",
       "isPartOf": {
         "@type": "WebSite",
         "name": "HTML to Figma",
@@ -448,7 +445,7 @@
          React (createRoot) replaces this on mount. Inline styles used so this
          paints immediately regardless of CSS-load timing.
          Target: FCP <1.5s (was 2.5s with blank React SPA shell). -->
-    <div id="root"><div style="position:relative;width:100%;min-height:100vh;background:#fff;overflow:hidden;font-family:system-ui,-apple-system,sans-serif;color:#111827;"><div style="position:fixed;top:2rem;left:2rem;z-index:50;mix-blend-mode:multiply;pointer-events:none;"><span style="font-weight:700;font-size:1.125rem;">HTML<span style="color:#2563EB;">2</span>FIGMA</span></div><main style="position:relative;z-index:10;"><section style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 1.5rem 4rem;overflow:hidden;"><div style="max-width:80rem;margin:0 auto;width:100%;"><div style="display:flex;flex-direction:column;gap:2rem;max-width:36rem;"><div style="display:inline-flex;align-items:center;border:1px solid #E5E7EB;padding:0.25rem 0.75rem;border-radius:9999px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;font-family:monospace;width:fit-content;">Figma Plugin - HTML to Figma</div><h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:0.9;color:#111827;margin:0;">Code to<br><span style="color:#6B7280;">Design.</span></h1><p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.625;margin:0;">Import pasted HTML or a public website URL into Figma. Choose native editable layers or a lossless Pixel capture, with no browser extension required.</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;"><a href="#pricing" style="display:inline-flex;align-items:center;height:3.5rem;padding:0 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:1rem;font-weight:500;text-decoration:none;">Get Access &#8594;</a><a href="/use-cases/url-to-figma" style="color:#6B7280;font-size:0.875rem;font-weight:500;text-decoration:none;">URL import guide &#8594;</a></div><nav style="display:flex;gap:1.5rem;margin-top:1.5rem;font-size:0.75rem;"><a href="/blog" style="color:#6B7280;text-decoration:none;">Blog</a><a href="/compare" style="color:#6B7280;text-decoration:none;">Compare Tools</a><a href="/guide" style="color:#6B7280;text-decoration:none;">Manual Import</a><a href="/pricing" style="color:#6B7280;text-decoration:none;">Pricing</a><a href="/contact" style="color:#6B7280;text-decoration:none;">Contact</a></nav></div></div></section></main></div></div>
+    <div id="root"><div style="position:relative;width:100%;min-height:100vh;background:#fff;overflow:hidden;font-family:'Inter',system-ui,-apple-system,sans-serif;color:#111827;"><div style="position:fixed;top:2rem;left:2rem;z-index:50;mix-blend-mode:multiply;pointer-events:none;"><span style="font-weight:700;font-size:1.125rem;">HTML<span style="color:#2563EB;">2</span>FIGMA</span></div><main style="position:relative;z-index:10;"><section style="min-height:88svh;display:flex;flex-direction:column;justify-content:flex-start;padding:8rem 1.5rem 3rem;overflow:hidden;"><div style="max-width:80rem;margin:0 auto;width:100%;"><div style="display:flex;flex-direction:column;gap:2rem;max-width:36rem;"><div style="display:inline-flex;align-items:center;border:1px solid #E5E7EB;padding:0.25rem 0.75rem;border-radius:9999px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B7280;font-family:monospace;width:fit-content;">Figma Plugin - HTML to Figma</div><h1 style="font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:0.9;color:#111827;margin:0;">Code to<br><span style="color:#6B7280;">Design.</span></h1><p style="font-size:1rem;color:#6B7280;font-weight:300;line-height:1.625;margin:0;">Import pasted HTML or a public website URL into Figma. Choose native editable layers or a lossless Pixel capture, with no browser extension required.</p><div style="display:flex;flex-wrap:wrap;align-items:center;gap:1rem;"><a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" style="display:inline-flex;align-items:center;height:3.5rem;padding:0 2rem;background:#111827;color:#fff;border-radius:9999px;font-size:1rem;font-weight:500;text-decoration:none;">Open in Figma &#8594;</a><a href="/result-quality" style="display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;color:#6B7280;font-size:0.875rem;font-weight:500;text-decoration:none;">See real results &#8594;</a></div><nav style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.5rem;font-size:0.75rem;"><a href="/blog" style="color:#6B7280;text-decoration:none;">Blog</a><a href="/compare" style="color:#6B7280;text-decoration:none;">Compare Tools</a><a href="/guide" style="color:#6B7280;text-decoration:none;">Manual Import</a><a href="/pricing" style="color:#6B7280;text-decoration:none;">Pricing</a><a href="/contact" style="color:#6B7280;text-decoration:none;">Contact</a></nav></div></div></section></main></div></div>
 
     <!-- Noscript SEO Fallback: Critical content for crawlers that don't execute JS -->
     <noscript>
@@ -463,8 +460,8 @@
           <h2>Key Features</h2>
           <ul>
             <li><strong>Native Figma Layers</strong> - Editable mode creates real Figma frames, rectangles, and text layers rather than a single flattened screenshot.</li>
-            <li><strong>Typography Preserved</strong> - Font families, weights, sizes, line-heights, and letter-spacing faithfully reproduced per the <a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4 specification</a></li>
-            <li><strong>Flexbox Layout Fidelity</strong> - Reads computed positions and sizes from <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox</a> layouts and recreates them as accurately positioned Figma frames</li>
+            <li><strong>Typography Mapping</strong> - Supported font families, weights, sizes, line-heights, and letter-spacing map to Figma text properties; unavailable fonts can change metrics.</li>
+            <li><strong>Flexbox Geometry</strong> - Reads computed positions and sizes from <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox</a> layouts and maps supported geometry to measured Figma frames.</li>
             <li><strong>Styling Fidelity</strong> - Supported colors, borders, shadows, gradients, and opacity are recreated where browser and Figma features map reliably.</li>
             <li><strong>Image Handling</strong> - High-res fills preserved at up to 2x resolution, SVGs imported as native vector paths</li>
             <li><strong>Structured Output</strong> - HTML hierarchy mapped to a clean, organized Figma layer tree with meaningful layer names</li>
@@ -519,7 +516,7 @@
           <p>HTML to Figma works in three simple steps: select an HTML file or paste HTML/CSS, configure your settings, and generate native, editable Figma layers.</p>
 
           <h3>Does HTML to Figma preserve CSS layouts like Flexbox?</h3>
-          <p>Yes. HTML to Figma reads the computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames that match the browser rendering.</p>
+          <p>HTML to Figma reads computed positions and sizes from Flexbox layouts and maps supported geometry to measured Figma frames. Compare the import with the browser because fonts, effects, and responsive behavior can differ.</p>
 
           <h3>What typography features are preserved?</h3>
           <p>Font families, font weights, font sizes, line-heights, letter-spacing, and text alignment are preserved. If a font is not available in Figma, it falls back to Inter Regular.</p>

@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>html2design vs Anima: HTML Import or Code Export?</title>
-  <meta name="description" content="Compare html2design website and HTML import with Anima's Figma-to-code workflow, pricing model, outputs, and best-fit use cases." />
+  <meta name="description" content="Compare html2design with Anima Buddy for HTML, URL, screenshot, and code-to-Figma workflows, plus Anima's broader design-to-code platform." />
   <meta name="keywords" content="html2design vs anima, anima figma alternative, html to figma plugin, anima vs html2design, figma html import, anima figma plugin comparison" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -15,8 +15,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/compare/html2design-vs-anima" />
-  <meta property="og:title" content="html2design vs Anima (2026) — Which Tool Actually Imports HTML into Figma?" />
-  <meta property="og:description" content="html2design converts HTML/CSS into native Figma layers. Anima converts Figma designs into React/HTML code. They work in opposite directions — here's when to use each." />
+  <meta property="og:title" content="html2design vs Anima Buddy (2026): HTML and URL Import Compared" />
+  <meta property="og:description" content="Both tools now bring HTML and websites into Figma. Compare inputs, output modes, browser requirements, and adjacent design-to-code features." />
   <meta property="og:image" content="https://html2design.com/og/compare.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,8 +26,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="html2design vs Anima — Two Tools, Two Opposite Directions" />
-  <meta name="twitter:description" content="html2design is code → Figma. Anima is Figma → code. If you want to import HTML into Figma, html2design is the right tool." />
+  <meta name="twitter:title" content="html2design vs Anima Buddy: HTML and URL Import Compared" />
+  <meta name="twitter:description" content="A current comparison of two editable HTML-to-Figma workflows, including Pixel mode, screenshots, URLs, and design-to-code." />
   <meta name="twitter:image" content="https://html2design.com/og/compare.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -40,11 +40,11 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "html2design vs Anima (2026)",
-    "description": "Detailed comparison of html2design and Anima for bringing HTML/CSS into Figma. Covers feature parity, workflow direction, pricing, and when to use each tool.",
+    "description": "Current comparison of html2design and Anima Buddy for importing HTML, URLs, screenshots, and other sources into Figma, including workflow and output differences.",
     "url": "https://html2design.com/compare/html2design-vs-anima",
     "inLanguage": "en",
     "datePublished": "2026-03-25",
-    "dateModified": "2026-04-17",
+    "dateModified": "2026-07-15",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": {
       "@type": "Organization",
@@ -88,15 +88,15 @@
         "name": "Does Anima import HTML into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Anima's primary function is the reverse: it exports Figma designs into React, HTML, or Vue code. It is a design-to-code tool. If you need to import HTML or CSS into Figma and get editable layers, html2design (html2design.com) is the purpose-built tool for that direction."
+          "text": "Yes. Anima announced in June 2026 that Buddy can accept HTML, website URLs, images, screenshots, and Claude artifacts, then produce editable Figma layers. Anima also continues to offer design-to-code workflows."
         }
       },
       {
         "@type": "Question",
-        "name": "Can html2design replace Anima?",
+        "name": "What is the clearest difference between html2design and Anima Buddy?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "They serve different workflows. html2design brings code into Figma (code → design). Anima takes Figma designs and produces production code (design → code). If your goal is to convert existing HTML/CSS into Figma layers, html2design is the right tool. If your goal is to generate React or HTML from a Figma file, Anima addresses that direction."
+          "text": "Their HTML and URL import capabilities now overlap. html2design offers an extension-free direct HTML workflow and separate Pixel and Editable modes. Anima Buddy accepts a wider set of visual and AI-artifact inputs, while Anima also provides design-to-code and Playground workflows."
         }
       },
       {
@@ -104,7 +104,7 @@
         "name": "Which tool works with localhost and unreleased components?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design. Because it works by accepting pasted HTML and CSS directly inside the Figma plugin, it has no dependency on a live, public URL. You can paste output from a local dev server running on localhost:3000, a Storybook story, or any component you can copy from your browser's DevTools — even if it's behind authentication."
+          "text": "Both products document ways to work beyond a public URL. html2design can accept copied or exported HTML directly inside the Figma plugin. Anima documents a Chrome-extension capture workflow for localhost, internal, and logged-in pages. Test the exact authenticated state because external assets and session behavior can affect any capture."
         }
       },
       {
@@ -112,7 +112,7 @@
         "name": "How does html2design handle Flexbox layouts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Properties like flex-direction, align-items, justify-content, gap, and padding are reflected in the spatial layout of the generated frames. The result is a Figma layer tree you can iterate on — not a flat image."
+          "text": "In Editable mode, html2design uses computed positions, sizes, and visual styles to construct Figma nodes. Flexbox and grid relationships can influence placement, but the output is best effort and should be checked against the rendered source. Pixel mode is the option when a lossless visual reference matters more than editable text and controls."
         }
       },
       {
@@ -183,8 +183,8 @@
         html2design<br />vs Anima
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        Both tools interact with Figma and HTML — but in <strong class="text-content font-medium">opposite directions</strong>.
-        Here's the honest breakdown of what each tool actually does, who it's for, and when to use each.
+        Both tools can now bring HTML and websites into Figma, but their <strong class="text-content font-medium">inputs, output choices, and surrounding workflows differ</strong>.
+        This comparison reflects publicly documented capabilities reviewed July 15, 2026.
       </p>
     </div>
   </header>
@@ -193,7 +193,7 @@
   <section class="max-w-5xl mx-auto px-6 mb-10">
     <div class="geo-box">
       <p class="geo-label">Direct Answer</p>
-      <p><strong>html2design and Anima solve opposite problems.</strong> html2design converts HTML and CSS code into native, editable Figma layers (code → design). Anima converts Figma designs into production-ready React or HTML code (design → code). If you need to import existing HTML into Figma, html2design is the right tool. If you need to generate code from a Figma file, Anima is for you.</p>
+      <p><strong>Both products now import web content into Figma.</strong> html2design accepts pasted/file HTML and public URLs, with lossless Pixel or best-effort Editable output. Anima Buddy accepts HTML, URLs, screenshots, images, and Claude artifacts as editable layers; Anima also covers Figma-to-code and Playground workflows. Choose after testing the same source and measuring cleanup.</p>
     </div>
   </section>
 
@@ -215,7 +215,7 @@
           <ul class="mt-4 space-y-1.5 text-sm">
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> No Chrome extension</li>
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Works with localhost</li>
-            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Flexbox layout preserved</li>
+            <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> Computed layout informs Editable nodes</li>
             <li class="flex items-center gap-2"><span class="text-accent font-bold">✓</span> $12/mo or $96/yr</li>
           </ul>
           <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
@@ -228,16 +228,17 @@
         <div class="bg-white border border-gray-200 rounded-2xl p-6">
           <div class="absolute top-4 right-4"></div>
           <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Anima</p>
-          <h3 class="text-xl font-bold tracking-tight mb-3">Export Figma.<br />Get production code.</h3>
+          <h3 class="text-xl font-bold tracking-tight mb-3">Import more sources.<br />Keep broader workflows.</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Primarily a Figma → Code tool. Generates React, HTML/CSS, or Vue from your Figma design files. Also offers some screen-capture import from live URLs, but that is not its core strength.
+            Buddy imports HTML, website URLs, images, screenshots, and Claude artifacts into editable Figma layers. Anima also includes Figma-to-code, AI design, and Playground workflows.
           </p>
           <ul class="mt-4 space-y-1.5 text-sm text-content-muted">
-            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Not designed for code → Figma</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> URL capture needs live site</li>
-            <li class="flex items-center gap-2"><span class="text-gray-300 font-bold">✗</span> Can't use localhost HTML</li>
-            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Free plan + paid from ~$36/mo</li>
+            <li class="flex items-center gap-2"><span class="text-gray-500 font-bold">✓</span> HTML and public URL inputs</li>
+            <li class="flex items-center gap-2"><span class="text-gray-500 font-bold">✓</span> Screenshot and image inputs</li>
+            <li class="flex items-center gap-2"><span class="text-gray-500 font-bold">✓</span> Browser capture for local/private state</li>
+            <li class="flex items-center gap-2"><span class="text-gray-400">~</span> Check current plan and credit limits</li>
           </ul>
+          <a href="https://www.animaapp.com/blog/ai-design-en/figma-import-image-html-code-to-layers/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-content hover:underline">Read Anima's import announcement &rarr;</a>
         </div>
 
       </div>
@@ -267,12 +268,12 @@
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Primary direction</td>
               <td class="py-4 px-4 text-center text-sm text-accent font-medium">Code → Figma</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-500">Figma → Code</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">HTML/URL → Figma, plus Figma → Code</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Import HTML/CSS into Figma</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not primary purpose</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Export Figma designs to code</td>
@@ -287,22 +288,22 @@
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Accepts pasted HTML/CSS</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">✓ Buddy HTML input</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Works with localhost / dev server</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">✓ Extension capture</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Works behind authentication</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">✓ Extension capture</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Import from live public URL</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Via pasted HTML</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-500 italic">Screen capture</td>
+              <td class="py-4 px-4 text-center text-sm text-accent font-medium">✓ Direct URL</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">✓ Buddy URL input</td>
             </tr>
 
             <!-- Output quality -->
@@ -312,22 +313,22 @@
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Produces native Figma layers</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">Not applicable</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
-              <td class="py-4 px-5 font-medium text-content">Flexbox layout preserved</td>
-              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-5 font-medium text-content">Layout reconstruction</td>
+              <td class="py-4 px-4 text-center text-sm text-accent">Best effort; review</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Best effort; review</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Typography preserved (font, size, weight)</td>
-              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-sm text-accent">Supported fonts; review</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Supported fonts; review</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
-              <td class="py-4 px-5 font-medium text-content">Fully editable text layers in Figma</td>
+              <td class="py-4 px-5 font-medium text-content">Editable text layers in Figma</td>
               <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
             </tr>
 
             <!-- Setup -->
@@ -337,7 +338,7 @@
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Requires Chrome extension</td>
               <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
-              <td class="py-4 px-4 text-center text-2xl check-no">✗</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Optional for private/local capture</td>
             </tr>
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Native Figma plugin</td>
@@ -357,19 +358,19 @@
             <tr class="border-b border-gray-100 hover:bg-surface transition-colors">
               <td class="py-4 px-5 font-medium text-content">Pricing transparency</td>
               <td class="py-4 px-4 text-center text-sm text-accent font-medium">$12/mo · $96/yr</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-500">Free + paid from ~$36/mo</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Check current Anima pricing</td>
             </tr>
             <tr class="hover:bg-surface transition-colors">
-              <td class="py-4 px-5 font-medium text-content">Unlimited HTML imports</td>
-              <td class="py-4 px-4 text-center text-2xl check-yes">✓</td>
-              <td class="py-4 px-4 text-center text-sm text-gray-400 italic">N/A — different use case</td>
+              <td class="py-4 px-5 font-medium text-content">Usage model</td>
+              <td class="py-4 px-4 text-center text-sm text-accent">Manual and URL allowances differ</td>
+              <td class="py-4 px-4 text-center text-sm text-gray-500">Plan or credit limits apply</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p class="text-xs font-mono text-gray-400 mt-5 max-w-3xl leading-relaxed">
-        ✓ = fully supported &nbsp;|&nbsp; ✗ = not supported &nbsp;|&nbsp; "N/A" = not applicable to this tool's purpose
+        Capability labels are based on vendor documentation reviewed July 15, 2026. Output quality is not inferred from feature availability; test both on the same page.
       </p>
     </div>
   </section>
@@ -392,7 +393,7 @@
                 <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Accepts pasted HTML/CSS directly — no live URL required for manual import</li>
                 <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Works with localhost, Storybook, email templates, and dev builds</li>
                 <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Produces real Figma layers: editable text, fills, properly positioned frames</li>
-                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Flexbox layout fidelity — spatial relationships preserved from computed CSS</li>
+                <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Computed layout and style data inform Editable-mode node placement</li>
                 <li class="flex items-start gap-2"><span class="text-accent font-bold mt-0.5">✓</span> Published pricing with separate manual and URL workflows</li>
               </ul>
             </div>
@@ -413,18 +414,17 @@
             <div>
               <p class="text-xs font-mono uppercase tracking-widest text-emerald-600 mb-2">Strengths</p>
               <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
-                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Strong Figma-to-code pipeline (React, Vue, HTML/CSS)</li>
-                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Developer handoff features built into the Figma plugin</li>
-                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Free plan available for light use</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Buddy accepts HTML, URLs, screenshots, images, and Claude artifacts</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Imported visual structure is documented as editable Figma layers</li>
+                <li class="flex items-start gap-2"><span class="text-gray-500 font-bold mt-0.5">✓</span> Broader Figma-to-code, Playground, and AI design workflows</li>
               </ul>
             </div>
             <div>
               <p class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Limitations</p>
               <ul class="space-y-2 text-sm text-content-muted leading-relaxed">
-                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Not designed for importing HTML/CSS into Figma</li>
-                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Cannot work with localhost or behind-auth content</li>
-                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Paid plans for teams are significantly more expensive</li>
-                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> URL-based capture produces screenshot-like results, not editable layers</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Private or localhost browser capture adds an extension workflow</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Published plans and credit limits need checking for the intended workflow</li>
+                <li class="flex items-start gap-2"><span class="text-gray-300 font-bold mt-0.5">—</span> Automated reconstruction still needs source-by-source visual review</li>
               </ul>
             </div>
           </div>
@@ -438,7 +438,7 @@
   <section class="py-14 md:py-20" aria-label="When to use each tool">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">When to use each tool</h2>
-      <p class="text-content-muted mb-10">The right choice depends entirely on your workflow direction.</p>
+      <p class="text-content-muted mb-10">The right choice depends on the input, desired output, access constraints, and cleanup cost.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white rounded-2xl p-6 border-l-4 border-accent border border-gray-100 shadow-sm">
@@ -447,7 +447,7 @@
             <li>You have HTML and CSS and need editable Figma layers</li>
             <li>You're working on <strong class="text-content">localhost</strong> or a local dev server</li>
             <li>You need to import a component from a <strong class="text-content">Storybook story</strong> or email template</li>
-            <li>You want <strong class="text-content">Flexbox layouts accurately preserved</strong> in Figma</li>
+            <li>You want to compare <strong class="text-content">lossless Pixel output</strong> with best-effort Editable nodes</li>
             <li>You're doing a <a href="/use-cases/developer-handoff" class="text-accent hover:underline">developer handoff audit</a> against the original design spec</li>
             <li>You're <a href="/use-cases/legacy-migration" class="text-accent hover:underline">migrating a legacy codebase</a> into Figma</li>
             <li>You don't want to install a browser extension</li>
@@ -455,19 +455,19 @@
         </div>
 
         <div class="bg-white rounded-2xl p-6 border-l-4 border-gray-200 border border-gray-100">
-          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-3">Use Anima when…</p>
+          <p class="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-3">Evaluate Anima when…</p>
           <ul class="space-y-3 text-sm text-content-muted leading-relaxed">
+            <li>You need to import <strong class="text-content">screenshots, images, Claude artifacts, HTML, or URLs</strong> through one assistant</li>
             <li>You want to <strong class="text-content">generate React or HTML code</strong> from a Figma design file</li>
-            <li>Your team uses Figma as the design source of truth and needs developer-ready code output</li>
-            <li>You need a <strong class="text-content">handoff layer</strong> between Figma designers and frontend developers</li>
-            <li>You're working on a greenfield design system in Figma and need code export</li>
+            <li>You want AI design, import, and code generation in a broader Anima workflow</li>
+            <li>You are comfortable using a browser extension for private or localhost page capture</li>
           </ul>
         </div>
       </div>
 
       <div class="mt-8 p-5 bg-accent/10 rounded-2xl border border-accent/20">
         <p class="text-sm font-medium text-accent mb-1">Can I use both?</p>
-        <p class="text-sm text-content-muted">Yes — they complement each other in full-cycle workflows. Use html2design to bring existing HTML/CSS into Figma for design review or migration. Use Anima to generate code from the updated Figma designs after the design iteration.</p>
+        <p class="text-sm text-content-muted">Yes. Their import capabilities overlap, while their adjacent workflows differ. A fair evaluation uses the same source page and records visual differences, missing assets, layer usability, processing time, and manual cleanup.</p>
       </div>
     </div>
   </section>
@@ -485,17 +485,17 @@
             <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
           </summary>
           <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
-            No. Anima's primary function is the reverse: it exports Figma designs into React, HTML, or Vue code. It is a design-to-code tool. If you need to import HTML or CSS into Figma and get editable layers, <a href="https://html2design.com" class="text-accent hover:underline">html2design</a> is the purpose-built tool for that direction.
+            Yes. Anima announced in June 2026 that Buddy accepts HTML, website URLs, screenshots, images, and Claude artifacts and converts them into editable Figma layers. Anima also retains its established design-to-code workflows. See <a href="https://www.animaapp.com/blog/ai-design-en/figma-import-image-html-code-to-layers/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Anima's official announcement</a>.
           </div>
         </details>
 
         <details class="group bg-white border border-gray-100 rounded-2xl overflow-hidden">
           <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-content hover:bg-surface transition-colors list-none">
-            Can html2design replace Anima?
+            What is the clearest difference between html2design and Anima Buddy?
             <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
           </summary>
           <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
-            They serve different workflows. html2design brings code into Figma (code → design). Anima takes Figma designs and produces production code (design → code). If your goal is to convert existing HTML/CSS into Figma layers, html2design is the right tool. If your goal is to generate React or HTML from a Figma file, Anima addresses that direction.
+            Their HTML and URL import capabilities overlap. html2design offers direct HTML/file input without a browser extension and separate Pixel and Editable outputs. Buddy accepts additional visual and AI-artifact inputs, while the broader Anima platform also covers design-to-code and AI web-building workflows.
           </div>
         </details>
 
@@ -505,7 +505,7 @@
             <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
           </summary>
           <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
-            html2design. Because it works by accepting pasted HTML and CSS directly inside the Figma plugin, it has no dependency on a live, public URL. You can paste output from a local dev server running on <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>, a Storybook story, or any component you can copy from your browser's DevTools — even if it's behind authentication.
+            Both document non-public workflows. html2design accepts copied or exported HTML inside the Figma plugin, so a public URL is not required. Anima documents Chrome-extension capture for localhost, internal, and logged-in pages. Verify the exact state because sessions, external assets, and font access can affect either result.
           </div>
         </details>
 
@@ -515,7 +515,7 @@
             <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
           </summary>
           <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
-            html2design reads computed CSS positions and sizes from your Flexbox layouts and recreates them as accurately positioned Figma frames. Properties like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">flex-direction</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">align-items</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">justify-content</code>, <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">gap</code>, and <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">padding</code> are reflected in the spatial layout of the generated frames. The result is a Figma layer tree you can iterate on — not a flat image.
+            In Editable mode, computed positions, dimensions, and visual styles inform the generated Figma nodes. The result is best effort and should be compared with the rendered source. Pixel mode is available when preserving appearance as a lossless raster reference matters more than editing individual text and controls.
           </div>
         </details>
 
@@ -525,7 +525,7 @@
             <span class="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
           </summary>
           <div class="px-6 pb-5 text-sm text-content-muted leading-relaxed border-t border-gray-100 pt-4">
-            html2design charges $12/month or $96/year for manual HTML import and published daily URL allowances. Anima offers a free plan with limited exports and paid plans for teams. For straightforward HTML-to-Figma conversion, html2design's flat pricing is more predictable.
+            html2design lists 10 trial conversions, then $12/month or $96/year; manual imports and URL allowances are separate. Anima's plans and AI-credit limits can change, so check its current pricing for the specific Buddy, Playground, or code-export workflow you need.
           </div>
         </details>
 
