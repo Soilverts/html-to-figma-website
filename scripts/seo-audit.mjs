@@ -46,6 +46,7 @@ const htmlFiles = [
 const canonicals = new Map();
 const indexableCanonicals = new Set();
 const internalLinks = new Map();
+const internalLinkSources = new Map();
 
 for (const path of htmlFiles) {
   const html = readFileSync(path, 'utf8');
@@ -111,6 +112,8 @@ for (const path of htmlFiles) {
     const route = href.split('#')[0].split('?')[0];
     if (!route) continue;
     if (!internalLinks.has(route)) internalLinks.set(route, label);
+    if (!internalLinkSources.has(route)) internalLinkSources.set(route, new Set());
+    internalLinkSources.get(route).add(label);
   }
 }
 
@@ -127,6 +130,36 @@ function internalTargetExists(route) {
 
 for (const [route, source] of internalLinks) {
   if (!internalTargetExists(route)) errors.push(`${source}: broken internal link ${route}`);
+}
+
+const priorityInboundRequirements = new Map([
+  ['/use-cases/url-to-figma', {
+    minimumSources: 6,
+    requiredSources: [
+      'index.html',
+      'public/alternatives/index.html',
+      'public/guide/index.html',
+      'public/use-cases/index.html',
+    ],
+  }],
+  ['/result-quality', {
+    minimumSources: 6,
+    requiredSources: [
+      'index.html',
+      'public/alternatives/index.html',
+      'public/guide/index.html',
+    ],
+  }],
+]);
+
+for (const [route, requirement] of priorityInboundRequirements) {
+  const sources = internalLinkSources.get(route) ?? new Set();
+  if (sources.size < requirement.minimumSources) {
+    errors.push(`${route}: only ${sources.size} internal link sources; requires at least ${requirement.minimumSources}`);
+  }
+  for (const source of requirement.requiredSources) {
+    if (!sources.has(source)) errors.push(`${source}: must link to priority page ${route}`);
+  }
 }
 
 const sitemap = readFileSync(join(PUBLIC, 'sitemap.xml'), 'utf8');

@@ -37,6 +37,7 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
   await page.mouse.wheel(0, 700);
   await expect(page.locator('#features')).toBeAttached();
   await expect(page.locator('#features h2')).toContainText('Retain the soul of your architecture.');
+  await expect(page.getByRole('link', { name: 'public URL workflow' })).toHaveAttribute('href', '/use-cases/url-to-figma');
   await expect.poll(() => requestedUrls.some((url) => /\/assets\/(?:proxy|vendor-framer)-/.test(url))).toBe(true);
   expect(errors).toEqual([]);
 });

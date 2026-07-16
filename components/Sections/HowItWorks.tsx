@@ -33,7 +33,14 @@ export const HowItWorks: React.FC<{ id: string }> = ({ id }) => {
                     transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="text-lg md:text-2xl text-content-muted font-light leading-relaxed mb-12 md:mb-20"
                 >
-                    Paste a public URL for remote browser capture, or supply HTML from DevTools or a local file when the source is private or running on localhost.
+                    Use the{' '}
+                    <a
+                        href="/use-cases/url-to-figma"
+                        className="font-medium text-content underline decoration-gray-400 underline-offset-4 transition-colors hover:text-accent"
+                    >
+                        public URL workflow
+                    </a>{' '}
+                    for remote browser capture, or supply HTML from DevTools or a local file when the source is private or running on localhost.
                 </motion.p>
 
                 {/* Elegant subtle line animation */}
