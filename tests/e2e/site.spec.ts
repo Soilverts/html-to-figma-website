@@ -167,13 +167,19 @@ test('comparison and current-product pages stay factual and responsive', async (
   await expect(page.getByRole('heading', { name: /Tool 5: html.to.design/ })).toBeVisible();
 });
 
-test('production redirects the www hostname to the canonical host', async ({ request }) => {
+test('production redirects protocol and www variants to the canonical host', async ({ request }) => {
   test.skip(!IS_LIVE, 'Canonical hostname redirects are only available in production.');
 
-  const response = await request.get('https://www.html2design.com/result-quality?source=e2e', {
-    maxRedirects: 0,
-  });
+  const [rootResponse, pathResponse, httpResponse] = await Promise.all([
+    request.get('https://www.html2design.com/', { maxRedirects: 0 }),
+    request.get('https://www.html2design.com/result-quality?source=e2e', { maxRedirects: 0 }),
+    request.get('http://www.html2design.com/result-quality?source=e2e'),
+  ]);
 
-  expect(response.status()).toBe(301);
-  expect(response.headers().location).toBe('https://html2design.com/result-quality?source=e2e');
+  expect(rootResponse.status()).toBe(301);
+  expect(rootResponse.headers().location).toBe('https://html2design.com/');
+  expect(pathResponse.status()).toBe(301);
+  expect(pathResponse.headers().location).toBe('https://html2design.com/result-quality?source=e2e');
+  expect(httpResponse.status()).toBe(200);
+  expect(httpResponse.url()).toBe('https://html2design.com/result-quality?source=e2e');
 });

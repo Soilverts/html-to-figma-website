@@ -1,6 +1,6 @@
 # html2design SEO and GEO Action Plan
 
-Updated: 2026-07-15
+Updated: 2026-07-16
 
 ## Completed in code
 
@@ -20,11 +20,13 @@ Updated: 2026-07-15
 - [x] Analyze the 2026-07-14 Search Console export and preserve its measurement baseline.
 - [x] Revalidate Figma, Anima Buddy, Builder Visual Copilot, and html.to.design capabilities from current primary sources.
 - [x] Replace stale competitor claims with a source-linked, testable comparison methodology.
+- [x] Run the same Playwright suite against local preview and the production domain.
+- [x] Allow Cloudflare Web Analytics through CSP without widening other script sources.
 
 ## Platform and owner actions
 
-- [ ] Deploy the current commit and verify production HSTS, CSP, canonical, sitemap, and asset responses.
-- [ ] Configure a permanent `www` to apex redirect.
+- [x] Deploy the current commit and verify production HSTS, CSP, canonical, sitemap, and asset responses.
+- [x] Configure and test a permanent `www` to apex 301 that preserves paths and query strings.
 - [ ] Request indexing for the homepage, URL import, result-quality, and materially rewritten use-case pages.
 - [ ] Update the Figma Community listing with evidence-based product language.
 - [ ] Publish a real conversion demo and link it from the relevant result/use-case page.

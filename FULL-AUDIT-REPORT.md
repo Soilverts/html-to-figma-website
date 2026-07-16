@@ -1,6 +1,6 @@
 # html2design SEO and GEO Audit
 
-Audit date: 2026-07-15
+Audit date: 2026-07-16
 Domain: https://html2design.com
 Business type: SaaS / Figma plugin
 Scope: 93 HTML documents, 92 indexable canonicals, 92 sitemap URLs
@@ -9,13 +9,13 @@ Scope: 93 HTML documents, 92 indexable canonicals, 92 sitemap URLs
 
 The code-side audit is complete. Automated checks now cover crawlability, canonical and sitemap consistency, schema safety, internal links, unsupported product claims, long-tail content duplication, responsive headers, critical conversion routes, evidence-image dimensions, and initial bundle behavior.
 
-The main remaining work is outside the repository: enforce the `www` to apex redirect at the edge, verify deployed response headers, request recrawls, collect CrUX field data, and build third-party authority. Long-tail use-case pages are now materially less repetitive, but editorial expansion should continue only where Search Console shows demand.
+The repository and production deployment checks are complete. The main remaining work is requesting recrawls, connecting measurement APIs, collecting CrUX field data, and building third-party authority. Long-tail use-case pages are now materially less repetitive, but editorial expansion should continue only where Search Console shows demand.
 
 ## Current assessment
 
 | Area | Status | Evidence |
 |---|---|---|
-| Technical SEO | Strong, one platform action remains | 92 canonicals match 92 sitemap URLs; HSTS/CSP configured; `www` redirect needs edge configuration |
+| Technical SEO | Strong | 92 canonicals match 92 sitemap URLs; production HSTS/CSP verified; `www` permanently redirects to the apex domain |
 | On-page SEO | Strong | Titles, descriptions, one-H1 structure, canonicals, and core intent pages pass repository checks |
 | Schema | Strong | Zero HowTo blocks; no duplicate Article/BlogPosting pairs; required WebPage names present |
 | Content quality | Improved, monitor long-tail depth | 35 use-case pages pass minimum depth and duplication checks; maximum vocabulary similarity is 71.9% |
@@ -35,7 +35,7 @@ The main remaining work is outside the repository: enforce the `www` to apex red
 - Redirecting internal privacy and terms links were replaced with canonical paths.
 - Unsupported timing, exactness, and editable-fidelity claims fail the audit.
 - 35 use-case pages pass word-count, duplicate-title, canonical, body-hash, and similarity checks.
-- Five Playwright E2E flows pass across the homepage, URL import, pricing, result quality, Bolt, Lovable, alternatives, comparisons, and current-product articles.
+- Six production Playwright E2E checks pass across the canonical-host redirect, homepage, URL import, pricing, result quality, Bolt, Lovable, alternatives, comparisons, and current-product articles.
 - `npm audit --audit-level=low` reports zero vulnerabilities.
 
 ### Lighthouse lab results
@@ -54,7 +54,7 @@ These are local Lighthouse lab measurements, not CrUX field data.
 - Removed Three.js and corrected chunking so Framer Motion is absent from initial requests.
 - Reduced homepage CSS from 52.8 KB to 35.5 KB and separated static-page Tailwind generation.
 - Unified all pages on the existing self-hosted Latin Inter and JetBrains Mono files.
-- Added HSTS and CSP headers for the Cloudflare Pages deployment.
+- Added HSTS and CSP headers for the Cloudflare deployment, including the narrow source required by Cloudflare Web Analytics.
 - Added deterministic sitemap generation based on actual indexable pages and Git modification dates.
 - Removed 14 HowTo schema blocks and one duplicate Article block.
 - Added schema, sitemap, header, content-claim, and duplication regression gates.
@@ -63,6 +63,7 @@ These are local Lighthouse lab measurements, not CrUX field data.
 - Replaced obsolete "competitor cannot import HTML" positioning with source-linked workflow comparisons and explicit output-quality review criteria.
 - Expanded `/result-quality` with a self-contained answer, method, limitations, reviewer date, and inspectable full-resolution evidence.
 - Fixed mobile navigation sizing, wrapping, visibility, focus behavior, and overflow regressions.
+- Added a reusable production E2E command and verified `www` root/path/query redirects, response headers, sitemap output, and browser console health on the live domain.
 
 ## Search evidence
 
@@ -70,12 +71,10 @@ The Search Console export for 2026-04-13 through 2026-07-12 records 700 clicks, 
 
 ## Remaining dependencies
 
-1. Configure and verify a permanent `www.html2design.com` to `html2design.com` redirect at Cloudflare or DNS level.
-2. Deploy and confirm HSTS/CSP on production responses before tightening CSP further.
-3. Request recrawls for the homepage, URL import, result-quality, and materially updated use-case pages.
-4. Connect Search Console, GA4, Bing Webmaster, and a backlink provider for repeatable reporting.
-5. Compare CrUX field data and the next complete 28-day GSC window before further homepage architecture or metadata changes.
-6. Build verifiable third-party mentions through the Figma listing, demos, directories, and relevant community answers.
+1. Request recrawls for the homepage, URL import, result-quality, and materially updated use-case pages.
+2. Connect Search Console, GA4, Bing Webmaster, and a backlink provider for repeatable reporting.
+3. Compare CrUX field data and the next complete 28-day GSC window before further homepage architecture or metadata changes.
+4. Build verifiable third-party mentions through the Figma listing, demos, directories, and relevant community answers.
 
 ## Next content opportunities
 
