@@ -29,7 +29,7 @@ Updated: 2026-07-16
 - [x] Configure and test a permanent `www` to apex 301 that preserves paths and query strings.
 - [x] Request indexing for the homepage, URL import, result-quality, Bolt, and Lovable pages.
 - [x] Strengthen crawl paths to URL import from the homepage, guide, alternatives, and use-case hub, with regression checks.
-- [ ] Update the Figma Community listing with evidence-based product language.
+- [x] Update the Figma Community listing while preserving the original JESSE brand voice, with accurate URL, Pixel/Editable, limitation, pricing, and result-evidence details.
 - [x] Publish a reproducible LINEA conversion demo with the exact noindex input, evidence hashes, and result/use-case links.
 - [ ] Submit accurate profiles to relevant directories after duplicate checks.
 

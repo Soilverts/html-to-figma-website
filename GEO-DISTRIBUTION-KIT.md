@@ -6,11 +6,87 @@ Use the wording below as a source, then verify each platform's current character
 
 ## Figma Community
 
-**Title**
-HTML to Figma: Import a Website URL or HTML
+**Published title**
+JESSE — HTML or Website URL to Figma
 
-**Short description**
-Import pasted HTML, an HTML file, or a public website URL into Figma. Choose lossless Pixel capture for visual reference or Editable mode for native text, frames, shapes, and images. Editable output is best effort and complex pages can require cleanup. No browser extension is required.
+**Published tagline**
+Import HTML files or public URLs as Pixel captures or editable Figma layers.
+
+**Published description**
+
+JESSE
+
+The Ultimate Tool for HTML to Figma
+
+Claude just designed your UI. Now make it real in Figma.
+
+Claude, v0, Bolt, Lovable, ChatGPT — they all output HTML.
+
+Stop screenshotting. Stop rebuilding from scratch.
+
+Paste your code. Drop your file. Or enter a public URL — and design.
+
+Turn HTML and websites into Figma. Instantly.
+
+Choose Pixel mode for browser-faithful visual capture.
+
+Choose Editable mode for native Figma layers you can inspect and refine.
+
+Built for the AI Design Era
+
+Vibe coding changed everything: Now you can generate UI with AI tools like Claude, ChatGPT, v0, or Bolt — then bring it straight into Figma as a visual reference or an editable starting point.
+
+The 100x efficient new workflow with JESSE:
+
+Prompt → Generate HTML → Import with JESSE → Refine in Figma → Ship
+
+JESSE made it possible:
+
+One developer. Zero designers. A faster path from coded UI to Figma.
+
+Why Designers Love It?
+
+Browser-faithful when it matters Pixel mode captures the rendered page as lossless raster tiles.
+
+Editable when it matters Editable mode extracts text, images, layout, and computed visual styles into native Figma nodes.
+
+No browser extension Public URLs import directly. For localhost and private pages, paste HTML or drop an .html file.
+
+Clear expectations Pixel mode is not element-level editable. Editable mode is best effort. Canvas, video, WebGL, complex SVG, and unsupported CSS may be rasterized or need cleanup.
+
+Built For
+
+AI-assisted design — Turn Claude Code, Codex, v0, or Bolt outputs into Figma
+
+Design audits — Pull live product states into Figma for redlines and reviews
+
+Dev-to-design handoff — Bring coded components back into your design workflow
+
+Rapid prototyping — Iterate on HTML mockups without rebuilding every screen
+
+Email & legacy rescue — Convert old templates into a practical editable starting point
+
+How It Works:
+
+Paste HTML, drop an .html file, or enter a public URL
+
+Choose Pixel or Editable mode
+
+Click import
+
+Refine the result in Figma
+
+See the result before you try it:
+
+https://html2design.com/result-quality
+
+Start with 10 trial conversions.
+
+Monthly: $12 with up to 50 public URL captures per day.
+
+Yearly: $96 with up to 200 public URL captures per day.
+
+Prompt it. Import it. Design it.
 
 **Key bullets**
 
@@ -34,7 +110,7 @@ This is a real, unretouched html2design test using a 4,321 px editorial jewelry 
 Output evidence: https://html2design.com/result-quality
 Exact noindex input: https://html2design-linea-fixture.pages.dev/
 Public URL workflow: https://html2design.com/use-cases/url-to-figma
-Figma plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html
+Figma plugin: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-or-website-url-to-figma
 
 **Chapters**
 
@@ -68,9 +144,9 @@ Disclosure: I work on html2design. We tested a 4,321 px jewelry storefront at a 
 ## Publication checklist
 
 - [ ] Confirm no existing duplicate listing.
-- [ ] Use the current product name and canonical URL.
+- [x] Use the current product name and canonical URL.
 - [x] Upload the real browser/import comparison, not a fabricated mockup.
 - [x] Link to the most relevant intent page, not every site page.
 - [ ] Disclose affiliation in community posts.
-- [ ] Record publication URL and date for verification.
+- [x] Record publication URL and date for verification: https://www.figma.com/community/plugin/1591359863857120491/jesse-html-or-website-url-to-figma — 2026-07-16.
 - [ ] Measure referral traffic and branded-query changes after 30 and 90 days.
