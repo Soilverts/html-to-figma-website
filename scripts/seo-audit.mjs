@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 
@@ -30,6 +31,10 @@ function findTag(html, tagName, predicate) {
 
 function pageLabel(path) {
   return relative(ROOT, path) || 'index.html';
+}
+
+function sha256(path) {
+  return createHash('sha256').update(readFileSync(path)).digest('hex');
 }
 
 function localAssetPath(url) {
@@ -179,9 +184,58 @@ for (const match of sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
   if (assetPath && !existsSync(assetPath)) errors.push(`sitemap.xml: missing local image asset ${imageUrl}`);
 }
 
-const requiredFiles = ['robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', '.well-known/ai-plugin.json'];
+const requiredFiles = [
+  'robots.txt',
+  'sitemap.xml',
+  'llms.txt',
+  'llms-full.txt',
+  '.well-known/ai-plugin.json',
+  'results/linea/evidence.json',
+];
 for (const file of requiredFiles) {
   if (!existsSync(join(PUBLIC, file))) errors.push(`public/${file}: required discovery file is missing`);
+}
+
+const evidencePath = join(PUBLIC, 'results/linea/evidence.json');
+if (existsSync(evidencePath)) {
+  try {
+    const evidence = JSON.parse(readFileSync(evidencePath, 'utf8'));
+    const resultPage = readFileSync(join(PUBLIC, 'result-quality/index.html'), 'utf8');
+    const fixtureUrl = evidence.source?.url;
+    if (!fixtureUrl?.startsWith('https://')) errors.push('results/linea/evidence.json: source URL must use HTTPS');
+    if (fixtureUrl && !resultPage.includes(`href="${fixtureUrl}"`)) {
+      errors.push('public/result-quality/index.html: must link to the exact LINEA input fixture');
+    }
+    if (!resultPage.includes('href="/results/linea/evidence.json"')) {
+      errors.push('public/result-quality/index.html: must link to the LINEA evidence manifest');
+    }
+
+    for (const key of ['source', 'output']) {
+      const screenshot = evidence[key]?.screenshot;
+      if (!screenshot?.path || !screenshot?.sha256) {
+        errors.push(`results/linea/evidence.json: ${key} screenshot evidence is incomplete`);
+        continue;
+      }
+      const screenshotPath = join(PUBLIC, screenshot.path.replace(/^\/+/, ''));
+      if (!existsSync(screenshotPath)) {
+        errors.push(`results/linea/evidence.json: missing ${key} screenshot ${screenshot.path}`);
+      } else if (sha256(screenshotPath) !== screenshot.sha256) {
+        errors.push(`results/linea/evidence.json: ${key} screenshot SHA-256 does not match ${screenshot.path}`);
+      }
+    }
+
+    const layers = evidence.output?.layers;
+    if (layers?.selectable !== 90 || layers?.text !== 57 || layers?.image !== 16) {
+      errors.push('results/linea/evidence.json: LINEA layer counts must match the verified Figma node');
+    }
+    for (const verification of Object.values(evidence.verification ?? {})) {
+      if (verification.sha256_equal !== true || verification.rmse !== 0) {
+        errors.push('results/linea/evidence.json: image verification must record exact equality');
+      }
+    }
+  } catch (error) {
+    errors.push(`results/linea/evidence.json: invalid JSON: ${error.message}`);
+  }
 }
 
 const headers = readFileSync(join(PUBLIC, '_headers'), 'utf8');

@@ -1,6 +1,9 @@
-import { expect, test, type Page } from '@playwright/test';
+import { createHash } from 'node:crypto';
+import { expect, test, type Page, type Response } from '@playwright/test';
 
 const FIGMA_PLUGIN = 'https://www.figma.com/community/plugin/1591359863857120491/';
+const LINEA_FIXTURE = 'https://html2design-linea-fixture.pages.dev/';
+const LINEA_SOURCE_SHA256 = 'a19db59ac6a211835c84b25bfaa392ea210e60857bdbef5e9fc186c9482d478b';
 const IS_LIVE = process.env.PLAYWRIGHT_BASE_URL === 'https://html2design.com';
 
 function watchPageErrors(page: Page) {
@@ -98,6 +101,11 @@ test('key static pages have canonical metadata, responsive headers, and no runti
 test('result evidence and sitemap remain inspectable', async ({ page, request }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/result-quality');
+  await expect(page.getByRole('link', { name: /Open the exact input/ })).toHaveAttribute('href', LINEA_FIXTURE);
+  await expect(page.getByRole('link', { name: /Read the evidence manifest/ })).toHaveAttribute(
+    'href',
+    '/results/linea/evidence.json',
+  );
   await page.getByRole('link', { name: /View the side-by-side evidence/ }).click();
   await expect(page.locator('#side-by-side')).toBeInViewport();
 
@@ -124,6 +132,17 @@ test('result evidence and sitemap remain inspectable', async ({ page, request })
   expect(sitemap).not.toContain('/llms-full.txt');
   expect(sitemap).not.toContain('/.well-known/ai-plugin.json');
   expect(sitemap).not.toContain('/blog/feed.xml');
+
+  const evidenceResponse = await request.get('/results/linea/evidence.json');
+  expect(evidenceResponse.status()).toBe(200);
+  const evidence = await evidenceResponse.json();
+  expect(evidence.source.url).toBe(LINEA_FIXTURE);
+  expect(evidence.source.screenshot.sha256).toBe(LINEA_SOURCE_SHA256);
+  expect(evidence.output.layers).toEqual({ selectable: 90, text: 57, image: 16 });
+  expect(evidence.verification.fresh_figma_export_matches_published_output).toEqual({
+    sha256_equal: true,
+    rmse: 0,
+  });
 });
 
 test('comparison and current-product pages stay factual and responsive', async ({ page }) => {
@@ -183,4 +202,43 @@ test('production redirects protocol and www variants to the canonical host', asy
   expect(pathResponse.headers().location).toBe('https://html2design.com/result-quality?source=e2e');
   expect(httpResponse.status()).toBe(200);
   expect(httpResponse.url()).toBe('https://html2design.com/result-quality?source=e2e');
+});
+
+test('published LINEA fixture remains exact and excluded from indexing', async ({ browser }) => {
+  test.skip(!IS_LIVE, 'The published conversion fixture is only verified against production.');
+
+  let fixturePage: Page | undefined;
+  let fixtureResponse: Response | null = null;
+  let errors: string[] = [];
+
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const candidate = await browser.newPage({ viewport: { width: 1425, height: 900 }, deviceScaleFactor: 1 });
+    const candidateErrors = watchPageErrors(candidate);
+    const response = await candidate.goto(LINEA_FIXTURE, { waitUntil: 'networkidle' }).catch(() => null);
+    if (response?.status() === 200) {
+      fixturePage = candidate;
+      fixtureResponse = response;
+      errors = candidateErrors;
+      break;
+    }
+    await candidate.close();
+    await new Promise((resolve) => setTimeout(resolve, 1_500));
+  }
+
+  expect(fixturePage).toBeDefined();
+  expect(fixtureResponse?.status()).toBe(200);
+  if (!fixturePage || !fixtureResponse) return;
+
+  expect(fixtureResponse.headers()['x-robots-tag']).toContain('noindex');
+  await expect(fixturePage.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+  await fixturePage.locator('img').evaluateAll(async (images: HTMLImageElement[]) => {
+    await Promise.all(images.map((image) => image.decode().catch(() => undefined)));
+  });
+  expect(await fixturePage.evaluate(() => document.documentElement.scrollHeight)).toBe(4321);
+  await expectNoHorizontalOverflow(fixturePage);
+
+  const screenshot = await fixturePage.screenshot({ fullPage: true, animations: 'disabled' });
+  expect(createHash('sha256').update(screenshot).digest('hex')).toBe(LINEA_SOURCE_SHA256);
+  expect(errors).toEqual([]);
+  await fixturePage.close();
 });

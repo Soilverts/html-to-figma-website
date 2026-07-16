@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "linea-url-editable-import",
+  "verified_at": "2026-07-16T08:12:16Z",
+  "source": {
+    "url": "https://html2design-linea-fixture.pages.dev/",
+    "build_commit": "59cbd76df8b6b0398cae1afdd2f11a86bc3bfdc1",
+    "viewport": {
+      "width": 1425,
+      "height": 900,
+      "device_scale_factor": 1
+    },
+    "full_page": {
+      "width": 1425,
+      "height": 4321
+    },
+    "screenshot": {
+      "path": "/results/linea/browser-full.png",
+      "sha256": "a19db59ac6a211835c84b25bfaa392ea210e60857bdbef5e9fc186c9482d478b"
+    }
+  },
+  "output": {
+    "mode": "Editable",
+    "figma_node": {
+      "id": "2021:2",
+      "name": "LINEA Jewelry — URL Editable Import"
+    },
+    "layers": {
+      "selectable": 90,
+      "text": 57,
+      "image": 16
+    },
+    "full_page": {
+      "width": 1425,
+      "height": 4321
+    },
+    "screenshot": {
+      "path": "/results/linea/figma-editable-full.png",
+      "sha256": "7a666799eed5dcae1406062068d50f974defb6a532f0ad90f32bb6e5a51cb2a4"
+    }
+  },
+  "verification": {
+    "deployed_fixture_matches_published_source_capture": {
+      "sha256_equal": true,
+      "rmse": 0
+    },
+    "fresh_figma_export_matches_published_output": {
+      "sha256_equal": true,
+      "rmse": 0
+    }
+  },
+  "known_differences": [
+    "Figma font metrics cause some navigation text to wrap differently.",
+    "Some browser image crops shift when translated into Figma image fills.",
+    "Responsive rules, links, hover states, and carousel behavior are not transferred.",
+    "Editable output is a positioned composition, not an Auto Layout component system."
+  ]
+}

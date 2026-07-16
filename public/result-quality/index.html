@@ -26,7 +26,7 @@
     "description": "A source-to-Figma comparison using a real editorial jewelry storefront.",
     "url": "https://html2design.com/result-quality",
     "datePublished": "2026-07-14",
-    "dateModified": "2026-07-15",
+    "dateModified": "2026-07-16",
     "author": { "@type": "Organization", "name": "html2design", "url": "https://html2design.com/about" },
     "publisher": { "@type": "Organization", "name": "html2design", "url": "https://html2design.com/" },
     "image": [
@@ -34,6 +34,7 @@
       "https://html2design.com/results/linea/figma-editable-full.png"
     ],
     "about": { "@type": "SoftwareApplication", "@id": "https://html2design.com/#software", "name": "HTML to Figma", "applicationCategory": "DesignApplication" },
+    "isBasedOn": "https://html2design-linea-fixture.pages.dev/",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://html2design.com/result-quality#webpage" }
   }
   </script>
@@ -71,7 +72,7 @@
       <p class="text-xl text-content-muted leading-relaxed max-w-3xl">This comparison uses LINEA, an image-led jewelry storefront with editorial photography, product grids, typography, and long-form sections. The Figma result below came from the same page at the same desktop viewport, with no visual retouching.</p>
       <div class="mt-7 flex flex-wrap gap-6 text-sm text-content-muted">
         <span>Captured July 14, 2026</span>
-        <span>Reviewed July 15, 2026</span>
+        <span>Verified July 16, 2026</span>
         <span>1425 px desktop viewport</span>
         <span>90 editable layers</span>
       </div>
@@ -98,6 +99,19 @@
         </div>
         <p class="mt-9 max-w-3xl text-sm leading-relaxed text-content-muted">The previews use 1425 px source images and are displayed below their native width. The previous page enlarged sub-300 px thumbnails, which caused the blur; these previews do not upscale.</p>
       </div>
+    </section>
+
+    <section id="reproduce" class="scroll-mt-20 max-w-5xl mx-auto px-6 py-14 border-b border-gray-100">
+      <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Reproducible case</p>
+      <h2 class="text-3xl font-black mb-5">Inspect the exact input and evidence files</h2>
+      <p class="max-w-4xl text-content-muted leading-relaxed">The original LINEA page is published as a read-only, noindex test fixture. It uses the same build and 1425 px viewport as the browser capture above. The fixture, source screenshot, Figma output screenshot, and machine-readable manifest remain separate so each part of the comparison can be checked independently.</p>
+      <div class="mt-8 grid sm:grid-cols-2 border-t border-gray-200">
+        <a href="https://html2design-linea-fixture.pages.dev/" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pr-8 font-semibold hover:text-accent">Open the exact input <span aria-hidden="true">&nearr;</span></a>
+        <a href="/results/linea/browser-full.png" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pl-8 font-semibold hover:text-accent">Open the browser PNG <span aria-hidden="true">&nearr;</span></a>
+        <a href="/results/linea/figma-editable-full.png" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pr-8 font-semibold hover:text-accent">Open the Figma PNG <span aria-hidden="true">&nearr;</span></a>
+        <a href="/results/linea/evidence.json" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pl-8 font-semibold hover:text-accent">Read the evidence manifest <span aria-hidden="true">&nearr;</span></a>
+      </div>
+      <p class="mt-7 text-sm text-content-muted leading-relaxed">Verification: on July 16, 2026, Figma node <code class="font-mono text-xs text-content">2021:2</code> was exported again through Figma MCP. Its 1425 × 4321 PNG matched the published output byte for byte. The deployed input also matched the published browser capture byte for byte. Full SHA-256 values and known differences are recorded in the manifest.</p>
     </section>
 
     <section class="max-w-5xl mx-auto px-6 py-14 border-b border-gray-100">
