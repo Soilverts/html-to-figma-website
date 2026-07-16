@@ -12,6 +12,15 @@ Search type: Web
 - Desktop accounted for 641 clicks and 31,291 impressions. Mobile accounted for 58 clicks and 2,593 impressions.
 - Growth is real, but it is concentrated in the homepage, `/alternatives`, and brand or near-brand demand.
 
+## Submission update: 2026-07-16
+
+- Resubmitted `https://html2design.com/sitemap.xml`; Search Console confirmed the submission succeeded.
+- The indexing report was still based on its July 10 refresh: 23 indexed pages and 71 not-indexed pages. The not-indexed total comprised 56 discovered but not indexed, 14 crawled but not indexed, and one alternate page with a proper canonical.
+- The existing Sitemap row still showed 93 discovered pages from its July 10 read. The current generated Sitemap contains 92 indexable canonical URLs, so this count should be rechecked after Google processes the new submission.
+- Requested priority crawling for `/`, `/use-cases/url-to-figma`, `/result-quality`, `/use-cases/bolt-to-figma`, and `/use-cases/lovable-to-figma`.
+- `/`, Bolt, and Lovable were already indexed. URL import was unknown to Google; result quality was discovered through the Sitemap but had not yet been crawled. Both new pages passed the live indexability check and were accepted into the priority crawl queue.
+- Do not interpret the July 10 coverage totals as the outcome of the July 14-16 deployment. Recheck after the indexing report and Sitemap last-read date advance.
+
 ## Leading pages
 
 | Page | Clicks | Impressions | CTR | Position | Interpretation |

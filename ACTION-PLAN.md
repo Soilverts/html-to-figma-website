@@ -27,7 +27,7 @@ Updated: 2026-07-16
 
 - [x] Deploy the current commit and verify production HSTS, CSP, canonical, sitemap, and asset responses.
 - [x] Configure and test a permanent `www` to apex 301 that preserves paths and query strings.
-- [ ] Request indexing for the homepage, URL import, result-quality, and materially rewritten use-case pages.
+- [x] Request indexing for the homepage, URL import, result-quality, Bolt, and Lovable pages.
 - [ ] Update the Figma Community listing with evidence-based product language.
 - [ ] Publish a real conversion demo and link it from the relevant result/use-case page.
 - [ ] Submit accurate profiles to relevant directories after duplicate checks.
