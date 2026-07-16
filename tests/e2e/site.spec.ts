@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 
 const FIGMA_PLUGIN = 'https://www.figma.com/community/plugin/1591359863857120491/';
+const IS_LIVE = process.env.PLAYWRIGHT_BASE_URL === 'https://html2design.com';
 
 function watchPageErrors(page: Page) {
   const errors: string[] = [];
@@ -164,4 +165,15 @@ test('comparison and current-product pages stay factual and responsive', async (
   await page.goto('/blog/html-to-figma-tools-compared');
   await expect(page.getByRole('heading', { name: /Tool 3: Figma Chrome Extension/ })).toBeVisible();
   await expect(page.getByRole('heading', { name: /Tool 5: html.to.design/ })).toBeVisible();
+});
+
+test('production redirects the www hostname to the canonical host', async ({ request }) => {
+  test.skip(!IS_LIVE, 'Canonical hostname redirects are only available in production.');
+
+  const response = await request.get('https://www.html2design.com/result-quality?source=e2e', {
+    maxRedirects: 0,
+  });
+
+  expect(response.status()).toBe(301);
+  expect(response.headers().location).toBe('https://html2design.com/result-quality?source=e2e');
 });

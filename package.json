@@ -10,6 +10,7 @@
     "build": "npm run build:static-css && npm run build:sitemap && vite build",
     "test:seo": "node scripts/seo-audit.mjs && node scripts/content-quality-audit.mjs",
     "test:e2e": "playwright test",
+    "test:e2e:live": "PLAYWRIGHT_BASE_URL=https://html2design.com playwright test",
     "test": "npm run test:seo && npm run test:e2e",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler pages deploy dist",
