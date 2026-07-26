@@ -71,8 +71,8 @@ for (const path of htmlFiles) {
   if (canonical && !canonical.startsWith(`${ORIGIN}/`) && canonical !== ORIGIN) {
     errors.push(`${label}: canonical must use ${ORIGIN}`);
   }
-  if (title.length > 65) warnings.push(`${label}: title is ${title.length} characters`);
-  if (description.length > 165) warnings.push(`${label}: description is ${description.length} characters`);
+  if (title.length > 60) errors.push(`${label}: title is ${title.length} characters; maximum is 60`);
+  if (description.length > 160) errors.push(`${label}: description is ${description.length} characters; maximum is 160`);
 
   for (const imageType of ['og:image', 'twitter:image']) {
     const imageTag = findTag(html, 'meta', (tag) =>
@@ -241,6 +241,19 @@ if (existsSync(evidencePath)) {
 const headers = readFileSync(join(PUBLIC, '_headers'), 'utf8');
 for (const header of ['Strict-Transport-Security:', 'Content-Security-Policy:']) {
   if (!headers.includes(header)) errors.push(`public/_headers: missing ${header.slice(0, -1)}`);
+}
+
+const homepage = readFileSync(join(ROOT, 'index.html'), 'utf8');
+const staticRoot = homepage.match(/<div id=["']root["']>([\s\S]*?)<!-- Noscript SEO Fallback:/i)?.[1] ?? '';
+const staticRootText = staticRoot
+  .replace(/<(?:script|style)\b[^>]*>[\s\S]*?<\/(?:script|style)>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&(?:[a-z]+|#\d+|#x[a-f0-9]+);/gi, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+const staticRootWordCount = staticRootText.match(/\b[\p{L}\p{N}][\p{L}\p{N}'-]*\b/gu)?.length ?? 0;
+if (staticRootWordCount < 200) {
+  errors.push(`index.html: static root has only ${staticRootWordCount} visible words; minimum is 200`);
 }
 
 const robots = readFileSync(join(PUBLIC, 'robots.txt'), 'utf8');
