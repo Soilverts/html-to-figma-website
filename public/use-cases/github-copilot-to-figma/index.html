@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>GitHub Copilot to Figma: Import Copilot-Built UI</title>
+  <title>GitHub Copilot to Figma: Import Rendered UI</title>
   <meta name="description" content="Import a Copilot-built interface into Figma from localhost HTML or a public preview, using Pixel or best-effort Editable output." />
   <meta name="keywords" content="github copilot to figma, copilot workspace to figma, github copilot figma, ai code to figma, ai generated ui to figma, copilot ui to figma" />
   <meta name="author" content="HTML to Figma" />
@@ -13,7 +13,7 @@
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/github-copilot-to-figma" />
-  <meta property="og:title" content="GitHub Copilot to Figma: Import Copilot-Built UI" />
+  <meta property="og:title" content="GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers" />
   <meta property="og:description" content="Copilot wrote the code. Run it, copy the rendered HTML, and html2design turns it into native, editable Figma layers." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/github-copilot-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
@@ -23,8 +23,8 @@
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GitHub Copilot to Figma: Import Copilot-Built UI" />
-  <meta name="twitter:description" content="GitHub Copilot writes real frontend code. Run it in a browser, copy the HTML; html2design rebuilds it as native Figma layers." />
+  <meta name="twitter:title" content="GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers" />
+  <meta name="twitter:description" content="Import a public GitHub Copilot to Figma preview or a complete HTML/CSS document into Figma with Pixel or best-effort Editable output." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/github-copilot-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -39,8 +39,8 @@
     "description": "Import a Copilot-built interface into Figma from localhost HTML or a public preview, using Pixel or best-effort Editable output.",
     "url": "https://html2design.com/use-cases/github-copilot-to-figma",
     "inLanguage": "en",
-    "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
     "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
@@ -65,10 +65,10 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How do I convert UI built with GitHub Copilot to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers." } },
-      { "@type": "Question", "name": "Does it matter which language or framework Copilot generated?", "acceptedAnswer": { "@type": "Answer", "text": "No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, plain HTML — all import the same way." } },
-      { "@type": "Question", "name": "Does this work with Copilot Workspace?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Copilot Workspace turns a plan into branched code. Check the branch out, run it locally, open the page, and copy the rendered HTML. html2design only needs the rendered HTML — Workspace's mechanism is invisible at the browser layer." } },
-      { "@type": "Question", "name": "Can I import a single component instead of the whole page?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — right-click the component's root element in DevTools (or use a Storybook story) and copy its outerHTML instead of the whole body." } }
+      { "@type": "Question", "name": "How do I convert UI built with GitHub Copilot to Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
+      { "@type": "Question", "name": "Does it matter which language or framework Copilot generated?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
+      { "@type": "Question", "name": "Does this work with Copilot Workspace?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
+      { "@type": "Question", "name": "Can I import a single component instead of the whole page?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } }
     ]
   }
   </script>
@@ -108,7 +108,7 @@
         AI-Coded UI, Made Editable
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        <strong class="text-content font-medium">Copilot wrote the code; now inspect it in Figma.</strong> Run the interface in a browser, then import copied HTML or an accessible preview as a Pixel reference or as best-effort editable layers for supported content.
+        <strong class="text-content font-medium">Move the rendered GitHub Copilot to Figma result into Figma.</strong> GitHub Copilot changes files in an existing repository. Use a deployed branch preview when available, or create a production build and export a self-contained document from that exact commit so the design review matches the code under review. Use an accessible public preview URL, or supply a complete HTML document with its required CSS and assets. Choose Pixel for visual fidelity or Editable for supported native layers.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -120,7 +120,7 @@
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "GitHub Copilot to Figma"?</h2>
-      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"GitHub Copilot to Figma"</strong> is the workflow of taking UI you built with GitHub Copilot (in VS Code, JetBrains, or via Copilot Workspace) and importing it into Figma as editable design layers. Copilot writes real frontend code into your project — React, Vue, Svelte, plain HTML — and you run it like any app. html2design reads the rendered DOM's computed styles. The framework Copilot used is irrelevant; only the rendered output matters.</p>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"GitHub Copilot to Figma"</strong> is a code-to-design workflow for importing the tool's rendered interface into Figma. GitHub Copilot changes files in an existing repository. Use a deployed branch preview when available, or create a production build and export a self-contained document from that exact commit so the design review matches the code under review. html2design can capture an accessible public preview or process a complete HTML/CSS document. Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes.</p>
       <p class="text-content-muted leading-relaxed max-w-3xl">Copilot is exceptional at "code → working UI fast." html2design closes the loop the other direction — code → editable Figma — so designers can refine, align to a design system, and hand off the Copilot draft with their existing tooling rather than rebuilding it by hand.</p>
     </div>
   </section>
@@ -130,10 +130,10 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">How GitHub Copilot import works</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Built on a browser-rendered DOM — exactly what the import approach reads.</p>
       <div class="space-y-6">
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Copilot writes real code; it's a normal project</h3><p class="text-sm text-content-muted leading-relaxed">Copilot edits files in your repo. Start the dev server and open the page; the browser computes every style, which is exactly what html2design reads. No special export.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Framework-agnostic — anything Copilot writes</h3><p class="text-sm text-content-muted leading-relaxed">React, Vue, Svelte, Astro, plain HTML — html2design reads the rendered output, not the source, so the language/framework Copilot picks does not matter.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Works on localhost & auth-gated pages</h3><p class="text-sm text-content-muted leading-relaxed">Because you paste HTML rather than a URL, it works on <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>, Storybook, or pages behind login — no public deploy needed.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Copilot Workspace plans → ready-to-import UI</h3><p class="text-sm text-content-muted leading-relaxed">Copilot Workspace turns a GitHub issue plan into working code. Run the resulting branch locally, open the page, copy the outerHTML — you've gone from issue to editable Figma frame in a single sitting.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Source handling for GitHub Copilot to Figma</h3><p class="text-sm text-content-muted leading-relaxed">GitHub Copilot changes files in an existing repository. Use a deployed branch preview when available, or create a production build and export a self-contained document from that exact commit so the design review matches the code under review.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Pixel or Editable output</h3><p class="text-sm text-content-muted leading-relaxed">Pixel mode preserves the browser appearance as lossless raster tiles. Editable mode creates best-effort native layers for supported content.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported SVG content</h3><p class="text-sm text-content-muted leading-relaxed">Compatible SVG content can remain editable; complex or externally loaded graphics may be rasterized or require cleanup.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Review remains part of the workflow</h3><p class="text-sm text-content-muted leading-relaxed">Fonts, browser-only media, effects, and responsive behavior can differ in Figma, so compare the result with the source before handoff.</p></div>
       </div>
     </div>
   </section>
@@ -143,13 +143,13 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The GitHub Copilot to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Four steps, followed by review and cleanup.</p>
       <div class="space-y-10">
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Run the project Copilot wrote</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Start the dev server (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code>, or your project's command) and open the page in a browser. For a single component, use a component route or Storybook (<code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:6006</code>).</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the GitHub Copilot to Figma result</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>GitHub Copilot changes files in an existing repository. Use a deployed branch preview when available, or create a production build and export a self-contained document from that exact commit so the design review matches the code under review. Load the intended interface state and let fonts, images, and application data finish rendering.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or the component wrapper), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Paste a remotely accessible preview URL. For local or private work, export a complete HTML document with its generated CSS and reachable assets; isolated outerHTML is not a self-contained visual export.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. The plugin maps supported elements and styles to native Figma objects.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Choose Pixel or Editable</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In html2design, use Pixel mode for lossless visual reference or Editable mode for supported native Figma nodes.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>You now have a best-effort editable frame of what Copilot built. Refine it, align it to your design system, and prepare it for review and handoff.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Compare and refine</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Compare the import with the browser source, then correct unavailable fonts, media, effects, and layout differences before relying on it.</p></div></article>
       </div>
     </div>
   </section>
@@ -171,10 +171,10 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with GitHub Copilot to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Copilot wrote (e.g., npm run dev), open the page in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does it matter which language or framework Copilot generated?</h3><p class="text-sm text-content-muted leading-relaxed">No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, plain HTML — all import the same way.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with Copilot Workspace?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. Copilot Workspace turns a plan into branched code. Check the branch out, run it locally, open the page, and copy the rendered HTML. html2design only needs the rendered HTML — Workspace's mechanism is invisible at the browser layer.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component instead of the whole page?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — right-click the component's root element in DevTools (or use a Storybook story) and copy its outerHTML instead of the whole body.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with GitHub Copilot to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does it matter which language or framework Copilot generated?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with Copilot Workspace?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component instead of the whole page?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the GitHub Copilot to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
       </div>
     </div>
   </section>

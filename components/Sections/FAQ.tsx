@@ -29,11 +29,11 @@ const faqs = [
   },
   {
     question: "Can I convert React/JSX components to Figma?",
-    answer: "Yes. Render your React component in the browser, then copy the resulting HTML from the page. Paste that HTML into the HTML to Figma plugin and it will generate native Figma layers — frames, text, and shapes — from your component's output. No special React integration is needed; the plugin works with any valid HTML regardless of how it was produced."
+    answer: "Yes. Use public URL capture for a deployed React page. For localhost or Storybook, export a complete HTML document with its generated CSS and assets. Isolated outerHTML does not include CSS Module, Tailwind, or CSS-in-JS rules."
   },
   {
     question: "Does HTML to Figma support Tailwind CSS classes?",
-    answer: "Yes. Tailwind utility classes are parsed the same way as any other CSS. The plugin reads computed styles from the browser's rendering engine, so it doesn't matter whether your styles come from Tailwind, plain CSS, or a CSS-in-JS library — the final visual output is what gets converted into Figma properties."
+    answer: "Yes, when the generated Tailwind stylesheet is available to the input. Use public URL capture or include the compiled CSS with a complete HTML document. Tailwind class names alone do not contain their visual values."
   },
   {
     question: "Can I sync my design system between code and Figma?",
@@ -45,11 +45,11 @@ const faqs = [
   },
   {
     question: "Can I use HTML to Figma with VS Code or my IDE?",
-    answer: "Yes. Open your component or page in a browser preview (for example, a local dev server or Storybook), then use browser DevTools to copy the rendered HTML of the element you want to import. Paste that HTML directly into the HTML to Figma plugin in Figma. The workflow is IDE-agnostic and works with any editor or framework."
+    answer: "Yes. Use a public preview URL, or export a complete HTML document from your local project with its generated CSS and assets. The workflow is IDE-agnostic, but the supplied document must contain the styles required to render it."
   },
   {
     question: "Can I convert Claude, v0, or other AI-generated designs to Figma?",
-    answer: "Yes. AI tools such as Claude, Vercel v0, Bolt, Lovable, and ChatGPT can generate browser-rendered HTML and CSS. Open the generated UI in a browser, copy the rendered HTML from DevTools, and paste it into the plugin. Supported text, fills, vectors, and measured frames become editable Figma layers; fonts, media, browser-only effects, and complex layouts can require cleanup. See the Claude to Figma and v0 to Figma guides for the full workflow."
+    answer: "Yes. For a deployed AI-generated preview, use public URL capture. For private output, export a complete HTML document with CSS and assets. Supported text, fills, media, and measured frames can become editable Figma layers; fonts, effects, and complex layouts may require cleanup. Figma also offers an official Claude Code workflow through its MCP server."
   }
 ];
 

@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Magic Patterns to Figma — Native Editable Layers, Not a Flat Import" />
-  <meta name="twitter:description" content="Magic Patterns writes real HTML & CSS. html2design reads the rendered preview and rebuilds it as native Figma layers — best-effort editable." />
+  <meta name="twitter:description" content="Import a public Magic Patterns to Figma preview or a complete HTML/CSS document into Figma with Pixel or best-effort Editable output." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/magic-patterns-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -39,8 +39,8 @@
     "description": "Import a rendered Magic Patterns interface into Figma from copied HTML or a public preview, with Pixel and best-effort Editable output.",
     "url": "https://html2design.com/use-cases/magic-patterns-to-figma",
     "inLanguage": "en",
-    "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
     "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
@@ -66,8 +66,8 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "How is this different from the official Magic Patterns Figma plugin?", "acceptedAnswer": { "@type": "Answer", "text": "Use Magic Patterns' own integration first. html2design is an alternative when you can supply rendered HTML or a public preview and want Pixel output or best-effort editable nodes for supported content." } },
-      { "@type": "Question", "name": "How do I convert a Magic Patterns design to Figma with html2design?", "acceptedAnswer": { "@type": "Answer", "text": "Open the design preview in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers." } },
-      { "@type": "Question", "name": "Does this work with any Magic Patterns design (Tailwind/shadcn etc.)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. html2design reads the rendered DOM and computed styles, not the source, so the underlying styling system Magic Patterns uses does not matter." } },
+      { "@type": "Question", "name": "How do I convert a Magic Patterns design to Figma with html2design?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the Magic Patterns to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
+      { "@type": "Question", "name": "Does this work with any Magic Patterns design (Tailwind/shadcn etc.)?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the Magic Patterns to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
       { "@type": "Question", "name": "Are the imported designs editable in Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Editable mode creates native Figma nodes for supported content. Fonts, media, effects, and layout can still require cleanup." } }
     ]
   }
@@ -108,7 +108,7 @@
         Editable Layers from Rendered HTML
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        <strong class="text-content font-medium">Magic Patterns generated your UI.</strong> If you can supply browser-rendered HTML or an accessible public preview, html2design can import it as a Pixel reference or as best-effort editable layers for supported content.
+        <strong class="text-content font-medium">Move the rendered Magic Patterns to Figma result into Figma.</strong> Magic Patterns provides its own Figma integration, which should be the first choice for a native handoff. html2design is an alternate capture path when a public preview or complete HTML/CSS export better fits the review. Use an accessible public preview URL, or supply a complete HTML document with its required CSS and assets. Choose Pixel for visual fidelity or Editable for supported native layers.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -120,7 +120,7 @@
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Magic Patterns to Figma"?</h2>
-      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"Magic Patterns to Figma"</strong> is the workflow of moving AI-generated UI from Magic Patterns into Figma. Magic Patterns provides its own integration. html2design can instead import supplied rendered HTML as native frames, text, shapes, images, and vectors where the source maps reliably to Figma; complex effects and media may need cleanup.</p>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"Magic Patterns to Figma"</strong> is a code-to-design workflow for importing the tool's rendered interface into Figma. Magic Patterns provides its own Figma integration, which should be the first choice for a native handoff. html2design is an alternate capture path when a public preview or complete HTML/CSS export better fits the review. html2design can capture an accessible public preview or process a complete HTML/CSS document. Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes.</p>
       <p class="text-content-muted leading-relaxed max-w-3xl">If you want to <em>refine</em> the AI draft inside Figma — restyle individual layers, swap copy, align it to a design system, build on top of it — importing the rendered preview through html2design gives you the granularity to do it.</p>
     </div>
   </section>
@@ -130,10 +130,10 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">How Magic Patterns import works</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Built on a browser-rendered DOM — exactly what the import approach reads.</p>
       <div class="space-y-6">
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Magic Patterns' preview is real, rendered HTML</h3><p class="text-sm text-content-muted leading-relaxed">By the time you see the preview, the browser has resolved every utility class and component variant to computed CSS — colors, spacing, type metrics. html2design reads those values.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported elements become editable Figma layers</h3><p class="text-sm text-content-muted leading-relaxed">Compatible text, fills, borders, images, and vectors become native nodes; unsupported content may be simplified or omitted.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported SVG content can stay vector</h3><p class="text-sm text-content-muted leading-relaxed">Compatible inline SVG content can become editable Figma vectors; complex or externally loaded assets may need cleanup.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Pairs with the official plugin</h3><p class="text-sm text-content-muted leading-relaxed">Use Magic Patterns' own integration first; test html2design when supplied HTML or Pixel-versus-Editable output better fits the workflow.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Source handling for Magic Patterns to Figma</h3><p class="text-sm text-content-muted leading-relaxed">Magic Patterns provides its own Figma integration, which should be the first choice for a native handoff. html2design is an alternate capture path when a public preview or complete HTML/CSS export better fits the review.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Pixel or Editable output</h3><p class="text-sm text-content-muted leading-relaxed">Pixel mode preserves the browser appearance as lossless raster tiles. Editable mode creates best-effort native layers for supported content.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported SVG content</h3><p class="text-sm text-content-muted leading-relaxed">Compatible SVG content can remain editable; complex or externally loaded graphics may be rasterized or require cleanup.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Review remains part of the workflow</h3><p class="text-sm text-content-muted leading-relaxed">Fonts, browser-only media, effects, and responsive behavior can differ in Figma, so compare the result with the source before handoff.</p></div>
       </div>
     </div>
   </section>
@@ -143,13 +143,13 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Magic Patterns to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Four steps, followed by review and cleanup.</p>
       <div class="space-y-10">
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the Magic Patterns preview</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open your Magic Patterns design's preview in the browser. Opening it in its own tab makes the next step cleaner.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the Magic Patterns to Figma result</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Magic Patterns provides its own Figma integration, which should be the first choice for a native handoff. html2design is an alternate capture path when a public preview or complete HTML/CSS export better fits the review. Load the intended interface state and let fonts, images, and application data finish rendering.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element, choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Paste a remotely accessible preview URL. For local or private work, export a complete HTML document with its generated CSS and reachable assets; isolated outerHTML is not a self-contained visual export.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. Supported elements and styles become native Figma objects.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Choose Pixel or Editable</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In html2design, use Pixel mode for lossless visual reference or Editable mode for supported native Figma nodes.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Refine in Figma</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Compare the best-effort editable result with the browser source, then correct fonts, media, effects, and layout differences.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Compare and refine</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Compare the import with the browser source, then correct unavailable fonts, media, effects, and layout differences before relying on it.</p></div></article>
       </div>
     </div>
   </section>
@@ -172,8 +172,8 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How is this different from the official Magic Patterns Figma plugin?</h3><p class="text-sm text-content-muted leading-relaxed">Use Magic Patterns' own integration first. html2design is an alternative when you can supply rendered HTML or a public preview and want Pixel output or best-effort editable nodes for supported content.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Magic Patterns design to Figma with html2design?</h3><p class="text-sm text-content-muted leading-relaxed">Open the design preview in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin. The rendered output transfers as best-effort editable Figma layers.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with any Magic Patterns design (Tailwind/shadcn etc.)?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. html2design reads the rendered DOM and computed styles, not the source, so the underlying styling system Magic Patterns uses does not matter.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Magic Patterns design to Figma with html2design?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the Magic Patterns to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with any Magic Patterns design (Tailwind/shadcn etc.)?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the Magic Patterns to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Editable mode creates native Figma nodes for supported content. Fonts, media, effects, and layout can still require cleanup.</p></div>
       </div>
     </div>

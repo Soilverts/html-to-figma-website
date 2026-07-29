@@ -150,7 +150,7 @@
         "name": "How do I convert an Ember.js component to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run ember serve in your project directory. Navigate to the route containing the component you want to export. Open DevTools (F12), find the component's root element in the Elements panel, right-click → Copy → Copy outerHTML, then paste the HTML into the html2design Figma plugin. Ember's Handlebars templates are fully compiled to HTML by the browser before you copy — the Figma output reflects the real rendered component, including Ember Data model values and all computed styles."
+          "text": "Run ember serve and open the target route. For a remotely accessible preview, use public URL capture. Otherwise export a complete HTML document with Ember's generated CSS and assets, then use manual input. The rendered model text is present in the DOM, but an element's outerHTML alone does not include external or computed styles."
         }
       },
       {

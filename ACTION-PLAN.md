@@ -1,6 +1,6 @@
 # html2design SEO and GEO Action Plan
 
-Updated: 2026-07-16
+Updated: 2026-07-29
 
 ## Completed in code
 
@@ -16,12 +16,15 @@ Updated: 2026-07-16
 - [x] Remove Three.js and defer Framer Motion until below-fold content is requested.
 - [x] Split homepage and static-page Tailwind scanning and unify self-hosted font families.
 - [x] Reach Lighthouse 100 for Accessibility, Best Practices, and SEO on tested routes.
-- [x] Reach Lighthouse Performance 87 mobile/100 desktop on the homepage and 93 mobile on result-quality.
+- [x] Reach Lighthouse 100 mobile and desktop for Performance, Accessibility, Best Practices, and SEO on the 2026-07-29 homepage lab run.
 - [x] Analyze the 2026-07-14 Search Console export and preserve its measurement baseline.
 - [x] Revalidate Figma, Anima Buddy, Builder Visual Copilot, and html.to.design capabilities from current primary sources.
 - [x] Replace stale competitor claims with a source-linked, testable comparison methodology.
 - [x] Run the same Playwright suite against local preview and the production domain.
 - [x] Allow Cloudflare Web Analytics through CSP without widening other script sources.
+- [x] Establish a live DataForSEO baseline for US rankings, keyword demand, SERP competitors, Lighthouse, and backlinks.
+- [x] Add a product-claims release gate that rejects incorrect outerHTML, extension, SVG, and automatic-layout promises.
+- [x] Reframe the Claude page around the current official Figma MCP workflow, public URL capture, and complete HTML/CSS input.
 
 ## Platform and owner actions
 
@@ -37,7 +40,8 @@ Updated: 2026-07-16
 
 - [ ] Connect Search Console and GA4 for automated reporting.
 - [ ] Connect Bing Webmaster.
-- [ ] Connect DataForSEO, Moz, Ahrefs, or Semrush for backlink and competitor-gap measurement.
+- [x] Connect DataForSEO for keyword, SERP, Lighthouse, domain, and backlink measurement.
+- [ ] Connect Moz, Ahrefs, or Semrush only if a second backlink source becomes necessary.
 - [ ] Establish CrUX field-data monitoring once traffic is sufficient.
 
 ## Release gates
@@ -50,3 +54,5 @@ Updated: 2026-07-16
 - [ ] Compare the next complete 28-day GSC window with `GSC-PERFORMANCE-2026-07-14.md` before changing stable metadata.
 - [ ] Publish same-source competitor result pages only after recording viewport, date, input method, output mode, and visible differences.
 - [ ] Instrument URL-import completion, timeout, raster fallback, and cleanup signals without collecting customer HTML unnecessarily.
+- [ ] Review the live ranking baseline in `OPEN-SEO-BASELINE-2026-07-29.md` every 28 days; change stable titles only when Search Console or rank data supports the change.
+- [ ] Earn independently verified links before expanding the programmatic page inventory.

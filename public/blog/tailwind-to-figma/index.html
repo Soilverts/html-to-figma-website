@@ -124,7 +124,7 @@
         "name": "Can I convert Tailwind CSS to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Tailwind utility classes compile to standard CSS in the browser. When you inspect a rendered Tailwind component in DevTools and copy its outerHTML, all computed styles are included. html2design reads those resolved values — colors, spacing, typography, layout — and maps them to native Figma properties. Tailwind class names don't appear in the output; what you get is the visual result as Figma layers."
+          "text": "Yes, when html2design can access the compiled Tailwind CSS. Import a public preview URL, or provide a complete HTML document that includes the generated stylesheet. An element's outerHTML contains class names but does not embed external or computed CSS."
         }
       },
       {
@@ -156,7 +156,7 @@
         "name": "Does Tailwind's dark mode work with html2design?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, but you capture light and dark modes as separate imports. Toggle the browser's color scheme (via DevTools > Rendering > Emulate prefers-color-scheme) or add the 'dark' class to the root element, then copy the component's outerHTML in that state and paste it into html2design. You get a Figma frame with the dark-mode computed styles, which you can use as the dark variant in a Figma Component alongside the light version."
+          "text": "Yes, as separate imports. Toggle the source between light and dark, then use public URL capture or export a complete HTML document with the generated CSS for each state. Compare both Editable results with the browser before organizing them as variants in Figma."
         }
       }
     ]
@@ -518,7 +518,7 @@ npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch
 
     <h3>Can I convert Tailwind CSS to Figma?</h3>
     <p>
-      Yes. Tailwind utilities compile to standard CSS, and when you copy a rendered component from DevTools, all computed styles are included. html2design reads those resolved values — not the class names — and maps them to native Figma properties. See our guide on <a href="/blog/how-to-convert-html-to-figma">converting HTML to Figma</a> for the core workflow.
+      Yes, when html2design can access the compiled Tailwind CSS. Import a public preview URL, or provide a complete HTML document that includes the generated stylesheet. An element's outerHTML contains class names but does not embed external or computed CSS. See our guide on <a href="/blog/how-to-convert-html-to-figma">converting HTML to Figma</a> for the core workflow.
     </p>
 
     <h3>How do I extract Tailwind design tokens into Figma variables?</h3>

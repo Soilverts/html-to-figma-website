@@ -45,7 +45,7 @@
     "url": "https://html2design.com/alternatives",
     "inLanguage": "en",
     "datePublished": "2026-03-23",
-    "dateModified": "2026-07-15",
+    "dateModified": "2026-07-29",
     "author": {
       "@type": "Organization",
       "name": "HTML to Figma",
@@ -191,7 +191,7 @@
         "name": "Can I import HTML into Figma without a Chrome extension?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. html2design (html2design.com) is a native Figma plugin that requires no Chrome extension. You copy HTML from your browser's DevTools (right-click any element → Inspect → Copy outerHTML), then paste it directly into the plugin inside Figma. It works with local development builds, staging environments, email templates, and any HTML you can copy — no browser extension or live URL needed."
+          "text": "Yes. html2design is a Figma plugin with no browser extension dependency. Use a public URL, or load a complete HTML document for local and private sources. Manual input must include the CSS and assets required to render the design."
         }
       },
       {
@@ -215,7 +215,7 @@
         "name": "How do I convert a React component to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "One workflow is to render the React component locally, copy its outerHTML from DevTools, and paste that HTML into html2design. The plugin uses browser-computed values as inputs for best-effort editable Figma layers. Review unsupported effects and responsive behavior after import."
+          "text": "For a deployed React route, use public URL capture. For localhost or Storybook, export a complete HTML document with its generated CSS and assets, then use manual input. Editable mode maps supported rendered properties to best-effort Figma layers; review effects and responsive behavior after import."
         }
       },
       {
@@ -317,7 +317,7 @@
         Seven ways to move browser output into Figma, compared by input method, output type, editability, and cleanup tradeoffs.
       </p>
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-content-muted font-mono">
-        <span>Reviewed July 2026</span>
+        <span>Reviewed July 29, 2026</span>
         <span class="text-gray-200">·</span>
         <span>7 workflows reviewed</span>
         <span class="text-gray-200">·</span>
@@ -450,7 +450,7 @@
           <strong>html2design</strong> (available at <a href="https://html2design.com" target="_blank" rel="noopener noreferrer">html2design.com</a> and on Figma Community) supports pasted HTML and <a href="/use-cases/url-to-figma">direct public URL capture</a> without a Chrome extension. Pixel mode prioritizes fidelity; Editable mode creates native layers that may require cleanup.
         </p>
         <p>
-          This matters most for developers. If you're working on a local dev build at <code>localhost:3000</code>, you can copy the rendered HTML from DevTools (right-click → Inspect → Copy outerHTML) and paste it straight into html2design. The same works for email templates, unreleased feature branches, design system components in Storybook — any HTML you can copy. No deployment required.
+          For a local build, email template, unreleased feature, or Storybook component, export a complete HTML document with the CSS and assets it needs, then use manual input. A fragment containing only class names does not carry framework styles or browser-computed values.
         </p>
         <p>
           Editable mode recreates typography, fills, border radii, shadows, spacing, and layout as native Figma nodes where the source maps reliably to the Figma API. It uses positioned frames rather than automatically generating Auto Layout. Complex effects, unavailable fonts, and remote media can require cleanup; see the <a href="/result-quality">documented output example</a> before choosing a workflow.
@@ -742,7 +742,7 @@
 
         <div class="faq-item" role="listitem">
           <p class="faq-question">Can I import HTML into Figma without a Chrome extension?</p>
-          <p class="faq-answer">Yes. <a href="https://html2design.com">html2design</a> is a native Figma plugin with no browser extension dependency. Copy the outerHTML of any element from DevTools (right-click → Inspect → right-click root node → Copy → Copy outerHTML), open html2design inside Figma, paste, and convert. Works with localhost, any dev environment, email templates, and private staging servers.</p>
+          <p class="faq-answer">Yes. <a href="https://html2design.com">html2design</a> is a Figma plugin with no browser extension dependency. Use a public URL, or load a complete HTML document for localhost, email templates, and private staging sources. Include the CSS and assets required to render the document.</p>
         </div>
 
         <div class="faq-item" role="listitem">
@@ -752,7 +752,7 @@
 
         <div class="faq-item" role="listitem">
           <p class="faq-question">How do I convert a React component to Figma?</p>
-          <p class="faq-answer">Render your React component in the browser (localhost is fine), open DevTools, right-click the root element, and choose Copy outerHTML. Then open the html2design Figma plugin, paste the HTML, and click Convert. The plugin generates native Figma layers from the live computed styles. Full walkthrough: <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
+          <p class="faq-answer">Use public URL capture for a deployed React route. For localhost or Storybook, export a complete HTML document with the generated CSS and assets. Isolated outerHTML does not include CSS Module, Tailwind, or CSS-in-JS rules. Full walkthrough: <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
         </div>
 
         <div class="faq-item" role="listitem">

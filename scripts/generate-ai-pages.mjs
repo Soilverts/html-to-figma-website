@@ -9,8 +9,9 @@
  *    (AI Design Tools category card grid + ItemList JSON-LD), and
  *    public/llms.txt — all idempotent (existing entries are not duplicated).
  *
- * Accuracy bar: NEVER claim Figma Auto Layout or that we create Figma
- * Components — html2design produces fixed-position editable layers only.
+ * Accuracy bar: NEVER claim Figma Auto Layout, automatic Components, or that
+ * copying outerHTML embeds external/computed CSS. Manual input needs a
+ * complete HTML document with its required CSS and reachable assets.
  *
  * Usage: node scripts/generate-ai-pages.mjs
  */
@@ -22,7 +23,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PLUGIN_URL =
   'https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html';
-const TODAY = '2026-07-14';
+const TODAY = '2026-07-29';
 
 // =============================================================================
 // TOOLS — one entry per page. Per-tool prose is unique; structure is shared.
@@ -34,7 +35,7 @@ const TOOLS = [
     listName: 'MagicPath to Figma',
     cardTitle: 'MagicPath to Figma',
     cardDesc: "Turn MagicPath's AI-designed UI into native, editable Figma layers.",
-    title: 'MagicPath to Figma — Turn AI Designs Into Editable Figma Layers',
+    title: 'MagicPath to Figma: Pixel or Editable Import',
     metaDesc: 'Import a rendered MagicPath interface into Figma from copied HTML or a public preview, using Pixel or best-effort Editable output.',
     keywords: 'magicpath to figma, convert magicpath to figma, magicpath ai design to figma, ai design to figma, ai generated html to figma',
     ogTitle: 'MagicPath to Figma — Turn AI Designs Into Editable Figma Layers',
@@ -82,7 +83,7 @@ const TOOLS = [
     listName: 'GitHub Copilot to Figma',
     cardTitle: 'GitHub Copilot to Figma',
     cardDesc: 'Turn UI written by GitHub Copilot or Copilot Workspace into editable Figma layers.',
-    title: 'GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers',
+    title: 'GitHub Copilot to Figma: Import Rendered UI',
     metaDesc: 'Import a Copilot-built interface into Figma from localhost HTML or a public preview, using Pixel or best-effort Editable output.',
     keywords: 'github copilot to figma, copilot workspace to figma, github copilot figma, ai code to figma, ai generated ui to figma, copilot ui to figma',
     ogTitle: 'GitHub Copilot to Figma — Turn Copilot-Built UI Into Figma Layers',
@@ -365,6 +366,93 @@ const TOOLS = [
     related: ['bolt-to-figma', 'v0-to-figma', 'claude-to-figma', 'nextjs-to-figma', 'guide', 'compare'],
   },
 ];
+
+const manualSourceAnswer = (toolName) =>
+  `Use public URL capture when the ${toolName} preview is remotely accessible. ` +
+  'For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. ' +
+  "An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.";
+const riskyFaqTerms = [
+  'outer' + 'HTML',
+  'computed ' + 'style',
+  'rendered ' + 'DOM',
+  'copy the rendered ' + 'HTML',
+];
+const toolContexts = {
+  'magicpath-to-figma':
+    'MagicPath work starts in its visual browser canvas. Confirm whether the preview has a shareable URL; otherwise package the generated markup, styles, fonts, and images together before manual import.',
+  'github-copilot-to-figma':
+    'GitHub Copilot changes files in an existing repository. Use a deployed branch preview when available, or create a production build and export a self-contained document from that exact commit so the design review matches the code under review.',
+  'windsurf-to-figma':
+    'Windsurf and Cascade edit a local workspace. Run the project, verify the intended route and state, then use a shareable staging URL or package the built HTML, generated stylesheets, and assets for manual input.',
+  'magic-patterns-to-figma':
+    "Magic Patterns provides its own Figma integration, which should be the first choice for a native handoff. html2design is an alternate capture path when a public preview or complete HTML/CSS export better fits the review.",
+  'google-stitch-to-figma':
+    "Google Stitch includes a direct Figma workflow, which should be tested first. html2design is useful when the available artifact is a browser preview and the team specifically needs lossless Pixel capture or an independent Editable comparison.",
+  'visily-to-figma':
+    "Visily offers a native bridge for moving its wireframes and screens to Figma. Use html2design as a comparison path only when a public browser preview or complete exported document is available.",
+  'replit-agent-to-figma':
+    "Replit Agent runs the generated application in a hosted webview. Open the preview in its own tab when possible, verify the active route and data state, and prefer its public preview URL over extracting an isolated DOM fragment.",
+};
+
+for (const tool of TOOLS) {
+  const sourceContext = toolContexts[tool.slug];
+  tool.twitterDesc =
+    `Import a public ${tool.listName} preview or a complete HTML/CSS document into Figma with Pixel or best-effort Editable output.`;
+  tool.heroLead =
+    `<strong class="text-content font-medium">Move the rendered ${tool.listName} result into Figma.</strong> ${sourceContext} ` +
+    'Use an accessible public preview URL, or supply a complete HTML document with its required CSS and assets. Choose Pixel for visual fidelity or Editable for supported native layers.';
+  tool.whatIsP1 =
+    `<strong class="text-content">"${tool.listName}"</strong> is a code-to-design workflow for importing the tool's rendered interface into Figma. ` +
+    `${sourceContext} html2design can capture an accessible public preview or process a complete HTML/CSS document. ` +
+    'Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes.';
+  tool.whyItWorks = [
+    {
+      t: `Source handling for ${tool.listName}`,
+      d: sourceContext,
+    },
+    {
+      t: 'Pixel or Editable output',
+      d: 'Pixel mode preserves the browser appearance as lossless raster tiles. Editable mode creates best-effort native layers for supported content.',
+    },
+    {
+      t: 'Supported SVG content',
+      d: 'Compatible SVG content can remain editable; complex or externally loaded graphics may be rasterized or require cleanup.',
+    },
+    {
+      t: 'Review remains part of the workflow',
+      d: 'Fonts, browser-only media, effects, and responsive behavior can differ in Figma, so compare the result with the source before handoff.',
+    },
+  ];
+  tool.workflow = [
+    {
+      n: 'Step 01',
+      t: `Open the ${tool.listName} result`,
+      d: `${sourceContext} Load the intended interface state and let fonts, images, and application data finish rendering.`,
+    },
+    {
+      n: 'Step 02',
+      t: 'Choose the complete source',
+      d: 'Paste a remotely accessible preview URL. For local or private work, export a complete HTML document with its generated CSS and reachable assets; isolated outerHTML is not a self-contained visual export.',
+    },
+    {
+      n: 'Step 03',
+      t: 'Choose Pixel or Editable',
+      d: 'In html2design, use Pixel mode for lossless visual reference or Editable mode for supported native Figma nodes.',
+    },
+    {
+      n: 'Step 04',
+      t: 'Compare and refine',
+      d: 'Compare the import with the browser source, then correct unavailable fonts, media, effects, and layout differences before relying on it.',
+    },
+  ];
+  tool.faq = tool.faq.map((item) => {
+    if (!riskyFaqTerms.some((term) => item.a.toLowerCase().includes(term.toLowerCase()))) {
+      return item;
+    }
+
+    return { ...item, a: manualSourceAnswer(tool.listName) };
+  });
+}
 
 // =============================================================================
 // HTML / SVG templates
@@ -699,8 +787,6 @@ function updateSitemap(tools) {
     const block = `  <url>
     <loc>https://html2design.com/use-cases/${t.slug}</loc>
     <lastmod>${TODAY}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/${t.slug}.svg</image:loc>
       <image:title>${t.listName}</image:title>

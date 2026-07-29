@@ -148,7 +148,7 @@
         "name": "Does html2design preserve Tailwind CSS styles from React components?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. When you copy outerHTML from a rendered React component, the browser has already applied all Tailwind utility classes to computed styles. html2design reads those computed styles — colors, spacing, typography, flex layout — and maps them to native Figma properties. Tailwind class names don't appear in the output; what you get is the resolved visual result."
+          "text": "Yes, when the compiled Tailwind CSS is available to html2design. Use public URL capture for a deployed route, or export a complete HTML document with its generated stylesheet for manual input. An element's outerHTML contains class names but does not embed the browser's computed-style map."
         }
       },
       {
@@ -412,7 +412,7 @@ npm run storybook</div>
 
     <h3>Working with Tailwind CSS</h3>
     <p>
-      Tailwind compiles to standard CSS at build time. When you copy a rendered component's outerHTML, the browser's DevTools shows the component with all computed styles applied — the pixel values behind utilities like <code>text-gray-900</code>, <code>p-6</code>, or <code>rounded-xl</code> are already resolved.
+      Tailwind compiles to standard CSS at build time. html2design needs access to that generated stylesheet: use a public preview URL, or export a complete HTML document that includes the CSS. Copying only a rendered component's outerHTML keeps utilities such as <code>text-gray-900</code>, <code>p-6</code>, and <code>rounded-xl</code> as class names without embedding their rules.
     </p>
     <p>
       html2design uses computed visual values rather than utility class names. Tailwind, styled-components, CSS Modules, and vanilla CSS all produce browser CSS, but Figma output still varies with fonts, unsupported effects, assets, and layout complexity.
@@ -497,7 +497,7 @@ npm run storybook</div>
 
     <h3>Does html2design preserve Tailwind CSS from React components?</h3>
     <p>
-      Yes. Tailwind utilities are compiled to standard CSS, and when you copy a rendered component from DevTools, all computed styles are included. html2design reads those resolved values — not the class names — so Tailwind, styled-components, CSS Modules, and plain CSS all work the same way.
+      Yes, when html2design can access the generated CSS. Import a public preview URL, or provide a complete HTML document with its compiled CSS. Copying an element's outerHTML alone preserves class names but does not embed Tailwind, styled-components, CSS Modules, or other external stylesheets.
     </p>
 
     <h3>What about importing a full React page into Figma?</h3>

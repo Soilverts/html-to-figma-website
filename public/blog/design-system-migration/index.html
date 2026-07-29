@@ -496,7 +496,7 @@ Badge / Warning</div>
 
     <h3>Can I extract design tokens from a production website I don't own the source for?</h3>
     <p>
-      Yes — you can read computed CSS values from any website you can open in a browser. DevTools shows the computed value of every CSS property on every element, regardless of whether you have the source code. This is useful for auditing a competitor's design system or capturing a client's existing site before a redesign. html2design works from outerHTML, which includes all inline computed styles — no source access required.
+      DevTools can show computed CSS values for manual inspection, even when you do not have the source code. To import the visual result with html2design, use public URL capture. Manual input requires a complete HTML document with its CSS; outerHTML contains markup and inline style attributes, not the browser's computed-style map.
     </p>
 
     <h3>What if my codebase has no token system and uses hardcoded values?</h3>

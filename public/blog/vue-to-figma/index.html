@@ -156,7 +156,7 @@
         "name": "Does html2design preserve Tailwind CSS from Vue components?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Tailwind utilities compile to standard CSS at build time. When you copy a rendered Vue component from DevTools, all computed styles are included. html2design reads those resolved values — not the class names — so Tailwind, Vuetify, PrimeVue, and plain CSS all work the same way."
+          "text": "Yes, when html2design can access the generated CSS. Import a public preview URL, or provide a complete HTML document with its compiled stylesheet. Copying an element's outerHTML alone preserves class names but does not embed Tailwind, Vuetify, PrimeVue, or other external CSS."
         }
       }
     ]

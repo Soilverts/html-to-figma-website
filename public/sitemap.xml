@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://html2design.com/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og-image.png</image:loc>
       <image:title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs</image:title>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://html2design.com/guide</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/guide.svg</image:loc>
       <image:title>Complete Guide to HTML to Figma</image:title>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://html2design.com/faq</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/faq.svg</image:loc>
       <image:title>HTML to Figma FAQ — Frequently Asked Questions</image:title>
@@ -41,7 +41,7 @@
   </url>
   <url>
     <loc>https://html2design.com/alternatives</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/alternatives.svg</image:loc>
       <image:title>HTML to Figma Alternatives Comparison</image:title>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/how-to-convert-html-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/how-to-convert-html-to-figma.svg</image:loc>
       <image:title>How to Convert HTML to Figma — Step-by-Step Guide</image:title>
@@ -127,7 +127,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/import-website-into-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/import-website-into-figma.svg</image:loc>
       <image:title>Import Website into Figma</image:title>
@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/react-component-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/react-component-to-figma.svg</image:loc>
       <image:title>React Component to Figma</image:title>
@@ -145,7 +145,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/tailwind-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/tailwind-to-figma.svg</image:loc>
       <image:title>Tailwind CSS to Figma</image:title>
@@ -163,7 +163,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/design-system-migration</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/design-system-migration.svg</image:loc>
       <image:title>Design System Migration to Figma</image:title>
@@ -199,7 +199,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/responsive-design-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/responsive-design-to-figma.svg</image:loc>
       <image:title>Responsive Design to Figma — Converting Breakpoints to Variants</image:title>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/webflow-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/webflow-to-figma.svg</image:loc>
       <image:title>Webflow to Figma — Import Your Webflow Site into Figma</image:title>
@@ -352,7 +352,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/astro-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/astro-to-figma.svg</image:loc>
       <image:title>Astro to Figma</image:title>
@@ -424,7 +424,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/material-ui-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/material-ui-to-figma.svg</image:loc>
       <image:title>Material UI to Figma</image:title>
@@ -433,7 +433,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/chakra-ui-to-figma</loc>
-    <lastmod>2026-05-18</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/chakra-ui-to-figma.svg</image:loc>
       <image:title>Chakra UI to Figma</image:title>
@@ -442,7 +442,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/ember-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/ember-to-figma.svg</image:loc>
       <image:title>Ember to Figma</image:title>
@@ -451,7 +451,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/storybook-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/storybook-to-figma.svg</image:loc>
       <image:title>Storybook to Figma</image:title>
@@ -496,7 +496,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/tailwind-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/tailwind-to-figma.svg</image:loc>
       <image:title>Tailwind CSS to Figma</image:title>
@@ -530,7 +530,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/html-to-figma-ci-cd-pipeline</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/html-to-figma-ci-cd-pipeline.svg</image:loc>
       <image:title>HTML to Figma CI/CD Pipeline — Automated Design Sync</image:title>
@@ -572,7 +572,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/convert-website-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/figma-to-html-developer-handoff</loc>
@@ -584,7 +584,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/vue-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/blog/angular-to-figma</loc>
@@ -592,7 +592,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/claude-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/claude-to-figma.svg</image:loc>
       <image:title>Claude to Figma</image:title>
@@ -601,7 +601,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/v0-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/v0-to-figma.svg</image:loc>
       <image:title>v0 to Figma</image:title>
@@ -637,7 +637,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/chatgpt-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/chatgpt-to-figma.svg</image:loc>
       <image:title>ChatGPT to Figma</image:title>
@@ -646,7 +646,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/magicpath-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/magicpath-to-figma.svg</image:loc>
       <image:title>MagicPath to Figma</image:title>
@@ -655,7 +655,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/github-copilot-to-figma</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/github-copilot-to-figma.svg</image:loc>
       <image:title>GitHub Copilot to Figma</image:title>
@@ -664,7 +664,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/windsurf-to-figma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/windsurf-to-figma.svg</image:loc>
       <image:title>Windsurf to Figma</image:title>
@@ -673,7 +673,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/magic-patterns-to-figma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/magic-patterns-to-figma.svg</image:loc>
       <image:title>Magic Patterns to Figma</image:title>
@@ -682,7 +682,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/google-stitch-to-figma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/google-stitch-to-figma.svg</image:loc>
       <image:title>Google Stitch to Figma</image:title>
@@ -691,7 +691,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/visily-to-figma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/visily-to-figma.svg</image:loc>
       <image:title>Visily to Figma</image:title>
@@ -700,7 +700,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/replit-agent-to-figma</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/replit-agent-to-figma.svg</image:loc>
       <image:title>Replit Agent to Figma</image:title>

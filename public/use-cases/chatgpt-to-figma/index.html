@@ -73,7 +73,7 @@
       {
         "@type": "Question",
         "name": "Does this work with ChatGPT Canvas?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. When ChatGPT renders a live preview in Canvas, the browser has already painted it. Open DevTools on the preview, copy the outerHTML, and paste into html2design — every computed style transfers as editable Figma layers." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use a remotely accessible preview URL when available, or export a complete HTML document with its CSS. Copying an element's outerHTML alone does not include external or computed styles, and Editable mode is a best-effort translation rather than a one-to-one browser renderer." }
       },
       {
         "@type": "Question",
@@ -224,7 +224,7 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert ChatGPT-generated UI to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Render ChatGPT's UI in a browser (Canvas preview, an .html file, or a running React app), open DevTools, right-click the root element, Copy &gt; Copy outerHTML, and paste into the html2design plugin. It transfers as best-effort editable Figma layers.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with ChatGPT Canvas?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. The Canvas preview is browser-rendered — copy its outerHTML and paste; every computed style transfers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with ChatGPT Canvas?</h3><p class="text-sm text-content-muted leading-relaxed">Use a remotely accessible preview URL when available, or export a complete HTML document with its CSS. Copying an element's outerHTML alone does not include external or computed styles.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">What if I only have an HTML code block?</h3><p class="text-sm text-content-muted leading-relaxed">Save it as a .html file and open it in a browser (or run generated React locally), then copy the rendered outerHTML. html2design needs the rendered HTML, not the source.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
       </div>

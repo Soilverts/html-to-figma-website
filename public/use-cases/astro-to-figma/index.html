@@ -120,7 +120,7 @@
         "name": "Do Astro's CSS scoping and View Transitions affect the Figma import?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Astro scopes component styles using unique class identifiers (similar to Vue and Svelte), but the browser resolves these to their computed CSS values before you copy the outerHTML. html2design reads computed CSS, not source stylesheets, so scoped styles appear correctly in Figma. View Transitions are JavaScript-driven animations and are captured as a static snapshot of the current DOM state."
+          "text": "Astro scoped styles work when html2design can access the generated CSS. Use public URL capture for a deployed page, or export a complete HTML document with its styles for manual input. An element's outerHTML preserves Astro's generated class names but does not embed their stylesheet rules. View Transitions are represented only as a static captured state."
         }
       },
       {

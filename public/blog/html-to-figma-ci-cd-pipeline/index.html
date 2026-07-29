@@ -415,7 +415,7 @@ curl -H <span class="code-string">"X-Figma-Token: $FIGMA_API_TOKEN"</span> \
       <h2>Tier 3: Figma REST API Programmatic Update</h2>
       <p>For teams that want fully automated Figma updates without designer intervention, the Figma REST API provides frame creation and update endpoints. The architecture:</p>
       <ol>
-        <li><strong>Playwright renders the component</strong> at the deployed URL and captures outerHTML + computed styles.</li>
+        <li><strong>Playwright renders the component</strong> at the deployed URL and produces a self-contained HTML/CSS artifact.</li>
         <li><strong>A transformer script</strong> converts the computed CSS into Figma API node properties (fills, text styles, effects, constraints).</li>
         <li><strong>The Figma REST API</strong> (<code>POST /v1/files/{file_key}/nodes</code>) creates or updates the corresponding frame in the design file.</li>
         <li><strong>A Slack/email notification</strong> alerts the design team that the Figma file was programmatically updated and should be reviewed.</li>

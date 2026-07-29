@@ -24,7 +24,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Google Stitch to Figma — HTML and Preview URL Workflow" />
-  <meta name="twitter:description" content="Import browser-rendered Stitch HTML or a public preview into Figma, with Pixel and best-effort Editable output options." />
+  <meta name="twitter:description" content="Import a public Google Stitch to Figma preview or a complete HTML/CSS document into Figma with Pixel or best-effort Editable output." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/google-stitch-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -39,8 +39,8 @@
     "description": "Use Stitch's native Figma export when available, or import browser-rendered Stitch HTML and public previews with html2design. Compare Pixel and Editable output.",
     "url": "https://html2design.com/use-cases/google-stitch-to-figma",
     "inLanguage": "en",
-    "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
     "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
@@ -67,7 +67,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "How is this different from Stitch's native Figma export?", "acceptedAnswer": { "@type": "Answer", "text": "Stitch's own export is the direct workflow and should be your first option. html2design is useful when you have copied browser-rendered HTML or a public preview URL and want to choose between a Pixel reference and best-effort editable layers." } },
       { "@type": "Question", "name": "Does this work with the legacy \"Galileo AI\" branding too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The product was acquired by Google and rebranded to Stitch; the underlying workflow (browser-rendered AI design preview) is the same." } },
-      { "@type": "Question", "name": "How do I convert a Stitch design to Figma with html2design?", "acceptedAnswer": { "@type": "Answer", "text": "Open the design preview in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin." } },
+      { "@type": "Question", "name": "How do I convert a Stitch design to Figma with html2design?", "acceptedAnswer": { "@type": "Answer", "text": "Use public URL capture when the Google Stitch to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS." } },
       { "@type": "Question", "name": "Are the imported designs editable in Figma?", "acceptedAnswer": { "@type": "Answer", "text": "Editable mode creates native Figma nodes for supported text, fills, images, vectors, and geometry. It does not guarantee that every browser element or effect will map one-to-one." } }
     ]
   }
@@ -108,7 +108,7 @@
         HTML and Preview URL Workflow
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        <strong class="text-content font-medium">Start with Stitch's native Figma export when it fits.</strong> If you instead have browser-rendered HTML or an accessible public preview, html2design can import that source as a lossless Pixel capture or as best-effort editable Figma layers.
+        <strong class="text-content font-medium">Move the rendered Google Stitch to Figma result into Figma.</strong> Google Stitch includes a direct Figma workflow, which should be tested first. html2design is useful when the available artifact is a browser preview and the team specifically needs lossless Pixel capture or an independent Editable comparison. Use an accessible public preview URL, or supply a complete HTML document with its required CSS and assets. Choose Pixel for visual fidelity or Editable for supported native layers.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm">Install Free on Figma Community &rarr;</a>
@@ -120,7 +120,7 @@
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "Google Stitch to Figma"?</h2>
-      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"Google Stitch to Figma"</strong> can mean Stitch's native export or importing a rendered Stitch interface through another workflow. html2design accepts copied HTML for local or private sources and public preview URLs when the renderer can access them.</p>
+      <p class="text-content-muted leading-relaxed max-w-3xl mb-4"><strong class="text-content">"Google Stitch to Figma"</strong> is a code-to-design workflow for importing the tool's rendered interface into Figma. Google Stitch includes a direct Figma workflow, which should be tested first. html2design is useful when the available artifact is a browser preview and the team specifically needs lossless Pixel capture or an independent Editable comparison. html2design can capture an accessible public preview or process a complete HTML/CSS document. Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes.</p>
       <p class="text-content-muted leading-relaxed max-w-3xl">Pixel mode preserves the captured appearance as an image. Editable mode maps supported text, fills, borders, images, vectors, and measured geometry to native Figma nodes. Fonts, remote media, browser-only effects, and responsive behavior can differ and may need cleanup.</p>
     </div>
   </section>
@@ -130,10 +130,10 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">How Google Stitch import works</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Built on a browser-rendered DOM — exactly what the import approach reads.</p>
       <div class="space-y-6">
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Stitch's preview is real, rendered HTML</h3><p class="text-sm text-content-muted leading-relaxed">By the time you see the design preview, the browser has resolved every style to a computed value — colors, spacing, type. html2design reads those values.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported elements become editable nodes</h3><p class="text-sm text-content-muted leading-relaxed">Editable mode maps supported text, fills, borders, images, and vectors to native Figma objects; unsupported effects may be simplified or omitted.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Pixel mode keeps a visual reference</h3><p class="text-sm text-content-muted leading-relaxed">Choose Pixel mode when the captured appearance matters more than editing individual elements.</p></div>
-        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Complements Stitch's native export</h3><p class="text-sm text-content-muted leading-relaxed">Use Stitch's own export first. html2design is an alternative for copied HTML, public preview URLs, or explicit Pixel-versus-Editable output choices.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Source handling for Google Stitch to Figma</h3><p class="text-sm text-content-muted leading-relaxed">Google Stitch includes a direct Figma workflow, which should be tested first. html2design is useful when the available artifact is a browser preview and the team specifically needs lossless Pixel capture or an independent Editable comparison.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Pixel or Editable output</h3><p class="text-sm text-content-muted leading-relaxed">Pixel mode preserves the browser appearance as lossless raster tiles. Editable mode creates best-effort native layers for supported content.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Supported SVG content</h3><p class="text-sm text-content-muted leading-relaxed">Compatible SVG content can remain editable; complex or externally loaded graphics may be rasterized or require cleanup.</p></div>
+        <div class="border border-gray-200 rounded-2xl p-6 md:p-8"><h3 class="text-lg font-bold tracking-tight mb-2">Review remains part of the workflow</h3><p class="text-sm text-content-muted leading-relaxed">Fonts, browser-only media, effects, and responsive behavior can differ in Figma, so compare the result with the source before handoff.</p></div>
       </div>
     </div>
   </section>
@@ -143,13 +143,13 @@
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Google Stitch to Figma workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">Four steps, followed by review and cleanup.</p>
       <div class="space-y-10">
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the Stitch design preview</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Stitch, open your design's preview in the browser.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p><h3 class="text-xl font-bold tracking-tight">Open the Google Stitch to Figma result</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Google Stitch includes a direct Figma workflow, which should be tested first. html2design is useful when the available artifact is a browser preview and the team specifically needs lossless Pixel capture or an independent Editable comparison. Load the intended interface state and let fonts, images, and application data finish rendering.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element, choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Paste a remotely accessible preview URL. For local or private work, export a complete HTML document with its generated CSS and reachable assets; isolated outerHTML is not a self-contained visual export.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Paste into html2design</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste, click <strong class="text-content">Generate</strong>. Supported elements and styles become native Figma objects.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p><h3 class="text-xl font-bold tracking-tight">Choose Pixel or Editable</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>In html2design, use Pixel mode for lossless visual reference or Editable mode for supported native Figma nodes.</p></div></article>
         <div class="border-t border-gray-100"></div>
-        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Inspect and refine</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Compare the import with the browser source, replace unavailable fonts or media, and convert useful repeated structures to your own components or Auto Layout.</p></div></article>
+        <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start"><div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p><h3 class="text-xl font-bold tracking-tight">Compare and refine</h3></div><div class="text-content-muted leading-relaxed space-y-3"><p>Compare the import with the browser source, then correct unavailable fonts, media, effects, and layout differences before relying on it.</p></div></article>
       </div>
     </div>
   </section>
@@ -173,7 +173,7 @@
       <div class="space-y-6">
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How is this different from Stitch's native Figma export?</h3><p class="text-sm text-content-muted leading-relaxed">Stitch's own export is the direct workflow and should be your first option. html2design is useful when you have copied browser-rendered HTML or a public preview URL and want to choose between a Pixel reference and best-effort editable layers.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with the legacy "Galileo AI" branding too?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. The product was acquired by Google and rebranded to Stitch; the underlying workflow (browser-rendered AI design preview) is the same.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Stitch design to Figma with html2design?</h3><p class="text-sm text-content-muted leading-relaxed">Open the design preview in a browser, open DevTools, right-click the root element, Copy > Copy outerHTML, and paste into the html2design Figma plugin.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Stitch design to Figma with html2design?</h3><p class="text-sm text-content-muted leading-relaxed">Use public URL capture when the Google Stitch to Figma preview is remotely accessible. For local or private sources, export a complete HTML document with its required CSS and reachable assets, then use manual input. An element's outerHTML alone preserves markup and inline style attributes, not external or computed CSS.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Editable mode creates native Figma nodes for supported text, fills, images, vectors, and geometry. It does not guarantee that every browser element or effect will map one-to-one.</p></div>
       </div>
     </div>

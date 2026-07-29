@@ -136,7 +136,7 @@
         "name": "How do I get the HTML from inside the Storybook canvas iframe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Open Storybook in Chrome or Firefox. In DevTools, click the source selector icon next to the URL bar — you will see the page document and a nested iframe labeled 'storybook-preview-iframe'. Select that iframe context, then find your component's root element in the Elements panel, right-click, and choose Copy > Copy outerHTML. This gives you the fully rendered HTML with all computed styles."
+          "text": "Open the isolated Storybook story. Use public URL capture when that story is remotely accessible. For localhost, export a complete HTML document that includes Storybook's global, decorator, and component CSS, plus required assets. Copying the component's outerHTML alone does not include those stylesheets."
         }
       },
       {
@@ -144,7 +144,7 @@
         "name": "Will Storybook's CSS addon styles be preserved in Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The browser resolves all styles — including styles applied by Storybook decorators, global stylesheets, and CSS-in-JS libraries like Emotion or styled-components — before you copy the outerHTML. The html2design plugin reads computed styles, not source files, so whatever the browser renders is what lands in Figma."
+          "text": "Yes, when the required CSS is available to html2design. Use a public Storybook URL or export a complete HTML document that includes decorator styles, global stylesheets, and generated CSS-in-JS rules. Editable mode is a best-effort translation and should be compared with the browser."
         }
       }
     ]

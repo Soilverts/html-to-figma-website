@@ -174,7 +174,7 @@
         "name": "Can I capture Chakra UI dark mode variants in Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. If your app uses Chakra's useColorMode hook or a color mode toggle, switch to dark mode in the running app before copying the component's outerHTML. The browser re-renders the component with dark-mode tokens resolved. Copy the outerHTML in dark mode and import it as a separate frame in html2design to create a dark-mode variant alongside your light-mode import."
+          "text": "Yes, as separate imports. Switch the source app to light or dark mode, then use a public preview URL or export a complete HTML document with Chakra's generated styles for each state. Review both Editable results before organizing them as variants in Figma."
         }
       },
       {
@@ -553,7 +553,7 @@
           <p class="text-sm text-content-muted leading-relaxed">
             Yes. Toggle dark mode in your running Chakra app using its color mode button or
             <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">useColorMode</code>.
-            The browser re-renders with dark token values resolved. Copy the outerHTML in dark mode
+            The browser re-renders with dark token values resolved. Capture the public preview or export a complete HTML/CSS document in dark mode
             and import it into html2design as a separate frame alongside your light-mode import.
           </p>
         </div>

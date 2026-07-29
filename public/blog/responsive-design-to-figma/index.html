@@ -134,7 +134,7 @@
         "name": "Can html2design capture a component at a specific screen size?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. html2design converts a static snapshot of whatever the HTML looks like when you copy it. To capture a specific breakpoint, resize your browser window to that width before opening DevTools and copying the outerHTML. The plugin will read the computed styles at that viewport size, producing the correct responsive layout for that breakpoint."
+          "text": "Yes, as separate static imports. Use public URL capture for the page, or export a complete HTML document with the CSS needed for each target state. Editable mode is best effort, so compare each imported breakpoint with the browser and refine responsive constraints in Figma."
         }
       }
     ]
@@ -327,7 +327,7 @@
       <div class="step-num">Step 3</div>
       <h3>Capture the tablet layout (768px)</h3>
       <p>
-        Resize the viewport to <strong>768px</strong>. The CSS media queries will trigger the tablet layout. Copy the outerHTML again — even if the element is the same, the computed styles will differ because different CSS rules are active at this width.
+        Resize the viewport to <strong>768px</strong> and verify the tablet state. Capture the public URL for that target state, or export a complete HTML document with the active CSS. An element's outerHTML alone does not include the media-query rules.
       </p>
       <p>Paste into html2design and convert. Label the frame <code>Viewport=Tablet</code>.</p>
     </div>

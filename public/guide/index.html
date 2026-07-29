@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="HTML to Figma" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-04-12T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-07-29T00:00:00Z" />
   <meta property="article:author" content="HTML to Figma" />
   <meta property="article:section" content="Guide" />
   <meta property="article:tag" content="html to figma" />
@@ -50,7 +50,7 @@
     "description": "The definitive guide to converting HTML and CSS into native, editable Figma designs. Covers React, Vue, Angular, Svelte, Tailwind, Bootstrap, design system migration, and a comparison of every method.",
     "url": "https://html2design.com/guide",
     "datePublished": "2026-03-23T00:00:00Z",
-    "dateModified": "2026-05-21T00:00:00Z",
+    "dateModified": "2026-07-29T00:00:00Z",
     "inLanguage": "en",
     "image": {
       "@type": "ImageObject",
@@ -128,7 +128,7 @@
         "name": "Can I convert a React component to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Run your React app locally (npm run dev), open the component in a browser, copy the rendered outerHTML from DevTools, and paste it into html2design in Figma. This works with any React setup — Vite, Next.js, Create React App, Storybook — because you are copying the browser's computed output, not the JSX source. See the full React to Figma guide for step-by-step instructions."
+          "text": "Yes. Use public URL capture for a deployed React page. For localhost or Storybook, export a complete HTML document with the generated CSS and assets, then use manual input. Isolated outerHTML does not include CSS Module, Tailwind, or CSS-in-JS stylesheet rules."
         }
       },
       {
@@ -152,7 +152,7 @@
         "name": "Can I import a full website into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. You can import individual pages by copying their outerHTML from DevTools. For a multi-page site, work page by page: open each URL in the browser, copy the outerHTML, and import. For simpler pages, you can also use the Chrome extension mode which imports the current tab's rendered output in one click."
+          "text": "Yes. Import publicly reachable pages one URL at a time with Pixel or Editable mode. For private or local pages, supply complete HTML documents with their required CSS and assets. html2design does not require or provide a browser extension."
         }
       },
       {
@@ -160,7 +160,7 @@
         "name": "How do I convert Angular components to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run your Angular application locally (ng serve), open the component or page in Chrome, inspect the root element, copy outerHTML, and paste into html2design in Figma. Angular renders to standard HTML and CSS in the browser, so the import process is identical to any other framework. See the Angular to Figma use-case guide for details."
+          "text": "Use public URL capture for a deployed Angular route. For local Angular output, export a complete HTML document with generated styles and assets. Copying a node with Angular encapsulation attributes but without its stylesheets is not enough to reproduce the design."
         }
       },
       {
@@ -176,7 +176,7 @@
         "name": "Does html2design support Vue and Nuxt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Vue and Nuxt components render to browser HTML and CSS. Run the dev server, open the component, copy its rendered outerHTML, and paste it into html2design. Scoped selectors and external assets still need output review."
+          "text": "Yes. Use URL capture for a public Vue or Nuxt route. For private output, include Vue's generated scoped CSS with the HTML; the data-v attributes alone do not contain visual style values."
         }
       },
       {
@@ -192,7 +192,7 @@
         "name": "Can I use html2design with Bootstrap components?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Bootstrap's utility classes and component styles are all applied via CSS in the browser. Copy any Bootstrap component's rendered outerHTML and paste into html2design. The import preserves Bootstrap's colour palette, spacing scale, and typography hierarchy. You can then map these to Figma Variables to create a Bootstrap-aligned design system."
+          "text": "Yes, when Bootstrap CSS is included with the input or reachable from the supplied document. A fragment containing Bootstrap class names without the Bootstrap stylesheet will render as mostly unstyled HTML."
         }
       },
       {
@@ -295,7 +295,7 @@
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
       <div>
         <p class="text-sm font-medium">HTML to Figma Team</p>
-        <time datetime="2026-03-23" class="text-xs text-gray-400 font-mono">March 23, 2026</time>
+        <time datetime="2026-07-29" class="text-xs text-gray-400 font-mono">Updated July 29, 2026</time>
       </div>
     </div>
   </header>
@@ -349,46 +349,46 @@
     <!-- Section 2 -->
     <h2 id="how-it-works">2. How It Works — Step by Step</h2>
 
-    <p>The core mechanism of html2design is simple: the plugin reads the browser's computed DOM — including all inline, class-based, and cascaded styles resolved to their final pixel values — and translates that into native Figma objects.</p>
+    <p>html2design has two distinct input paths. Public URL capture loads the page in a remote browser and records resolved visual output. Manual input renders the HTML document you supply inside the plugin, so it can only compute styles that are inline, included in <code>&lt;style&gt;</code> blocks, or available through reachable stylesheet links.</p>
 
-    <p>This is fundamentally different from a screenshot. A screenshot is a flat image. An html2design import produces a structured Figma frame with named layers, editable text, coloured shapes, and a layout that can be re-organised. See the full step-by-step tutorial: <a href="/blog/how-to-convert-html-to-figma">How to Convert HTML to Figma</a>.</p>
+    <p>URL capture also lets you choose the output contract. Pixel mode uses lossless raster tiles for a close visual reference. Editable mode maps supported text, images, fills, effects, and measured geometry to native Figma nodes. See the focused tutorial: <a href="/blog/how-to-convert-html-to-figma">How to Convert HTML to Figma</a>.</p>
 
     <div class="step-card">
       <div class="step-num">Step 1</div>
-      <h3>Open the page in a browser</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Navigate to the URL or start your local dev server. Open Chrome, Firefox, or Edge — any browser with DevTools works. If you are converting a component, navigate to the state you want to capture (hover, focus, error state).</p>
+      <h3>Choose the input path</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Use a public URL when the page is remotely reachable and you want browser-resolved capture. Use manual input for private or local sources only when you can supply a complete HTML document with its required CSS and assets.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 2</div>
-      <h3>Copy the outerHTML</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Right-click the element you want to convert. Choose <em>Inspect</em>. In the DevTools panel, right-click the root node of your element and select <em>Copy → Copy outerHTML</em>. You now have the browser's fully rendered, computed HTML in your clipboard.</p>
+      <h3>Verify the source is self-contained</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open the HTML file by itself and confirm that it still has the expected colors, fonts, and layout. Copying an isolated element's outerHTML preserves its markup and inline styles, but it does not embed external CSS or the browser's computed-style values.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 3</div>
-      <h3>Open html2design in Figma</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">In Figma, go to <em>Plugins → html2design</em>. If you haven't installed it, search for <em>html2design</em> in the Figma Community and run it from there. A text input dialog will open inside your Figma canvas.</p>
+      <h3>Choose Pixel or Editable mode</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">For URL capture, use Pixel mode when visual matching matters most. Use Editable mode when individual supported elements need to remain selectable and you can accept cleanup for browser-only features.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 4</div>
-      <h3>Paste and import</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Paste the copied HTML into the plugin's input field and click <em>Import</em>. The plugin processes supported markup and computed styles, then creates a Figma frame for review.</p>
+      <h3>Import into Figma</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open html2design from Figma Community. Enter the public URL, load the HTML file, or paste the complete document, then start the import.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 5</div>
       <h3>Review and organise the layers</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Inspect the imported frame. Rename key layers. Convert repeated elements into Figma Components. If your project has a design token library, bind colours and spacing to Figma Variables so the imported frame is immediately connected to your system.</p>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Compare the result with the browser. Check text wrapping, fonts, image crops, fixed elements, overflow, effects, and responsive state before turning selected results into maintained Figma components.</p>
     </div>
 
-    <p>The entire process for a single component takes two to five minutes. For a full page, plan for ten to fifteen minutes including layer clean-up.</p>
+    <div class="tip-box"><p><strong>Important:</strong> outerHTML is markup, not a visual snapshot. If it only contains class names, bring the CSS with it or use public URL capture.</p></div>
 
     <!-- Section 3 -->
     <h2 id="ai-tools">3. AI Design Tools (Claude, v0)</h2>
 
-    <p>The fastest-growing way to start a Figma design is to let an AI tool generate it. Claude (Artifacts and Claude Code), Vercel v0, Bolt, Lovable, and ChatGPT all produce real HTML, CSS, and React — which means html2design can bring their output straight into Figma as native, editable layers. Render the AI-generated UI in a browser, copy the outerHTML, and paste it into the plugin. Because the browser resolves every style to a computed value first, the import is model- and framework-agnostic.</p>
+    <p>Claude Code, Vercel v0, Bolt, Lovable, and ChatGPT can produce real web projects. For deployed previews, public URL capture records the browser-resolved page. For private projects, export a complete HTML document with the CSS and assets it needs. Figma also offers an official Claude Code workflow through its MCP server; the <a href="/use-cases/claude-to-figma">Claude to Figma guide</a> compares the current options.</p>
 
     <p>This closes part of the AI design loop: generated HTML can become a Figma baseline for review, refinement, and design-system alignment instead of being treated as a finished design artifact.</p>
 
@@ -407,7 +407,7 @@
 
     <h2 id="frameworks">4. Framework Guides</h2>
 
-    <p>html2design works with every web framework because it reads the browser's computed output, not the source code. The workflow is the same regardless of what built the page: run a dev server, open a browser, copy the outerHTML, paste into Figma. Below are dedicated guides for each major framework.</p>
+    <p>The framework name matters less than the exported browser input. A public React, Vue, Angular, Svelte, or static page can use URL capture. A private project needs a complete document or self-contained export; a DOM fragment that omits its framework CSS will not reproduce the rendered design.</p>
 
     <div class="framework-grid">
       <a href="/blog/react-component-to-figma" class="framework-card">
@@ -492,50 +492,17 @@
       </a>
     </div>
 
-    <h3>React and Next.js</h3>
-    <p>React renders to the DOM just like any other framework. Run your dev server (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>), open the component in Chrome, copy its outerHTML from DevTools, and paste into html2design. Works with Next.js App Router, Pages Router, and Storybook. The full tutorial walks through converting a complex component with hover states, dark mode, and responsive variants. → <a href="/blog/react-component-to-figma">React Component to Figma →</a></p>
+    <h3>Public framework pages</h3>
+    <p>Use URL capture for a deployed React, Next.js, Vue, Nuxt, Angular, Svelte, Gatsby, Astro, Remix, Shopify, WordPress, or Alpine page. The capture browser loads framework-generated CSS, waits for the rendered DOM, and records the selected viewport. See the dedicated guides above for framework-specific runtime and asset caveats.</p>
 
-    <h3>Storybook</h3>
-    <p>Storybook is useful for component-level conversion because each story renders an isolated variant at a predictable localhost URL. Open the story in Canvas mode and copy the component's rendered outerHTML for an extension-free workflow. Browser extensions may also capture localhost when their permissions and product workflow support it. → <a href="/use-cases/storybook-to-figma">Storybook to Figma →</a></p>
+    <h3>Local and private framework pages</h3>
+    <p>Manual input works when you export a complete HTML document with its required styles. For component systems such as Storybook, create a dedicated story or export route, then package the CSS with the markup. CSS Modules, scoped Vue/Svelte selectors, Tailwind classes, Angular encapsulation attributes, and CSS-in-JS class names have no visual meaning without their generated stylesheet.</p>
 
-    <h3>Vue and Nuxt</h3>
-    <p>Vue's scoped CSS is resolved by the browser before you copy the outerHTML, so scoped styles import correctly with no extra steps. Start your Nuxt or Vite dev server, navigate to the component's URL, and copy the root element's outerHTML. Scoped class names like <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">data-v-xxxx</code> are already resolved to their computed values by the time you copy. → <a href="/use-cases/vue-to-figma">Vue to Figma →</a></p>
+    <h3>Stateful and responsive pages</h3>
+    <p>Choose the viewport and state before export or URL capture. Import hover, focus, open, loading, error, and responsive variants separately. Interactive behavior does not transfer to Figma; the import represents one rendered state at a time.</p>
 
-    <h3>Angular</h3>
-    <p>Angular's View Encapsulation generates unique attribute selectors (<code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">_nghost-xxx</code>). Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code>, navigate to the component, copy the rendered outerHTML, and review Material or CDK output for fonts, overlays, and runtime state. → <a href="/use-cases/angular-to-figma">Angular to Figma →</a></p>
-
-    <h3>Svelte and SvelteKit</h3>
-    <p>Svelte compiles its scoped styles into unique class names at build time. Open your SvelteKit dev server, navigate to the page, and copy the outerHTML. All styles are fully inlined by the browser. Svelte's reactive animations and transitions are captured as static snapshots of the current state. → <a href="/use-cases/svelte-to-figma">Svelte to Figma →</a></p>
-
-    <h3>Tailwind CSS</h3>
-    <p>Tailwind components render to ordinary browser CSS. Editable import can recreate supported spacing, color, typography, and layout values, but the output does not automatically become a token-connected design system. Review the frame and map approved values to Figma Variables and Styles manually. → <a href="/blog/tailwind-to-figma">Tailwind to Figma →</a></p>
-
-    <h3>Tailwind CSS + React</h3>
-    <p>For React with Tailwind, run the dev server or Storybook, copy the rendered component's outerHTML, and paste it into html2design. The browser provides computed values, but Figma text metrics and unsupported effects can differ. Use the result as a baseline, then map approved values and variants into the design system. → <a href="/use-cases/tailwind-react-to-figma">Tailwind + React to Figma →</a></p>
-
-    <h3>Bootstrap</h3>
-    <p>Bootstrap's component library imports cleanly because every component follows a predictable HTML structure with well-named CSS classes. Import a Bootstrap button, card, or navbar and you get a Figma frame that accurately mirrors the component's visual output. The Bootstrap guide covers mapping imported frames to a reusable Figma component library. → <a href="/blog/bootstrap-to-figma">Bootstrap to Figma →</a></p>
-
-    <h3>Next.js</h3>
-    <p>Next.js pages render to full HTML regardless of whether you use the App Router, Pages Router, server-side rendering (SSR), or static site generation (SSG). Open the built page in a browser, copy the outerHTML of the root element from DevTools, and paste into html2design. React Server Components output is captured as rendered HTML — no special handling needed. → <a href="/use-cases/nextjs-to-figma">Next.js to Figma →</a></p>
-
-    <h3>WordPress</h3>
-    <p>WordPress generates standard HTML regardless of your theme builder. Elementor, Divi, Astra, GeneratePress, and custom PHP themes all render to HTML in the browser. Open your WordPress site (local or live), inspect the section you need, copy its outerHTML, and paste into html2design. Works with local WP installs via LocalWP, XAMPP, or Docker — no public URL required. → <a href="/use-cases/wordpress-to-figma">WordPress to Figma →</a></p>
-
-    <h3>Gatsby</h3>
-    <p>Gatsby pre-renders pages to static HTML at build time. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">gatsby develop</code> or serve the built output, open the page in a browser, and copy the fully rendered outerHTML from DevTools. GraphQL-populated content (images, rich text, dynamic data) is captured exactly as rendered. → <a href="/use-cases/gatsby-to-figma">Gatsby to Figma →</a></p>
-
-    <h3>Astro</h3>
-    <p>Astro ships zero JavaScript by default, producing clean semantic HTML that maps directly to Figma layer names. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>, open the page, and copy the outerHTML. For Astro Island components (React, Vue, Svelte), wait for hydration to complete in DevTools before copying. Astro's scoped styles compile to unique class identifiers that the browser resolves to computed values — fully transparent to the import. → <a href="/use-cases/astro-to-figma">Astro to Figma →</a></p>
-
-    <h3>Remix</h3>
-    <p>Remix is a full-stack React framework that performs server-side rendering on every request. Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">npm run dev</code>, navigate to the route (including auth-protected routes you're logged into), and copy the outerHTML from the DevTools Elements panel. Remix loaders populate pages with real data from your database — so Figma imports contain actual product names, user details, and prices rather than placeholder text. → <a href="/use-cases/remix-to-figma">Remix to Figma →</a></p>
-
-    <h3>Shopify</h3>
-    <p>Shopify renders Liquid templates on the server into standard HTML. Open the storefront (live, theme preview, or Shopify CLI dev server), navigate to the page template you want (homepage, product page, collection, cart), and copy the outerHTML of the Shopify section wrapper from DevTools. Dawn and modern Shopify themes use CSS custom properties for brand colors and fonts — these resolve to the exact values from your theme customizer settings. Works with Dawn, any marketplace theme, and Headless Commerce (Hydrogen, Next.js Commerce). → <a href="/use-cases/shopify-to-figma">Shopify to Figma →</a></p>
-
-    <h3>Alpine.js</h3>
-    <p>Alpine.js enriches server-rendered HTML with interactivity directly in the browser — no build step, no virtual DOM. Trigger the component state you want to capture (open dropdown, active tab, error state), then copy the outerHTML from DevTools. Alpine modifies the real DOM, so DevTools always shows the current state. Particularly useful for capturing multiple component variants: import each state separately and convert to Figma Component Variants. Works with any backend that renders HTML — Laravel Blade, Django, Rails, plain PHP. → <a href="/use-cases/alpine-to-figma">Alpine.js to Figma →</a></p>
+    <h3>Framework-specific guides</h3>
+    <p>Use the <a href="/blog/react-component-to-figma">React component guide</a>, <a href="/use-cases/storybook-to-figma">Storybook guide</a>, <a href="/use-cases/vue-to-figma">Vue guide</a>, <a href="/use-cases/angular-to-figma">Angular guide</a>, <a href="/use-cases/svelte-to-figma">Svelte guide</a>, <a href="/blog/tailwind-to-figma">Tailwind guide</a>, or <a href="/blog/bootstrap-to-figma">Bootstrap guide</a> for source-specific setup and review checklists.</p>
 
     <!-- Section 4 -->
     <h2 id="design-system">5. Design System Migration Workflow</h2>
@@ -632,12 +599,12 @@
 
     <div class="faq-item">
       <h3>How do I convert HTML to Figma for free?</h3>
-      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a> and use the 10 trial conversions on representative sources. Copy rendered outerHTML into the plugin or <a href="/use-cases/url-to-figma">test a public URL</a>, then inspect the output before subscribing.</p>
+      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a> and use the 10 trial conversions on representative sources. Test a <a href="/use-cases/url-to-figma">public URL</a> or import a complete HTML document with its CSS, then inspect the output before subscribing.</p>
     </div>
 
     <div class="faq-item">
       <h3>Can I convert a React component to Figma?</h3>
-      <p>Yes. Run your React app locally, open the component in a browser, copy the rendered outerHTML from DevTools, and paste into html2design. Works with Next.js, Vite, Create React App, and Storybook. See the <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
+      <p>Yes. Use URL capture for a public React route. For a local app or Storybook, export a complete HTML document with its generated CSS and assets. See the <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
     </div>
 
     <div class="faq-item">
@@ -652,12 +619,12 @@
 
     <div class="faq-item">
       <h3>Can I import a full website into Figma?</h3>
-      <p>Yes. Work page by page: open each URL, copy the outerHTML, and import. For simple static pages, the Chrome extension can import the current tab in one click. See the <a href="/blog/import-website-into-figma">Import Website into Figma guide</a> for both methods.</p>
+      <p>Yes. Work page by page with public URL capture, choosing Pixel or Editable output. Private pages use complete HTML documents rather than a remote URL. See the <a href="/blog/import-website-into-figma">Import Website into Figma guide</a>.</p>
     </div>
 
     <div class="faq-item">
       <h3>How do I convert Angular components to Figma?</h3>
-      <p>Run <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code>, open the component in Chrome, copy the root element's outerHTML from DevTools, and paste into html2design. Angular's view encapsulation attributes are already resolved by the browser. See the <a href="/use-cases/angular-to-figma">Angular to Figma use case</a>.</p>
+      <p>Use URL capture for a deployed Angular route. For <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code> output, export a complete document with generated styles and assets. See the <a href="/use-cases/angular-to-figma">Angular to Figma use case</a>.</p>
     </div>
 
     <div class="faq-item">
@@ -667,12 +634,12 @@
 
     <div class="faq-item">
       <h3>Does html2design support Vue and Nuxt?</h3>
-      <p>Yes. Vue scoped styles are resolved by the browser before copy, so they import correctly. Run your dev server, open the component URL, and copy the outerHTML. See the <a href="/use-cases/vue-to-figma">Vue to Figma use case</a> for step-by-step instructions.</p>
+      <p>Yes. Use public URL capture or include Vue's generated scoped CSS with a manual HTML export. The scoped attributes alone do not carry the CSS rules. See the <a href="/use-cases/vue-to-figma">Vue to Figma use case</a>.</p>
     </div>
 
     <div class="faq-item">
       <h3>Can I use html2design with Bootstrap components?</h3>
-      <p>Yes. Bootstrap CSS classes are resolved by the browser. Copy any Bootstrap component's rendered HTML and paste into html2design. The import preserves Bootstrap's colour palette, spacing scale, and component structure. See the <a href="/blog/bootstrap-to-figma">Bootstrap to Figma guide</a>.</p>
+      <p>Yes, when Bootstrap CSS is included with the document or reachable through its stylesheet link. Class names without Bootstrap CSS render as unstyled markup. See the <a href="/blog/bootstrap-to-figma">Bootstrap to Figma guide</a>.</p>
     </div>
 
     <div class="faq-item">

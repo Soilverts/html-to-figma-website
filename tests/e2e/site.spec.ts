@@ -28,7 +28,9 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
 
   const response = await page.goto('/');
   expect(response?.status()).toBe(200);
-  await expect(page.getByRole('heading', { level: 1, name: 'Code to Design.' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'HTML to Figma. Pixel or editable.', exact: true }),
+  ).toBeVisible();
   await expect(page.getByRole('link', { name: 'Open in Figma' })).toHaveAttribute('href', new RegExp(`^${FIGMA_PLUGIN}`));
   await expect(page.getByRole('link', { name: 'See real results' })).toHaveAttribute('href', '/result-quality');
   expect(await page.locator('h1').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
@@ -71,8 +73,11 @@ test('key static pages have canonical metadata, responsive headers, and no runti
   await page.setViewportSize({ width: 375, height: 812 });
   const routes = [
     '/use-cases/url-to-figma',
+    '/use-cases/claude-to-figma',
+    '/guide',
     '/pricing',
     '/result-quality',
+    '/blog/import-website-into-figma',
     '/use-cases/bolt-to-figma',
     '/use-cases/lovable-to-figma',
   ];
@@ -96,6 +101,39 @@ test('key static pages have canonical metadata, responsive headers, and no runti
     await expectNoHorizontalOverflow(page);
     expect(errors, route).toEqual([]);
   }
+});
+
+test('manual import guidance stays consistent across high-intent pages', async ({ request }) => {
+  const routes = [
+    '/guide',
+    '/faq',
+    '/alternatives',
+    '/use-cases/claude-to-figma',
+    '/use-cases/storybook-to-figma',
+    '/use-cases/tailwind-to-figma',
+    '/blog/how-to-convert-html-to-figma',
+    '/blog/convert-website-to-figma',
+    '/blog/import-website-into-figma',
+    '/blog/react-component-to-figma',
+    '/blog/tailwind-to-figma',
+    '/blog/webflow-to-figma',
+  ];
+
+  for (const route of routes) {
+    const response = await request.get(route);
+    expect(response.status(), route).toBe(200);
+    const html = await response.text();
+    expect(html, route).not.toMatch(/all computed styles are included|every computed style transfers/i);
+    expect(html, route).not.toMatch(/html2design chrome extension|chrome extension mode/i);
+  }
+
+  const guide = await (await request.get('/guide')).text();
+  expect(guide).toContain('does not embed external CSS');
+
+  const claude = await (await request.get('/use-cases/claude-to-figma')).text();
+  expect(claude).toContain('Figma');
+  expect(claude).toContain('MCP');
+  expect(claude).toContain('self-contained HTML document');
 });
 
 test('result evidence and sitemap remain inspectable', async ({ page, request }) => {

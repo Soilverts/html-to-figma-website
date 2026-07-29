@@ -112,7 +112,7 @@
         "name": "How do I convert a Tailwind CSS page to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run your app locally (or open the live site in a browser). Open DevTools (F12), switch to the Elements panel, right-click the root element, and choose Copy > Copy outerHTML. Paste the HTML into the html2design Figma plugin and click Generate. Tailwind utilities are represented by browser-computed values, which become inputs for best-effort editable fills, text styles, and layout in Figma."
+          "text": "For a deployed app, paste the public URL into html2design. For localhost, export a complete HTML document that includes the compiled Tailwind stylesheet and assets, then use manual input. Editable mode maps supported rendered properties to best-effort fills, text, and layout."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "Does this work with Tailwind v3 and v4?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The html2design approach is version-agnostic: it reads browser-computed CSS values, not the Tailwind source files. Whether you are using Tailwind v3's JIT compiler, Tailwind v4's CSS-first configuration, or even an older v2 project, the workflow is identical — open in browser, copy outerHTML from DevTools, paste into html2design."
+          "text": "Tailwind version matters less than the generated output. html2design needs the compiled CSS, whether it came from Tailwind v2, v3, or v4. Use public URL capture or provide a complete HTML document with the generated stylesheet; isolated outerHTML is not sufficient."
         }
       },
       {

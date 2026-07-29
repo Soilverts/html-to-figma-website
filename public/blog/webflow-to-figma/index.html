@@ -123,7 +123,7 @@
         "name": "Can I import a Webflow site into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Webflow publishes standard HTML with computed CSS — which means any published Webflow page can be imported into Figma using html2design. Open the live site in a browser, copy the outerHTML of any section or full page from DevTools, and paste it into the plugin. You get native Figma layers with all Webflow styles preserved as fills, fonts, and auto-layout properties."
+          "text": "Yes. Paste the published Webflow page URL into html2design and choose Pixel mode for a lossless visual capture or Editable mode for best-effort native layers. For manual input, export a complete HTML document with its CSS; an element's outerHTML alone does not include Webflow's external stylesheets."
         }
       },
       {
@@ -529,7 +529,7 @@
     <div class="bg-surface rounded-2xl p-8 text-center border border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Try it now</p>
       <h2 class="text-2xl font-black tracking-tighter text-content mb-3 mt-0">Import your Webflow site in 60 seconds</h2>
-      <p class="text-content-muted mb-6">Open your published Webflow page, copy a section's outerHTML from DevTools, and paste it into html2design. Get native Figma layers with all Webflow styles preserved — no rebuild required.</p>
+      <p class="text-content-muted mb-6">Paste your published Webflow page URL into html2design. Choose Pixel mode for lossless visual reference or Editable mode for best-effort native layers, then review the result against the browser.</p>
       <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
          target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full hover:bg-accent-dark transition-colors text-sm no-underline">

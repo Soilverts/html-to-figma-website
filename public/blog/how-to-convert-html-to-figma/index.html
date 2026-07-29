@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>How to Convert HTML to Figma: A Developer's Guide (2026)</title>
-  <meta name="description" content="Step-by-step guide to converting HTML and CSS into editable Figma designs. Paste directly from DevTools, localhost, or any web app — no Chrome extension needed." />
+  <meta name="description" content="Convert HTML and CSS into Figma with public URL capture or a complete HTML document. Learn the input requirements, output modes, and limits." />
   <meta name="keywords" content="how to convert html to figma, html to figma, html2design, convert html css figma, figma plugin html, import html figma, paste html figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="HTML to Figma" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-03-16T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-04-12T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-07-29T00:00:00Z" />
   <meta property="article:author" content="HTML to Figma" />
   <meta property="article:section" content="Tutorial" />
   <meta property="article:tag" content="html to figma" />
@@ -50,7 +50,7 @@
     "description": "Step-by-step guide to converting HTML and CSS into editable Figma designs using the html2design plugin. Works with localhost, DevTools, and any web app.",
     "url": "https://html2design.com/blog/how-to-convert-html-to-figma",
     "datePublished": "2026-03-16T00:00:00Z",
-    "dateModified": "2026-04-17T00:00:00Z",
+    "dateModified": "2026-07-29T00:00:00Z",
     "wordCount": 1952,
     "inLanguage": "en",
     "image": {
@@ -118,7 +118,7 @@
         "name": "Does HTML to Figma work with localhost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Because html2design works by pasting raw HTML/CSS directly into the Figma plugin panel, it works with any source — including localhost dev servers, staging environments, and live URLs. No Chrome extension or URL access is needed."
+          "text": "Yes. For localhost or private sources, export a complete HTML document with its required CSS and assets, then use manual input. Isolated outerHTML does not include external stylesheets or computed CSS values."
         }
       },
       {
@@ -218,7 +218,7 @@
       How to Convert HTML to Figma: A Developer's Guide
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Paste supplied HTML and CSS directly into Figma and create editable nodes for supported content — no Chrome extension or live URL required.
+      Import a public URL or supply a complete HTML document with its CSS, then create editable nodes for supported content.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
@@ -235,7 +235,7 @@
 
     <!-- GEO: Definition block — AI engines prefer pages that open with a direct answer -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML to Figma conversion</strong> is the process of transforming <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">HTML</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> source code into native, editable <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> design layers — frames, text nodes, shapes, and <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">SVG vector paths</a> — without manual recreation. The html2design plugin reads computed CSS values to faithfully preserve typography, spacing, colors, and layout structure from any web source.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>HTML to Figma conversion</strong> uses a rendered webpage or a supplied HTML/CSS document to create native <a href="https://help.figma.com/hc/en-us/articles/360039832054-Use-the-Figma-plugin-API" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma</a> nodes for supported text, shapes, images, and measured layout. Public URL capture can record browser-resolved output. Manual input can only compute styles that are included with or reachable from the supplied document.</p>
     </div>
 
     <h2>Why Convert HTML to Figma?</h2>
@@ -271,12 +271,14 @@
 
     <div class="step-card">
       <div class="step-num">Step 2</div>
-      <h3>Open DevTools and copy the HTML</h3>
+      <h3>Prepare a complete HTML and CSS input</h3>
       <p>
-        Navigate to the element you want to convert. In Chrome or Firefox, right-click the element → <em>Inspect</em>. In the Elements panel, right-click the root node of your component → <em>Copy → Copy outerHTML</em>.
+        For a public page, use the URL workflow so the capture browser can load its CSS and assets. For localhost or private content, export a complete HTML document that includes inline styles, <code>&lt;style&gt;</code> blocks, or reachable stylesheet links.
       </p>
       <p>
-        For styles, you can optionally copy the associated CSS rules. html2design reads inline styles, CSS classes from stylesheets, and computed styles. Most of the time, <strong>copying outerHTML is enough</strong> — the plugin resolves linked stylesheets automatically.
+        <strong>Copy outerHTML is not a self-contained visual export.</strong> It preserves markup and inline
+        style attributes, but external stylesheets, framework-generated CSS, and values shown in the browser's
+        Computed panel are not embedded in that fragment.
       </p>
       <div class="code-block">&lt;div class="card" style="..."&gt;
   &lt;h2&gt;Card Title&lt;/h2&gt;
@@ -323,9 +325,11 @@
 
     <h2>Tips for Better Conversions</h2>
 
-    <h3>Use computed styles for complex layouts</h3>
+    <h3>Inline or package styles for complex layouts</h3>
     <p>
-      When a component relies on CSS custom properties (variables) or complex cascade, the plugin may not resolve all values from raw HTML alone. In DevTools, switch to the <em>Computed</em> tab, select all styles (<kbd>Cmd+A</kbd>), and copy those instead. Paste them alongside your HTML in the plugin.
+      When a component relies on CSS custom properties, CSS Modules, utility classes, or CSS-in-JS, export the
+      generated stylesheet with the HTML or inline the resolved visual properties into the document. Pasting a
+      plain list copied from DevTools' Computed panel is not valid CSS unless you attach those declarations to a selector or style attribute.
     </p>
 
     <h3>Work at the component level, not the page level</h3>
@@ -378,7 +382,7 @@
 
     <h3>Does HTML to Figma work with localhost?</h3>
     <p>
-      Yes — because you paste raw HTML/CSS rather than giving the plugin a URL, it works with localhost, Storybook, internal tools, and any environment you can open in a browser. No Chrome extension or network access required.
+      Yes. Export a complete HTML document from localhost, Storybook, or an internal tool and include the generated CSS and assets it requires. Manual input does not require the remote URL service.
     </p>
 
     <h3>Does it preserve CSS Flexbox layouts?</h3>
@@ -396,8 +400,8 @@
       <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;font-weight:600;color:#2563EB;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;margin-top:0;">Key Takeaways</p>
       <ul style="list-style:none;padding:0;margin:0;">
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> html2design converts HTML/CSS to native Figma layers in <strong>2–15 seconds</strong>, versus 20–40 minutes per component manually</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Works with any HTML source: localhost, staging, Storybook, live sites — no Chrome extension required</li>
-        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Preserves typography, colors, borders, box-shadows, SVGs, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/computed_value" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">computed CSS</a> layout positions</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Supports public URL capture and complete HTML documents from localhost, staging, Storybook, and private sources</li>
+        <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Maps supported typography, colors, borders, shadows, media, and measured layout to Figma nodes</li>
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS Flexbox</a> and Grid layouts become accurately positioned Figma frames — not Auto Layout</li>
         <li style="padding-left:1.5rem;position:relative;margin-bottom:0;color:#374151;font-size:0.875rem;line-height:1.6;"><span style="position:absolute;left:0;color:#2563EB;font-weight:700;">✓</span> Pricing: <strong>$12/month</strong> or <strong>$96/year</strong> — unlimited conversions, no watermarks</li>
       </ul>
@@ -415,7 +419,7 @@
         </a>
         <a href="/blog/import-website-into-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Import a Website into Figma &rarr;</p>
-          <p class="text-xs text-content-muted mt-0.5">Two methods compared: Chrome extension vs code paste. Covers localhost, staging, and auth-gated pages.</p>
+          <p class="text-xs text-content-muted mt-0.5">Public URL capture and complete HTML input compared, including localhost, staging, and private pages.</p>
         </a>
         <a href="/blog/react-component-to-figma" class="block group">
           <p class="text-sm font-semibold text-content group-hover:text-accent transition-colors no-underline">How to Convert React Components to Figma Designs &rarr;</p>

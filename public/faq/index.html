@@ -113,7 +113,7 @@
         "name": "Which CSS properties does html2design support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design reads computed CSS values from the browser's rendering engine, including: background colors and gradients, border colors, border radius, box shadows, opacity, font family, font size, font weight, line height, letter spacing, text alignment, text decoration, padding, margin, width, height, and absolute position. Because it reads resolved computed values rather than source CSS, all CSS methodologies are supported: plain CSS, CSS Modules, CSS-in-JS, Tailwind, Bootstrap, and any other framework that compiles to standard CSS."
+          "text": "Public URL capture records supported resolved values such as colors, borders, radius, shadows, opacity, typography, and measured geometry. Manual input computes styles from the CSS included with or reachable from the supplied document. Framework class names without their generated stylesheet are not sufficient."
         }
       },
       {
@@ -121,7 +121,7 @@
         "name": "Does html2design work with React, Vue, Angular, and Svelte?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All major frontend frameworks compile to standard HTML and CSS in the browser. The process is the same regardless of framework: render the component in a browser, open DevTools, right-click the element → Copy → Copy outerHTML, paste into html2design. No source code changes are required. This also applies to Next.js, Nuxt, Remix, Astro, and any other framework that outputs standard HTML."
+          "text": "Yes. Use public URL capture for deployed React, Vue, Angular, or Svelte pages. For local or private output, export a complete HTML document with the generated CSS and assets. Isolated outerHTML does not include framework stylesheet rules."
         }
       },
       {
@@ -129,7 +129,7 @@
         "name": "Can I import Tailwind CSS components into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Tailwind utility classes compile to standard CSS before the browser renders them. When you copy a component's outerHTML from DevTools, all computed styles are included — your custom colors from tailwind.config.js, spacing scale values, shadows, and responsive variants. html2design reads those resolved values, not the class names, so the output is accurate regardless of your Tailwind configuration."
+          "text": "Yes, when the generated Tailwind CSS is available to the input. Use public URL capture or include the compiled stylesheet with a complete HTML document. Copying an element with Tailwind class names does not embed the utility rules or computed values."
         }
       },
       {
@@ -137,7 +137,7 @@
         "name": "Does html2design preserve Flexbox and CSS Grid layouts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design reads computed positions (top, left, width, height) and sizes from the browser's rendered layout. Flexbox and Grid layouts are preserved visually — spacing, alignment, and padding are all maintained. The resulting Figma frames use absolute positioning rather than Figma Auto Layout. You can manually apply Auto Layout in Figma after import if you want responsive Figma frames."
+          "text": "Editable mode maps captured or locally computed positions and sizes to fixed-position Figma frames. Flexbox and Grid do not become Figma Auto Layout, and browser-to-Figma differences can require spacing and alignment cleanup."
         }
       },
       {
@@ -145,7 +145,7 @@
         "name": "Does html2design work with localhost and local development servers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Because you paste raw HTML rather than providing a URL, html2design works with any local development server: localhost:3000, localhost:8080, localhost:6006 (Storybook), Vite dev server, Next.js dev server, or any other local environment. No proxy, tunnel, or special network configuration is required."
+          "text": "Yes, through manual input from a complete HTML document exported from localhost or Storybook. Include generated CSS and required assets; a local URL itself cannot be reached by the remote URL capture service."
         }
       },
       {
@@ -418,8 +418,8 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p>html2design reads <strong>computed CSS values</strong> from the browser's rendering engine, including background colors and gradients, border colors, border radius, box shadows, opacity, font family, font size, font weight, line height, letter spacing, text alignment, text decoration, padding, margin, width, height, and absolute position.</p>
-            <p>Because it reads resolved values rather than source CSS, all CSS methodologies are supported: plain CSS, CSS Modules, CSS-in-JS, Tailwind, Bootstrap, Sass, and any other approach that compiles to standard CSS.</p>
+            <p>Public URL capture records supported resolved values including colors, borders, radius, shadows, opacity, typography, and measured geometry.</p>
+            <p>Manual input computes styles from the CSS included with or reachable from the supplied document. CSS Modules, CSS-in-JS, Tailwind, Bootstrap, and Sass output work only when their generated stylesheet is present.</p>
           </div>
         </details>
 
@@ -430,8 +430,8 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p>Yes. All major frontend frameworks compile to standard HTML and CSS in the browser. The process is the same regardless of framework: render the component in a browser, open DevTools, right-click the element → Copy → Copy outerHTML, paste into html2design. No source code changes are required.</p>
-            <p>This also applies to Next.js, Nuxt, Remix, Astro, and any other framework that outputs standard HTML. See specific guides for <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React</a> and <a href="/use-cases/tailwind-react-to-figma" class="text-accent hover:underline">Tailwind + React</a>.</p>
+            <p>Yes. Use public URL capture for deployed framework pages. For local or private output, export a complete HTML document with the generated CSS and assets.</p>
+            <p>Isolated outerHTML does not include framework stylesheet rules. See specific guides for <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React</a> and <a href="/use-cases/tailwind-react-to-figma" class="text-accent hover:underline">Tailwind + React</a>.</p>
           </div>
         </details>
 
@@ -442,7 +442,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p>Yes. Tailwind utility classes compile to standard CSS before the browser renders them. When you copy a component's outerHTML from DevTools, all computed styles are included — your custom colors from <code class="bg-gray-100 px-1 rounded text-xs">tailwind.config.js</code>, spacing scale values, shadows, and responsive variants. html2design reads those resolved values, not the class names.</p>
+            <p>Yes, when the generated Tailwind CSS is available to the input. Use public URL capture or include the compiled stylesheet with a complete HTML document. Copying class names does not embed utility rules or computed values.</p>
             <p><a href="/blog/tailwind-to-figma" class="text-accent hover:underline">Read the Tailwind to Figma guide →</a></p>
           </div>
         </details>
@@ -454,7 +454,7 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm">
-            <p>html2design reads computed positions (top, left, width, height) and sizes from the browser's rendered layout. Flexbox and Grid layouts are preserved visually — spacing, alignment, and padding are all maintained. The resulting Figma frames use absolute positioning rather than Figma Auto Layout. You can manually apply Auto Layout in Figma after import if you want responsive Figma frames.</p>
+            <p>Editable mode maps captured or locally computed positions and sizes to fixed-position Figma frames. Flexbox and Grid do not become Figma Auto Layout, and spacing or alignment can require cleanup.</p>
           </div>
         </details>
 
@@ -465,8 +465,8 @@
             <svg class="shrink-0 mt-0.5 text-gray-400 group-open:rotate-180 transition-transform" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
-            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> Yes — html2design works with localhost because you paste raw HTML rather than providing a URL. No proxy, tunnel, or network configuration required.</p>
-            <p>It works with any local development server: <code class="bg-gray-100 px-1 rounded text-xs">localhost:3000</code>, <code class="bg-gray-100 px-1 rounded text-xs">localhost:8080</code>, <code class="bg-gray-100 px-1 rounded text-xs">localhost:6006</code> (Storybook), Vite dev server, Next.js dev server, or any other local environment.</p>
+            <p style="background:#EFF6FF;border-left:3px solid #2563EB;padding:0.5rem 0.75rem;border-radius:0 0.5rem 0.5rem 0;color:#1E40AF;font-weight:600;margin-bottom:0.75rem;line-height:1.6;"><strong>Quick Answer:</strong> Yes, through manual input from a complete HTML export with its CSS and assets.</p>
+            <p>Export the intended state from <code class="bg-gray-100 px-1 rounded text-xs">localhost:3000</code>, Storybook, Vite, Next.js, or another local environment. The remote public URL service cannot reach localhost.</p>
           </div>
         </details>
 
@@ -599,7 +599,7 @@
           </summary>
           <div class="faq-answer mt-4 text-content-muted leading-relaxed text-sm space-y-2">
             <p>html2design requires no Chrome extension and supports both manual HTML and direct public URL import. URL capture offers lossless Pixel mode and best-effort Editable mode.</p>
-            <p>Manual import still covers localhost, Storybook, authenticated pages, and HTML copied from DevTools. See the full <a href="/alternatives" class="text-accent hover:underline">alternatives comparison &rarr;</a></p>
+            <p>Manual import covers localhost, Storybook, and authenticated pages when the supplied document includes its CSS and assets. See the full <a href="/alternatives" class="text-accent hover:underline">alternatives comparison &rarr;</a></p>
           </div>
         </details>
 

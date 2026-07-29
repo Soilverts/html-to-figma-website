@@ -44,8 +44,8 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
               Figma Plugin — HTML to Figma
             </Badge>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-content mb-6 md:mb-8">
-              Code to <br />
-              <span className="text-gray-500">Design.</span>
+              HTML to Figma. <br />
+              <span className="text-gray-500">Pixel or editable.</span>
             </h1>
             <p className="text-base md:text-xl text-content-muted max-w-md font-light leading-relaxed mb-8">
               Import pasted HTML or a public website URL into Figma.

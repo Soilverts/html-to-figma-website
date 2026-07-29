@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>How to Convert a Live Website to Figma in Minutes (2026)</title>
-  <meta name="description" content="Convert a public website to Figma with URL Pixel or Editable mode, or import copied HTML for localhost and private pages. Includes limits and tradeoffs." />
+  <meta name="description" content="Convert a public website to Figma with URL Pixel or Editable mode, or import a complete HTML document for private pages. Includes limits and tradeoffs." />
   <meta name="keywords" content="convert website to figma, convert live website to figma, website to figma, import website figma, html to figma live site, figma website import, html2design tutorial, website figma conversion" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/blog/convert-website-to-figma" />
   <meta property="og:title" content="How to Convert a Live Website to Figma in Minutes (2026)" />
-  <meta property="og:description" content="Two methods for converting any live website to editable Figma layers — Chrome extension for public sites, HTML paste for localhost and private URLs. With use cases, comparison table, and step-by-step walkthrough." />
+  <meta property="og:description" content="Convert public websites by URL, or import complete HTML documents for private sources. Compare Pixel and Editable output with clear limits." />
   <meta property="og:image" content="https://html2design.com/og/blog/convert-website-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="HTML to Figma" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-04-10T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-04-12T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-07-29T00:00:00Z" />
   <meta property="article:author" content="HTML to Figma" />
   <meta property="article:section" content="Tutorial" />
   <meta property="article:tag" content="convert website to figma" />
@@ -35,7 +35,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Convert a Live Website to Figma in Minutes (2026)" />
-  <meta name="twitter:description" content="Convert any live website to editable Figma layers in minutes — Chrome extension or HTML paste method, with use cases and comparison to manual rebuild." />
+  <meta name="twitter:description" content="Convert a public website by URL or import a complete HTML document, then choose lossless Pixel or best-effort Editable output." />
   <meta name="twitter:image" content="https://html2design.com/og/blog/convert-website-to-figma.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -48,10 +48,10 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "How to Convert a Live Website to Figma in Minutes (2026)",
-    "description": "Step-by-step guide to converting any live website into editable Figma layers using html2design. Covers the Chrome extension method for public sites and the HTML paste method for localhost, staging, and auth-gated pages. Includes real-world use cases and a comparison with manual recreation.",
+    "description": "Step-by-step guide to converting a public website by URL or importing a complete HTML document for localhost, staging, and private sources. Covers Pixel and Editable output.",
     "url": "https://html2design.com/blog/convert-website-to-figma",
     "datePublished": "2026-04-10T00:00:00Z",
-    "dateModified": "2026-04-17T00:00:00Z",
+    "dateModified": "2026-07-29T00:00:00Z",
     "wordCount": 1900,
     "inLanguage": "en",
     "image": {
@@ -109,7 +109,7 @@
         "name": "How do you convert a website to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For a public site, paste its URL into html2design and choose lossless Pixel mode or best-effort Editable mode. For localhost or private sources, copy the rendered outerHTML from DevTools and use manual HTML import. Review fonts, effects, image crops, and responsive behavior after editable conversion."
+          "text": "For a public site, paste its URL into html2design and choose lossless Pixel mode or best-effort Editable mode. For localhost or private sources, import a complete HTML document with its required CSS and assets. Review fonts, effects, image crops, and responsive behavior after editable conversion."
         }
       },
       {
@@ -117,7 +117,7 @@
         "name": "Can you import a live website into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "html2design can capture publicly reachable website URLs in lossless Pixel mode or best-effort Editable mode. For localhost, staging, or authenticated sources, copy rendered outerHTML and use manual import. Not every browser effect or runtime behavior maps to editable Figma nodes."
+          "text": "html2design can capture publicly reachable website URLs in lossless Pixel mode or best-effort Editable mode. For localhost, staging, or authenticated sources, supply a complete HTML document with its CSS. Not every browser effect or runtime behavior maps to editable Figma nodes."
         }
       },
       {
@@ -141,7 +141,7 @@
         "name": "Does html2design work with JavaScript-rendered pages?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. html2design reads the rendered DOM — the fully hydrated HTML after JavaScript has executed — not the source HTML. This means it works correctly with React, Vue, Angular, Next.js, and other JS-rendered pages. The import captures what the browser actually renders, including dynamic content, conditional UI states, and any DOM modifications JavaScript makes on load."
+          "text": "Public URL capture runs the page in a browser and can record hydrated React, Vue, Angular, and Next.js output. Manual input does not execute application scripts, so private sources must be exported as complete rendered HTML with the required CSS and assets."
         }
       }
     ]
@@ -269,7 +269,7 @@
     <!-- GEO: TL;DR citation box -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
       <p style="margin:0 0 0.5rem 0;color:#1E3A8A;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">TL;DR</p>
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;">To convert a website to Figma, install the <a href="https://html2design.com/guide" style="color:#2563EB;">html2design plugin</a>. Paste a public URL for Pixel or best-effort Editable capture, or copy rendered outerHTML from DevTools for local and private source. Review the resulting text, images, styles, and measured frames against the browser page.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;">To convert a website to Figma, install the <a href="https://html2design.com/guide" style="color:#2563EB;">html2design plugin</a>. Paste a public URL for Pixel or best-effort Editable capture, or import a complete HTML document with its CSS for local and private sources. Review the resulting text, images, styles, and measured frames against the browser page.</p>
     </div>
 
     <h2>Why Convert a Live Website to Figma?</h2>
@@ -277,15 +277,15 @@
       The standard design workflow starts in Figma and ends in code. But that direction doesn't work when the code is already ahead of Figma — which is most of the time in established products. Developers ship features, designers update the Figma file later (or don't), and within a few sprints the Figma file no longer reflects what's actually live.
     </p>
     <p>
-      Converting the live website back to Figma closes that gap. Instead of re-creating pages from scratch in Figma based on screenshots and memory, you import the rendered HTML directly — getting a Figma file that is, by definition, accurate to what ships.
+      Converting the live website back to Figma closes that gap. Instead of re-creating pages from screenshots and memory, use a Pixel capture as a visual reference or an Editable import as a measured starting point. Editable output still needs comparison because browser and Figma rendering models differ.
     </p>
     <p>
       The workflow also has value outside of sync situations. Competitive analysis, client handoffs, rapid prototyping, and redesign audits all benefit from having the live site available as editable Figma layers rather than static reference screenshots. We'll cover the specific use cases in detail after the how-to.
     </p>
 
-    <h2>Two Methods: Which One to Use</h2>
+    <h2>Two Input Paths: Which One to Use</h2>
     <p>
-      <a href="/guide">html2design</a> offers two import paths for live websites. They produce identical Figma output — the difference is in how you extract the HTML from the page.
+      <a href="/guide">html2design</a> supports public URL capture and manual HTML input. URL capture can produce Pixel or Editable output. Manual input creates editable nodes from the complete document you supply.
     </p>
 
     <table class="method-table">
@@ -298,20 +298,20 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Chrome extension</strong></td>
-          <td>Public websites, marketing pages, competitor sites, any page you can open in Chrome</td>
-          <td>Chrome + html2design extension installed</td>
+          <td><strong>Public URL capture</strong></td>
+          <td>Public websites, marketing pages, competitor references, deployed previews</td>
+          <td>A remotely reachable HTTP or HTTPS URL</td>
         </tr>
         <tr>
-          <td><strong>HTML code paste</strong></td>
+          <td><strong>Complete HTML input</strong></td>
           <td>Localhost, staging environments, auth-gated dashboards, internal tools</td>
-          <td>Chrome DevTools (built-in, no install)</td>
+          <td>HTML with inline styles, style blocks, or reachable stylesheet links</td>
         </tr>
       </tbody>
     </table>
 
     <p>
-      If the page is publicly accessible, the Chrome extension is faster — one click and it handles everything. If the page requires login, runs on localhost, or is behind a staging URL that the extension can't reach, use the HTML paste method. See the <a href="/blog/import-website-into-figma">full method comparison guide</a> for a detailed breakdown of edge cases.
+      If the page is publicly accessible, use URL capture so the remote browser can load CSS, fonts, and images. If the page requires login or runs on localhost, export a complete document for manual input. See the <a href="/blog/import-website-into-figma">full method comparison guide</a> for edge cases.
     </p>
 
     <h2>Step-by-Step: Convert a Website to Figma</h2>
@@ -329,43 +329,43 @@
 
     <div class="step-card">
       <p class="step-num">Step 2</p>
-      <h3>Open the target page in Chrome and let it fully load</h3>
+      <h3>Prepare the target page and viewport</h3>
       <p>
-        Navigate to the page you want to convert in Chrome. Wait for all content to load — especially if the page has lazy-loaded images, sticky headers that change state on scroll, or JavaScript-rendered sections. The import captures the DOM at the moment you trigger it, so partial renders produce partial imports.
+        For URL capture, use the exact public page and viewport you want to record. For manual input, export the intended state as a complete HTML document and verify that the file still renders correctly outside the original application.
       </p>
       <p>
-        For pages with above-the-fold vs below-the-fold content that renders differently, decide upfront what you want to capture. You can capture the page at a specific scroll position by scrolling to that point before triggering the extension. For full-page imports of long pages, the <a href="/blog/multi-page-website-to-figma">multi-page import workflow</a> covers how to handle sections systematically.
+        Lazy content, authenticated data, hover states, and scroll-triggered sections may need separate preparation. For long sites, the <a href="/blog/multi-page-website-to-figma">multi-page import workflow</a> covers page-by-page handling.
       </p>
     </div>
 
     <div class="step-card">
       <p class="step-num">Step 3a</p>
-      <h3>Chrome extension method — capture directly from the page</h3>
+      <h3>Public URL method — capture through the plugin</h3>
       <p>
-        If you installed the html2design Chrome extension, click the extension icon in your Chrome toolbar while on the target page. The extension reads the rendered HTML and computed CSS styles for the full page and sends them to the Figma plugin automatically.
+        Paste the public page URL into html2design. Choose Pixel mode for a lossless raster reference or Editable mode for best-effort native layers, then start the capture.
       </p>
       <p>
-        Switch to Figma. The plugin will show a preview of the incoming import. Click <strong>Convert</strong>. The plugin generates native Figma frames from the HTML and CSS data the extension sent.
+        The remote browser loads the page, serializes supported visual output, and sends the capture document back to the Figma plugin. URL capture does not require a browser extension.
       </p>
       <div class="tip-box">
-        <p><strong>If the extension doesn't capture images:</strong> Some sites serve images with restrictive CORS headers that prevent the extension from embedding them. The frames will still be accurate in every other respect — text, colors, layout, spacing — with placeholder rectangles where images would be. This is typically fine for redesign and audit work.</p>
+        <p><strong>Use Pixel mode for visual evidence.</strong> Editable mode is intended for inspection and modification; unsupported media or complex visual regions may be rasterized.</p>
       </div>
     </div>
 
     <div class="step-card">
       <p class="step-num">Step 3b</p>
-      <h3>HTML paste method — copy outerHTML from DevTools</h3>
+      <h3>Manual method — import a complete HTML document</h3>
       <p>
-        If the page is behind a login, on localhost, or otherwise not reachable by the extension: open Chrome DevTools with <kbd>Cmd+Option+I</kbd> (Mac) or <kbd>Ctrl+Shift+I</kbd> (Windows/Linux). Go to the <strong>Elements</strong> tab.
+        If the page is behind a login or on localhost, export the rendered state as an HTML file. Include inline styles, <code>&lt;style&gt;</code> blocks, or stylesheet links the plugin can reach.
       </p>
       <p>
-        Right-click the <code>&lt;body&gt;</code> element (or the specific section you want to import) and choose <strong>Copy → Copy outerHTML</strong>. Switch to Figma, open the html2design plugin, click the <strong>Code</strong> tab, paste the HTML, and click <strong>Convert</strong>.
+        Load the file or paste the complete document into html2design, then convert. Verify the exported file in a clean browser tab first; if it looks unstyled there, it will also look unstyled in the plugin.
       </p>
       <p>
-        For sections where computed styles matter (particularly for fonts and colors that don't appear directly in the HTML), html2design reads the computed CSS alongside the HTML, so the output accurately reflects the browser-rendered values even for utility-class frameworks like Tailwind.
+        Copying <code>outerHTML</code> from a single element does not include external stylesheets or computed CSS values. Framework class names such as Tailwind utilities require the generated CSS to travel with the HTML.
       </p>
       <div class="tip-box">
-        <p><strong>Targeting a specific component</strong> instead of the full page: right-click the component in the page, choose <strong>Inspect</strong>, right-click the highlighted element in the Elements panel, and choose <strong>Copy → Copy outerHTML</strong>. This gives you a focused import of just that component — useful for auditing individual UI elements.</p>
+        <p><strong>Targeting a component:</strong> create a dedicated component route or Storybook export, then package the component HTML and generated CSS together.</p>
       </div>
     </div>
 
@@ -482,12 +482,12 @@
 
     <h3>How do you convert a website to Figma?</h3>
     <p>
-      Install the html2design Figma plugin. For public sites, paste the URL and choose lossless Pixel mode or best-effort Editable mode. For private or localhost pages, copy rendered outerHTML from DevTools and use manual HTML import.
+      Install the html2design Figma plugin. For public sites, paste the URL and choose lossless Pixel mode or best-effort Editable mode. For private or localhost pages, import a complete HTML document with its required CSS and assets.
     </p>
 
     <h3>Can you import a live website into Figma?</h3>
     <p>
-      Publicly reachable URLs can be captured in Pixel or Editable mode. Localhost, staging, and authenticated sources use copied HTML instead. Editable output uses browser measurements as inputs but still requires review for fonts, effects, image crops, and runtime behavior.
+      Publicly reachable URLs can be captured in Pixel or Editable mode. Localhost, staging, and authenticated sources use complete HTML documents instead. Editable output still requires review for fonts, effects, image crops, and runtime behavior.
     </p>
 
     <h3>Is it better to screenshot a site or import it into Figma?</h3>
@@ -497,7 +497,7 @@
 
     <h3>Does this work with JavaScript-rendered sites (React, Next.js)?</h3>
     <p>
-      Yes. html2design reads the rendered DOM after JavaScript has executed, not the source HTML. React, Next.js, Vue, Angular, and any other JS-rendered framework all work — the import captures what the browser displays, including dynamic content and JS-modified DOM state.
+      Public URL capture runs JavaScript in a remote browser and can record hydrated React, Next.js, Vue, and Angular output. Manual input does not execute the original application, so private sources must be exported with their final HTML, CSS, and assets.
     </p>
 
     <h3>How long does it take to convert a website to Figma?</h3>
