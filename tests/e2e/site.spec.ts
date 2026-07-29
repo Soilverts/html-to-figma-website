@@ -161,6 +161,20 @@ test('result evidence and sitemap remain inspectable', async ({ page, request })
     expect(dimensions.naturalWidth).toBe(1425);
     expect(dimensions.renderedWidth).toBeLessThanOrEqual(dimensions.naturalWidth);
   }
+  await expect(page.getByRole('link', { name: 'Open the full browser source preview' })).toHaveAttribute(
+    'href',
+    '/results/linea/browser-full.webp',
+  );
+  await expect(page.getByRole('link', { name: 'Open the full editable Figma result preview' })).toHaveAttribute(
+    'href',
+    '/results/linea/figma-editable-full.webp',
+  );
+
+  for (const preview of ['/results/linea/browser-full.webp', '/results/linea/figma-editable-full.webp']) {
+    const previewResponse = await request.get(preview);
+    expect(previewResponse.status(), preview).toBe(200);
+    expect((await previewResponse.body()).byteLength, preview).toBeLessThan(1_000_000);
+  }
 
   const sitemapResponse = await request.get('/sitemap.xml');
   expect(sitemapResponse.status()).toBe(200);
@@ -175,7 +189,9 @@ test('result evidence and sitemap remain inspectable', async ({ page, request })
   expect(evidenceResponse.status()).toBe(200);
   const evidence = await evidenceResponse.json();
   expect(evidence.source.url).toBe(LINEA_FIXTURE);
+  expect(evidence.source.screenshot.path).toBe('/results/linea/browser-full.png');
   expect(evidence.source.screenshot.sha256).toBe(LINEA_SOURCE_SHA256);
+  expect(evidence.output.screenshot.path).toBe('/results/linea/figma-editable-full.png');
   expect(evidence.output.layers).toEqual({ selectable: 90, text: 57, image: 16 });
   expect(evidence.verification.fresh_figma_export_matches_published_output).toEqual({
     sha256_equal: true,

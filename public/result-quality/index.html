@@ -84,17 +84,17 @@
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <figure>
             <figcaption class="mb-4"><span class="font-bold">Browser source</span><span class="block text-sm text-content-muted mt-1">The live page rendered in Chromium.</span></figcaption>
-            <a href="/results/linea/browser-full.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full browser source capture" class="block overflow-hidden border border-gray-200 bg-white">
+            <a href="/results/linea/browser-full.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full browser source preview" class="block overflow-hidden border border-gray-200 bg-white">
               <img src="/results/linea/browser-viewport.webp" width="1425" height="900" decoding="async" alt="LINEA jewelry storefront rendered in a browser, showing a two-image editorial hero and product copy" class="w-full object-cover object-top" style="aspect-ratio: 19 / 12" />
             </a>
-            <p class="text-xs text-content-muted mt-3"><a class="underline hover:text-content" href="/results/linea/browser-full.png" target="_blank" rel="noopener noreferrer">Open the full-page source</a></p>
+            <p class="text-xs text-content-muted mt-3"><a class="underline hover:text-content" href="/results/linea/browser-full.webp" target="_blank" rel="noopener noreferrer">Open the full-page source preview</a></p>
           </figure>
           <figure>
             <figcaption class="mb-4"><span class="font-bold">Editable Figma result</span><span class="block text-sm text-content-muted mt-1">Text, shapes, fills, and photography as separate layers.</span></figcaption>
-            <a href="/results/linea/figma-editable-full.png" target="_blank" rel="noopener noreferrer" aria-label="Open the full editable Figma result capture" class="block overflow-hidden border border-gray-200 bg-white">
+            <a href="/results/linea/figma-editable-full.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full editable Figma result preview" class="block overflow-hidden border border-gray-200 bg-white">
               <img src="/results/linea/figma-viewport.webp" width="1425" height="900" decoding="async" alt="Editable Figma import of the LINEA jewelry storefront at the same desktop viewport" class="w-full object-cover object-top" style="aspect-ratio: 19 / 12" />
             </a>
-            <p class="text-xs text-content-muted mt-3"><a class="underline hover:text-content" href="/results/linea/figma-editable-full.png" target="_blank" rel="noopener noreferrer">Open the full-page Figma result</a></p>
+            <p class="text-xs text-content-muted mt-3"><a class="underline hover:text-content" href="/results/linea/figma-editable-full.webp" target="_blank" rel="noopener noreferrer">Open the full-page Figma result preview</a></p>
           </figure>
         </div>
         <p class="mt-9 max-w-3xl text-sm leading-relaxed text-content-muted">The previews use 1425 px source images and are displayed below their native width. The previous page enlarged sub-300 px thumbnails, which caused the blur; these previews do not upscale.</p>
@@ -104,11 +104,11 @@
     <section id="reproduce" class="scroll-mt-20 max-w-5xl mx-auto px-6 py-14 border-b border-gray-100">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Reproducible case</p>
       <h2 class="text-3xl font-black mb-5">Inspect the exact input and evidence files</h2>
-      <p class="max-w-4xl text-content-muted leading-relaxed">The original LINEA page is published as a read-only, noindex test fixture. It uses the same build and 1425 px viewport as the browser capture above. The fixture, source screenshot, Figma output screenshot, and machine-readable manifest remain separate so each part of the comparison can be checked independently.</p>
+      <p class="max-w-4xl text-content-muted leading-relaxed">The original LINEA page is published as a read-only, noindex test fixture. It uses the same build and 1425 px viewport as the browser capture above. The links below use faster high-quality WebP previews; the original byte-verified PNG URLs and SHA-256 values remain recorded in the machine-readable evidence manifest.</p>
       <div class="mt-8 grid sm:grid-cols-2 border-t border-gray-200">
         <a href="https://html2design-linea-fixture.pages.dev/" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pr-8 font-semibold hover:text-accent">Open the exact input <span aria-hidden="true">&nearr;</span></a>
-        <a href="/results/linea/browser-full.png" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pl-8 font-semibold hover:text-accent">Open the browser PNG <span aria-hidden="true">&nearr;</span></a>
-        <a href="/results/linea/figma-editable-full.png" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pr-8 font-semibold hover:text-accent">Open the Figma PNG <span aria-hidden="true">&nearr;</span></a>
+        <a href="/results/linea/browser-full.webp" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pl-8 font-semibold hover:text-accent">Open the browser preview <span aria-hidden="true">&nearr;</span></a>
+        <a href="/results/linea/figma-editable-full.webp" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pr-8 font-semibold hover:text-accent">Open the Figma preview <span aria-hidden="true">&nearr;</span></a>
         <a href="/results/linea/evidence.json" target="_blank" rel="noopener noreferrer" class="py-5 border-b border-gray-200 sm:pl-8 font-semibold hover:text-accent">Read the evidence manifest <span aria-hidden="true">&nearr;</span></a>
       </div>
       <p class="mt-7 text-sm text-content-muted leading-relaxed">Verification: on July 16, 2026, Figma node <code class="font-mono text-xs text-content">2021:2</code> was exported again through Figma MCP. Its 1425 × 4321 PNG matched the published output byte for byte. The deployed input also matched the published browser capture byte for byte. Full SHA-256 values and known differences are recorded in the manifest.</p>
