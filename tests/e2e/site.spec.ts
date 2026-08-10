@@ -44,6 +44,7 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
   await expect(page.locator('#features h2')).toContainText('Retain the soul of your architecture.');
   await expect(page.getByRole('link', { name: 'public URL workflow' })).toHaveAttribute('href', '/use-cases/url-to-figma');
   await expect.poll(() => requestedUrls.some((url) => /\/assets\/(?:proxy|vendor-framer)-/.test(url))).toBe(true);
+  await expect(page.locator('#pricing')).toBeAttached({ timeout: 15_000 });
   await expect(page.getByRole('link', { name: 'Buy monthly — $12' })).toHaveAttribute(
     'href',
     'https://api.html2design.com/v1/checkout/monthly?source=website_home',
