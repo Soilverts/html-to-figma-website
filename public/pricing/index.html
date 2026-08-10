@@ -109,7 +109,7 @@
           "billingIncrement": 1
         },
         "availability": "https://schema.org/InStock",
-        "url": "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+        "url": "https://api.html2design.com/v1/checkout/monthly?source=website_pricing"
       },
       {
         "@type": "Offer",
@@ -125,7 +125,7 @@
           "billingIncrement": 1
         },
         "availability": "https://schema.org/InStock",
-        "url": "https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+        "url": "https://api.html2design.com/v1/checkout/yearly?source=website_pricing"
       }
     ]
   }
@@ -279,10 +279,10 @@
           </li>
         </ul>
 
-        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+        <a href="https://api.html2design.com/v1/checkout/monthly?source=website_pricing"
            target="_blank" rel="noopener noreferrer"
            class="block w-full text-center text-sm font-medium border-2 border-content text-content px-5 py-3 rounded-full hover:bg-content hover:text-white transition-colors">
-          Get Started &rarr;
+          Buy monthly — $12 &rarr;
         </a>
       </div>
 
@@ -325,10 +325,10 @@
           </li>
         </ul>
 
-        <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+        <a href="https://api.html2design.com/v1/checkout/yearly?source=website_pricing"
            target="_blank" rel="noopener noreferrer"
            class="block w-full text-center text-sm font-medium bg-accent text-white px-5 py-3 rounded-full hover:bg-black transition-colors">
-          Start Trial &rarr;
+          Buy annual — $96 &rarr;
         </a>
       </div>
 
@@ -337,6 +337,14 @@
     <!-- Trust note -->
     <p class="text-center text-xs text-content-muted mt-6 font-mono">
       Payments are processed by Waffo. A license key is delivered by email.
+    </p>
+    <p class="text-center text-sm text-content-muted mt-4">
+      Want to test it first?
+      <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+         target="_blank" rel="noopener noreferrer"
+         class="font-medium text-content underline underline-offset-4 hover:text-accent transition-colors">
+        Start with 10 free conversions in Figma
+      </a>
     </p>
   </section>
 
@@ -584,5 +592,6 @@
     </div>
   </footer>
 
+  <script defer src="/funnel.js" data-event="pricing_view" data-source="website_pricing"></script>
 </body>
 </html>

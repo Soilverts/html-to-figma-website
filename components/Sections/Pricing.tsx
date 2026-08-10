@@ -13,6 +13,9 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                     <p className="text-content-muted text-base md:text-lg font-light">
                         Professional tools at a fraction of the manual cost.
                     </p>
+                    <a href="/pricing" className="inline-block mt-3 text-sm font-medium text-content underline underline-offset-4 hover:text-accent">
+                        See plan details and billing FAQ
+                    </a>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -22,7 +25,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         period="/mo"
                         description="Flexible for short sprints and single projects."
                         features={["Manual HTML import", "50 URL captures per day", "Pixel and Editable URL modes"]}
-                        checkoutUrl="https://api.html2design.com/v1/checkout/monthly"
+                        checkoutUrl="https://api.html2design.com/v1/checkout/monthly?source=website_home"
                     />
                     <PriceCard
                         title="Yearly"
@@ -33,9 +36,20 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         description="Best for continuous design operations. Save 33%."
                         features={["Manual HTML import", "200 URL captures per day", "Pixel and Editable URL modes"]}
                         isPopular
-                        checkoutUrl="https://api.html2design.com/v1/checkout/yearly"
+                        checkoutUrl="https://api.html2design.com/v1/checkout/yearly?source=website_home"
                     />
                 </div>
+                <p className="mt-8 text-center text-sm text-content-muted">
+                    Want to test the workflow first?{' '}
+                    <a
+                        href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-content underline underline-offset-4 hover:text-accent"
+                    >
+                        Start with 10 free conversions in Figma
+                    </a>
+                </p>
             </div>
         </section>
     )
@@ -99,7 +113,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, originalPrice, peri
 
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="block w-full mt-auto">
                 <button className={`w-full py-3.5 px-6 rounded-xl font-bold transition-all duration-200 ${isPopular ? 'bg-gray-900 text-white hover:bg-black hover:shadow-lg' : 'bg-white text-content border border-gray-200 hover:bg-gray-50'}`}>
-                    {title === 'Monthly' ? 'Start Monthly' : 'Start Annual'}
+                    {title === 'Monthly' ? 'Buy monthly — $12' : 'Buy annual — $96'}
                 </button>
             </a>
         </motion.div>

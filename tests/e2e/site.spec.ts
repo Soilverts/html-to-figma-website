@@ -44,7 +44,33 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
   await expect(page.locator('#features h2')).toContainText('Retain the soul of your architecture.');
   await expect(page.getByRole('link', { name: 'public URL workflow' })).toHaveAttribute('href', '/use-cases/url-to-figma');
   await expect.poll(() => requestedUrls.some((url) => /\/assets\/(?:proxy|vendor-framer)-/.test(url))).toBe(true);
+  await expect(page.getByRole('link', { name: 'Buy monthly — $12' })).toHaveAttribute(
+    'href',
+    'https://api.html2design.com/v1/checkout/monthly?source=website_home',
+  );
+  await expect(page.getByRole('link', { name: 'Buy annual — $96' })).toHaveAttribute(
+    'href',
+    'https://api.html2design.com/v1/checkout/yearly?source=website_home',
+  );
   expect(errors).toEqual([]);
+});
+
+test('pricing offers direct attributed checkout with trial as a secondary path', async ({ page }) => {
+  await page.goto('/pricing');
+
+  await expect(page.getByRole('link', { name: /Buy monthly/ })).toHaveAttribute(
+    'href',
+    'https://api.html2design.com/v1/checkout/monthly?source=website_pricing',
+  );
+  await expect(page.getByRole('link', { name: /Buy annual/ })).toHaveAttribute(
+    'href',
+    'https://api.html2design.com/v1/checkout/yearly?source=website_pricing',
+  );
+  await expect(page.getByRole('link', { name: /Start with 10 free conversions/ })).toHaveAttribute(
+    'href',
+    new RegExp(`^${FIGMA_PLUGIN}`),
+  );
+  await expect(page.locator('script[data-event="pricing_view"][data-source="website_pricing"]')).toHaveCount(1);
 });
 
 test('mobile homepage keeps the hero and menu usable', async ({ page }) => {
