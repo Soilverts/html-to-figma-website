@@ -68,7 +68,7 @@
       {
         "@type": "Question",
         "name": "How do I convert a Bolt.new app to Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Open your Bolt project's live preview in the browser. Open DevTools (F12), go to the Elements panel, right-click the root element of the rendered UI, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. Bolt builds standard web apps (React/Vite and similar), which the browser compiles to computed CSS — html2design reads those values and rebuilds them as native, editable Figma layers." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the public Bolt preview URL for Pixel or best-effort Editable capture. For a private project, export a complete HTML document with its generated CSS and assets, verify that it renders independently, and load the file through manual input. Isolated outerHTML does not include external or runtime CSS." }
       },
       {
         "@type": "Question",
@@ -78,7 +78,7 @@
       {
         "@type": "Question",
         "name": "Do I need to deploy the Bolt app first?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Copy the rendered HTML directly from Bolt's in-browser preview, or open the preview in its own tab and copy from there. html2design only needs the rendered HTML — no deployment or public URL required." }
+        "acceptedAnswer": { "@type": "Answer", "text": "A public deployment is not required for manual input, but the plugin needs a complete HTML document with its CSS and assets. Use URL mode when a public preview is available; do not rely on an isolated DOM fragment with class names." }
       },
       {
         "@type": "Question",
@@ -125,8 +125,8 @@
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">Bolt built your app in the browser.</strong> It runs real
-        web code and renders a live preview — and the browser resolves all of it to computed CSS before
-        html2design reads it. Copy the rendered HTML from Bolt's preview, paste it into the plugin, and create
+        web code and renders a live preview. Use its public preview URL, or export a complete document with
+        the CSS and assets it needs, then create
         <strong class="text-content font-medium">best-effort editable Figma layers</strong> for supported content.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -163,8 +163,8 @@
           <p class="text-sm text-content-muted leading-relaxed">Bolt's Publish flow can create a public <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">bolt.host</code> address. Paste that address into html2design and choose Pixel or Editable mode. If the published site is private, the capture service cannot complete its sign-in flow, so use supplied HTML instead.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">Unpublished or private project: copy the rendered preview</h3>
-          <p class="text-sm text-content-muted leading-relaxed">Open Bolt's preview in Chromium, wait for fonts, images, and application data to settle, then copy the relevant <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code> from DevTools. This keeps a private project out of the public URL workflow while still giving the plugin browser-rendered input.</p>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Unpublished or private project: export a complete document</h3>
+          <p class="text-sm text-content-muted leading-relaxed">Export a complete HTML document with its generated CSS and reachable assets, then verify the file in a browser before manual input. Isolated outerHTML does not include external or runtime styles.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">Need a local baseline: use Code View or download</h3>
@@ -190,8 +190,8 @@
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
-          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div>
-          <div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code>), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading first.</p></div>
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>Use the public preview URL, or export a complete HTML document with its generated CSS and assets for manual input. Verify fonts, images, colors, and layout before importing.</p></div>
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
@@ -224,9 +224,9 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Bolt.new app to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Open Bolt's live preview, open DevTools, right-click the root element, Copy &gt; Copy outerHTML, and paste into the html2design plugin. Bolt's rendered output transfers as best-effort editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert a Bolt.new app to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Use the public Bolt preview URL, or load a complete HTML document with its generated CSS and assets. Choose Pixel for visual reference or Editable for supported native layers.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with Bolt's React/Vite output?</h3><p class="text-sm text-content-muted leading-relaxed">Yes. html2design reads the rendered DOM and computed styles, not the source, so whatever Bolt scaffolds imports the same way.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Do I need to deploy the Bolt app first?</h3><p class="text-sm text-content-muted leading-relaxed">No. Copy from Bolt's in-browser preview directly — no deployment or public URL required.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Do I need to deploy the Bolt app first?</h3><p class="text-sm text-content-muted leading-relaxed">Not for manual input, but a private project must be exported as a complete document. URL mode requires a publicly reachable preview.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
       </div>
     </div>

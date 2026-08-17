@@ -68,7 +68,7 @@
       {
         "@type": "Question",
         "name": "How do I convert ChatGPT-generated UI to Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Get ChatGPT's UI rendering in a browser: use the Canvas live preview, or copy the HTML/CSS it generated into a file and open it, or run the React it produced on a local dev server. Open DevTools (F12), right-click the root element in the Elements panel, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. ChatGPT writes standard HTML/CSS, so the browser resolves it to computed values that html2design rebuilds as native, editable Figma layers." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Use a remotely accessible ChatGPT preview URL when available. Otherwise save the complete generated HTML and CSS, include required assets, verify the file in a browser, and load it through manual input. Editable conversion maps supported content on a best-effort basis." }
       },
       {
         "@type": "Question",
@@ -78,7 +78,7 @@
       {
         "@type": "Question",
         "name": "What if ChatGPT only gives me an HTML code block?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Save the HTML/CSS it produced into a single .html file and open it in your browser, then copy the rendered outerHTML from DevTools. If it generated a React component, run it on a local dev server first. html2design needs the rendered HTML, not the source." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Save the complete HTML and CSS in a document that renders independently, include required assets, and load that file in html2design. If ChatGPT generated React, create a build or public preview rather than supplying JSX source or isolated outerHTML." }
       },
       {
         "@type": "Question",
@@ -125,8 +125,8 @@
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">ChatGPT designed your UI in HTML.</strong> Canvas previews and
-        code blocks are real HTML/CSS/React — and the browser resolves them to computed CSS before html2design
-        reads anything. Render it, copy the HTML, paste into the plugin, and get
+        code blocks can become a public preview or complete HTML/CSS document. Verify the source, load it in the
+        plugin, and get
         <strong class="text-content font-medium">native, editable Figma layers</strong> in a few manual steps.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -168,7 +168,7 @@
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">Plain code blocks work too</h3>
-          <p class="text-sm text-content-muted leading-relaxed">If ChatGPT only gives a code block, save it as an <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.html</code> file and open it (or run the React locally), then copy the rendered HTML.</p>
+          <p class="text-sm text-content-muted leading-relaxed">If ChatGPT only gives a code block, save a complete <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.html</code> file with its CSS and assets, then verify it independently before manual input.</p>
         </div>
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">SVG icons import as vector paths</h3>
@@ -189,8 +189,8 @@
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
-          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div>
-          <div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code>), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading first.</p></div>
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>Use a public preview URL, or package a complete HTML document with its CSS and assets. Open the file and verify fonts, images, colors, and layout before importing.</p></div>
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
@@ -223,9 +223,9 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert ChatGPT-generated UI to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Render ChatGPT's UI in a browser (Canvas preview, an .html file, or a running React app), open DevTools, right-click the root element, Copy &gt; Copy outerHTML, and paste into the html2design plugin. It transfers as best-effort editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert ChatGPT-generated UI to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Use a public preview URL, or load a complete HTML document with its CSS and assets. Editable output maps supported content; Pixel mode is available for public URL capture.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does this work with ChatGPT Canvas?</h3><p class="text-sm text-content-muted leading-relaxed">Use a remotely accessible preview URL when available, or export a complete HTML document with its CSS. Copying an element's outerHTML alone does not include external or computed styles.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">What if I only have an HTML code block?</h3><p class="text-sm text-content-muted leading-relaxed">Save it as a .html file and open it in a browser (or run generated React locally), then copy the rendered outerHTML. html2design needs the rendered HTML, not the source.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">What if I only have an HTML code block?</h3><p class="text-sm text-content-muted leading-relaxed">Save a complete .html file with the required CSS and assets, verify that it renders independently, and load that file through manual input.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
       </div>
     </div>

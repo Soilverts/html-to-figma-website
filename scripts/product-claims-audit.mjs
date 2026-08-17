@@ -4,8 +4,21 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const roots = ['components', 'public', 'scripts', 'index.html'];
-const extensions = new Set(['.html', '.tsx', '.xml', '.mjs']);
+const extensions = new Set(['.html', '.tsx', '.xml', '.mjs', '.txt']);
 const ignoredDirectories = new Set(['dist', 'node_modules']);
+const priorityManualImportFiles = new Set([
+  'public/blog/react-component-to-figma/index.html',
+  'public/use-cases/bolt-to-figma/index.html',
+  'public/use-cases/chatgpt-to-figma/index.html',
+  'public/use-cases/claude-to-figma/index.html',
+  'public/use-cases/cursor-to-figma/index.html',
+  'public/use-cases/developer-handoff/index.html',
+  'public/use-cases/lovable-to-figma/index.html',
+  'public/use-cases/storybook-to-figma/index.html',
+  'public/use-cases/tailwind-to-figma/index.html',
+  'public/use-cases/v0-to-figma/index.html',
+  'public/use-cases/vue-to-figma/index.html',
+]);
 
 const unsupportedClaims = [
   {
@@ -31,6 +44,38 @@ const unsupportedClaims = [
   {
     pattern: /every computed style transfers/i,
     reason: 'browser and Figma rendering are not one-to-one',
+  },
+  {
+    pattern: /paste outerhtml to import/i,
+    reason: 'manual input needs a complete document when CSS is external or generated',
+  },
+  {
+    pattern: /exact digital twin/i,
+    reason: 'editable browser-to-Figma conversion is best effort',
+  },
+  {
+    pattern: /preserved styling, auto layout/i,
+    reason: 'html2design does not generate Figma Auto Layout automatically',
+  },
+  {
+    pattern: /convert css grid and flexbox layouts into figma auto layout/i,
+    reason: 'CSS layout imports as measured geometry; Auto Layout is manual',
+  },
+  {
+    pattern: /import css variables as figma variables/i,
+    reason: 'html2design does not create Figma Variables automatically',
+  },
+  {
+    pattern: /arbitrary values capture exactly in figma/i,
+    reason: 'supported CSS values still require browser-to-Figma translation',
+  },
+  {
+    pattern: /result looks exactly like your tailwind ui/i,
+    reason: 'editable output should be described as best effort',
+  },
+  {
+    pattern: /reads every element's computed style/i,
+    reason: 'manual outerHTML does not carry the browser computed-style map',
   },
   {
     pattern: /imports? inline svg(?:s)? as native figma vector/i,
@@ -72,7 +117,8 @@ const files = roots.flatMap(collect);
 const errors = [];
 
 for (const file of files) {
-  if (relative(root, file) === 'scripts/product-claims-audit.mjs') continue;
+  const relativeFile = relative(root, file);
+  if (relativeFile === 'scripts/product-claims-audit.mjs') continue;
 
   const lines = readFileSync(file, 'utf8').split('\n');
   lines.forEach((line, index) => {
@@ -86,6 +132,15 @@ for (const file of files) {
       }
     }
   });
+
+  if (priorityManualImportFiles.has(relativeFile)) {
+    const content = lines.join('\n');
+    if (/copy the rendered html|copy\s*(?:>|&gt;|→)\s*copy outerhtml|paste outerhtml to import/i.test(content)) {
+      errors.push(
+        `${relativeFile}: manual-import instructions must use a complete HTML/CSS document, not an isolated DOM copy`,
+      );
+    }
+  }
 }
 
 if (errors.length > 0) {

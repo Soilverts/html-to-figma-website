@@ -112,7 +112,7 @@
         "name": "How do I convert a Vercel v0 design to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Open your v0 generation's live preview (on v0.dev or the deployed/forked project running locally). Open DevTools (F12), go to the Elements panel, right-click the root element of the rendered component, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. v0 produces React with Tailwind, which the browser compiles to computed CSS — html2design reads those values and rebuilds them as native, editable Figma layers."
+          "text": "Use a remotely accessible v0 or deployed preview URL when available. For a local fork, export a complete HTML document with the compiled Tailwind CSS and assets, verify it in a browser, and load it through manual input. Isolated outerHTML with utility classes does not include the generated stylesheet."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "Do I need to deploy the v0 project first?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No deployment required. You can copy the rendered HTML directly from v0's live preview in the browser, or fork/run the generated project locally and copy from there. html2design only needs the rendered HTML — a public URL is never required, so unreleased v0 work stays private."
+          "text": "A public deployment is not required for manual input, but private work must be packaged as a complete HTML document with its CSS and assets. URL mode requires a remotely accessible preview."
         }
       },
       {
@@ -194,8 +194,7 @@
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">v0 generated your UI in seconds.</strong> It ships React +
-        Tailwind, and the browser resolves all of it to computed CSS before html2design reads it. Copy the
-        rendered HTML from v0's preview, paste into the plugin, and get
+        Tailwind. Use a public preview URL, or export a complete document with compiled CSS and assets, and get
         <strong class="text-content font-medium">native, editable Figma layers</strong> in a few manual steps.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -269,10 +268,10 @@
         </div>
 
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
-          <h3 class="text-lg font-bold tracking-tight mb-2">Private by design — no public URL needed</h3>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Private work uses a complete local document</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            The plugin parses your pasted HTML/CSS locally inside Figma. You never have to deploy or expose the
-            v0 project — useful for unreleased product work and internal tools.
+            Manual input processes the supplied HTML/CSS inside the plugin workflow. You do not have to deploy, but
+            you must export a complete document with the compiled CSS and assets required to render the v0 project.
           </p>
         </div>
 
@@ -309,15 +308,12 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
-            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML from DevTools</h3>
+            <h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), go to
-              the Elements panel, right-click the root element of the v0 component (or the
-              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> for a full
-              page) and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and
-              images finish loading first for an accurate capture.
+              Use the public v0 preview URL when it is remotely accessible. For a local fork, export a complete HTML document with the generated
+              Tailwind stylesheet, fonts, images, and other required assets. Verify the file before manual input.
             </p>
           </div>
         </article>
@@ -413,9 +409,8 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">How do I convert a Vercel v0 design to Figma?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Open the v0 preview in a browser, open DevTools, right-click the component's root element, choose
-            Copy &gt; Copy outerHTML, and paste into the html2design Figma plugin. v0's React + Tailwind is
-            already computed by the browser, so it transfers as best-effort editable Figma layers.
+            Use a public v0 preview URL, or load a complete HTML document that includes the compiled Tailwind CSS
+            and assets. Editable output maps supported content on a best-effort basis.
           </p>
         </div>
 
@@ -430,8 +425,8 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Do I need to deploy the v0 project first?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            No. Copy the rendered HTML straight from v0's live preview, or run a forked project locally. No
-            public URL is ever required.
+            Not for manual input. A local fork must be exported as a complete document with its generated CSS and
+            assets. URL mode requires a remotely accessible preview.
           </p>
         </div>
 

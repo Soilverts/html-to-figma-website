@@ -23,7 +23,8 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PLUGIN_URL =
   'https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html';
-const TODAY = '2026-07-29';
+const PUBLISHED = '2026-07-29';
+const UPDATED = '2026-08-17';
 
 // =============================================================================
 // TOOLS — one entry per page. Per-tool prose is unique; structure is shared.
@@ -396,6 +397,13 @@ const toolContexts = {
 
 for (const tool of TOOLS) {
   const sourceContext = toolContexts[tool.slug];
+  const sourceName = tool.listName.replace(/ to Figma$/, '');
+  tool.metaDesc =
+    `Import a public ${sourceName} preview or a complete HTML document with its CSS and assets into Figma. Compare Pixel and best-effort Editable output.`;
+  tool.ogDesc = tool.metaDesc;
+  tool.ogImgAlt = `${sourceName} import workflow with Pixel and best-effort Editable output`;
+  tool.cardDesc =
+    `Import a public ${sourceName} preview or a complete HTML/CSS document with Pixel or best-effort Editable output.`;
   tool.twitterDesc =
     `Import a public ${tool.listName} preview or a complete HTML/CSS document into Figma with Pixel or best-effort Editable output.`;
   tool.heroLead =
@@ -601,8 +609,8 @@ function renderPage(t) {
     "description": ${JSON.stringify(t.metaDesc)},
     "url": "${url}",
     "inLanguage": "en",
-    "datePublished": "${TODAY}",
-    "dateModified": "${TODAY}",
+    "datePublished": "${PUBLISHED}",
+    "dateModified": "${UPDATED}",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com", "logo": { "@type": "ImageObject", "url": "https://html2design.com/favicon.svg" } },
     "isPartOf": { "@type": "WebSite", "name": "HTML to Figma", "url": "https://html2design.com/" },
@@ -786,7 +794,7 @@ function updateSitemap(tools) {
   for (const t of tools) {
     const block = `  <url>
     <loc>https://html2design.com/use-cases/${t.slug}</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${UPDATED}</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/${t.slug}.svg</image:loc>
       <image:title>${t.listName}</image:title>

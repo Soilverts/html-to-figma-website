@@ -2,7 +2,7 @@
 
 > html2design is a Figma plugin for importing pasted HTML or a public website URL into Figma. It offers editable native layers and a lossless Pixel mode for URL captures.
 
-Last updated: 2026-07-14
+Last updated: 2026-08-17
 
 ## Product facts
 
@@ -19,7 +19,7 @@ Last updated: 2026-07-14
 
 ### Manual HTML import
 
-Paste HTML, load an HTML file, or copy rendered markup from browser DevTools. This workflow processes the supplied markup inside the Figma plugin. It works with localhost, Storybook, private staging pages, and authenticated applications because html2design does not need to fetch the source URL.
+Paste HTML or load an HTML file. This workflow processes only the document supplied inside the Figma plugin. For localhost, Storybook, private staging pages, and authenticated applications, provide a complete HTML document with the CSS and assets required to render it. Isolated outerHTML preserves markup and inline styles, but it does not embed external stylesheets, runtime CSS, fonts, or computed values shown in DevTools.
 
 Manual import creates native Figma frames, text, shapes, images, and a layer hierarchy. It is best for editable output. CSS layouts are reproduced with fixed positioning; html2design does not automatically generate Figma Auto Layout, Components, Variants, Variables, or interactions.
 
@@ -45,8 +45,8 @@ Canvas, WebGL, video, and complex large SVG content may be rasterized in URL cap
 ## Supported inputs
 
 - Public websites through URL import
-- Rendered HTML from React, Next.js, Vue, Nuxt, Angular, Svelte, Astro, Remix, and other web frameworks
-- Tailwind CSS, Bootstrap, CSS-in-JS, CSS Modules, Sass output, and plain CSS after browser rendering
+- Complete HTML exports from React, Next.js, Vue, Nuxt, Angular, Svelte, Astro, Remix, and other web frameworks
+- Tailwind CSS, Bootstrap, CSS-in-JS, CSS Modules, Sass output, and plain CSS when the generated CSS is included or reachable
 - Localhost, Storybook, authenticated pages, and private tools through manual HTML import
 - Static HTML files and pasted HTML/CSS
 
@@ -58,10 +58,19 @@ Canvas, WebGL, video, and complex large SVG content may be rasterized in URL cap
 - Imported text and layout are static snapshots; animations and interactive behavior are not recreated.
 - Claims of perfect editable conversion for every website are not accurate.
 
+## Claude Design and Claude Code
+
+- Claude Design can export standalone HTML. Verify the exported file in a browser, then load the complete document in html2design for best-effort editable output: https://support.claude.com/en/articles/14604416-get-started-with-claude-design
+- Claude Code also has an official Figma MCP workflow for sending live web interfaces to Figma as editable layers: https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server
+- html2design public URL capture remains useful when a Claude-built preview is publicly reachable and Pixel mode or an independent Editable comparison is needed.
+
 ## Primary pages
 
 - [Website](https://html2design.com/): Product overview
 - [URL to Figma](https://html2design.com/use-cases/url-to-figma): URL workflow, modes, limits, and troubleshooting
+- [Claude Design to Figma](https://html2design.com/use-cases/claude-to-figma): Standalone HTML export, public preview, and official Claude Code MCP paths
+- [Tailwind CSS to Figma](https://html2design.com/use-cases/tailwind-to-figma): Public build or complete HTML with compiled Tailwind CSS
+- [Figma design handoff from HTML](https://html2design.com/use-cases/developer-handoff): Versioned browser-state review workflow
 - [Output quality](https://html2design.com/result-quality): Real browser-to-Figma comparison, visible differences, and current automated test coverage
 - [Guide](https://html2design.com/guide): Manual HTML workflow
 - [Pricing](https://html2design.com/pricing): Plans, trial, and URL allowances

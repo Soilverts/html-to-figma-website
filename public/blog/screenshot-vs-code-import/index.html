@@ -127,7 +127,7 @@
         "name": "What is the best way to import a website into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The best method depends on your use case. For editable design files, use html2design (paste outerHTML from DevTools). For quick visual reference only, a screenshot or browser extension capture works. For full-page live site import, a Chrome extension like html.to.design captures scrollable pages automatically."
+          "text": "The best method depends on the goal. For visual reference, use a screenshot or html2design Pixel mode. For best-effort editable output, use a public URL or a complete HTML document with the CSS and assets it needs. Isolated outerHTML does not include external or computed CSS."
         }
       },
       {
@@ -268,7 +268,7 @@
       <p>Tools in this category include Figma's built-in image placement, browser screenshot plugins, and capture-based extensions that photograph the rendered page without reading the underlying code. The output is always the same: a rasterized image layer with no sub-layers, no text, and no fills you can re-style.</p>
 
       <h2>What "Code Import" Actually Means</h2>
-      <p>Code import means reading the actual HTML markup and CSS styles — either by pasting outerHTML from DevTools or via a browser extension that reads the live DOM — and converting those structures into native Figma primitives.</p>
+      <p>Code import means translating a public browser-rendered page or a complete HTML/CSS document into supported Figma primitives. Isolated outerHTML is only sufficient when all required styling and assets are already included.</p>
       <p>Tools like <a href="/blog/how-to-convert-html-to-figma">html2design</a> take the HTML/CSS you paste and produce a Figma frame tree: each element becomes a frame or shape, each text node becomes a Figma text layer with real font settings, each background becomes a Figma fill. The output is a fully structured layer hierarchy that lives inside Figma's design system.</p>
 
       <h2>Side-by-Side Comparison</h2>
@@ -375,7 +375,7 @@
       <h3>What it does well</h3>
       <p>Code import via <a href="/blog/how-to-convert-html-to-figma">html2design</a> converts the structural intent of the original design back into Figma primitives. Every text node becomes a Figma text layer with real typography settings. Every background color becomes a Figma fill. Every border becomes a Figma stroke. The resulting layers are first-class Figma objects — they can be renamed, grouped into components, connected to Styles and Variables, and used in Auto Layout constraints.</p>
       <p>For teams doing <a href="/blog/design-system-migration">design system migration work</a>, this is transformative. Instead of rebuilding a 200-component library by hand, you export HTML from each component and convert it into a Figma frame. The font settings are already correct. The spacing is already there. What remains is cleanup and component-ification — not reconstruction.</p>
-      <p>Code import also handles responsive work well. Resize the browser to the mobile breakpoint, right-click the root element, copy outerHTML, and paste it into html2design. You get a mobile-width frame with the exact layout the browser computed — not a manually resized desktop layout that approximates mobile.</p>
+      <p>For responsive review, prepare the target mobile viewport and capture that public URL state or export a complete document for it. Import each breakpoint separately and compare the static frame with the browser source.</p>
 
       <h3>Where it falls short</h3>
       <p>Code import requires access to the source HTML — either via DevTools or a browser extension. For pages you do not control, this is rarely a problem (DevTools works on any page). But for complex single-page applications with heavy client-side rendering, the outerHTML captured at a given moment may not represent all states the component can be in. You need to trigger each interactive state manually and capture separately.</p>
@@ -426,7 +426,7 @@
       <h2>Hybrid Approach: When to Use Both</h2>
       <p>The methods are not mutually exclusive. A practical workflow for capturing complex pages:</p>
       <ol>
-        <li><strong>Code import the component or section</strong> you need to edit — paste the outerHTML of the relevant element into html2design, get editable layers.</li>
+        <li><strong>Import the component or section</strong> from a public preview or complete HTML/CSS document to get best-effort editable layers.</li>
         <li><strong>Screenshot the surrounding context</strong> — capture the full page as a screenshot and place it on the canvas at reduced opacity behind your editable component frame.</li>
         <li><strong>Use the screenshot as reference only</strong> — design against it, but ensure the deliverable layers come from the code import, not the screenshot.</li>
       </ol>
@@ -436,7 +436,7 @@
       <p>The workflow takes about two minutes for any component:</p>
       <ol>
         <li>Open your page in Chrome or Firefox and navigate to the section you want to import.</li>
-        <li>Right-click the root element of your component → Inspect → right-click the highlighted node in the Elements panel → Copy → Copy outerHTML.</li>
+        <li>Copy the public preview URL, or export a complete HTML document with its required CSS and assets.</li>
         <li>In Figma, open the html2design plugin (Plugins → html2design).</li>
         <li>Paste your HTML into the plugin panel and click Convert.</li>
         <li>Review the generated frame, rename layers, and clean up any unnecessary nesting.</li>

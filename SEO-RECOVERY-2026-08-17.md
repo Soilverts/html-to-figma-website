@@ -37,3 +37,22 @@ Use Search Console data with its normal reporting delay. Do not judge this relea
 - Day 28: evaluate position and conversion movement for the mapped query groups.
 
 Do not reverse the mapping based on daily volatility. Reconsider only if a mapped page loses impressions for two consecutive complete weekly windows or Google persistently selects another page for the same intent.
+
+## August 17 opportunity release
+
+Fresh OpenSEO, Search Console, and DataForSEO checks found that the crawl/indexing layer is healthy:
+
+- The completed OpenSEO crawl covered 95 pages with 0 technical issues.
+- Ten priority URLs were inspected in Search Console; all were indexed and Google's canonical matched the declared canonical.
+- August 1-14 produced 55 clicks and 1,862 impressions, versus 42 clicks and 1,494 impressions for July 18-31.
+- GA4 is not connected in OpenSEO, so this release can measure search visibility but not landing-page conversion quality yet.
+
+The next gains are page-level rather than a sitewide technical rewrite:
+
+| Opportunity | Evidence | Action in this release |
+| --- | --- | --- |
+| `claude design to figma` | 140 US volume, KD 9, transactional intent | Reframed `/use-cases/claude-to-figma` around Claude Design standalone HTML export, while preserving the official Claude Code MCP path |
+| `figma design handoff from html` | 201 impressions over three months, average position 18.89, 0 clicks | Reframed `/use-cases/developer-handoff` around a versioned, verifiable HTML-to-Figma review workflow |
+| `convert tailwind css to figma` | 204 impressions over three months, average position 25.67, 0 clicks | Aligned `/use-cases/tailwind-to-figma` with public build or complete HTML plus compiled CSS |
+
+Product-fact quality is now a release gate. High-intent pages cannot instruct users to copy isolated outerHTML as if it contained external or computed CSS, and automated checks block automatic Auto Layout/Variables and universal-fidelity claims.

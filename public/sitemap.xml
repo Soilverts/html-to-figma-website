@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/react-component-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/react-component-to-figma.svg</image:loc>
       <image:title>React Component to Figma</image:title>
@@ -172,7 +172,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/screenshot-vs-code-import</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/screenshot-vs-code-import.svg</image:loc>
       <image:title>Screenshot vs Code Import — HTML to Figma Methods Compared</image:title>
@@ -181,7 +181,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/css-grid-to-figma-auto-layout</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/css-grid-to-figma-auto-layout.svg</image:loc>
       <image:title>CSS Grid and Flexbox to Figma Auto Layout</image:title>
@@ -217,7 +217,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/design-tokens-code-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/design-tokens-code-to-figma.svg</image:loc>
       <image:title>Design Tokens from Code to Figma</image:title>
@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://html2design.com/blog/component-library-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/blog/component-library-to-figma.svg</image:loc>
       <image:title>Import Component Library into Figma</image:title>
@@ -289,7 +289,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases.svg</image:loc>
       <image:title>HTML to Figma Use Cases — Every Framework and Platform</image:title>
@@ -325,7 +325,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/developer-handoff</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/developer-handoff.svg</image:loc>
       <image:title>Developer Handoff to Figma</image:title>
@@ -334,7 +334,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/vue-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/vue-to-figma.svg</image:loc>
       <image:title>Vue.js to Figma</image:title>
@@ -451,7 +451,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/storybook-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/storybook-to-figma.svg</image:loc>
       <image:title>Storybook to Figma</image:title>
@@ -496,7 +496,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/tailwind-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/tailwind-to-figma.svg</image:loc>
       <image:title>Tailwind CSS to Figma</image:title>
@@ -592,7 +592,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/claude-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/claude-to-figma.svg</image:loc>
       <image:title>Claude to Figma</image:title>
@@ -601,7 +601,7 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/v0-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/use-cases/v0-to-figma.svg</image:loc>
       <image:title>v0 to Figma</image:title>
@@ -610,46 +610,81 @@
   </url>
   <url>
     <loc>https://html2design.com/use-cases/bolt-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/chatgpt-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/cursor-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
-  </url>
-  <url>
-    <loc>https://html2design.com/use-cases/github-copilot-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://html2design.com/use-cases/google-stitch-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/lovable-to-figma</loc>
-    <lastmod>2026-07-16</lastmod>
-  </url>
-  <url>
-    <loc>https://html2design.com/use-cases/magic-patterns-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/magicpath-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/magicpath-to-figma.svg</image:loc>
+      <image:title>MagicPath to Figma</image:title>
+      <image:caption>Convert UI generated by MagicPath into native, editable Figma layers</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://html2design.com/use-cases/replit-agent-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
-  </url>
-  <url>
-    <loc>https://html2design.com/use-cases/visily-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://html2design.com/use-cases/github-copilot-to-figma</loc>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/github-copilot-to-figma.svg</image:loc>
+      <image:title>GitHub Copilot to Figma</image:title>
+      <image:caption>Convert UI written by GitHub Copilot (and Copilot Workspace) into native, editable Figma layers</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://html2design.com/use-cases/windsurf-to-figma</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/windsurf-to-figma.svg</image:loc>
+      <image:title>Windsurf to Figma</image:title>
+      <image:caption>Convert UI built with Windsurf (Codeium's AI IDE) into native, editable Figma layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/magic-patterns-to-figma</loc>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/magic-patterns-to-figma.svg</image:loc>
+      <image:title>Magic Patterns to Figma</image:title>
+      <image:caption>Convert UI generated by Magic Patterns into native, editable Figma layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/google-stitch-to-figma</loc>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/google-stitch-to-figma.svg</image:loc>
+      <image:title>Google Stitch to Figma</image:title>
+      <image:caption>Import a browser-rendered Google Stitch interface into Figma from HTML or a public preview URL</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/visily-to-figma</loc>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/visily-to-figma.svg</image:loc>
+      <image:title>Visily to Figma</image:title>
+      <image:caption>Convert UI generated by Visily into native, editable Figma layers</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://html2design.com/use-cases/replit-agent-to-figma</loc>
+    <lastmod>2026-08-17</lastmod>
+    <image:image>
+      <image:loc>https://html2design.com/og/use-cases/replit-agent-to-figma.svg</image:loc>
+      <image:title>Replit Agent to Figma</image:title>
+      <image:caption>Convert apps built by Replit Agent into native, editable Figma layers</image:caption>
+    </image:image>
   </url>
 </urlset>

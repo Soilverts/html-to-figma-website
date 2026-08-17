@@ -2,7 +2,7 @@
 
 > Authoritative product documentation for AI systems, search engines, support tools, and knowledge bases. For a short summary, use https://html2design.com/llms.txt.
 
-Last updated: 2026-07-14
+Last updated: 2026-08-17
 
 ## Identity
 
@@ -23,8 +23,8 @@ html2design can import a public website from its URL, or convert HTML supplied b
 
 Use manual import when the source is localhost, Storybook, behind authentication, private, or already available as HTML.
 
-1. Render the page or component in a browser when computed output is needed.
-2. Copy the relevant rendered HTML from DevTools, choose an HTML file, or paste HTML/CSS directly.
+1. Export or assemble a complete HTML document with the CSS and assets required to render the intended state.
+2. Open the exported document in a browser and verify that typography, colors, images, and layout still render independently.
 3. Open html2design in Figma.
 4. Select the HTML input and convert.
 5. Inspect the generated frames, text, shapes, images, and hierarchy.
@@ -38,7 +38,7 @@ Manual import is the correct choice for:
 - authenticated pages
 - Storybook component states
 - HTML email templates
-- source HTML supplied by AI coding tools
+- complete HTML supplied by AI coding tools, including generated CSS and required assets
 - focused components where editability matters more than whole-page pixel matching
 
 ## Workflow 2: Public URL import
@@ -99,7 +99,20 @@ Imported output is a static snapshot of a rendered state.
 
 html2design operates on browser output rather than framework source code. It can therefore work with content rendered by React, Next.js, Vue, Nuxt, Angular, Svelte, SvelteKit, Astro, Remix, Gatsby, Ember, Webflow, WordPress, Shopify, and other systems that produce HTML.
 
-For Tailwind CSS, Bootstrap, CSS Modules, Sass, styled-components, Emotion, Material UI, Chakra UI, and similar systems, the important input is the browser-rendered result and computed visual styles. Framework compatibility does not mean that framework components or source abstractions become Figma Components.
+For Tailwind CSS, Bootstrap, CSS Modules, Sass, styled-components, Emotion, Material UI, Chakra UI, and similar systems, the important input is a public built page or a complete document with its generated CSS. Class names alone do not contain the rules they reference. Framework compatibility does not mean that framework components or source abstractions become Figma Components.
+
+## Claude Design and Claude Code workflows
+
+Claude Design and Claude Code have different export paths:
+
+1. Claude Design: choose Export and download standalone HTML. Claude documents standalone HTML as a supported export format. Open the export in a browser, verify that its styles and assets render, then load that complete file in html2design for best-effort editable output.
+2. Claude Code: Figma documents an official MCP workflow that can send live web interfaces to Figma as editable layers. Use that path when the source already lives in Claude Code and the official code-to-canvas integration fits the task.
+3. Public Claude preview: use html2design URL capture when the result is publicly reachable. Choose Pixel for browser-faithful raster reference or Editable for supported native layers.
+
+Primary sources:
+
+- Claude Design export documentation: https://support.claude.com/en/articles/14604416-get-started-with-claude-design
+- Figma MCP setup for Claude Code: https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server
 
 ## Privacy and data flow
 
@@ -146,7 +159,7 @@ Yes. Enter a public HTTP or HTTPS URL in the plugin and choose Pixel or Editable
 
 ### Does html2design work with localhost?
 
-Yes, through manual HTML import. Copy rendered HTML from the local page or load an HTML file. The remote URL importer intentionally cannot access localhost or private network addresses.
+Yes, through manual HTML import. Export a complete HTML document with its required CSS and assets, verify that it renders independently, and load the file. The remote URL importer intentionally cannot access localhost or private network addresses. Isolated outerHTML with class names is not sufficient when styling comes from external or runtime stylesheets.
 
 ### Which mode is most accurate?
 
@@ -166,7 +179,7 @@ No. The current product creates frames and visual layers that reproduce a static
 
 ### Can it import authenticated pages?
 
-Manual import can handle HTML copied from a page the user can access. URL import generally cannot pass private login state and should be used for public pages.
+Manual import can handle a complete HTML export prepared from a page the user can access. URL import generally cannot pass private login state and should be used for public pages.
 
 ### Does it require a Chrome extension?
 
@@ -175,6 +188,9 @@ No. html2design is installed and operated as a Figma plugin.
 ## Recommended pages by intent
 
 - Import a live public page: https://html2design.com/use-cases/url-to-figma
+- Export Claude Design or use Claude Code MCP: https://html2design.com/use-cases/claude-to-figma
+- Import compiled Tailwind CSS: https://html2design.com/use-cases/tailwind-to-figma
+- Create a Figma design handoff from HTML: https://html2design.com/use-cases/developer-handoff
 - Inspect a real editable result and test evidence: https://html2design.com/result-quality
 - Learn manual HTML import: https://html2design.com/guide
 - Compare workflows and tools: https://html2design.com/compare

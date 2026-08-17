@@ -14,7 +14,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/cursor-to-figma" />
   <meta property="og:title" content="Cursor to Figma — Turn Cursor-Built UI Into Figma Layers" />
-  <meta property="og:description" content="Cursor writes real frontend code. Run it, copy the rendered HTML, and html2design turns it into native, editable Figma layers." />
+  <meta property="og:description" content="Import a public Cursor-built preview or a complete HTML document with its CSS and assets into best-effort editable Figma layers." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/cursor-to-figma.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -68,7 +68,7 @@
       {
         "@type": "Question",
         "name": "How do I convert UI built with Cursor to Figma?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Cursor is an AI code editor that writes real frontend code into your project. Run the project's dev server (for example npm run dev), open the page in a browser, open DevTools (F12), right-click the root element in the Elements panel, and choose Copy > Copy outerHTML. Paste that HTML into the html2design Figma plugin and click Generate. The browser resolves the code Cursor wrote to computed CSS, which html2design rebuilds as native, editable Figma layers." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Publish the intended Cursor-built state at a review URL, or export a complete HTML document with its generated CSS and assets. Use URL Pixel mode for visual reference or Editable/manual input for supported native layers, then compare the result with the browser source." }
       },
       {
         "@type": "Question",
@@ -125,8 +125,8 @@
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">Cursor wrote the code; now design on top of it.</strong>
-        Cursor builds real frontend code in your editor — run it, and the browser resolves it to computed CSS.
-        Copy the rendered HTML, paste into html2design, and get
+        Cursor builds real frontend code in your editor. Publish a preview URL or export a complete HTML/CSS document,
+        load it in html2design, and get
         <strong class="text-content font-medium">native, editable Figma layers</strong> in a few manual steps.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -147,7 +147,7 @@
       </p>
       <p class="text-content-muted leading-relaxed max-w-3xl">
         Unlike hosted AI builders, Cursor produces code in a normal local project, so the path to Figma is the
-        classic developer workflow: run the dev server, copy the rendered HTML, paste into html2design — then
+        developer workflow: run the app, publish a review URL or export a complete document, import it — then
         refine the result in Figma instead of rebuilding it by hand.
       </p>
     </div>
@@ -189,8 +189,8 @@
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
-          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3></div>
-          <div class="text-content-muted leading-relaxed space-y-3"><p>Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd>), Elements panel, right-click the root element (or the component's wrapper), choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>. Let fonts and images finish loading first.</p></div>
+          <div><p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p><h3 class="text-xl font-bold tracking-tight">Choose the complete source</h3></div>
+          <div class="text-content-muted leading-relaxed space-y-3"><p>Use a public branch preview, or export a complete HTML document with its generated CSS and assets. Verify the intended route, state, fonts, and images before importing.</p></div>
         </article>
         <div class="border-t border-gray-100"></div>
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
@@ -223,9 +223,9 @@
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-10">Frequently asked questions</h2>
       <div class="space-y-6">
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with Cursor to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Run the project Cursor built, open the page in a browser, open DevTools, right-click the root element, Copy &gt; Copy outerHTML, and paste into the html2design plugin. The rendered output transfers as best-effort editable Figma layers.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">How do I convert UI built with Cursor to Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Use a public branch preview or load a complete HTML document with its generated CSS and assets. Compare the imported output with the source before handoff.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Does the framework Cursor used matter?</h3><p class="text-sm text-content-muted leading-relaxed">No. html2design reads the rendered DOM and computed styles, not the source, so React, Vue, Svelte, or plain HTML all import the same way.</p></div>
-        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — right-click the component's root element (or use Storybook) and copy its outerHTML instead of the whole body.</p></div>
+        <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Can I import a single component?</h3><p class="text-sm text-content-muted leading-relaxed">Yes, if you publish an isolated Storybook state or export a complete component document with all required CSS and assets.</p></div>
         <div class="border-l-4 border-accent pl-6"><h3 class="text-base font-bold mb-2">Are the imported designs editable in Figma?</h3><p class="text-sm text-content-muted leading-relaxed">Yes — native editable text, vector paths, image fills, and measured frames. Not a screenshot.</p></div>
       </div>
     </div>

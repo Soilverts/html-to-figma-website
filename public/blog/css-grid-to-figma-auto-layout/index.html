@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>CSS Grid &amp; Flexbox to Figma Auto Layout Guide (2026)</title>
-  <meta name="description" content="Convert CSS Grid and Flexbox layouts into Figma Auto Layout. Preserve responsive breakpoints, spacing systems, and alignment rules as native Figma constraints." />
+  <meta name="description" content="Import CSS Grid and Flexbox as measured Figma frames, then rebuild responsive behavior with Auto Layout. Learn the mappings, limits, and cleanup steps." />
   <meta name="keywords" content="css grid to figma, flexbox to figma auto layout, css grid figma, figma auto layout from css, convert css layout figma, figma css grid import" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/blog/css-grid-to-figma-auto-layout" />
   <meta property="og:title" content="CSS Grid &amp; Flexbox to Figma Auto Layout Guide (2026)" />
-  <meta property="og:description" content="Convert CSS Grid and Flexbox layouts into Figma Auto Layout. Preserve responsive breakpoints, spacing systems, and alignment rules as native Figma constraints." />
+  <meta property="og:description" content="Import CSS Grid and Flexbox as measured frames, then apply Figma Auto Layout manually for responsive behavior." />
   <meta property="og:image" content="https://html2design.com/og/blog/css-grid-to-figma-auto-layout.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -239,7 +239,7 @@
 
     <!-- GEO: Definition block -->
     <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:0.75rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>CSS Grid to Figma</strong> is the process of converting <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS Grid</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">CSS Flexbox</a> layout structures into native <a href="https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Auto Layout</a> frames — preserving spacing, alignment, and visual structure from your code without manual recreation. The html2design plugin reads computed CSS positions and sizes, producing accurately positioned frames that serve as a starting point for applying Figma Auto Layout.</p>
+      <p style="margin:0;color:#1E40AF;font-size:0.9rem;line-height:1.7;"><strong>CSS Grid to Figma</strong> is the process of importing one rendered Grid or Flexbox state as measured Figma geometry, then rebuilding responsive behavior with <a href="https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties" target="_blank" rel="noopener noreferrer" style="color:#2563EB;">Figma Auto Layout</a>. html2design does not convert CSS layout rules into Auto Layout automatically; the imported frame is a starting point for manual structure and constraint work.</p>
     </div>
 
     <h2>Why CSS Layout Conversion Matters</h2>
@@ -250,7 +250,7 @@
       The <strong>manual path</strong> requires recreating every container, gap, and alignment value by hand. For a card grid with 12 items and 3 breakpoints, that's dozens of measurements to get right. A single component can take 15–30 minutes to accurately translate.
     </p>
     <p>
-      <strong>html2design</strong> solves the first half of this problem: it reads the browser's computed layout values and creates a Figma frame that <em>looks exactly like</em> your CSS layout. The second half — converting fixed-position frames into true Figma Auto Layout — takes 2–5 minutes of manual work per component, versus recreating from scratch.
+      <strong>html2design</strong> solves the first half of this problem: it imports supported browser geometry into a Figma frame that should be compared with the source. The second half — converting fixed-position frames into true Figma Auto Layout — is manual and varies with component complexity.
     </p>
 
     <h2>CSS Grid vs. Flexbox vs. Figma Auto Layout</h2>

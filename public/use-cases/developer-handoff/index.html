@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>Developer to Designer Handoff — Code to Figma Guide</title>
-  <meta name="description" content="Bridge the dev-to-design gap. Convert live code into editable Figma frames for accurate designer handoffs — no screenshot or manual layer-tracing needed." />
+  <title>Figma Design Handoff from HTML: Code-to-Canvas Guide</title>
+  <meta name="description" content="Create a Figma handoff from shipped HTML or a complete local document. Compare URL Pixel and best-effort Editable output, then review the differences." />
   <meta name="keywords" content="developer to designer handoff figma, code to design handoff, dev to design figma, code to figma workflow, developer handoff figma, html to figma handoff, react to figma handoff, figma developer handoff" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -15,8 +15,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/use-cases/developer-handoff" />
-  <meta property="og:title" content="Developer to Designer Handoff — Code to Figma Guide" />
-  <meta property="og:description" content="Bridge the dev-to-design gap. Convert live code into editable Figma frames for accurate designer handoffs — no screenshot or manual layer-tracing needed." />
+  <meta property="og:title" content="Figma Design Handoff from HTML: Code-to-Canvas Guide" />
+  <meta property="og:description" content="Use a public URL or complete HTML document as a review baseline in Figma, with clear Pixel and Editable tradeoffs." />
   <meta property="og:image" content="https://html2design.com/og/use-cases/developer-handoff.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -26,8 +26,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Developer to Designer Handoff — Code to Figma Guide" />
-  <meta name="twitter:description" content="Bridge the dev-to-design gap. Convert live code into editable Figma frames for accurate designer handoffs — no screenshot or manual layer-tracing needed." />
+  <meta name="twitter:title" content="Figma Design Handoff from HTML: Code-to-Canvas Guide" />
+  <meta name="twitter:description" content="Turn a public URL or complete HTML document into a Figma review baseline, then compare the imported state with the browser source." />
   <meta name="twitter:image" content="https://html2design.com/og/use-cases/developer-handoff.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -39,12 +39,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Developer to Designer Handoff with Figma — Code to Design Workflow",
-    "description": "Bridge the gap between dev and design. Convert live code into editable Figma designs for accurate designer handoffs using the html2design plugin.",
+    "name": "Figma Design Handoff from HTML: Code-to-Canvas Guide",
+    "description": "How to create a design handoff from a public web page or complete HTML document, choose Pixel or Editable output, and review differences in Figma.",
     "url": "https://html2design.com/use-cases/developer-handoff",
     "inLanguage": "en",
     "datePublished": "2026-03-23",
-    "dateModified": "2026-04-17",
+    "dateModified": "2026-08-17",
     "author": {
       "@type": "Organization",
       "name": "HTML to Figma",
@@ -112,7 +112,7 @@
         "name": "How do I hand off code to a designer in Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use HTML to Figma (html2design). Copy the rendered HTML from your browser's DevTools or directly from localhost, paste it into the Figma plugin, and the plugin generates native, editable Figma layers. Your designer gets an exact digital twin of the live component — with real typography, colors, and layout — that they can iterate on immediately."
+          "text": "Prepare the exact browser state you want reviewed. For a deployed page, import its public URL and choose Pixel for visual reference or Editable for supported native layers. For local or private work, export a complete HTML document with the CSS and assets it needs, then use manual input. Compare the Figma result with the browser before using it as a handoff baseline."
         }
       },
       {
@@ -120,7 +120,7 @@
         "name": "Can I convert React components to Figma for a designer handoff?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Render your React component in the browser (via localhost, Storybook, or Next.js dev server), inspect the rendered HTML in DevTools, copy the outerHTML, and paste it into the html2design plugin. The plugin converts the rendered output into Figma layers — framework-agnostic."
+          "text": "Yes. Publish the React or Storybook state at a review URL, or export a complete HTML document with the generated CSS and assets. html2design works from browser output rather than React source abstractions, so Components, Variables, Auto Layout, and interactions are not created automatically."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "What is the best way to share code changes with a designer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The fastest method is to paste the rendered HTML into Figma via the html2design plugin. This gives the designer an editable representation of the actual code — not a screenshot — so they can make design changes directly in Figma and hand back a spec that matches the real implementation."
+          "text": "Share a versioned preview URL plus the viewport, route, data state, and commit being reviewed. Import that state into Figma as Pixel reference or best-effort Editable layers, annotate implementation differences, and keep the source URL linked so reviewers can verify the handoff."
         }
       },
       {
@@ -136,7 +136,7 @@
         "name": "Does the component need to be deployed to convert it for a handoff?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. HTML to Figma works with localhost, Storybook, any local dev server, or even static HTML files. There is no requirement for a public URL or a browser extension. Developers can convert unreleased components directly from their local branch."
+          "text": "A public deployment is not required for manual input, but localhost cannot be entered in URL mode. For private or local work, provide a complete HTML document with its required CSS and reachable assets. An isolated outerHTML fragment with class names does not include external or computed CSS."
         }
       }
     ]
@@ -179,15 +179,15 @@
   <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
     <div class="max-w-3xl">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Use Case · Developer Handoff</p>
-      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: March 2026</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: August 17, 2026</p>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
-        Code to Design<br />
-        Handoff — In Figma
+        Figma Design Handoff<br />
+        from HTML
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
-        Stop sending screenshots to your designers. Convert live code into
-        <strong class="text-content font-medium">editable Figma layers</strong> — with real typography, accurate spacing, and
-        correct colors — so designers can iterate directly on the real implementation.
+        Turn a shipped page or complete HTML document into a
+        <strong class="text-content font-medium">verifiable Figma review baseline</strong>. Choose Pixel mode for
+        browser-faithful reference or Editable mode for supported native layers, then document the differences.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
@@ -206,12 +206,17 @@
   <!-- GEO definition paragraph -->
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is "developer-to-designer handoff" with html2design?</h2>
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-6">What is a Figma design handoff from HTML?</h2>
       <p class="text-content-muted leading-relaxed max-w-3xl mb-4">
-        <strong class="text-content">Developer-to-designer handoff with html2design</strong> means copying the <code class="bg-white border border-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code> of a shipped component from browser DevTools and pasting it into the html2design Figma plugin — converting the production implementation into editable Figma layers in a few manual steps. No Chrome extension, no public URL, no manual layer recreation required.
+        <strong class="text-content">A Figma design handoff from HTML</strong> uses a browser-rendered implementation
+        as a review baseline on the Figma canvas. Import a deployed state by public URL, or use a complete local HTML
+        document that includes its required CSS and assets. URL Pixel mode preserves the browser appearance as raster
+        tiles; Editable mode and manual input create best-effort native layers for supported content.
       </p>
       <p class="text-content-muted leading-relaxed max-w-3xl mb-10">
-        This workflow runs in reverse to the traditional Figma handoff: instead of Figma → developer, it goes developer → Figma. Developers paste rendered HTML; designers receive editable, measured Figma frames to inspect against what shipped.
+        The result is a static snapshot, not a live connection to source code. It does not automatically recreate
+        Figma Components, Variables, Auto Layout, interactions, or every browser effect. Keep the source URL, viewport,
+        state, and commit with the handoff, and verify the import against the browser before approving changes.
       </p>
       <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-8">Why developer-to-designer handoffs break down</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -234,9 +239,10 @@
 
         <div class="bg-white border border-gray-200 rounded-2xl p-6">
           <p class="text-2xl mb-3">🌐</p>
-          <h3 class="text-lg font-bold tracking-tight mb-2">Extension tools need a live URL</h3>
+          <h3 class="text-lg font-bold tracking-tight mb-2">Private states need a complete source</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Tools that capture web pages via a Chrome extension require a deployed, public URL. Most in-progress features live on localhost or behind a VPN — those tools can't help here.
+            Localhost and authenticated states are not reachable through public URL capture. Manual input works when
+            the exported HTML includes the CSS and assets required to render the state independently.
           </p>
         </div>
 
@@ -247,10 +253,10 @@
   <!-- The workflow -->
   <section class="py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The developer-to-designer handoff workflow</h2>
+      <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">The Figma design handoff from HTML workflow</h2>
       <p class="text-content-muted mb-10 max-w-2xl">
-        HTML to Figma turns the code-to-design loop into a one-step operation. Developers export rendered HTML;
-        designers get editable Figma layers without rebuilding every layer manually.
+        Preserve the exact implementation state and its provenance. The imported frame is evidence for review, not
+        a replacement for the source application or its design system.
       </p>
 
       <div class="space-y-10">
@@ -259,19 +265,16 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 01</p>
-            <h3 class="text-xl font-bold tracking-tight">Dev runs the component locally</h3>
+            <h3 class="text-xl font-bold tracking-tight">Prepare the exact review state</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Render the component or page in your local dev environment — React via
-              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:3000</code>,
-              Storybook via <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost:6006</code>,
-              Next.js, Vue, Angular — whatever your stack is.
-              No deployment, no staging, no public URL required.
+              Open the route, component state, viewport, theme, locale, and data set the designer must review.
+              Record the source URL or commit so the Figma frame can be traced back to a specific implementation.
             </p>
             <p>
-              This is the key advantage over Chrome-extension tools: you hand off a feature before it ships,
-              giving designers time to review and suggest changes while iteration is still cheap.
+              Wait for fonts, images, application data, and lazy content to load. Capture separate states for hover,
+              menus, breakpoints, or themes rather than assuming one static frame represents the full interaction.
             </p>
           </div>
         </article>
@@ -282,18 +285,17 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
-            <h3 class="text-xl font-bold tracking-tight">Copy the rendered HTML</h3>
+            <h3 class="text-xl font-bold tracking-tight">Choose a public URL or complete HTML</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Open DevTools (<kbd class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">F12</kbd> or right-click &gt; Inspect),
-              find the root element of the component in the Elements tab,
-              right-click it, and choose <strong class="text-content">Copy &gt; Copy outerHTML</strong>.
+              Use the deployed preview URL when it is publicly reachable. URL mode lets a remote browser load the
+              page with its styles and assets. For localhost, private staging, or static artifacts, export a complete
+              HTML document with the generated CSS and reachable assets, then use manual input.
             </p>
             <p>
-              For a full-page handoff, select the <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;main&gt;</code> or
-              <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;body&gt;</code> element.
-              For a component-level handoff — a new button, modal, card, or nav variant — select just that element.
+              Do not treat isolated outerHTML as a visual export unless all necessary styling is inline. Class names
+              alone do not contain external stylesheets, runtime CSS, fonts, or values shown in DevTools' Computed panel.
             </p>
           </div>
         </article>
@@ -304,17 +306,17 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 03</p>
-            <h3 class="text-xl font-bold tracking-tight">Paste into html2design, share the Figma link</h3>
+            <h3 class="text-xl font-bold tracking-tight">Choose Pixel or Editable output</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Open Figma, run the <strong class="text-content">HTML to Figma</strong> plugin, paste the copied HTML, and click
-              <strong class="text-content">Generate</strong>.
-              The plugin creates a native Figma frame with accurate typography, spacing, colors, and structure — not a screenshot.
+              In URL mode, use Pixel when the browser appearance is the review artifact. Use Editable when supported
+              text, fills, images, and frames need to be selected or changed. Manual file input produces best-effort
+              editable layers and requires a complete document.
             </p>
             <p>
-              Share the Figma frame link with your designer. They can open it immediately, see the exact rendered state of the
-              component, leave comments, adjust spacing, swap colors, and hand back a Figma-native spec — all without ever touching the codebase.
+              Browser-only media, complex SVG, canvas, video, filters, and unavailable fonts may be rasterized or need
+              cleanup. Choose the mode based on the review goal rather than assuming every element maps one-to-one.
             </p>
           </div>
         </article>
@@ -325,17 +327,17 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 04</p>
-            <h3 class="text-xl font-bold tracking-tight">Designer iterates, dev implements the diff</h3>
+            <h3 class="text-xl font-bold tracking-tight">Compare, annotate, and share the handoff</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Because the Figma frame starts from the real code — not a wireframe or guess —
-              the designer's changes represent a true delta from the current state.
-              No "wait, does that match what's live?" back-and-forth.
+              Compare typography, wrapping, image crops, fixed elements, overflow, effects, and responsive geometry
+              against the source. Mark conversion differences separately from intentional design changes.
             </p>
             <p>
-              The developer can inspect the Figma frame for exact spacing values, color hex codes, and font specs —
-              and implement only the changes that were intentionally modified. Faster iteration, fewer regressions.
+              Share the Figma link together with the source URL or commit and the captured viewport. The designer can
+              then rebuild approved patterns as Components, Variables, Styles, and Auto Layout where the system needs them.
+              See the <a href="/result-quality" class="text-accent hover:underline">measured output example</a> for current editable limits.
             </p>
           </div>
         </article>
@@ -348,23 +350,23 @@
   <section class="bg-surface border-y border-gray-100 py-10 md:py-14">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl md:text-4xl font-black tracking-tighter mb-2">What designers receive in the Figma handoff</h2>
-      <p class="text-content-muted mb-10">Every generated frame is a native Figma object — not a screenshot, not a plugin wrapper.</p>
+      <p class="text-content-muted mb-10">Pixel output is a raster reference. Editable output maps supported content to native Figma objects and may require cleanup.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
           <h3 class="text-base font-bold tracking-tight">Editable text layers</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Every text node from the HTML becomes a real Figma text layer with the correct font, size, weight, and color.
-            Designers can select it, edit the copy, adjust the style, and use Figma's native type tools — not rasterized text.
+            Supported text becomes editable Figma text. Missing fonts and differences between browser and Figma text
+            metrics can change wrapping, line height, or spacing and should be reviewed.
           </p>
         </div>
 
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
           <h3 class="text-base font-bold tracking-tight">Accurate spacing and layout</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            The plugin reads computed CSS — not declared values — so padding, margin, gap, and alignment reflect what the browser
-            actually renders. Designers see the component at its true dimensions, not an approximation.
+            Editable mode uses measured browser geometry to position supported frames. CSS and Figma use different layout
+            models, so responsive behavior and some alignment rules become a static state rather than native constraints.
           </p>
         </div>
 
@@ -380,8 +382,8 @@
         <div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-3">
           <h3 class="text-base font-bold tracking-tight">Real fill values, not guesses</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Colors from CSS custom properties, Tailwind classes, or hardcoded hex values all appear as Figma fill values.
-            Designers see the exact same colors the code produces — no estimating from a screenshot.
+            Supported CSS colors, borders, opacity, gradients, and shadows can map to Figma properties. Advanced filters,
+            blend behavior, and browser-only effects may need manual correction or raster fallback.
           </p>
         </div>
 
@@ -399,9 +401,9 @@
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">React &amp; Next.js</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Render your component via <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">npm run dev</code> or in Storybook,
-            inspect the rendered HTML in DevTools, copy the outerHTML, and paste it into the plugin.
-            Works with JSX, TypeScript, styled-components, CSS Modules, and Tailwind CSS.
+            Publish the intended component state at a review URL, or export a complete document with its generated CSS
+            and assets. JSX, TypeScript, CSS Modules, CSS-in-JS, and Tailwind source abstractions do not become Figma
+            components automatically.
             See also: <a href="/blog/react-component-to-figma" class="text-accent hover:underline">React Component to Figma guide</a> and <a href="/use-cases/storybook-to-figma" class="text-accent hover:underline">Storybook to Figma</a>.
           </p>
         </div>
@@ -409,18 +411,17 @@
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">Tailwind CSS</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Tailwind utility classes produce computed CSS that the plugin reads perfectly. The generated Figma frame reflects
-            your exact spacing scale, color palette, and typography config — making it easy to keep Figma in sync with your
-            design tokens. See also: <a href="/blog/tailwind-to-figma" class="text-accent hover:underline">Tailwind to Figma guide</a>.
+            Use a public built page or a complete HTML document that includes the compiled Tailwind stylesheet. Supported
+            rendered values can inform Figma fills, text, and measured geometry, but Variables and design tokens must be
+            rebuilt or applied afterward. See also: <a href="/blog/tailwind-to-figma" class="text-accent hover:underline">Tailwind to Figma guide</a>.
           </p>
         </div>
 
         <div class="border border-gray-200 rounded-2xl p-6 md:p-8">
           <h3 class="text-lg font-bold tracking-tight mb-2">Vue, Angular, Svelte, and others</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            HTML to Figma is framework-agnostic. It reads the final rendered HTML and computed styles — not the source code.
-            Any frontend framework that renders HTML in the browser will work. Open the component in your browser,
-            copy the rendered HTML, and paste it into the plugin.
+            HTML to Figma works from browser output rather than framework source code. Use a reachable public preview or
+            package a complete HTML/CSS artifact; framework class names without the styles they reference are insufficient.
           </p>
         </div>
 
@@ -446,18 +447,18 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Does the component need to be deployed for the handoff?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            No. HTML to Figma works with any HTML you can open in a browser — including
-            <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>, Storybook,
-            local dev servers, and even static HTML files. You can hand off unreleased features without deploying to staging.
+            Not for manual input. URL mode cannot fetch <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">localhost</code>
+            or a private network. Export a complete HTML document with the CSS and assets it needs, verify that file in a
+            browser, and load it into the plugin.
           </p>
         </div>
 
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Will the designer be able to edit the output in Figma?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Yes. The output is native Figma layers — frames, text layers, fills, and groups.
-            Designers use the standard Figma interface to edit them. There is no plugin required to view or modify
-            the generated frames, only to generate them.
+            Editable mode creates native Figma layers for supported content; Pixel mode creates raster tiles. Designers
+            can edit native nodes normally, but complex media, unsupported effects, and raster fallbacks are not
+            individually editable.
           </p>
         </div>
 
@@ -473,10 +474,9 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">What about complex components with hover states or animations?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            HTML to Figma captures the static rendered state of the HTML. For hover states, trigger them in the browser before
-            copying (force <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">:hover</code> via DevTools),
-            then import each state separately as a named frame in Figma. You can combine them into a Figma component with
-            interactive variants for the full handoff.
+            HTML to Figma captures a static rendered state. Prepare and import each important hover, open, loading, error,
+            theme, or breakpoint state separately. Interactions and animations are not recreated automatically; build
+            Figma variants and prototype links afterward when the handoff requires them.
           </p>
         </div>
 
@@ -508,7 +508,7 @@
            class="group block border border-gray-200 rounded-2xl p-6 hover:border-accent/30 hover:shadow-md transition-all">
           <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Tutorial</p>
           <h3 class="text-base font-bold tracking-tight group-hover:text-accent transition-colors">Tailwind to Figma</h3>
-          <p class="text-sm text-content-muted mt-1 leading-relaxed">How to extract Tailwind design tokens as Figma Variables and Styles.</p>
+          <p class="text-sm text-content-muted mt-1 leading-relaxed">Import compiled Tailwind output, then rebuild recurring values as Figma Variables and Styles.</p>
         </a>
 
         <a href="/compare"

@@ -129,6 +129,8 @@ test('key static pages have canonical metadata, responsive headers, and no runti
   const routes = [
     '/use-cases/url-to-figma',
     '/use-cases/claude-to-figma',
+    '/use-cases/developer-handoff',
+    '/use-cases/tailwind-to-figma',
     '/guide',
     '/pricing',
     '/result-quality',
@@ -164,6 +166,13 @@ test('manual import guidance stays consistent across high-intent pages', async (
     '/faq',
     '/alternatives',
     '/use-cases/claude-to-figma',
+    '/use-cases/developer-handoff',
+    '/use-cases/bolt-to-figma',
+    '/use-cases/lovable-to-figma',
+    '/use-cases/chatgpt-to-figma',
+    '/use-cases/cursor-to-figma',
+    '/use-cases/v0-to-figma',
+    '/use-cases/vue-to-figma',
     '/use-cases/storybook-to-figma',
     '/use-cases/tailwind-to-figma',
     '/blog/how-to-convert-html-to-figma',
@@ -173,6 +182,19 @@ test('manual import guidance stays consistent across high-intent pages', async (
     '/blog/tailwind-to-figma',
     '/blog/webflow-to-figma',
   ];
+  const completeDocumentRoutes = new Set([
+    '/use-cases/claude-to-figma',
+    '/use-cases/developer-handoff',
+    '/use-cases/bolt-to-figma',
+    '/use-cases/lovable-to-figma',
+    '/use-cases/chatgpt-to-figma',
+    '/use-cases/cursor-to-figma',
+    '/use-cases/v0-to-figma',
+    '/use-cases/vue-to-figma',
+    '/use-cases/storybook-to-figma',
+    '/use-cases/tailwind-to-figma',
+    '/blog/react-component-to-figma',
+  ]);
 
   for (const route of routes) {
     const response = await request.get(route);
@@ -180,15 +202,26 @@ test('manual import guidance stays consistent across high-intent pages', async (
     const html = await response.text();
     expect(html, route).not.toMatch(/all computed styles are included|every computed style transfers/i);
     expect(html, route).not.toMatch(/html2design chrome extension|chrome extension mode/i);
+    if (completeDocumentRoutes.has(route)) {
+      expect(html, route).not.toMatch(/copy\s*(?:>|&gt;|→)\s*copy outerhtml|copy the rendered html|paste outerhtml to import/i);
+    }
   }
 
   const guide = await (await request.get('/guide')).text();
   expect(guide).toContain('does not embed external CSS');
 
   const claude = await (await request.get('/use-cases/claude-to-figma')).text();
-  expect(claude).toContain('Figma');
-  expect(claude).toContain('MCP');
-  expect(claude).toContain('self-contained HTML document');
+  expect(claude).toContain('Claude Design to Figma: HTML Export or Figma MCP');
+  expect(claude).toContain('standalone HTML');
+  expect(claude).toContain('support.claude.com/en/articles/14604416-get-started-with-claude-design');
+
+  const handoff = await (await request.get('/use-cases/developer-handoff')).text();
+  expect(handoff).toContain('Figma Design Handoff from HTML');
+  expect(handoff).toContain('static snapshot, not a live connection to source code');
+
+  const tailwind = await (await request.get('/use-cases/tailwind-to-figma')).text();
+  expect(tailwind).toContain('Convert Tailwind CSS to Figma: URL or Complete HTML');
+  expect(tailwind).toContain('compiled Tailwind stylesheet');
 });
 
 test('result evidence and sitemap remain inspectable', async ({ page, request }) => {
