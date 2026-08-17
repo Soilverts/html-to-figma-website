@@ -61,7 +61,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Open in Figma
+                Install HTML to Figma plugin
                 <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

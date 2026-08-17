@@ -40,8 +40,8 @@ const faqs = [
     answer: "Yes. Export the rendered HTML of a component from your codebase, import it into Figma with HTML to Figma, and compare the resulting layers against your Figma design tokens and components. This workflow lets teams catch drift between the coded implementation and the design file without manual redrawing."
   },
   {
-    question: "How does HTML to Figma compare to URL-based tools like html.to.design?",
-    answer: "HTML to Figma supports both workflows without a browser extension. Paste HTML for localhost, private builds, and email templates, or enter a public URL and choose lossless Pixel mode or best-effort Editable mode."
+    question: "How does HTML to Figma compare with other website import tools?",
+    answer: "HTML to Figma supports pasted or file-based HTML for local and private sources, plus public URL capture without a browser extension. Choose lossless Pixel mode for a visual reference or best-effort Editable mode for native layers."
   },
   {
     question: "Can I use HTML to Figma with VS Code or my IDE?",

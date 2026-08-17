@@ -69,11 +69,13 @@ const App: React.FC = () => {
     }
 
     const reveal = () => setShowSections(true);
+    const idleReveal = window.setTimeout(reveal, 1_500);
     window.addEventListener('scroll', reveal, { once: true, passive: true });
     window.addEventListener('wheel', reveal, { once: true, passive: true });
     window.addEventListener('pointerdown', reveal, { once: true, passive: true });
     window.addEventListener('touchstart', reveal, { once: true, passive: true });
     return () => {
+      window.clearTimeout(idleReveal);
       window.removeEventListener('scroll', reveal);
       window.removeEventListener('wheel', reveal);
       window.removeEventListener('pointerdown', reveal);

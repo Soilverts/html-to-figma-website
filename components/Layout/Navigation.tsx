@@ -128,7 +128,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, sections,
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         aria-hidden={!isOpen}
-        {...(!isOpen ? { inert: '' } : {})}
+        inert={!isOpen}
       >
         <div className="max-h-[calc(100svh-7rem)] overflow-y-auto no-scrollbar flex flex-col gap-5 px-6 py-4 text-center">
           {sections.map((id, i) => (

@@ -28,10 +28,11 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
 
   const response = await page.goto('/');
   expect(response?.status()).toBe(200);
+  await expect(page).toHaveTitle('HTML to Figma Plugin - Import a Website URL or HTML');
   await expect(
     page.getByRole('heading', { level: 1, name: 'HTML to Figma. Pixel or editable.', exact: true }),
   ).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Open in Figma' })).toHaveAttribute('href', new RegExp(`^${FIGMA_PLUGIN}`));
+  await expect(page.getByRole('link', { name: 'Install HTML to Figma plugin' })).toHaveAttribute('href', new RegExp(`^${FIGMA_PLUGIN}`));
   await expect(page.getByRole('link', { name: 'See real results' })).toHaveAttribute('href', '/result-quality');
   expect(await page.locator('h1').evaluate((element) => getComputedStyle(element).animationName)).toBe('none');
   expect(await page.locator('link[rel="preload"][href="/index.css"]').count()).toBe(0);
@@ -54,6 +55,33 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
     'https://api.html2design.com/v1/checkout/yearly?source=website_home',
   );
   expect(errors).toEqual([]);
+});
+
+test('homepage renders its complete content without requiring user interaction', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#features')).toBeAttached({ timeout: 5_000 });
+  await expect(page.locator('#pricing')).toBeAttached({ timeout: 15_000 });
+  await expect(page.locator('#faq')).toBeAttached({ timeout: 15_000 });
+});
+
+test('priority search intents resolve to distinct pages', async ({ page, request }) => {
+  const homepage = await (await request.get('/')).text();
+  expect(homepage).not.toContain('html.to.design');
+
+  await page.goto('/guide');
+  await expect(page).toHaveTitle('HTML to Figma Plugin Guide: Import HTML or Websites');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('HTML to Figma Plugin Guide: Import HTML or Websites');
+  await expect(page.getByRole('link', { name: 'HTML to Figma plugin on Figma Community' }).first()).toHaveAttribute(
+    'href',
+    new RegExp(`^${FIGMA_PLUGIN}`),
+  );
+
+  await page.goto('/alternatives');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Best html.to.design Alternatives');
+  await expect(page.getByRole('link', { name: 'html2design vs html.to.design', exact: true }).first()).toHaveAttribute(
+    'href',
+    '/compare/html2design-vs-html-to-design',
+  );
 });
 
 test('pricing offers direct attributed checkout with trial as a secondary path', async ({ page }) => {

@@ -244,6 +244,25 @@ for (const header of ['Strict-Transport-Security:', 'Content-Security-Policy:'])
 }
 
 const homepage = readFileSync(join(ROOT, 'index.html'), 'utf8');
+const guidePage = readFileSync(join(PUBLIC, 'guide/index.html'), 'utf8');
+const alternativesPage = readFileSync(join(PUBLIC, 'alternatives/index.html'), 'utf8');
+const homepageTitle = match(homepage, /<title>([\s\S]*?)<\/title>/i);
+const homepageH1 = match(homepage, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i).replace(/<[^>]+>/g, ' ');
+if (/html\.to\.design/i.test(`${homepageTitle} ${homepageH1}`)) {
+  errors.push('index.html: competitor-branded intent must not be assigned to the homepage title or H1');
+}
+if (!/<title>HTML to Figma Plugin/i.test(guidePage)) {
+  errors.push('public/guide/index.html: title must own the HTML to Figma plugin guide intent');
+}
+if (!/HTML to Figma plugin on Figma Community/i.test(guidePage)) {
+  errors.push('public/guide/index.html: missing contextual link to the Figma Community plugin');
+}
+if (!/<h1[^>]*>[\s\S]*html\.to\.design[\s\S]*Alternatives/i.test(alternativesPage)) {
+  errors.push('public/alternatives/index.html: H1 must own the html.to.design alternatives intent');
+}
+if (!/href=["']\/compare\/html2design-vs-html-to-design["']/i.test(alternativesPage)) {
+  errors.push('public/alternatives/index.html: missing direct product comparison link');
+}
 const staticRoot = homepage.match(/<div id=["']root["']>([\s\S]*?)<!-- Noscript SEO Fallback:/i)?.[1] ?? '';
 const staticRootText = staticRoot
   .replace(/<(?:script|style)\b[^>]*>[\s\S]*?<\/(?:script|style)>/gi, ' ')

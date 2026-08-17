@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://html2design.com/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og-image.png</image:loc>
       <image:title>HTML to Figma - Convert HTML/CSS Code to Native Figma Designs</image:title>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://html2design.com/guide</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/guide.svg</image:loc>
       <image:title>Complete Guide to HTML to Figma</image:title>
@@ -41,7 +41,7 @@
   </url>
   <url>
     <loc>https://html2design.com/alternatives</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <image:image>
       <image:loc>https://html2design.com/og/alternatives.svg</image:loc>
       <image:title>HTML to Figma Alternatives Comparison</image:title>
