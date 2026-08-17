@@ -394,6 +394,22 @@ const toolContexts = {
   'replit-agent-to-figma':
     "Replit Agent runs the generated application in a hosted webview. Open the preview in its own tab when possible, verify the active route and data state, and prefer its public preview URL over extracting an isolated DOM fragment.",
 };
+const sourceReviewContexts = {
+  'magicpath-to-figma':
+    'Before capture, check whether the MagicPath canvas exposes a share link or downloadable web artifact. Preserve custom typefaces, generated images, responsive artboards, and the selected interaction state. If only a visual canvas is available, Pixel capture is a more honest reference than inventing editable structure from incomplete markup.',
+  'github-copilot-to-figma':
+    'Tie the design review to a pull request, commit SHA, feature flag set, and CI preview. Confirm that fixture data and environment variables produce the same UI a reviewer will see. A versioned branch preview makes later comments traceable; a local export should identify the build command and commit that produced it.',
+  'windsurf-to-figma':
+    'Treat the Windsurf workspace as source code, not as the visual artifact. Run the intended route, record the Cascade change set, create a production build, and verify responsive states before import. Include generated stylesheets and public assets in a local package, especially when the workspace uses Vite, Next.js, or runtime CSS injection.',
+  'magic-patterns-to-figma':
+    'Magic Patterns already offers a direct design handoff, so compare that native result first. Use html2design when the browser preview is the review authority, when Pixel evidence is required, or when a separate editable translation helps expose implementation differences. Keep the pattern variant, theme, and viewport alongside the captured frame.',
+  'google-stitch-to-figma':
+    'Google Stitch has its own Figma path and should remain the default when it preserves the intended design semantics. An html2design capture is useful for checking a published browser implementation, documenting visual drift, or preserving a Pixel reference. Record which Stitch screen, export revision, and breakpoint produced the reviewed state.',
+  'visily-to-figma':
+    'Visily is primarily a wireframing and UI design environment with a native Figma bridge. Use that bridge for design objects, and use html2design only when a browser-rendered prototype is the evidence under review. Check whether placeholder content, generated imagery, fonts, and screen dimensions survive outside the Visily workspace.',
+  'replit-agent-to-figma':
+    'Replit previews may depend on deployment secrets, seeded databases, generated routes, and webview-specific origins. Open the app in a standalone tab, choose deterministic fixture data, wait for runtime requests, and record the Repl revision. For private work, package the built document and assets rather than assuming webview DOM markup is portable.',
+};
 
 for (const tool of TOOLS) {
   const sourceContext = toolContexts[tool.slug];
@@ -412,7 +428,8 @@ for (const tool of TOOLS) {
   tool.whatIsP1 =
     `<strong class="text-content">"${tool.listName}"</strong> is a code-to-design workflow for importing the tool's rendered interface into Figma. ` +
     `${sourceContext} html2design can capture an accessible public preview or process a complete HTML/CSS document. ` +
-    'Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes.';
+    'Editable mode maps supported text, images, fills, borders, effects, vectors, and measured geometry to native Figma nodes. ' +
+    sourceReviewContexts[tool.slug];
   tool.whyItWorks = [
     {
       t: `Source handling for ${tool.listName}`,
