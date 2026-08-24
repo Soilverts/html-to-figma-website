@@ -50,6 +50,10 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
     'href',
     'https://api.html2design.com/v1/checkout/monthly?source=website_home',
   );
+  await expect(page.getByRole('link', { name: 'Buy monthly — $12' })).toHaveAttribute(
+    'data-funnel-source',
+    'website_home',
+  );
   await expect(page.getByRole('link', { name: 'Buy annual — $96' })).toHaveAttribute(
     'href',
     'https://api.html2design.com/v1/checkout/yearly?source=website_home',
@@ -84,7 +88,7 @@ test('priority search intents resolve to distinct pages', async ({ page, request
   );
 });
 
-test('pricing offers direct attributed checkout with trial as a secondary path', async ({ page }) => {
+test('pricing makes the manual trial explicit and keeps direct checkout attributed', async ({ page }) => {
   await page.goto('/pricing');
 
   await expect(page.getByRole('link', { name: /Buy monthly/ })).toHaveAttribute(
@@ -95,10 +99,15 @@ test('pricing offers direct attributed checkout with trial as a secondary path',
     'href',
     'https://api.html2design.com/v1/checkout/yearly?source=website_pricing',
   );
-  await expect(page.getByRole('link', { name: /Start with 10 free conversions/ })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /Try 10 manual imports free/ })).toHaveAttribute(
     'href',
     new RegExp(`^${FIGMA_PLUGIN}`),
   );
+  await expect(page.getByRole('link', { name: /Buy monthly/ })).toHaveAttribute(
+    'data-funnel-plan',
+    'monthly',
+  );
+  await expect(page.locator('body')).toContainText('Public URL capture requires Pro');
   await expect(page.locator('script[data-event="pricing_view"][data-source="website_pricing"]')).toHaveCount(1);
 });
 
@@ -285,6 +294,14 @@ test('result evidence and sitemap remain inspectable', async ({ page, request })
     sha256_equal: true,
     rmse: 0,
   });
+});
+
+test('review page presents product evidence rather than internal test metrics', async ({ page }) => {
+  await page.goto('/reviews');
+
+  await expect(page.getByRole('heading', { name: 'Inspect the actual output' })).toBeVisible();
+  await expect(page.locator('body')).not.toContainText('75 unit tests');
+  await expect(page.locator('body')).not.toContainText('statement and branch coverage');
 });
 
 test('comparison and current-product pages stay factual and responsive', async ({ page }) => {

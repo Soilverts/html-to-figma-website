@@ -11,11 +11,21 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         Simple, transparent pricing.
                     </h2>
                     <p className="text-content-muted text-base md:text-lg font-light">
-                        Professional tools at a fraction of the manual cost.
+                        Try manual HTML import first. Public URL capture unlocks with Pro.
                     </p>
-                    <a href="/pricing" className="inline-block mt-3 text-sm font-medium text-content underline underline-offset-4 hover:text-accent">
-                        See plan details and billing FAQ
-                    </a>
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                        <a
+                            href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex min-h-12 items-center bg-content px-6 py-3 text-sm font-semibold text-white hover:bg-black"
+                        >
+                            Try 10 manual imports free
+                        </a>
+                        <a href="/result-quality" className="inline-flex min-h-12 items-center text-sm font-medium text-content underline underline-offset-4 hover:text-accent">
+                            Inspect a real result
+                        </a>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -40,15 +50,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                     />
                 </div>
                 <p className="mt-8 text-center text-sm text-content-muted">
-                    Want to test the workflow first?{' '}
-                    <a
-                        href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-content underline underline-offset-4 hover:text-accent"
-                    >
-                        Start with 10 free conversions in Figma
-                    </a>
+                    Secure checkout by Waffo. License keys are delivered by email after payment.
                 </p>
             </div>
         </section>
@@ -111,10 +113,16 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, originalPrice, peri
                 ))}
             </ul>
 
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="block w-full mt-auto">
-                <button className={`w-full py-3.5 px-6 rounded-xl font-bold transition-all duration-200 ${isPopular ? 'bg-gray-900 text-white hover:bg-black hover:shadow-lg' : 'bg-white text-content border border-gray-200 hover:bg-gray-50'}`}>
-                    {title === 'Monthly' ? 'Buy monthly — $12' : 'Buy annual — $96'}
-                </button>
+            <a
+                href={checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-funnel-checkout
+                data-funnel-source="website_home"
+                data-funnel-plan={title === 'Monthly' ? 'monthly' : 'yearly'}
+                className={`block w-full mt-auto py-3.5 px-6 text-center rounded-lg font-bold transition-all duration-200 ${isPopular ? 'bg-gray-900 text-white hover:bg-black hover:shadow-lg' : 'bg-white text-content border border-gray-200 hover:bg-gray-50'}`}
+            >
+                {title === 'Monthly' ? 'Buy monthly — $12' : 'Buy annual — $96'}
             </a>
         </motion.div>
     );
