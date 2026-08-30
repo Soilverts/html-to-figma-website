@@ -6,6 +6,13 @@ const LINEA_FIXTURE = 'https://html2design-linea-fixture.pages.dev/';
 const LINEA_SOURCE_SHA256 = 'a19db59ac6a211835c84b25bfaa392ea210e60857bdbef5e9fc186c9482d478b';
 const IS_LIVE = process.env.PLAYWRIGHT_BASE_URL === 'https://html2design.com';
 
+test.beforeEach(async ({ page }) => {
+  if (!IS_LIVE) return;
+  await page.route('https://api.html2design.com/v1/telemetry', async (route) => {
+    await route.fulfill({ status: 204 });
+  });
+});
+
 function watchPageErrors(page: Page) {
   const errors: string[] = [];
   page.on('console', (message: { type: () => string; text: () => string }) => {
