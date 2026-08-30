@@ -135,10 +135,14 @@ test('pricing creates checkout with POST only after a real click', async ({ page
   });
   await page.goto('/pricing');
 
+  const popupPromise = page.waitForEvent('popup');
   await page.getByRole('link', { name: /Start monthly/ }).click();
+  const popup = await popupPromise;
 
   await expect.poll(() => checkoutMethod).toBe('POST');
-  await expect.poll(() => page.url()).toContain('#checkout-ready');
+  await popup.waitForURL(/#checkout-ready/);
+  expect(popup.url()).toContain('#checkout-ready');
+  await expect(page).toHaveURL(/\/pricing$/);
 });
 
 test('mobile homepage keeps the hero and menu usable', async ({ page }) => {

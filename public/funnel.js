@@ -42,11 +42,21 @@
     event.preventDefault();
     if (checkout.getAttribute('aria-busy') === 'true') return;
     checkout.setAttribute('aria-busy', 'true');
+    const checkoutWindow = window.open('about:blank', '_blank');
+    if (checkoutWindow) checkoutWindow.opener = null;
     emit(
       'checkout_click',
       source,
       plan
     );
+
+    const openCheckout = (url) => {
+      if (checkoutWindow && !checkoutWindow.closed) {
+        checkoutWindow.location.replace(url);
+      } else {
+        location.assign(url);
+      }
+    };
 
     try {
       const response = await fetch(
@@ -60,10 +70,10 @@
         checkoutUrl.protocol !== 'https:' ||
         checkoutUrl.hostname !== 'pancake.waffo.ai'
       ) throw new Error('Invalid checkout URL');
-      location.assign(checkoutUrl.href);
+      openCheckout(checkoutUrl.href);
     } catch {
       // The un-attributed GET remains a resilient fallback for real clicks.
-      location.assign(checkout.href);
+      openCheckout(checkout.href);
     } finally {
       checkout.removeAttribute('aria-busy');
     }
