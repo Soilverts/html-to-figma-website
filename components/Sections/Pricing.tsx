@@ -35,22 +35,23 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         period="/mo"
                         description="Flexible for short sprints and single projects."
                         features={["Manual HTML import", "50 URL captures per day", "Pixel and Editable URL modes"]}
-                        checkoutUrl="https://api.html2design.com/v1/checkout/monthly?source=website_home"
+                        label="Start here"
+                        isPopular
+                        checkoutUrl="https://api.html2design.com/v1/checkout/monthly"
                     />
                     <PriceCard
                         title="Yearly"
                         price="$8"
                         originalPrice="$12"
                         period="/mo"
-                        label="Most Popular"
+                        label="Save 33%"
                         description="Best for continuous design operations. Save 33%."
                         features={["Manual HTML import", "200 URL captures per day", "Pixel and Editable URL modes"]}
-                        isPopular
-                        checkoutUrl="https://api.html2design.com/v1/checkout/yearly?source=website_home"
+                        checkoutUrl="https://api.html2design.com/v1/checkout/yearly"
                     />
                 </div>
                 <p className="mt-8 text-center text-sm text-content-muted">
-                    Secure checkout by Waffo. License keys are delivered by email after payment.
+                    Card, Apple Pay, and Google Pay where available. Waffo processes the payment and your license key arrives by email.
                 </p>
             </div>
         </section>
@@ -115,8 +116,6 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, originalPrice, peri
 
             <a
                 href={checkoutUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 data-funnel-checkout
                 data-funnel-source="website_home"
                 data-funnel-plan={title === 'Monthly' ? 'monthly' : 'yearly'}

@@ -66,7 +66,7 @@
     "url": "https://html2design.com/pricing",
     "inLanguage": "en",
     "datePublished": "2026-03-27",
-    "dateModified": "2026-07-14",
+    "dateModified": "2026-08-30",
     "author": { "@type": "Organization", "name": "HTML to Figma", "url": "https://html2design.com" },
     "publisher": {
       "@type": "Organization",
@@ -109,7 +109,7 @@
           "billingIncrement": 1
         },
         "availability": "https://schema.org/InStock",
-        "url": "https://api.html2design.com/v1/checkout/monthly?source=website_pricing"
+        "url": "https://html2design.com/pricing#monthly"
       },
       {
         "@type": "Offer",
@@ -125,7 +125,7 @@
           "billingIncrement": 1
         },
         "availability": "https://schema.org/InStock",
-        "url": "https://api.html2design.com/v1/checkout/yearly?source=website_pricing"
+        "url": "https://html2design.com/pricing#annual"
       }
     ]
   }
@@ -257,7 +257,10 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto">
 
       <!-- Monthly -->
-      <div class="border border-gray-200 rounded-2xl p-8 bg-white hover:shadow-md transition-all">
+      <div id="monthly" class="border-2 border-accent rounded-2xl p-8 bg-white hover:shadow-md transition-all relative scroll-mt-28">
+        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-mono px-2 py-0.5 rounded-full">
+          Start here
+        </div>
         <p class="text-xs font-mono uppercase tracking-widest text-content-muted mb-4">Monthly</p>
         <div class="flex items-baseline gap-1 mb-1">
           <span class="text-4xl font-black tracking-tighter text-content">$12</span>
@@ -292,17 +295,16 @@
           </li>
         </ul>
 
-        <a href="https://api.html2design.com/v1/checkout/monthly?source=website_pricing"
-           target="_blank" rel="noopener noreferrer"
+        <a href="https://api.html2design.com/v1/checkout/monthly"
            data-funnel-checkout data-funnel-source="website_pricing" data-funnel-plan="monthly"
-           class="block w-full text-center text-sm font-medium border-2 border-content text-content px-5 py-3 rounded-full hover:bg-content hover:text-white transition-colors">
-          Buy monthly — $12 &rarr;
+           class="block w-full text-center text-sm font-medium bg-accent text-white px-5 py-3 rounded-full hover:bg-black transition-colors">
+          Start monthly — $12 &rarr;
         </a>
       </div>
 
       <!-- Annual — highlighted -->
-      <div class="border-2 border-accent rounded-2xl p-8 bg-white relative overflow-hidden hover:shadow-md transition-all">
-        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-mono px-2 py-0.5 rounded-full">
+      <div id="annual" class="border border-gray-200 rounded-2xl p-8 bg-white relative overflow-hidden hover:shadow-md transition-all scroll-mt-28">
+        <div class="absolute top-4 right-4 bg-content text-white text-xs font-mono px-2 py-0.5 rounded-full">
           Save 33%
         </div>
         <p class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Annual</p>
@@ -339,11 +341,10 @@
           </li>
         </ul>
 
-        <a href="https://api.html2design.com/v1/checkout/yearly?source=website_pricing"
-           target="_blank" rel="noopener noreferrer"
+        <a href="https://api.html2design.com/v1/checkout/yearly"
            data-funnel-checkout data-funnel-source="website_pricing" data-funnel-plan="yearly"
-           class="block w-full text-center text-sm font-medium bg-accent text-white px-5 py-3 rounded-full hover:bg-black transition-colors">
-          Buy annual — $96 &rarr;
+           class="block w-full text-center text-sm font-medium border-2 border-content text-content px-5 py-3 rounded-full hover:bg-content hover:text-white transition-colors">
+          Choose annual — $96 &rarr;
         </a>
       </div>
 
@@ -351,7 +352,7 @@
 
     <!-- Trust note -->
     <p class="text-center text-xs text-content-muted mt-6 font-mono">
-      Payments are processed by Waffo. A license key is delivered by email.
+      Card, Apple Pay, and Google Pay are available where supported. Waffo processes the payment; your license key is delivered by email.
     </p>
     <p class="text-center text-sm text-content-muted mt-4">
       Need to verify output first?

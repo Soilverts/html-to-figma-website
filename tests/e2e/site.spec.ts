@@ -48,7 +48,7 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
   await expect(page.locator('#pricing')).toBeAttached({ timeout: 15_000 });
   await expect(page.getByRole('link', { name: 'Buy monthly — $12' })).toHaveAttribute(
     'href',
-    'https://api.html2design.com/v1/checkout/monthly?source=website_home',
+    'https://api.html2design.com/v1/checkout/monthly',
   );
   await expect(page.getByRole('link', { name: 'Buy monthly — $12' })).toHaveAttribute(
     'data-funnel-source',
@@ -56,7 +56,7 @@ test('homepage exposes the install path and loads sections on intent', async ({ 
   );
   await expect(page.getByRole('link', { name: 'Buy annual — $96' })).toHaveAttribute(
     'href',
-    'https://api.html2design.com/v1/checkout/yearly?source=website_home',
+    'https://api.html2design.com/v1/checkout/yearly',
   );
   expect(errors).toEqual([]);
 });
@@ -88,27 +88,50 @@ test('priority search intents resolve to distinct pages', async ({ page, request
   );
 });
 
-test('pricing makes the manual trial explicit and keeps direct checkout attributed', async ({ page }) => {
+test('pricing makes the manual trial explicit and attributes only user-initiated checkout', async ({ page }) => {
   await page.goto('/pricing');
 
-  await expect(page.getByRole('link', { name: /Buy monthly/ })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /Start monthly/ })).toHaveAttribute(
     'href',
-    'https://api.html2design.com/v1/checkout/monthly?source=website_pricing',
+    'https://api.html2design.com/v1/checkout/monthly',
   );
-  await expect(page.getByRole('link', { name: /Buy annual/ })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /Choose annual/ })).toHaveAttribute(
     'href',
-    'https://api.html2design.com/v1/checkout/yearly?source=website_pricing',
+    'https://api.html2design.com/v1/checkout/yearly',
   );
   await expect(page.getByRole('link', { name: /Try 10 manual imports free/ })).toHaveAttribute(
     'href',
     new RegExp(`^${FIGMA_PLUGIN}`),
   );
-  await expect(page.getByRole('link', { name: /Buy monthly/ })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /Start monthly/ })).toHaveAttribute(
     'data-funnel-plan',
     'monthly',
   );
+  const schema = await page.locator('script[type="application/ld+json"]').allTextContents();
+  expect(schema.join('\n')).not.toContain('api.html2design.com/v1/checkout');
   await expect(page.locator('body')).toContainText('Public URL capture requires Pro');
   await expect(page.locator('script[data-event="pricing_view"][data-source="website_pricing"]')).toHaveCount(1);
+});
+
+test('pricing creates checkout with POST only after a real click', async ({ page }) => {
+  let checkoutMethod = '';
+  await page.route('https://pancake.waffo.ai/e2e-checkout', async (route) => {
+    await route.fulfill({ status: 200, contentType: 'text/html', body: '<h1>Checkout ready</h1>' });
+  });
+  await page.route('https://api.html2design.com/v1/checkout/monthly?source=website_pricing', async (route) => {
+    checkoutMethod = route.request().method();
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ checkoutUrl: 'https://pancake.waffo.ai/e2e-checkout#checkout-ready' }),
+    });
+  });
+  await page.goto('/pricing');
+
+  await page.getByRole('link', { name: /Start monthly/ }).click();
+
+  await expect.poll(() => checkoutMethod).toBe('POST');
+  await expect.poll(() => page.url()).toContain('#checkout-ready');
 });
 
 test('mobile homepage keeps the hero and menu usable', async ({ page }) => {
