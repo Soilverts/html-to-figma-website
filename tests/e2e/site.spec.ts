@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { expect, test, type Page, type Response } from '@playwright/test';
 
 const FIGMA_PLUGIN = 'https://www.figma.com/community/plugin/1591359863857120491/';
@@ -453,7 +454,7 @@ test('production redirects protocol and www variants to the canonical host', asy
   expect(httpResponse.url()).toBe('https://html2design.com/result-quality?source=e2e');
 });
 
-test('published LINEA fixture remains exact and excluded from indexing', async ({ browser }) => {
+test('published LINEA fixture matches visual evidence and remains excluded from indexing', async ({ browser, request }) => {
   test.skip(!IS_LIVE, 'The published conversion fixture is only verified against production.');
 
   let fixturePage: Page | undefined;
@@ -480,14 +481,26 @@ test('published LINEA fixture remains exact and excluded from indexing', async (
 
   expect(fixtureResponse.headers()['x-robots-tag']).toContain('noindex');
   await expect(fixturePage.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+  await fixturePage.evaluate(() => document.fonts.ready);
   await fixturePage.locator('img').evaluateAll(async (images: HTMLImageElement[]) => {
     await Promise.all(images.map((image) => image.decode().catch(() => undefined)));
   });
   expect(await fixturePage.evaluate(() => document.documentElement.scrollHeight)).toBe(4321);
   await expectNoHorizontalOverflow(fixturePage);
 
-  const screenshot = await fixturePage.screenshot({ fullPage: true, animations: 'disabled' });
-  expect(createHash('sha256').update(screenshot).digest('hex')).toBe(LINEA_SOURCE_SHA256);
+  const baseline = readFileSync(new URL('../../public/results/linea/browser-full.png', import.meta.url));
+  expect(createHash('sha256').update(baseline).digest('hex')).toBe(LINEA_SOURCE_SHA256);
+  const publishedEvidence = await request.get('/results/linea/browser-full.png');
+  expect(publishedEvidence.status()).toBe(200);
+  expect(createHash('sha256').update(await publishedEvidence.body()).digest('hex')).toBe(LINEA_SOURCE_SHA256);
+  // Keep the published evidence immutable; compare rendering, not PNG encoder bytes.
+  await expect(fixturePage).toHaveScreenshot(['linea', 'browser-full.png'], {
+    fullPage: true,
+    animations: 'disabled',
+    threshold: 0.1,
+    // Allow tiny cross-version glyph rasterization drift, not layout changes.
+    maxDiffPixels: 100,
+  });
   expect(errors).toEqual([]);
   await fixturePage.close();
 });

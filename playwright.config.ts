@@ -1,11 +1,18 @@
 import { defineConfig } from '@playwright/test';
 
 const externalBaseURL = process.env.PLAYWRIGHT_BASE_URL;
+const proxyServer = process.env.PLAYWRIGHT_PROXY_SERVER;
 
 export default defineConfig({
   testDir: './tests/e2e',
   timeout: 30_000,
-  expect: { timeout: 8_000 },
+  expect: {
+    timeout: 8_000,
+    toHaveScreenshot: {
+      pathTemplate: '{testDir}/../../public/results/{arg}{ext}',
+    },
+  },
+  updateSnapshots: 'none',
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
@@ -14,6 +21,7 @@ export default defineConfig({
     baseURL: externalBaseURL ?? 'http://127.0.0.1:4173',
     browserName: 'chromium',
     channel: process.env.PLAYWRIGHT_CHANNEL,
+    proxy: proxyServer ? { server: proxyServer, bypass: '127.0.0.1,localhost' } : undefined,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },
