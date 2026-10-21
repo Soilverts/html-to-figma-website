@@ -77,7 +77,13 @@
           "name": "Monthly",
           "price": "12.00",
           "priceCurrency": "USD",
-          "billingIncrement": "P1M",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "12.00",
+            "priceCurrency": "USD",
+            "unitText": "MONTH",
+            "billingIncrement": 1
+          },
           "description": "Manual HTML import and up to 50 public URL captures per day"
         },
         {
@@ -85,7 +91,13 @@
           "name": "Yearly",
           "price": "96.00",
           "priceCurrency": "USD",
-          "billingIncrement": "P1Y",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "96.00",
+            "priceCurrency": "USD",
+            "unitText": "YEAR",
+            "billingIncrement": 1
+          },
           "description": "Manual HTML import and up to 200 public URL captures per day"
         }
       ],
@@ -492,7 +504,7 @@
           <table>
             <thead><tr><th>Feature</th><th>HTML to Figma</th><th>Manual Rebuild</th><th>Screenshot Tools</th></tr></thead>
             <tbody>
-              <tr><td>Native Figma layers</td><td>Yes</td><td>No</td><td>No</td></tr>
+              <tr><td>Native Figma layers</td><td>Yes</td><td>Yes</td><td>No</td></tr>
               <tr><td>Flexbox layout preserved</td><td>Yes</td><td>No</td><td>No</td></tr>
               <tr><td>Typography preservation</td><td>Yes</td><td>Yes</td><td>No</td></tr>
               <tr><td>Styling fidelity (colors, shadows)</td><td>Yes</td><td>Yes</td><td>No</td></tr>

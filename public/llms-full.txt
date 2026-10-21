@@ -2,7 +2,7 @@
 
 > Authoritative product documentation for AI systems, search engines, support tools, and knowledge bases. For a short summary, use https://html2design.com/llms.txt.
 
-Last updated: 2026-08-17
+Last updated: 2026-10-21
 
 ## Identity
 
@@ -23,10 +23,10 @@ html2design can import a public website from its URL, or convert HTML supplied b
 
 Use manual import when the source is localhost, Storybook, behind authentication, private, or already available as HTML.
 
-1. Export or assemble a complete HTML document with the CSS and assets required to render the intended state.
-2. Open the exported document in a browser and verify that typography, colors, images, and layout still render independently.
+1. Export or assemble a complete static HTML document with the visible content in the markup. Manual import removes source JavaScript and event handlers; it does not execute an application bundle.
+2. Include CSS in the document or use reachable absolute stylesheet URLs. Embed images or use reachable absolute image URLs. Selecting an HTML file does not upload neighboring asset files. Verify the exported document's appearance without relying on source JavaScript or a signed-in session.
 3. Open html2design in Figma.
-4. Select the HTML input and convert.
+4. Select the HTML input, load the file or paste the complete document, then click Import. This path creates editable layers and has a 10-conversion manual trial.
 5. Inspect the generated frames, text, shapes, images, and hierarchy.
 
 The supplied markup is processed in the Figma plugin workflow and is not sent to html2design's remote URL-rendering service. License verification still communicates with api.html2design.com.
@@ -45,10 +45,10 @@ Manual import is the correct choice for:
 
 Use URL import for a publicly reachable HTTP or HTTPS page.
 
-1. Open html2design in Figma and select the URL input.
+1. Open html2design in Figma and select the URL input. Public URL capture requires an active Pro license.
 2. Enter a public URL.
 3. Choose Pixel mode or Editable mode.
-4. Start the capture and review the result in Figma.
+4. Click Fetch; this imports the capture directly into Figma. Review the result against the browser source.
 
 The requested URL is sent through html2design's Cloudflare Worker to a remote headless browser service. The browser loads the page, waits for rendered content, and returns capture data to the plugin. Localhost, private network ranges, metadata endpoints, and unsupported schemes are blocked for security.
 
@@ -105,14 +105,15 @@ For Tailwind CSS, Bootstrap, CSS Modules, Sass, styled-components, Emotion, Mate
 
 Claude Design and Claude Code have different export paths:
 
-1. Claude Design: choose Export and download standalone HTML. Claude documents standalone HTML as a supported export format. Open the export in a browser, verify that its styles and assets render, then load that complete file in html2design for best-effort editable output.
+1. Claude Design: choose Export and download standalone HTML. Claude documents standalone HTML as a supported export format. Verify that visible content is already static markup with embedded or reachable CSS and assets; an export that needs source JavaScript must be rendered and exported as a static snapshot first. Load that complete file in html2design for best-effort editable output.
 2. Claude Code: Figma documents an official MCP workflow that can send live web interfaces to Figma as editable layers. Use that path when the source already lives in Claude Code and the official code-to-canvas integration fits the task.
-3. Public Claude preview: use html2design URL capture when the result is publicly reachable. Choose Pixel for browser-faithful raster reference or Editable for supported native layers.
+3. Public Claude preview: open the link while signed out first. A share link that requests a Claude login cannot be captured using the visitor's session. Use a separately hosted public preview for Pro URL capture, or export static HTML for manual import. Choose Pixel for a raster reference or Editable for supported native layers.
 
 Primary sources:
 
 - Claude Design export documentation: https://support.claude.com/en/articles/14604416-get-started-with-claude-design
 - Figma MCP setup for Claude Code: https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server
+- Claude artifact sharing: https://support.claude.com/en/articles/9547008-share-artifacts
 
 ## Privacy and data flow
 
@@ -129,7 +130,7 @@ Do not use URL import for confidential content that is not intended to be fetche
 
 ## Pricing, trial, and usage
 
-- Trial: 10 conversions before a license is required
+- Trial: 10 manual HTML/file/paste conversions. Public URL capture requires Pro and is not included in the trial.
 - Monthly: $12/month
 - Yearly: $96/year, equivalent to $8/month when billed annually
 - Monthly URL allowance: 50 URL captures per day
@@ -191,8 +192,9 @@ No. html2design is installed and operated as a Figma plugin.
 - Export Claude Design or use Claude Code MCP: https://html2design.com/use-cases/claude-to-figma
 - Import compiled Tailwind CSS: https://html2design.com/use-cases/tailwind-to-figma
 - Create a Figma design handoff from HTML: https://html2design.com/use-cases/developer-handoff
-- Inspect a real editable result and test evidence: https://html2design.com/result-quality
-- Learn manual HTML import: https://html2design.com/guide
+- Inspect real browser/Figma screenshots, layer counts, and the evidence manifest: https://html2design.com/result-quality
+- Choose public URL or complete HTML input: https://html2design.com/guide
+- Compare free trials, browser extensions, and input limits: https://html2design.com/alternatives
 - Compare workflows and tools: https://html2design.com/compare
 - Review plans and URL allowances: https://html2design.com/pricing
 - Read limitations and support answers: https://html2design.com/faq

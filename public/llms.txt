@@ -2,7 +2,7 @@
 
 > html2design is a Figma plugin for importing pasted HTML or a public website URL into Figma. It offers editable native layers and a lossless Pixel mode for URL captures.
 
-Last updated: 2026-08-17
+Last updated: 2026-10-21
 
 ## Product facts
 
@@ -11,7 +11,7 @@ Last updated: 2026-08-17
 - Figma plugin ID: 1591359863857120491
 - Monthly plan: $12/month
 - Yearly plan: $96/year
-- Trial: 10 conversions before a license is required
+- Trial: 10 manual HTML/file/paste conversions; public URL capture requires Pro and is not included in the trial
 - URL allowance: 50 captures/day on Monthly; 200 captures/day on Yearly
 - Support: support@html2design.com
 
@@ -19,7 +19,7 @@ Last updated: 2026-08-17
 
 ### Manual HTML import
 
-Paste HTML or load an HTML file. This workflow processes only the document supplied inside the Figma plugin. For localhost, Storybook, private staging pages, and authenticated applications, provide a complete HTML document with the CSS and assets required to render it. Isolated outerHTML preserves markup and inline styles, but it does not embed external stylesheets, runtime CSS, fonts, or computed values shown in DevTools.
+Paste static HTML or load an HTML file. The visible content must already exist in the markup: source JavaScript and event handlers are removed, so manual import does not run a React/Vue app or other scripts. Include CSS in the document or use reachable absolute stylesheet URLs; embed images or use reachable absolute image URLs. Selecting an HTML file does not upload neighboring asset files. Isolated outerHTML preserves markup and inline styles, but it does not embed external stylesheets, runtime CSS, fonts, or computed values shown in DevTools.
 
 Manual import creates native Figma frames, text, shapes, images, and a layer hierarchy. It is best for editable output. CSS layouts are reproduced with fixed positioning; html2design does not automatically generate Figma Auto Layout, Components, Variants, Variables, or interactions.
 
@@ -61,6 +61,7 @@ Canvas, WebGL, video, and complex large SVG content may be rasterized in URL cap
 ## Claude Design and Claude Code
 
 - Claude Design can export standalone HTML. Verify the exported file in a browser, then load the complete document in html2design for best-effort editable output: https://support.claude.com/en/articles/14604416-get-started-with-claude-design
+- For manual import, ensure the exported content exists as static markup without executing source JavaScript. For URL capture, check the preview while signed out: a Claude share link that requires login cannot supply the user's session to the remote browser. Sharing rules: https://support.claude.com/en/articles/9547008-share-artifacts
 - Claude Code also has an official Figma MCP workflow for sending live web interfaces to Figma as editable layers: https://help.figma.com/hc/en-us/articles/39888612464151-Claude-Code-and-Figma-Set-up-the-MCP-server
 - html2design public URL capture remains useful when a Claude-built preview is publicly reachable and Pixel mode or an independent Editable comparison is needed.
 
@@ -71,8 +72,9 @@ Canvas, WebGL, video, and complex large SVG content may be rasterized in URL cap
 - [Claude Design to Figma](https://html2design.com/use-cases/claude-to-figma): Standalone HTML export, public preview, and official Claude Code MCP paths
 - [Tailwind CSS to Figma](https://html2design.com/use-cases/tailwind-to-figma): Public build or complete HTML with compiled Tailwind CSS
 - [Figma design handoff from HTML](https://html2design.com/use-cases/developer-handoff): Versioned browser-state review workflow
-- [Output quality](https://html2design.com/result-quality): Real browser-to-Figma comparison, visible differences, and current automated test coverage
-- [Guide](https://html2design.com/guide): Manual HTML workflow
+- [Output quality](https://html2design.com/result-quality): Real browser-to-Figma screenshots, visible differences, selectable layer counts, and a downloadable evidence manifest
+- [Guide](https://html2design.com/guide): Choose public URL or complete HTML input, then check the imported result
+- [Alternatives](https://html2design.com/alternatives): Free trial limits, browser extensions, private-page access, and editable versus raster workflows
 - [Pricing](https://html2design.com/pricing): Plans, trial, and URL allowances
 - [FAQ](https://html2design.com/faq): Product questions and limitations
 - [Comparison](https://html2design.com/compare): html2design and alternative workflows

@@ -6,7 +6,7 @@
 
   <!-- Primary SEO -->
   <title>HTML to Figma Plugin Guide: Import HTML or Websites</title>
-  <meta name="description" content="Install and use the HTML to Figma plugin. Import a public website URL or complete HTML, choose Pixel or Editable mode, and inspect the result." />
+  <meta name="description" content="Import static HTML with 10 trial conversions, or use Pro to capture a public URL in Pixel or Editable mode. Follow the input checks and import steps." />
   <meta name="keywords" content="html to figma, convert html to figma, html to figma guide, html2design, figma import html, react to figma, vue to figma, tailwind to figma, design system migration figma" />
   <meta name="author" content="HTML to Figma" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://html2design.com/guide" />
   <meta property="og:title" content="HTML to Figma Plugin Guide: Import HTML or Websites" />
-  <meta property="og:description" content="Install the plugin, import a public website URL or complete HTML, and choose Pixel or Editable output." />
+  <meta property="og:description" content="Import static HTML as best-effort editable layers, or use Pro public URL capture with Pixel or Editable output." />
   <meta property="og:image" content="https://html2design.com/og/guide.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="HTML to Figma" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-03-23T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-07-29T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-10-21T00:00:00Z" />
   <meta property="article:author" content="HTML to Figma" />
   <meta property="article:section" content="Guide" />
   <meta property="article:tag" content="html to figma" />
@@ -34,7 +34,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="HTML to Figma Plugin Guide: Import HTML or Websites" />
-  <meta name="twitter:description" content="Step-by-step: convert HTML and CSS — from any site or framework's rendered output — into editable Figma layers in 2 minutes." />
+  <meta name="twitter:description" content="Import static HTML as best-effort editable layers, or use Pro public URL capture with Pixel or Editable output." />
   <meta name="twitter:image" content="https://html2design.com/og/guide.svg" />
 
   <meta name="theme-color" content="#2563EB" />
@@ -47,10 +47,10 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "HTML to Figma Plugin Guide: Import HTML or Websites",
-    "description": "The definitive guide to converting HTML and CSS into native, editable Figma designs. Covers React, Vue, Angular, Svelte, Tailwind, Bootstrap, design system migration, and a comparison of every method.",
+    "description": "Import static HTML or capture public URLs with html2design. Check CSS and assets, choose an output mode, and review supported Figma layers before design handoff.",
     "url": "https://html2design.com/guide",
     "datePublished": "2026-03-23T00:00:00Z",
-    "dateModified": "2026-08-17T00:00:00Z",
+    "dateModified": "2026-10-21T00:00:00Z",
     "inLanguage": "en",
     "image": {
       "@type": "ImageObject",
@@ -120,7 +120,7 @@
         "name": "How do I convert HTML to Figma for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Install html2design from the Figma Community and use the 10 manual HTML trial conversions on representative documents. Public URL capture requires Pro. Paid access is $12/month or $96/year."
+          "text": "Install html2design from Figma Community. Choose a .html/.htm file or paste static HTML with its CSS and embedded or reachable absolute asset URLs, then click Import. The trial includes 10 manual HTML conversions. Public URL capture through Fetch requires Pro."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "Can I convert a React component to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Use public URL capture for a deployed React page. For localhost or Storybook, export a complete HTML document with the generated CSS and assets, then use manual input. Isolated outerHTML does not include CSS Module, Tailwind, or CSS-in-JS stylesheet rules."
+          "text": "Yes. Use Pro URL capture for a deployed React page that renders while signed out. For localhost or Storybook, export static HTML with the rendered content, generated CSS, and embedded or reachable absolute asset URLs. Manual import does not execute source JavaScript; isolated outerHTML does not include external stylesheet rules."
         }
       },
       {
@@ -152,7 +152,7 @@
         "name": "Can I import a full website into Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Import publicly reachable pages one URL at a time with Pixel or Editable mode. For private or local pages, supply complete HTML documents with their required CSS and assets. html2design does not require or provide a browser extension."
+          "text": "Yes, one page at a time. With Pro, verify that the page renders while signed out, choose Pixel or Editable, enter its public HTTP(S) URL, and click Fetch. For private or local pages, supply static HTML with its CSS and embedded or reachable absolute asset URLs, then click Import. Manual import does not execute source scripts or upload neighboring files."
         }
       },
       {
@@ -160,7 +160,7 @@
         "name": "How do I convert Angular components to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use public URL capture for a deployed Angular route. For local Angular output, export a complete HTML document with generated styles and assets. Copying a node with Angular encapsulation attributes but without its stylesheets is not enough to reproduce the design."
+          "text": "Use Pro URL capture for a deployed Angular route that renders while signed out. For local Angular output, export static HTML with generated styles and embedded or reachable absolute asset URLs. Manual import does not execute source scripts; Angular encapsulation attributes alone do not include the stylesheet rules."
         }
       },
       {
@@ -176,7 +176,7 @@
         "name": "Does html2design support Vue and Nuxt?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Use URL capture for a public Vue or Nuxt route. For private output, include Vue's generated scoped CSS with the HTML; the data-v attributes alone do not contain visual style values."
+          "text": "Yes. Use Pro URL capture for a public Vue or Nuxt route that renders while signed out. For private output, export static HTML with Vue's generated scoped CSS and embedded or reachable absolute asset URLs. Manual import does not execute source scripts; data-v attributes alone do not contain visual style values."
         }
       },
       {
@@ -289,13 +289,13 @@
       HTML to Figma Plugin Guide: Import HTML or Websites
     </h1>
     <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed">
-      Install the plugin, import a public URL or complete HTML document, choose Pixel or Editable output, and verify the resulting Figma layers.
+      Import static HTML as best-effort editable layers, or use Pro to capture a public URL in Pixel or Editable mode. Check the source and review the result.
     </p>
     <div class="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
       <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold">HF</div>
       <div>
         <p class="text-sm font-medium">HTML to Figma Team</p>
-        <time datetime="2026-08-17" class="text-xs text-gray-400 font-mono">Updated August 17, 2026</time>
+        <time datetime="2026-10-21" class="text-xs text-gray-400 font-mono">Updated October 21, 2026</time>
       </div>
     </div>
   </header>
@@ -337,44 +337,44 @@
       <li><strong>Legacy application modernisation:</strong> An older codebase has no design files at all. Converting key screens to Figma is the first step toward a modern design process. See the <a href="/use-cases/legacy-migration">legacy migration use case</a> for a detailed workflow.</li>
       <li><strong>Sketch to Figma migration:</strong> Teams moving from Sketch to Figma can use their existing HTML components as the source of truth, skipping the need to recreate designs from scratch. See the <a href="/use-cases/sketch-to-figma">Sketch to Figma migration use case</a>.</li>
       <li><strong>Developer handoff in reverse:</strong> Usually designers hand off to developers. With HTML to Figma, developers hand off back — sharing an accurate visual reference that designers can refine without re-measuring the live app. Read more about <a href="/use-cases/developer-handoff">developer handoff</a>.</li>
-      <li><strong>Design drift audit:</strong> Import the current production UI and compare it side-by-side with the original Figma designs. Every discrepancy is visible immediately.</li>
-      <li><strong>Client presentations:</strong> Import a live staging environment into Figma to create high-fidelity mock-ups for stakeholder reviews without any manual work.</li>
-      <li><strong>Component documentation:</strong> Populate a Figma component library with accurate visual references for every production component, including all states and variants.</li>
+      <li><strong>Design drift audit:</strong> Compare an imported screen with the original Figma design. Check differences against the browser source so conversion artifacts are not mistaken for product changes.</li>
+      <li><strong>Client presentations:</strong> Import a public staging page or complete static HTML export for stakeholder review, then check fonts, layout, and unsupported effects.</li>
+      <li><strong>Component documentation:</strong> Import representative screens as visual references. Capture additional states separately and build reusable Figma components and variants manually.</li>
     </ul>
 
     <div class="tip-box">
-      <p><strong>In short:</strong> if your code is ahead of your Figma file, HTML to Figma conversion is the fastest way to close the gap.</p>
+      <p><strong>In short:</strong> if your code is ahead of your Figma file, conversion can provide a starting point for updating the design, with review and cleanup after import.</p>
     </div>
 
     <!-- Section 2 -->
     <h2 id="how-it-works">2. How It Works — Step by Step</h2>
 
-    <p>html2design has two distinct input paths. Public URL capture loads the page in a remote browser and records resolved visual output. Manual input renders the HTML document you supply inside the plugin, so it can only compute styles that are inline, included in <code>&lt;style&gt;</code> blocks, or available through reachable stylesheet links.</p>
+    <p>html2design has two distinct input paths. Pro URL capture loads a public page in a remote browser. Manual input renders static HTML inside the plugin without executing source scripts. Include CSS inline, in <code>&lt;style&gt;</code> blocks, or through reachable absolute stylesheet URLs; embed images or use reachable absolute image URLs.</p>
 
     <p>URL capture also lets you choose the output contract. Pixel mode uses lossless raster tiles for a close visual reference. Editable mode maps supported text, images, fills, effects, and measured geometry to native Figma nodes. See the focused tutorial: <a href="/blog/how-to-convert-html-to-figma">How to Convert HTML to Figma</a>.</p>
 
     <div class="step-card">
       <div class="step-num">Step 1</div>
       <h3>Choose the input path</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Use a public URL when the page is remotely reachable and you want browser-resolved capture. Use manual input for private or local sources only when you can supply a complete HTML document with its required CSS and assets.</p>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Public URL capture requires Pro: open the URL in a signed-out browser and confirm the page renders without authentication. For private or local sources, use manual static HTML input with its CSS and assets; the trial includes 10 manual HTML conversions.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 2</div>
       <h3>Verify the source is self-contained</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open the HTML file by itself and confirm that it still has the expected colors, fonts, and layout. Copying an isolated element's outerHTML preserves its markup and inline styles, but it does not embed external CSS or the browser's computed-style values.</p>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">For manual input, visible content must already be in the HTML: source JavaScript is not executed. Include CSS in the document or at reachable absolute URLs; embed images or use reachable absolute URLs. Choosing an HTML file does not upload its folder or neighboring assets. A correct browser preview alone is not enough: copying outerHTML does not embed external CSS or computed styles.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 3</div>
-      <h3>Choose Pixel or Editable mode</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">For URL capture, use Pixel mode when visual matching matters most. Use Editable mode when individual supported elements need to remain selectable and you can accept cleanup for browser-only features.</p>
+      <h3>Choose the URL output mode</h3>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">For URL capture, choose Pixel for a raster reference or Editable for supported native nodes that may need cleanup. Manual HTML input creates best-effort editable layers, not Pixel capture.</p>
     </div>
 
     <div class="step-card">
       <div class="step-num">Step 4</div>
       <h3>Import into Figma</h3>
-      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Open html2design from Figma Community. Enter the public URL, load the HTML file, or paste the complete document, then start the import.</p>
+      <p style="color:#374151;margin-bottom:0;line-height:1.7;">Run html2design in Figma. <strong>Public URL (Pro):</strong> choose Pixel or Editable, enter the public HTTP(S) URL, then click <strong>Fetch</strong>; it imports directly. <strong>Manual HTML (10 trial conversions):</strong> use <strong>Choose File</strong> for a <code>.html</code>/<code>.htm</code> file or paste static HTML, then click <strong>Import</strong>.</p>
     </div>
 
     <div class="step-card">
@@ -599,12 +599,12 @@
 
     <div class="faq-item">
       <h3>How do I convert HTML to Figma for free?</h3>
-      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a> and use the 10 manual HTML trial conversions on representative documents. Public URL capture requires Pro; read the <a href="/use-cases/url-to-figma">URL workflow</a> and review the <a href="/result-quality">verified result</a> before subscribing.</p>
+      <p>Install <a href="https://www.figma.com/community/plugin/1591359863857120491/jesse-html-to-figma-import-websites-as-editable-designs-web-css-html" target="_blank" rel="noopener noreferrer">html2design from Figma Community</a>. Choose a <code>.html</code>/<code>.htm</code> file or paste static HTML with its CSS and embedded or reachable absolute asset URLs, then click <strong>Import</strong>. The trial includes 10 manual HTML conversions. Public URL capture through <strong>Fetch</strong> requires Pro; see the <a href="/use-cases/url-to-figma">URL workflow</a> and <a href="/result-quality">verified result</a>.</p>
     </div>
 
     <div class="faq-item">
       <h3>Can I convert a React component to Figma?</h3>
-      <p>Yes. Use URL capture for a public React route. For a local app or Storybook, export a complete HTML document with its generated CSS and assets. See the <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
+      <p>Yes. Use Pro URL capture for a deployed React page that renders while signed out. For localhost or Storybook, export static HTML with the rendered content, generated CSS, and embedded or reachable absolute asset URLs. Manual import does not execute source JavaScript; isolated outerHTML does not include external stylesheet rules. See the <a href="/blog/react-component-to-figma">React Component to Figma guide</a>.</p>
     </div>
 
     <div class="faq-item">
@@ -619,12 +619,12 @@
 
     <div class="faq-item">
       <h3>Can I import a full website into Figma?</h3>
-      <p>Yes. Work page by page with public URL capture, choosing Pixel or Editable output. Private pages use complete HTML documents rather than a remote URL. See the <a href="/blog/import-website-into-figma">Import Website into Figma guide</a>.</p>
+      <p>Yes, one page at a time. With Pro, verify that the page renders while signed out, choose Pixel or Editable, enter its public HTTP(S) URL, and click <strong>Fetch</strong>. For private or local pages, supply static HTML with its CSS and embedded or reachable absolute asset URLs, then click <strong>Import</strong>. Manual import does not execute source scripts or upload neighboring files. See the <a href="/blog/import-website-into-figma">Import Website into Figma guide</a>.</p>
     </div>
 
     <div class="faq-item">
       <h3>How do I convert Angular components to Figma?</h3>
-      <p>Use URL capture for a deployed Angular route. For <code style="font-family:'JetBrains Mono',monospace;font-size:0.85em;background:#F3F4F6;padding:0.15em 0.35em;border-radius:3px;">ng serve</code> output, export a complete document with generated styles and assets. See the <a href="/use-cases/angular-to-figma">Angular to Figma use case</a>.</p>
+      <p>Use Pro URL capture for a deployed Angular route that renders while signed out. For local Angular output, export static HTML with generated styles and embedded or reachable absolute asset URLs. Manual import does not execute source scripts; Angular encapsulation attributes alone do not include the stylesheet rules. See the <a href="/use-cases/angular-to-figma">Angular to Figma use case</a>.</p>
     </div>
 
     <div class="faq-item">
@@ -634,7 +634,7 @@
 
     <div class="faq-item">
       <h3>Does html2design support Vue and Nuxt?</h3>
-      <p>Yes. Use public URL capture or include Vue's generated scoped CSS with a manual HTML export. The scoped attributes alone do not carry the CSS rules. See the <a href="/use-cases/vue-to-figma">Vue to Figma use case</a>.</p>
+      <p>Yes. Use Pro URL capture for a public Vue or Nuxt route that renders while signed out. For private output, export static HTML with Vue's generated scoped CSS and embedded or reachable absolute asset URLs. Manual import does not execute source scripts; <code>data-v</code> attributes alone do not contain visual style values. See the <a href="/use-cases/vue-to-figma">Vue to Figma use case</a>.</p>
     </div>
 
     <div class="faq-item">

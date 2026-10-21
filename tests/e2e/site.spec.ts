@@ -118,6 +118,53 @@ test('pricing makes the manual trial explicit and attributes only user-initiated
   expect(schema.join('\n')).not.toContain('api.html2design.com/v1/checkout');
   await expect(page.locator('body')).toContainText('Public URL capture requires Pro');
   await expect(page.locator('script[data-event="pricing_view"][data-source="website_pricing"]')).toHaveCount(1);
+  const faq = schema.map((entry) => JSON.parse(entry)).find((entry) => entry['@type'] === 'FAQPage');
+  const answer = faq.mainEntity.find((item: { name: string }) => item.name === 'How does html2design compare to free alternatives?').acceptedAnswer.text;
+  await expect(page.locator('body')).toContainText(answer);
+  expect(answer).not.toMatch(/typically produce screenshot|components/);
+});
+
+test('homepage billing schema uses numeric increments within price specifications', async ({ page }) => {
+  await page.goto('/');
+  const schemas = (await page.locator('script[type="application/ld+json"]').allTextContents()).map((entry) => JSON.parse(entry));
+  const product = schemas.find((entry) => entry['@type'] === 'SoftwareApplication');
+  expect(product.offers).toHaveLength(2);
+  for (const offer of product.offers) {
+    expect(offer).not.toHaveProperty('billingIncrement');
+    expect(offer.priceSpecification).toMatchObject({ '@type': 'UnitPriceSpecification', billingIncrement: 1, price: offer.price, priceCurrency: 'USD' });
+    expect(['MONTH', 'YEAR']).toContain(offer.priceSpecification.unitText);
+  }
+});
+
+test('alternative answers agree with structured data and expose the manual trial', async ({ page }) => {
+  await page.goto('/alternatives');
+  await expect(page.getByRole('link', { name: 'Try 10 manual HTML imports free', exact: true })).toHaveAttribute(
+    'href',
+    new RegExp(`^${FIGMA_PLUGIN}`),
+  );
+  await expect(page.locator('#free-and-extension-options')).toBeVisible();
+  const faq = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) =>
+    scripts.map((script) => JSON.parse(script.textContent || '{}')).find((schema) => schema['@type'] === 'FAQPage'),
+  );
+  for (const question of ['Are there free HTML to Figma alternatives?', 'What is the difference between html2design and html.to.design?']) {
+    const answer = faq.mainEntity.find((item: { name: string }) => item.name === question).acceptedAnswer.text;
+    await expect(page.locator('.faq-answer').filter({ hasText: answer })).toHaveCount(1);
+  }
+  await expect(page.getByRole('link', { name: 'Public URL capture requires Pro', exact: true })).toHaveAttribute('href', '/pricing');
+});
+
+test('AI references distinguish paid URL capture and static manual HTML', async ({ request }) => {
+  for (const route of ['/llms.txt', '/llms-full.txt']) {
+    const response = await request.get(route);
+    expect(response.status(), route).toBe(200);
+    const body = await response.text();
+    expect(body, route).toMatch(/10 manual HTML\/file\/paste conversions/);
+    expect(body, route).toMatch(/public URL capture requires Pro/i);
+    expect(body, route).toContain('Selecting an HTML file does not upload neighboring asset files');
+    expect(body, route).toMatch(/source JavaScript/i);
+    expect(body, route).not.toContain('current automated test coverage');
+    expect(body, route).not.toMatch(/Trial: 10 conversions before/);
+  }
 });
 
 test('pricing creates checkout with POST only after a real click', async ({ page }) => {
@@ -252,11 +299,20 @@ test('manual import guidance stays consistent across high-intent pages', async (
 
   const guide = await (await request.get('/guide')).text();
   expect(guide).toContain('does not embed external CSS');
+  expect(guide).toContain('source JavaScript is not executed');
+  expect(guide).toContain('does not upload its folder or neighboring assets');
+  expect(guide).toContain('Public URL (Pro)');
+  expect(guide).toContain('<strong>Fetch</strong>');
+  expect(guide).toContain('<strong>Import</strong>');
 
   const claude = await (await request.get('/use-cases/claude-to-figma')).text();
   expect(claude).toContain('Claude Design to Figma: HTML Export or Figma MCP');
   expect(claude).toContain('standalone HTML');
   expect(claude).toContain('support.claude.com/en/articles/14604416-get-started-with-claude-design');
+  expect(claude).toContain('support.claude.com/en/articles/9547008-share-artifacts');
+  expect(claude).toContain('Selecting the HTML file does not upload neighboring assets');
+  expect(claude).toContain('source scripts');
+  expect(claude).toContain('signed-out browser');
 
   const handoff = await (await request.get('/use-cases/developer-handoff')).text();
   expect(handoff).toContain('Figma Design Handoff from HTML');

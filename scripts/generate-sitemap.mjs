@@ -1,18 +1,13 @@
-import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { join, relative, resolve } from 'node:path';
+import { join, resolve } from 'node:path';
 import { XMLBuilder, XMLParser } from 'fast-xml-parser';
+import { createLastModifiedResolver } from './lib/sitemap-dates.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 const SITEMAP = join(PUBLIC, 'sitemap.xml');
 const ORIGIN = 'https://html2design.com';
-const TODAY = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'Asia/Shanghai',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-}).format(new Date());
+const lastModified = createLastModifiedResolver({ cwd: ROOT });
 
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
@@ -29,20 +24,6 @@ function attribute(tag, name) {
 function findTag(html, tagName, predicate) {
   const tags = html.match(new RegExp(`<${tagName}\\b[^>]*>`, 'gi')) ?? [];
   return tags.find(predicate) ?? '';
-}
-
-function git(args) {
-  try {
-    return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' }).trim();
-  } catch {
-    return '';
-  }
-}
-
-function lastModified(path) {
-  const relativePath = relative(ROOT, path);
-  if (git(['status', '--porcelain', '--', relativePath])) return TODAY;
-  return git(['log', '-1', '--format=%cs', '--', relativePath]) || TODAY;
 }
 
 const parser = new XMLParser({ ignoreAttributes: false, processEntities: false });
@@ -76,10 +57,9 @@ const pages = htmlFiles.flatMap((path) => {
   if (!canonical || !canonical.startsWith(ORIGIN) || /\bnoindex\b/i.test(robots)) return [];
 
   const previous = currentByUrl.get(canonical);
-  const entry = {
-    loc: canonical,
-    lastmod: lastModified(path),
-  };
+  const lastmod = lastModified(path, previous?.lastmod);
+  const entry = { loc: canonical };
+  if (lastmod) entry.lastmod = lastmod;
   if (previous?.['image:image']) entry['image:image'] = previous['image:image'];
   return [{ entry, order: currentOrder.get(canonical) ?? Number.MAX_SAFE_INTEGER }];
 });

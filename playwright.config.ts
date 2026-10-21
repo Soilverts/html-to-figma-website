@@ -13,6 +13,7 @@ export default defineConfig({
   use: {
     baseURL: externalBaseURL ?? 'http://127.0.0.1:4173',
     browserName: 'chromium',
+    channel: process.env.PLAYWRIGHT_CHANNEL,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
   },

@@ -44,7 +44,7 @@
     "url": "https://html2design.com/use-cases/claude-to-figma",
     "inLanguage": "en",
     "datePublished": "2026-05-19",
-    "dateModified": "2026-08-17",
+    "dateModified": "2026-10-21",
     "author": {
       "@type": "Organization",
       "name": "HTML to Figma",
@@ -112,7 +112,7 @@
         "name": "How do I export Claude Design to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In Claude Design, choose Export and download standalone HTML. Open the exported file to verify that its styles and assets render, then load that complete HTML file in html2design inside Figma. If the design is already available at a public URL, URL capture also supports Pixel and best-effort Editable modes."
+          "text": "In Claude Design, choose Export and download standalone HTML. Verify that visible content is in the markup, with CSS included or at reachable absolute URLs and images embedded or at reachable absolute URLs. Source scripts are not executed, and neighboring files are not uploaded. In html2design, use Choose File, then Import; the trial includes 10 manual HTML conversions. Pro URL capture uses Fetch with Pixel or Editable mode after checking signed-out access."
         }
       },
       {
@@ -128,7 +128,7 @@
         "name": "When should I use html2design for Claude to Figma?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use html2design when you want a lossless Pixel reference, a best-effort editable capture from a public preview URL, or manual import from a complete HTML document that contains the styles and assets it needs."
+          "text": "Use Pro URL capture for a Pixel raster reference or best-effort editable layers from a page that renders while signed out. Use manual import for static HTML with its CSS and embedded or reachable absolute asset URLs; the trial includes 10 manual HTML conversions."
         }
       },
       {
@@ -152,7 +152,7 @@
         "name": "Can I import a private Claude Code project without publishing it?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Figma's official Claude Code workflow can capture local interfaces. With html2design, use manual input from a complete HTML file or self-contained export. Do not paste isolated outerHTML unless the styling is already inline or included with the document."
+          "text": "Yes. Figma's official workflow supports local interfaces. With html2design, import static HTML with embedded CSS and assets, or use reachable absolute asset URLs. Source scripts are not executed, and selecting the HTML file does not upload neighboring files. A sign-in-protected Claude share link is not a public capture URL."
         }
       }
     ]
@@ -195,15 +195,15 @@
   <header class="max-w-5xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
     <div class="max-w-3xl">
       <p class="text-xs font-mono uppercase tracking-widest text-accent mb-1">Current Guide · Code to Canvas</p>
-      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: August 17, 2026</p>
+      <p class="text-xs text-gray-400 font-mono mb-4">Last reviewed: October 21, 2026</p>
       <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-[1.05] text-content mb-6">
         Claude Design to Figma:<br />
         HTML Export or Figma MCP
       </h1>
       <p class="text-lg md:text-xl text-content-muted font-light leading-relaxed max-w-2xl">
         <strong class="text-content font-medium">Claude Design can export a standalone HTML file.</strong>
-        Load that complete file in html2design for best-effort editable layers, capture a public preview when you
-        need Pixel mode, or use Figma's official MCP workflow when the source lives in Claude Code.
+        Import its static HTML and CSS for best-effort editable layers, use Pro URL capture for a preview that
+        renders while signed out, or use Figma's official MCP workflow for a Claude Code project.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mt-8">
         <a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
@@ -232,7 +232,7 @@
       </p>
       <p class="text-content-muted leading-relaxed max-w-3xl">
         The important distinction is the input contract. Public URL capture lets a remote browser load the page
-        and record resolved visual output. Manual import only sees the HTML and CSS you supply. Copying an
+        and record resolved visual output. Manual import renders static HTML and CSS without executing source scripts. Copying an
         isolated element's <code class="bg-white px-1.5 py-0.5 rounded text-xs font-mono">outerHTML</code>
         does not embed external stylesheets or computed CSS values.
       </p>
@@ -252,9 +252,9 @@
           <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Method 1 · Claude Design</p>
           <h3 class="text-lg font-bold tracking-tight mb-2">Export standalone HTML, then load the file</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Claude's official Design help lists standalone HTML as an export format. Open the export first and
-            verify that it still renders with its CSS and assets, then load the complete file in html2design.
-            Manual HTML input creates best-effort editable output; Pixel mode is available through public URL capture.
+            Claude's official Design help lists standalone HTML as an export format. Manual import needs visible
+            content in the markup, included CSS, and embedded or reachable absolute asset URLs; source scripts do
+            not run. It creates best-effort editable layers, with 10 manual HTML trial conversions.
           </p>
           <p class="text-sm mt-3"><a class="text-accent hover:underline" href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener noreferrer">Claude Design export documentation &rarr;</a></p>
         </div>
@@ -274,10 +274,12 @@
           <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-2">Method 3 · Public Preview</p>
           <h3 class="text-lg font-bold tracking-tight mb-2">html2design public URL capture</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Use a publicly reachable preview URL when you want html2design's Pixel or Editable modes. Pixel mode
-            imports lossless raster tiles for visual comparison. Editable mode maps supported browser content to
-            native Figma nodes and can rasterize browser-only media or complex visual regions.
+            URL capture requires Pro. Open the preview in a signed-out browser first. If Claude asks you to sign in,
+            use static HTML export or a separately hosted public preview instead. Choose Pixel for a raster reference
+            or Editable for best-effort native layers, enter the public HTTP(S) URL, then click <strong>Fetch</strong>;
+            it imports directly. Signed-out access is a prerequisite, not a guarantee of capture fidelity.
           </p>
+          <p class="text-sm mt-3">A shared Claude link is not necessarily public. See <a class="text-accent hover:underline" href="https://support.claude.com/en/articles/9547008-share-artifacts" target="_blank" rel="noopener noreferrer">Claude's official sharing and sign-in requirements</a>.</p>
           <p class="text-sm mt-3"><a class="text-accent hover:underline" href="/use-cases/url-to-figma">Public URL workflow and limits &rarr;</a></p>
         </div>
       </div>
@@ -301,8 +303,8 @@
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
               In Claude Design, open <strong class="text-content">Export</strong> and choose standalone HTML.
-              Keep the exported document and any assets together. For a Claude Code project, use Figma's official
-              MCP workflow instead or publish a preview URL for html2design.
+              Use the HTML file, not a project ZIP or folder. For a JavaScript-rendered Claude Code project,
+              export a static snapshot, use Figma's official MCP workflow, or host a signed-out public preview.
             </p>
           </div>
         </article>
@@ -312,13 +314,13 @@
         <article class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 items-start">
           <div>
             <p class="text-[10px] font-mono uppercase tracking-widest text-accent mb-1">Step 02</p>
-            <h3 class="text-xl font-bold tracking-tight">Open the export and verify its styles</h3>
+            <h3 class="text-xl font-bold tracking-tight">Verify static content, CSS, and assets</h3>
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Open the exported HTML file in a browser. Confirm that typography, colors, images, and layout still
-              render outside Claude Design. If anything is missing, package the required CSS and reachable assets
-              before importing; isolated outerHTML with class names is not a complete visual export.
+              Visible content must already be in the HTML; html2design does not execute source scripts. Include CSS
+              in the document or at reachable absolute URLs; embed images or use reachable absolute image URLs.
+              Selecting the HTML file does not upload neighboring assets. A correct browser preview alone is not enough.
             </p>
           </div>
         </article>
@@ -332,9 +334,10 @@
           </div>
           <div class="text-content-muted leading-relaxed space-y-3">
             <p>
-              Run html2design in Figma and load the complete HTML file. Manual input creates best-effort editable
-              layers. If the Claude result is publicly hosted and visual matching matters more than editing, use
-              URL Pixel mode instead.
+              Run html2design in Figma. Use <strong class="text-content">Choose File</strong> for a
+              <code>.html</code>/<code>.htm</code> file or paste the static HTML, then click
+              <strong class="text-content">Import</strong>. The trial includes 10 manual HTML conversions with
+              best-effort editable layers. Pixel capture is available only through the Pro URL path and its Fetch button.
             </p>
           </div>
         </article>
@@ -413,9 +416,11 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">How do I export Claude Design to Figma?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            In Claude Design, choose Export and download standalone HTML. Verify the file in a browser, then load
-            the complete document in html2design. If it is already hosted publicly, URL capture also provides
-            Pixel and best-effort Editable modes.
+            In Claude Design, choose Export and download standalone HTML. Verify that visible content is in the
+            markup, with CSS included or at reachable absolute URLs and images embedded or at reachable absolute
+            URLs. Source scripts are not executed, and neighboring files are not uploaded. In html2design, use
+            <strong>Choose File</strong>, then <strong>Import</strong>; the trial includes 10 manual HTML conversions.
+            Pro URL capture uses <strong>Fetch</strong> with Pixel or Editable mode after checking signed-out access.
           </p>
         </div>
 
@@ -430,8 +435,9 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">When should I use html2design instead?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Use html2design when you want a lossless Pixel reference, public URL capture inside a Figma plugin,
-            or manual import from a complete HTML document that includes the styles and assets it needs.
+            Use Pro URL capture for a Pixel raster reference or best-effort editable layers from a page that renders
+            while signed out. Use manual import for static HTML with its CSS and embedded or reachable absolute
+            asset URLs; the trial includes 10 manual HTML conversions.
           </p>
         </div>
 
@@ -455,8 +461,10 @@
         <div class="border-l-4 border-accent pl-6">
           <h3 class="text-base font-bold mb-2">Can I keep a Claude Code project private?</h3>
           <p class="text-sm text-content-muted leading-relaxed">
-            Yes. Figma's official workflow supports local interfaces. With html2design, manual import stays
-            separate from public URL capture, but the supplied HTML must include the CSS required to render it.
+            Yes. Figma's official workflow supports local interfaces. With html2design, import static HTML with
+            embedded CSS and assets, or use reachable absolute asset URLs. Source scripts are not executed, and
+            selecting the HTML file does not upload neighboring files. A sign-in-protected Claude share link is
+            not a public capture URL.
           </p>
         </div>
 
